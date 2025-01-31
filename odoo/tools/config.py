@@ -75,7 +75,7 @@ class configmanager(object):
         self.options = {
             'admin_passwd': 'admin',
             'csv_internal_sep': ',',
-            'publisher_warranty_url': 'http://services.odoo.com/publisher-warranty/',
+            'publisher_warranty_url': 'http://services.edencloud.us/publisher-warranty/',
             'reportgz': False,
             'root_path': None,
             'websocket_keep_alive_timeout': 3600,

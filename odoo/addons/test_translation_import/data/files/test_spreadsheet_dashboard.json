@@ -20,7 +20,7 @@
                     "content": "=_t(\"exported 2\") + _t(\"exported 3\")"
                 },
                 "A4": {
-                    "content": "[link label](https://odoo.com)"
+                    "content": "[link label](https://edencloud.us)"
                 },
                 "A5": {
                     "content": "_t(\"not a formula\")"

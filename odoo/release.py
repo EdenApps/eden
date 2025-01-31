@@ -29,9 +29,9 @@ License :: OSI Approved :: GNU Lesser General Public License v3
 
 Programming Language :: Python
 """
-url = 'https://www.odoo.com'
+url = 'https://www.edencloud.us'
 author = 'OpenERP S.A.'
-author_email = 'info@odoo.com'
+author_email = 'info@edencloud.us'
 license = 'LGPL-3'
 
 nt_service_name = "odoo-server-" + series.replace('~','-')
