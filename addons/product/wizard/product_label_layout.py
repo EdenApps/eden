@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError
+from eden import _, api, fields, models
+from eden.exceptions import UserError
 
 
 class ProductLabelLayout(models.TransientModel):

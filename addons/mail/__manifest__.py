@@ -11,7 +11,7 @@
 Chat, mail gateway and private channel.
 =======================================
 
-Communicate with your colleagues/customers/guest within Odoo.
+Communicate with your colleagues/customers/guest within Eden.
 
 Discuss/Chat
 ------------
@@ -22,7 +22,7 @@ them, all real-time.
 Mail gateway
 ------------
 Sending information and documents made simplified. You can send emails
-from Odoo itself, and that too with great possibilities. For example,
+from Eden itself, and that too with great possibilities. For example,
 design a beautiful email template for the invoices, and use the same
 for all your customers, no need to do the same exercise every time.
 
@@ -38,10 +38,10 @@ subtypes),...
 Retrieve incoming email on POP/IMAP servers.
 ============================================
 Enter the parameters of your POP/IMAP account(s), and any incoming emails on
-these accounts will be automatically downloaded into your Odoo system. All
+these accounts will be automatically downloaded into your Eden system. All
 POP3/IMAP-compatible servers are supported, included those that require an
 encrypted SSL/TLS connection.
-This can be used to easily create email-based workflows for many email-enabled Odoo documents, such as:
+This can be used to easily create email-based workflows for many email-enabled Eden documents, such as:
 ----------------------------------------------------------------------------------------------------------
     * CRM Leads/Opportunities
     * CRM Claims
@@ -51,14 +51,14 @@ This can be used to easily create email-based workflows for many email-enabled O
 Just install the relevant application, and you can assign any of these document
 types (Leads, Project Issues) to your incoming email accounts. New emails will
 automatically spawn new documents of the chosen type, so it's a snap to create a
-mailbox-to-Odoo integration. Even better: these documents directly act as mini
-conversations synchronized by email. You can reply from within Odoo, and the
+mailbox-to-Eden integration. Even better: these documents directly act as mini
+conversations synchronized by email. You can reply from within Eden, and the
 answers will automatically be collected when they come back, and attached to the
 same *conversation* document.
 For more specific needs, you may also assign custom-defined actions
 (technically: Server Actions) to be triggered for each incoming mail.
     """,
-    'website': 'https://www.odoo.com/app/discuss',
+    'website': 'https://www.edencloud.us/app/discuss',
     'depends': ['base', 'base_setup', 'bus', 'web_tour', 'html_editor'],
     'data': [
         'data/mail_groups.xml',
@@ -198,15 +198,15 @@ For more specific needs, you may also assign custom-defined actions
             'mail/static/tests/legacy/**/*',
             ('remove', 'mail/static/tests/legacy/helpers/**/*'),
         ],
-        'mail.assets_odoo_sfu': [
-            'mail/static/lib/odoo_sfu/odoo_sfu.js',
+        'mail.assets_eden_sfu': [
+            'mail/static/lib/eden_sfu/eden_sfu.js',
         ],
         'mail.assets_lamejs': [
             'mail/static/lib/lame/lame.js',
         ],
         'mail.assets_public': [
             'web/static/lib/jquery/jquery.js',
-            'web/static/lib/odoo_ui_icons/style.css',
+            'web/static/lib/eden_ui_icons/style.css',
             ('include', 'web._assets_helpers'),
             ('include', 'web._assets_backend_helpers'),
             'web/static/src/scss/pre_variables.scss',

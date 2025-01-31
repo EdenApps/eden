@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { onWillStart } from "@odoo/owl";
+import { onWillStart } from "@eden/owl";
 import { user } from "@web/core/user";
 import { ColumnProgress } from "@web/views/view_components/column_progress";
 import { session } from "@web/session";

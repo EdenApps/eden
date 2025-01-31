@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, fields, models
-from odoo.fields import Command
+from eden import _, api, fields, models
+from eden.fields import Command
 
 
 class UpdateProductAttributeValue(models.TransientModel):

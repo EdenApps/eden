@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <record id="card_card_view_list" model="ir.ui.view">
         <field name="name">card.card.view.list</field>
         <field name="model">card.card</field>
@@ -47,4 +47,4 @@
             </p>
         </field>
     </record>
-</odoo>
+</eden>

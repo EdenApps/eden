@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <record id="time_product" model="product.product">
             <field name="name">Service on Timesheets</field>
@@ -63,4 +63,4 @@
             <field name="name">amount</field>
         </record>
     </data>
-</odoo>
+</eden>

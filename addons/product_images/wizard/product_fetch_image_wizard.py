@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import base64
 import logging
@@ -7,8 +7,8 @@ from datetime import timedelta
 import requests
 from requests.exceptions import ConnectionError as RequestConnectionError, Timeout as RequestTimeout
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError
+from eden import _, api, fields, models
+from eden.exceptions import UserError
 
 _logger = logging.getLogger(__name__)
 

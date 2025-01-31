@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="crm_action_helper" name="crm action helper">
         <t t-if="team.alias_email">
             <p class="o_view_nocontent_smiling_face">
@@ -13,4 +13,4 @@
             <p>Use the New button, or configure an email alias to test the email gateway.</p>
         </t>
     </template>
-</odoo>
+</eden>

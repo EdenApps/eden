@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="sale_report_view_graph_slides" model="ir.ui.view">
          <field name="name">sale.report.view.graph.slides</field>
          <field name="model">sale.report</field>
@@ -25,4 +25,4 @@
             <p>Come back once your courses starts selling to report on your revenues.</p>
         </field>
     </record>
-</odoo>
+</eden>

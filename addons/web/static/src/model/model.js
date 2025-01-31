@@ -4,7 +4,7 @@ import { useSetupAction } from "@web/search/action_hook";
 import { SEARCH_KEYS } from "@web/search/with_search/with_search";
 import { buildSampleORM } from "./sample_server";
 
-import { EventBus, onWillStart, onWillUpdateProps, status, useComponent } from "@odoo/owl";
+import { EventBus, onWillStart, onWillUpdateProps, status, useComponent } from "@eden/owl";
 
 /**
  * @typedef {import("@web/search/search_model").SearchParams} SearchParams

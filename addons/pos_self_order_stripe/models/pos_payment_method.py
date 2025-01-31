@@ -1,4 +1,4 @@
-from odoo import models
+from eden import models
 
 
 class PosPaymentMethod(models.Model):

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import operator
 
-from odoo.tools.float_utils import float_compare
+from eden.tools.float_utils import float_compare
 
 RATING_AVG_TOP = 3.66
 RATING_AVG_OK = 2.33

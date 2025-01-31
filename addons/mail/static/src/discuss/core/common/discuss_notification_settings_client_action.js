@@ -1,4 +1,4 @@
-import { Component, xml } from "@odoo/owl";
+import { Component, xml } from "@eden/owl";
 import { registry } from "@web/core/registry";
 
 import { DiscussNotificationSettings } from "@mail/discuss/core/common/discuss_notification_settings";

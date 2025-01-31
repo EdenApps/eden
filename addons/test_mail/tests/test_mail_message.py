@@ -1,12 +1,12 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from markupsafe import Markup
 
-from odoo.addons.mail.tests.common import mail_new_test_user, MailCommon
-from odoo.addons.mail.tools.discuss import Store
-from odoo.exceptions import UserError
-from odoo.tests.common import tagged, users, HttpCase
-from odoo.tools import is_html_empty, mute_logger, formataddr
+from eden.addons.mail.tests.common import mail_new_test_user, MailCommon
+from eden.addons.mail.tools.discuss import Store
+from eden.exceptions import UserError
+from eden.tests.common import tagged, users, HttpCase
+from eden.tools import is_html_empty, mute_logger, formataddr
 
 
 @tagged("mail_message", "post_install", "-at_install")
@@ -92,7 +92,7 @@ class TestMessageValues(MailCommon):
         with self.assertRaises(UserError, msg='Tracking values prevent from updating content'):
             record._message_update_content(tracking_message, '', [])
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('eden.models.unlink')
     def test_mail_message_to_store_access(self):
         """
         User that doesn't have access to a record should still be able to fetch
@@ -179,7 +179,7 @@ class TestMessageValues(MailCommon):
             '<img src="/web/image/{attachment.id}?access_token={attachment.access_token}" alt="image0" width="2"></p>'.format(attachment=msg.attachment_ids[0])
         )
 
-    @mute_logger('odoo.models.unlink', 'odoo.addons.mail.models.models')
+    @mute_logger('eden.models.unlink', 'eden.addons.mail.models.models')
     @users('employee')
     def test_mail_message_values_fromto_long_name(self):
         """ Long headers may break in python if above 68 chars for certain
@@ -241,7 +241,7 @@ class TestMessageValues(MailCommon):
         self.assertEqual(msg.reply_to, f"{sanitized_alias_name}@{self.alias_domain}",
                          'Reply-To: even a long email is ok as only formataddr is problematic')
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('eden.models.unlink')
     def test_mail_message_values_fromto_no_document_values(self):
         msg = self.Message.create({
             'reply_to': 'test.reply@example.com',
@@ -251,7 +251,7 @@ class TestMessageValues(MailCommon):
         self.assertEqual(msg.reply_to, 'test.reply@example.com')
         self.assertEqual(msg.email_from, 'test.from@example.com')
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('eden.models.unlink')
     def test_mail_message_values_fromto_no_document(self):
         msg = self.Message.create({})
         self.assertIn('-private', msg.message_id.split('@')[0], 'mail_message: message_id for a void message should be a "private" one')
@@ -269,7 +269,7 @@ class TestMessageValues(MailCommon):
         self.assertEqual(msg.reply_to, formataddr((self.user_employee.name, self.user_employee.email)))
         self.assertEqual(msg.email_from, formataddr((self.user_employee.name, self.user_employee.email)))
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('eden.models.unlink')
     def test_mail_message_values_fromto_document_alias(self):
         msg = self.Message.create({
             'model': 'mail.test.container',
@@ -307,7 +307,7 @@ class TestMessageValues(MailCommon):
         self.assertEqual(msg.reply_to, formataddr((reply_to_name, reply_to_email)))
         self.assertEqual(msg.email_from, formataddr((self.user_employee.name, self.user_employee.email)))
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('eden.models.unlink')
     def test_mail_message_values_fromto_document_no_alias(self):
         test_record = self.env['mail.test.simple'].create({'name': 'Test', 'email_from': 'ignasse@example.com'})
 
@@ -321,7 +321,7 @@ class TestMessageValues(MailCommon):
         self.assertEqual(msg.reply_to, formataddr((reply_to_name, reply_to_email)))
         self.assertEqual(msg.email_from, formataddr((self.user_employee.name, self.user_employee.email)))
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('eden.models.unlink')
     def test_mail_message_values_fromto_document_manual_alias(self):
         test_record = self.env['mail.test.simple'].create({'name': 'Test', 'email_from': 'ignasse@example.com'})
         alias = self.env['mail.alias'].create({
@@ -367,7 +367,7 @@ class TestMessageLinks(MailCommon, HttpCase):
         deleted_message = record.message_post(body='', message_type='comment')
         self.authenticate(self.user_employee.login, self.user_employee.login)
         with self.subTest(thread_message=thread_message):
-            expected_url = self.base_url() + f'/odoo/{thread_message.model}/{thread_message.res_id}?highlight_message_id={thread_message.id}'
+            expected_url = self.base_url() + f'/eden/{thread_message.model}/{thread_message.res_id}?highlight_message_id={thread_message.id}'
             res = self.url_open(f'/mail/message/{thread_message.id}')
             self.assertEqual(res.url, expected_url)
             self.assertEqual(res.url, expected_url)

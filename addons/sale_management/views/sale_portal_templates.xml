@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <template id="sale_order_portal_content_inherit_sale_management" name="Order Options" inherit_id="sale.sale_order_portal_content">
 
@@ -103,4 +103,4 @@
 
     </template>
 
-</odoo>
+</eden>

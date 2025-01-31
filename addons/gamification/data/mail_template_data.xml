@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <record id="email_template_badge_received" model="mail.template">
             <field name="name">Gamification: Badge Received</field>
@@ -91,7 +91,7 @@
 <tr><td align="center" style="min-width: 590px;">
     <table width="590" border="0" cellpadding="0" style="min-width: 590px; background-color: #F1F1F1; color: #454748; padding: 8px; border-collapse:separate;">
       <tr><td style="text-align: center; font-size: 14px;">
-        Powered by <a target="_blank" href="https://www.odoo.com?utm_source=db&amp;utm_medium=gamification" style="color: #875A7B;">Odoo</a>
+        Powered by <a target="_blank" href="https://www.edencloud.us?utm_source=db&amp;utm_medium=gamification" style="color: #875A7B;">Eden</a>
       </td></tr>
     </table>
 </td></tr>
@@ -373,4 +373,4 @@
         </record>
 
     </data>
-</odoo>
+</eden>

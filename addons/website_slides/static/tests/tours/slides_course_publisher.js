@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { clickOnEditAndWaitEditMode, registerWebsitePreviewTour } from '@website/js/tours/tour_utils';
 import slidesTourTools from '@website_slides/../tests/tours/slides_tour_tools';
@@ -35,7 +35,7 @@ registerWebsitePreviewTour('course_publisher', {
     run: "click",
 }, {
     content: 'eLearning: set description',
-    trigger: 'modal .o_field_html[name="description"] .odoo-editor-editable p',
+    trigger: 'modal .o_field_html[name="description"] .eden-editor-editable p',
     run: "editor Déboulonnate is very common at Fleurus",
 }, {
     content: 'eLearning: we want reviews',

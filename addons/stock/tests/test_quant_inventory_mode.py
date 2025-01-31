@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.tests import Form, TransactionCase
-from odoo.exceptions import AccessError, UserError
+from eden.addons.mail.tests.common import mail_new_test_user
+from eden.tests import Form, TransactionCase
+from eden.exceptions import AccessError, UserError
 
 
 class TestEditableQuant(TransactionCase):

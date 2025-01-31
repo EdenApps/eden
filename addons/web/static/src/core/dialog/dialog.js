@@ -1,7 +1,7 @@
 import { useHotkey } from "@web/core/hotkeys/hotkey_hook";
 import { useActiveElement } from "../ui/ui_service";
 import { useForwardRefToParent } from "@web/core/utils/hooks";
-import { Component, onWillDestroy, useChildSubEnv, useExternalListener, useState } from "@odoo/owl";
+import { Component, onWillDestroy, useChildSubEnv, useExternalListener, useState } from "@eden/owl";
 import { throttleForAnimation } from "@web/core/utils/timing";
 import { makeDraggableHook } from "../utils/draggable_hook_builder_owl";
 
@@ -64,7 +64,7 @@ export class Dialog extends Component {
         header: true,
         size: "lg",
         technical: true,
-        title: "Odoo",
+        title: "Eden",
         withBodyPadding: true,
     };
 

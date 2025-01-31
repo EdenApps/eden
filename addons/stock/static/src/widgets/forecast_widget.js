@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { FloatField, floatField } from "@web/views/fields/float/float_field";
 import { formatDate } from "@web/core/l10n/dates";

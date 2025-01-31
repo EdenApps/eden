@@ -1,4 +1,4 @@
-/** @odoo-module alias=mailing.PortalSubscriptionForm **/
+/** @eden-module alias=mailing.PortalSubscriptionForm **/
 
 import { rpc } from "@web/core/network/rpc";
 import { renderToFragment } from "@web/core/utils/render";

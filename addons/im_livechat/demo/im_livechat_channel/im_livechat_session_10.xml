@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <data>
         <record id="livechat_channel_session_10" model="discuss.channel">
             <field name="name">Visitor, Mitchell Admin</field>
@@ -84,4 +84,4 @@
         <function model="discuss.channel" name="rating_apply"
             eval="([ref('im_livechat.livechat_channel_session_10')], 1, 'LIVECHAT_10', None, 'Not so good')"/>
     </data>
-</odoo>
+</eden>

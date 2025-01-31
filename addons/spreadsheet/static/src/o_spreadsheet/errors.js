@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { registries, EvaluationError } from "@odoo/o-spreadsheet";
+import { registries, EvaluationError } from "@eden/o-spreadsheet";
 
 const LOADING_ERROR = "Loading...";
 

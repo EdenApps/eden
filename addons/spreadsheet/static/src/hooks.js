@@ -1,12 +1,12 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { _t } from "@web/core/l10n/translation";
 import { useService } from "@web/core/utils/hooks";
 
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 
-import { stores } from "@odoo/o-spreadsheet";
-import { useEffect, useExternalListener, useState } from "@odoo/owl";
+import { stores } from "@eden/o-spreadsheet";
+import { useEffect, useExternalListener, useState } from "@eden/owl";
 
 import { loadBundle } from "@web/core/assets";
 
@@ -125,7 +125,7 @@ export function useSpreadsheetNotificationStore() {
      */
     function askConfirmation(body, confirm) {
         dialog.add(ConfirmationDialog, {
-            title: _t("Odoo Spreadsheet"),
+            title: _t("Eden Spreadsheet"),
             body,
             confirm,
             cancel: () => {}, // Must be defined to display the Cancel button
@@ -154,7 +154,7 @@ export function useSpreadsheetNotificationStore() {
         dialog.add(
             ConfirmationDialog,
             {
-                title: _t("Odoo Spreadsheet"),
+                title: _t("Eden Spreadsheet"),
                 body,
             },
             {

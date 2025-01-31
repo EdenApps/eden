@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.test_event_full.tests.common import TestEventFullCommon
-from odoo.tests import tagged, users
+from eden.addons.test_event_full.tests.common import TestEventFullCommon
+from eden.tests import tagged, users
 
 
 @tagged("event_crm")

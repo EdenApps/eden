@@ -1,5 +1,5 @@
-from odoo import Command
-from odoo.tests import Form, TransactionCase
+from eden import Command
+from eden.tests import Form, TransactionCase
 
 
 class TestRoutes(TransactionCase):

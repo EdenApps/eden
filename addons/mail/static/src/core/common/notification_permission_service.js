@@ -1,4 +1,4 @@
-import { reactive } from "@odoo/owl";
+import { reactive } from "@eden/owl";
 
 import { browser } from "@web/core/browser/browser";
 import {
@@ -33,7 +33,7 @@ export const notificationPermissionService = {
     },
 
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").EdenEnv} env
      * @param {Partial<import("services").Services>} services
      */
     async start(env, services) {
@@ -66,12 +66,12 @@ export const notificationPermissionService = {
                         await browser.Notification.requestPermission()
                     );
                     if (state.permission === "denied") {
-                        notification.add(_t("Odoo will not send notifications on this device."), {
+                        notification.add(_t("Eden will not send notifications on this device."), {
                             type: "warning",
                             title: _t("Notifications blocked"),
                         });
                     } else if (state.permission === "granted") {
-                        notification.add(_t("Odoo will send notifications on this device!"), {
+                        notification.add(_t("Eden will send notifications on this device!"), {
                             type: "success",
                             title: _t("Notifications allowed"),
                         });

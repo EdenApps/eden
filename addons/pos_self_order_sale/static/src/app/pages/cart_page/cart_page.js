@@ -1,7 +1,7 @@
 import { patch } from "@web/core/utils/patch";
 import { CartPage } from "@pos_self_order/app/pages/cart_page/cart_page";
 import { ProductCard } from "@pos_self_order/app/components/product_card/product_card";
-import { onWillStart } from "@odoo/owl";
+import { onWillStart } from "@eden/owl";
 
 patch(CartPage.prototype, {
     setup() {

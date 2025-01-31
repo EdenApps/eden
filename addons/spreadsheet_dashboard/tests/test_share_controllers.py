@@ -1,8 +1,8 @@
 import json
 import base64
 
-from odoo.tests.common import HttpCase
-from odoo.tools import mute_logger
+from eden.tests.common import HttpCase
+from eden.tools import mute_logger
 
 from .common import DashboardTestCommon
 
@@ -16,7 +16,7 @@ class TestShareController(DashboardTestCommon, HttpCase):
     def test_dashboard_share_portal_wrong_token(self):
         dashboard = self.create_dashboard()
         share = self.share_dashboard(dashboard)
-        with mute_logger('odoo.http'):
+        with mute_logger('eden.http'):
             response = self.url_open(f"/dashboard/share/{share.id}/a-random-token")
         self.assertEqual(response.status_code, 403)
 
@@ -30,7 +30,7 @@ class TestShareController(DashboardTestCommon, HttpCase):
     def test_public_dashboard_data_wrong_token(self):
         dashboard = self.create_dashboard()
         share = self.share_dashboard(dashboard)
-        with mute_logger('odoo.http'):  # mute 403 warning
+        with mute_logger('eden.http'):  # mute 403 warning
             response = self.url_open(f"/dashboard/data/{share.id}/a-random-token")
         self.assertEqual(response.status_code, 403)
 
@@ -44,7 +44,7 @@ class TestShareController(DashboardTestCommon, HttpCase):
 
         self.user.groups_id -= self.group # revoke access
 
-        with mute_logger('odoo.http'):  # mute 403 warning
+        with mute_logger('eden.http'):  # mute 403 warning
             response = self.url_open(f"/dashboard/data/{share.id}/{share.access_token}")
         self.assertEqual(response.status_code, 403)
 
@@ -60,7 +60,7 @@ class TestShareController(DashboardTestCommon, HttpCase):
         dashboard = self.create_dashboard()
         share = self.share_dashboard(dashboard)
         share.excel_export = base64.b64encode(b"test")
-        with mute_logger('odoo.http'):  # mute 403 warning
+        with mute_logger('eden.http'):  # mute 403 warning
             response = self.url_open(f"/dashboard/download/{share.id}/a-random-token")
         self.assertEqual(response.status_code, 403)
 
@@ -74,6 +74,6 @@ class TestShareController(DashboardTestCommon, HttpCase):
 
         self.user.groups_id -= self.group # revoke access
 
-        with mute_logger('odoo.http'):  # mute 403 warning
+        with mute_logger('eden.http'):  # mute 403 warning
             response = self.url_open(f"/dashboard/download/{share.id}/{share.access_token}")
         self.assertEqual(response.status_code, 403)

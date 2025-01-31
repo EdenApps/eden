@@ -1,7 +1,7 @@
 import { memoize } from "@web/core/utils/functions";
 import { useAutofocus, useService } from "@web/core/utils/hooks";
 import { ModelFieldSelectorPopover } from "@web/core/model_field_selector/model_field_selector_popover";
-import { Component, onWillStart, useState } from "@odoo/owl";
+import { Component, onWillStart, useState } from "@eden/owl";
 import { user } from "@web/core/user";
 
 const allowedQwebExpressions = memoize(async (model, orm) => {

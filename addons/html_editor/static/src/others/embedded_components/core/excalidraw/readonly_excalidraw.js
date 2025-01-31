@@ -1,7 +1,7 @@
 import { isMobileOS } from "@web/core/browser/feature_detection";
 import { getEmbeddedProps } from "@html_editor/others/embedded_component_utils";
 import { checkURL, excalidrawWebsiteDomainList } from "@html_editor/utils/url";
-import { Component, onWillStart, useRef, useState } from "@odoo/owl";
+import { Component, onWillStart, useRef, useState } from "@eden/owl";
 import { useMouseResizeListeners } from "@html_editor/others/embedded_components/core/excalidraw/excalidraw_utils";
 
 /**

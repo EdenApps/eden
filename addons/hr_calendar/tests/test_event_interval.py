@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import tagged
+from eden.tests import tagged
 from datetime import datetime
 from pytz import timezone
-from odoo.addons.hr_calendar.tests.common import TestHrCalendarCommon
+from eden.addons.hr_calendar.tests.common import TestHrCalendarCommon
 
 
 @tagged('event_interval')

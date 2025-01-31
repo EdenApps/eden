@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <record id="mail_template_donation" model="mail.template">
             <field name="name">Website: Donation</field>
@@ -7,4 +7,4 @@
             <field name="lang">{{ object.partner_id.lang }}</field>
         </record>
     </data>
-</odoo>
+</eden>

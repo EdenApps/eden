@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { Component, xml } from "@odoo/owl";
+import { expect, test } from "@eden/hoot";
+import { Component, xml } from "@eden/owl";
 import { contains, mountWithCleanup } from "@web/../tests/web_test_helpers";
 
 import { ColorList } from "@web/core/colorlist/colorlist";

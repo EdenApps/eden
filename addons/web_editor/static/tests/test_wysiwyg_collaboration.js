@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { patch } from "@web/core/utils/patch";
 import {
@@ -6,7 +6,7 @@ import {
     setTestSelection,
     renderTextualSelection,
     patchEditorIframe,
-} from '@web_editor/js/editor/odoo-editor/test/utils';
+} from '@web_editor/js/editor/eden-editor/test/utils';
 import { Wysiwyg, stripHistoryIds } from '@web_editor/js/wysiwyg/wysiwyg';
 import { Mutex } from '@web/core/utils/concurrency';
 import { makeTestEnv } from "@web/../tests/helpers/mock_env";
@@ -53,7 +53,7 @@ class PeerTest {
         await this._started;
         if (this.initialParsedSelection) {
             await setTestSelection(this.initialParsedSelection, this.document);
-            this.wysiwyg.odooEditor._recordHistorySelection();
+            this.wysiwyg.edenEditor._recordHistorySelection();
         } else {
             document.getSelection().removeAllRanges();
         }
@@ -97,8 +97,8 @@ class PeerTest {
         this._onlineResolver = undefined;
     }
     async getValue() {
-        this.wysiwyg.odooEditor.observerUnactive('PeerTest.getValue');
-        renderTextualSelection(this.wysiwyg.odooEditor);
+        this.wysiwyg.edenEditor.observerUnactive('PeerTest.getValue');
+        renderTextualSelection(this.wysiwyg.edenEditor);
 
         const html = this.wysiwyg.$editable[0].innerHTML;
 
@@ -106,7 +106,7 @@ class PeerTest {
         if (selection) {
             await setTestSelection(selection, this.document);
         }
-        this.wysiwyg.odooEditor.observerActive('PeerTest.getValue');
+        this.wysiwyg.edenEditor.observerActive('PeerTest.getValue');
 
         return stripHistoryIds(html);
     }
@@ -199,7 +199,7 @@ export async function createPeers(peers) {
             _generateClientId() {
                 return peerId;
             },
-            // Hacky hook as we know this method is called after setting the value in the wysiwyg start and before sending the value to odooEditor.
+            // Hacky hook as we know this method is called after setting the value in the wysiwyg start and before sending the value to edenEditor.
             _getLastHistoryStepId() {
                 pool.peers[peerId].initialParsedSelection = parseTextualSelection(wysiwyg.$editable[0]);
                 return super._getLastHistoryStepId(...arguments);
@@ -269,7 +269,7 @@ export async function createPeers(peers) {
             },
             async startEdition() {
                 await super.startEdition(...arguments);
-                patch(this.odooEditor, {
+                patch(this.edenEditor, {
                     _generateId() {
                         // Ensure the id are deterministically gererated for
                         // when we need to sort by them. (eg. in the
@@ -353,7 +353,7 @@ QUnit.module('web_editor', {
                 await peers.p1.focus();
                 await peers.p2.focus();
 
-                await peers.p1.wysiwyg.odooEditor.execCommand('insert', 'b');
+                await peers.p1.wysiwyg.edenEditor.execCommand('insert', 'b');
 
                 assert.equal(await peers.p1.getValue(), `<p>ab[]</p>`, 'p1 should have the document changed');
                 assert.equal(await peers.p2.getValue(), `<p>a[]</p>`, 'p2 should not have the document changed');
@@ -375,7 +375,7 @@ QUnit.module('web_editor', {
 
                 await peers.p1.openDataChannel(peers.p2);
 
-                await peers.p1.wysiwyg.odooEditor.execCommand('insert', 'b');
+                await peers.p1.wysiwyg.edenEditor.execCommand('insert', 'b');
 
                 assert.equal(await peers.p1.getValue(), `<p>ab[]</p>`, 'p1 should have the same document as p2');
                 assert.equal(await peers.p2.getValue(), `<p>[]ab</p>`, 'p2 should have the same document as p1');
@@ -395,7 +395,7 @@ QUnit.module('web_editor', {
                 await peers.p1.focus();
                 await peers.p2.focus();
 
-                await peers.p1.wysiwyg.odooEditor.execCommand('insert', 'b');
+                await peers.p1.wysiwyg.edenEditor.execCommand('insert', 'b');
 
                 await peers.p1.openDataChannel(peers.p2);
 
@@ -422,7 +422,7 @@ QUnit.module('web_editor', {
                     await peers.p2.focus();
                     await peers.p1.openDataChannel(peers.p2);
 
-                    await peers.p1.wysiwyg.odooEditor.execCommand('insert', 'b');
+                    await peers.p1.wysiwyg.edenEditor.execCommand('insert', 'b');
                     await peers.p1.writeToServer();
 
                     assert.equal(peers.p1.wysiwyg._isDocumentStale, false, 'p1 should not have a stale document');
@@ -442,7 +442,7 @@ QUnit.module('web_editor', {
                     assert.equal(peers.p3.wysiwyg._isDocumentStale, false, 'p3 should not have a stale document');
                     assert.equal(await peers.p3.getValue(), `<p>[]ab</p>`, 'p3 should have the same document as p1');
 
-                    await peers.p1.wysiwyg.odooEditor.execCommand('insert', 'c');
+                    await peers.p1.wysiwyg.edenEditor.execCommand('insert', 'c');
                     assert.equal(await peers.p1.getValue(), `<p>abc[]</p>`, 'p1 should have the same document as p3');
                     assert.equal(await peers.p3.getValue(), `<p>[]abc</p>`, 'p3 should have the same document as p1');
 
@@ -484,7 +484,7 @@ QUnit.module('web_editor', {
 
                         await peers.p3.setOffline();
 
-                        await peers.p1.wysiwyg.odooEditor.execCommand('insert', 'b');
+                        await peers.p1.wysiwyg.edenEditor.execCommand('insert', 'b');
 
                         assert.equal(await peers.p1.getValue(), `<p>ab[]</p>`, 'p1 should have the same document as p2');
                         assert.equal(await peers.p2.getValue(), `<p>[]ab</p>`, 'p2 should have the same document as p1');
@@ -543,7 +543,7 @@ QUnit.module('web_editor', {
                             '_onRecoveryClientTimeout',
                         ]);
 
-                        await peers.p1.wysiwyg.odooEditor.execCommand('insert', 'b');
+                        await peers.p1.wysiwyg.edenEditor.execCommand('insert', 'b');
                         await peers.p1.writeToServer();
 
                         assert.equal(await peers.p1.getValue(), `<p>ab[]</p>`, 'p1 have inserted char b');
@@ -609,7 +609,7 @@ QUnit.module('web_editor', {
                             '_onRecoveryClientTimeout',
                         ]);
 
-                        await peers.p1.wysiwyg.odooEditor.execCommand('insert', 'b');
+                        await peers.p1.wysiwyg.edenEditor.execCommand('insert', 'b');
                         await peers.p1.writeToServer();
                         peers.p1.setOffline();
 
@@ -680,7 +680,7 @@ QUnit.module('web_editor', {
                             '_resetFromClient',
                         ]);
 
-                        await peers.p1.wysiwyg.odooEditor.execCommand('insert', 'b');
+                        await peers.p1.wysiwyg.edenEditor.execCommand('insert', 'b');
                         await peers.p1.writeToServer();
 
                         assert.equal(await peers.p1.getValue(), `<p>ab[]</p>`, 'p1 have inserted char b');
@@ -737,7 +737,7 @@ QUnit.module('web_editor', {
                             '_resetFromClient',
                         ]);
 
-                        await peers.p1.wysiwyg.odooEditor.execCommand('insert', 'b');
+                        await peers.p1.wysiwyg.edenEditor.execCommand('insert', 'b');
                         await peers.p1.writeToServer();
 
                         assert.equal(await peers.p1.getValue(), `<p>ab[]</p>`, 'p1 have inserted char b');
@@ -790,7 +790,7 @@ QUnit.module('web_editor', {
                             '_resetFromClient',
                         ]);
 
-                        await peers.p1.wysiwyg.odooEditor.execCommand('insert', 'b');
+                        await peers.p1.wysiwyg.edenEditor.execCommand('insert', 'b');
                         await peers.p1.writeToServer();
                         peers.p1.setOffline();
 
@@ -838,14 +838,14 @@ QUnit.module('web_editor', {
                 await peers.p2.focus();
                 await peers.p1.openDataChannel(peers.p2);
 
-                await peers.p1.wysiwyg.odooEditor.execCommand('insert', 'b');
+                await peers.p1.wysiwyg.edenEditor.execCommand('insert', 'b');
 
                 await peers.p1.setOffline();
                 peers.p1.removeDataChannel(peers.p2);
 
                 const setSelection = peer => {
                     const selection = peer.document.getSelection();
-                    const pElement = peer.wysiwyg.odooEditor.editable.querySelector('p')
+                    const pElement = peer.wysiwyg.edenEditor.editable.querySelector('p')
                     const range = new Range();
                     range.setStart(pElement, 1);
                     range.setEnd(pElement, 1);
@@ -855,16 +855,16 @@ QUnit.module('web_editor', {
                 const addP = (peer, content) => {
                     const p = document.createElement('p');
                     p.textContent = content;
-                    peer.wysiwyg.odooEditor.editable.append(p);
-                    peer.wysiwyg.odooEditor.historyStep();
+                    peer.wysiwyg.edenEditor.editable.append(p);
+                    peer.wysiwyg.edenEditor.historyStep();
                 }
 
                 setSelection(peers.p1);
-                await peers.p1.wysiwyg.odooEditor.execCommand('insert', 'c');
+                await peers.p1.wysiwyg.edenEditor.execCommand('insert', 'c');
                 addP(peers.p1, 'd');
 
                 setSelection(peers.p2);
-                await peers.p2.wysiwyg.odooEditor.execCommand('insert', 'e');
+                await peers.p2.wysiwyg.edenEditor.execCommand('insert', 'e');
                 addP(peers.p2, 'f');
 
                 peers.p1.setOnline();

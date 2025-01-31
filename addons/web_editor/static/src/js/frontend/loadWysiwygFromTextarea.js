@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { loadBundle } from "@web/core/assets";
 import { ensureJQuery } from "@web/core/ensure_jquery";
@@ -18,7 +18,7 @@ export async function loadWysiwygFromTextarea(parent, textarea, options) {
 
     await ensureJQuery();
     await loadBundle("web_editor.assets_wysiwyg");
-    const { Wysiwyg } = await odoo.loader.modules.get('@web_editor/js/wysiwyg/wysiwyg');
+    const { Wysiwyg } = await eden.loader.modules.get('@web_editor/js/wysiwyg/wysiwyg');
     let wysiwyg;
     class LegacyWysiwyg extends Wysiwyg {
         constructor(...args) {

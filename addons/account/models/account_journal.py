@@ -1,9 +1,9 @@
 from ast import literal_eval
 
-from odoo import api, Command, fields, models, _
-from odoo.exceptions import UserError, ValidationError
-from odoo.addons.base.models.res_bank import sanitize_account_number
-from odoo.tools import groupby
+from eden import api, Command, fields, models, _
+from eden.exceptions import UserError, ValidationError
+from eden.addons.base.models.res_bank import sanitize_account_number
+from eden.tools import groupby
 from collections import defaultdict
 import logging
 import re
@@ -63,7 +63,7 @@ class AccountJournal(models.Model):
             for model in self._fields['invoice_reference_model'].get_values(self.env):
                 if model.startswith(country_code):
                     return model
-        return 'odoo'
+        return 'eden'
 
     def _get_default_account_domain(self):
         return """[
@@ -125,7 +125,7 @@ class AccountJournal(models.Model):
     sequence = fields.Integer(help='Used to order Journals in the dashboard view', default=10)
 
     invoice_reference_type = fields.Selection(string='Communication Type', required=True, selection=[('none', 'Open'), ('partner', 'Based on Customer'), ('invoice', 'Based on Invoice')], default='invoice', help='You can set here the default communication that will appear on customer invoices, once validated, to help the customer to refer to that particular invoice when making the payment.')
-    invoice_reference_model = fields.Selection(string='Communication Standard', required=True, selection=[('odoo', 'Odoo'), ('euro', 'European')], default=_default_invoice_reference_model, help="You can choose different models for each type of reference. The default one is the Odoo reference.")
+    invoice_reference_model = fields.Selection(string='Communication Standard', required=True, selection=[('eden', 'Eden'), ('euro', 'European')], default=_default_invoice_reference_model, help="You can choose different models for each type of reference. The default one is the Eden reference.")
 
     #groups_id = fields.Many2many('res.groups', 'account_journal_group_rel', 'journal_id', 'group_id', string='Groups')
     currency_id = fields.Many2one('res.currency', help='The currency used to enter statement', string="Currency")
@@ -160,7 +160,7 @@ class AccountJournal(models.Model):
         inverse_name='journal_id',
         copy=False,
         check_company=True,
-        help="Manual: Get paid by any method outside of Odoo.\n"
+        help="Manual: Get paid by any method outside of Eden.\n"
         "Payment Providers: Each payment provider has its own Payment Method. Request a transaction on/to a card thanks to a payment token saved by the partner when buying or subscribing online.\n"
         "Batch Deposit: Collect several customer checks at once generating and submitting a batch deposit to your bank. Module account_batch_payment is necessary.\n"
         "SEPA Direct Debit: Get paid in the SEPA zone thanks to a mandate your partner will have granted to you. Module account_sepa is necessary.\n"
@@ -175,8 +175,8 @@ class AccountJournal(models.Model):
         inverse_name='journal_id',
         copy=False,
         check_company=True,
-        help="Manual: Pay by any method outside of Odoo.\n"
-        "Check: Pay bills by check and print it from Odoo.\n"
+        help="Manual: Pay by any method outside of Eden.\n"
+        "Check: Pay bills by check and print it from Eden.\n"
         "SEPA Credit Transfer: Pay in the SEPA zone by submitting a SEPA Credit Transfer file to your bank. Module account_sepa is necessary.\n"
     )
     profit_account_id = fields.Many2one(
@@ -206,7 +206,7 @@ class AccountJournal(models.Model):
     # alias configuration for journals
     alias_id = fields.Many2one(help="Send one separate email for each invoice.\n\n"
                                     "Any file extension will be accepted.\n\n"
-                                    "Only PDF and XML files will be interpreted by Odoo")
+                                    "Only PDF and XML files will be interpreted by Eden")
 
     journal_group_ids = fields.Many2many('account.journal.group',
         check_company=True,

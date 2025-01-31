@@ -1,4 +1,4 @@
-<odoo>
+<eden>
     <data>
         <record id="product_uom_form_view_inherit" model="ir.ui.view">
             <field name="name">product_uom_form_view_inherit</field>
@@ -11,4 +11,4 @@
             </field>
         </record>
     </data>
-</odoo>
+</eden>

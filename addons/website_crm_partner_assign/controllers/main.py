@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import werkzeug.urls
 
 from werkzeug.exceptions import NotFound
 
-from odoo import fields
-from odoo import http
-from odoo.http import request
-from odoo.addons.portal.controllers.portal import CustomerPortal
-from odoo.addons.website_google_map.controllers.main import GoogleMap
-from odoo.addons.website_partner.controllers.main import WebsitePartnerPage
+from eden import fields
+from eden import http
+from eden.http import request
+from eden.addons.portal.controllers.portal import CustomerPortal
+from eden.addons.website_google_map.controllers.main import GoogleMap
+from eden.addons.website_partner.controllers.main import WebsitePartnerPage
 
-from odoo.tools.translate import _
+from eden.tools.translate import _
 
 
 class WebsiteAccount(CustomerPortal):

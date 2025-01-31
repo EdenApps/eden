@@ -81,7 +81,7 @@ a, .btn-link {
     }
 }
 
-// Odoo options classes
+// Eden options classes
 .jumbotron {
     margin-bottom: 0;
 }
@@ -107,7 +107,7 @@ li > p {
 #wrap {
     .container, .container-fluid {
         // BS3 used to do this on all containers so that margins and floats are
-        // cleared inside containers. As lots of current odoo layouts may rely
+        // cleared inside containers. As lots of current eden layouts may rely
         // on this for some alignments, this is restored (at least for a while)
         // here only for main containers of the frontend.
         &::before, &::after {

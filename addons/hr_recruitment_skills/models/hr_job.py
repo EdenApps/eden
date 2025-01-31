@@ -1,7 +1,7 @@
 from markupsafe import Markup
 from ast import literal_eval
 
-from odoo import fields, models, _
+from eden import fields, models, _
 
 
 class HrJob(models.Model):

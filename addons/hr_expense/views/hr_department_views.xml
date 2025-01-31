@@ -1,4 +1,4 @@
-<odoo>
+<eden>
     <!--Hr Department Inherit Kanban view-->
     <record id="hr_department_view_kanban" model="ir.ui.view">
         <field name="name">hr.department.kanban.inherit</field>
@@ -25,4 +25,4 @@
             </data>
         </field>
     </record>
-</odoo>
+</eden>

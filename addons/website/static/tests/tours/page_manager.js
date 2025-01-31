@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { testSwitchWebsite, registerWebsitePreviewTour } from '@website/js/tours/tour_utils';
 import { registry } from "@web/core/registry";
@@ -226,7 +226,7 @@ registerWebsitePreviewTour('website_page_manager_session_forced', {
 }]);
 
 registry.category("web_tour.tours").add('website_page_manager_direct_access', {
-    url: '/odoo/action-website.action_website_pages_list',
+    url: '/eden/action-website.action_website_pages_list',
     steps: () => [{
     content: "Check that the homepage is the one of Test Website",
     trigger: ".o_list_table .o_data_row .o_data_cell[name=name]:contains('Home') " +

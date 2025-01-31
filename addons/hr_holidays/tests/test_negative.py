@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 from freezegun import freeze_time
 
-from odoo.tests.common import tagged
-from odoo.addons.hr_holidays.tests.common import TestHrHolidaysCommon
-from odoo.models import ValidationError
+from eden.tests.common import tagged
+from eden.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from eden.models import ValidationError
 
 
 @tagged('negative_time_off')

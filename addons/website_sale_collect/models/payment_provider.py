@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, fields, models
+from eden import _, api, fields, models
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.website_sale_collect import const
+from eden.addons.payment import utils as payment_utils
+from eden.addons.website_sale_collect import const
 
 
 class PaymentProvider(models.Model):

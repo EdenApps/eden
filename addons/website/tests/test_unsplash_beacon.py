@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
+import eden.tests
 
 
-@odoo.tests.common.tagged('post_install', '-at_install')
-class TestUnsplashBeacon(odoo.tests.HttpCase):
+@eden.tests.common.tagged('post_install', '-at_install')
+class TestUnsplashBeacon(eden.tests.HttpCase):
 
     def test_01_beacon(self):
         self.env['ir.config_parameter'].sudo().set_param('unsplash.app_id', '123456')

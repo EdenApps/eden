@@ -3,10 +3,10 @@
 from contextlib import contextmanager
 from unittest.mock import patch
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.tests import Form, tagged
-from odoo.exceptions import UserError
-from odoo import fields, Command
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
+from eden.tests import Form, tagged
+from eden.exceptions import UserError
+from eden import fields, Command
 
 
 @tagged('post_install', '-at_install')
@@ -4732,7 +4732,7 @@ class TestAccountMoveReconcile(AccountTestInvoicingCommon):
         self.assertTrue(line_1.full_reconcile_id)
 
     def test_reconcile_payment_custom_rate(self):
-        """When reconciling a payment we want to take the accounting rate and not the odoo rate.
+        """When reconciling a payment we want to take the accounting rate and not the eden rate.
         Most likely the payment information are derived from information of the bank, therefore have
         the relevant rate.
         """

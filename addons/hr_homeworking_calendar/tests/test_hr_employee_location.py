@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.hr_homeworking_calendar.tests.common import TestHrHomeworkingCommon
+from eden.addons.hr_homeworking_calendar.tests.common import TestHrHomeworkingCommon
 
-from odoo.tests import tagged
+from eden.tests import tagged
 from datetime import datetime
 
 @tagged('post_install', '-at_install', "homeworking_tests")

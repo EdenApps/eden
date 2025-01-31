@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from lxml import etree
 
-from odoo import fields, Command
-from odoo.addons.survey.tests import common
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.exceptions import UserError
-from odoo.tests import Form
-from odoo.tests.common import users
+from eden import fields, Command
+from eden.addons.survey.tests import common
+from eden.addons.mail.tests.common import MailCommon
+from eden.exceptions import UserError
+from eden.tests import Form
+from eden.tests.common import users
 
 
 class TestSurveyInvite(common.TestSurveyCommon, MailCommon):
@@ -344,11 +344,11 @@ class TestSurveyInvite(common.TestSurveyCommon, MailCommon):
         invite_form = Form.from_action(self.env, user_survey.action_send_survey())
         invite_form.send_email = True
         invite_form.template_id = mail_template
-        invite_form.emails = 'test_survey_invite_with_template_attachment@odoo.gov'
+        invite_form.emails = 'test_survey_invite_with_template_attachment@eden.gov'
         invite = invite_form.save()
         with self.mock_mail_gateway():
             invite.action_invite()
 
         self.assertEqual(self.env['mail.mail'].sudo().search([
-            ('email_to', '=', 'test_survey_invite_with_template_attachment@odoo.gov')
+            ('email_to', '=', 'test_survey_invite_with_template_attachment@eden.gov')
         ]).attachment_ids, mail_template.attachment_ids)

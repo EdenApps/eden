@@ -1,5 +1,5 @@
-import { describe, expect, getFixture, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
+import { describe, expect, getFixture, test } from "@eden/hoot";
+import { animationFrame } from "@eden/hoot-mock";
 import { createSpreadsheetDashboard } from "@spreadsheet_dashboard/../tests/helpers/dashboard_action";
 import {
     SpreadsheetDashboard,
@@ -23,7 +23,7 @@ test("A link in a dashboard should be clickable", async () => {
     const data = {
         sheets: [
             {
-                cells: { A1: { content: "[Odoo](https://odoo.com)" } },
+                cells: { A1: { content: "[Eden](https://edencloud.us)" } },
             },
         ],
     };
@@ -37,7 +37,7 @@ test("Invalid pivot/list formulas should not be clickable", async () => {
             {
                 cells: {
                     A1: { content: `=PIVOT.VALUE("1", "measure")` },
-                    A2: { content: `=ODOO.LIST("1", 1, "name")` },
+                    A2: { content: `=EDEN.LIST("1", 1, "name")` },
                 },
             },
         ],
@@ -53,7 +53,7 @@ test("pivot/list formulas should be clickable", async () => {
             {
                 cells: {
                     A1: { content: `=PIVOT.VALUE("1", "probability", "bar", "false")` },
-                    A2: { content: `=ODOO.LIST(1, 1, "foo")` },
+                    A2: { content: `=EDEN.LIST(1, 1, "foo")` },
                 },
             },
         ],

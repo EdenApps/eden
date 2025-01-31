@@ -1,4 +1,4 @@
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@eden/o-spreadsheet";
 import { range } from "@web/core/utils/numbers";
 
 const { toCartesian, toZone, toXC } = spreadsheet.helpers;

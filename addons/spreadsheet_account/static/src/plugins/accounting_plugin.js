@@ -1,8 +1,8 @@
-/** @odoo-module */
+/** @eden-module */
 // @ts-check
 
-import { EvaluationError } from "@odoo/o-spreadsheet";
-import { OdooUIPlugin } from "@spreadsheet/plugins";
+import { EvaluationError } from "@eden/o-spreadsheet";
+import { EdenUIPlugin } from "@spreadsheet/plugins";
 import { _t } from "@web/core/l10n/translation";
 import { deepCopy } from "@web/core/utils/objects";
 import { camelToSnakeObject, toServerDateString } from "@spreadsheet/helpers/helpers";
@@ -11,7 +11,7 @@ import { camelToSnakeObject, toServerDateString } from "@spreadsheet/helpers/hel
  * @typedef {import("../accounting_functions").DateRange} DateRange
  */
 
-export class AccountingPlugin extends OdooUIPlugin {
+export class AccountingPlugin extends EdenUIPlugin {
     static getters = /** @type {const} */ ([
         "getAccountPrefixCredit",
         "getAccountPrefixDebit",
@@ -24,13 +24,13 @@ export class AccountingPlugin extends OdooUIPlugin {
     constructor(config) {
         super(config);
         /** @type {import("@spreadsheet/data_sources/server_data").ServerData} */
-        this._serverData = config.custom.odooDataProvider?.serverData;
+        this._serverData = config.custom.edenDataProvider?.serverData;
     }
 
     get serverData() {
         if (!this._serverData) {
             throw new Error(
-                "'serverData' is not defined, please make sure a 'OdooDataProvider' instance is provided to the model."
+                "'serverData' is not defined, please make sure a 'EdenDataProvider' instance is provided to the model."
             );
         }
         return this._serverData;

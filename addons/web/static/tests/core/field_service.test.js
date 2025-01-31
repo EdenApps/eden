@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@eden/hoot";
 import {
     defineModels,
     fields,
@@ -9,8 +9,8 @@ import {
     onRpc,
 } from "@web/../tests/web_test_helpers";
 
-import { Deferred, animationFrame } from "@odoo/hoot-mock";
-import { Component, useState, xml } from "@odoo/owl";
+import { Deferred, animationFrame } from "@eden/hoot-mock";
+import { Component, useState, xml } from "@eden/owl";
 import { useService } from "@web/core/utils/hooks";
 
 function getModelInfo(resModel) {

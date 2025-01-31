@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from odoo.tests import tagged
+from eden.tests import tagged
 
-from odoo.addons.project.tests.test_project_base import TestProjectCommon
+from eden.addons.project.tests.test_project_base import TestProjectCommon
 
 
 @tagged('-at_install', 'post_install')

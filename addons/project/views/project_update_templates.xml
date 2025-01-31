@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <template id="project.milestone_deadline">
 <t t-if="milestone['deadline']">
 (due <t t-out="milestone['deadline']" t-options='{"widget": "date"}'/><t t-if="not milestone['is_reached'] or not milestone['reached_date']">
@@ -66,4 +66,4 @@
 </t>
 </div>
     </template>
-</odoo>
+</eden>

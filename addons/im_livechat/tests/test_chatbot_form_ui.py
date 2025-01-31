@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import tests
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
+from eden import tests
+from eden.addons.base.tests.common import HttpCaseWithUserDemo
 
 
 @tests.tagged('post_install', '-at_install')
@@ -12,7 +12,7 @@ class TestLivechatChatbotFormUI(HttpCaseWithUserDemo):
         creates a few steps, then verify sequences are properly applied. """
 
         self.start_tour(
-            '/odoo',
+            '/eden',
             'im_livechat_chatbot_steps_sequence_tour',
             login='admin',
             step_delay=1000
@@ -36,7 +36,7 @@ class TestLivechatChatbotFormUI(HttpCaseWithUserDemo):
         move records around. """
 
         self.start_tour(
-            '/odoo',
+            '/eden',
             'im_livechat_chatbot_steps_sequence_with_move_tour',
             login='admin',
             step_delay=1000

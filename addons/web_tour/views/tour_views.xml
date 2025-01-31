@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="tour_form" model="ir.ui.view">
         <field name="model">web_tour.tour</field>
         <field name="arch" type="xml">
@@ -85,4 +85,4 @@ if records:
     action = records.export_js_file()
         </field>
     </record>
-</odoo>
+</eden>

@@ -1,4 +1,4 @@
-<odoo noupdate="1">
+<eden noupdate="1">
     <record id="card_template_light" model="card.template">
         <field name="name">Light</field>
         <field name="body" type="html">
@@ -115,4 +115,4 @@
             <t t-call="marketing_card.template_5"/>
         </field>
     </record>
-</odoo>
+</eden>

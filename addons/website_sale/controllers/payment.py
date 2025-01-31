@@ -1,12 +1,12 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import _
-from odoo.exceptions import AccessError, MissingError, ValidationError
-from odoo.fields import Command
-from odoo.http import request, route
-from odoo.tools import float_compare
+from eden import _
+from eden.exceptions import AccessError, MissingError, ValidationError
+from eden.fields import Command
+from eden.http import request, route
+from eden.tools import float_compare
 
-from odoo.addons.payment.controllers import portal as payment_portal
+from eden.addons.payment.controllers import portal as payment_portal
 
 # TODO ANVFE part of payment routes ? /shop/payment ? express_checkout ?
 

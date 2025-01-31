@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<odoo>
+<eden>
     <data>
         <!--
             This template is the PDF Viewer. It will mostly rendered throught an iFrame.
@@ -145,4 +145,4 @@
             </html>
         </template>
     </data>
-</odoo>
+</eden>

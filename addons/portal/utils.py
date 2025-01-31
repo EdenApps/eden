@@ -1,6 +1,6 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.tools import consteq
+from eden.tools import consteq
 
 
 def validate_thread_with_hash_pid(thread, _hash, pid):

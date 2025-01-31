@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from werkzeug.exceptions import NotFound, Forbidden
 
-from odoo import http
-from odoo.http import request
-from odoo.addons.portal.controllers.mail import PortalChatter
-from odoo.tools import plaintext2html, html2plaintext
+from eden import http
+from eden.http import request
+from eden.addons.portal.controllers.mail import PortalChatter
+from eden.tools import plaintext2html, html2plaintext
 
 
 class SlidesPortalChatter(PortalChatter):

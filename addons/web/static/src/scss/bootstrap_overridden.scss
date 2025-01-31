@@ -214,7 +214,7 @@ $breadcrumb-item-padding-x: $o-breadcrumb-item-padding-x !default;
 // Indeed, bootstrap forces them to a lower z-index as the modal-backdrop
 // element (unique in their supported cases) might be put after the modal
 // element (if the modal is already in the DOM, hidden, then opened). This
-// cannot happen in odoo though as modals are not hidden but removed from
+// cannot happen in eden though as modals are not hidden but removed from
 // the DOM and are always put at the end of the body when opened.
 //
 // TODO the following code was disabled because it is saas-incompatible

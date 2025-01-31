@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { _t } from "@web/core/l10n/translation";
 import { ReorderDialog } from "@website_sale/js/website_sale_reorder";

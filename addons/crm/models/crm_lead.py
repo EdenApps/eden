@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 import pytz
@@ -8,15 +8,15 @@ from collections import OrderedDict, defaultdict
 from datetime import datetime, timedelta
 from markupsafe import Markup
 
-from odoo import api, fields, models, tools
-from odoo.addons.iap.tools import iap_tools
-from odoo.addons.mail.tools import mail_validation
-from odoo.addons.phone_validation.tools import phone_validation
-from odoo.exceptions import UserError, AccessError
-from odoo.osv import expression
-from odoo.tools.translate import _
-from odoo.tools import date_utils, email_split, is_html_empty, groupby, parse_contact_from_email, SQL
-from odoo.tools.misc import get_lang
+from eden import api, fields, models, tools
+from eden.addons.iap.tools import iap_tools
+from eden.addons.mail.tools import mail_validation
+from eden.addons.phone_validation.tools import phone_validation
+from eden.exceptions import UserError, AccessError
+from eden.osv import expression
+from eden.tools.translate import _
+from eden.tools import date_utils, email_split, is_html_empty, groupby, parse_contact_from_email, SQL
+from eden.tools.misc import get_lang
 
 from . import crm_stage
 
@@ -81,7 +81,7 @@ PARTNER_ADDRESS_FIELDS_TO_SYNC = [
 
 # Those values have been determined based on benchmark to minimise
 # computation time, number of transaction and transaction time.
-PLS_COMPUTE_BATCH_STEP = 50000  # odoo.models.PREFETCH_MAX = 1000 but larger cluster can speed up global computation
+PLS_COMPUTE_BATCH_STEP = 50000  # eden.models.PREFETCH_MAX = 1000 but larger cluster can speed up global computation
 PLS_UPDATE_BATCH_STEP = 5000
 
 

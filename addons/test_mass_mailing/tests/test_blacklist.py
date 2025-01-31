@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests.common import users
-from odoo.addons.test_mass_mailing.tests import common
-from odoo.exceptions import AccessError
+from eden.tests.common import users
+from eden.addons.test_mass_mailing.tests import common
+from eden.exceptions import AccessError
 
 
 class TestBLAccessRights(common.TestMassMailCommon):

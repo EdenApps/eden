@@ -1,24 +1,24 @@
 // @ts-check
 
-import { stores } from "@odoo/o-spreadsheet";
+import { stores } from "@eden/o-spreadsheet";
 import { createModelWithDataSource } from "@spreadsheet/../tests/helpers/model";
 
 const { ModelStore, NotificationStore, DependencyContainer } = stores;
 
 /**
  * @template T
- * @typedef {import("@odoo/o-spreadsheet").StoreConstructor<T>} StoreConstructor<T>
+ * @typedef {import("@eden/o-spreadsheet").StoreConstructor<T>} StoreConstructor<T>
  */
 
 /**
- * @typedef {import("@spreadsheet").OdooSpreadsheetModel} OdooSpreadsheetModel
+ * @typedef {import("@spreadsheet").EdenSpreadsheetModel} EdenSpreadsheetModel
  */
 
 /**
  * @template T
  * @param {StoreConstructor<T>} Store
  * @param  {any[]} args
- * @return {Promise<{ store: T, container: InstanceType<DependencyContainer>, model: OdooSpreadsheetModel }>}
+ * @return {Promise<{ store: T, container: InstanceType<DependencyContainer>, model: EdenSpreadsheetModel }>}
  */
 export async function makeStore(Store, ...args) {
     const model = await createModelWithDataSource();
@@ -27,10 +27,10 @@ export async function makeStore(Store, ...args) {
 
 /**
  * @template T
- * @param {import("@odoo/o-spreadsheet").Model} model
+ * @param {import("@eden/o-spreadsheet").Model} model
  * @param {StoreConstructor<T>} Store
  * @param  {any[]} args
- * @return {{ store: T, container: InstanceType<DependencyContainer>, model: OdooSpreadsheetModel }}
+ * @return {{ store: T, container: InstanceType<DependencyContainer>, model: EdenSpreadsheetModel }}
  */
 export function makeStoreWithModel(model, Store, ...args) {
     const container = new DependencyContainer();

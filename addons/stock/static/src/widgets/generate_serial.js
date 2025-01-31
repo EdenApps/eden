@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { _t } from "@web/core/l10n/translation";
 import { x2ManyCommands } from "@web/core/orm_service";
@@ -7,7 +7,7 @@ import { useService } from "@web/core/utils/hooks";
 import { registry } from "@web/core/registry";
 import { parseInteger  } from "@web/views/fields/parsers";
 import { getId } from "@web/model/relational_model/utils";
-import { Component, useRef, onMounted } from "@odoo/owl";
+import { Component, useRef, onMounted } from "@eden/owl";
 import { standardWidgetProps } from "@web/views/widgets/standard_widget_props";
 
 export class GenerateDialog extends Component {

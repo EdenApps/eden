@@ -198,9 +198,9 @@ export class Thread extends Record {
         }
         return this.message_needaction_counter;
     }
-    isCorrespondentOdooBot = Record.attr(undefined, {
+    isCorrespondentEdenBot = Record.attr(undefined, {
         compute() {
-            return this.correspondent?.persona.eq(this.store.odoobot);
+            return this.correspondent?.persona.eq(this.store.edenbot);
         },
     });
     isDisplayed = Record.attr(false, {
@@ -390,7 +390,7 @@ export class Thread extends Record {
     get allowCalls() {
         return (
             this.typesAllowingCalls.includes(this.channel_type) &&
-            !this.correspondent?.persona.eq(this.store.odoobot)
+            !this.correspondent?.persona.eq(this.store.edenbot)
         );
     }
 

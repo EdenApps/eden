@@ -1,4 +1,4 @@
-import { describe, expect, getFixture, test } from "@odoo/hoot";
+import { describe, expect, getFixture, test } from "@eden/hoot";
 import {
     clear,
     click,
@@ -18,7 +18,7 @@ import {
     queryText,
     unload,
     waitFor,
-} from "@odoo/hoot-dom";
+} from "@eden/hoot-dom";
 import {
     animationFrame,
     Deferred,
@@ -26,8 +26,8 @@ import {
     mockTimeZone,
     runAllTimers,
     tick,
-} from "@odoo/hoot-mock";
-import { Component, markup, onRendered, onWillStart, useRef, xml } from "@odoo/owl";
+} from "@eden/hoot-mock";
+import { Component, markup, onRendered, onWillStart, useRef, xml } from "@eden/owl";
 import {
     getPickerApplyButton,
     getPickerCell,
@@ -4523,7 +4523,7 @@ test(`deleting record which throws UserError should close confirmation dialog`, 
     expect.errors(1);
 
     onRpc("unlink", () => {
-        throw makeServerError({ message: "Odoo Server Error" });
+        throw makeServerError({ message: "Eden Server Error" });
     });
 
     await mountView({

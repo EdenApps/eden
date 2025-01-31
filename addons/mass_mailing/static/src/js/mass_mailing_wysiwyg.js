@@ -1,8 +1,8 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { loadBundle } from "@web/core/assets";
 import { Wysiwyg } from "@web_editor/js/wysiwyg/wysiwyg";
-import { closestElement } from "@web_editor/js/editor/odoo-editor/src/OdooEditor";
+import { closestElement } from "@web_editor/js/editor/eden-editor/src/EdenEditor";
 import "@web_editor/js/wysiwyg/wysiwyg_iframe";
 
 export class MassMailingWysiwyg extends Wysiwyg {
@@ -35,7 +35,7 @@ export class MassMailingWysiwyg extends Wysiwyg {
         });
         if (this.state.snippetsMenuFolded) {
             // Hide toolbar and avoid it being re-displayed after getDeepRange.
-            this.odooEditor.document.getSelection().collapseToEnd();
+            this.edenEditor.document.getSelection().collapseToEnd();
         }
     }
 
@@ -57,16 +57,16 @@ export class MassMailingWysiwyg extends Wysiwyg {
             this._updateEditorUI();
             this.setCSSVariables(this.toolbarEl);
             // Position the toolbar element.
-            if (this.odooEditor.isMobile) {
+            if (this.edenEditor.isMobile) {
                 document.body.querySelector('.o_mail_body').prepend(this.toolbarEl);
             } else {
                 document.body.append(this.toolbarEl);
             }
             this._isMainToolbarReady = true;
         }
-        this.odooEditor.toolbar = this.toolbarEl;
-        this.odooEditor.autohideToolbar = !!fold;
-        this.odooEditor.toolbarHide();
+        this.edenEditor.toolbar = this.toolbarEl;
+        this.edenEditor.autohideToolbar = !!fold;
+        this.edenEditor.toolbarHide();
         this.mainToolbarEl.classList.toggle('d-none', !fold);
         // Update the toolbar props as some elements might now need to be
         // visible.
@@ -125,7 +125,7 @@ export class MassMailingWysiwyg extends Wysiwyg {
         // Opening the dialog in the outer document does not trigger the selectionChange
         // (that would normally hide the toolbar) in the iframe.
         if (this.state.snippetsMenuFolded) {
-            this.odooEditor.toolbarHide();
+            this.edenEditor.toolbarHide();
         }
     }
 
@@ -138,7 +138,7 @@ export class MassMailingWysiwyg extends Wysiwyg {
      */
     async getSnippetsMenuClass() {
         await loadBundle('mass_mailing.assets_snippets_menu');
-        const { MassMailingSnippetsMenu } = await odoo.loader.modules.get('@mass_mailing/js/snippets.editor');
+        const { MassMailingSnippetsMenu } = await eden.loader.modules.get('@mass_mailing/js/snippets.editor');
         return MassMailingSnippetsMenu;
     }
     /**
@@ -165,7 +165,7 @@ export class MassMailingWysiwyg extends Wysiwyg {
                 if (superIsDisabled && superIsDisabled()) {
                     return true;
                 } else {
-                    const selection = this.odooEditor.document.getSelection();
+                    const selection = this.edenEditor.document.getSelection();
                     const range = selection.rangeCount && selection.getRangeAt(0);
                     return !!range && !!closestElement(range.startContainer, '[style*=background-image]');
                 }
@@ -188,7 +188,7 @@ export class MassMailingWysiwyg extends Wysiwyg {
         super._updateEditorUI(...arguments);
         // Hide the create-link button if the selection is within a
         // background-image.
-        const selection = this.odooEditor.document.getSelection();
+        const selection = this.edenEditor.document.getSelection();
         if (!selection) return;
         const range = selection.rangeCount && selection.getRangeAt(0);
         const isWithinBackgroundImage = !!range && !!closestElement(range.startContainer, '[style*=background-image]');

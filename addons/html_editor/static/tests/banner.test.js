@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { click, manuallyDispatchProgrammaticEvent, press, waitFor } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { expect, test } from "@eden/hoot";
+import { click, manuallyDispatchProgrammaticEvent, press, waitFor } from "@eden/hoot-dom";
+import { animationFrame } from "@eden/hoot-mock";
 import { setupEditor } from "./_helpers/editor";
 import { getContent, setSelection } from "./_helpers/selection";
 import { insertText } from "./_helpers/user_actions";

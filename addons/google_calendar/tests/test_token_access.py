@@ -1,6 +1,6 @@
-from odoo import fields, Command
-from odoo.exceptions import AccessError
-from odoo.tests.common import TransactionCase
+from eden import fields, Command
+from eden.exceptions import AccessError
+from eden.tests.common import TransactionCase
 
 class TestTokenAccess(TransactionCase):
 
@@ -13,7 +13,7 @@ class TestTokenAccess(TransactionCase):
             user = cls.env['res.users'].create({
                 'name': f'{u}',
                 'login': f'{u}',
-                'email': f'{u}@odoo.com',
+                'email': f'{u}@eden.com',
             })
             user.res_users_settings_id.write({
                 'google_calendar_rtoken': f'{u}_rtoken',
@@ -26,7 +26,7 @@ class TestTokenAccess(TransactionCase):
         cls.system_user = cls.env['res.users'].create({
             'name': 'system_user',
             'login': 'system_user',
-            'email': 'system_user@odoo.com',
+            'email': 'system_user@eden.com',
             'groups_id': [Command.link(cls.env.ref('base.group_system').id)],
         })
 

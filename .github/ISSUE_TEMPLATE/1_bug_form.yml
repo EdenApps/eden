@@ -50,5 +50,5 @@ body:
     id: supportticket
     attributes:
       label: Support Ticket
-      description: Optional odoo.com/help ticket number
+      description: Optional eden.com/help ticket number
       placeholder: opw-123456789

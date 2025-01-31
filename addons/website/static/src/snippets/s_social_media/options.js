@@ -1,10 +1,10 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import fonts from '@web_editor/js/wysiwyg/fonts';
 import weUtils from '@web_editor/js/common/utils';
 import options from '@web_editor/js/editor/snippets.options';
 import { _t } from "@web/core/l10n/translation";
-import { ICON_SELECTOR } from "@web_editor/js/editor/odoo-editor/src/utils/utils";
+import { ICON_SELECTOR } from "@web_editor/js/editor/eden-editor/src/utils/utils";
 
 let dbSocialValues;
 let dbSocialValuesProm;

@@ -1,6 +1,6 @@
-from odoo import Command, models, fields, api, _
-from odoo.addons.account.models.exceptions import TaxClosingNonPostedDependingMovesError
-from odoo.exceptions import UserError
+from eden import Command, models, fields, api, _
+from eden.addons.account.models.exceptions import TaxClosingNonPostedDependingMovesError
+from eden.exceptions import UserError
 
 
 class ValidateAccountMove(models.TransientModel):

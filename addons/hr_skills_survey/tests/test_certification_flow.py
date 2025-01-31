@@ -1,13 +1,13 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from dateutil.relativedelta import relativedelta
 from freezegun import freeze_time
 from markupsafe import Markup
 
-from odoo import Command, fields
-from odoo.addons.survey.tests import common
-from odoo.tests import tagged
-from odoo.tests.common import HttpCase
+from eden import Command, fields
+from eden.addons.survey.tests import common
+from eden.tests import tagged
+from eden.tests.common import HttpCase
 
 
 @tagged('-at_install', 'post_install', 'functional')

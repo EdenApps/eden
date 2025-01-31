@@ -1,6 +1,6 @@
 import { escapeRegExp } from "@web/core/utils/strings";
 import { Setting } from "@web/views/form/setting/setting";
-import { onMounted, useRef, useState } from "@odoo/owl";
+import { onMounted, useRef, useState } from "@eden/owl";
 import { FormLabelHighlightText } from "../highlight_text/form_label_highlight_text";
 import { HighlightText } from "../highlight_text/highlight_text";
 import { browser } from "@web/core/browser/browser";

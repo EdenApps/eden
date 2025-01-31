@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import io
 import logging
 import xml.dom.minidom
 import zipfile
 
-from odoo import api, models
-from odoo.tools.lru import LRU
+from eden import api, models
+from eden.tools.lru import LRU
 
 _logger = logging.getLogger(__name__)
 

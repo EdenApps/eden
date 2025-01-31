@@ -1,4 +1,4 @@
-/** @odoo-module alias=@web/../tests/helpers/mock_env default=false */
+/** @eden-module alias=@web/../tests/helpers/mock_env default=false */
 
 import { SERVICES_METADATA } from "@web/core/utils/hooks";
 import { registry } from "@web/core/registry";
@@ -7,7 +7,7 @@ import { registerCleanup } from "./cleanup";
 import { makeMockServer } from "./mock_server";
 import { mocks } from "./mock_services";
 import { patchWithCleanup } from "./utils";
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 import { startRouter } from "@web/core/browser/router";
 
 function prepareRegistry(registry, keepContent = false) {
@@ -94,14 +94,14 @@ export function prepareRegistriesWithCleanup() {
 }
 
 /**
- * @typedef {import("@web/env").OdooEnv} OdooEnv
+ * @typedef {import("@web/env").EdenEnv} EdenEnv
  */
 
 /**
  * Create a test environment
  *
  * @param {*} config
- * @returns {Promise<OdooEnv>}
+ * @returns {Promise<EdenEnv>}
  */
 export async function makeTestEnv(config = {}) {
     startRouter();
@@ -138,7 +138,7 @@ export async function makeTestEnv(config = {}) {
  * Create a test environment for dialog tests
  *
  * @param {*} config
- * @returns {Promise<OdooEnv>}
+ * @returns {Promise<EdenEnv>}
  */
 export async function makeDialogTestEnv(config = {}) {
     const env = await makeTestEnv(config);

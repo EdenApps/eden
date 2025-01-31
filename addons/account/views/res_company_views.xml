@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="view_company_form" model="ir.ui.view">
         <field name="name">res.company.form.inherit.account</field>
         <field name="model">res.company</field>
@@ -69,7 +69,7 @@
                             <field name="phone" class="o_force_ltr"/>
                             <field name="mobile" class="o_force_ltr"/>
                             <field name="email"/>
-                            <field name="website" string="Website" widget="url" placeholder="e.g. https://www.odoo.com"/>
+                            <field name="website" string="Website" widget="url" placeholder="e.g. https://www.edencloud.us"/>
                         </group>
                     </group>
                 </sheet>
@@ -98,4 +98,4 @@
             </form>
         </field>
     </record>
-</odoo>
+</eden>

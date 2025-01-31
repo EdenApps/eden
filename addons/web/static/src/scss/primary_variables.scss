@@ -1,5 +1,5 @@
 ///
-/// This file regroups the variables that style odoo components.
+/// This file regroups the variables that style eden components.
 /// They are available in every asset bundle.
 ///
 
@@ -24,7 +24,7 @@ $o-line-height-lg : 2 !default;
 
 // Global sans-serif fonts stack, defined here as we need to process
 // it before actually using it (to add more unicode support with the special
-// Odoo font for example). Adding unicode support is not done directly here as
+// Eden font for example). Adding unicode support is not done directly here as
 // this font can be used by the website where the unicode support is already
 // automatically added.
 $o-system-fonts: (-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, "Noto Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji") !default;
@@ -74,7 +74,7 @@ $o-community-color: #1bad3e !default;
 $o-enterprise-color: #714B67 !default;
 $o-enterprise-action-color: #017e84 !default;
 
-$o-brand-odoo: $o-community-color !default;
+$o-brand-eden: $o-community-color !default;
 $o-brand-primary: $o-community-color !default;
 
 $o-brand-secondary: #8f8f8f !default;

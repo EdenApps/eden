@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 import math
@@ -10,11 +10,11 @@ from werkzeug.urls import url_parse
 import pytz
 import uuid
 
-from odoo import api, fields, models, Command
-from odoo.osv.expression import AND
-from odoo.addons.base.models.res_partner import _tz_get
-from odoo.addons.calendar.models.calendar_attendee import Attendee
-from odoo.addons.calendar.models.calendar_recurrence import (
+from eden import api, fields, models, Command
+from eden.osv.expression import AND
+from eden.addons.base.models.res_partner import _tz_get
+from eden.addons.calendar.models.calendar_attendee import Attendee
+from eden.addons.calendar.models.calendar_recurrence import (
     weekday_to_field,
     RRULE_TYPE_SELECTION,
     END_TYPE_SELECTION,
@@ -22,10 +22,10 @@ from odoo.addons.calendar.models.calendar_recurrence import (
     WEEKDAY_SELECTION,
     BYDAY_SELECTION
 )
-from odoo.tools.translate import _
-from odoo.tools.misc import get_lang
-from odoo.tools import html2plaintext, html_sanitize, is_html_empty, single_email_re
-from odoo.exceptions import UserError, ValidationError
+from eden.tools.translate import _
+from eden.tools.misc import get_lang
+from eden.tools import html2plaintext, html_sanitize, is_html_empty, single_email_re
+from eden.exceptions import UserError, ValidationError
 
 _logger = logging.getLogger(__name__)
 
@@ -1429,7 +1429,7 @@ class Meeting(models.Model):
                     elif interval == 'minutes':
                         delta = timedelta(minutes=duration)
                     trigger.value = delta
-                    valarm.add('DESCRIPTION').value = alarm.name or u'Odoo'
+                    valarm.add('DESCRIPTION').value = alarm.name or u'Eden'
             for attendee in meeting.attendee_ids:
                 attendee_add = event.add('attendee')
                 attendee_add.value = u'MAILTO:' + (attendee.email or u'')

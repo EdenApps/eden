@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { registries, constants } from "@odoo/o-spreadsheet";
+import { describe, expect, test } from "@eden/hoot";
+import { registries, constants } from "@eden/o-spreadsheet";
 import { selectCell, setCellContent } from "@spreadsheet/../tests/helpers/commands";
 import { createModelWithDataSource } from "@spreadsheet/../tests/helpers/model";
 import { doMenuAction } from "@spreadsheet/../tests/helpers/ui";
@@ -59,10 +59,10 @@ test("Create drill down domain", async () => {
     });
     const env = model.config.custom.env;
     env.model = model;
-    setCellContent(model, "A1", `=ODOO.BALANCE("100", 2020)`);
-    setCellContent(model, "A2", `=ODOO.BALANCE("100", 0)`);
-    setCellContent(model, "A3", `=ODOO.BALANCE("100", 2020, , , FALSE)`);
-    setCellContent(model, "A4", `=ODOO.BALANCE("100", 2020, , , )`);
+    setCellContent(model, "A1", `=EDEN.BALANCE("100", 2020)`);
+    setCellContent(model, "A2", `=EDEN.BALANCE("100", 0)`);
+    setCellContent(model, "A3", `=EDEN.BALANCE("100", 2020, , , FALSE)`);
+    setCellContent(model, "A4", `=EDEN.BALANCE("100", 2020, , , )`);
     // Does not affect non formula cells
     setCellContent(model, "A5", `5`);
     await waitForDataLoaded(model);
@@ -113,7 +113,7 @@ test("Create drill down domain when month date is a reference", async () => {
     const env = model.config.custom.env;
     env.model = model;
     setCellContent(model, "A1", "02/2024");
-    setCellContent(model, "A2", '=ODOO.BALANCE("100", A1)');
+    setCellContent(model, "A2", '=EDEN.BALANCE("100", A1)');
     await waitForDataLoaded(model);
     selectCell(model, "A2");
     await doMenuAction(cellMenuRegistry, ["move_lines_see_records"], env);
@@ -148,7 +148,7 @@ test("Create drill down domain when date uses a non-standard locale", async () =
     env.model = model;
     const myLocale = { ...DEFAULT_LOCALE, dateFormat: "d/mmm/yyyy" };
     model.dispatch("UPDATE_LOCALE", { locale: myLocale });
-    setCellContent(model, "A1", '=ODOO.BALANCE("100", DATE(2002, 2, 1))');
+    setCellContent(model, "A1", '=EDEN.BALANCE("100", DATE(2002, 2, 1))');
     await waitForDataLoaded(model);
     await doMenuAction(cellMenuRegistry, ["move_lines_see_records"], env);
     expect.verifySteps(["spreadsheet_move_line_action"]);

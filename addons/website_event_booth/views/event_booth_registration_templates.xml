@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<odoo><data>
+<eden><data>
 
     <template id="event_booth_registration_details" name="Event Booth Registration Details">
         <t t-call="website_event_booth.event_booth_layout">
@@ -69,4 +69,4 @@
         </t>
     </template>
 
-</data></odoo>
+</data></eden>

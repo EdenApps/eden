@@ -6,7 +6,7 @@ import { useCalendarPopover, useClickHandler, useFullCalendar } from "../hooks";
 import { CalendarCommonPopover } from "./calendar_common_popover";
 import { makeWeekColumn } from "./calendar_common_week_column";
 
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 import { useBus } from "@web/core/utils/hooks";
 
 const SCALE_TO_FC_VIEW = {

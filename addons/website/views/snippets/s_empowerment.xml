@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_empowerment" name="Empowerment">
     <section class="s_empowerment pt24 pb24">
@@ -24,4 +24,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

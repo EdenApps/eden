@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import base64
 import json
 import os
@@ -7,20 +7,20 @@ import os
 from io import BytesIO
 from zipfile import ZipFile
 
-import odoo.tests
-from odoo.tests import new_test_user
+import eden.tests
+from eden.tests import new_test_user
 
 
 from unittest.mock import patch
 
-from odoo import release
-from odoo.addons import __path__ as __addons_path__
-from odoo.exceptions import UserError
-from odoo.tools import mute_logger
+from eden import release
+from eden.addons import __path__ as __addons_path__
+from eden.exceptions import UserError
+from eden.tools import mute_logger
 
 
-@odoo.tests.tagged('post_install', '-at_install')
-class TestImportModule(odoo.tests.TransactionCase):
+@eden.tests.tagged('post_install', '-at_install')
+class TestImportModule(eden.tests.TransactionCase):
 
     def import_zipfile(self, files):
         archive = BytesIO()
@@ -64,9 +64,9 @@ class TestImportModule(odoo.tests.TransactionCase):
             """),
         ]
         self.env['res.lang']._activate_lang('fr_FR')
-        with self.assertLogs('odoo.addons.base.models.ir_module') as log_catcher:
+        with self.assertLogs('eden.addons.base.models.ir_module') as log_catcher:
             self.import_zipfile(files)
-            self.assertIn('INFO:odoo.addons.base.models.ir_module:module foo: no translation for language fr_FR', log_catcher.output)
+            self.assertIn('INFO:eden.addons.base.models.ir_module:module foo: no translation for language fr_FR', log_catcher.output)
         self.assertEqual(self.env.ref('foo.foo')._name, 'res.partner')
         self.assertEqual(self.env.ref('foo.foo').name, 'foo')
         self.assertEqual(self.env.ref('foo.bar')._name, 'res.partner')
@@ -94,7 +94,7 @@ class TestImportModule(odoo.tests.TransactionCase):
         ]
         error_message = "Error while importing module 'foo'"
         with (
-            mute_logger("odoo.addons.base_import_module.models.ir_module"),
+            mute_logger("eden.addons.base_import_module.models.ir_module"),
             self.assertRaises(UserError, msg=error_message),
         ):
             self.import_zipfile(files)
@@ -120,7 +120,7 @@ class TestImportModule(odoo.tests.TransactionCase):
             """),
         ]
         with (
-            mute_logger("odoo.addons.base_import_module.models.ir_module"),
+            mute_logger("eden.addons.base_import_module.models.ir_module"),
             self.assertRaises(UserError),
         ):
             self.import_zipfile(files)
@@ -158,10 +158,10 @@ class TestImportModule(odoo.tests.TransactionCase):
                 b'foo,foo'
             ),
         ]
-        with self.assertLogs('odoo.addons.base_import_module.models.ir_module') as log_catcher:
+        with self.assertLogs('eden.addons.base_import_module.models.ir_module') as log_catcher:
             self.import_zipfile(files)
-            self.assertIn("INFO:odoo.addons.base_import_module.models.ir_module:module foo: skip unsupported file res.partner.xls", log_catcher.output)
-            self.assertIn("INFO:odoo.addons.base_import_module.models.ir_module:Successfully imported module 'foo'", log_catcher.output)
+            self.assertIn("INFO:eden.addons.base_import_module.models.ir_module:module foo: skip unsupported file res.partner.xls", log_catcher.output)
+            self.assertIn("INFO:eden.addons.base_import_module.models.ir_module:Successfully imported module 'foo'", log_catcher.output)
             self.assertFalse(self.env.ref('foo.foo', raise_if_not_found=False))
 
     def test_import_zip_extract_only_useful(self):
@@ -349,7 +349,7 @@ class TestImportModule(odoo.tests.TransactionCase):
             """),
         ]
         with (
-            mute_logger("odoo.addons.base_import_module.models.ir_module"),
+            mute_logger("eden.addons.base_import_module.models.ir_module"),
             self.assertRaisesRegex(
                 UserError,
                 "Unknown module dependencies",
@@ -358,7 +358,7 @@ class TestImportModule(odoo.tests.TransactionCase):
             self.import_zipfile(files)
 
 
-class TestImportModuleHttp(TestImportModule, odoo.tests.HttpCase):
+class TestImportModuleHttp(TestImportModule, eden.tests.HttpCase):
     def test_import_module_icon(self):
         """Assert import a module with an icon result in the module displaying the icon in the apps menu,
         and with the base module icon if module without icon"""

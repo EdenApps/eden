@@ -1,7 +1,7 @@
-/* @odoo-module */
+/* @eden-module */
 
 
-import { Component, useState } from "@odoo/owl";
+import { Component, useState } from "@eden/owl";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { useDropdownState } from "@web/core/dropdown/dropdown_hooks";

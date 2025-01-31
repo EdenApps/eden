@@ -1,12 +1,12 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import date, timedelta
 
-from odoo import Command
-from odoo.tests import tagged
+from eden import Command
+from eden.tests import tagged
 
-from odoo.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
-from odoo.addons.point_of_sale.tests.common_setup_methods import setup_product_combo_items
+from eden.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
+from eden.addons.point_of_sale.tests.common_setup_methods import setup_product_combo_items
 
 
 @tagged("post_install", "-at_install")

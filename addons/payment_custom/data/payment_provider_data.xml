@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<eden noupdate="1">
 
     <record id="payment.payment_provider_transfer" model="payment.provider">
         <field name="code">custom</field>
@@ -18,4 +18,4 @@
               name="_transfer_ensure_pending_msg_is_set"
               eval="[[ref('payment.payment_provider_transfer')]]"/>
 
-</odoo>
+</eden>

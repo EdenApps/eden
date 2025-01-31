@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { Component, useState, onWillUpdateProps } from "@odoo/owl";
+import { Component, useState, onWillUpdateProps } from "@eden/owl";
 
 export class ChatterPager extends Component {
     static template = "project.ChatterPager";

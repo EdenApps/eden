@@ -1,4 +1,4 @@
-/** @odoo-module alias=@bus/../tests/websocket_worker_tests default=false */
+/** @eden-module alias=@bus/../tests/websocket_worker_tests default=false */
 
 import { WEBSOCKET_CLOSE_CODES } from "@bus/workers/websocket_worker";
 import { patchWebsocketWorkerWithCleanup } from "@bus/../tests/helpers/mock_websocket";

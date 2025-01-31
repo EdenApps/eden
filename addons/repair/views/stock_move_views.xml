@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <record model="ir.actions.act_window" id="action_repair_move_lines">
         <field name="name">Inventory Moves</field>
@@ -8,4 +8,4 @@
         <field name="domain">[('move_id.repair_id', '=', active_id)]</field>
     </record>
 
-</odoo>
+</eden>

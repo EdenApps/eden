@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import datetime
 
-from odoo import api, fields, models, modules, _
-from odoo.exceptions import AccessError
+from eden import api, fields, models, modules, _
+from eden.exceptions import AccessError
 
 from pytz import timezone, UTC
 

@@ -19,7 +19,7 @@ function notPointEqual(a, b) {
     expect(Math.abs(a[0] - b[0]) > epsilon || Math.abs(a[1] - b[1]) > epsilon).toBe(true);
 }
 
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 
 describe("Perspective Utils", () => {
     test("Should correctly transform 2D points using a projective transformation", async () => {

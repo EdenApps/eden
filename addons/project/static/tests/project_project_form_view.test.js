@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@eden/hoot";
 import { mountView } from "@web/../tests/web_test_helpers";
 
 import { defineProjectModels } from "./project_models";

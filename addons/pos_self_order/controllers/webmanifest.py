@@ -1,12 +1,12 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import mimetypes
 import re
 
 from urllib.parse import unquote
-from odoo import http
-from odoo.http import request
-from odoo.addons.web.controllers import webmanifest
+from eden import http
+from eden.http import request
+from eden.addons.web.controllers import webmanifest
 
 
 class WebManifest(webmanifest.WebManifest):

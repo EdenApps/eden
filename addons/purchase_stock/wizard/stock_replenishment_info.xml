@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<odoo>
+<eden>
     <record id="product_supplierinfo_replenishment_tree_view" model="ir.ui.view">
         <field name="name">product.supplierinfo.replenishment.list.view</field>
         <field name="model">product.supplierinfo</field>
@@ -42,4 +42,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</eden>

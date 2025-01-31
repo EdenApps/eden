@@ -196,8 +196,8 @@ $o-user-theme-color-palette: o-map-normalize-website-values($o-user-theme-color-
 $-palette-default: map-get($o-theme-color-palettes, $o-theme-color-palette-name) or ();
 $-actual-user-theme-color-palette: map-merge($-palette-default, $o-user-theme-color-palette);
 // Always remove the primary/secondary which were customizable in some theme
-// in Odoo <= 13.3. The customer can always rechoose the right color in the
-// Odoo color system as the first two ones are mapped to primary/secondary.
+// in Eden <= 13.3. The customer can always rechoose the right color in the
+// Eden color system as the first two ones are mapped to primary/secondary.
 $-actual-user-theme-color-palette: map-remove($-actual-user-theme-color-palette,
     'primary',
     'secondary'
@@ -262,7 +262,7 @@ $o-theme-font-configs: map-merge($o-base-theme-font-configs, $o-theme-font-confi
     ));
 }
 
-// Add odoo unicode support for all fonts
+// Add eden unicode support for all fonts
 @each $font-name, $font-config in $o-theme-font-configs {
     $o-theme-font-configs: map-merge($o-theme-font-configs, (
         $font-name: map-merge($font-config, (

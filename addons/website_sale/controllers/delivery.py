@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import _
-from odoo.exceptions import UserError, ValidationError
-from odoo.http import request, route
+from eden import _
+from eden.exceptions import UserError, ValidationError
+from eden.http import request, route
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.website_sale.controllers.main import WebsiteSale
+from eden.addons.payment import utils as payment_utils
+from eden.addons.website_sale.controllers.main import WebsiteSale
 
 
 class Delivery(WebsiteSale):

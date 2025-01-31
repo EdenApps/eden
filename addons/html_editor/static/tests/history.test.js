@@ -1,9 +1,9 @@
 import { Plugin } from "@html_editor/plugin";
 import { MAIN_PLUGINS } from "@html_editor/plugin_sets";
 import { parseHTML } from "@html_editor/utils/html";
-import { describe, expect, test } from "@odoo/hoot";
-import { click, pointerDown, pointerUp, press, queryOne } from "@odoo/hoot-dom";
-import { animationFrame, mockUserAgent, tick } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@eden/hoot";
+import { click, pointerDown, pointerUp, press, queryOne } from "@eden/hoot-dom";
+import { animationFrame, mockUserAgent, tick } from "@eden/hoot-mock";
 import { setupEditor, testEditor } from "./_helpers/editor";
 import { getContent, setSelection } from "./_helpers/selection";
 import { addStep, deleteBackward, insertText, redo, undo } from "./_helpers/user_actions";
@@ -42,7 +42,7 @@ describe("reset", () => {
         const historyPlugin = plugins.get("history");
         expect(historyPlugin.currentStep.mutations.length).toBe(0);
 
-        await click(".odoo-editor-editable p");
+        await click(".eden-editor-editable p");
         await animationFrame();
         expect(".o-we-tablepicker").toHaveCount(0);
         expect(historyPlugin.currentStep.mutations.length).toBe(0);

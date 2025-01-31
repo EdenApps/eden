@@ -1,5 +1,5 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-from odoo import models, api, fields
+# Part of Eden. See LICENSE file for full copyright and licensing details.
+from eden import models, api, fields
 
 
 class EventTicket(models.Model):

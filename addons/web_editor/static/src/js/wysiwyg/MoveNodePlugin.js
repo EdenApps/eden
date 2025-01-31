@@ -1,10 +1,10 @@
-/** @odoo-module */
+/** @eden-module */
 import {
     ancestors,
     closestElement,
     resetOuids,
     setSelection,
-} from '@web_editor/js/editor/odoo-editor/src/OdooEditor';
+} from '@web_editor/js/editor/eden-editor/src/EdenEditor';
 import { useNativeDraggable } from "@web_editor/js/editor/drag_and_drop";
 
 const simpleDraggableHook = {

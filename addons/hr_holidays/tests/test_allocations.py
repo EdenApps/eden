@@ -2,10 +2,10 @@ from datetime import date
 
 from freezegun import freeze_time
 
-from odoo.exceptions import ValidationError
-from odoo.tests import Form, tagged, users
+from eden.exceptions import ValidationError
+from eden.tests import Form, tagged, users
 
-from odoo.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from eden.addons.hr_holidays.tests.common import TestHrHolidaysCommon
 
 
 @tagged('allocation')

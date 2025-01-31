@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 from freezegun import freeze_time
-from odoo.tests import common, new_test_user
+from eden.tests import common, new_test_user
 
 
 class TestsCommon(common.TransactionCase):

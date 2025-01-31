@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <template id="exception_on_so">
             <div>
@@ -54,4 +54,4 @@
             </div>
         </template>
     </data>
-</odoo>
+</eden>

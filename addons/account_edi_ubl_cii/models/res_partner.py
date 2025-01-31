@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import re
 from stdnum.fr import siret
 
-from odoo import models, fields, api, _
-from odoo.exceptions import ValidationError
-from odoo.addons.account_edi_ubl_cii.models.account_edi_common import EAS_MAPPING
-from odoo.addons.account.models.company import PEPPOL_DEFAULT_COUNTRIES
+from eden import models, fields, api, _
+from eden.exceptions import ValidationError
+from eden.addons.account_edi_ubl_cii.models.account_edi_common import EAS_MAPPING
+from eden.addons.account.models.company import PEPPOL_DEFAULT_COUNTRIES
 
 
 class ResPartner(models.Model):

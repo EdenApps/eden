@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { _t } from "@web/core/l10n/translation";
 import { browser } from "@web/core/browser/browser";
@@ -6,7 +6,7 @@ import { CopyButton } from "@web/core/copy_button/copy_button";
 import { Dialog } from "@web/core/dialog/dialog";
 import { EmailSharingInput } from "./email_sharing_input";
 
-import { Component, useRef } from "@odoo/owl";
+import { Component, useRef } from "@eden/owl";
 
 export class SlideShareDialog extends Component {
     static template = "website_slides.SlideShareDialog";

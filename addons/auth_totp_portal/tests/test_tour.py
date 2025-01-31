@@ -1,8 +1,8 @@
 import logging
 
-from odoo.addons.auth_totp.tests.test_totp import TestTOTPMixin
-from odoo.addons.base.tests.common import HttpCaseWithUserPortal
-from odoo.tests import tagged
+from eden.addons.auth_totp.tests.test_totp import TestTOTPMixin
+from eden.addons.base.tests.common import HttpCaseWithUserPortal
+from eden.tests import tagged
 
 _logger = logging.getLogger(__name__)
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_company_team" name="Team">
     <section class="s_company_team pt48 pb48">
@@ -70,4 +70,4 @@
     <field name="path">website/static/src/snippets/s_company_team/000.scss</field>
 </record>
 
-</odoo>
+</eden>

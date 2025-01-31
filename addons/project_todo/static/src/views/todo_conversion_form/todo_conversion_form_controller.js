@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @eden-module **/
 
-import { onMounted } from "@odoo/owl";
+import { onMounted } from "@eden/owl";
 import { FormController } from "@web/views/form/form_controller";
 
 export class TodoConversionFormController extends FormController {

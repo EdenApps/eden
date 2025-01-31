@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { Component, onWillRender, useState, xml } from "@odoo/owl";
+import { Component, onWillRender, useState, xml } from "@eden/owl";
 import { parseRegExp } from "../../hoot-dom/hoot_dom_utils";
 import { Test } from "../core/test";
 import { EXCLUDE_PREFIX } from "../core/url";

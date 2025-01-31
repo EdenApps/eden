@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 
-from odoo import api, fields, models
+from eden import api, fields, models
 
 
 class MarketingCard(models.Model):

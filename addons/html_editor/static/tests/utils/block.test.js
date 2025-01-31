@@ -1,6 +1,6 @@
 import { closestBlock } from "@html_editor/utils/blocks";
 import { isVisibleTextNode } from "@html_editor/utils/dom_info";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 import { insertTestHtml } from "../_helpers/editor";
 
 describe("closestBlock", () => {

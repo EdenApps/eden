@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data noupdate="1">
+<eden><data noupdate="1">
 
     <!-- CHANNEL 5: Basics of Furniture Creation -->
     <!-- ======================================= -->
@@ -33,4 +33,4 @@
         <field name="description">It's time to test your knowledge!</field>
     </record>
 
-</data></odoo>
+</data></eden>

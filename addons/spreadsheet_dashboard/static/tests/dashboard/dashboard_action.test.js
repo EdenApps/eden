@@ -1,6 +1,6 @@
-import { describe, expect, onError as onErrorHoot, test } from "@odoo/hoot";
-import { pointerDown, press, queryAll } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { describe, expect, onError as onErrorHoot, test } from "@eden/hoot";
+import { pointerDown, press, queryAll } from "@eden/hoot-dom";
+import { animationFrame } from "@eden/hoot-mock";
 import { getBasicData } from "@spreadsheet/../tests/helpers/data";
 import { createSpreadsheetDashboard } from "@spreadsheet_dashboard/../tests/helpers/dashboard_action";
 import {

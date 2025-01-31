@@ -1,10 +1,10 @@
-/* @odoo-module */
+/* @eden-module */
 
 import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
 import { useRecordObserver } from "@web/model/relational_model/utils";
 
-import { Component, useState, onWillStart } from "@odoo/owl";
+import { Component, useState, onWillStart } from "@eden/owl";
 import { standardWidgetProps } from "@web/views/widgets/standard_widget_props";
 
 const { DateTime } = luxon;

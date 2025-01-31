@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import UserError
-from odoo.tests import common, Form
-from odoo.tools.float_utils import float_round, float_compare
+from eden.exceptions import UserError
+from eden.tests import common, Form
+from eden.tools.float_utils import float_round, float_compare
 
 
 class TestBomPriceCommon(common.TransactionCase):

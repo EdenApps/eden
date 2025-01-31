@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
 
         <record id="menu_shop" model="website.menu">
@@ -186,4 +186,4 @@ response = DynamicFilter._get_products('alternative_products', product_template_
             ]"/>
         </function>
     </data>
-</odoo>
+</eden>

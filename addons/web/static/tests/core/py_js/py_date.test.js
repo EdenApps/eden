@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { mockDate } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@eden/hoot";
+import { mockDate } from "@eden/hoot-mock";
 
 import { evaluateExpr } from "@web/core/py_js/py";
 import { PyDate, PyTimeDelta } from "@web/core/py_js/py_date";

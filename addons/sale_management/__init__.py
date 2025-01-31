@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from . import models
 from . import controllers
-from odoo.tools.sql import column_exists, create_column
+from eden.tools.sql import column_exists, create_column
 
 
 def pre_init_hook(env):

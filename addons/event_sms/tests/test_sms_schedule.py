@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
 
-from odoo.addons.event.tests.common import EventCase
-from odoo.addons.phone_validation.tools import phone_validation
-from odoo.addons.sms.tests.common import SMSCase
-from odoo.tests import tagged, users
+from eden.addons.event.tests.common import EventCase
+from eden.addons.phone_validation.tools import phone_validation
+from eden.addons.sms.tests.common import SMSCase
+from eden.tests import tagged, users
 
 
 @tagged('event_mail', 'post_install', '-at_install')

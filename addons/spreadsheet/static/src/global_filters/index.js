@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @eden-module */
 
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@eden/o-spreadsheet";
 
 import { GlobalFiltersUIPlugin } from "./plugins/global_filters_ui_plugin";
 import { GlobalFiltersCorePlugin } from "./plugins/global_filters_core_plugin";

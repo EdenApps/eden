@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import Form, tagged, TransactionCase
-from odoo.exceptions import MissingError
+from eden.tests import Form, tagged, TransactionCase
+from eden.exceptions import MissingError
 
 @tagged('post_install', '-at_install')
 class TestEmployeeDeletion(TransactionCase):

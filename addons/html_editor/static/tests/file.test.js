@@ -1,9 +1,9 @@
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
+import { beforeEach, describe, expect, test } from "@eden/hoot";
 import { setupEditor } from "./_helpers/editor";
 import { EMBEDDED_COMPONENT_PLUGINS, MAIN_PLUGINS } from "@html_editor/plugin_sets";
 import { insertText } from "./_helpers/user_actions";
 import { onRpc, patchWithCleanup } from "@web/../tests/web_test_helpers";
-import { animationFrame, click, press, queryOne, waitFor } from "@odoo/hoot-dom";
+import { animationFrame, click, press, queryOne, waitFor } from "@eden/hoot-dom";
 import { execCommand } from "./_helpers/userCommands";
 import { MAIN_EMBEDDINGS } from "@html_editor/others/embedded_components/embedding_sets";
 import { getContent } from "./_helpers/selection";
@@ -45,7 +45,7 @@ describe("file command", () => {
         expect(".o_select_media_dialog").toHaveCount(0);
         await mockedUpload;
         // Check that file card (embedded component) was inserted in the editable.
-        expect(".odoo-editor-editable .o_file_box").toHaveCount(1);
+        expect(".eden-editor-editable .o_file_box").toHaveCount(1);
     });
 
     test("file card should have inline display, BS alert-info style and no download button", async () => {
@@ -111,7 +111,7 @@ describe("document tab in media dialog", () => {
             await click(".nav-link:contains('Documents')");
             await animationFrame();
             await click(".o_we_attachment_highlight");
-            expect(".odoo-editor-editable .o_file_box a:contains('file.txt')").toHaveCount(1);
+            expect(".eden-editor-editable .o_file_box a:contains('file.txt')").toHaveCount(1);
         });
     });
 });
@@ -127,7 +127,7 @@ describe("powerbutton", () => {
         expect(".o_select_media_dialog").toHaveCount(0);
         await mockedUpload;
         // Check that file card (embedded component) was inserted in the editable.
-        expect(".odoo-editor-editable .o_file_box").toHaveCount(1);
+        expect(".eden-editor-editable .o_file_box").toHaveCount(1);
     });
 
     test("file powerbutton uploads a file directly via the system's selector (embedded component)", async () => {
@@ -140,7 +140,7 @@ describe("powerbutton", () => {
         expect(".o_select_media_dialog").toHaveCount(0);
         await mockedUpload;
         // Check that file card (embedded component) was inserted in the editable.
-        expect('.odoo-editor-editable [data-embedded="file"]').toHaveCount(1);
+        expect('.eden-editor-editable [data-embedded="file"]').toHaveCount(1);
     });
 });
 

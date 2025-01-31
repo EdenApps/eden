@@ -1,9 +1,9 @@
 from io import BytesIO
 from zipfile import ZipFile
 
-from odoo.fields import Command
-from odoo.tests.common import tagged
-from odoo.addons.account.tests.common import AccountTestInvoicingHttpCommon
+from eden.fields import Command
+from eden.tests.common import tagged
+from eden.addons.account.tests.common import AccountTestInvoicingHttpCommon
 
 
 @tagged('post_install', '-at_install')

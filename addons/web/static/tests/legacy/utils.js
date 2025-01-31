@@ -1,4 +1,4 @@
-/** @odoo-module alias=@web/../tests/utils default=false */
+/** @eden-module alias=@web/../tests/utils default=false */
 
 import { isVisible } from "@web/core/utils/ui";
 import { registerCleanup } from "@web/../tests/helpers/cleanup";

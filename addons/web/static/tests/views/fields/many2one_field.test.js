@@ -1,7 +1,7 @@
-import { describe, expect, getFixture, test } from "@odoo/hoot";
-import { click, press, queryAll, queryAllTexts, queryOne, scroll } from "@odoo/hoot-dom";
-import { Deferred, animationFrame, runAllTimers } from "@odoo/hoot-mock";
-import { Component, xml } from "@odoo/owl";
+import { describe, expect, getFixture, test } from "@eden/hoot";
+import { click, press, queryAll, queryAllTexts, queryOne, scroll } from "@eden/hoot-dom";
+import { Deferred, animationFrame, runAllTimers } from "@eden/hoot-mock";
+import { Component, xml } from "@eden/owl";
 import {
     clickFieldDropdown,
     clickFieldDropdownItem,
@@ -1084,8 +1084,8 @@ test("many2one in non edit mode (with value)", async () => {
     });
 
     expect("a.o_form_uri").toHaveCount(2);
-    expect("div[name=res_trululu] a.o_form_uri").toHaveAttribute("href", "/odoo/res.partner/1");
-    expect("div[name=trululu] a.o_form_uri").toHaveAttribute("href", "/odoo/m-partner/4");
+    expect("div[name=res_trululu] a.o_form_uri").toHaveAttribute("href", "/eden/res.partner/1");
+    expect("div[name=trululu] a.o_form_uri").toHaveAttribute("href", "/eden/m-partner/4");
 });
 
 test("many2one in non edit mode (without value)", async () => {

@@ -1,4 +1,4 @@
-/** @odoo-module alias=@mail/../tests/views/fields/statusbar_duration_field_tests default=false */
+/** @eden-module alias=@mail/../tests/views/fields/statusbar_duration_field_tests default=false */
 const test = QUnit.test; // QUnit.test()
 
 import { getFixture } from "@web/../tests/helpers/utils";

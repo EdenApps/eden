@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<eden noupdate="1">
 
     <record id="ir_rule_mail_test_access_public" model="ir.rule">
         <field name="name">Public: public only</field>
@@ -129,4 +129,4 @@
         <field name="groups" eval="[(4, ref('base.group_portal'))]"/>
     </record>
 
-</odoo>
+</eden>

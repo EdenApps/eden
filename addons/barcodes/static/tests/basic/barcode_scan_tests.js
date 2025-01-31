@@ -1,11 +1,11 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { BarcodeScanner } from "@barcodes/components/barcode_scanner";
 import { getFixture, mount } from "@web/../tests/helpers/utils";
 import { contains } from "@web/../tests/utils";
 import { createWebClient } from "@web/../tests/webclient/helpers";
 
-import { xml, Component } from "@odoo/owl";
+import { xml, Component } from "@eden/owl";
 
 QUnit.module("Barcode scan", {});
 
@@ -29,6 +29,6 @@ QUnit.test("Display notification for media device permission on barcode scanning
     await mount(BarcodeScan, target, { env });
 
     await document.querySelector('.o_mobile_barcode').click();
-    await contains(".modal-body", { text: "Unable to access cameraCould not start scanning. Odoo needs your authorization first." });
+    await contains(".modal-body", { text: "Unable to access cameraCould not start scanning. Eden needs your authorization first." });
     await document.querySelector('.modal-header button[aria-label="Close"]').click();
 })

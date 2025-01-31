@@ -5,9 +5,9 @@ import io
 from lxml import etree
 from xml.sax.saxutils import escape, quoteattr
 
-from odoo import _, api, fields, models, tools, SUPERUSER_ID
-from odoo.tools import cleanup_xml_node
-from odoo.tools.pdf import OdooPdfFileReader, OdooPdfFileWriter
+from eden import _, api, fields, models, tools, SUPERUSER_ID
+from eden.tools import cleanup_xml_node
+from eden.tools.pdf import EdenPdfFileReader, EdenPdfFileWriter
 
 _logger = logging.getLogger(__name__)
 
@@ -140,10 +140,10 @@ class AccountMoveSend(models.AbstractModel):
         # Read pdf content.
         pdf_values = invoice.invoice_pdf_report_id or invoice_data.get('pdf_attachment_values') or invoice_data['proforma_pdf_attachment_values']
         reader_buffer = io.BytesIO(pdf_values['raw'])
-        reader = OdooPdfFileReader(reader_buffer, strict=False)
+        reader = EdenPdfFileReader(reader_buffer, strict=False)
 
         # Post-process.
-        writer = OdooPdfFileWriter()
+        writer = EdenPdfFileWriter()
         writer.cloneReaderDocumentRoot(reader)
 
         writer.addAttachment('factur-x.xml', xml_facturx, subtype='text/xml')

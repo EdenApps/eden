@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="view_resource_calendar_leaves_search" model="ir.ui.view">
         <field name="name">resource.calendar.leaves.search</field>
         <field name="model">resource.calendar.leaves</field>
@@ -107,4 +107,4 @@
         <field name="binding_model_id" ref="model_resource_calendar"/>
         <field name="binding_view_types">form</field>
     </record>
-</odoo>
+</eden>

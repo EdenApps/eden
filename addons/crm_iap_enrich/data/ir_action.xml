@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
     <data>
         <record id="action_enrich_mail" model="ir.actions.server" >
             <field name="name">Enrich</field>
@@ -13,4 +13,4 @@
         </record>
 
     </data>
-</odoo>
+</eden>

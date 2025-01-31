@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 
@@ -7,10 +7,10 @@ try:
 except ImportError:
     ws = None
 
-from odoo.tests import tagged, new_test_user
-from odoo.addons.bus.tests.common import WebsocketCase
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.addons.bus.models.bus import channel_with_db, json_dump
+from eden.tests import tagged, new_test_user
+from eden.addons.bus.tests.common import WebsocketCase
+from eden.addons.mail.tests.common import MailCommon
+from eden.addons.bus.models.bus import channel_with_db, json_dump
 
 
 @tagged("post_install", "-at_install")
@@ -29,7 +29,7 @@ class TestBusPresence(WebsocketCase, MailCommon):
         sender_bus_target = sender.partner_id if sent_from_user else sender
         self.subscribe(
             websocket,
-            [f"odoo-presence-{sender_bus_target._name}_{sender_bus_target.id}"],
+            [f"eden-presence-{sender_bus_target._name}_{sender_bus_target.id}"],
             self.env["bus.bus"]._bus_last_id(),
         )
         self.env["bus.presence"].create(

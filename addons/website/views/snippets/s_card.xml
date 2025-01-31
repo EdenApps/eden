@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_card" name="Card">
     <div class="s_card o_card_img_top card o_cc o_cc1" data-vxml="001">
@@ -142,4 +142,4 @@
     <field name="path">website/static/src/snippets/s_card/000.scss</field>
 </record>
 
-</odoo>
+</eden>

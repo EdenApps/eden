@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_cover" name="Cover">
     <section class="s_cover parallax s_parallax_is_fixed o_cc o_cc5 pt232 pb232" data-scroll-background-ratio="1">
@@ -16,4 +16,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

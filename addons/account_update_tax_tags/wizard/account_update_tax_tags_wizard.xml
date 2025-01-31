@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="view_account_update_tax_tags_wizard_form" model="ir.ui.view">
         <field name="name">account.update.tax.tags.wizard.form</field>
         <field name="model">account.update.tax.tags.wizard</field>
@@ -25,4 +25,4 @@
             </form>
         </field>
     </record>
-</odoo>
+</eden>

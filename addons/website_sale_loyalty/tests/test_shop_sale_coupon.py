@@ -1,16 +1,16 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 from datetime import timedelta
 
-from odoo import fields, http
-from odoo.exceptions import ValidationError
-from odoo.fields import Command
-from odoo.tests import HttpCase, tagged
+from eden import fields, http
+from eden.exceptions import ValidationError
+from eden.fields import Command
+from eden.tests import HttpCase, tagged
 
-from odoo.addons.sale.tests.test_sale_product_attribute_value_config import (
+from eden.addons.sale.tests.test_sale_product_attribute_value_config import (
     TestSaleProductAttributeValueCommon,
 )
-from odoo.addons.website.tools import MockRequest
-from odoo.addons.website_sale_loyalty.controllers.main import WebsiteSale
+from eden.addons.website.tools import MockRequest
+from eden.addons.website_sale_loyalty.controllers.main import WebsiteSale
 
 
 @tagged('post_install', '-at_install')

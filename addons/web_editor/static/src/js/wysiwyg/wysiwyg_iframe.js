@@ -1,10 +1,10 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { Wysiwyg } from '@web_editor/js/wysiwyg/wysiwyg';
 import { patch } from "@web/core/utils/patch";
 import { getBundle } from "@web/core/assets";
 import { isMobileOS } from "@web/core/browser/feature_detection";
-import { useEffect } from "@odoo/owl";
+import { useEffect } from "@eden/owl";
 
 var promiseJsAssets;
 
@@ -107,8 +107,8 @@ patch(Wysiwyg.prototype, {
      */
     _loadIframe() {
         var self = this;
-        this.$editable = $('<div class="note-editable oe_structure odoo-editor-editable"></div>');
-        this.$el.removeClass('note-editable oe_structure odoo-editor-editable');
+        this.$editable = $('<div class="note-editable oe_structure eden-editor-editable"></div>');
+        this.$el.removeClass('note-editable oe_structure eden-editor-editable');
         this.$iframe = $('<iframe class="wysiwyg_iframe o_iframe">').css({
             width: '100%',
             height: '100%',
@@ -133,7 +133,7 @@ patch(Wysiwyg.prototype, {
                 self.$iframeBody = $iframeTarget;
                 $iframeTarget.attr("isMobile", isMobileOS());
 
-                const $iframeWrapper = $('<div class="iframe-editor-wrapper odoo-editor">');
+                const $iframeWrapper = $('<div class="iframe-editor-wrapper eden-editor">');
                 const $codeview = $('<textarea class="o_codeview d-none"/>');
                 self.$editable.addClass('o_editable oe_structure');
 
@@ -231,11 +231,11 @@ patch(Wysiwyg.prototype, {
             const scrollInIframe = ev.target === iframeDocument || ev.target.ownerDocument === iframeDocument;
             if (ev.target.contains(this.$iframe[0]))  {
                 this.scrollContainer = ev.target;
-                this.odooEditor.updateToolbarPosition();
+                this.edenEditor.updateToolbarPosition();
             } else if (scrollInIframe) {
                 // UpdateToolbarPosition needs a scroll container in the top document.
                 this.scrollContainer = this.$iframe[0];
-                this.odooEditor.updateToolbarPosition();
+                this.edenEditor.updateToolbarPosition();
             }
         } else {
             return super._onScroll(...arguments);
@@ -274,7 +274,7 @@ function getWysiwygIframeContent(params) {
         ${assets.jsLibs.join('\n')}
 
         <script type="text/javascript">
-            window.odoo?.define('root.widget', ['@web/legacy/js/public/public_widget'], function (require) {
+            window.eden?.define('root.widget', ['@web/legacy/js/public/public_widget'], function (require) {
                 'use strict';
                 const publicWidget = require('@web/legacy/js/public/public_widget')[Symbol.for("default")];
                 const widget = new publicWidget.Widget();
@@ -286,7 +286,7 @@ function getWysiwygIframeContent(params) {
     <body class="o_in_iframe">
         <div id="iframe_target"/>
         <script type="text/javascript">
-            window.odoo?.define('web_editor.wysiwyg.iniframe', [], function (require) {
+            window.eden?.define('web_editor.wysiwyg.iniframe', [], function (require) {
                 'use strict';
                 if (window.top.${params.updateIframeId}) {
                     window.top.${params.updateIframeId}(${params.avoidDoubleLoad});

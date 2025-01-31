@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 import {
     click,
     keyDown,
@@ -12,8 +12,8 @@ import {
     waitFor,
     waitForNone,
     waitUntil,
-} from "@odoo/hoot-dom";
-import { advanceTime, animationFrame, tick } from "@odoo/hoot-mock";
+} from "@eden/hoot-dom";
+import { advanceTime, animationFrame, tick } from "@eden/hoot-mock";
 import { contains, patchTranslations, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { fontSizeItems, fontItems } from "../src/main/font/font_plugin";
 import { Plugin } from "../src/plugin";

@@ -1,8 +1,8 @@
-/** @odoo-module alias=@web/../tests/utils default=false */
+/** @eden-module alias=@web/../tests/utils default=false */
 
-import { __debug__, after, afterEach, expect, getFixture } from "@odoo/hoot";
-import { queryAll, queryFirst } from "@odoo/hoot-dom";
-import { Deferred, tick } from "@odoo/hoot-mock";
+import { __debug__, after, afterEach, expect, getFixture } from "@eden/hoot";
+import { queryAll, queryFirst } from "@eden/hoot-dom";
+import { Deferred, tick } from "@eden/hoot-mock";
 import { asyncStep, waitForSteps } from "@web/../tests/web_test_helpers";
 import { isMacOS } from "@web/core/browser/feature_detection";
 import { isVisible } from "@web/core/utils/ui";
@@ -513,7 +513,7 @@ afterEach(() => (hasUsedContainsPositively = false));
  * @property {boolean} [shadowRoot] if provided, targets the shadowRoot of the found elements.
  * @property {number|"bottom"} [setScroll] if provided, sets the scrollTop on the first found
  *  element.
- * @property {HTMLElement|OdooEnv} [target=getFixture()]
+ * @property {HTMLElement|EdenEnv} [target=getFixture()]
  * @property {string[]} [triggerEvents] if provided, triggers the given events on the found element
  * @property {string} [text] if provided, the textContent of the found element(s) or one of their
  *  descendants must match. Use `textContent` option for a match on the found element(s) only.
@@ -535,7 +535,7 @@ class Contains {
         this.options.count ??= 1;
         let targetParam;
         if (this.options.target?.testEnv) {
-            // when OdooEnv, special key `target`. See @start
+            // when EdenEnv, special key `target`. See @start
             targetParam = this.options.target?.target;
         }
         if (!targetParam) {

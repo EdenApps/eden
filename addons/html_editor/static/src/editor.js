@@ -102,7 +102,7 @@ export class Editor {
         this.preparePlugins();
         editable.setAttribute("contenteditable", true);
         initElementForEdition(editable, { allowInlineAtRoot: !!this.config.allowInlineAtRoot });
-        editable.classList.add("odoo-editor-editable");
+        editable.classList.add("eden-editor-editable");
         if (this.config.classList) {
             editable.classList.add(...this.config.classList);
         }
@@ -221,7 +221,7 @@ export class Editor {
                 // element will be removed, no need to make changes that may require the browser
                 // to recompute the layout
                 this.editable.removeAttribute("contenteditable");
-                removeClass(this.editable, "odoo-editor-editable");
+                removeClass(this.editable, "eden-editor-editable");
             }
             this.editable = null;
         }

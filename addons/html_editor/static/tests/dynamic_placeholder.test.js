@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
-import { click, manuallyDispatchProgrammaticEvent, press } from "@odoo/hoot-dom";
+import { expect, test } from "@eden/hoot";
+import { animationFrame } from "@eden/hoot-mock";
+import { click, manuallyDispatchProgrammaticEvent, press } from "@eden/hoot-dom";
 import { DYNAMIC_PLACEHOLDER_PLUGINS, MAIN_PLUGINS } from "@html_editor/plugin_sets";
 import { defineModels, models, onRpc, serverState } from "@web/../tests/web_test_helpers";
 import { setupEditor } from "./_helpers/editor";

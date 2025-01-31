@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models, tools
-from odoo.osv import expression
-from odoo.tools import SQL
+from eden import fields, models, tools
+from eden.osv import expression
+from eden.tools import SQL
 
 
 class VendorDelayReport(models.Model):

@@ -2,7 +2,7 @@ import { registry } from "@web/core/registry";
 import { stepUtils } from "@web_tour/tour_service/tour_utils";
 
 registry.category("web_tour.tours").add("mail_template_dynamic_placeholder_tour", {
-    url: "/odoo",
+    url: "/eden",
     steps: () => [
         stepUtils.showAppsMenuItem(),
         {
@@ -106,7 +106,7 @@ registry.category("web_tour.tours").add("mail_template_dynamic_placeholder_tour"
         },
         {
             content: "Insert text inside editable",
-            trigger: ".note-editable.odoo-editor-editable",
+            trigger: ".note-editable.eden-editor-editable",
             async run(actions) {
                 await actions.editor(`/`);
                 document.querySelector(".note-editable").dispatchEvent(
@@ -150,7 +150,7 @@ registry.category("web_tour.tours").add("mail_template_dynamic_placeholder_tour"
         },
         {
             content: "Ensure the editable contain the dynamic placeholder t tag",
-            trigger: `.note-editable.odoo-editor-editable t[t-out="object.company_name"]:contains("defValue")`,
+            trigger: `.note-editable.eden-editor-editable t[t-out="object.company_name"]:contains("defValue")`,
             run: "click",
         },
         {

@@ -6,7 +6,7 @@ import { useService } from "@web/core/utils/hooks";
 import { ImageSelector } from "@html_editor/main/media/media_dialog/image_selector";
 
 import { UnsplashError } from "../unsplash_error/unsplash_error";
-import { useState } from "@odoo/owl";
+import { useState } from "@eden/owl";
 
 patch(ImageSelector.prototype, {
     setup() {

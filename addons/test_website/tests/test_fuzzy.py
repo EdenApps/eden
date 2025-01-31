@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 import psycopg2
 
-from odoo.addons.website.controllers.main import Website
-from odoo.addons.website.tools import MockRequest
-import odoo.tests
-from odoo.tests.common import TransactionCase
+from eden.addons.website.controllers.main import Website
+from eden.addons.website.tools import MockRequest
+import eden.tests
+from eden.tests.common import TransactionCase
 
 _logger = logging.getLogger(__name__)
 
-@odoo.tests.tagged('-at_install', 'post_install')
+@eden.tests.tagged('-at_install', 'post_install')
 class TestAutoComplete(TransactionCase):
     @classmethod
     def setUpClass(cls):

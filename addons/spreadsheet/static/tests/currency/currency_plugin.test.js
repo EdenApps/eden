@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@eden/hoot";
+import { animationFrame } from "@eden/hoot-mock";
 import { createModelWithDataSource } from "@spreadsheet/../tests/helpers/model";
 import { defineSpreadsheetModels } from "../helpers/data";
 import { LoadingDataError } from "@spreadsheet/o_spreadsheet/errors";
@@ -23,7 +23,7 @@ test("get default currency format when it's not in the config", async () => {
         mockRPC: async function (route, args) {
             if (args.method === "get_company_currency_for_spreadsheet") {
                 return {
-                    code: "Odoo",
+                    code: "Eden",
                     symbol: "θ",
                     position: "after",
                     decimalPlaces: 2,
@@ -44,7 +44,7 @@ test("get specific currency format", async () => {
         mockRPC: async function (route, args) {
             if (args.method === "get_company_currency_for_spreadsheet" && args.args[0] === 42) {
                 return {
-                    code: "Odoo",
+                    code: "Eden",
                     symbol: "O",
                     position: "after",
                     decimalPlaces: 2,

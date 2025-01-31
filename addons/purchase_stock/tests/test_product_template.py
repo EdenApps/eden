@@ -1,4 +1,4 @@
-from odoo.tests.common import TransactionCase
+from eden.tests.common import TransactionCase
 
 
 class TestProductTemplate(TransactionCase):

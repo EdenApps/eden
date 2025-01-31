@@ -1,17 +1,17 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
 from unittest.mock import patch
 
-from odoo import Command
-from odoo.exceptions import AccessError
-from odoo.tests import tagged, JsonRpcException
-from odoo.tools import mute_logger
+from eden import Command
+from eden.exceptions import AccessError
+from eden.tests import tagged, JsonRpcException
+from eden.tools import mute_logger
 
-from odoo.addons.account_payment.controllers.payment import PaymentPortal
-from odoo.addons.account_payment.tests.common import AccountPaymentCommon
-from odoo.addons.payment.tests.http_common import PaymentHttpCommon
-from odoo.addons.portal.controllers.portal import CustomerPortal
+from eden.addons.account_payment.controllers.payment import PaymentPortal
+from eden.addons.account_payment.tests.common import AccountPaymentCommon
+from eden.addons.payment.tests.http_common import PaymentHttpCommon
+from eden.addons.portal.controllers.portal import CustomerPortal
 
 
 @tagged('post_install', '-at_install')
@@ -36,7 +36,7 @@ class TestFlows(AccountPaymentCommon, PaymentHttpCommon):
             'landing_route': tx_context['landing_route'],
             'access_token': tx_context['access_token'],
         }
-        with mute_logger('odoo.addons.payment.models.payment_transaction'):
+        with mute_logger('eden.addons.payment.models.payment_transaction'):
             processing_values = self._get_processing_values(
                 tx_route=tx_context['transaction_route'], **tx_route_values
             )
@@ -77,7 +77,7 @@ class TestFlows(AccountPaymentCommon, PaymentHttpCommon):
 
         with patch.object(
             CustomerPortal, '_document_check_access', _document_check_access_mock
-        ), patch('odoo.addons.payment.utils.check_access_token') as check_payment_access_token_mock:
+        ), patch('eden.addons.payment.utils.check_access_token') as check_payment_access_token_mock:
             try:
                 payment_portal_controller._get_extra_payment_form_values(
                     invoice_id=self.invoice.id, access_token='whatever'
@@ -91,14 +91,14 @@ class TestFlows(AccountPaymentCommon, PaymentHttpCommon):
                     " check as a portal access token failed.",
             )
 
-    @mute_logger('odoo.http')
+    @mute_logger('eden.http')
     def test_transaction_route_rejects_unexpected_kwarg(self):
         url = self._build_url(f'/invoice/transaction/{self.invoice.id}/')
         route_kwargs = {
             'access_token': self.invoice._portal_ensure_token(),
             'partner_id': self.partner.id,  # This should be rejected.
         }
-        with self.assertRaises(JsonRpcException, msg='odoo.exceptions.ValidationError'):
+        with self.assertRaises(JsonRpcException, msg='eden.exceptions.ValidationError'):
             self.make_jsonrpc_request(url, route_kwargs)
 
     def test_public_user_new_company(self):
@@ -126,7 +126,7 @@ class TestFlows(AccountPaymentCommon, PaymentHttpCommon):
             'landing_route': tx_context['landing_route'],
             'access_token': tx_context['access_token'],
         }
-        with mute_logger('odoo.addons.payment.models.payment_transaction'):
+        with mute_logger('eden.addons.payment.models.payment_transaction'):
             processing_values = self._get_processing_values(
                 tx_route=tx_context['transaction_route'], **tx_route_values
             )
@@ -149,7 +149,7 @@ class TestFlows(AccountPaymentCommon, PaymentHttpCommon):
         partner = self.env['res.partner'].create({'name': 'Alsh'})
         account_user = self.env['res.users'].create({
             'login': 'TestUser',
-            'password': 'Odoo@123',
+            'password': 'Eden@123',
             'groups_id': [Command.set(self.env.ref('account.group_account_manager').ids)],
             'partner_id': partner.id
         })
@@ -164,7 +164,7 @@ class TestFlows(AccountPaymentCommon, PaymentHttpCommon):
         self.assertEqual(invoice.payment_state, 'not_paid')
 
         # Must be authenticated before making an http resqest
-        self.authenticate('TestUser', 'Odoo@123')
+        self.authenticate('TestUser', 'Eden@123')
         overdue_url = self._build_url('/my/invoices/overdue')
         resp = self._make_http_get_request(overdue_url, {})
 
@@ -188,7 +188,7 @@ class TestFlows(AccountPaymentCommon, PaymentHttpCommon):
             'landing_route': tx_context['landing_route'],
             'payment_reference': tx_context['payment_reference'],
         }
-        with mute_logger('odoo.addons.payment.models.payment_transaction'):
+        with mute_logger('eden.addons.payment.models.payment_transaction'):
             processing_values = self._get_processing_values(
                 tx_route=tx_context['transaction_route'], **tx_route_values
             )

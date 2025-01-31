@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { getFixture } from "@web/../tests/helpers/utils";
 import { checkLabels, checkLegend, selectMode } from "@web/../tests/views/graph_view_tests";

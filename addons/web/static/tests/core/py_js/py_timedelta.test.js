@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 
 import { evaluateExpr } from "@web/core/py_js/py";
 import { PyTimeDelta } from "@web/core/py_js/py_date";

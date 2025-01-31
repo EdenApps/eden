@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 from freezegun import freeze_time
 from unittest.mock import patch
 
-from odoo import fields
-from odoo.addons.base.tests.test_format_address_mixin import FormatAddressCase
-from odoo.addons.crm.models.crm_lead import PARTNER_FIELDS_TO_SYNC, PARTNER_ADDRESS_FIELDS_TO_SYNC
-from odoo.addons.crm.tests.common import TestCrmCommon, INCOMING_EMAIL
-from odoo.addons.mail.tests.mail_tracking_duration_mixin_case import MailTrackingDurationMixinCase
-from odoo.addons.phone_validation.tools.phone_validation import phone_format
-from odoo.exceptions import UserError
-from odoo.tests import Form, tagged, users
-from odoo.tools import mute_logger
+from eden import fields
+from eden.addons.base.tests.test_format_address_mixin import FormatAddressCase
+from eden.addons.crm.models.crm_lead import PARTNER_FIELDS_TO_SYNC, PARTNER_ADDRESS_FIELDS_TO_SYNC
+from eden.addons.crm.tests.common import TestCrmCommon, INCOMING_EMAIL
+from eden.addons.mail.tests.mail_tracking_duration_mixin_case import MailTrackingDurationMixinCase
+from eden.addons.phone_validation.tools.phone_validation import phone_format
+from eden.exceptions import UserError
+from eden.tests import Form, tagged, users
+from eden.tools import mute_logger
 
 
 @tagged('lead_internals')
@@ -138,7 +138,7 @@ class TestCRMLead(TestCrmCommon):
             'street': 'My street',
             'street2': 'My street',
             'city': 'My city',
-            'zip': 'test@odoo.com',
+            'zip': 'test@eden.com',
             'state_id': self.env['res.country.state'].create({
                 'name': 'My state',
                 'country_id': self.country_ref.id,
@@ -828,7 +828,7 @@ class TestCRMLead(TestCrmCommon):
                     self.assertNotIn(f"<a href='mailto:{team.display_name}'>{team.display_name}</a>", self.env['crm.lead'].sudo().get_empty_list_help(""))
                 team.active = False
 
-    @mute_logger('odoo.addons.mail.models.mail_thread')
+    @mute_logger('eden.addons.mail.models.mail_thread')
     def test_mailgateway(self):
         new_lead = self.format_and_process(
             INCOMING_EMAIL,

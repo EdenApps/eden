@@ -1,5 +1,5 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-from odoo import fields, models, _
+# Part of Eden. See LICENSE file for full copyright and licensing details.
+from eden import fields, models, _
 
 
 class Partner(models.Model):

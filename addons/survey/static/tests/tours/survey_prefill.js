@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @eden-module **/
 
-import { queryFirst, queryOne } from "@odoo/hoot-dom";
+import { queryFirst, queryOne } from "@eden/hoot-dom";
 import { registry } from "@web/core/registry";
 
 registry.category("web_tour.tours").add('test_survey_prefill', {

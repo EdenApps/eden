@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<odoo>
+<eden>
     <template id="availability_email_body">
         <div id="body">
             <p>Dear Customer,</p>
@@ -29,4 +29,4 @@
             <p>Regards,</p>
         </div>
     </template>
-</odoo>
+</eden>

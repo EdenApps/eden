@@ -1,6 +1,6 @@
 import { useService } from "@web/core/utils/hooks";
 
-import { Component, useState } from "@odoo/owl";
+import { Component, useState } from "@eden/owl";
 import { Thread } from "./thread_model";
 import { _t } from "@web/core/l10n/translation";
 

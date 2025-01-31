@@ -1,4 +1,4 @@
-/** @odoo-module alias=@mail/../tests/helpers/mock_server/models/mail_tracking_value default=false */
+/** @eden-module alias=@mail/../tests/helpers/mock_server/models/mail_tracking_value default=false */
 
 import { patch } from "@web/core/utils/patch";
 import { capitalize } from "@web/core/utils/strings";

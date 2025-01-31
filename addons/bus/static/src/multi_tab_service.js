@@ -1,8 +1,8 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { registry } from "@web/core/registry";
 import { browser } from "@web/core/browser/browser";
-import { EventBus } from "@odoo/owl";
+import { EventBus } from "@eden/owl";
 
 let multiTabId = 0;
 /**

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<eden noupdate="1">
 
     <record id="event_sponsor_rule_share" model="ir.rule">
         <field name="name">Event Sponsor: public/portal sponsor or published only</field>
@@ -12,4 +12,4 @@
         <field name="perm_unlink" eval="False"/>
     </record>
 
-</odoo>
+</eden>

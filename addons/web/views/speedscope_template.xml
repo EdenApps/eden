@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="view_speedscope_index">
         &lt;!DOCTYPE html&gt;
         <html lang="en">
             <head>
                 <meta charset="UTF-8"/>
-                <title>Speedscope for odoo</title>
+                <title>Speedscope for eden</title>
                 <script t-if="profile">window.location.hash="#profileURL=<t t-esc="url_root"/>web/content/ir.profile/<t t-esc="profile.id"/>/speedscope"</script>
                 <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet"/>
                 <link rel="stylesheet"
@@ -23,4 +23,4 @@
             </body>
         </html>
     </template>
-</odoo>
+</eden>

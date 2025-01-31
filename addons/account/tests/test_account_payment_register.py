@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.exceptions import UserError
-from odoo.tests import tagged, users
-from odoo import fields, Command
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
+from eden.exceptions import UserError
+from eden.tests import tagged, users
+from eden import fields, Command
 from dateutil.relativedelta import relativedelta
 
-from odoo import fields, Command
-from odoo.exceptions import UserError
-from odoo.tests import tagged, Form
-from odoo.tests.common import Like
+from eden import fields, Command
+from eden.exceptions import UserError
+from eden.tests import tagged, Form
+from eden.tests.common import Like
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
 
 
 @tagged('post_install', '-at_install')

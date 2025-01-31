@@ -1,4 +1,4 @@
-import { reactive } from "@odoo/owl";
+import { reactive } from "@eden/owl";
 import { rpc } from "@web/core/network/rpc";
 
 export function assignDefined(obj, data, keys = Object.keys(data)) {

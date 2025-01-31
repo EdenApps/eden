@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <record id="stock_storage_category_high_small" model="stock.storage.category">
             <field name="name">High frequency - Small</field>
@@ -26,4 +26,4 @@
             <field name="max_weight">3000</field>
         </record>
     </data>
-</odoo>
+</eden>

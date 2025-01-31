@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
         <template id="providers" name="OAuth Providers">
             <t t-if="len(providers) &gt; 0">
                 <em t-attf-class="d-block text-center text-muted small my-#{len(providers) if len(providers) &lt; 3 else 3}">- or -</em>
@@ -29,4 +29,4 @@
                 <t t-call="auth_oauth.providers"/>
             </xpath>
         </template>
-</odoo>
+</eden>

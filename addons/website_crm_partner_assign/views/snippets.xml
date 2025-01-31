@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="snippet_options" inherit_id="website.snippet_options" name="Crm Partner Assign Snippet Options">
     <xpath expr="." position="inside">
@@ -22,4 +22,4 @@
     </xpath>
 </template>
 
-</odoo>
+</eden>

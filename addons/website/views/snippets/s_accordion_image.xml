@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_accordion_image" name="Accordion Image">
     <section class="s_accordion_image pt56 pb56 o_cc o_cc2">
@@ -21,4 +21,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

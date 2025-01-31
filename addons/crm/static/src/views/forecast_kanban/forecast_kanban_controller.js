@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { crmKanbanView } from "@crm/views/crm_kanban/crm_kanban_view";
 

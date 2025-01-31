@@ -1,4 +1,4 @@
-/** @odoo-module alias=@bus/../tests/helpers/mock_server/models/ir_websocket default=false */
+/** @eden-module alias=@bus/../tests/helpers/mock_server/models/ir_websocket default=false */
 
 import { patch } from "@web/core/utils/patch";
 import { MockServer } from "@web/../tests/helpers/mock_server";

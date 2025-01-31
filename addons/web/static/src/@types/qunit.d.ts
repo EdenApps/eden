@@ -1,6 +1,6 @@
 // Type definitions for QUnit v2.9.2
 
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 // Project: http://qunitjs.com/
 // Definitions by: James Bracy <https://github.com/waratuman>
@@ -11,11 +11,11 @@ import { Component } from "@odoo/owl";
 //                 James C. Davis <https://github.com/jamescdavis>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
-// Updated for odoo.
+// Updated for eden.
 
 interface Assert {
     // -----------------------------------------------------------------------------
-    // Start of Odoo added asserts
+    // Start of Eden added asserts
     // -----------------------------------------------------------------------------
     /**
      * Checks that the target contains exactly n matches for the selector.
@@ -87,7 +87,7 @@ interface Assert {
     isNotVisible(el:HTMLElement , msg?: string): void;
 
     // -----------------------------------------------------------------------------
-    // End of Odoo added asserts
+    // End of Eden added asserts
     // -----------------------------------------------------------------------------
   
     /**

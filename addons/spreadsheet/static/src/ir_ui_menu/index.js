@@ -1,7 +1,7 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { registry } from "@web/core/registry";
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@eden/o-spreadsheet";
 
 import { IrMenuPlugin } from "./ir_ui_menu_plugin";
 
@@ -12,7 +12,7 @@ import {
     parseIrMenuXmlUrl,
     parseViewLink,
     parseIrMenuIdLink,
-} from "./odoo_menu_link_cell";
+} from "./eden_menu_link_cell";
 import { _t } from "@web/core/l10n/translation";
 import { sprintf } from "@web/core/utils/strings";
 import { navigateTo } from "../actions/helpers";
@@ -25,7 +25,7 @@ corePluginRegistry.add("ir_ui_menu_plugin", IrMenuPlugin);
 const LINK_ERROR = "#LINK";
 errorTypes.add(LINK_ERROR);
 
-class BadOdooLinkError extends EvaluationError {
+class BadEdenLinkError extends EvaluationError {
     constructor(menuId) {
         super(
             sprintf(_t("Menu %s not found. You may not have the required access rights."), menuId),
@@ -40,20 +40,20 @@ export const spreadsheetLinkMenuCellService = {
         function _getIrMenuByXmlId(xmlId) {
             const menu = env.services.menu.getAll().find((menu) => menu.xmlid === xmlId);
             if (!menu) {
-                throw new BadOdooLinkError(xmlId);
+                throw new BadEdenLinkError(xmlId);
             }
             return menu;
         }
 
         urlRegistry
-            .add("OdooMenuIdLink", {
+            .add("EdenMenuIdLink", {
                 sequence: 65,
                 match: isMarkdownIrMenuIdUrl,
                 createLink(url, label) {
                     const menuId = parseIrMenuIdLink(url);
                     const menu = env.services.menu.getMenu(menuId);
                     if (!menu) {
-                        throw new BadOdooLinkError(menuId);
+                        throw new BadEdenLinkError(menuId);
                     }
                     return {
                         url,
@@ -72,7 +72,7 @@ export const spreadsheetLinkMenuCellService = {
                     env.services.action.doAction(menu.actionID);
                 },
             })
-            .add("OdooMenuXmlLink", {
+            .add("EdenMenuXmlLink", {
                 sequence: 66,
                 match: isIrMenuXmlUrl,
                 createLink(url, label) {
@@ -97,7 +97,7 @@ export const spreadsheetLinkMenuCellService = {
                     env.services.action.doAction(menu.actionID);
                 },
             })
-            .add("OdooViewLink", {
+            .add("EdenViewLink", {
                 sequence: 67,
                 match: isMarkdownViewUrl,
                 createLink(url, label) {

@@ -1,12 +1,12 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import ast
 from collections import defaultdict
 
 from dateutil.relativedelta import relativedelta
-from odoo import api, fields, models, SUPERUSER_ID, _
-from odoo.tools import SQL
-from odoo.tools.convert import convert_file
+from eden import api, fields, models, SUPERUSER_ID, _
+from eden.tools import SQL
+from eden.tools.convert import convert_file
 
 
 class Job(models.Model):

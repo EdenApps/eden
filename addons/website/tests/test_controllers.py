@@ -1,19 +1,19 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 
 from werkzeug.urls import url_encode
 
 from unittest.mock import patch, Mock
-from odoo import tests
-from odoo.tools.misc import mute_logger, submap
-from odoo.addons.website.controllers.main import Website
+from eden import tests
+from eden.tools.misc import mute_logger, submap
+from eden.addons.website.controllers.main import Website
 
 
 @tests.tagged('post_install', '-at_install')
 class TestControllers(tests.HttpCase):
 
-    @mute_logger('odoo.addons.http_routing.models.ir_http', 'odoo.http')
+    @mute_logger('eden.addons.http_routing.models.ir_http', 'eden.http')
     def test_last_created_pages_autocompletion(self):
         self.authenticate("admin", "admin")
         Page = self.env['website.page']
@@ -67,7 +67,7 @@ class TestControllers(tests.HttpCase):
             resp = self.url_open(f'/@{url}')
             backend_params = url_encode(dict(path=url))
             self.assertURLEqual(
-                resp.url, f'/odoo/action-website.website_preview?{backend_params}',
+                resp.url, f'/eden/action-website.website_preview?{backend_params}',
                 "Internal user should have landed in the backend")
 
     def test_03_website_image(self):

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from markupsafe import Markup
-from odoo import api, fields, models, _
-from odoo.tools.mail import is_html_empty
+from eden import api, fields, models, _
+from eden.tools.mail import is_html_empty
 
 
 class CrmLeadLost(models.TransientModel):

@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.http import route
-from odoo.addons.mail.controllers.link_preview import LinkPreviewController
-from odoo.addons.im_livechat.tools.misc import force_guest_env
+from eden.http import route
+from eden.addons.mail.controllers.link_preview import LinkPreviewController
+from eden.addons.im_livechat.tools.misc import force_guest_env
 
 
 class LivechatLinkPreviewController(LinkPreviewController):

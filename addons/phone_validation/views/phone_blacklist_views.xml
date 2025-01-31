@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
     <record id="phone_blacklist_view_tree" model="ir.ui.view">
         <field name="name">phone.blacklist.view.list</field>
         <field name="model">phone.blacklist</field>
@@ -72,4 +72,4 @@
         sequence="3"
         action="phone_blacklist_action"/>
 
-</odoo>
+</eden>

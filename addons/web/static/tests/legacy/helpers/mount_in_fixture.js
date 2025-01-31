@@ -1,6 +1,6 @@
-/** @odoo-module alias=@web/../tests/helpers/mount_in_fixture default=false**/
+/** @eden-module alias=@web/../tests/helpers/mount_in_fixture default=false**/
 
-import { App, Component, xml } from "@odoo/owl";
+import { App, Component, xml } from "@eden/owl";
 import { registerCleanup } from "@web/../tests/helpers/cleanup";
 import { makeTestEnv } from "@web/../tests/helpers/mock_env";
 import { mocks } from "@web/../tests/helpers/mock_services";

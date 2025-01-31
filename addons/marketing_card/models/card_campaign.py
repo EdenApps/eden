@@ -1,6 +1,6 @@
 import base64
 
-from odoo import _, api, fields, models, exceptions
+from eden import _, api, fields, models, exceptions
 
 from .card_template import TEMPLATE_DIMENSIONS
 

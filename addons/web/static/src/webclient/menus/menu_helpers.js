@@ -34,7 +34,7 @@ export function computeAppsAndMenuItems(menuTree) {
             id: menuItem.id,
             xmlid: menuItem.xmlid,
             actionID: menuItem.actionID,
-            href: `/odoo/${menuItem.actionPath || "action-" + menuItem.actionID}`,
+            href: `/eden/${menuItem.actionPath || "action-" + menuItem.actionID}`,
             appID: menuItem.appID,
         };
         if (isApp) {

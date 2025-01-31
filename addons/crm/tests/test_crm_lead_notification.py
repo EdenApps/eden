@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.crm.tests.common import TestCrmCommon
-from odoo.tests import tagged, users
-from odoo.tools import formataddr, mute_logger
+from eden.addons.crm.tests.common import TestCrmCommon
+from eden.tests import tagged, users
+from eden.tools import formataddr, mute_logger
 
 
 @tagged('mail_thread', 'mail_gateway')
@@ -74,7 +74,7 @@ class NewLeadNotification(TestCrmCommon):
             }, {
               'name': 'Test Suggestion (partner no email with cc email)',
               'partner_id': partner_no_email.id,
-              'email_cc': 'test_cc@odoo.com',
+              'email_cc': 'test_cc@eden.com',
               'user_id': self.user_sales_leads.id
             }
         ])
@@ -135,7 +135,7 @@ class NewLeadNotification(TestCrmCommon):
                 [
                     {
                       'name': False,
-                      'email': 'test_cc@odoo.com',
+                      'email': 'test_cc@eden.com',
                       'lang': None,
                       'reason': 'CC Email',
                       'create_values': {}
@@ -304,7 +304,7 @@ class NewLeadNotification(TestCrmCommon):
         lead_user = lead.with_user(self.user_sales_manager)
         self.assertTrue(lead_user.message_needaction)
 
-    @mute_logger('odoo.addons.mail.models.mail_thread')
+    @mute_logger('eden.addons.mail.models.mail_thread')
     def test_new_lead_from_email_multicompany(self):
         company0 = self.env.company
         company1 = self.company_2

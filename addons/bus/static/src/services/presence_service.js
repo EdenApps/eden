@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @eden-module **/
 
-import { EventBus } from "@odoo/owl";
+import { EventBus } from "@eden/owl";
 import { browser } from "@web/core/browser/browser";
 import { registry } from "@web/core/registry";
 
@@ -8,7 +8,7 @@ export const presenceService = {
     start(env) {
         const LOCAL_STORAGE_PREFIX = "presence";
         const bus = new EventBus();
-        let isOdooFocused = true;
+        let isEdenFocused = true;
         let lastPresenceTime =
             browser.localStorage.getItem(`${LOCAL_STORAGE_PREFIX}.lastPresence`) ||
             luxon.DateTime.now().ts;
@@ -25,17 +25,17 @@ export const presenceService = {
             } catch {
                 // noop
             }
-            isOdooFocused = isFocused;
-            browser.localStorage.setItem(`${LOCAL_STORAGE_PREFIX}.focus`, isOdooFocused);
-            if (isOdooFocused) {
+            isEdenFocused = isFocused;
+            browser.localStorage.setItem(`${LOCAL_STORAGE_PREFIX}.focus`, isEdenFocused);
+            if (isEdenFocused) {
                 lastPresenceTime = luxon.DateTime.now().ts;
-                env.bus.trigger("window_focus", isOdooFocused);
+                env.bus.trigger("window_focus", isEdenFocused);
             }
         }
 
         function onStorage({ key, newValue }) {
             if (key === `${LOCAL_STORAGE_PREFIX}.focus`) {
-                isOdooFocused = JSON.parse(newValue);
+                isEdenFocused = JSON.parse(newValue);
                 env.bus.trigger("window_focus", newValue);
             }
             if (key === `${LOCAL_STORAGE_PREFIX}.lastPresence`) {
@@ -55,8 +55,8 @@ export const presenceService = {
             getLastPresence() {
                 return lastPresenceTime;
             },
-            isOdooFocused() {
-                return isOdooFocused;
+            isEdenFocused() {
+                return isEdenFocused;
             },
             getInactivityPeriod() {
                 return luxon.DateTime.now().ts - this.getLastPresence();

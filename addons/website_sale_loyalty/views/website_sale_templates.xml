@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="sale_coupon_result" inherit_id="website_sale.coupon_form">
         <xpath expr="//form[@name='coupon_code']//input[@name='promo']" position="attributes">
             <attribute name="placeholder">Gift card or discount code...</attribute>
@@ -196,4 +196,4 @@
             <t t-call="sale_loyalty.sale_purchased_gift_card"/>
         </xpath>
     </template>
-</odoo>
+</eden>

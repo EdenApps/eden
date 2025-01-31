@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <!-- SLIDE.CHANNEL VIEWS -->
         <record model="ir.ui.view" id="view_slide_channel_form">
@@ -370,4 +370,4 @@
         </record>
 
     </data>
-</odoo>
+</eden>

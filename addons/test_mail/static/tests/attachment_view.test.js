@@ -1,7 +1,7 @@
 import { defineTestMailModels } from "@test_mail/../tests/test_mail_test_helpers";
-import { beforeEach, describe, test, expect } from "@odoo/hoot";
-import { queryOne, waitUntil } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { beforeEach, describe, test, expect } from "@eden/hoot";
+import { queryOne, waitUntil } from "@eden/hoot-dom";
+import { animationFrame } from "@eden/hoot-mock";
 import {
     click,
     contains,
@@ -132,7 +132,7 @@ test("Attachment view popout controls test", async () => {
 });
 
 test.skip("Attachment view / chatter popout across multiple records test", async () => {
-    // skip because test has race conditions: https://runbot.odoo.com/odoo/runbot.build.error/109795
+    // skip because test has race conditions: https://runbot.edencloud.us/eden/runbot.build.error/109795
     const pyEnv = await startServer();
     const recordIds = pyEnv["mail.test.simple.main.attachment"].create([
         {

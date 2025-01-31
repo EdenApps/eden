@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # pylint: disable=bad-whitespace
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.tests import Form, tagged
-from odoo import fields, Command
-from odoo.exceptions import UserError
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
+from eden.tests import Form, tagged
+from eden import fields, Command
+from eden.exceptions import UserError
 
 from collections import defaultdict
 from unittest.mock import patch

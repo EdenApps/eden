@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 import logging
 
-from odoo import http, _
-from odoo.http import request
-from odoo.osv.expression import AND
-from odoo.tools import format_amount
-from odoo.addons.account.controllers.portal import PortalAccount
+from eden import http, _
+from eden.http import request
+from eden.osv.expression import AND
+from eden.tools import format_amount
+from eden.addons.account.controllers.portal import PortalAccount
 from datetime import timedelta, datetime
 
 _logger = logging.getLogger(__name__)
@@ -54,7 +54,7 @@ class PosController(PortalAccount):
             pos_session = request.env['pos.session'].sudo().search(domain, limit=1)
 
         if not pos_config or not pos_config.active or pos_config.has_active_session and not pos_session:
-            return request.redirect('/odoo/action-point_of_sale.action_client_pos_menu')
+            return request.redirect('/eden/action-point_of_sale.action_client_pos_menu')
 
         if not pos_config.has_active_session:
             pos_config.open_ui()

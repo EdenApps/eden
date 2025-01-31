@@ -1,7 +1,7 @@
 /** @ts-check */
-import { mockDate } from "@odoo/hoot-mock";
+import { mockDate } from "@eden/hoot-mock";
 import { defineSpreadsheetModels } from "@spreadsheet/../tests/helpers/data";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 
 import { globalFiltersFieldMatchers } from "@spreadsheet/global_filters/plugins/global_filters_core_plugin";
 import { createSpreadsheetWithChart } from "@spreadsheet/../tests/helpers/chart";

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data noupdate="1">
+<eden><data noupdate="1">
 
     <!-- CHANNEL 6: DIY Furniture -->
     <!-- ================================================== -->
@@ -87,4 +87,4 @@
         ref('sale_order_course_3'),
     ]]"/>
 
-</data></odoo>
+</data></eden>

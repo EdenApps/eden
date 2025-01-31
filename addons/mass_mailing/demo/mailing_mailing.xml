@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <record id="mass_mail_attach_1" model="ir.attachment">
             <field name="datas">bWlncmF0aW9uIHRlc3Q=</field>
@@ -88,7 +88,7 @@
     <div align="center" class="container" style="width:100%;border-collapse:separate;">
         <div class="row">
             <div align="center" style="padding:16px 0 16px 0;" class="col pt16 pb16">
-                Powered by <a target="_blank" href="https://www.odoo.com" style="text-decoration:none;background-color:transparent;color:#875A7B;">Odoo</a>
+                Powered by <a target="_blank" href="https://www.edencloud.us" style="text-decoration:none;background-color:transparent;color:#875A7B;">Eden</a>
             </div>
         </div>
     </div>
@@ -99,4 +99,4 @@
         <!-- Generate link tracker information from it -->
         <function model="mailing.mailing" name="convert_links" eval="[ref('mass_mailing.mass_mail_1')]"/>
     </data>
-</odoo>
+</eden>

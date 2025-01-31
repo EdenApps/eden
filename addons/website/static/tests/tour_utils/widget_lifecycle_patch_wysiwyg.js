@@ -1,9 +1,9 @@
-/** @odoo-module **/
+/** @eden-module **/
 
-import { onMounted, onWillRender } from "@odoo/owl";
+import { onMounted, onWillRender } from "@eden/owl";
 import { patch } from "@web/core/utils/patch";
 
-odoo.loader.bus.addEventListener("module-started", (e) => {
+eden.loader.bus.addEventListener("module-started", (e) => {
     if (e.detail.moduleName !== "@website/components/wysiwyg_adapter/wysiwyg_adapter") {
         return;
     }

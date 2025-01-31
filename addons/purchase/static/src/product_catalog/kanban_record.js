@@ -1,10 +1,10 @@
-/** @odoo-module */
+/** @eden-module */
 import { ProductCatalogKanbanRecord } from "@product/product_catalog/kanban_record";
 import { ProductCatalogPurchaseOrderLine } from "./purchase_order_line/purchase_order_line";
 import { rpc } from "@web/core/network/rpc";
 import { patch } from "@web/core/utils/patch";
 import { useService } from "@web/core/utils/hooks";
-import { useSubEnv } from "@odoo/owl";
+import { useSubEnv } from "@eden/owl";
 
 patch(ProductCatalogKanbanRecord.prototype, {
     setup() {

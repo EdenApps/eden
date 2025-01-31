@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<odoo>
+<eden>
 
     <record id="view_holidays_status_filter" model="ir.ui.view">
         <field name="name">hr.leave.type.filter</field>
@@ -146,4 +146,4 @@
         <field name="view_mode">list,kanban,form</field>
     </record>
 
-</odoo>
+</eden>

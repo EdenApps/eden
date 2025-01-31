@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.tests import Form, HttpCase, new_test_user, tagged
+from eden import Command
+from eden.tests import Form, HttpCase, new_test_user, tagged
 
 from .common import TestSaleProjectCommon
 
@@ -105,10 +105,10 @@ class TestSaleProject(HttpCase, TestSaleProjectCommon):
         })
 
     def test_task_create_sol_ui(self):
-        self.start_tour('/odoo', 'task_create_sol_tour', login='admin')
+        self.start_tour('/eden', 'task_create_sol_tour', login='admin')
 
     def test_project_create_sol_ui(self):
-        self.start_tour('/odoo', 'project_create_sol_tour', login='admin')
+        self.start_tour('/eden', 'project_create_sol_tour', login='admin')
 
     def test_sale_order_with_project_task(self):
         SaleOrder = self.env['sale.order'].with_context(tracking_disable=True)

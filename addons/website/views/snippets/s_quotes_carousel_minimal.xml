@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_quotes_carousel_minimal" name="Quotes Minimal">
     <section class="s_quotes_carousel_wrapper" data-vxml="001" data-vcss="002">
@@ -84,4 +84,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

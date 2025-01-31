@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.osv.expression import OR
+from eden.osv.expression import OR
 
-from odoo.addons.payment.tests.common import PaymentCommon
+from eden.addons.payment.tests.common import PaymentCommon
 
 
 class PaymentCustomCommon(PaymentCommon):

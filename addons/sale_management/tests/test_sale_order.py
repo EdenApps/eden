@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from itertools import chain
 
-from odoo.fields import Command
-from odoo.tests import Form, tagged
+from eden.fields import Command
+from eden.tests import Form, tagged
 
-from odoo.addons.sale_management.tests.common import SaleManagementCommon
+from eden.addons.sale_management.tests.common import SaleManagementCommon
 
 
 @tagged('-at_install', 'post_install')
@@ -508,7 +508,7 @@ class TestSaleOrder(SaleManagementCommon):
         ]
         self.env['ir.default'].set('sale.order', 'sale_order_template_id', quotation_template.id)
         try:
-            with self.assertLogs('odoo.tests.form.onchange') as log_catcher:
+            with self.assertLogs('eden.tests.form.onchange') as log_catcher:
                 Form(self.env['sale.order'])
         except AssertionError:
             pass

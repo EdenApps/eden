@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
 
         <record id="base.res_partner_3" model="res.partner">
             <field name="grade_id" ref="res_partner_grade_data_silver"/>
@@ -46,4 +46,4 @@
             <field name="partner_longitude">-120.8279940</field>
             <field name="assigned_partner_id" ref="base.res_partner_2"/>
         </record>
-</odoo>
+</eden>

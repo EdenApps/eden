@@ -10,7 +10,7 @@ import {
     onWillStart,
     onWillUpdateProps,
     xml,
-} from "@odoo/owl";
+} from "@eden/owl";
 import { nextTick } from "@web/../tests/legacy/legacy_tests/helpers/test_utils";
 import { makeTestEnv } from "@web/../tests/legacy/helpers/mock_env";
 

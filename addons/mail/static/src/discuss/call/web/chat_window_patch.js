@@ -2,7 +2,7 @@ import { ChatWindow } from "@mail/core/common/chat_window";
 
 import { patch } from "@web/core/utils/patch";
 
-import { useEffect } from "@odoo/owl";
+import { useEffect } from "@eden/owl";
 
 patch(ChatWindow.prototype, {
     setup(...args) {

@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { makeTestEnv } from "@web/../tests/helpers/mock_env";
 import {
@@ -41,7 +41,7 @@ async function createFileInput({ mockPost, mockAdd, props }) {
 
 QUnit.module("Project", ({ beforeEach }) => {
     beforeEach(() => {
-        patchWithCleanup(odoo, { csrf_token: "dummy" });
+        patchWithCleanup(eden, { csrf_token: "dummy" });
 
         target = getFixture();
     });

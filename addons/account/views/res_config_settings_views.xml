@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <record id="open_account_charts_modules" model="ir.actions.act_window">
             <field name="name">Chart Templates</field>
@@ -194,7 +194,7 @@
                             <setting id="show_purchase_receipts" help="Activate to create purchase receipt">
                                 <field name="group_show_purchase_receipts"/>
                             </setting>
-                            <setting id="autopost_bills" help="After importing three bills for a vendor without making changes, Odoo will suggest automatically validating future bills. You can toggle this feature at any time in the vendor's profile.">
+                            <setting id="autopost_bills" help="After importing three bills for a vendor without making changes, Eden will suggest automatically validating future bills. You can toggle this feature at any time in the vendor's profile.">
                                 <field name="autopost_bills"/>
                             </setting>
                         </block>
@@ -322,4 +322,4 @@
         </record>
 
     </data>
-</odoo>
+</eden>

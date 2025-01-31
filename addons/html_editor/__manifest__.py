@@ -9,8 +9,8 @@ Html Editor
 This addon provides an extensible, maintainable editor.
     """,
 
-    'author': "odoo",
-    'website': "https://www.odoo.com",
+    'author': "eden",
+    'website': "https://www.edencloud.us",
     'version': '1.0',
     'category': 'Hidden',
     'depends': ['base', 'bus', 'web'],

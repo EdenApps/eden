@@ -1,8 +1,8 @@
-/** @odoo-module **/
+/** @eden-module **/
 import { rpc } from "@web/core/network/rpc";
 import { registry } from "@web/core/registry";
 import { Layout } from "@web/search/layout";
-import { Component, useEffect, useState } from "@odoo/owl";
+import { Component, useEffect, useState } from "@eden/owl";
 import { KeepLast } from "@web/core/utils/concurrency";
 import { DocumentationLink } from "@web/views/widgets/documentation_link/documentation_link";
 

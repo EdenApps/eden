@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 <data>
     <!-- QUESTIONS -->
     <record model="ir.ui.view" id="survey_question_form">
@@ -413,4 +413,4 @@
         parent="survey_menu_questions"
         sequence="4"/>
 </data>
-</odoo>
+</eden>

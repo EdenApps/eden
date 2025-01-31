@@ -9,7 +9,7 @@ import { MainComponentsContainer } from "@web/core/main_components_container";
 import { browser } from '@web/core/browser/browser';
 import { _t } from "@web/core/l10n/translation";
 import { jsToPyLocale, pyToJsLocale } from "@web/core/l10n/utils";
-import { App, Component, whenReady } from "@odoo/owl";
+import { App, Component, whenReady } from "@eden/owl";
 import { RPCError } from '@web/core/network/rpc';
 
 const { Settings } = luxon;
@@ -206,7 +206,7 @@ export const PublicRoot = publicWidget.Widget.extend({
      * context to RPCs.
      *
      * @private
-     * @param {OdooEvent} event
+     * @param {EdenEvent} event
      */
     _onCallService: function (ev) {
         const payload = ev.data;
@@ -219,7 +219,7 @@ export const PublicRoot = publicWidget.Widget.extend({
      * Called when someone asked for the global public context.
      *
      * @private
-     * @param {OdooEvent} ev
+     * @param {EdenEvent} ev
      */
     _onContextGet: function (ev) {
         if (ev.data.extra) {
@@ -232,7 +232,7 @@ export const PublicRoot = publicWidget.Widget.extend({
      * Checks information about the page main object.
      *
      * @private
-     * @param {OdooEvent} ev
+     * @param {EdenEvent} ev
      */
     _onMainObjectRequest: function (ev) {
         var repr = $('html').data('main-object');
@@ -247,7 +247,7 @@ export const PublicRoot = publicWidget.Widget.extend({
      * (re)started.
      *
      * @private
-     * @param {OdooEvent} ev
+     * @param {EdenEvent} ev
      */
     _onWidgetsStartRequest: function (ev) {
         this._startWidgets(ev.data.$target, ev.data.options)
@@ -266,7 +266,7 @@ export const PublicRoot = publicWidget.Widget.extend({
      * stopped.
      *
      * @private
-     * @param {OdooEvent} ev
+     * @param {EdenEvent} ev
      */
     _onWidgetsStopRequest: function (ev) {
         this._stopWidgets(ev.data.$target);
@@ -331,7 +331,7 @@ export async function createPublicRoot(RootWidget) {
         app.mount(document.body),
         publicRoot.attachTo(document.body),
     ]);
-    odoo.__WOWL_DEBUG__ = { root };
+    eden.__WOWL_DEBUG__ = { root };
     return publicRoot;
 }
 

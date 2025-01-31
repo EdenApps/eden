@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
+import { expect, test } from "@eden/hoot";
+import { animationFrame } from "@eden/hoot-mock";
 import { getCellValue } from "@spreadsheet/../tests/helpers/getters";
 import { makeSpreadsheetMockEnv } from "@spreadsheet/../tests/helpers/model";
 import { waitForDataLoaded } from "@spreadsheet/helpers/model";
@@ -219,7 +219,7 @@ test("async formulas are correctly evaluated", async () => {
             {
                 id: "sheet1",
                 cells: {
-                    A1: { content: `=ODOO.CURRENCY.RATE("EUR","USD")` }, // an async formula
+                    A1: { content: `=EDEN.CURRENCY.RATE("EUR","USD")` }, // an async formula
                 },
             },
         ],
@@ -288,7 +288,7 @@ test("default currency format", async () => {
                     data: {},
                     revisions: [],
                     default_currency: {
-                        code: "Odoo",
+                        code: "Eden",
                         symbol: "θ",
                         position: "after",
                         decimalPlaces: 2,

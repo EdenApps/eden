@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-from odoo.tests import tagged, common
+# Part of Eden. See LICENSE file for full copyright and licensing details.
+from eden.tests import tagged, common
 
 
 class TestMatrixCommon(common.HttpCase):

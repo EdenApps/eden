@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, models, Command
-from odoo.tools import html2plaintext
+from eden import api, models, Command
+from eden.tools import html2plaintext
 
 
 class Task(models.Model):

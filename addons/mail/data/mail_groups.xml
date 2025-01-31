@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 <data noupdate="1">
     <record model="ir.module.category" id="module_category_canned_response">
         <field name="name">Canned Responses</field>
@@ -21,8 +21,8 @@
 
     <!-- Group used for the notification_type field of res.users -->
     <record id="group_mail_notification_type_inbox" model="res.groups">
-        <field name="name">Receive notifications in Odoo</field>
+        <field name="name">Receive notifications in Eden</field>
         <field name="category_id" ref="base.module_category_hidden"/>
     </record>
 </data>
-</odoo>
+</eden>

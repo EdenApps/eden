@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="mailing_trace_report_sms_view_tree" model="ir.ui.view">
         <field name="name">mailing.sms.trace.report.view.list</field>
         <field name="model">mailing.trace.report</field>
@@ -81,4 +81,4 @@
         <field name="act_window_id" ref="mailing_trace_report_action_sms"/>
         <field name="view_id" ref="mailing_trace_report_sms_view_tree"/>
     </record>
-</odoo>
+</eden>

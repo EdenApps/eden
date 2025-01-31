@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<odoo><data>
+<eden><data>
 
     <record id="event_type_booth_view_form_from_type" model="ir.ui.view">
         <field name="name">event.type.booth.view.form.from.type</field>
@@ -82,4 +82,4 @@
         </field>
     </record>
 
-</data></odoo>
+</data></eden>

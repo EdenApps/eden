@@ -3,8 +3,8 @@
 export const CONFIG_SUFFIX = ".hoot";
 export const TEST_SUFFIX = ".test";
 
-odoo.define = {
+eden.define = {
     ["define (mocked)"](name, dependencies, factory) {
-        return odoo.loader.define(name, dependencies, factory, !name.endsWith(CONFIG_SUFFIX));
+        return eden.loader.define(name, dependencies, factory, !name.endsWith(CONFIG_SUFFIX));
     },
 }["define (mocked)"];

@@ -1,5 +1,5 @@
-import { after, expect } from "@odoo/hoot";
-import { Deferred } from "@odoo/hoot-dom";
+import { after, expect } from "@eden/hoot";
+import { Deferred } from "@eden/hoot-dom";
 
 /**
  * @typedef {{

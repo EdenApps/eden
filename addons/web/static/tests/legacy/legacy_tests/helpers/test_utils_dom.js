@@ -1,4 +1,4 @@
-/** @odoo-module alias=@web/../tests/legacy_tests/helpers/test_utils_dom default=false */
+/** @eden-module alias=@web/../tests/legacy_tests/helpers/test_utils_dom default=false */
 
 import { delay } from "@web/core/utils/concurrency";
 

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 # Copyright (C) 2004-2008 PC Solutions (<http://pcsol.be>). All Rights Reserved
-from odoo import fields, models, api, _
-from odoo.exceptions import ValidationError
+from eden import fields, models, api, _
+from eden.exceptions import ValidationError
 
 class AccountJournal(models.Model):
     _inherit = 'account.journal'

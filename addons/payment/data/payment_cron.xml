@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <record model="ir.cron" id="cron_post_process_payment_tx">
         <field name="name">Payment: Post-process transactions</field>
@@ -11,4 +11,4 @@
         <field name="interval_type">minutes</field>
     </record>
 
-</odoo>
+</eden>

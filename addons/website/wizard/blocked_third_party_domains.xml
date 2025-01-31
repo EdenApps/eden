@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <record id="view_edit_third_party_domains" model="ir.ui.view">
     <field name="name">Block 3rd-party service domains</field>
@@ -25,4 +25,4 @@
     </field>
 </record>
 
-</odoo>
+</eden>

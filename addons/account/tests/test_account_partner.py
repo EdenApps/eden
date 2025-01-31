@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.tests import tagged
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
+from eden.tests import tagged
 from freezegun import freeze_time
 
 

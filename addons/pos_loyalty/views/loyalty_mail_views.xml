@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
     <record id="loyalty_mail_view_tree_inherit_pos_loyalty" model="ir.ui.view">
         <field name="name">loyalty.mail.view.list.inherit.pos.loyalty</field>
         <field name="model">loyalty.mail</field>
@@ -10,4 +10,4 @@
             </field>
         </field>
     </record>
-</odoo>
+</eden>

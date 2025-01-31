@@ -1,8 +1,8 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { CharField, charField } from "@web/views/fields/char/char_field";
 import { registry } from "@web/core/registry";
-import { useEffect, useRef } from "@odoo/owl";
+import { useEffect, useRef } from "@eden/owl";
 
 class DescriptionPageField extends CharField {
     static template = "survey.DescriptionPageField";

@@ -1,7 +1,7 @@
-/** @odoo-module */
+/** @eden-module */
 // @ts-check
 
-import { EvaluationError } from "@odoo/o-spreadsheet";
+import { EvaluationError } from "@eden/o-spreadsheet";
 import { LoadingDataError, isLoadingError } from "../o_spreadsheet/errors";
 
 /**

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record model="ir.ui.view" id="res_partner_activation_form">
         <field name="name">res.partner.activation.form</field>
         <field name="model">res.partner.activation</field>
@@ -49,4 +49,4 @@
            </p>
         </field>
     </record>
-</odoo>
+</eden>

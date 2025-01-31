@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { contains } from "@web/../tests/utils";
 import { getDataURLFromFile } from "@web/core/utils/urls";

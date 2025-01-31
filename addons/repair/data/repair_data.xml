@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<eden noupdate="1">
     <!--
     Given that data are loaded before update of warehouses through the post_init_hook,
     we manually create the 'Repairs' Operation Type in warehouse0 here such that it's available
@@ -21,4 +21,4 @@
     <record id='stock.warehouse0' model='stock.warehouse'>
         <field name='repair_type_id' ref='repair.picking_type_warehouse0_repair'/>
     </record>
-</odoo>
+</eden>

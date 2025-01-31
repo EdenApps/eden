@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-from odoo.tests.common import BaseCase
-from odoo.addons.google_calendar.utils.google_calendar import GoogleEvent
+# Part of Eden. See LICENSE file for full copyright and licensing details.
+from eden.tests.common import BaseCase
+from eden.addons.google_calendar.utils.google_calendar import GoogleEvent
 
 
 class TestGoogleEvent(BaseCase):

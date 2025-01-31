@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="report_employee_cv">
         <t t-set="full_width" t-value="True"/>
         <t t-call="web.basic_layout">
@@ -84,7 +84,7 @@
                             </div>
                         </div>
                         <div class="o_main_panel_resume_description ps-5 w-auto">
-                            <p t-field="resume_line.description" data-oe-demo="Odoo India pvt. Ltd"/>
+                            <p t-field="resume_line.description" data-oe-demo="Eden India pvt. Ltd"/>
                         </div>
                     </t>
                 </div>
@@ -147,4 +147,4 @@
         </div>
         <div class="oe_structure"></div>
     </template>
-</odoo>
+</eden>

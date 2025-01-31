@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 from lxml.builder import E
 
-from odoo import api, fields, models, _
-from odoo.exceptions import ValidationError
-from odoo.osv.expression import OR
+from eden import api, fields, models, _
+from eden.exceptions import ValidationError
+from eden.osv.expression import OR
 
 
 class AnalyticPlanFields(models.AbstractModel):

@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
-from odoo.addons.point_of_sale.tests.common_setup_methods import setup_product_combo_items
-from odoo.addons.point_of_sale.tests.common import archive_products
-from odoo.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
-from odoo import Command
+import eden.tests
+from eden.addons.point_of_sale.tests.common_setup_methods import setup_product_combo_items
+from eden.addons.point_of_sale.tests.common import archive_products
+from eden.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
+from eden import Command
 
-@odoo.tests.tagged('post_install', '-at_install')
+@eden.tests.tagged('post_install', '-at_install')
 class TestFrontendCommon(TestPointOfSaleHttpCommon):
 
     @classmethod

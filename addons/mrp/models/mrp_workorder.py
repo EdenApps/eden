@@ -1,13 +1,13 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 from collections import defaultdict
 import json
 
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools import float_compare, format_datetime, float_is_zero, float_round
+from eden import api, fields, models, _
+from eden.exceptions import UserError, ValidationError
+from eden.tools import float_compare, format_datetime, float_is_zero, float_round
 
 
 class MrpWorkorder(models.Model):

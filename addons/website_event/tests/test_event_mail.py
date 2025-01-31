@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
 
-from odoo.addons.mail.tests.common import  MailCommon
-from odoo.tests import tagged
+from eden.addons.mail.tests.common import  MailCommon
+from eden.tests import tagged
 
 @tagged('post_install', '-at_install')
 class TestMail(MailCommon):

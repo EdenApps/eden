@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from odoo import fields, models, api
-from odoo.tools import float_is_zero
+from eden import fields, models, api
+from eden.tools import float_is_zero
 
 
 class AccountMove(models.Model):

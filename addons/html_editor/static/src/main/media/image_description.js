@@ -1,4 +1,4 @@
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 import { Dialog } from "@web/core/dialog/dialog";
 import { useService } from "@web/core/utils/hooks";
 import { toolbarButtonProps } from "@html_editor/main/toolbar/toolbar";

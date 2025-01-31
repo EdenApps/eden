@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data noupdate="0">
+<eden><data noupdate="0">
 
     <!-- User input 1 -->
     <!-- page 1 -->
@@ -426,4 +426,4 @@
         <field name="skipped" eval="True"/>
     </record>
 
-</data></odoo>
+</data></eden>

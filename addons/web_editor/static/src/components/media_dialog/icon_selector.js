@@ -1,7 +1,7 @@
 import fonts from '@web_editor/js/wysiwyg/fonts';
 import { SearchMedia } from './search_media';
 
-import { Component, useState } from "@odoo/owl";
+import { Component, useState } from "@eden/owl";
 
 export class IconSelector extends Component {
     static mediaSpecificClasses = ["fa"];

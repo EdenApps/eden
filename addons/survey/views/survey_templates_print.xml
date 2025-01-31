@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 <data>
     <!-- Survey: printable page view (all pages) -->
     <template id="survey_page_print" name="Survey: print page">
@@ -146,4 +146,4 @@
         </html>
     </template>
 </data>
-</odoo>
+</eden>

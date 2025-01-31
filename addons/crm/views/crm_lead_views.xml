@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
         <record id="crm_lead_view_form" model="ir.ui.view">
             <field name="name">crm.lead.form</field>
             <field name="model">crm.lead</field>
@@ -118,7 +118,7 @@
                                     <field name="zip" placeholder="ZIP" class="o_address_zip"/>
                                     <field name="country_id" placeholder="Country" class="o_address_country" options='{"no_open": True, "no_create": True}'/>
                                 </div>
-                                <field name="website" widget="url" placeholder="e.g. https://www.odoo.com"/>
+                                <field name="website" widget="url" placeholder="e.g. https://www.edencloud.us"/>
                                 <field name="lang_active_count" invisible="1"/>
                                 <field name="lang_code" invisible="1"/>
                                 <field name="lang_id" invisible="lang_active_count &lt;= 1"
@@ -291,7 +291,7 @@
                                             <field name="zip" placeholder="ZIP" class="o_address_zip"/>
                                             <field name="country_id" placeholder="Country" class="o_address_country" options='{"no_open": True, "no_create": True}'/>
                                         </div>
-                                        <field name="website" widget="url" placeholder="e.g. https://www.odoo.com"/>
+                                        <field name="website" widget="url" placeholder="e.g. https://www.edencloud.us"/>
                                         <field name="lang_active_count" invisible="1"/>
                                         <field name="lang_id" invisible="lang_active_count &lt;= 1"
                                             options="{'no_quick_create': True, 'no_create_edit': True, 'no_open': True}"/>
@@ -1258,4 +1258,4 @@
             <field name="search_view_id" ref="crm.view_crm_case_leads_filter"/>
         </record>
 
-</odoo>
+</eden>

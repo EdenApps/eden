@@ -1,4 +1,4 @@
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 import { Typing } from "@mail/discuss/typing/common/typing";
 
 export class ImStatus extends Component {

@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from .common import DashboardTestCommon
-from odoo.exceptions import AccessError
+from eden.exceptions import AccessError
 
 EXCEL_FILES = [
     {

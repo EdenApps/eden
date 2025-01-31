@@ -2,7 +2,7 @@ import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
 import { CopyButton } from "@web/core/copy_button/copy_button";
 import { useService } from "@web/core/utils/hooks";
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";
 
 export class CopyButtonJob extends CopyButton {

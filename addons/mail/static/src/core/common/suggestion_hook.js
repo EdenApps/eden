@@ -1,4 +1,4 @@
-import { status, useComponent, useEffect, useState } from "@odoo/owl";
+import { status, useComponent, useEffect, useState } from "@eden/owl";
 import { ConnectionAbortedError } from "@web/core/network/rpc";
 import { useService } from "@web/core/utils/hooks";
 import { useDebounced } from "@web/core/utils/timing";

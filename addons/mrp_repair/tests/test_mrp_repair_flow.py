@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
-from odoo.tests import tagged
-from odoo.addons.mrp.tests.common import TestMrpCommon
+from eden.fields import Command
+from eden.tests import tagged
+from eden.addons.mrp.tests.common import TestMrpCommon
 
 
 @tagged('post_install', '-at_install')

@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { setInputFiles } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { expect, test } from "@eden/hoot";
+import { setInputFiles } from "@eden/hoot-dom";
+import { animationFrame } from "@eden/hoot-mock";
 import {
     contains,
     mockService,
@@ -30,7 +30,7 @@ mockService("http", () => ({
 }));
 
 test("check that uploading a file that is too heavy in portal sends a notification", async (assert) => {
-    patchWithCleanup(odoo, { csrf_token: "dummy" });
+    patchWithCleanup(eden, { csrf_token: "dummy" });
     patchWithCleanup(session, { max_file_upload_size: 2 });
     await mountWithCleanup(PortalFileInput, {
         onUpload(files) {

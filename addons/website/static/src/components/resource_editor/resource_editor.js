@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { CodeEditor } from "@web/core/code_editor/code_editor";
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
@@ -16,7 +16,7 @@ import { useService } from "@web/core/utils/hooks";
 import { ResourceEditorWarningOverlay } from "./resource_editor_warning";
 import { checkSCSS, checkXML, formatXML } from "./utils";
 
-import { Component, onWillUnmount, onWillStart, reactive, useRef, useState } from "@odoo/owl";
+import { Component, onWillUnmount, onWillStart, reactive, useRef, useState } from "@eden/owl";
 
 const BUNDLES_RESTRICTION = [
     "web.assets_frontend",

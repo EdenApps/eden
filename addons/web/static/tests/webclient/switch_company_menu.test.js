@@ -1,6 +1,6 @@
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { edit, keyDown, press, queryAll, queryAllAttributes, queryAllTexts } from "@odoo/hoot-dom";
-import { animationFrame, runAllTimers } from "@odoo/hoot-mock";
+import { beforeEach, describe, expect, test } from "@eden/hoot";
+import { edit, keyDown, press, queryAll, queryAllAttributes, queryAllTexts } from "@eden/hoot-dom";
+import { animationFrame, runAllTimers } from "@eden/hoot-mock";
 import {
     contains,
     getService,

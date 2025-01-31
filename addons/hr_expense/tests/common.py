@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 from datetime import datetime
 
 from freezegun import freeze_time
 
-from odoo import Command
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.addons.mail.tests.common import mail_new_test_user
+from eden import Command
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
+from eden.addons.mail.tests.common import mail_new_test_user
 
 
 class TestExpenseCommon(AccountTestInvoicingCommon):

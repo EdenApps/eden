@@ -4,8 +4,8 @@
     pointer-events: all;
     z-index: $zindex-modal - 1;
 
-    .o_website_loader_odoo_logo {
-        background-image: var(--configurator-logo, url('/web/static/img/odoo_logo.svg'));
+    .o_website_loader_eden_logo {
+        background-image: var(--configurator-logo, url('/web/static/img/eden_logo.svg'));
         background-repeat: no-repeat;
         background-size: contain;
         filter: var(--website-loader-logo-filter);

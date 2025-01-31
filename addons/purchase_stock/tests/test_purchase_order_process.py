@@ -1,6 +1,6 @@
-from odoo import Command, fields
-from odoo.tests import tagged
-from odoo.tools import float_compare
+from eden import Command, fields
+from eden.tests import tagged
+from eden.tools import float_compare
 from .common import PurchaseTestCommon
 
 

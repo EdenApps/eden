@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from werkzeug.urls import url_encode
 
-from odoo import _, http, tools
-from odoo.http import request
-from odoo.exceptions import AccessError, ValidationError, UserError
-from odoo.addons.payment.controllers import portal as payment_portal
+from eden import _, http, tools
+from eden.http import request
+from eden.exceptions import AccessError, ValidationError, UserError
+from eden.addons.payment.controllers import portal as payment_portal
 
 
 class PaymentPortal(payment_portal.PaymentPortal):

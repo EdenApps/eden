@@ -1,4 +1,4 @@
-/** @odoo-module alias=@web/../tests/mock_server_tests default=false */
+/** @eden-module alias=@web/../tests/mock_server_tests default=false */
 
 import { MockServer } from "./helpers/mock_server";
 

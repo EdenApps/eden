@@ -12,7 +12,7 @@ import { ConnectionLostError, RPCError } from "@web/core/network/rpc";
 import { PaymentScreenPaymentLines } from "@point_of_sale/app/screens/payment_screen/payment_lines/payment_lines";
 import { PaymentScreenStatus } from "@point_of_sale/app/screens/payment_screen/payment_status/payment_status";
 import { usePos } from "@point_of_sale/app/store/pos_hook";
-import { Component, useState, onMounted } from "@odoo/owl";
+import { Component, useState, onMounted } from "@eden/owl";
 import { Numpad, enhancedButtons } from "@point_of_sale/app/generic_components/numpad/numpad";
 import { floatIsZero, roundPrecision } from "@web/core/utils/numbers";
 import { ask } from "@point_of_sale/app/store/make_awaitable_dialog";

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import ast
 import datetime
@@ -14,9 +14,9 @@ from collections import defaultdict
 
 from dateutil.parser import parse
 
-from odoo import _, api, fields, models, modules, SUPERUSER_ID, tools
-from odoo.addons.base.models.ir_mail_server import MailDeliveryException
-from odoo.modules.registry import Registry
+from eden import _, api, fields, models, modules, SUPERUSER_ID, tools
+from eden.addons.base.models.ir_mail_server import MailDeliveryException
+from eden.modules.registry import Registry
 
 _logger = logging.getLogger(__name__)
 _UNFOLLOW_REGEX = re.compile(r'<span id="mail_unfollow".*?<\/span>', re.DOTALL)
@@ -88,7 +88,7 @@ class MailMail(models.Model):
         help="Failure reason. This is usually the exception thrown by the email server, stored to ease the debugging of mailing issues.")
     auto_delete = fields.Boolean(
         'Auto Delete',
-        help="This option permanently removes any track of email after it's been sent, including from the Technical menu in the Settings, in order to preserve storage space of your Odoo database.")
+        help="This option permanently removes any track of email after it's been sent, including from the Technical menu in the Settings, in order to preserve storage space of your Eden database.")
     scheduled_date = fields.Datetime('Scheduled Send Date',
         help="If set, the queue manager will send the email after the date. If not set, the email will be send as soon as possible. Unless a timezone is specified, it is considered as being in UTC timezone.")
     fetchmail_server_id = fields.Many2one('fetchmail.server', "Inbound Mail Server", readonly=True)
@@ -423,7 +423,7 @@ class MailMail(models.Model):
                     'Unknown error when evaluating mail headers (received %r): %s',
                     self.headers, e,
                 )
-        headers['X-Odoo-Message-Id'] = self.message_id
+        headers['X-Eden-Message-Id'] = self.message_id
         headers.setdefault('Return-Path', self.record_alias_domain_id.bounce_email or self.env.company.bounce_email)
 
         # prepare recipients: use email_to if defined then check recipient_ids
@@ -631,7 +631,7 @@ class MailMail(models.Model):
             except Exception as exc:
                 if raise_exception:
                     # To be consistent and backward compatible with mail_mail.send() raised
-                    # exceptions, it is encapsulated into an Odoo MailDeliveryException
+                    # exceptions, it is encapsulated into an Eden MailDeliveryException
                     raise MailDeliveryException(_('Unable to connect to SMTP Server'), exc)
                 else:
                     batch = self.browse(batch_ids)

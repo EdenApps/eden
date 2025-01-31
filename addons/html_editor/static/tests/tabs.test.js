@@ -1,4 +1,4 @@
-import { describe, test } from "@odoo/hoot";
+import { describe, test } from "@eden/hoot";
 import { testEditor } from "./_helpers/editor";
 import { TAB_WIDTH, getCharWidth, getIndentWidth, oeTab, testTabulation } from "./_helpers/tabs";
 import {

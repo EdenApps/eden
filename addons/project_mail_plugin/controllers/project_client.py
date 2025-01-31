@@ -1,6 +1,6 @@
 
-from odoo import Command, http, _
-from odoo.http import request
+from eden import Command, http, _
+from eden.http import request
 
 
 class ProjectClient(http.Controller):

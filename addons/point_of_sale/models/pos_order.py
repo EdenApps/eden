@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import logging
 from datetime import datetime
 from markupsafe import Markup
@@ -11,10 +11,10 @@ from pprint import pformat
 import psycopg2
 import pytz
 
-from odoo import api, fields, models, tools, _, Command
-from odoo.tools import float_is_zero, float_round, float_repr, float_compare, formatLang
-from odoo.exceptions import ValidationError, UserError
-from odoo.osv.expression import AND
+from eden import api, fields, models, tools, _, Command
+from eden.tools import float_is_zero, float_round, float_repr, float_compare, formatLang
+from eden.exceptions import ValidationError, UserError
+from eden.osv.expression import AND
 import base64
 
 

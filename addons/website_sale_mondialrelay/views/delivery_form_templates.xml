@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <template id="mondialrelay_delivery_method" inherit_id="website_sale.delivery_method">
         <input name="o_delivery_radio" position="attributes">
@@ -12,4 +12,4 @@
         </label>
     </template>
 
-</odoo>
+</eden>

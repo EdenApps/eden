@@ -4,7 +4,7 @@ import { ChannelInvitation } from "@mail/discuss/core/common/channel_invitation"
 import { ChannelMemberList } from "@mail/discuss/core/common/channel_member_list";
 import { NotificationSettings } from "@mail/discuss/core/common/notification_settings";
 
-import { useComponent } from "@odoo/owl";
+import { useComponent } from "@eden/owl";
 
 import { _t } from "@web/core/l10n/translation";
 import { usePopover } from "@web/core/popover/popover_hook";

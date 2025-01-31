@@ -55,7 +55,7 @@ export class ChatGPTPlugin extends Plugin {
             keywords: [_t("AI")],
             categoryId: "ai",
             commandId: "openChatGPTDialog",
-            // isAvailable: () => !this.odooEditor.isSelectionInBlockRoot(), // TODO!
+            // isAvailable: () => !this.edenEditor.isSelectionInBlockRoot(), // TODO!
         },
     };
 

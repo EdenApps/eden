@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from random import randint
 
-from odoo import api, fields, models
-from odoo.osv import expression
-from odoo.tools import SQL
+from eden import api, fields, models
+from eden.osv import expression
+from eden.tools import SQL
 
 
 class ProjectTags(models.Model):

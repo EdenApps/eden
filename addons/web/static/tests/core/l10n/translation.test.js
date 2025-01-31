@@ -1,4 +1,4 @@
-import { after, expect, test } from "@odoo/hoot";
+import { after, expect, test } from "@eden/hoot";
 import {
     defineParams,
     makeMockEnv,
@@ -11,7 +11,7 @@ import {
 import { _t, translatedTerms, translationLoaded } from "@web/core/l10n/translation";
 import { session } from "@web/session";
 
-import { Component, xml } from "@odoo/owl";
+import { Component, xml } from "@eden/owl";
 const { DateTime } = luxon;
 
 const frenchTerms = { Hello: "Bonjour" };

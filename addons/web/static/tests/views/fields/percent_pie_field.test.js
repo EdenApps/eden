@@ -1,6 +1,6 @@
 import { defineModels, fields, models, mountView } from "@web/../tests/web_test_helpers";
-import { test, expect } from "@odoo/hoot";
-import { queryOne } from "@odoo/hoot-dom";
+import { test, expect } from "@eden/hoot";
+import { queryOne } from "@eden/hoot-dom";
 
 class Partner extends models.Model {
     foo = fields.Char({

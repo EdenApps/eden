@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <data>
 
         <record id="im_livechat_channel_action" model="ir.actions.act_window">
@@ -114,7 +114,7 @@
                                         </kanban>
                                     </field>
                                     <p class="text-muted" colspan="2">
-                                        Operators that do not show any activity In Odoo for more than 30 minutes will be considered as disconnected.
+                                        Operators that do not show any activity In Eden for more than 30 minutes will be considered as disconnected.
                                     </p>
                             </page>
                             <page string="Options" name="options">
@@ -158,7 +158,7 @@
                                         or copy this url and send it by email to your customers or suppliers:
                                     </p>
                                     <field name="web_page" readonly="1" widget="CopyClipboardChar"/>
-                                    <p>For websites built with the Odoo CMS, go to Website > Configuration > Settings and select the Website Live Chat Channel you want to add to your website.</p>
+                                    <p>For websites built with the Eden CMS, go to Website > Configuration > Settings and select the Website Live Chat Channel you want to add to your website.</p>
                                 </div>
                             </page>
                         </notebook>
@@ -297,4 +297,4 @@
             sequence="20"/>
 
     </data>
-</odoo>
+</eden>

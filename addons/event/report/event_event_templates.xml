@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <!-- EVENT A4 FOLDABLE BADGE (A4_french_fold) -->
 
@@ -246,7 +246,7 @@
 
     <div class="oe_structure"></div>
     <div class="row footer o_event_full_page_ticket_footer d-block">
-        <div class="o_event_full_page_ticket_powered_by bg-odoo text-white text-center p-2 w-100">
+        <div class="o_event_full_page_ticket_powered_by bg-edentext-white text-center p-2 w-100">
             <span t-if="event.organizer_id">
                 <span class="fw-bold" t-field="event.organizer_id.name">Marc Demo</span>
                 <span t-if="event.organizer_id.phone" class="ps-3 fa fa-phone"/>
@@ -257,7 +257,7 @@
                 <span t-if="event.organizer_id.website" t-field="event.organizer_id.website">https://www.example.com</span>
             </span>
             <t t-else="">
-                <span t-out="event.name">Odoo Community Days</span> <!-- Force some content to avoid messing the layout -->
+                <span t-out="event.name">Eden Community Days</span> <!-- Force some content to avoid messing the layout -->
             </t>
         </div>
     </div>
@@ -386,4 +386,4 @@
     <span t-else="" t-out="event.address_id.name">1000 Brussels</span>
 </template>
 
-</odoo>
+</eden>

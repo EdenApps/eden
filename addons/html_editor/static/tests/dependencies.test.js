@@ -10,7 +10,7 @@ import { PositionPlugin } from "@html_editor/main/position_plugin";
 import { PowerButtonsPlugin } from "@html_editor/main/power_buttons_plugin";
 import { SearchPowerboxPlugin } from "@html_editor/main/powerbox/search_powerbox_plugin";
 import { CollaborationSelectionPlugin } from "@html_editor/others/collaboration/collaboration_selection_plugin";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 
 describe("Implicit plugin dependencies", () => {
     test("input as an implicit dependency", async () => {

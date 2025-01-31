@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
+import { beforeEach, describe, expect, test } from "@eden/hoot";
 import { patchWithCleanup } from "@web/../tests/web_test_helpers";
 
 import { browser } from "@web/core/browser/browser";
@@ -85,6 +85,6 @@ test("redirect", () => {
     expect(testRedirect("/abc/def?x=y")).toBe("http://www.test.com/abc/def?x=y");
     expect(testRedirect("/abc?x=y#a=1&b=2")).toBe("http://www.test.com/abc?x=y#a=1&b=2");
 
-    expect(() => testRedirect("https://www.odoo.com")).toThrow(/Can't redirect/);
+    expect(() => testRedirect("https://www.edencloud.us")).toThrow(/Can't redirect/);
     expect(() => testRedirect("javascript:alert('boom');")).toThrow(/Can't redirect/);
 });

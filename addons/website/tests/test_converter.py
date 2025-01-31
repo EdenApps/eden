@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import threading
 
-from odoo.tests.common import BaseCase
-from odoo.modules.registry import Registry
+from eden.tests.common import BaseCase
+from eden.modules.registry import Registry
 
 
 class TestSlugUnslug(BaseCase):

@@ -1,7 +1,7 @@
 import { lockBusServiceStart, lockWebsocketConnect } from "@bus/../tests/bus_test_helpers";
 import { WEBSOCKET_CLOSE_CODES } from "@bus/workers/websocket_worker";
-import { describe, expect, test } from "@odoo/hoot";
-import { queryFirst, runAllTimers, waitFor, waitUntil } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@eden/hoot";
+import { queryFirst, runAllTimers, waitFor, waitUntil } from "@eden/hoot-dom";
 import { asyncStep, MockServer, waitForSteps } from "@web/../tests/web_test_helpers";
 import { defineMailModels, openDiscuss, start } from "@mail/../tests/mail_test_helpers";
 

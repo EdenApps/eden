@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_kickoff" name="Kickoff">
     <section class="s_kickoff o_cc o_cc5 parallax s_parallax_is_fixed s_parallax_no_overflow_hidden pt232 pb88" data-scroll-background-ratio="1" data-oe-shape-data="{'shape': 'web_editor/Origins/14_001', 'colors': {'c3': 'o-color-4', 'c4': 'rgba(255, 0, 0, 0)'}, 'flip': [], 'showOnMobile': false}">
@@ -13,4 +13,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

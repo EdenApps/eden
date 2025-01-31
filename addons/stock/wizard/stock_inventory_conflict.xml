@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="stock_inventory_conflict_form_view" model="ir.ui.view">
         <field name="name">stock.inventory.conflict.form.view</field>
         <field name="model">stock.inventory.conflict</field>
@@ -46,4 +46,4 @@
             </form>
         </field>
     </record>
-</odoo>
+</eden>

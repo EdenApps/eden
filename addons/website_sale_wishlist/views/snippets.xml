@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="snippet_options" inherit_id="website.snippet_options" name="Wishlist Snippet Options">
     <xpath expr="//we-button[hasclass('o_btn_show_empty_cart')]" position="after">
@@ -33,4 +33,4 @@
     </div>
 </template>
 
-</odoo>
+</eden>

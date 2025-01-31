@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { HierarchyCard } from "@web_hierarchy/hierarchy_card";
 

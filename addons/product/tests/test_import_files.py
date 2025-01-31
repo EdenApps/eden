@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import unittest
 
-from odoo.tests import TransactionCase, can_import, loaded_demo_data, tagged
-from odoo.tools.misc import file_open
+from eden.tests import TransactionCase, can_import, loaded_demo_data, tagged
+from eden.tools.misc import file_open
 
 
 @tagged("post_install", "-at_install")

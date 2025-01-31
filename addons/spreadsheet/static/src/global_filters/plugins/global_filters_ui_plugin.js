@@ -13,7 +13,7 @@ import { Domain } from "@web/core/domain";
 import { user } from "@web/core/user";
 import { constructDateRange, QUARTER_OPTIONS } from "@web/search/utils/dates";
 
-import { EvaluationError, helpers } from "@odoo/o-spreadsheet";
+import { EvaluationError, helpers } from "@eden/o-spreadsheet";
 import { CommandResult } from "@spreadsheet/o_spreadsheet/cancelled_reason";
 
 import { isEmpty } from "@spreadsheet/helpers/helpers";
@@ -23,7 +23,7 @@ import {
     getRelativeDateDomain,
 } from "@spreadsheet/global_filters/helpers";
 import { RELATIVE_DATE_RANGE_TYPES } from "@spreadsheet/helpers/constants";
-import { OdooUIPlugin } from "@spreadsheet/plugins";
+import { EdenUIPlugin } from "@spreadsheet/plugins";
 import { getItemId } from "../../helpers/model";
 import { serializeDateTime, serializeDate } from "@web/core/l10n/dates";
 
@@ -47,7 +47,7 @@ const MONTHS = {
 const { UuidGenerator, createEmptyExcelSheet, createEmptySheet, toXC, toNumber } = helpers;
 const uuidGenerator = new UuidGenerator();
 
-export class GlobalFiltersUIPlugin extends OdooUIPlugin {
+export class GlobalFiltersUIPlugin extends EdenUIPlugin {
     static getters = /** @type {const} */ ([
         "exportSheetWithActiveFilters",
         "getFilterDisplayValue",
@@ -61,7 +61,7 @@ export class GlobalFiltersUIPlugin extends OdooUIPlugin {
     constructor(config) {
         super(config);
         this.orm = config.custom.env?.services.orm;
-        this.odooDataProvider = config.custom.odooDataProvider;
+        this.edenDataProvider = config.custom.edenDataProvider;
         /**
          * Cache record display names for relation filters.
          * For each filter, contains a promise resolving to
@@ -302,7 +302,7 @@ export class GlobalFiltersUIPlugin extends OdooUIPlugin {
                             const names = result.map(({ display_name }) => display_name);
                             this.recordsDisplayName[filter.id] = names;
                         });
-                    this.odooDataProvider.notifyWhenPromiseResolves(promise);
+                    this.edenDataProvider.notifyWhenPromiseResolves(promise);
                     return [[{ value: "" }]];
                 }
                 return [[{ value: this.recordsDisplayName[filter.id].join(", ") }]];

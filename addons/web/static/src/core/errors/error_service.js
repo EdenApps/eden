@@ -98,14 +98,14 @@ export const errorService = {
                 // Firefox doesn't hide details of errors occuring in third-party scripts, check origin explicitly
                 (isBrowserFirefox() && new URL(filename).origin !== window.location.origin);
             // Don't display error dialogs for third party script errors unless we are in debug mode
-            if (isThirdPartyScriptError && !odoo.debug) {
+            if (isThirdPartyScriptError && !eden.debug) {
                 return;
             }
             let uncaughtError;
             if (isRedactedError) {
                 uncaughtError = new ThirdPartyScriptError();
                 uncaughtError.traceback =
-                    `An error whose details cannot be accessed by the Odoo framework has occurred.\n` +
+                    `An error whose details cannot be accessed by the Eden framework has occurred.\n` +
                     `The error probably originates from a JavaScript file served from a different origin.\n` +
                     `The full error is available in the browser console.`;
             } else {
@@ -132,12 +132,12 @@ export const errorService = {
                 // to have extension's errors in the main business page.
                 // We want to ignore those errors as they are not produced by us, and are parasiting
                 // the navigation. We do this according to the heuristic expressed in the if.
-                if (!odoo.debug) {
+                if (!eden.debug) {
                     return;
                 }
                 traceback =
                     `Uncaught unknown Error\n` +
-                    `An unknown error occured. This may be due to a Chrome extension meddling with Odoo.\n` +
+                    `An unknown error occured. This may be due to a Chrome extension meddling with Eden.\n` +
                     `(Opening your browser console might give you a hint on the error.)`;
             }
             const uncaughtError = new UncaughtPromiseError();

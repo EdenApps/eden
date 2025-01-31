@@ -119,7 +119,7 @@ $-forum-sidebar-width: map-get($container-max-widths, sm) / 2;
                     content:'\f066';
                 }
 
-                .odoo-editor-editable {
+                .eden-editor-editable {
                     transition: $transition-collapse;
                     flex-grow: 1;
                 }
@@ -134,7 +134,7 @@ $-forum-sidebar-width: map-get($container-max-widths, sm) / 2;
                 flex-flow: column;
                 flex-grow: 1;
 
-                .odoo-editor {
+                .eden-editor {
                     height: 200px !important;
                     display: flex;
                     flex-grow: 1;

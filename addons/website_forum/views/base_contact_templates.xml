@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data>
+<eden><data>
 
 <template id="contact" inherit_id="base.contact" name="Forum Contact Widget">
     <xpath expr="//div[@itemscope='itemscope']" position="after">
@@ -39,4 +39,4 @@
     </xpath>
 </template>
 
-</data></odoo>
+</data></eden>

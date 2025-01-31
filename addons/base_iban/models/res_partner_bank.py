@@ -2,9 +2,9 @@
 
 import re
 
-from odoo import api, models
-from odoo.exceptions import UserError, ValidationError
-from odoo. tools import LazyTranslate
+from eden import api, models
+from eden.exceptions import UserError, ValidationError
+from eden. tools import LazyTranslate
 
 _lt = LazyTranslate(__name__)  # TODO pass env to functions and remove _lt
 

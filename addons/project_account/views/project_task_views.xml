@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <record id="project_task_form_view_account_inherit" model="ir.ui.view">
         <field name="name">project.task.form.view.account.inherit</field>
@@ -29,4 +29,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

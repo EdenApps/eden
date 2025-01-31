@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data>
+<eden><data>
 
     <record id="event_7_track_2_visitor_0" model="event.track.visitor">
         <field name="track_id" ref="website_event_track.event_7_track_2"/>
@@ -12,4 +12,4 @@
         <field name="is_wishlisted" eval="True"/>
     </record>
 
-</data></odoo>
+</data></eden>

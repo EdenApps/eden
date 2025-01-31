@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.stock_landed_costs.tests.common import TestStockLandedCostsCommon
-from odoo.exceptions import ValidationError
-from odoo.tests import tagged
-from odoo import fields
+from eden.addons.stock_landed_costs.tests.common import TestStockLandedCostsCommon
+from eden.exceptions import ValidationError
+from eden.tests import tagged
+from eden import fields
 
 
 @tagged('post_install', '-at_install')

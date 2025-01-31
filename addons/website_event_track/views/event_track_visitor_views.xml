@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo><data>
+<eden><data>
 
     <record id="event_track_visitor_view_search" model="ir.ui.view" >
         <field name="name">event.track.visitor.view.search</field>
@@ -69,4 +69,4 @@
         </field>
     </record>
 
-</data></odoo>
+</data></eden>

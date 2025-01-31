@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.phone_validation.tools import phone_validation
-from odoo.exceptions import UserError
-from odoo.tests import tagged
-from odoo.tests.common import BaseCase
+from eden.addons.phone_validation.tools import phone_validation
+from eden.exceptions import UserError
+from eden.tests import tagged
+from eden.tests.common import BaseCase
 
 
 @tagged('phone_validation')
@@ -48,7 +48,7 @@ class TestPhonenumbers(BaseCase):
     def test_phone_format_e164_brazil(self):
         """ In the new brazilian phone numbers system, phone numbers add a '9'
             in front of the last 8 digits of mobile numbers.
-            Phonenumbers metadata is patched in odoo, however, when E164 is selected,
+            Phonenumbers metadata is patched in eden, however, when E164 is selected,
             phone numbers aren't formatted, thus patched metadata not being applied.
             See format_number in phonenumbers "Early exit for E164 case"
         """

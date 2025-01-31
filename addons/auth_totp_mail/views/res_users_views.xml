@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record model="ir.ui.view" id="view_users_form">
         <field name="name">res.users.view.form.inherit.auth.totp.mail</field>
         <field name="model">res.users</field>
@@ -43,4 +43,4 @@
             <footer position="replace"/>
         </field>
     </record>
-</odoo>
+</eden>

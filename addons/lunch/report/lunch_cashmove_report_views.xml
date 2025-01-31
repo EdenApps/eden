@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="lunch_cashmove_report_view_search" model="ir.ui.view">
         <field name='name'>lunch.cashmove.report.search</field>
         <field name='model'>lunch.cashmove.report</field>
@@ -139,4 +139,4 @@
           </p>
         </field>
     </record>
-</odoo>
+</eden>

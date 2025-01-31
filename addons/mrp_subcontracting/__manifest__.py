@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 {
     'name': "MRP Subcontracting",
     'version': '0.1',
     'summary': "Subcontract Productions",
-    'website': 'https://www.odoo.com/app/manufacturing',
+    'website': 'https://www.edencloud.us/app/manufacturing',
     'category': 'Manufacturing/Manufacturing',
     'depends': ['mrp'],
     'data': [
@@ -49,7 +49,7 @@
             'web/static/lib/bootstrap/scss/_maps.scss',
 
             'web/static/src/libs/fontawesome/css/font-awesome.css',
-            'web/static/lib/odoo_ui_icons/*',
+            'web/static/lib/eden_ui_icons/*',
             'web/static/src/webclient/navbar/navbar.scss',
             'web/static/src/scss/animation.scss',
             'web/static/src/core/colorpicker/colorpicker.scss',
@@ -64,7 +64,7 @@
 
             'web/static/lib/luxon/luxon.js',
             'web/static/lib/owl/owl.js',
-            'web/static/lib/owl/odoo_module.js',
+            'web/static/lib/owl/eden_module.js',
             'web/static/lib/jquery/jquery.js',
             'web/static/lib/popper/popper.js',
             'web/static/lib/bootstrap/js/dist/util/index.js',

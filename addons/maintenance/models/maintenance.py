@@ -2,9 +2,9 @@
 
 import ast
 from dateutil.relativedelta import relativedelta
-from odoo.exceptions import ValidationError
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
+from eden.exceptions import ValidationError
+from eden import api, fields, models, _
+from eden.exceptions import UserError
 
 
 class MaintenanceStage(models.Model):

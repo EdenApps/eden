@@ -1,4 +1,4 @@
-import { Component, markup } from "@odoo/owl";
+import { Component, markup } from "@eden/owl";
 import { isMacOS } from "@web/core/browser/feature_detection";
 import { _t } from "@web/core/l10n/translation";
 import { rpc } from "@web/core/network/rpc";
@@ -9,7 +9,7 @@ import { browser } from "../../core/browser/browser";
 import { registry } from "../../core/registry";
 
 function documentationItem(env) {
-    const documentationURL = "https://www.odoo.com/documentation/18.0";
+    const documentationURL = "https://www.edencloud.us/documentation/18.0";
     return {
         type: "item",
         id: "documentation",
@@ -86,18 +86,18 @@ export function preferencesItem(env) {
     };
 }
 
-export function odooAccountItem(env) {
+export function edenAccountItem(env) {
     return {
         type: "item",
         id: "account",
-        description: _t("My Odoo.com account"),
+        description: _t("My Eden.com account"),
         callback: () => {
             rpc("/web/session/account")
                 .then((url) => {
                     browser.open(url, "_blank");
                 })
                 .catch(() => {
-                    browser.open("https://accounts.odoo.com/account", "_blank");
+                    browser.open("https://accounts.edencloud.us/account", "_blank");
                 });
         },
         sequence: 60,
@@ -157,6 +157,6 @@ registry
     .add("shortcuts", shortCutsItem)
     .add("separator", separator)
     .add("profile", preferencesItem)
-    .add("odoo_account", odooAccountItem)
+    .add("eden_account", edenAccountItem)
     .add("install_pwa", installPWAItem)
     .add("log_out", logOutItem);

@@ -8,7 +8,7 @@ import {
     useComponent,
     useRef,
     useState,
-} from "@odoo/owl";
+} from "@eden/owl";
 
 /**
  * @typedef {HTMLElement} HostElement host element for an embedded component

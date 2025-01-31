@@ -4,7 +4,7 @@ import { Deferred } from "@web/core/utils/concurrency";
 import { registry } from "@web/core/registry";
 import { session } from "@web/session";
 import { isIosApp } from "@web/core/browser/feature_detection";
-import { EventBus } from "@odoo/owl";
+import { EventBus } from "@eden/owl";
 import { user } from "@web/core/user";
 
 // List of worker events that should not be broadcasted.
@@ -143,7 +143,7 @@ export const busService = {
                     session.websocket_worker_version
                 }`,
                 db: session.db,
-                debug: odoo.debug,
+                debug: eden.debug,
                 lastNotificationId: multiTab.getSharedValue("last_notification_id", 0),
                 uid,
                 startTs: startedAt.valueOf(),
@@ -166,8 +166,8 @@ export const busService = {
             const workerClass = isUsingSharedWorker ? browser.SharedWorker : browser.Worker;
             worker = new workerClass(workerURL, {
                 name: isUsingSharedWorker
-                    ? "odoo:websocket_shared_worker"
-                    : "odoo:websocket_worker",
+                    ? "eden:websocket_shared_worker"
+                    : "eden:websocket_worker",
             });
             worker.addEventListener("error", (e) => {
                 if (!isInitialized && workerClass === browser.SharedWorker) {

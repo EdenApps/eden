@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
 from pytz import timezone, utc
 
-from odoo import api, fields, models, _
-from odoo.addons.resource.models.utils import float_to_time
-from odoo.tools import is_html_empty
-from odoo.tools.translate import html_translate
+from eden import api, fields, models, _
+from eden.addons.resource.models.utils import float_to_time
+from eden.tools import is_html_empty
+from eden.tools.translate import html_translate
 
 
 class Sponsor(models.Model):
@@ -131,7 +131,7 @@ class Sponsor(models.Model):
         for sponsor in self:
             if sponsor.exhibitor_type == 'online' and not sponsor.room_name:
                 if sponsor.name:
-                    room_name = "odoo-exhibitor-%s" % sponsor.name
+                    room_name = "eden-exhibitor-%s" % sponsor.name
                 else:
                     room_name = self.env['chat.room']._default_name(objname='exhibitor')
                 sponsor.room_name = self._jitsi_sanitize_name(room_name)
@@ -202,7 +202,7 @@ class Sponsor(models.Model):
         for values in values_list:
             if values.get('is_exhibitor') and not values.get('room_name'):
                 exhibitor_name = values['name'] if values.get('name') else self.env['res.partner'].browse(values['partner_id']).name
-                name = 'odoo-exhibitor-%s' % exhibitor_name or 'sponsor'
+                name = 'eden-exhibitor-%s' % exhibitor_name or 'sponsor'
                 values['room_name'] = name
         return super(Sponsor, self).create(values_list)
 
@@ -212,7 +212,7 @@ class Sponsor(models.Model):
             toupdate = self.filtered(lambda exhibitor: not exhibitor.chat_room_id)
             # go into sequential update in order to create a custom room name for each sponsor
             for exhibitor in toupdate:
-                values['room_name'] = 'odoo-exhibitor-%s' % exhibitor.name
+                values['room_name'] = 'eden-exhibitor-%s' % exhibitor.name
                 super(Sponsor, exhibitor).write(values)
         return super(Sponsor, self - toupdate).write(values)
 

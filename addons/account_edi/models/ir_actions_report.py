@@ -2,8 +2,8 @@
 
 import io
 
-from odoo import models
-from odoo.tools.pdf import OdooPdfFileReader, OdooPdfFileWriter
+from eden import models
+from eden.tools.pdf import EdenPdfFileReader, EdenPdfFileWriter
 
 
 class IrActionsReport(models.Model):
@@ -27,10 +27,10 @@ class IrActionsReport(models.Model):
                     # Read pdf content.
                     pdf_content = pdf_stream.getvalue()
                     reader_buffer = io.BytesIO(pdf_content)
-                    reader = OdooPdfFileReader(reader_buffer, strict=False)
+                    reader = EdenPdfFileReader(reader_buffer, strict=False)
 
                     # Post-process and embed the additional files.
-                    writer = OdooPdfFileWriter()
+                    writer = EdenPdfFileWriter()
                     writer.cloneReaderDocumentRoot(reader)
                     for edi_document in to_embed:
                         # The attachements on the edi documents are only system readable

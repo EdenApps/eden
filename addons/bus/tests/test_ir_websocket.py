@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import json
 from datetime import datetime, timedelta
 from freezegun import freeze_time
@@ -7,7 +7,7 @@ try:
 except ImportError:
     ws = None
 
-from odoo.tests import new_test_user, tagged
+from eden.tests import new_test_user, tagged
 from .common import WebsocketCase
 from ..models.bus_presence import AWAY_TIMER
 from ..models.bus import channel_with_db, json_dump
@@ -20,7 +20,7 @@ class TestIrWebsocket(WebsocketCase):
             self.env['ir.websocket']._subscribe({
                 'inactivity_period': 1000,
                 'last': 0,
-                'channels': [('odoo', 'discuss.channel', 5)],
+                'channels': [('eden', 'discuss.channel', 5)],
             })
 
     def test_notify_on_status_change(self):
@@ -29,7 +29,7 @@ class TestIrWebsocket(WebsocketCase):
         websocket = self.websocket_connect(cookie=f"session_id={session.sid};")
         self.subscribe(
             websocket,
-            [f"odoo-presence-res.partner_{bob.partner_id.id}"],
+            [f"eden-presence-res.partner_{bob.partner_id.id}"],
             self.env["bus.bus"]._bus_last_id(),
         )
         # offline => online
@@ -87,7 +87,7 @@ class TestIrWebsocket(WebsocketCase):
         self.env.cr.precommit.run()  # trigger the creation of bus.bus records
         self.subscribe(
             websocket,
-            [f"odoo-presence-res.partner_{bob.partner_id.id}"],
+            [f"eden-presence-res.partner_{bob.partner_id.id}"],
             self.env["bus.bus"]._bus_last_id(),
         )
         self.trigger_notification_dispatching([(bob.partner_id, "presence")])

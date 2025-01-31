@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
-from odoo.addons.product_matrix.tests.common import TestMatrixCommon
+import eden.tests
+from eden.addons.product_matrix.tests.common import TestMatrixCommon
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@eden.tests.tagged('post_install', '-at_install')
 class TestPurchaseMatrixUi(TestMatrixCommon):
 
     def test_purchase_matrix_ui(self):
-        self.start_tour("/odoo", 'purchase_matrix_tour', login="admin")
+        self.start_tour("/eden", 'purchase_matrix_tour', login="admin")
 
         # Ensures some dynamic create variants have been created by the matrix
         # Ensures a PO has been created with exactly x lines ...

@@ -1,4 +1,4 @@
-import { reactive } from "@odoo/owl";
+import { reactive } from "@eden/owl";
 import { browser } from "@web/core/browser/browser";
 import {
     isDisplayStandalone,
@@ -44,7 +44,7 @@ const pwaService = {
             isAvailable: false,
             isScopedApp: browser.location.href.includes("/scoped_app"),
             isSupportedOnBrowser: false,
-            startUrl: "/odoo",
+            startUrl: "/eden",
             decline,
             getManifest,
             hasScopeBeenInstalled,

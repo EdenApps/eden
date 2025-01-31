@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { PortalHomeCounters } from '@portal/js/portal';
 

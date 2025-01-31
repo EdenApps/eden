@@ -1,4 +1,4 @@
-import { expect } from "@odoo/hoot";
+import { expect } from "@eden/hoot";
 import { testEditor } from "./editor";
 
 export const TAB_WIDTH = 40;
@@ -16,7 +16,7 @@ function setWidths() {
     indentWidths = {};
 
     const rootDiv = document.createElement("div");
-    rootDiv.classList.add("odoo-editor-editable");
+    rootDiv.classList.add("eden-editor-editable");
     rootDiv.contentEditable = true;
     document.body.append(rootDiv);
 

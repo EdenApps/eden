@@ -1,4 +1,4 @@
-from odoo.tests.common import RecordCapturer, TransactionCase
+from eden.tests.common import RecordCapturer, TransactionCase
 
 
 class TestPropertiesExportImport(TransactionCase):

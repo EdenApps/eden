@@ -1,10 +1,10 @@
 from lxml import html
 
-from odoo.tools import mute_logger
-from odoo.exceptions import AccessError
-from odoo.tests import HttpCase, tagged
+from eden.tools import mute_logger
+from eden.exceptions import AccessError
+from eden.tests import HttpCase, tagged
 
-from odoo.addons.website.controllers.model_page import ModelPageController
+from eden.addons.website.controllers.model_page import ModelPageController
 
 @tagged('post_install', '-at_install')
 class TestWebsiteControllerPage(HttpCase):
@@ -83,7 +83,7 @@ class TestWebsiteControllerPage(HttpCase):
     def test_access_rights_and_rules(self):
         self.authenticate(None, None)
         self.model_acl.active = False
-        with mute_logger("odoo.http"):
+        with mute_logger("eden.http"):
             response = self.url_open(f"/model/{self.listing_controller_page.name_slugified}")
         self.assertEqual(response.status_code, 403)
 

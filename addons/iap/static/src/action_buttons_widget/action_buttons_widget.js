@@ -1,9 +1,9 @@
-/** @odoo-modules */
+/** @eden-modules */
 
 import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
 import { standardWidgetProps } from "@web/views/widgets/standard_widget_props";
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 class IAPActionButtonsWidget extends Component {
     static template = "iap.ActionButtonsWidget";

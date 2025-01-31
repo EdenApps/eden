@@ -15,9 +15,9 @@ import {
     step,
     triggerHotkey,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, expect, test } from "@odoo/hoot";
-import { leave, press, queryFirst } from "@odoo/hoot-dom";
-import { Deferred, mockDate, tick } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@eden/hoot";
+import { leave, press, queryFirst } from "@eden/hoot-dom";
+import { Deferred, mockDate, tick } from "@eden/hoot-mock";
 import {
     Command,
     mockService,
@@ -343,11 +343,11 @@ test("Update the link previews when a message is edited", async () => {
     await openDiscuss(channelId);
     await click(".o-mail-Message [title='Expand']");
     await click(".o-mail-Message-moreMenu [title='Edit']");
-    await insertText(".o-mail-Message .o-mail-Composer-input", "http://odoo.com", {
+    await insertText(".o-mail-Message .o-mail-Composer-input", "http://edencloud.us", {
         replace: true,
     });
     await click(".o-mail-Message a", { text: "save" });
-    await contains(".o-mail-Message-body", { text: "http://odoo.com" });
+    await contains(".o-mail-Message-body", { text: "http://edencloud.us" });
     await assertSteps(["link_preview"]);
 });
 
@@ -405,7 +405,7 @@ test("mentions are kept when editing message", async () => {
 test("can add new mentions when editing message", async () => {
     const pyEnv = await startServer();
     const partnerId = pyEnv["res.partner"].create({
-        email: "testpartner@odoo.com",
+        email: "testpartner@eden.com",
         name: "TestPartner",
     });
     const channelId = pyEnv["discuss.channel"].create({
@@ -1147,7 +1147,7 @@ test("not highlighting the message if not mentioning the current user inside the
     const pyEnv = await startServer();
     const partnerId = pyEnv["res.partner"].create({
         display_name: "testPartner",
-        email: "testPartner@odoo.com",
+        email: "testPartner@eden.com",
     });
     pyEnv["res.users"].create({ partner_id: partnerId });
     const channelId = pyEnv["discuss.channel"].create({
@@ -1450,7 +1450,7 @@ test("Chat with partner should be opened after clicking on their mention", async
     const pyEnv = await startServer();
     const partnerId = pyEnv["res.partner"].create({
         name: "Test Partner",
-        email: "testpartner@odoo.com",
+        email: "testpartner@eden.com",
     });
     pyEnv["res.users"].create({ partner_id: partnerId });
     await start();

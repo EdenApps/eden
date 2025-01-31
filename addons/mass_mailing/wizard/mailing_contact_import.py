@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models, tools, Command, _
-from odoo.tools.misc import clean_context
+from eden import fields, models, tools, Command, _
+from eden.tools.misc import clean_context
 
 
 class MailingContactImport(models.TransientModel):

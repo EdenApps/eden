@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import time
 
-from odoo.tests.common import TransactionCase
-from odoo.exceptions import AccessError
+from eden.tests.common import TransactionCase
+from eden.exceptions import AccessError
 
 
 class TestEquipmentMulticompany(TransactionCase):

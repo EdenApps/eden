@@ -4,7 +4,7 @@ import {
     StateChangeManager,
     useEmbeddedState,
 } from "@html_editor/others/embedded_component_utils";
-import { useEffect, useRef, useState } from "@odoo/owl";
+import { useEffect, useRef, useState } from "@eden/owl";
 import { ReadonlyEmbeddedFileComponent } from "@html_editor/others/embedded_components/core/file/readonly_file";
 
 export class EmbeddedFileComponent extends ReadonlyEmbeddedFileComponent {

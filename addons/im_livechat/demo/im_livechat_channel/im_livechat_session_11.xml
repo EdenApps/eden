@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <data>
         <record id="livechat_channel_session_11" model="discuss.channel">
             <field name="name">Visitor, Mitchell Admin</field>
@@ -62,4 +62,4 @@
             <field name="model">discuss.channel</field>
         </record>
     </data>
-</odoo>
+</eden>

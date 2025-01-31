@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { mockPermission } from "@odoo/hoot-mock";
+import { expect, test } from "@eden/hoot";
+import { mockPermission } from "@eden/hoot-mock";
 import { defineModels, models, mountView } from "@web/../tests/web_test_helpers";
 
 class Partner extends models.Model {

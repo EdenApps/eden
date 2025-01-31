@@ -1,8 +1,8 @@
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.addons.analytic.tests.common import AnalyticCommon
-from odoo.tests import tagged, Form
-from odoo.exceptions import UserError, ValidationError
-from odoo import Command
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
+from eden.addons.analytic.tests.common import AnalyticCommon
+from eden.tests import tagged, Form
+from eden.exceptions import UserError, ValidationError
+from eden import Command
 
 
 @tagged('post_install', '-at_install')

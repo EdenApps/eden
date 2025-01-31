@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="project_embedded_action_from_wh" model="ir.embedded.actions">
         <field name="parent_res_model">project.project</field>
         <field name="sequence">80</field>
@@ -26,4 +26,4 @@
         <field name="python_method">action_open_all_pickings</field>
         <field name="groups_ids" eval="[(4, ref('stock.group_stock_user'))]"/>
     </record>
-</odoo>
+</eden>

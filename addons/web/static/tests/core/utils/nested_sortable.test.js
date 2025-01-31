@@ -1,7 +1,7 @@
-import { expect, test } from "@odoo/hoot";
-import { queryFirst, queryOne, queryRect } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
-import { Component, reactive, useRef, useState, xml } from "@odoo/owl";
+import { expect, test } from "@eden/hoot";
+import { queryFirst, queryOne, queryRect } from "@eden/hoot-dom";
+import { animationFrame } from "@eden/hoot-mock";
+import { Component, reactive, useRef, useState, xml } from "@eden/owl";
 import { contains, mountWithCleanup } from "@web/../tests/web_test_helpers";
 
 import { useNestedSortable } from "@web/core/utils/nested_sortable";
@@ -13,7 +13,7 @@ import { useNestedSortable } from "@web/core/utils/nested_sortable";
  * a placeholder that does not have the same height. The moves are done with
  * the same x position to prevent triggering horizontal moves.
  *
- * @param {import("@odoo/hoot-dom").Target} from
+ * @param {import("@eden/hoot-dom").Target} from
  * @param {import("../../_framework/dom_test_helpers").DragAndDropOptions} [options]
  */
 const sortableDrag = async (from, options) => {
@@ -64,8 +64,8 @@ const sortableDrag = async (from, options) => {
 };
 
 /**
- * @param {import("@odoo/hoot-dom").Target} from
- * @param {import("@odoo/hoot-dom").Target} to
+ * @param {import("@eden/hoot-dom").Target} from
+ * @param {import("@eden/hoot-dom").Target} to
  */
 const dragAndDrop = async (from, to) => {
     const { drop, moveUnder } = await sortableDrag(from);

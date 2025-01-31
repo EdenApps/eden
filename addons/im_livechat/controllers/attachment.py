@@ -1,12 +1,12 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from werkzeug.exceptions import NotFound
 
-from odoo import _
-from odoo.http import route, request
-from odoo.addons.mail.controllers.attachment import AttachmentController
-from odoo.exceptions import AccessError
-from odoo.addons.mail.models.discuss.mail_guest import add_guest_to_context
+from eden import _
+from eden.http import route, request
+from eden.addons.mail.controllers.attachment import AttachmentController
+from eden.exceptions import AccessError
+from eden.addons.mail.models.discuss.mail_guest import add_guest_to_context
 
 
 class LivechatAttachmentController(AttachmentController):

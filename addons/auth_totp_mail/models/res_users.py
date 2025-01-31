@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, models
+from eden import _, models
 
 
 class Users(models.Model):
@@ -48,7 +48,7 @@ class Users(models.Model):
         return action
 
     def get_totp_invite_url(self):
-        return '/odoo/action-auth_totp_mail.action_activate_two_factor_authentication'
+        return '/eden/action-auth_totp_mail.action_activate_two_factor_authentication'
 
     def action_totp_invite(self):
         invite_template = self.env.ref('auth_totp_mail.mail_template_totp_invite')

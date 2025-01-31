@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @eden-module **/
 
-import { onWillStart } from "@odoo/owl";
+import { onWillStart } from "@eden/owl";
 import { useService } from "@web/core/utils/hooks";
 import { useOpenChat } from "@mail/core/web/open_chat_hook";
 import { AvatarCardPopover } from "@mail/discuss/web/avatar_card/avatar_card_popover";

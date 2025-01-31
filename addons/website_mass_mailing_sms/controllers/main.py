@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.http import request
-from odoo.addons.mass_mailing.controllers import main
+from eden.http import request
+from eden.addons.mass_mailing.controllers import main
 
 
 class MassMailController(main.MassMailController):

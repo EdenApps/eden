@@ -6,11 +6,11 @@ from cryptography import x509
 from cryptography.hazmat.primitives import constant_time, serialization
 from cryptography.hazmat.primitives.serialization import Encoding, pkcs12
 
-from odoo import _, api, fields, models
+from eden import _, api, fields, models
 from .key import STR_TO_HASH, _get_formatted_value
-from odoo.exceptions import UserError
-from odoo.osv import expression
-from odoo.tools import parse_version
+from eden.exceptions import UserError
+from eden.osv import expression
+from eden.tools import parse_version
 
 
 class Certificate(models.Model):

@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 """ Implementation of "INVENTORY VALUATION TESTS (With valuation layers)" spreadsheet. """
 
-from odoo.addons.stock_account.tests.test_stockvaluationlayer import TestStockValuationCommon
-from odoo.addons.stock_account.tests.test_stockvaluation import TestStockValuationBase
-from odoo.tests import Form
-from odoo.tests.common import tagged
+from eden.addons.stock_account.tests.test_stockvaluationlayer import TestStockValuationCommon
+from eden.addons.stock_account.tests.test_stockvaluation import TestStockValuationBase
+from eden.tests import Form
+from eden.tests.common import tagged
 
 
 class TestMrpValuationCommon(TestStockValuationCommon):

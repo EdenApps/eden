@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="event_meet_main" name="Event Meet">
     <t t-set="no_header" t-value="option_widescreen"/>
@@ -136,4 +136,4 @@
     </div>
 </template>
 
-</odoo>
+</eden>

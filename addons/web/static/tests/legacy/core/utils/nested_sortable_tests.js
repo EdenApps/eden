@@ -1,4 +1,4 @@
-/** @odoo-module alias=@web/../tests/core/utils/nested_sortable_tests default=false */
+/** @eden-module alias=@web/../tests/core/utils/nested_sortable_tests default=false */
 
 import { drag, getFixture } from "@web/../tests/helpers/utils";
 

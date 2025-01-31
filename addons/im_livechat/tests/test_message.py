@@ -1,14 +1,14 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from freezegun import freeze_time
 from markupsafe import Markup
 
-from odoo import Command, fields
-from odoo.exceptions import AccessError
-from odoo.tools.misc import limited_field_access_token
-from odoo.tests.common import users, tagged, HttpCase
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.addons.mail.tools.discuss import Store
+from eden import Command, fields
+from eden.exceptions import AccessError
+from eden.tools.misc import limited_field_access_token
+from eden.tests.common import users, tagged, HttpCase
+from eden.addons.mail.tests.common import MailCommon
+from eden.addons.mail.tools.discuss import Store
 
 
 @tagged('post_install', '-at_install')
@@ -28,7 +28,7 @@ class TestImLivechatMessage(HttpCase, MailCommon):
                 'login': 'emp',
                 'name': 'Ernest Employee',
                 'notification_type': 'inbox',
-                'odoobot_state': 'disabled',
+                'edenbot_state': 'disabled',
                 'signature': '--\nErnest',
             },
             {

@@ -1,4 +1,4 @@
-from odoo.tests.common import HttpCase
+from eden.tests.common import HttpCase
 
 class LoadMenusTests(HttpCase):
 

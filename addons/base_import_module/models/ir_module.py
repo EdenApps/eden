@@ -13,18 +13,18 @@ from collections import defaultdict
 from io import BytesIO
 from os.path import join as opj
 
-from odoo import api, fields, models, _
-from odoo.exceptions import AccessDenied, AccessError, UserError
-from odoo.http import request
-from odoo.modules.module import adapt_version, MANIFEST_NAMES
-from odoo.osv.expression import is_leaf
-from odoo.release import major_version
-from odoo.tools import convert_csv_import, convert_sql_import, convert_xml_import, exception_to_unicode
-from odoo.tools import file_open, file_open_temporary_directory, ormcache
+from eden import api, fields, models, _
+from eden.exceptions import AccessDenied, AccessError, UserError
+from eden.http import request
+from eden.modules.module import adapt_version, MANIFEST_NAMES
+from eden.osv.expression import is_leaf
+from eden.release import major_version
+from eden.tools import convert_csv_import, convert_sql_import, convert_xml_import, exception_to_unicode
+from eden.tools import file_open, file_open_temporary_directory, ormcache
 
 _logger = logging.getLogger(__name__)
 
-APPS_URL = "https://apps.odoo.com"
+APPS_URL = "https://apps.edencloud.us"
 MAX_FILE_SIZE = 100 * 1024 * 1024  # in megabytes
 
 
@@ -101,7 +101,7 @@ class IrModule(models.Model):
             to_install = known_mods.filtered(lambda mod: mod.name in unmet_dependencies)
             to_install.button_immediate_install()
         elif 'web_studio' not in installed_mods and _is_studio_custom(path):
-            raise UserError(_("Studio customizations require the Odoo Studio app."))
+            raise UserError(_("Studio customizations require the Eden Studio app."))
 
         mod = known_mods_names.get(module)
         if mod:
@@ -484,8 +484,8 @@ class IrModule(models.Model):
                 description += "- " + module + "\n"
             description += _(
                 "\nYou may need the Enterprise version to install the data module. Please visit "
-                "https://www.odoo.com/pricing-plan for more information.\n"
-                "If you need Website themes, it can be downloaded from https://github.com/odoo/design-themes.\n"
+                "https://www.edencloud.us/pricing-plan for more information.\n"
+                "If you need Website themes, it can be downloaded from https://github.com/eden/design-themes.\n"
             )
         else:
             description = _(

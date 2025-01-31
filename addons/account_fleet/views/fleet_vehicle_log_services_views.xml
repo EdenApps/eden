@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
     <record id='fleet_vehicle_log_services_view_form' model='ir.ui.view'>
         <field name="name">fleet.vehicle.log.services.form.inherit.account</field>
         <field name="model">fleet.vehicle.log.services</field>
@@ -30,4 +30,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</eden>

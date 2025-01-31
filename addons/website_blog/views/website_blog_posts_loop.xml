@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <!-- ======   Template: Posts Loop    ==========================================
 Loop through post and call sub-templates (tags, cover..) in different position
@@ -234,4 +234,4 @@ according to the enabled options.
 <!-- (Option) Posts List: Show Post Teaser -->
 <template id="opt_posts_loop_show_teaser" name="Teaser &amp; Tags" inherit_id="website_blog.posts_loop" active="True"/>
 
-</odoo>
+</eden>

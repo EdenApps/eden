@@ -1,6 +1,6 @@
-import { test, expect, describe, beforeEach } from "@odoo/hoot";
-import { queryFirst, queryAll, queryOne } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { test, expect, describe, beforeEach } from "@eden/hoot";
+import { queryFirst, queryAll, queryOne } from "@eden/hoot-dom";
+import { animationFrame } from "@eden/hoot-mock";
 
 import { WebClient } from "@web/webclient/webclient";
 import {

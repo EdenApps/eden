@@ -1,6 +1,6 @@
-import { beforeEach, destroy, expect, test } from "@odoo/hoot";
-import { queryAll, queryAllAttributes, queryAllTexts, resize } from "@odoo/hoot-dom";
-import { advanceTime, animationFrame, runAllTimers } from "@odoo/hoot-mock";
+import { beforeEach, destroy, expect, test } from "@eden/hoot";
+import { queryAll, queryAllAttributes, queryAllTexts, resize } from "@eden/hoot-dom";
+import { advanceTime, animationFrame, runAllTimers } from "@eden/hoot-mock";
 import {
     clearRegistry,
     contains,
@@ -11,7 +11,7 @@ import {
     patchWithCleanup,
 } from "@web/../tests/web_test_helpers";
 
-import { Component, onRendered, xml } from "@odoo/owl";
+import { Component, onRendered, xml } from "@eden/owl";
 import { registry } from "@web/core/registry";
 import { NavBar } from "@web/webclient/navbar/navbar";
 
@@ -69,7 +69,7 @@ test("href attribute on apps menu items", async () => {
     ]);
     await mountWithCleanup(NavBar);
     await contains(".o_navbar_apps_menu button.dropdown-toggle").click();
-    expect(".o-dropdown--menu .dropdown-item").toHaveAttribute("href", "/odoo/action-339");
+    expect(".o-dropdown--menu .dropdown-item").toHaveAttribute("href", "/eden/action-339");
 });
 
 test.tags("desktop");
@@ -93,7 +93,7 @@ test("href attribute with path on apps menu items", async () => {
     ]);
     await mountWithCleanup(NavBar);
     await contains(".o_navbar_apps_menu button.dropdown-toggle").click();
-    expect(".o-dropdown--menu .dropdown-item").toHaveAttribute("href", "/odoo/my-path");
+    expect(".o-dropdown--menu .dropdown-item").toHaveAttribute("href", "/eden/my-path");
 });
 
 test.tags("desktop");

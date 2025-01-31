@@ -2,7 +2,7 @@ import { ThreadIcon } from "@mail/core/common/thread_icon";
 import { discussSidebarItemsRegistry } from "@mail/core/public_web/discuss_sidebar";
 import { useHover } from "@mail/utils/common/hooks";
 
-import { Component, useRef, useState } from "@odoo/owl";
+import { Component, useRef, useState } from "@eden/owl";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { useDropdownState } from "@web/core/dropdown/dropdown_hooks";
 

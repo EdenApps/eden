@@ -1,5 +1,5 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-from odoo import api, models, fields, _
+# Part of Eden. See LICENSE file for full copyright and licensing details.
+from eden import api, models, fields, _
 
 
 class RepairOrder(models.Model):

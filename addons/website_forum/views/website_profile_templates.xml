@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data>
+<eden><data>
     <!--Access Denied - Profile Page-->
     <template id="profile_access_denied" inherit_id="website_profile.profile_access_denied">
         <xpath expr="//div[@id='profile_access_denied_return_link_container']" position="inside">
@@ -241,4 +241,4 @@
             <p t-else="" class="text-muted">You haven't given any votes yet.</p>
         </div>
     </template>
-</data></odoo>
+</data></eden>

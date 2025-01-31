@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 export class ProjectRightSidePanelSection extends Component {
     static props = {

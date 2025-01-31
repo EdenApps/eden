@@ -1,9 +1,9 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 import { setupEditor, testEditor } from "../_helpers/editor";
 import { deleteBackward, insertText } from "../_helpers/user_actions";
 import { getContent } from "../_helpers/selection";
 import { execCommand } from "../_helpers/userCommands";
-import { press } from "@odoo/hoot-dom";
+import { press } from "@eden/hoot-dom";
 
 describe("collapsed selection", () => {
     test("should insert a char into an empty span without removing the zws", async () => {

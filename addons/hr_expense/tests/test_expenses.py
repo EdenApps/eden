@@ -1,15 +1,15 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import base64
 from datetime import date
 
 from freezegun import freeze_time
 
-from odoo import Command, fields
-from odoo.addons.hr_expense.tests.common import TestExpenseCommon
-from odoo.exceptions import RedirectWarning, UserError, ValidationError
-from odoo.tests import tagged, Form
-from odoo.tools.misc import format_date
+from eden import Command, fields
+from eden.addons.hr_expense.tests.common import TestExpenseCommon
+from eden.exceptions import RedirectWarning, UserError, ValidationError
+from eden.tests import tagged, Form
+from eden.tools.misc import format_date
 
 
 @tagged('-at_install', 'post_install')

@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import werkzeug
 
-from odoo.addons.test_mail_full.tests.common import TestMailFullCommon
-from odoo.tests.common import users
-from odoo.tools import mute_logger
-from odoo.tests import tagged
+from eden.addons.test_mail_full.tests.common import TestMailFullCommon
+from eden.tests.common import users
+from eden.tools import mute_logger
+from eden.tests import tagged
 
 
 @tagged('mass_mailing')
 class TestMassMailing(TestMailFullCommon):
 
     @users('user_marketing')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('eden.addons.mail.models.mail_mail')
     def test_mailing_w_blacklist_opt_out(self):
         mailing = self.env['mailing.mailing'].browse(self.mailing_bl.ids)
         mailing.write({'subject': 'Subject {{ object.name }}'})
@@ -127,15 +127,15 @@ class TestMassMailing(TestMailFullCommon):
             self.assertMailTraces(
                 [recipient_info], mailing, recipient,
                 mail_links_info=[[
-                    ('url0', 'https://www.odoo.tz/my/%s' % recipient.name, True, {}),
-                    ('url1', 'https://www.odoo.be', True, {}),
-                    ('url2', 'https://www.odoo.com', True, {}),
-                    ('url3', 'https://www.odoo.eu', True, {}),
+                    ('url0', 'https://www.eden.tz/my/%s' % recipient.name, True, {}),
+                    ('url1', 'https://www.eden.be', True, {}),
+                    ('url2', 'https://www.edencloud.us', True, {}),
+                    ('url3', 'https://www.eden.eu', True, {}),
                     ('url4', 'https://www.example.com/foo/bar?baz=qux', True, {'baz': 'qux'}),
                     ('url5', '%s/event/dummy-event-0' % mailing.get_base_url(), True, {}),
                     # view is not shortened and parsed at sending
                     ('url6', '%s/view' % mailing.get_base_url(), False, {}),
-                    ('url7', 'mailto:test@odoo.com', False, {}),
+                    ('url7', 'mailto:test@edencloud.us', False, {}),
                     # unsubscribe is not shortened and parsed at sending
                     ('url8', '%s/unsubscribe_from_list' % mailing.get_base_url(), False, {}),
                 ]],

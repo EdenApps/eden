@@ -1,8 +1,8 @@
 // ! WARNING: this module cannot depend on modules not ending with ".hoot" (except libs) !
 
-import { beforeEach } from "@odoo/hoot";
-import { on } from "@odoo/hoot-dom";
-import { mockLocation } from "@odoo/hoot-mock";
+import { beforeEach } from "@eden/hoot";
+import { on } from "@eden/hoot-dom";
+import { mockLocation } from "@eden/hoot-mock";
 
 //-----------------------------------------------------------------------------
 // Internal
@@ -34,7 +34,7 @@ const anchorHrefDescriptor = Object.getOwnPropertyDescriptor(HTMLAnchorElement.p
  * it can't be directly mocked on the window object.
  *
  * @param {string} name
- * @param {OdooModuleFactory} factory
+ * @param {EdenModuleFactory} factory
  */
 export function mockBrowserFactory(name, { fn }) {
     return (...args) => {

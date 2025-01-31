@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import datetime
 from freezegun import freeze_time
 
-from odoo.addons.gamification.tests.common import TransactionCaseGamification
-from odoo.exceptions import UserError
-from odoo.tools import mute_logger
+from eden.addons.gamification.tests.common import TransactionCaseGamification
+from eden.exceptions import UserError
+from eden.tools import mute_logger
 
 
 class TestGamificationCommon(TransactionCaseGamification):
@@ -62,7 +62,7 @@ class test_challenge(TestGamificationCommon):
         badge_ids = self.env['gamification.badge.user'].search([('badge_id', '=', badge_id), ('user_id', '=', demo.id)])
         self.assertEqual(len(badge_ids), 1, "Demo user has not received the badge")
 
-    @mute_logger('odoo.models.unlink', 'odoo.addons.mail', 'odoo.addons.auth_signup')
+    @mute_logger('eden.models.unlink', 'eden.addons.mail', 'eden.addons.auth_signup')
     def test_20_update_all_goals_filter(self):
         # Enroll two internal and two portal users in the challenge
         (

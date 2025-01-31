@@ -1,4 +1,4 @@
-import { Component, onWillDestroy, onWillUpdateProps, xml } from "@odoo/owl";
+import { Component, onWillDestroy, onWillUpdateProps, xml } from "@eden/owl";
 
 import { _t } from "@web/core/l10n/translation";
 

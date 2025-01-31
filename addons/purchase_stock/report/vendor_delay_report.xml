@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="vendor_delay_report_filter" model="ir.ui.view">
         <field name="name">vendor.delay.report.search</field>
         <field name="model">vendor.delay.report</field>
@@ -32,4 +32,4 @@
         <field name="target">current</field>
         <field name="context">{'search_default_later_than_a_year_ago':1}</field>
     </record>
-</odoo>
+</eden>

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import itertools
 import random
@@ -7,8 +7,8 @@ import random
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
-from odoo import fields
-from odoo.addons.mail.tests import common as mail_test
+from eden import fields
+from eden.addons.mail.tests import common as mail_test
 
 
 class TestDigestCommon(mail_test.MailCommon):

@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import exceptions
-from odoo.addons.sales_team.tests.common import TestSalesCommon
-from odoo.tests.common import users
-from odoo.tools import mute_logger
+from eden import exceptions
+from eden.addons.sales_team.tests.common import TestSalesCommon
+from eden.tests.common import users
+from eden.tools import mute_logger
 
 
 class TestMembership(TestSalesCommon):
@@ -272,7 +272,7 @@ class TestMembership(TestSalesCommon):
         self.assertFalse(admin_archived.active)
 
         # change team of membership should raise unicity constraint
-        with self.assertRaises(exceptions.UserError), mute_logger('odoo.sql_db'):
+        with self.assertRaises(exceptions.UserError), mute_logger('eden.sql_db'):
             added.write({'crm_team_id': sales_team_1.id})
 
     def test_users_sale_team_id(self):

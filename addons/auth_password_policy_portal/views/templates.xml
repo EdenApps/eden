@@ -1,4 +1,4 @@
-<odoo>
+<eden>
     <template id="portal_my_security" inherit_id="portal.portal_my_security"
               name="Password policy data for portal">
         <xpath expr="//div[input[@name='new1']]" position="attributes">
@@ -12,4 +12,4 @@
             <attribute name="t-att-data-minlength">password_minimum_length</attribute>
         </xpath>
     </template>
-</odoo>
+</eden>

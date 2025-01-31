@@ -4,7 +4,7 @@
 import { onChange } from "@mail/utils/common/misc";
 import { IS_DELETED_SYM, IS_DELETING_SYM, IS_RECORD_SYM, isRelation } from "./misc";
 import { RecordList } from "./record_list";
-import { reactive, toRaw } from "@odoo/owl";
+import { reactive, toRaw } from "@eden/owl";
 import { RecordUses } from "./record_uses";
 
 export class RecordInternal {

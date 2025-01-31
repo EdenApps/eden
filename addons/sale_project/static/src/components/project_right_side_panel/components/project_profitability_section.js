@@ -1,5 +1,5 @@
 import { useService } from "@web/core/utils/hooks";
-import { Component, useState } from "@odoo/owl";
+import { Component, useState } from "@eden/owl";
 import { formatFloat, formatFloatTime } from "@web/views/fields/formatters";
 
 export class ProjectProfitabilitySection extends Component {

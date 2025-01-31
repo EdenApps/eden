@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { queryFirst } from '@odoo/hoot-dom';
+import { queryFirst } from '@eden/hoot-dom';
 import {
     changeOption,
     clickOnSave,

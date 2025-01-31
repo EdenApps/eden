@@ -1,5 +1,5 @@
 import { CalendarCommonPopover } from "@web/views/calendar/calendar_common/calendar_common_popover";
-import { onWillStart } from "@odoo/owl";
+import { onWillStart } from "@eden/owl";
 import { user } from "@web/core/user";
 import { useService } from "@web/core/utils/hooks";
 

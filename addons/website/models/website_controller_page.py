@@ -1,6 +1,6 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 from ast import literal_eval
-from odoo import api, fields, models
+from eden import api, fields, models
 
 
 class WebsiteControllerPage(models.Model):

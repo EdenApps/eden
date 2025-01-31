@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from odoo.tests.common import TransactionCase, tagged
-from odoo.tools.misc import file_open
+from eden.tests.common import TransactionCase, tagged
+from eden.tools.misc import file_open
 from unittest import skipIf
 import os
 

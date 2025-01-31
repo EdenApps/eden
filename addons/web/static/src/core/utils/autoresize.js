@@ -1,4 +1,4 @@
-import { useEffect } from "@odoo/owl";
+import { useEffect } from "@eden/owl";
 import { browser } from "../browser/browser";
 
 /**

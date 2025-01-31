@@ -1,16 +1,16 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import urllib.parse
 
 import werkzeug
 
-from odoo import _, http
-from odoo.exceptions import AccessError, ValidationError
-from odoo.http import request
+from eden import _, http
+from eden.exceptions import AccessError, ValidationError
+from eden.http import request
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.controllers.post_processing import PaymentPostProcessing
-from odoo.addons.portal.controllers import portal
+from eden.addons.payment import utils as payment_utils
+from eden.addons.payment.controllers.post_processing import PaymentPostProcessing
+from eden.addons.portal.controllers import portal
 
 
 class PaymentPortal(portal.CustomerPortal):

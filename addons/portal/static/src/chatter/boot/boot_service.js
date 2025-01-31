@@ -3,7 +3,7 @@ import { loadBundle } from "@web/core/assets";
 import { registry } from "@web/core/registry";
 import { memoize } from "@web/core/utils/functions";
 
-odoo.portalChatterReady = new Deferred();
+eden.portalChatterReady = new Deferred();
 
 const loader = {
     loadChatter: memoize(() => loadBundle("portal.assets_chatter")),

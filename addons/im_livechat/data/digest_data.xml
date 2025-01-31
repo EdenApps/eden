@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<odoo>
+<eden>
     <data noupdate="1">
         <record id="digest.digest_digest_default" model="digest.digest">
             <field name="kpi_livechat_rating">True</field>
@@ -17,9 +17,9 @@
 <div>
     <p class="tip_title">Tip: Use canned responses to chat faster</p>
     <p class="tip_content">Use canned responses to define templates of messages in the livechat app. To load a canned response, start your sentence with ':' and select the template.</p>
-    <img src="https://download.odoocdn.com/digests/im_livechat/static/src/img/milk-canned-responses.gif" width="540" class="illustration_border" />
+    <img src="https://cdn.edencloud.us/digests/im_livechat/static/src/img/milk-canned-responses.gif" width="540" class="illustration_border" />
 </div>
             </field>
         </record>
     </data>
-</odoo>
+</eden>

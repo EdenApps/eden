@@ -28,7 +28,7 @@ import {
     onWillRender,
     useExternalListener,
     useRef,
-} from "@odoo/owl";
+} from "@eden/owl";
 import { _t } from "@web/core/l10n/translation";
 import { exprToBoolean } from "@web/core/utils/strings";
 
@@ -1784,7 +1784,7 @@ export class ListRenderer extends Component {
     }
 
     get isDebugMode() {
-        return Boolean(odoo.debug);
+        return Boolean(eden.debug);
     }
 
     makeTooltip(column) {

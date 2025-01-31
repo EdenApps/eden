@@ -1,4 +1,4 @@
-import { Component, onMounted, onWillUnmount, useState } from "@odoo/owl";
+import { Component, onMounted, onWillUnmount, useState } from "@eden/owl";
 import { Dialog } from "@web/core/dialog/dialog";
 import { useMessageActions } from "./message_actions";
 import { useChildRef, useService } from "@web/core/utils/hooks";

@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import tagged, HttpCase
-from odoo import Command
+from eden.tests import tagged, HttpCase
+from eden import Command
 from .test_project_base import TestProjectCommon
 
 
@@ -55,4 +55,4 @@ class TestProjectTags(HttpCase, TestProjectCommon):
         ])
 
     def test_01_project_tags(self):
-        self.start_tour("/odoo", 'project_tags_filter_tour', login="admin")
+        self.start_tour("/eden", 'project_tags_filter_tour', login="admin")

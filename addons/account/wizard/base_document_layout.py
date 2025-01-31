@@ -1,4 +1,4 @@
-from odoo import api, Command, fields, models
+from eden import api, Command, fields, models
 
 
 class BaseDocumentLayout(models.TransientModel):

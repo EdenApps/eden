@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, fields, models
-from odoo.tools import format_date, formatLang
+from eden import _, api, fields, models
+from eden.tools import format_date, formatLang
 
-from odoo.addons.payment import utils as payment_utils
+from eden.addons.payment import utils as payment_utils
 
 
 class PaymentLinkWizard(models.TransientModel):

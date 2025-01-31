@@ -1,11 +1,11 @@
-import { reactive } from "@odoo/owl";
+import { reactive } from "@eden/owl";
 
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
 
 export class DiscussCoreWeb {
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").EdenEnv} env
      * @param {Partial<import("services").Services>} services
      */
     constructor(env, services) {
@@ -59,7 +59,7 @@ export class DiscussCoreWeb {
 export const discussCoreWeb = {
     dependencies: ["bus_service", "mail.store", "notification", "ui", "multi_tab"],
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").EdenEnv} env
      * @param {Partial<import("services").Services>} services
      */
     start(env, services) {

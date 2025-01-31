@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_image_text_overlap" name="Image - Text Overlap">
     <section class="s_image_text_overlap pt64 pb64">
@@ -19,4 +19,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

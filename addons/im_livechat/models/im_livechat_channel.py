@@ -1,18 +1,18 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import timedelta
 import random
 import re
 
-from odoo import api, Command, fields, models, _
-from odoo.addons.mail.tools.discuss import Store
-from odoo.addons.bus.websocket import WebsocketConnectionHandler
+from eden import api, Command, fields, models, _
+from eden.addons.mail.tools.discuss import Store
+from eden.addons.bus.websocket import WebsocketConnectionHandler
 
 
 class ImLivechatChannel(models.Model):
     """ Livechat Channel
         Define a communication channel, which can be accessed with 'script_external' (script tag to put on
-        external website), 'script_internal' (code to be integrated with odoo website) or via 'web_page' link.
+        external website), 'script_internal' (code to be integrated with eden website) or via 'web_page' link.
         It provides rating tools, and access rules for anonymous people.
     """
 

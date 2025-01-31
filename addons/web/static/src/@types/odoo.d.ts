@@ -1,23 +1,23 @@
-interface OdooModuleErrors {
+interface EdenModuleErrors {
     cycle?: string | null;
     failed?: Set<string>;
     missing?: Set<string>;
     unloaded?: Set<string>;
 }
 
-interface OdooModuleFactory {
+interface EdenModuleFactory {
     deps: string[];
-    fn: OdooModuleFactoryFn;
+    fn: EdenModuleFactoryFn;
     ignoreMissingDeps: boolean;
 }
 
-class OdooModuleLoader {
+class EdenModuleLoader {
     bus: EventTarget;
     checkErrorProm: Promise<void> | null;
     /**
      * Mapping [name => factory]
      */
-    factories: Map<string, OdooModuleFactory>;
+    factories: Map<string, EdenModuleFactory>;
     /**
      * Names of failed modules
      */
@@ -29,7 +29,7 @@ class OdooModuleLoader {
     /**
      * Mapping [name => module]
      */
-    modules: Map<string, OdooModule>;
+    modules: Map<string, EdenModule>;
 
     constructor(root?: HTMLElement);
 
@@ -38,30 +38,30 @@ class OdooModuleLoader {
     define: (
         name: string,
         deps: string[],
-        factory: OdooModuleFactoryFn,
+        factory: EdenModuleFactoryFn,
         lazy?: boolean
-    ) => OdooModule;
+    ) => EdenModule;
 
-    findErrors: (jobs?: Iterable<string>) => OdooModuleErrors;
+    findErrors: (jobs?: Iterable<string>) => EdenModuleErrors;
 
     findJob: () => string | null;
 
-    reportErrors: (errors: OdooModuleErrors) => Promise<void>;
+    reportErrors: (errors: EdenModuleErrors) => Promise<void>;
 
     sortFactories: () => void;
 
-    startModule: (name: string) => OdooModule;
+    startModule: (name: string) => EdenModule;
 
     startModules: () => void;
 }
 
-type OdooModule = Record<string, any>;
+type EdenModule = Record<string, any>;
 
-type OdooModuleFactoryFn = (require: (dependency: string) => OdooModule) => OdooModule;
+type EdenModuleFactoryFn = (require: (dependency: string) => EdenModule) => EdenModule;
 
-declare const odoo: {
+declare const eden: {
     csrf_token: string;
     debug: string;
-    define: OdooModuleLoader["define"];
-    loader: OdooModuleLoader;
+    define: EdenModuleLoader["define"];
+    loader: EdenModuleLoader;
 };

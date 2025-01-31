@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="header_cart_link" name="Header Cart Link">
         <t t-nocache="The number of products is dynamic, this rendering cannot be cached."
            t-nocache-_icon="_icon"
@@ -1609,14 +1609,14 @@
     <template inherit_id='website_sale.product' id="product_picture_magnify_hover" name="Automatic Image Zoom">
         <xpath expr='//div[hasclass("o_wsale_product_page")]' position='attributes'>
             <attribute name="data-ecom-zoom-auto">1</attribute>
-            <attribute name="class" separator=" " add="ecom-zoomable zoomodoo-next" />
+            <attribute name="class" separator=" " add="ecom-zoomable zoomeden-next" />
         </xpath>
     </template>
 
     <template inherit_id='website_sale.product' id="product_picture_magnify_click" active="False" name="Image Zoom On Click">
         <xpath expr='//div[hasclass("o_wsale_product_page")]' position='attributes'>
             <attribute name="data-ecom-zoom-click">1</attribute>
-            <attribute name="class" separator=" " add="ecom-zoomable zoomodoo-next" />
+            <attribute name="class" separator=" " add="ecom-zoomable zoomeden-next" />
         </xpath>
     </template>
 
@@ -1624,7 +1624,7 @@
         <xpath expr='//div[hasclass("o_wsale_product_page")]' position='attributes'>
             <attribute name="data-ecom-zoom-auto">1</attribute>
             <attribute name="data-ecom-zoom-click">1</attribute>
-            <attribute name="class" separator=" " add="ecom-zoomable zoomodoo-next" />
+            <attribute name="class" separator=" " add="ecom-zoomable zoomeden-next" />
         </xpath>
     </template>
 
@@ -3046,7 +3046,7 @@
                 'bg-danger'}">
                 <div class="card-header">
                     <a role="button" groups="base.group_system" class="btn btn-sm btn-link text-white float-end" target="_blank" aria-label="Edit" title="Edit"
-                            t-attf-href="/odoo/action-payment.action_payment_provider/{{tx_sudo.provider_id.id}}">
+                            t-attf-href="/eden/action-payment.action_payment_provider/{{tx_sudo.provider_id.id}}">
                         <i class="fa fa-pencil"></i>
                     </a>
                     <t t-if="tx_sudo.state == 'pending'">
@@ -3090,7 +3090,7 @@
         <xpath expr="//t[@t-call='web.brand_promotion_message']" position="replace">
             <t t-call="web.brand_promotion_message">
                 <t t-set="_message">
-                    The #1 <a target="_blank" href="http://www.odoo.com/app/ecommerce?utm_source=db&amp;utm_medium=website">Open Source eCommerce</a>
+                    The #1 <a target="_blank" href="http://www.edencloud.us/app/ecommerce?utm_source=db&amp;utm_medium=website">Open Source eCommerce</a>
                 </t>
                 <t t-set="_utm_medium" t-valuef="website"/>
             </t>
@@ -3401,4 +3401,4 @@
             </t>
         </xpath>
     </template>
-</odoo>
+</eden>

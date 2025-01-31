@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, fields, models, tools
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Command
+from eden import _, api, fields, models, tools
+from eden.exceptions import UserError, ValidationError
+from eden.fields import Command
 
 
 class ProductTemplateAttributeLine(models.Model):
@@ -177,7 +177,7 @@ class ProductTemplateAttributeLine(models.Model):
         ptal_to_archive = self.env['product.template.attribute.line']
         for ptal in self:
             try:
-                with self.env.cr.savepoint(), tools.mute_logger('odoo.sql_db'):
+                with self.env.cr.savepoint(), tools.mute_logger('eden.sql_db'):
                     super(ProductTemplateAttributeLine, ptal).unlink()
             except Exception:
                 # We catch all kind of exceptions to be sure that the operation

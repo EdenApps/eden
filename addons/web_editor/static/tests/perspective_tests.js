@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import {getAffineApproximation, getProjective, transform} from '@web_editor/js/editor/perspective_utils';
 

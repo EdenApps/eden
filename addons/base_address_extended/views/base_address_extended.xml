@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<odoo>
+<eden>
 
     <record id="address_street_extended_form" model="ir.ui.view">
         <field name="name">partner.form.address.extended</field>
@@ -92,4 +92,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

@@ -47,7 +47,7 @@ function getWKHTMLTOPDF_MESSAGES(status) {
             { link }
         ),
         workers: _t(
-            "You need to start Odoo with at least two workers to print a pdf version of the reports."
+            "You need to start Eden with at least two workers to print a pdf version of the reports."
         ),
     };
     return _status[status];

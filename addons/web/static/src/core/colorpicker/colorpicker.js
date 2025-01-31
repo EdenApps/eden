@@ -8,7 +8,7 @@ import { uniqueId } from "@web/core/utils/functions";
 import { clamp } from "@web/core/utils/numbers";
 import { debounce, useThrottleForAnimation } from "@web/core/utils/timing";
 
-import { Component, onMounted, onWillUpdateProps, useExternalListener, useRef } from "@odoo/owl";
+import { Component, onMounted, onWillUpdateProps, useExternalListener, useRef } from "@eden/owl";
 
 export class Colorpicker extends Component {
     static template = "web.Colorpicker";

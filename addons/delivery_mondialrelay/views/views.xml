@@ -1,4 +1,4 @@
-<odoo>
+<eden>
   <data>
 
     <record id="view_delivery_carrier_form_provider_mondialrelay" model="ir.ui.view">
@@ -25,4 +25,4 @@
     </record>
 
   </data>
-</odoo>
+</eden>

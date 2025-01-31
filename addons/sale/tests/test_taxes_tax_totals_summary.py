@@ -1,6 +1,6 @@
-from odoo.addons.account.tests.test_taxes_tax_totals_summary import TestTaxesTaxTotalsSummary
-from odoo.addons.sale.tests.common import TestTaxCommonSale
-from odoo.tests import tagged
+from eden.addons.account.tests.test_taxes_tax_totals_summary import TestTaxesTaxTotalsSummary
+from eden.addons.sale.tests.common import TestTaxCommonSale
+from eden.tests import tagged
 
 
 @tagged('post_install', '-at_install')

@@ -1,8 +1,8 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { _t } from "@web/core/l10n/translation";
 import { BarcodeScanner } from "@barcodes/components/barcode_scanner";
-import { Component, onWillStart } from "@odoo/owl";
+import { Component, onWillStart } from "@eden/owl";
 import { isDisplayStandalone } from "@web/core/browser/feature_detection";
 import { rpc } from "@web/core/network/rpc";
 import { registry } from "@web/core/registry";

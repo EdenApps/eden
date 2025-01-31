@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<eden noupdate="1">
 
     <record id="carrier_pick_up_in_store" model="delivery.carrier">
         <field name="name">Pick up in store</field>
@@ -8,4 +8,4 @@
         <field name="website_id" ref="website.default_website"/>
     </record>
 
-</odoo>
+</eden>

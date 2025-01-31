@@ -1,4 +1,4 @@
-<odoo>
+<eden>
     <data>
         <!-- Group 1 -->
         <record id="mail_group_1" model="mail.group">
@@ -161,4 +161,4 @@
             <field name="mail_group_id" ref="mail_group_2"/>
         </record>
     </data>
-</odoo>
+</eden>

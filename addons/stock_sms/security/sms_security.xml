@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<eden noupdate="1">
 
     <record id="ir_rule_sms_template_stock_manager" model="ir.rule">
         <field name="name">SMS Template: stock manager CUD on stock picking templates</field>
@@ -9,4 +9,4 @@
         <field name="perm_read" eval="False"/>
     </record>
 
-</odoo>
+</eden>

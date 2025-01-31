@@ -1,4 +1,4 @@
-<odoo><data>
+<eden><data>
     <record id="product_category_courses" model="product.category">
         <field name="parent_id" ref="product.product_category_1"/>
         <field name="name">Courses</field>
@@ -15,4 +15,4 @@
         <field name="image_1920" type="base64" file="website_sale_slides/static/img/default_course_product.svg"/>
         <field name="categ_id" ref="product_category_courses"/>
     </record>
-</data></odoo>
+</data></eden>

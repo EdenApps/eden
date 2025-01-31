@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template name="Steps" id="s_process_steps">
     <section class="s_process_steps pt72 pb72 s_process_steps_connector_line" data-vcss="002" data-vxml="002">
@@ -115,4 +115,4 @@
     <field name="active" eval="True"/>
 </record>
 
-</odoo>
+</eden>

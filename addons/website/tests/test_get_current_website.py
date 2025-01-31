@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import json
 
-from odoo import Command
-from odoo.addons.website.tools import MockRequest
-from odoo.tests import tagged
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
+from eden import Command
+from eden.addons.website.tools import MockRequest
+from eden.tests import tagged
+from eden.addons.base.tests.common import HttpCaseWithUserDemo
 
 
 @tagged('post_install', '-at_install')

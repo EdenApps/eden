@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.http import request
-from odoo.addons.mail.controllers.message_reaction import MessageReactionController
-from odoo.addons.portal.utils import get_portal_partner
+from eden.http import request
+from eden.addons.mail.controllers.message_reaction import MessageReactionController
+from eden.addons.portal.utils import get_portal_partner
 
 
 class PortalMessageReactionController(MessageReactionController):

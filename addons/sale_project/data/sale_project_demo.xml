@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <!-- Project Template -->
         <record id="so_template_project" model="project.project">
@@ -222,4 +222,4 @@
             }"/>
         </function>
     </data>
-</odoo>
+</eden>

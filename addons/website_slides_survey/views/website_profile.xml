@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data>
+<eden><data>
     <template id="user_profile_content" inherit_id="website_profile.user_profile_content">
         <xpath expr="//div[@id='profile_about_badge']" position="before">
             <t t-if="channel">
@@ -152,4 +152,4 @@
             </t>
         </xpath>
     </template>
-</data></odoo>
+</data></eden>

@@ -1,13 +1,13 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 
-from odoo.exceptions import ValidationError
-from odoo.http import request, route
+from eden.exceptions import ValidationError
+from eden.http import request, route
 
-from odoo.addons.base.models.ir_qweb_fields import nl2br_enclose
-from odoo.addons.website.controllers import main
-from odoo.addons.website.controllers.form import WebsiteForm
+from eden.addons.base.models.ir_qweb_fields import nl2br_enclose
+from eden.addons.website.controllers import main
+from eden.addons.website.controllers.form import WebsiteForm
 
 
 class WebsiteSaleForm(WebsiteForm):

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from markupsafe import Markup
-from odoo import fields, models, _, tools
+from eden import fields, models, _, tools
 
 
 class MassMailing(models.Model):
@@ -27,7 +27,7 @@ class MassMailing(models.Model):
     def action_redirect_to_leads_and_opportunities(self):
         text = _("Leads") if self.use_leads else _("Opportunities")
         helper_header = _("No %s yet!", text)
-        helper_message = _("Note that Odoo cannot track replies if they are sent towards email addresses to this database.")
+        helper_message = _("Note that Eden cannot track replies if they are sent towards email addresses to this database.")
         return {
             'context': {
                 'active_test': False,

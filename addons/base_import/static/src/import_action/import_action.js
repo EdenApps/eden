@@ -1,7 +1,7 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { _t } from "@web/core/l10n/translation";
-import { Component, onWillStart, onMounted, useRef, useState } from "@odoo/owl";
+import { Component, onWillStart, onMounted, useRef, useState } from "@eden/owl";
 import { registry } from "@web/core/registry";
 import { useFileUploader } from "@web/core/utils/files";
 import { useService } from "@web/core/utils/hooks";
@@ -78,7 +78,7 @@ export class ImportAction extends Component {
                     });
                 } else {
                     await this.uploadFiles(this.uploadFilesRoute, {
-                        csrf_token: odoo.csrf_token,
+                        csrf_token: eden.csrf_token,
                         ufile: [file],
                         model: this.resModel,
                         id: this.model.id,

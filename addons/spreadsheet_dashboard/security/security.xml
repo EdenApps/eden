@@ -1,4 +1,4 @@
-<odoo>
+<eden>
     <!-- duplicated for spreadsheetCellThreads in rule spreadsheet_dashboard_edition.ir_rule_spreadsheet_dashboard_threads
         Please update aforemetioned the rule accordingly -->
     <record id="ir_rule_spreadsheet_dashboard" model="ir.rule">
@@ -33,4 +33,4 @@
         <field name="groups" eval="[(4, ref('base.group_user'))]" />
         <field name="domain_force">[('create_uid', '=', user.id)]</field>
     </record>
-</odoo>
+</eden>

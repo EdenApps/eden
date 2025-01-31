@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<eden noupdate="1">
     <record id="barcode_rule_coupon" model="barcode.rule">
         <field name="name">Coupon &amp; Gift Card Barcodes</field>
         <field name="barcode_nomenclature_id" ref="barcodes.default_barcode_nomenclature"/>
@@ -9,4 +9,4 @@
         <!-- Old Gift Cards might start with 044 -->
         <field name="pattern">043|044</field>
     </record>
-</odoo>
+</eden>

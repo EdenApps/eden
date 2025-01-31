@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <!-- Subscription to 'mailing_list_data' -->
        <record id="mailing_list_data_sub_contact_1" model="mailing.subscription">
@@ -51,4 +51,4 @@
             <field name="email">elsa.ericson@example.com</field>
         </record>
     </data>
-</odoo>
+</eden>

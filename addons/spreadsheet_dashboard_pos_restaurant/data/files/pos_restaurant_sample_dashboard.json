@@ -1402,7 +1402,7 @@
   "pivots": {},
   "pivotNextId": 11,
   "customTableStyles": {},
-  "odooVersion": 12,
+  "edenVersion": 12,
   "globalFilters": [],
   "lists": {},
   "listNextId": 1

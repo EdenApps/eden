@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <!-- ONBOARDING STEPS -->
         <!-- INVOICING -->
@@ -76,4 +76,4 @@
             <field name="route_name">account_dashboard</field>
         </record>
     </data>
-</odoo>
+</eden>

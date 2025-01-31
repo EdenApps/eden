@@ -1,7 +1,7 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { AutoComplete } from "@web/core/autocomplete/autocomplete";
-import { useEffect } from "@odoo/owl";
+import { useEffect } from "@eden/owl";
 
 export class AutoCompleteWithPages extends AutoComplete {
     static props = {

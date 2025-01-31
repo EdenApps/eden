@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import api, fields, models, _, Command
+from eden import api, fields, models, _, Command
 
 
 class AccountFullReconcile(models.Model):

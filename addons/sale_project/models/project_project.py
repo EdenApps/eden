@@ -1,14 +1,14 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import ast
 import json
 from collections import defaultdict
 
-from odoo import api, fields, models
-from odoo.osv import expression
-from odoo.tools import Query, SQL
-from odoo.tools.misc import unquote
-from odoo.tools.translate import _
+from eden import api, fields, models
+from eden.osv import expression
+from eden.tools import Query, SQL
+from eden.tools.misc import unquote
+from eden.tools.translate import _
 
 
 class ProjectProject(models.Model):

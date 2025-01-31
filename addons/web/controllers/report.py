@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 import logging
@@ -6,10 +6,10 @@ import logging
 import werkzeug.exceptions
 from werkzeug.urls import url_parse
 
-from odoo import http
-from odoo.http import content_disposition, request
-from odoo.tools.misc import html_escape
-from odoo.tools.safe_eval import safe_eval, time
+from eden import http
+from eden.http import content_disposition, request
+from eden.tools.misc import html_escape
+from eden.tools.safe_eval import safe_eval, time
 
 
 _logger = logging.getLogger(__name__)
@@ -144,7 +144,7 @@ class ReportController(http.Controller):
             se = http.serialize_exception(e)
             error = {
                 'code': 200,
-                'message': "Odoo Server Error",
+                'message': "Eden Server Error",
                 'data': se
             }
             res = request.make_response(html_escape(json.dumps(error)))

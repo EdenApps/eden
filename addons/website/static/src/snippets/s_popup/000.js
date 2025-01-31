@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import publicWidget from "@web/legacy/js/public/public_widget";
 import { cookie } from "@web/core/browser/cookie";
@@ -518,9 +518,9 @@ publicWidget.registry.cookies_bar = PopupWidget.extend({
         this._super(...arguments);
         const params = new URLSearchParams(window.location.search);
         const trackingFields = {
-            utm_campaign: "odoo_utm_campaign",
-            utm_source: "odoo_utm_source",
-            utm_medium: "odoo_utm_medium",
+            utm_campaign: "eden_utm_campaign",
+            utm_source: "eden_utm_source",
+            utm_medium: "eden_utm_medium",
         };
         for (const [key, value] of params) {
             if (key in trackingFields) {

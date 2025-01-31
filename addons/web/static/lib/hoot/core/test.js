@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { reactive } from "@odoo/owl";
+import { reactive } from "@eden/owl";
 import { HootError, stringify } from "../hoot_utils";
 import { Job } from "./job";
 import { Tag } from "./tag";

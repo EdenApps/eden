@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <menuitem
         id="crm_reveal_rule_menu_action"
         action="crm_reveal_rule_action"
@@ -11,4 +11,4 @@
         parent="crm.crm_menu_report"
         action="crm_reveal_view_action"
         groups="base.group_no_one"/>
-</odoo>
+</eden>

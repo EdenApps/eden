@@ -1,4 +1,4 @@
-import { Component, onWillStart, onWillUpdateProps } from "@odoo/owl";
+import { Component, onWillStart, onWillUpdateProps } from "@eden/owl";
 import { Domain } from "@web/core/domain";
 import { TreeEditor } from "@web/core/tree_editor/tree_editor";
 import {

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "@odoo/owl";
+import { useState, useEffect } from "@eden/owl";
 import { localization } from "@web/core/l10n/localization";
 const { DateTime } = luxon;
 

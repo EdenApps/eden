@@ -1,7 +1,7 @@
 import { _t } from "@web/core/l10n/translation";
 import { escape } from "@web/core/utils/strings";
 import { formatList } from "@web/core/l10n/utils";
-import { markup, Component } from "@odoo/owl";
+import { markup, Component } from "@eden/owl";
 import { usePopover } from "@web/core/popover/popover_hook";
 
 import { RecipientList } from "@mail/core/web/recipient_list";

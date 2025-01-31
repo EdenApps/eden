@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <record id="stock_picking_type_kanban_inherit_stock_fleet" model="ir.ui.view">
             <field name="name">stock.picking.type.kanban.inherit.stock.transport</field>
@@ -35,4 +35,4 @@
             </field>
         </record>
     </data>
-</odoo>
+</eden>

@@ -1,4 +1,4 @@
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 export class FileUploadProgressContainer extends Component {
     static template = "web.FileUploadProgressContainer";

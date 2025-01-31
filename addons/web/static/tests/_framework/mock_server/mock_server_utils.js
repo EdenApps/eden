@@ -84,9 +84,9 @@ export function makeServerError({
 } = {}) {
     return makeErrorFromResponse({
         code: code || 200,
-        message: message || "Odoo Server Error",
+        message: message || "Eden Server Error",
         data: {
-            name: errorName || `odoo.exceptions.${type || "UserError"}`,
+            name: errorName || `eden.exceptions.${type || "UserError"}`,
             debug: "traceback",
             arguments: [],
             context: context || {},

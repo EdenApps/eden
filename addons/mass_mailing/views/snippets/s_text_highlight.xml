@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_text_highlight" name="Text Highlight">
     <div class="s_mail_text_highlight o_mail_snippet_general o_cc o_cc3 pt32 pb32 w-100">
@@ -8,4 +8,4 @@
     </div>
 </template>
 
-</odoo>
+</eden>

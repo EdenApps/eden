@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from unittest.mock import patch
 
-from odoo import exceptions
-from odoo.addons.base.tests.test_ir_cron import CronMixinCase
-from odoo.addons.event.tests.common import EventCase
-from odoo.addons.mail.tests.common import MockEmail
-from odoo.tests import tagged, users, warmup
-from odoo.tools import formataddr, mute_logger
+from eden import exceptions
+from eden.addons.base.tests.test_ir_cron import CronMixinCase
+from eden.addons.event.tests.common import EventCase
+from eden.addons.mail.tests.common import MockEmail
+from eden.tests import tagged, users, warmup
+from eden.tools import formataddr, mute_logger
 
 
 @tagged('event_mail', 'post_install', '-at_install')
@@ -108,7 +108,7 @@ class TestMailSchedule(EventCase, MockEmail, CronMixinCase):
         self.assertEqual(event_next_scheduler.mail_state, 'scheduled')
         self.assertEqual(event_next_scheduler.mail_count_done, 0)
 
-    @mute_logger('odoo.addons.base.models.ir_model', 'odoo.models')
+    @mute_logger('eden.addons.base.models.ir_model', 'eden.models')
     @users('user_eventmanager')
     def test_event_mail_schedule(self):
         """ Test mail scheduling for events """
@@ -398,7 +398,7 @@ class TestMailSchedule(EventCase, MockEmail, CronMixinCase):
                 'subject': f"Reminder for {test_event.name}: today",
             })
 
-    @mute_logger('odoo.addons.event.models.event_mail')
+    @mute_logger('eden.addons.event.models.event_mail')
     @users('user_eventmanager')
     def test_event_mail_schedule_fail_global_composer(self):
         """ Simulate a fail during composer usage e.g. invalid field path, template
@@ -430,9 +430,9 @@ class TestMailSchedule(EventCase, MockEmail, CronMixinCase):
         self.assertTrue(before_scheduler.mail_done)
 
     @mute_logger(
-        'odoo.addons.event.models.event_mail',
-        'odoo.addons.event.models.event_mail_registration',
-        'odoo.addons.event.models.event_registration',
+        'eden.addons.event.models.event_mail',
+        'eden.addons.event.models.event_mail_registration',
+        'eden.addons.event.models.event_registration',
     )
     def test_event_mail_schedule_fail_registration_composer(self):
         """ Simulate a fail during composer usage e.g. invalid field path, template
@@ -455,7 +455,7 @@ class TestMailSchedule(EventCase, MockEmail, CronMixinCase):
         self.assertTrue(registration.exists(), "Registration record should exist after creation.")
         self.assertEqual(onsub_scheduler.mail_count_done, 0)
 
-    @mute_logger('odoo.addons.event.models.event_mail')
+    @mute_logger('eden.addons.event.models.event_mail')
     @users('user_eventmanager')
     def test_event_mail_schedule_fail_registration_template_removed(self):
         """ Test flow where scheduler fails due to template being removed. """
@@ -464,7 +464,7 @@ class TestMailSchedule(EventCase, MockEmail, CronMixinCase):
         self.template_subscription.sudo().unlink()
         self.assertFalse(after_sub_scheduler.exists(), "When removing template, scheduler should be removed")
 
-    @mute_logger('odoo.addons.base.models.ir_model', 'odoo.models')
+    @mute_logger('eden.addons.base.models.ir_model', 'eden.models')
     @users('user_eventmanager')
     @warmup
     def test_event_mail_schedule_on_subscription(self):
@@ -519,7 +519,7 @@ class TestMailSchedule(EventCase, MockEmail, CronMixinCase):
         self.assertEqual(self.mail_mail_create_mocked.call_count, 1,
                          'EventMail: should create mails in batch for new registrations')
 
-    @mute_logger('odoo.addons.base.models.ir_model', 'odoo.models')
+    @mute_logger('eden.addons.base.models.ir_model', 'eden.models')
     @users('user_eventmanager')
     def test_event_mail_schedule_on_subscription_async(self):
         """ Async mode for schedulers activated, should not send communication
@@ -560,7 +560,7 @@ class TestMailSchedule(EventCase, MockEmail, CronMixinCase):
                 'subject': f'Confirmation for {test_event.name}',
             })
 
-    @mute_logger('odoo.addons.base.models.ir_model', 'odoo.models')
+    @mute_logger('eden.addons.base.models.ir_model', 'eden.models')
     def test_unique_event_mail_ids(self):
         # create event with default event_mail_ids lines
         test_event = self.env['event.event'].with_user(self.user_eventmanager).create({
@@ -615,7 +615,7 @@ class TestMailSchedule(EventCase, MockEmail, CronMixinCase):
         self.assertEqual(len(duplicate_mails), 0,
             "The duplicate configuration (first one from event_type.event_type_mail_ids which has same configuration as the sent one) should not have been added")
 
-    @mute_logger('odoo.addons.base.models.ir_model', 'odoo.models')
+    @mute_logger('eden.addons.base.models.ir_model', 'eden.models')
     def test_archived_event_mail_schedule(self):
         """ Test mail scheduling for archived events """
         event_cron_id = self.env.ref('event.event_mail_scheduler')

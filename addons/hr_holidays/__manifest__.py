@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 {
     'name': 'Time Off',
@@ -7,7 +7,7 @@
     'category': 'Human Resources/Time Off',
     'sequence': 85,
     'summary': 'Allocate PTOs and follow leaves requests',
-    'website': 'https://www.odoo.com/app/time-off',
+    'website': 'https://www.edencloud.us/app/time-off',
     'description': """
 Manage time off requests and allocations
 =====================================

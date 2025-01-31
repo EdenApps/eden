@@ -1,6 +1,6 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import TransactionCase
+from eden.tests import TransactionCase
 
 
 class DeliveryCommon(TransactionCase):

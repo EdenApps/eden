@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
 
 <!-- test.model.multi.website views -->
 <record id="test_model_multi_website_view_kanban" model="ir.ui.view">
@@ -70,4 +70,4 @@
     ]"/>
 </record>
 
-</odoo>
+</eden>

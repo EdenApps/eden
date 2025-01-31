@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { SelectionField, selectionField } from '@web/views/fields/selection/selection_field';
 import { registry } from '@web/core/registry';

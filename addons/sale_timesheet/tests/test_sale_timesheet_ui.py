@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 # -*- coding: utf-8 -*-
 
 import logging
 
-from odoo.tests import HttpCase, tagged
+from eden.tests import HttpCase, tagged
 
 _logger = logging.getLogger(__name__)
 
@@ -43,4 +43,4 @@ class TestSaleTimesheetUi(HttpCase):
 
     def test_ui(self):
         self.env['product.pricelist'].with_context(active_test=False).search([]).unlink()
-        self.start_tour('/odoo', 'sale_timesheet_tour', login='admin', timeout=100)
+        self.start_tour('/eden', 'sale_timesheet_tour', login='admin', timeout=100)

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <record id="product_category_events" model="product.category">
             <field name="parent_id" ref="product.product_category_1"/>
@@ -18,4 +18,4 @@
             <field name="service_tracking">event</field>
         </record>
     </data>
-</odoo>
+</eden>

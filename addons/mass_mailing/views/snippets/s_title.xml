@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_title" name="Title">
     <div class="s_title o_mail_snippet_general pt16 pb16">
@@ -9,4 +9,4 @@
     </div>
 </template>
 
-</odoo>
+</eden>

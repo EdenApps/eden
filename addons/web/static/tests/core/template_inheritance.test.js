@@ -1,4 +1,4 @@
-import { test, expect } from "@odoo/hoot";
+import { test, expect } from "@eden/hoot";
 import { applyInheritance } from "@web/core/template_inheritance";
 import { serverState } from "@web/../tests/web_test_helpers";
 

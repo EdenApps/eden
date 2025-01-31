@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <!--  MAILING LIST -->
     <record model="ir.ui.view" id="mailing_list_view_search">
         <field name="name">mailing.list.view.search</field>
@@ -238,8 +238,8 @@
           <p class="o_view_nocontent_smiling_face">
             Create a Mailing List
           </p><p>
-            No need to import mailing lists, you can send mailings to contacts saved in other Odoo apps.
+            No need to import mailing lists, you can send mailings to contacts saved in other Eden apps.
           </p>
         </field>
     </record>
-</odoo>
+</eden>

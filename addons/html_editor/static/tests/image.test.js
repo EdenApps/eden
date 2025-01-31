@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { click, press, queryOne, waitFor, waitUntil, dblclick } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { expect, test } from "@eden/hoot";
+import { click, press, queryOne, waitFor, waitUntil, dblclick } from "@eden/hoot-dom";
+import { animationFrame } from "@eden/hoot-mock";
 import { setupEditor } from "./_helpers/editor";
 import { contains } from "@web/../tests/web_test_helpers";
 import { getContent, setContent } from "./_helpers/selection";
@@ -470,10 +470,10 @@ test("can add link on an image", async () => {
     await click("button[name='link']");
     await animationFrame();
 
-    await contains(".o-we-linkpopover input.o_we_href_input_link").fill("http://odoo.com/");
+    await contains(".o-we-linkpopover input.o_we_href_input_link").fill("http://edencloud.us/");
     await animationFrame();
     expect(img.parentElement.tagName).toBe("A");
-    expect(img.parentElement).toHaveAttribute("href", "http://odoo.com/");
+    expect(img.parentElement).toHaveAttribute("href", "http://edencloud.us/");
 });
 
 test("can undo adding link to image", async () => {
@@ -485,7 +485,7 @@ test("can undo adding link to image", async () => {
     await waitFor(".o-we-toolbar");
     await click("button[name='link']");
     await animationFrame();
-    await contains(".o-we-linkpopover input.o_we_href_input_link").fill("http://odoo.com/");
+    await contains(".o-we-linkpopover input.o_we_href_input_link").fill("http://edencloud.us/");
     await animationFrame();
     expect(img.parentElement.tagName).toBe("A");
 

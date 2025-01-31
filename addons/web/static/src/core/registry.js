@@ -1,4 +1,4 @@
-import { EventBus, validate } from "@odoo/owl";
+import { EventBus, validate } from "@eden/owl";
 
 // -----------------------------------------------------------------------------
 // Errors
@@ -12,7 +12,7 @@ export class DuplicatedKeyError extends Error {}
 // -----------------------------------------------------------------------------
 
 const validateSchema = (value, schema) => {
-    if (!odoo.debug) {
+    if (!eden.debug) {
         return;
     }
     validate(value, schema);

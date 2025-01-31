@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 
-from odoo.tests import HttpCase, tagged
-from odoo.addons.website.tools import MockRequest
+from eden.tests import HttpCase, tagged
+from eden.addons.website.tools import MockRequest
 
 _logger = logging.getLogger(__name__)
 
@@ -46,7 +46,7 @@ class TestSnippets(HttpCase):
         if not website_visitor:
             with MockRequest(user.with_user(user).env, website=self.env['website'].get_current_website()):
                 website_visitor = Visitor.create({'partner_id': user.partner_id.id})
-        self.assertEqual(website_visitor.name, user.name, "The visitor should be linked to the admin user, not OdooBot or anything.")
+        self.assertEqual(website_visitor.name, user.name, "The visitor should be linked to the admin user, not EdenBot or anything.")
         self.product = self.env['product.product'].create({
             'name': 'Storage Box',
             'website_published': True,

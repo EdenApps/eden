@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_images_constellation" name="Images Constellation">
     <section class="s_images_constellation o_cc o_cc5 pt48 pb48">
@@ -28,4 +28,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

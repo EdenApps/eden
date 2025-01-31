@@ -1,4 +1,4 @@
-<odoo>
+<eden>
     <data>
         <record id="image_placeholder" model="ir.attachment">
             <field name="name">placeholder.png</field>
@@ -7,4 +7,4 @@
             <field name="public">True</field>
         </record>
     </data>
-</odoo>
+</eden>

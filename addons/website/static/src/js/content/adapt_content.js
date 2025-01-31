@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 document.addEventListener('DOMContentLoaded', () => {
     const htmlEl = document.documentElement;

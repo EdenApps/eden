@@ -1,7 +1,7 @@
 import { compareDatetime } from "@mail/utils/common/misc";
 import { rpc } from "@web/core/network/rpc";
 import { Store as BaseStore, makeStore, Record } from "@mail/core/common/record";
-import { reactive } from "@odoo/owl";
+import { reactive } from "@eden/owl";
 
 import { registry } from "@web/core/registry";
 import { user } from "@web/core/user";
@@ -104,7 +104,7 @@ export class Store extends BaseStore {
      * public page.
      */
     inPublicPage = false;
-    odoobot = Record.one("Persona");
+    edenbot = Record.one("Persona");
     users = {};
     /** @type {number} */
     internalUserGroupId;
@@ -731,7 +731,7 @@ export class Store extends BaseStore {
             if (
                 partner.name &&
                 cleanTerm(partner.name).includes(searchTerm) &&
-                ((partner.active && partner.userId) || partner === this.store.odoobot)
+                ((partner.active && partner.userId) || partner === this.store.edenbot)
             ) {
                 partners.push(partner);
                 if (partners.length >= limit) {
@@ -755,7 +755,7 @@ Store.register();
 export const storeService = {
     dependencies: ["bus_service", "im_status", "ui"],
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").EdenEnv} env
      * @param {Partial<import("services").Services>} services
      */
     start(env, services) {

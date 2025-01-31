@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <!-- Index -->
 <template id="index" name="Events" track="1">
@@ -293,7 +293,7 @@
         <p t-elif="searches['tags']">No event matching your search criteria could be found.</p>
         <p t-else="">We couldn't find any event scheduled at this moment.</p>
         <div class="o_not_editable my-3" groups="event.group_event_user">
-            <a class="o_wevent_cta btn" target="_blank" href="/odoo/action-event.action_event_view?view_type=form">
+            <a class="o_wevent_cta btn" target="_blank" href="/eden/action-event.action_event_view?view_type=form">
                 <span class="fa fa-plus me-1"/> Create an Event
             </a>
         </div>
@@ -496,4 +496,4 @@
     <div class="o_wevent_confirmation_end_page_hook"/>
 </template>
 
-</odoo>
+</eden>

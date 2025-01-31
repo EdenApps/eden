@@ -1,7 +1,7 @@
-/** @odoo-module **/
+/** @eden-module **/
 import { makeDraggableHook } from "@web/core/utils/draggable_hook_builder";
 import { pick } from "@web/core/utils/objects";
-import { reactive } from "@odoo/owl";
+import { reactive } from "@eden/owl";
 import { throttleForAnimation } from "@web/core/utils/timing";
 import { closest, touching } from "@web/core/utils/ui";
 

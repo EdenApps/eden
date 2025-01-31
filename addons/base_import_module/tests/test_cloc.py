@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import json
 from io import BytesIO
 from zipfile import ZipFile, ZIP_DEFLATED
 
-from odoo.tools import cloc
-from odoo.addons.base.tests import test_cloc
+from eden.tools import cloc
+from eden.addons.base.tests import test_cloc
 
 VALID_XML = """
 <templates id="template" xml:space="preserve">
@@ -18,7 +18,7 @@ VALID_XML = """
 </templates>
 """
 VALID_XML_2 = """<?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
     <template id="template_2">
         <t t-name="stock_barcode.LineComponent">
             <div t-if="line.picking_id and line.picking_id.origin" name="origin">
@@ -30,7 +30,7 @@ VALID_XML_2 = """<?xml version="1.0" encoding="UTF-8"?>
     <record id="base.view_company_form" model="ir.ui.view">
         <field name="active" eval="True"/>
     </record>
-</odoo>
+</eden>
 """
 
 class TestClocFields(test_cloc.TestClocCustomization):
@@ -40,7 +40,7 @@ class TestClocFields(test_cloc.TestClocCustomization):
         # Check for existing module in case the test run on an existing database
         if not self.env['ir.module.module'].search([('name', '=', 'studio_customization')]):
             self.env['ir.module.module'].create({
-                'author': 'Odoo',
+                'author': 'Eden',
                 'imported': True,
                 'latest_version': '13.0.1.0.0',
                 'name': 'studio_customization',
@@ -101,7 +101,7 @@ class TestClocFields(test_cloc.TestClocCustomization):
 
     def test_count_qweb_imported_module(self):
         self.env['ir.module.module'].create({
-            'author': 'Odoo',
+            'author': 'Eden',
             'imported': True,
             'latest_version': '15.0.1.0.0',
             'name': 'test_imported_module',
@@ -168,7 +168,7 @@ class TestClocFields(test_cloc.TestClocCustomization):
 
     def test_exclude_qweb(self):
         self.env['ir.module.module'].create({
-            'author': 'Odoo',
+            'author': 'Eden',
             'imported': True,
             'latest_version': '15.0.1.0.0',
             'name': 'test_imported_module',

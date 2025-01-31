@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import re
 
-from odoo import models
-from odoo.addons.mail.models.discuss.mail_guest import add_guest_to_context
-from odoo.addons.mail.tools.discuss import Store
+from eden import models
+from eden.addons.mail.models.discuss.mail_guest import add_guest_to_context
+from eden.addons.mail.tools.discuss import Store
 
 
 class IrWebsocket(models.AbstractModel):

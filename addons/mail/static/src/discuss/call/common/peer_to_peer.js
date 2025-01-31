@@ -233,7 +233,7 @@ export class PeerToPeer extends EventTarget {
     }
     /**
      * @param {object} [options]
-     * @param {String} [options.notificationRoute] the route used to communicate with the odoo server
+     * @param {String} [options.notificationRoute] the route used to communicate with the eden server
      * @param {LOG_LEVEL[keyof LOG_LEVEL]} [options.logLevel=LOG_LEVEL.NONE]
      * @param {boolean} [options.antiGlare=true] whether or not to use the rollback feature to manage offer collisions,
      *        ids provided for peers should be comparable for this feature to work.

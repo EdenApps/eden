@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <data>
         <!-- FORUM VIEWS -->
         <record id="forum_forum_view_tree" model="ir.ui.view">
@@ -175,4 +175,4 @@
         </record>
 
     </data>
-</odoo>
+</eden>

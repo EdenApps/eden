@@ -1,9 +1,9 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { _t } from "@web/core/l10n/translation";
 import { scanBarcode } from "@web/core/barcode/barcode_dialog";
 import { isBarcodeScannerSupported } from "@web/core/barcode/barcode_video_scanner";
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 import { useService } from "@web/core/utils/hooks";
 
 export class BarcodeScanner extends Component {

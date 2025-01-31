@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { queryAllTexts } from "@odoo/hoot-dom";
-import { Component, xml } from "@odoo/owl";
+import { expect, test } from "@eden/hoot";
+import { queryAllTexts } from "@eden/hoot-dom";
+import { Component, xml } from "@eden/owl";
 import { defineModels, fields, models, mountView, contains } from "@web/../tests/web_test_helpers";
 
 import { registry } from "@web/core/registry";

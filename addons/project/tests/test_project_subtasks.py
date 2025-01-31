@@ -1,13 +1,13 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import psycopg2
 from lxml import etree
 
-from odoo import Command
-from odoo.addons.project.tests.test_project_base import TestProjectCommon
-from odoo.tests import Form, tagged
-from odoo.tools import mute_logger
-from odoo.exceptions import ValidationError
+from eden import Command
+from eden.addons.project.tests.test_project_base import TestProjectCommon
+from eden.tests import Form, tagged
+from eden.tools import mute_logger
+from eden.exceptions import ValidationError
 
 
 @tagged('-at_install', 'post_install')
@@ -116,7 +116,7 @@ class TestProjectSubtasks(TestProjectCommon):
         task_form = Form(self.task_1.with_context({'tracking_disable': True}))
         with task_form.child_ids.edit(0) as child_task_form:
             child_task_form.project_id = self.env['project.project']
-        with self.assertRaises(psycopg2.errors.CheckViolation), mute_logger('odoo.sql_db'):
+        with self.assertRaises(psycopg2.errors.CheckViolation), mute_logger('eden.sql_db'):
             task_form.save()
 
         # 3bis)

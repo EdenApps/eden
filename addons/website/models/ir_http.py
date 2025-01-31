@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import contextlib
 import functools
 import logging
@@ -11,17 +11,17 @@ import werkzeug
 import werkzeug.routing
 import werkzeug.utils
 
-import odoo
-from odoo import api, models, tools
-from odoo import SUPERUSER_ID
-from odoo.exceptions import AccessError
-from odoo.http import request
-from odoo.tools.json import scriptsafe as json_scriptsafe
-from odoo.tools.safe_eval import safe_eval
-from odoo.osv.expression import FALSE_DOMAIN
-from odoo.addons.base.models.ir_http import EXTENSION_TO_WEB_MIMETYPES
-from odoo.addons.http_routing.models import ir_http
-from odoo.addons.portal.controllers.portal import _build_url_w_params
+import eden
+from eden import api, models, tools
+from eden import SUPERUSER_ID
+from eden.exceptions import AccessError
+from eden.http import request
+from eden.tools.json import scriptsafe as json_scriptsafe
+from eden.tools.safe_eval import safe_eval
+from eden.osv.expression import FALSE_DOMAIN
+from eden.addons.base.models.ir_http import EXTENSION_TO_WEB_MIMETYPES
+from eden.addons.http_routing.models import ir_http
+from eden.addons.portal.controllers.portal import _build_url_w_params
 
 logger = logging.getLogger(__name__)
 
@@ -51,7 +51,7 @@ def get_request_website():
 
     Don't import directly the method or it won't be mocked during tests, do:
     ```
-    from odoo.addons.website.models import ir_http
+    from eden.addons.website.models import ir_http
     my_var = ir_http.get_request_website()
     ```
     """
@@ -291,7 +291,7 @@ class Http(models.AbstractModel):
     @classmethod
     def _get_translation_frontend_modules_name(cls):
         mods = super()._get_translation_frontend_modules_name()
-        installed = request.registry._init_modules.union(odoo.conf.server_wide_modules)
+        installed = request.registry._init_modules.union(eden.conf.server_wide_modules)
         return mods + [mod for mod in installed if mod.startswith('website')]
 
     @classmethod

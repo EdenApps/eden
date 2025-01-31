@@ -1,4 +1,4 @@
-import { after, describe, expect, test } from "@odoo/hoot";
+import { after, describe, expect, test } from "@eden/hoot";
 import {
     defineModels,
     getService,

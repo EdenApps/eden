@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <!-- 15% next order -->
         <record id="15_pc_on_next_order" model="loyalty.program">
@@ -94,4 +94,4 @@
         <field name="available_in_pos">True</field>
     </record>
 
-</odoo>
+</eden>

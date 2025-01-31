@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from contextlib import contextmanager
 
-from odoo import Command
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.tests import Form, tagged
+from eden import Command
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
+from eden.tests import Form, tagged
 from unittest.mock import patch
 
 

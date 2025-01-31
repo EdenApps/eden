@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { registry } from "@web/core/registry";
 import { ControlPanel } from "@web/search/control_panel/control_panel";
@@ -12,10 +12,10 @@ import { useService } from "@web/core/utils/hooks";
 import { standardActionServiceProps } from "@web/webclient/actions/action_service";
 import { SpreadsheetShareButton } from "@spreadsheet/components/share_button/share_button";
 import { useSpreadsheetPrint } from "@spreadsheet/hooks";
-import { Registry } from "@odoo/o-spreadsheet";
+import { Registry } from "@eden/o-spreadsheet";
 import { router } from "@web/core/browser/router";
 
-import { Component, onWillStart, useState, useEffect } from "@odoo/owl";
+import { Component, onWillStart, useState, useEffect } from "@eden/owl";
 
 export const dashboardActionRegistry = new Registry();
 

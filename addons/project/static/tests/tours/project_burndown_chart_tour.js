@@ -1,10 +1,10 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { registry } from "@web/core/registry";
 import { stepUtils } from "@web_tour/tour_service/tour_utils";
 
 registry.category("web_tour.tours").add('burndown_chart_tour', {
-    url: '/odoo',
+    url: '/eden',
     steps: () => [stepUtils.showAppsMenuItem(), {
     trigger: '.o_app[data-menu-xmlid="project.menu_main_pm"]',
     run: "click",

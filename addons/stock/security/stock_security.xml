@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 <data noupdate="0">
 
     <record id="base.module_category_inventory_inventory" model="ir.module.category">
@@ -177,4 +177,4 @@
     </record>
 
 </data>
-</odoo>
+</eden>

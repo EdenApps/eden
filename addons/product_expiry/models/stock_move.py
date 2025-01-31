@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import datetime
 import dateutil.parser as dparser
 from re import findall as re_findall
 
-from odoo import fields, models
-from odoo.tools import get_lang
+from eden import fields, models
+from eden.tools import get_lang
 
 
 class StockMove(models.Model):

@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<odoo>
+<eden>
     <data>
         <record id="res_users_view_form_simple_modif" model="ir.ui.view">
             <field name="name">res.users.preferences.form.simplified.inherit</field>
@@ -17,10 +17,10 @@
             <field name="inherit_id"
                    ref="mail_bot.res_users_view_form_preferences" />
             <field name="arch" type="xml">
-                <field name="odoobot_state" position="before">
+                <field name="edenbot_state" position="before">
                     <field name="can_edit" invisible="1"/>
                 </field>
-                <xpath expr="//field[@name='odoobot_state']" position="attributes">
+                <xpath expr="//field[@name='edenbot_state']" position="attributes">
                     <attribute name="readonly">not can_edit</attribute>
                 </xpath>
             </field>
@@ -38,4 +38,4 @@
             </field>
         </record>
     </data>
-</odoo>
+</eden>

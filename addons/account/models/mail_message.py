@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-from odoo import api, fields, models
-from odoo.exceptions import UserError
-from odoo.osv.expression import OR
+# Part of Eden. See LICENSE file for full copyright and licensing details.
+from eden import api, fields, models
+from eden.exceptions import UserError
+from eden.osv.expression import OR
 
 bypass_token = object()
 DOMAINS = {

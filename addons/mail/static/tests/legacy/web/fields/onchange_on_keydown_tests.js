@@ -1,4 +1,4 @@
-/** @odoo-module alias=@mail/../tests/web/fields/onchange_on_keydown_tests default=false */
+/** @eden-module alias=@mail/../tests/web/fields/onchange_on_keydown_tests default=false */
 const test = QUnit.test; // QUnit.test()
 
 import {

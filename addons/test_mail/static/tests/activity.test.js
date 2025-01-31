@@ -17,9 +17,9 @@ import {
     DEFAULT_MAIL_SEARCH_ID,
     DEFAULT_MAIL_VIEW_ID,
 } from "@mail/../tests/mock_server/mock_models/constants";
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { mockDate, animationFrame } from "@odoo/hoot-mock";
-import { onMounted, onWillUnmount } from "@odoo/owl";
+import { beforeEach, describe, expect, test } from "@eden/hoot";
+import { mockDate, animationFrame } from "@eden/hoot-mock";
+import { onMounted, onWillUnmount } from "@eden/owl";
 import { MailTestActivity } from "@test_mail/../tests/mock_server/models/mail_test_activity";
 import { defineTestMailModels } from "@test_mail/../tests/test_mail_test_helpers";
 import { Domain } from "@web/core/domain";
@@ -29,7 +29,7 @@ import { deepEqual, omit } from "@web/core/utils/objects";
 import { getOrigin } from "@web/core/utils/urls";
 import { serializeDate, formatDate } from "@web/core/l10n/dates";
 import { onRpc, patchWithCleanup, serverState, contains as webContains } from "@web/../tests/web_test_helpers";
-import { keyDown, waitFor } from "@odoo/hoot-dom";
+import { keyDown, waitFor } from "@eden/hoot-dom";
 import { MailActivitySchedule } from "@mail/../tests/mock_server/mock_models/mail_activity_schedule";
 
 const { DateTime } = luxon;

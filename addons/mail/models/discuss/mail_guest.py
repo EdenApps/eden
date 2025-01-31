@@ -1,18 +1,18 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import pytz
 import uuid
 from datetime import datetime, timedelta
 from functools import wraps
 
-from odoo.tools import consteq
-from odoo import _, api, fields, models
-from odoo.http import request
-from odoo.addons.base.models.res_partner import _tz_get
-from odoo.exceptions import UserError
-from odoo.tools.misc import limited_field_access_token
-from odoo.addons.bus.websocket import wsrequest
-from odoo.addons.mail.tools.discuss import Store
+from eden.tools import consteq
+from eden import _, api, fields, models
+from eden.http import request
+from eden.addons.base.models.res_partner import _tz_get
+from eden.exceptions import UserError
+from eden.tools.misc import limited_field_access_token
+from eden.addons.bus.websocket import wsrequest
+from eden.addons.mail.tools.discuss import Store
 
 
 def add_guest_to_context(func):

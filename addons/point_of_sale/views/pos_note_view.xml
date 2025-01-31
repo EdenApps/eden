@@ -1,4 +1,4 @@
-<odoo>
+<eden>
 
     <record id="view_pos_note_tree" model="ir.ui.view">
         <field name="name">Note Models</field>
@@ -21,4 +21,4 @@
              parent="menu_point_config_product"
              action="action_pos_note_model"
              sequence="11"/>
-</odoo>
+</eden>

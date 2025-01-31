@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.website_slides.tests import common
-from odoo.tests import tagged
-from odoo.tests.common import users
-from odoo.tools import mute_logger
+from eden.addons.website_slides.tests import common
+from eden.tests import tagged
+from eden.tests.common import users
+from eden.tools import mute_logger
 
 
 @tagged('gamification')
@@ -39,7 +39,7 @@ class TestKarmaGain(common.SlidesCase):
             }
         ])
 
-    @mute_logger('odoo.models')
+    @mute_logger('eden.models')
     @users('user_emp', 'user_portal', 'user_officer')
     def test_karma_gain(self):
         user = self.env.user
@@ -104,7 +104,7 @@ class TestKarmaGain(common.SlidesCase):
         self.assertTrue(self.channel_2.with_user(user).completed)
         self.assertEqual(user.karma, computed_karma)
 
-    @mute_logger('odoo.models')
+    @mute_logger('eden.models')
     @users('user_emp', 'user_portal', 'user_officer')
     def test_karma_gain_multiple_course(self):
         user = self.env.user
@@ -118,7 +118,7 @@ class TestKarmaGain(common.SlidesCase):
         (self.slide | self.slide_2 | self.slide_3 | self.slide_2_0 | self.slide_2_1).with_user(user)._action_mark_completed()
         self.assertEqual(user.karma, computed_karma)
 
-    @mute_logger('odoo.models')
+    @mute_logger('eden.models')
     def test_karma_gain_multiple_course_multiple_users(self):
         users = self.user_emp | self.user_portal
         users.write({'karma': 0})

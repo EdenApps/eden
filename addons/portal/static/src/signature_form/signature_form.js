@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @eden-module **/
 
-import { Component, onMounted, useRef, useState } from "@odoo/owl";
+import { Component, onMounted, useRef, useState } from "@eden/owl";
 import { _t } from "@web/core/l10n/translation";
 import { addLoadingEffect } from '@web/core/utils/ui';
 import { rpc } from "@web/core/network/rpc";
@@ -21,7 +21,7 @@ class SignatureForm extends Component {
     setup() {
         this.rootRef = useRef("root");
 
-        this.csrfToken = odoo.csrf_token;
+        this.csrfToken = eden.csrf_token;
         this.state = useState({
             error: false,
             success: false,

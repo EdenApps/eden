@@ -1,6 +1,6 @@
 import { InputPlugin } from "@html_editor/core/input_plugin";
 import { MentionPlugin } from "@mail/views/web/fields/html_composer_message_field/mention_plugin";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 
 describe("Implicit plugin dependencies", () => {
     test("position as an implicit dependency", async () => {

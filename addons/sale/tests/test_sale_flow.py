@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo.addons.sale.tests.common import TestSaleCommonBase
+from eden.addons.sale.tests.common import TestSaleCommonBase
 
 
 class TestSaleFlow(TestSaleCommonBase):

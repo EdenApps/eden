@@ -1,4 +1,4 @@
-import { describe, test } from "@odoo/hoot";
+import { describe, test } from "@eden/hoot";
 import {
     contains,
     insertText,

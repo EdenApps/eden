@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.phone_validation.tools import phone_validation
-from odoo.addons.test_mail.tests.common import TestRecipients
+from eden.addons.phone_validation.tools import phone_validation
+from eden.addons.test_mail.tests.common import TestRecipients
 
 
 class TestSMSRecipients(TestRecipients):

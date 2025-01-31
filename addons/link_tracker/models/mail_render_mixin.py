@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import re
 from html import unescape
@@ -8,9 +8,9 @@ import lxml
 import markupsafe
 from werkzeug import urls
 
-from odoo import api, models, tools
-from odoo.addons.link_tracker.tools.html import find_links_with_urls_and_labels
-from odoo.tools.mail import is_html_empty, URL_SKIP_PROTOCOL_REGEX, TEXT_URL_REGEX
+from eden import api, models, tools
+from eden.addons.link_tracker.tools.html import find_links_with_urls_and_labels
+from eden.tools.mail import is_html_empty, URL_SKIP_PROTOCOL_REGEX, TEXT_URL_REGEX
 
 
 class MailRenderMixin(models.AbstractModel):
@@ -23,7 +23,7 @@ class MailRenderMixin(models.AbstractModel):
     @api.model
     def _shorten_links(self, html, link_tracker_vals, blacklist=None, base_url=None):
         """ Shorten links in an html content. It uses the '/r' short URL routing
-        introduced in this module. Using the standard Odoo regex local links are
+        introduced in this module. Using the standard Eden regex local links are
         found and replaced by global URLs (not including mailto, tel, sms).
 
         TDE FIXME: could be great to have a record to enable website-based URLs

@@ -1,19 +1,19 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import base64
 import json
 
 from werkzeug.urls import url_encode
 
-import odoo
-import odoo.tests
-from odoo import http
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
-from odoo.addons.web_editor.controllers.main import Web_Editor
+import eden
+import eden.tests
+from eden import http
+from eden.addons.base.tests.common import HttpCaseWithUserDemo
+from eden.addons.web_editor.controllers.main import Web_Editor
 
 
-@odoo.tests.tagged('-at_install', 'post_install')
-class TestUiCustomizeTheme(odoo.tests.HttpCase):
+@eden.tests.tagged('-at_install', 'post_install')
+class TestUiCustomizeTheme(eden.tests.HttpCase):
     def test_01_attachment_website_unlink(self):
         ''' Some ir.attachment needs to be unlinked when a website is unlink,
             otherwise some flows will just crash. That's the case when 2 website
@@ -63,7 +63,7 @@ class TestUiCustomizeTheme(odoo.tests.HttpCase):
         self.assertFalse(so_attachment.website_id, 'Website should be removed')
 
 
-@odoo.tests.tagged('-at_install', 'post_install')
+@eden.tests.tagged('-at_install', 'post_install')
 class TestUiHtmlEditor(HttpCaseWithUserDemo):
 
     def test_html_editor_multiple_templates(self):
@@ -140,18 +140,18 @@ class TestUiHtmlEditor(HttpCaseWithUserDemo):
 
     def test_code_editor_usable(self):
         # TODO: enable debug mode when failing tests have been fixed (props validation)
-        url = '/odoo/action-website.website_preview'
+        url = '/eden/action-website.website_preview'
         self.start_tour(url, 'website_code_editor_usable', login='admin')
 
 
-@odoo.tests.tagged('external', '-standard', '-at_install', 'post_install')
+@eden.tests.tagged('external', '-standard', '-at_install', 'post_install')
 class TestUiHtmlEditorWithExternal(HttpCaseWithUserDemo):
     def test_media_dialog_external_library(self):
         self.start_tour("/", 'website_media_dialog_external_library', login='admin')
 
 
-@odoo.tests.tagged('-at_install', 'post_install')
-class TestUiTranslate(odoo.tests.HttpCase):
+@eden.tests.tagged('-at_install', 'post_install')
+class TestUiTranslate(eden.tests.HttpCase):
     def test_admin_tour_rte_translator(self):
         self.env['res.lang'].create({
             'name': 'Parseltongue',
@@ -235,11 +235,11 @@ class TestUiTranslate(odoo.tests.HttpCase):
         self.start_tour(f"/website/force/{website_2.id}", 'snippet_translation_changing_lang', login='admin')
 
 
-@odoo.tests.common.tagged('post_install', '-at_install')
-class TestUi(odoo.tests.HttpCase):
+@eden.tests.common.tagged('post_install', '-at_install')
+class TestUi(eden.tests.HttpCase):
 
     def test_01_admin_tour_homepage(self):
-        self.start_tour("/odoo", 'homepage', login='admin')
+        self.start_tour("/eden", 'homepage', login='admin')
 
     def test_02_restricted_editor(self):
         self.restricted_editor = self.env['res.users'].create({
@@ -379,7 +379,7 @@ class TestUi(odoo.tests.HttpCase):
 
     def test_10_website_conditional_visibility(self):
         self.start_tour(self.env['website'].get_client_action_url('/'), 'conditional_visibility_1', login='admin')
-        self.start_tour('/odoo', 'conditional_visibility_2', login='admin')
+        self.start_tour('/eden', 'conditional_visibility_2', login='admin')
         self.start_tour(self.env['website'].get_client_action_url('/'), 'conditional_visibility_3', login='admin')
         self.start_tour(self.env['website'].get_client_action_url('/'), 'conditional_visibility_4', login='admin')
         self.start_tour(self.env['website'].get_client_action_url('/'), 'conditional_visibility_5', login='admin')
@@ -469,16 +469,16 @@ class TestUi(odoo.tests.HttpCase):
         self.start_tour('/', 'website_snippets_menu_tabs', login='admin')
 
     def test_19_website_page_options(self):
-        self.start_tour("/odoo", "website_page_options", login="admin")
+        self.start_tour("/eden", "website_page_options", login="admin")
 
     def test_20_snippet_editor_panel_options(self):
         self.start_tour('/@/', 'snippet_editor_panel_options', login='admin')
 
     def test_21_website_start_cloned_snippet(self):
-        self.start_tour('/odoo', 'website_start_cloned_snippet', login='admin')
+        self.start_tour('/eden', 'website_start_cloned_snippet', login='admin')
 
     def test_22_website_gray_color_palette(self):
-        self.start_tour('/odoo', 'website_gray_color_palette', login='admin')
+        self.start_tour('/eden', 'website_gray_color_palette', login='admin')
 
     def test_23_website_multi_edition(self):
         self.start_tour('/@/', 'website_multi_edition', login='admin')
@@ -506,18 +506,18 @@ class TestUi(odoo.tests.HttpCase):
 
     def test_26_website_media_dialog_icons(self):
         self.env.ref('website.default_website').write({
-            'social_twitter': 'https://twitter.com/Odoo',
-            'social_facebook': 'https://www.facebook.com/Odoo',
-            'social_linkedin': 'https://www.linkedin.com/company/odoo',
+            'social_twitter': 'https://twitter.com/Eden',
+            'social_facebook': 'https://www.facebook.com/Eden',
+            'social_linkedin': 'https://www.linkedin.com/company/eden',
             'social_youtube': 'https://www.youtube.com/user/OpenERPonline',
-            'social_github': 'https://github.com/odoo',
-            'social_instagram': 'https://www.instagram.com/explore/tags/odoo/',
-            'social_tiktok': 'https://www.tiktok.com/@odoo',
+            'social_github': 'https://github.com/eden',
+            'social_instagram': 'https://www.instagram.com/explore/tags/eden/',
+            'social_tiktok': 'https://www.tiktok.com/@eden',
         })
         self.start_tour("/", 'website_media_dialog_icons', login='admin')
 
     def test_27_website_clicks(self):
-        self.start_tour('/odoo', 'website_click_tour', login='admin')
+        self.start_tour('/eden', 'website_click_tour', login='admin')
 
     def test_29_website_text_edition(self):
         self.start_tour('/@/', 'website_text_edition', login='admin')

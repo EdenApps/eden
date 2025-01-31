@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="view_confirm_stock_sms" model="ir.ui.view">
         <field name="name">stock_confirm_sms</field>
         <field name="model">confirm.stock.sms</field>
@@ -17,4 +17,4 @@
             </form>
         </field>
     </record>
-</odoo>
+</eden>

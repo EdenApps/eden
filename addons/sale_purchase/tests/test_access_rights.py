@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import AccessError
-from odoo.addons.sale_purchase.tests.common import TestCommonSalePurchaseNoChart
-from odoo.tests import tagged
+from eden.exceptions import AccessError
+from eden.addons.sale_purchase.tests.common import TestCommonSalePurchaseNoChart
+from eden.tests import tagged
 
 
 @tagged('-at_install', 'post_install')

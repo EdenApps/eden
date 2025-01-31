@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields
+from eden import models, fields
 
 
 class res_company(models.Model):

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <record id="account_analytic_plan_form_view_inherit_account" model="ir.ui.view">
             <field name="name">account.analytic.plan.inherit.form</field>
@@ -20,4 +20,4 @@
             </field>
         </record>
     </data>
-</odoo>
+</eden>

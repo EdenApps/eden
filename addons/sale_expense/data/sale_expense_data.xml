@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
 
         <function model="product.product" name="write">
@@ -22,4 +22,4 @@
             <value eval="{'expense_policy': 'cost'}"/>
         </function>
     </data>
-</odoo>
+</eden>

@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 from dateutil.relativedelta import relativedelta
 
-from odoo.fields import Datetime
-from odoo.tests.common import TransactionCase
-from odoo.osv.expression import normalize_domain
-from odoo.addons.resource.models import utils
-from odoo.tests import Form
+from eden.fields import Datetime
+from eden.tests.common import TransactionCase
+from eden.osv.expression import normalize_domain
+from eden.addons.resource.models import utils
+from eden.tests import Form
 
 
 class TestExpression(TransactionCase):

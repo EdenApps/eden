@@ -1,4 +1,4 @@
-from odoo import api, fields, models, _
+from eden import api, fields, models, _
 
 
 class ProductProduct(models.Model):

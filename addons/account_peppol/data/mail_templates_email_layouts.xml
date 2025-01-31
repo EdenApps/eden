@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <template id="mail_notification_layout_with_responsible_signature_and_peppol"
                   name="Mail: mail notification layout with responsible signature (user_id of the record) and Peppol advertisement"
@@ -22,11 +22,11 @@
                                 </a>
                             </t>
                             <br/>
-                            If you need a Peppol compliant software, we recommend <a target="_blank" href="https://www.odoo.com/app/invoicing?utm_source=db&amp;utm_medium=email&amp;utm_campaign=einvoicing" style="color: $o-enterprise-color;">Odoo</a>.
+                            If you need a Peppol compliant software, we recommend <a target="_blank" href="https://www.edencloud.us/app/invoicing?utm_source=db&amp;utm_medium=email&amp;utm_campaign=einvoicing" style="color: $o-enterprise-color;">Eden</a>.
                         </p>
                     </t>
                 </div>
             </xpath>
         </template>
     </data>
-</odoo>
+</eden>

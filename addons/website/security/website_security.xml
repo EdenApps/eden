@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record model="ir.module.category" id="base.module_category_website_website">
         <field name="sequence">23</field>
     </record>
@@ -118,4 +118,4 @@
         <field name="groups" eval="[(4, ref('website.website_page_controller_expose'))]"/>
     </record>
 
-</odoo>
+</eden>

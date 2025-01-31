@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from hashlib import sha256
 import copy
@@ -8,8 +8,8 @@ from itertools import zip_longest
 from lxml import etree as ET, html
 from lxml.html import builder as h
 
-from odoo.modules.module import _DEFAULT_MANIFEST
-from odoo.tests import common, HttpCase, tagged
+from eden.modules.module import _DEFAULT_MANIFEST
+from eden.tests import common, HttpCase, tagged
 
 
 def attrs(**kwargs):
@@ -1050,7 +1050,7 @@ class TestCowViewSaving(TestViewSavingCommon):
         specific_view = self.base_view._get_specific_views() - self.base_view
 
         # generic view without website_id but with website for request
-        with patch('odoo.addons.website.models.ir_http.get_request_website', lambda: website):
+        with patch('eden.addons.website.models.ir_http.get_request_website', lambda: website):
             self.base_view.invalidate_recordset()
             self.assertIn('to_translate', self.base_view.with_context(lang='en_US', edit_translations=True).arch)
             self.assertIn('translated', self.base_view.with_context(lang='fr_BE', edit_translations=True).arch)
@@ -1510,7 +1510,7 @@ class TestThemeViews(common.TransactionCase):
         main_view.with_context(website_id=website_1.id).arch = '<body>specific</body>'
 
         # 2. Simulate a theme install with a child view of `main_view`
-        patcher = patch('odoo.modules.module._get_manifest_cached', return_value=copy.deepcopy(_DEFAULT_MANIFEST))
+        patcher = patch('eden.modules.module._get_manifest_cached', return_value=copy.deepcopy(_DEFAULT_MANIFEST))
         self.startPatcher(patcher)
         test_theme_module = self.env['ir.module.module'].create({'name': 'test_theme'})
         self.env['ir.model.data'].create({
@@ -1543,18 +1543,18 @@ class TestThemeViews(common.TransactionCase):
         self.assertEqual(specific_main_view_children.website_id, website_1, "..and the website is the correct one.")
 
         # 4. Simulate theme update. Do it 2 time to make sure it was not interpreted as a user change the first time.
-        new_arch = '<xpath expr="//body" position="replace"><span>Odoo Change01</span></xpath>'
+        new_arch = '<xpath expr="//body" position="replace"><span>Eden Change01</span></xpath>'
         theme_view.arch = new_arch
         test_theme_module.with_context(load_all_views=True)._theme_load(website_1)
         self.assertEqual(specific_main_view_children.arch, new_arch, "First time: View arch should receive theme updates.")
         self.assertFalse(specific_main_view_children.arch_updated)
-        new_arch = '<xpath expr="//body" position="replace"><span>Odoo Change02</span></xpath>'
+        new_arch = '<xpath expr="//body" position="replace"><span>Eden Change02</span></xpath>'
         theme_view.arch = new_arch
         test_theme_module.with_context(load_all_views=True)._theme_load(website_1)
         self.assertEqual(specific_main_view_children.arch, new_arch, "Second time: View arch should still receive theme updates.")
 
         # 5. Keep User arch changes
-        new_arch = '<xpath expr="//body" position="replace"><span>Odoo</span></xpath>'
+        new_arch = '<xpath expr="//body" position="replace"><span>Eden</span></xpath>'
         specific_main_view_children.arch = new_arch
         theme_view.name = 'Test Child View modified'
         test_theme_module.with_context(load_all_views=True)._theme_load(website_1)

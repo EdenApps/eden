@@ -1,7 +1,7 @@
-/** @odoo-module */
+/** @eden-module */
 import { _t } from "@web/core/l10n/translation";
 
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@eden/o-spreadsheet";
 
 import "./list_functions";
 
@@ -19,23 +19,23 @@ const { coreTypes, invalidateEvaluationCommands } = spreadsheet;
 
 const { cellMenuRegistry } = spreadsheet.registries;
 
-coreTypes.add("INSERT_ODOO_LIST");
-coreTypes.add("RENAME_ODOO_LIST");
-coreTypes.add("REMOVE_ODOO_LIST");
-coreTypes.add("RE_INSERT_ODOO_LIST");
-coreTypes.add("UPDATE_ODOO_LIST_DOMAIN");
-coreTypes.add("UPDATE_ODOO_LIST");
+coreTypes.add("INSERT_EDEN_LIST");
+coreTypes.add("RENAME_EDEN_LIST");
+coreTypes.add("REMOVE_EDEN_LIST");
+coreTypes.add("RE_INSERT_EDEN_LIST");
+coreTypes.add("UPDATE_EDEN_LIST_DOMAIN");
+coreTypes.add("UPDATE_EDEN_LIST");
 coreTypes.add("ADD_LIST_DOMAIN");
-coreTypes.add("DUPLICATE_ODOO_LIST");
+coreTypes.add("DUPLICATE_EDEN_LIST");
 
-invalidateEvaluationCommands.add("UPDATE_ODOO_LIST_DOMAIN");
-invalidateEvaluationCommands.add("UPDATE_ODOO_LIST");
-invalidateEvaluationCommands.add("INSERT_ODOO_LIST");
-invalidateEvaluationCommands.add("REMOVE_ODOO_LIST");
+invalidateEvaluationCommands.add("UPDATE_EDEN_LIST_DOMAIN");
+invalidateEvaluationCommands.add("UPDATE_EDEN_LIST");
+invalidateEvaluationCommands.add("INSERT_EDEN_LIST");
+invalidateEvaluationCommands.add("REMOVE_EDEN_LIST");
 
 cellMenuRegistry.add(
     "list_see_record",
-    /** @type {import("@odoo/o-spreadsheet").ActionSpec}*/ ({
+    /** @type {import("@eden/o-spreadsheet").ActionSpec}*/ ({
         name: _t("See record"),
         sequence: 200,
         execute: async (env) => {
@@ -51,11 +51,11 @@ cellMenuRegistry.add(
 );
 
 inverseCommandRegistry
-    .add("INSERT_ODOO_LIST", identity)
-    .add("UPDATE_ODOO_LIST_DOMAIN", identity)
-    .add("UPDATE_ODOO_LIST", identity)
-    .add("RE_INSERT_ODOO_LIST", identity)
-    .add("RENAME_ODOO_LIST", identity)
-    .add("REMOVE_ODOO_LIST", identity);
+    .add("INSERT_EDEN_LIST", identity)
+    .add("UPDATE_EDEN_LIST_DOMAIN", identity)
+    .add("UPDATE_EDEN_LIST", identity)
+    .add("RE_INSERT_EDEN_LIST", identity)
+    .add("RENAME_EDEN_LIST", identity)
+    .add("REMOVE_EDEN_LIST", identity);
 
 export { ListCorePlugin, ListUIPlugin };

@@ -1,14 +1,14 @@
-/** @odoo-module */
+/** @eden-module */
 // @ts-check
 
 import { Domain } from "@web/core/domain";
-import { OdooCorePlugin } from "@spreadsheet/plugins";
+import { EdenCorePlugin } from "@spreadsheet/plugins";
 
-export class PivotOdooCorePlugin extends OdooCorePlugin {
+export class PivotEdenCorePlugin extends EdenCorePlugin {
     handle(cmd) {
         switch (cmd.type) {
             // this command is deprecated. use UPDATE_PIVOT instead
-            case "UPDATE_ODOO_PIVOT_DOMAIN":
+            case "UPDATE_EDEN_PIVOT_DOMAIN":
                 this.dispatch("UPDATE_PIVOT", {
                     pivotId: cmd.pivotId,
                     pivot: {
@@ -28,7 +28,7 @@ export class PivotOdooCorePlugin extends OdooCorePlugin {
     export(data) {
         if (data.pivots) {
             for (const id in data.pivots) {
-                if (data.pivots[id].type === "ODOO") {
+                if (data.pivots[id].type === "EDEN") {
                     data.pivots[id].domain = new Domain(data.pivots[id].domain).toJson();
                 }
             }

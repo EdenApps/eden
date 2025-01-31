@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 {
     'name': 'account_qr_code_emv',
@@ -7,7 +7,7 @@
     'description': """
 Bridge module addings support for EMV Merchant-Presented QR-code generation for Payment System.
     """,
-    'author': 'Odoo SA',
+    'author': 'Eden Cloud',
     'depends': ['account'],
     'data': [
         'views/res_bank_views.xml',

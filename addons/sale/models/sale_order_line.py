@@ -1,16 +1,16 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
 from datetime import timedelta
 
 from markupsafe import Markup
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Command
-from odoo.osv import expression
-from odoo.tools import float_compare, float_is_zero, format_date, groupby
-from odoo.tools.translate import _
+from eden import api, fields, models
+from eden.exceptions import UserError, ValidationError
+from eden.fields import Command
+from eden.osv import expression
+from eden.tools import float_compare, float_is_zero, format_date, groupby
+from eden.tools.translate import _
 
 
 class SaleOrderLine(models.Model):
@@ -1434,7 +1434,7 @@ class SaleOrderLine(models.Model):
 
         Note: This method cannot be called with multiple records that have different products linked.
 
-        :raise odoo.exceptions.ValueError: ``len(self.product_id) != 1``
+        :raise eden.exceptions.ValueError: ``len(self.product_id) != 1``
         :rtype: dict
         :return: A dict with the following structure:
             {

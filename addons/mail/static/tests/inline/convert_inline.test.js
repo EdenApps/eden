@@ -9,7 +9,7 @@ import {
     normalizeColors,
     normalizeRem,
 } from "@mail/views/web/fields/html_mail_field/convert_inline";
-import { afterEach, beforeEach, describe, expect, getFixture, test } from "@odoo/hoot";
+import { afterEach, beforeEach, describe, expect, getFixture, test } from "@eden/hoot";
 import {
     getGridHtml,
     getRegularGridHtml,

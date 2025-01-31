@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import timedelta
 
-from odoo.tests import Form
-from odoo.addons.stock.tests.common import TestStockCommon
+from eden.tests import Form
+from eden.addons.stock.tests.common import TestStockCommon
 
 class TestOldRules(TestStockCommon):
 

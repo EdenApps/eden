@@ -3,7 +3,7 @@ import { registry } from "@web/core/registry";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";
 
 import { ChatGPTPromptDialog } from "@html_editor/main/chatgpt/chatgpt_prompt_dialog";
-import { Component, markup } from "@odoo/owl";
+import { Component, markup } from "@eden/owl";
 
 
 export class MailComposerChatGPT extends Component {

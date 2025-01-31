@@ -1,7 +1,7 @@
-/** @odoo-module **/
+/** @eden-module **/
 import { formatFloat } from "@web/views/fields/formatters";
 import { useService } from "@web/core/utils/hooks";
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 export class ForecastedDetails extends Component {
     static template = "stock.ForecastedDetails";

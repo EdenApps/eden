@@ -1,22 +1,22 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 from freezegun import freeze_time
 
-from odoo.addons.base.tests.test_ir_cron import CronMixinCase
-from odoo.addons.mass_mailing.tests.common import MassMailCommon
-from odoo.tests import users, Form
-from odoo.tools import mute_logger
+from eden.addons.base.tests.test_ir_cron import CronMixinCase
+from eden.addons.mass_mailing.tests.common import MassMailCommon
+from eden.tests import users, Form
+from eden.tools import mute_logger
 
 
 class TestMailingScheduleDateWizard(MassMailCommon, CronMixinCase):
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('eden.addons.mail.models.mail_mail')
     @users('user_marketing')
     def test_mailing_next_departure(self):
         # test if mailing.mailing.next_departure is correctly set taking into account
-        # presence of implicitly created cron triggers (since odoo v15). These should
+        # presence of implicitly created cron triggers (since eden v15). These should
         # launch cron job before its schedule nextcall datetime (if scheduled_date < nextcall)
 
         cron_job = self.env.ref('mass_mailing.ir_cron_mass_mailing_queue').sudo()

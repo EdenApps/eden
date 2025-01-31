@@ -11,7 +11,7 @@ import {
     useEffect,
     useRef,
     useState,
-} from "@odoo/owl";
+} from "@eden/owl";
 
 import { loadBundle } from "@web/core/assets";
 import { browser } from "@web/core/browser/browser";
@@ -131,7 +131,7 @@ export async function loadEmoji() {
     const res = { categories: [], emojis: [] };
     try {
         await loader.loadEmoji();
-        const { getCategories, getEmojis } = odoo.loader.modules.get(
+        const { getCategories, getEmojis } = eden.loader.modules.get(
             "@web/core/emoji_picker/emoji_data"
         );
         res.categories = getCategories();

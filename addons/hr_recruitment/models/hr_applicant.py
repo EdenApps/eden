@@ -1,14 +1,14 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import re
 
 from markupsafe import Markup
 from dateutil.relativedelta import relativedelta
 from datetime import datetime
 
-from odoo import api, fields, models, tools
-from odoo.exceptions import UserError, ValidationError
-from odoo.osv import expression
-from odoo.tools.translate import _
+from eden import api, fields, models, tools
+from eden.exceptions import UserError, ValidationError
+from eden.osv import expression
+from eden.tools.translate import _
 
 
 AVAILABLE_PRIORITIES = [
@@ -428,7 +428,7 @@ class Applicant(models.Model):
             'para_1': match[1],
             'para_2': match[2],
             'para_3': match[3],
-            'link': f'/odoo/recruitment/{hr_job.id}',
+            'link': f'/eden/recruitment/{hr_job.id}',
         }
 
         if hr_job.alias_email:

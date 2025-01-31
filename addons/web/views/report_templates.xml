@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <!-- Private templates used internally by reports -->
 
@@ -13,7 +13,7 @@
             <head>
                 <meta charset="utf-8"/>
                 <meta name="viewport" content="initial-scale=1"/>
-                <title><t t-esc="title or 'Odoo Report'"/></title>
+                <title><t t-esc="title or 'Eden Report'"/></title>
                 <t t-call-assets="web.report_assets_common"/>
                 <!-- Temporary code: only used to maintain CSS for legacy HTML reports (full width...) -->
                 <!-- Should be removed once the reports are fully converted. -->
@@ -47,7 +47,7 @@
             <head>
                 <meta charset="utf-8"/>
                 <meta name="viewport" content="initial-scale=1"/>
-                <title><t t-esc="title or 'Odoo Report'"/></title>
+                <title><t t-esc="title or 'Eden Report'"/></title>
                 <t t-call-assets="web.report_assets_common" t-js="false"/>
                 <style>
                     <t t-out="preview_css"/>
@@ -966,4 +966,4 @@
         <field name="binding_model_id" ref="model_res_company"/>
         <field name="binding_type">report</field>
     </record>
-</odoo>
+</eden>

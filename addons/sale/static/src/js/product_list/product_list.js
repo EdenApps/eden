@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 import { formatCurrency } from "@web/core/currency";
 import { _t } from "@web/core/l10n/translation";
 import { Product } from "../product/product";

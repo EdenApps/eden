@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <!-- Action -->
         <record id="rounding_list_action" model="ir.actions.act_window">
@@ -61,4 +61,4 @@
         </record>
 
     </data>
-</odoo>
+</eden>

@@ -1,7 +1,7 @@
 import { busService } from "@bus/services/bus_service";
 
-import { after, expect, registerDebugInfo } from "@odoo/hoot";
-import { Deferred } from "@odoo/hoot-mock";
+import { after, expect, registerDebugInfo } from "@eden/hoot";
+import { Deferred } from "@eden/hoot-mock";
 import {
     MockServer,
     defineModels,
@@ -162,7 +162,7 @@ export function waitForChannels(channels, { operation = "add" } = {}) {
 /**
  * @typedef {Object} ExpectedNotificationOptions
  * @property {boolean} [received=true]
- * @typedef {[env: import("@web/env").OdooEnv, notificationType: string, notificationPayload: any, options: ExpectedNotificationOptions]} ExpectedNotification
+ * @typedef {[env: import("@web/env").EdenEnv, notificationType: string, notificationPayload: any, options: ExpectedNotificationOptions]} ExpectedNotification
  */
 
 /**

@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { KanbanController } from '@web/views/kanban/kanban_controller';
 import { ProjectRightSidePanel } from '../../components/project_right_side_panel/project_right_side_panel';

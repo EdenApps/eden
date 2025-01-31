@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 from dateutil.relativedelta import relativedelta
 from pytz import UTC
 
-from odoo import api, fields, models
+from eden import api, fields, models
 
-from odoo.addons.resource.models.utils import Intervals, sum_intervals, timezone_datetime
+from eden.addons.resource.models.utils import Intervals, sum_intervals, timezone_datetime
 
 
 class CalendarEvent(models.Model):

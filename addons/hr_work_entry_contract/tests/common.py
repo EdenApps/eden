@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from dateutil.relativedelta import relativedelta
-from odoo.fields import Date
-from odoo.tests.common import TransactionCase
+from eden.fields import Date
+from eden.tests.common import TransactionCase
 
 
 class TestWorkEntryBase(TransactionCase):

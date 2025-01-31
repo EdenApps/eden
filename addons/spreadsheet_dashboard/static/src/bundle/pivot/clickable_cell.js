@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @eden-module */
 
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@eden/o-spreadsheet";
 import {
     SEE_RECORDS_PIVOT,
     SEE_RECORDS_PIVOT_VISIBLE,

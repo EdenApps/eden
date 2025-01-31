@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { registry } from '@web/core/registry'
 import { HotkeyCommandItem } from '@web/core/commands/default_providers'
@@ -19,12 +19,12 @@ commandProviderRegistry.add("link dialog", {
             const wysiwyg = [...Wysiwyg.activeWysiwygs].find((wysiwyg) => {
                 return wysiwyg.isSelectionInEditable();
             });
-            const selection = wysiwyg && wysiwyg.odooEditor && wysiwyg.odooEditor.document.getSelection();
+            const selection = wysiwyg && wysiwyg.edenEditor && wysiwyg.edenEditor.document.getSelection();
             const range = selection && selection.rangeCount && selection.getRangeAt(0);
             if (range) {
                 label = !wysiwyg.getInSelection('a') ? 'Create link' : 'Edit link';
                 action = () => {
-                    const selection = wysiwyg.odooEditor.document.getSelection();
+                    const selection = wysiwyg.edenEditor.document.getSelection();
                     selection.removeAllRanges();
                     selection.addRange(range);
 

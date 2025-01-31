@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<odoo>
+<eden>
 
     <record id="res_config_settings_view_form_inherit_autocomplete_googleplaces" model="ir.ui.view">
         <field name="name">res.config.settings.view.form.inherit.autocomplete.googleplaces</field>
@@ -28,4 +28,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

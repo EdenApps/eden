@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <record id="hr_attendance_check_out_cron" model="ir.cron">
             <field name="name">Attendance: Automatically check-out employees</field>
@@ -19,4 +19,4 @@
             <field name="interval_type">hours</field>
         </record>
     </data>
-</odoo>
+</eden>

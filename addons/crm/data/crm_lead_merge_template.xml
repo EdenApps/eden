@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="crm_lead_merge_summary" name="crm_lead_merge_summary">
     <div class="crm_lead_merge_summary">
@@ -179,4 +179,4 @@
     </div>
 </template>
 
-</odoo>
+</eden>

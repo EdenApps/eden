@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
 
     <!-- Calendar Events Types : Views and Actions -->
     <record id="view_calendar_event_type_tree" model="ir.ui.view">
@@ -196,7 +196,7 @@
                                 </button>
                                 <button name="set_discuss_videocall_location" type="object" class="btn btn-link ps-0"
                                     invisible="videocall_location or not user_can_edit" context="{'recurrence_update': recurrence_update}">
-                                    <span class="fa fa-plus"></span><span> Odoo meeting</span>
+                                    <span class="fa fa-plus"></span><span> Eden meeting</span>
                                 </button>
                                 <button name="action_join_video_call" class="btn btn-link" help="Join Video Call" type="object" invisible="not videocall_location or not user_can_edit">
                                     <span class="oi oi-arrow-right"></span><span> Join video call</span>
@@ -317,7 +317,7 @@
                             </button>
                             <button name="set_discuss_videocall_location" type="object" class="btn btn-link p-0"
                                 invisible="videocall_location" context="{'recurrence_update': recurrence_update}">
-                                <span class="fa fa-plus"></span> <span>Odoo meeting</span>
+                                <span class="fa fa-plus"></span> <span>Eden meeting</span>
                             </button>
                             <button name="action_join_video_call" class="btn btn-link" help="Join Video Call" type="object" invisible="not videocall_location">
                                 <span class="oi oi-arrow-right"></span><span> Join video call</span>
@@ -523,4 +523,4 @@
         action="action_calendar_alarm"
         groups="base.group_no_one"/>
 
-</odoo>
+</eden>

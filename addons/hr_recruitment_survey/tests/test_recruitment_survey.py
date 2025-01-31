@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.exceptions import AccessError
-from odoo.tests import common, Form, tagged
-from odoo.tools import mute_logger
+from eden.addons.mail.tests.common import mail_new_test_user
+from eden.exceptions import AccessError
+from eden.tests import common, Form, tagged
+from eden.tools import mute_logger
 
 
 @tagged('security')
@@ -54,7 +54,7 @@ class TestRecruitmentSurvey(common.TransactionCase):
             'job_id': cls.job.id,
         })
 
-    @mute_logger('odoo.addons.base.models.ir_rule')
+    @mute_logger('eden.addons.base.models.ir_rule')
     def test_send_survey(self):
         Answer = self.env['survey.user_input']
         invite_recruitment = self._prepare_invite(self.survey_sysadmin, self.job_applicant)
@@ -87,7 +87,7 @@ class TestRecruitmentSurvey(common.TransactionCase):
                 self.job_applicant.interviewer_ids = user
                 invite_recruitment.with_user(user).action_invite()
 
-    @mute_logger('odoo.addons.base.models.ir_rule')
+    @mute_logger('eden.addons.base.models.ir_rule')
     def test_print_survey(self):
         action_print = self.job_applicant.action_print_survey()
         self.assertEqual(action_print['type'], 'ir.actions.act_url')

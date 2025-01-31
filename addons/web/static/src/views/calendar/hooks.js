@@ -11,7 +11,7 @@ import {
     useComponent,
     useExternalListener,
     useRef,
-} from "@odoo/owl";
+} from "@eden/owl";
 
 export function useCalendarPopover(component) {
     const owner = useComponent();

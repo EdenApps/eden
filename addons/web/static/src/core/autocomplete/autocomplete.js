@@ -4,7 +4,7 @@ import { isScrollableY, scrollTo } from "@web/core/utils/scrolling";
 import { useDebounced } from "@web/core/utils/timing";
 import { getActiveHotkey } from "@web/core/hotkeys/hotkey_service";
 import { usePosition } from "@web/core/position/position_hook";
-import { Component, onWillUpdateProps, useExternalListener, useRef, useState } from "@odoo/owl";
+import { Component, onWillUpdateProps, useExternalListener, useRef, useState } from "@eden/owl";
 
 export class AutoComplete extends Component {
     static template = "web.AutoComplete";

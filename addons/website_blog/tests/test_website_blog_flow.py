@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import json
 
-from odoo.exceptions import UserError
-from odoo.tests.common import users, HttpCase, tagged
-from odoo.addons.website.tools import MockRequest
-from odoo.addons.website_blog.tests.common import TestWebsiteBlogCommon
-from odoo.addons.mail.controllers.thread import ThreadController
+from eden.exceptions import UserError
+from eden.tests.common import users, HttpCase, tagged
+from eden.addons.website.tools import MockRequest
+from eden.addons.website_blog.tests.common import TestWebsiteBlogCommon
+from eden.addons.mail.controllers.thread import ThreadController
 
 
 class TestWebsiteBlogFlow(TestWebsiteBlogCommon):

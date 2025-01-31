@@ -65,7 +65,7 @@
   const CLASS_NAME_DROPDOWN_CENTER = 'dropdown-center';
   const SELECTOR_DATA_TOGGLE = '[data-bs-toggle="dropdown"]:not(.disabled):not(:disabled)';
   const SELECTOR_DATA_TOGGLE_SHOWN = `${SELECTOR_DATA_TOGGLE}.${CLASS_NAME_SHOW}`;
-  const SELECTOR_MENU = '.dropdown-menu:not(.o-dropdown--menu)'; // Odoo fix task-2764821
+  const SELECTOR_MENU = '.dropdown-menu:not(.o-dropdown--menu)'; // Eden fix task-2764821
   const SELECTOR_NAVBAR = '.navbar';
   const SELECTOR_MENU_NOT_SUB = '.dropdown-menu:not(.o-dropdown--menu):not(.o_wysiwyg_submenu)';
   const SELECTOR_NAVBAR_NAV = '.navbar-nav';

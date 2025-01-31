@@ -2,35 +2,35 @@
 
 set -e
 
-ODOO_CONFIGURATION_FILE=/etc/odoo/odoo.conf
-ODOO_GROUP="odoo"
-ODOO_DATA_DIR=/var/lib/odoo
-ODOO_LOG_DIR=/var/log/odoo
-ODOO_USER="odoo"
+EDEN_CONFIGURATION_FILE=/etc/eden/eden.conf
+EDEN_GROUP="eden"
+EDEN_DATA_DIR=/var/lib/eden
+EDEN_LOG_DIR=/var/log/eden
+EDEN_USER="eden"
 GSFONTS_DIR=/usr/share/fonts/type1/gsfonts
 
 case "${1}" in
     configure)
-        if ! getent passwd | grep -q "^odoo:"; then
-            adduser --system --home $ODOO_DATA_DIR --quiet --group $ODOO_USER
+        if ! getent passwd | grep -q "^eden:"; then
+            adduser --system --home $EDEN_DATA_DIR --quiet --group $EDEN_USER
             # Data dir
-            chown $ODOO_USER:$ODOO_GROUP $ODOO_DATA_DIR
+            chown $EDEN_USER:$EDEN_GROUP $EDEN_DATA_DIR
         fi
-        # Register "$ODOO_USER" as a postgres user with "Create DB" role attribute
-        su - postgres -c "createuser -d -R -S $ODOO_USER" 2> /dev/null || true
+        # Register "$EDEN_USER" as a postgres user with "Create DB" role attribute
+        su - postgres -c "createuser -d -R -S $EDEN_USER" 2> /dev/null || true
         # Configuration file
-        chown $ODOO_USER:$ODOO_GROUP $ODOO_CONFIGURATION_FILE
-        chmod 0640 $ODOO_CONFIGURATION_FILE
+        chown $EDEN_USER:$EDEN_GROUP $EDEN_CONFIGURATION_FILE
+        chmod 0640 $EDEN_CONFIGURATION_FILE
         # Log
-        mkdir -p $ODOO_LOG_DIR
-        chown $ODOO_USER:$ODOO_GROUP $ODOO_LOG_DIR
-        chmod 0750 $ODOO_LOG_DIR
+        mkdir -p $EDEN_LOG_DIR
+        chown $EDEN_USER:$EDEN_GROUP $EDEN_LOG_DIR
+        chmod 0750 $EDEN_LOG_DIR
         	# work around https://bugs.debian.org/1059326
 
         if ! [ -e ${GSFONTS_DIR}/n021003l.pfb ] ; then
             if ! [ -d ${GSFONTS_DIR} ] ; then
                 mkdir ${GSFONTS_DIR}
-                touch ${GSFONTS_DIR}/.created-by-odoo-package
+                touch ${GSFONTS_DIR}/.created-by-eden-package
             fi
             ln -s /usr/share/fonts/X11/Type1/C059-Roman.pfb ${GSFONTS_DIR}/n021003l.pfb
         fi

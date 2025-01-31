@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <!-- Chatter templates -->
 <template id="event_track_template_new">
@@ -29,4 +29,4 @@
     </ul>
 </template>
 
-</odoo>
+</eden>

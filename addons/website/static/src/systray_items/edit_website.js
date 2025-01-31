@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { _t } from "@web/core/l10n/translation";
 import { rpc } from "@web/core/network/rpc";
@@ -6,7 +6,7 @@ import { registry } from "@web/core/registry";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { useService } from '@web/core/utils/hooks';
-import { Component, useState, useEffect } from "@odoo/owl";
+import { Component, useState, useEffect } from "@eden/owl";
 
 class EditWebsiteSystray extends Component {
     static template = "website.EditWebsiteSystray";

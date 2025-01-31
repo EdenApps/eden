@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <record model="ir.cron" id="cron_post_upgrade_assign_missing_form_fields">
         <field name="name">Sale Pdf Quote Builder: assign form fields to documents post upgrade</field>
@@ -11,4 +11,4 @@
         <field name="interval_type">months</field>
     </record>
 
-</odoo>
+</eden>

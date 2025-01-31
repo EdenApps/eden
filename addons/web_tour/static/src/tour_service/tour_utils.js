@@ -1,5 +1,5 @@
-/** @odoo-module **/
-import * as hoot from "@odoo/hoot-dom";
+/** @eden-module **/
+import * as hoot from "@eden/hoot-dom";
 import { _t } from "@web/core/l10n/translation";
 
 /**

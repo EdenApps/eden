@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<odoo>
+<eden>
 
     <record id="group_use_lead" model="res.groups">
         <field name="name">Show Lead Menu</field>
@@ -76,4 +76,4 @@
 
 </data>
 
-</odoo>
+</eden>

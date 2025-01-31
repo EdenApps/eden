@@ -1,7 +1,7 @@
 import { CORE_PLUGINS } from "@html_editor/plugin_sets";
-import { describe, expect, test } from "@odoo/hoot";
-import { click, waitFor } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@eden/hoot";
+import { click, waitFor } from "@eden/hoot-dom";
+import { animationFrame } from "@eden/hoot-mock";
 import { contains } from "@web/../tests/web_test_helpers";
 import { setupEditor, setupWysiwyg } from "./_helpers/editor";
 import {
@@ -15,7 +15,7 @@ describe("Wysiwyg Component", () => {
     test("Wysiwyg component can be instantiated", async () => {
         const { el } = await setupWysiwyg();
         expect(".o-wysiwyg").toHaveCount(1);
-        expect(".odoo-editor-editable").toHaveCount(1);
+        expect(".eden-editor-editable").toHaveCount(1);
         expect(".o-we-toolbar").toHaveCount(0);
 
         // set the selection to a range, and check that the toolbar
@@ -37,7 +37,7 @@ describe("Wysiwyg Component", () => {
         expect(".o-we-toolbar").toHaveCount(0);
         await setupWysiwyg({ toolbar: true });
         expect(".o-wysiwyg").toHaveCount(1);
-        expect(".odoo-editor-editable").toHaveCount(1);
+        expect(".eden-editor-editable").toHaveCount(1);
         expect(".o-we-toolbar").toHaveCount(1);
     });
 
@@ -45,7 +45,7 @@ describe("Wysiwyg Component", () => {
         expect(".o-we-toolbar").toHaveCount(0);
         await setupWysiwyg({ toolbar: true, config: { Plugins: CORE_PLUGINS } });
         expect(".o-wysiwyg").toHaveCount(1);
-        expect(".odoo-editor-editable").toHaveCount(1);
+        expect(".eden-editor-editable").toHaveCount(1);
         expect(".o-we-toolbar").toHaveCount(0);
     });
 
@@ -106,7 +106,7 @@ describe("Wysiwyg Component", () => {
             iframe: true,
             contentClass: "test ",
         });
-        expect(":iframe .test.odoo-editor-editable").toHaveCount(1);
+        expect(":iframe .test.eden-editor-editable").toHaveCount(1);
     });
 
     test.tags("desktop");

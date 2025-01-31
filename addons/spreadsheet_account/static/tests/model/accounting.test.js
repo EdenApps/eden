@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 import { setCellContent } from "@spreadsheet/../tests/helpers/commands";
 import { getCellValue, getEvaluatedCell } from "@spreadsheet/../tests/helpers/getters";
 import { createModelWithDataSource } from "@spreadsheet/../tests/helpers/model";
@@ -11,7 +11,7 @@ import { parseAccountingDate } from "@spreadsheet_account/accounting_functions";
 import { makeServerError } from "@web/../tests/web_test_helpers";
 import { sprintf } from "@web/core/utils/strings";
 
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@eden/o-spreadsheet";
 import { waitForDataLoaded } from "@spreadsheet/helpers/model";
 
 describe.current.tags("headless");
@@ -30,9 +30,9 @@ test("Basic evaluation", async () => {
             }
         },
     });
-    setCellContent(model, "A1", `=ODOO.CREDIT("100", "2022")`);
-    setCellContent(model, "A2", `=ODOO.DEBIT("100", "2022")`);
-    setCellContent(model, "A3", `=ODOO.BALANCE("100", "2022")`);
+    setCellContent(model, "A1", `=EDEN.CREDIT("100", "2022")`);
+    setCellContent(model, "A2", `=EDEN.DEBIT("100", "2022")`);
+    setCellContent(model, "A3", `=EDEN.BALANCE("100", "2022")`);
     await waitForDataLoaded(model);
     expect(getCellValue(model, "A1")).toBe(16);
     expect(getCellValue(model, "A2")).toBe(42);
@@ -62,9 +62,9 @@ test("evaluation with reference to a month period", async () => {
         },
     });
     setCellContent(model, "B1", "02/2022");
-    setCellContent(model, "A1", `=ODOO.CREDIT("100", B1)`);
-    setCellContent(model, "A2", `=ODOO.DEBIT("100", B1)`);
-    setCellContent(model, "A3", `=ODOO.BALANCE("100", B1)`);
+    setCellContent(model, "A1", `=EDEN.CREDIT("100", B1)`);
+    setCellContent(model, "A2", `=EDEN.DEBIT("100", B1)`);
+    setCellContent(model, "A3", `=EDEN.BALANCE("100", B1)`);
     await waitForDataLoaded(model);
     expect(getCellValue(model, "A1")).toBe(16);
     expect(getCellValue(model, "A2")).toBe(42);
@@ -75,9 +75,9 @@ test("evaluation with reference to a month period", async () => {
 
 test("Functions are correctly formatted", async () => {
     const model = await createModelWithDataSource();
-    setCellContent(model, "A1", `=ODOO.CREDIT("100", "2022")`);
-    setCellContent(model, "A2", `=ODOO.DEBIT("100", "2022")`);
-    setCellContent(model, "A3", `=ODOO.BALANCE("100", "2022")`);
+    setCellContent(model, "A1", `=EDEN.CREDIT("100", "2022")`);
+    setCellContent(model, "A2", `=EDEN.DEBIT("100", "2022")`);
+    setCellContent(model, "A3", `=EDEN.BALANCE("100", "2022")`);
     await waitForDataLoaded(model);
     expect(getEvaluatedCell(model, "A1").format).toBe("#,##0.00[$€]");
     expect(getEvaluatedCell(model, "A2").format).toBe("#,##0.00[$€]");
@@ -92,20 +92,20 @@ test("Functions with a wrong company id is correctly in error", async () => {
             }
         },
     });
-    setCellContent(model, "A1", `=ODOO.CREDIT("100", "2022", 0, 123456)`);
+    setCellContent(model, "A1", `=EDEN.CREDIT("100", "2022", 0, 123456)`);
     await waitForDataLoaded(model);
     expect(getEvaluatedCell(model, "A1").message).toBe("Currency not available for this company.");
 });
 
 test("formula with invalid date", async () => {
     const model = await createModelWithDataSource();
-    setCellContent(model, "A1", `=ODOO.CREDIT("100",)`);
-    setCellContent(model, "A2", `=ODOO.DEBIT("100", 0)`);
-    setCellContent(model, "A3", `=ODOO.BALANCE("100", -1)`);
-    setCellContent(model, "A4", `=ODOO.BALANCE("100", "not a valid period")`);
-    setCellContent(model, "A5", `=ODOO.BALANCE("100", 1900)`); // this should be ok
-    setCellContent(model, "A6", `=ODOO.BALANCE("100", 1900, -1)`);
-    setCellContent(model, "A7", `=ODOO.DEBIT("100", 1899)`);
+    setCellContent(model, "A1", `=EDEN.CREDIT("100",)`);
+    setCellContent(model, "A2", `=EDEN.DEBIT("100", 0)`);
+    setCellContent(model, "A3", `=EDEN.BALANCE("100", -1)`);
+    setCellContent(model, "A4", `=EDEN.BALANCE("100", "not a valid period")`);
+    setCellContent(model, "A5", `=EDEN.BALANCE("100", 1900)`); // this should be ok
+    setCellContent(model, "A6", `=EDEN.BALANCE("100", 1900, -1)`);
+    setCellContent(model, "A7", `=EDEN.DEBIT("100", 1899)`);
     await waitForDataLoaded(model);
     const errorMessage = `'%s' is not a valid period. Supported formats are "21/12/2022", "Q1/2022", "12/2022", and "2022".`;
     expect(getEvaluatedCell(model, "A1").message).toBe("0 is not a valid year.");
@@ -126,14 +126,14 @@ test("Evaluation with multiple account codes", async () => {
             }
         },
     });
-    setCellContent(model, "A1", `=ODOO.CREDIT("100,200", "2022")`);
-    setCellContent(model, "A2", `=ODOO.DEBIT("100,200", "2022")`);
-    setCellContent(model, "A3", `=ODOO.BALANCE("100,200", "2022")`);
+    setCellContent(model, "A1", `=EDEN.CREDIT("100,200", "2022")`);
+    setCellContent(model, "A2", `=EDEN.DEBIT("100,200", "2022")`);
+    setCellContent(model, "A3", `=EDEN.BALANCE("100,200", "2022")`);
 
     // with spaces
-    setCellContent(model, "B1", `=ODOO.CREDIT("100 , 200", "2022")`);
-    setCellContent(model, "B2", `=ODOO.DEBIT("100 , 200", "2022")`);
-    setCellContent(model, "B3", `=ODOO.BALANCE("100 , 200", "2022")`);
+    setCellContent(model, "B1", `=EDEN.CREDIT("100 , 200", "2022")`);
+    setCellContent(model, "B2", `=EDEN.DEBIT("100 , 200", "2022")`);
+    setCellContent(model, "B3", `=EDEN.BALANCE("100 , 200", "2022")`);
 
     await waitForDataLoaded(model);
     expect(getCellValue(model, "A1")).toBe(26);
@@ -154,7 +154,7 @@ test("Handle error evaluation", async () => {
             }
         },
     });
-    setCellContent(model, "A1", `=ODOO.CREDIT("100", "2022")`);
+    setCellContent(model, "A1", `=EDEN.CREDIT("100", "2022")`);
     await waitForDataLoaded(model);
     const cell = getEvaluatedCell(model, "A1");
     expect(cell.value).toBe("#ERROR");
@@ -173,16 +173,16 @@ test("Server requests", async () => {
             }
         },
     });
-    setCellContent(model, "A1", `=ODOO.BALANCE("100", "2022")`);
-    setCellContent(model, "A2", `=ODOO.CREDIT("100", "01/2022")`);
-    setCellContent(model, "A3", `=ODOO.DEBIT("100","Q2/2022")`);
-    setCellContent(model, "A4", `=ODOO.BALANCE("10", "2021")`);
-    setCellContent(model, "A5", `=ODOO.CREDIT("10", "2022", -1)`); // same payload as A4: should only be called once
-    setCellContent(model, "A6", `=ODOO.DEBIT("5", "2021", 0, 2)`);
-    setCellContent(model, "A7", `=ODOO.DEBIT("5", "05/04/2021", 1)`);
-    setCellContent(model, "A8", `=ODOO.BALANCE("5", "2022",,,FALSE)`);
-    setCellContent(model, "A9", `=ODOO.BALANCE("100", "05/05/2022",,,TRUE)`);
-    setCellContent(model, "A10", `=ODOO.BALANCE(33,2021,-2)`);
+    setCellContent(model, "A1", `=EDEN.BALANCE("100", "2022")`);
+    setCellContent(model, "A2", `=EDEN.CREDIT("100", "01/2022")`);
+    setCellContent(model, "A3", `=EDEN.DEBIT("100","Q2/2022")`);
+    setCellContent(model, "A4", `=EDEN.BALANCE("10", "2021")`);
+    setCellContent(model, "A5", `=EDEN.CREDIT("10", "2022", -1)`); // same payload as A4: should only be called once
+    setCellContent(model, "A6", `=EDEN.DEBIT("5", "2021", 0, 2)`);
+    setCellContent(model, "A7", `=EDEN.DEBIT("5", "05/04/2021", 1)`);
+    setCellContent(model, "A8", `=EDEN.BALANCE("5", "2022",,,FALSE)`);
+    setCellContent(model, "A9", `=EDEN.BALANCE("100", "05/05/2022",,,TRUE)`);
+    setCellContent(model, "A10", `=EDEN.BALANCE(33,2021,-2)`);
     await waitForDataLoaded(model);
 
     expect.verifySteps([
@@ -273,9 +273,9 @@ test("Server requests with multiple account codes", async () => {
             }
         },
     });
-    setCellContent(model, "A1", `=ODOO.BALANCE("100,200", "2022")`);
-    setCellContent(model, "A2", `=ODOO.CREDIT("100,200", "2022")`);
-    setCellContent(model, "A3", `=ODOO.DEBIT("100,200","2022")`);
+    setCellContent(model, "A1", `=EDEN.BALANCE("100,200", "2022")`);
+    setCellContent(model, "A2", `=EDEN.CREDIT("100,200", "2022")`);
+    setCellContent(model, "A3", `=EDEN.DEBIT("100,200","2022")`);
     await waitForDataLoaded(model);
 
     expect.verifySteps([
@@ -304,8 +304,8 @@ test("account group formula as input to balance formula", async () => {
             }
         },
     });
-    setCellContent(model, "A1", `=ODOO.ACCOUNT.GROUP("income")`);
-    setCellContent(model, "A2", `=ODOO.BALANCE(A1, 2022)`);
+    setCellContent(model, "A1", `=EDEN.ACCOUNT.GROUP("income")`);
+    setCellContent(model, "A2", `=EDEN.BALANCE(A1, 2022)`);
     expect(getCellValue(model, "A1")).toBe("Loading...");
     expect(getCellValue(model, "A2")).toBe("Loading...");
     await waitForDataLoaded(model);
@@ -337,9 +337,9 @@ test("two concurrent requests on different accounts", async () => {
             }
         },
     });
-    setCellContent(model, "A1", `=ODOO.ACCOUNT.GROUP("income")`);
-    setCellContent(model, "A2", `=ODOO.BALANCE(A1, 2022)`); // batched only when A1 resolves
-    setCellContent(model, "A3", `=ODOO.BALANCE("100", 2022)`); // batched directly
+    setCellContent(model, "A1", `=EDEN.ACCOUNT.GROUP("income")`);
+    setCellContent(model, "A2", `=EDEN.BALANCE(A1, 2022)`); // batched only when A1 resolves
+    setCellContent(model, "A3", `=EDEN.BALANCE("100", 2022)`); // batched directly
     expect(getCellValue(model, "A1")).toBe("Loading...");
     expect(getCellValue(model, "A2")).toBe("Loading...");
     expect(getCellValue(model, "A3")).toBe("Loading...");
@@ -400,9 +400,9 @@ test("date with non-standard locale", async () => {
     const myLocale = { ...locale, dateFormat: "d/mmm/yyyy" };
     model.dispatch("UPDATE_LOCALE", { locale: myLocale });
     setCellContent(model, "A1", "=DATE(2002, 2, 1)");
-    setCellContent(model, "A2", "=ODOO.BALANCE(100, A1)");
-    setCellContent(model, "A3", "=ODOO.CREDIT(100, A1)");
-    setCellContent(model, "A4", "=ODOO.DEBIT(100, A1)");
+    setCellContent(model, "A2", "=EDEN.BALANCE(100, A1)");
+    setCellContent(model, "A3", "=EDEN.CREDIT(100, A1)");
+    setCellContent(model, "A4", "=EDEN.DEBIT(100, A1)");
     await waitForDataLoaded(model);
     expect(getEvaluatedCell(model, "A1").formattedValue).toBe("1/Feb/2002");
     expect(getCellValue(model, "A2")).toBe(116);

@@ -47,7 +47,7 @@ export class KeepLast {
 }
 
 /**
- * A (Odoo) mutex is a primitive for serializing computations.  This is
+ * A (Eden) mutex is a primitive for serializing computations.  This is
  * useful to avoid a situation where two computations modify some shared
  * state and cause some corrupted state.
  *

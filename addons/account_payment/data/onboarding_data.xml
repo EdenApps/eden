@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <record id="onboarding_onboarding_step_payment_provider" model="onboarding.onboarding.step">
             <field name="title">Online Payments</field>
@@ -11,4 +11,4 @@
             <field name="step_image_alt">Onboarding Online Payments</field>
         </record>
     </data>
-</odoo>
+</eden>

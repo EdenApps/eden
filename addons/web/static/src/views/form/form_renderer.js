@@ -25,7 +25,7 @@ import {
     useRef,
     useState,
     xml,
-} from "@odoo/owl";
+} from "@eden/owl";
 
 export class FormRenderer extends Component {
     static template = xml`<t t-call="{{ templates.FormRenderer }}" t-call-context="{ __comp__: Object.assign(Object.create(this), { this: this }) }" />`;

@@ -3,7 +3,7 @@ import { AutoComplete } from "@web/core/autocomplete/autocomplete";
 import { getActiveHotkey } from "@web/core/hotkeys/hotkey_service";
 import { Many2XAutocomplete } from "@web/views/fields/relational_utils";
 import { Many2OneField, many2OneField } from "@web/views/fields/many2one/many2one_field";
-import { onMounted, onPatched, onWillUnmount, useEffect, useRef, useState } from "@odoo/owl";
+import { onMounted, onPatched, onWillUnmount, useEffect, useRef, useState } from "@eden/owl";
 import { registry } from "@web/core/registry";
 import {
     SectionAndNoteListRenderer,

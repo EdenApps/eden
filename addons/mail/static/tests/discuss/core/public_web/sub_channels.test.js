@@ -8,8 +8,8 @@ import {
     start,
     startServer,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, test } from "@odoo/hoot";
-import { Deferred, animationFrame } from "@odoo/hoot-mock";
+import { describe, test } from "@eden/hoot";
+import { Deferred, animationFrame } from "@eden/hoot-mock";
 import { Command, serverState } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");
@@ -171,8 +171,8 @@ test("mention suggestions in thread match channel restrictions", async () => {
     });
     pyEnv["res.users"].write(serverState.userId, { groups_id: [Command.link(groupId)] });
     const [partnerId_1, partnerId_2] = pyEnv["res.partner"].create([
-        { email: "p1@odoo.com", name: "p1" },
-        { email: "p2@odoo.com", name: "p2" },
+        { email: "p1@eden.com", name: "p1" },
+        { email: "p2@eden.com", name: "p2" },
     ]);
     pyEnv["res.users"].create([
         { partner_id: partnerId_1, groups_id: [Command.link(groupId)] },

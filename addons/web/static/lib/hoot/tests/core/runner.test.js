@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 import { parseUrl } from "../local_helpers";
 
 import { Runner } from "../../core/runner";

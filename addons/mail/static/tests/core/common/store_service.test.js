@@ -2,7 +2,7 @@ import { Message } from "@mail/core/common/message_model";
 
 import { assertSteps, defineMailModels, start, step } from "@mail/../tests/mail_test_helpers";
 
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@eden/hoot";
 
 import { getService, patchWithCleanup } from "@web/../tests/web_test_helpers";
 

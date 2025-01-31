@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-import odoo
+import eden
 
-from odoo.addons.point_of_sale.tests.common import TestPoSCommon
+from eden.addons.point_of_sale.tests.common import TestPoSCommon
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@eden.tests.tagged('post_install', '-at_install')
 class TestPosSimpleInvoicedOrders(TestPoSCommon):
     """
     Each test case only make a single **invoiced** order.

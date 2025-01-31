@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { useService } from "@web/core/utils/hooks";
 import { registry } from "@web/core/registry";
@@ -7,7 +7,7 @@ import { FloatToggleField } from "@web/views/fields/float_toggle/float_toggle_fi
 import { FloatTimeField } from "@web/views/fields/float_time/float_time_field";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";
 
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 export class TimesheetUOM extends Component {
     static props = {

@@ -1,13 +1,13 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
-from odoo.addons.point_of_sale.tests.common_setup_methods import setup_product_combo_items
-from odoo.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
+import eden.tests
+from eden.addons.point_of_sale.tests.common_setup_methods import setup_product_combo_items
+from eden.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
 
-from odoo.exceptions import UserError
+from eden.exceptions import UserError
 
 
-@odoo.tests.tagged("post_install", "-at_install")
+@eden.tests.tagged("post_install", "-at_install")
 class TestSelfOrderCommon(SelfOrderCommonTest):
     def test_self_order_common(self):
         self.pos_config.write({

@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import date
 from markupsafe import Markup
 import json
 
-from odoo import _, api, fields, models, SUPERUSER_ID
-from odoo.exceptions import UserError
+from eden import _, api, fields, models, SUPERUSER_ID
+from eden.exceptions import UserError
 
 
 class StockPicking(models.Model):
@@ -71,7 +71,7 @@ class StockPicking(models.Model):
     def _send_confirmation_email(self):
         # The carrier's API processes validity checks and parcels generation one picking at a time.
         # However, since a UserError of any of the picking will cause a rollback of the entire batch
-        # on Odoo's side and since pickings that were already processed on the carrier's side must
+        # on Eden's side and since pickings that were already processed on the carrier's side must
         # stay validated, UserErrors might need to be replaced by activity warnings.
 
         processed_carrier_picking = False

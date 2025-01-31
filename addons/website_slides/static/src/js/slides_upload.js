@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import publicWidget from '@web/legacy/js/public/public_widget';
 import { SlideUploadDialog } from "@website_slides/js/public/components/slide_upload_dialog/slide_upload_dialog";

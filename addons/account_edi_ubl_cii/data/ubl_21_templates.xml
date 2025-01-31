@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="ubl_21_AddressType" inherit_id="account_edi_ubl_cii.ubl_20_AddressType">
         <xpath expr="//*[local-name()='CountrySubentityCode']" position="after">
             <t xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
@@ -188,4 +188,4 @@
         </xpath>
     </template>
 
-</odoo>
+</eden>

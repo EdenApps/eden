@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
     <record id="privacy_log_view_list" model="ir.ui.view">
         <field name="name">privacy.log.view.list</field>
         <field name="model">privacy.log</field>
@@ -70,4 +70,4 @@
         id="pricacy_log_menu"
         parent="privacy_menu"
         sequence="1"/>
-</odoo>
+</eden>

@@ -1,20 +1,20 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import re
 from pytz import UTC
 from collections import defaultdict
 from datetime import timedelta, datetime, time
 
-from odoo import api, Command, fields, models, tools, SUPERUSER_ID, _
-from odoo.addons.rating.models import rating_data
-from odoo.addons.web_editor.tools import handle_history_divergence
-from odoo.exceptions import UserError, ValidationError, AccessError
-from odoo.osv import expression
-from odoo.tools import format_list, SQL
-from odoo.addons.resource.models.utils import filter_domain_leaf
-from odoo.addons.project.controllers.project_sharing_chatter import ProjectSharingChatter
-from odoo.addons.mail.tools.discuss import Store
+from eden import api, Command, fields, models, tools, SUPERUSER_ID, _
+from eden.addons.rating.models import rating_data
+from eden.addons.web_editor.tools import handle_history_divergence
+from eden.exceptions import UserError, ValidationError, AccessError
+from eden.osv import expression
+from eden.tools import format_list, SQL
+from eden.addons.resource.models.utils import filter_domain_leaf
+from eden.addons.project.controllers.project_sharing_chatter import ProjectSharingChatter
+from eden.addons.mail.tools.discuss import Store
 
 
 PROJECT_TASK_READABLE_FIELDS = {
@@ -1691,11 +1691,11 @@ class Task(models.Model):
     def _notify_by_email_get_headers(self, headers=None):
         headers = super(Task, self)._notify_by_email_get_headers(headers=headers)
         if self.project_id:
-            current_objects = [h for h in headers.get('X-Odoo-Objects', '').split(',') if h]
+            current_objects = [h for h in headers.get('X-Eden-Objects', '').split(',') if h]
             current_objects.insert(0, 'project.project-%s, ' % self.project_id.id)
-            headers['X-Odoo-Objects'] = ','.join(current_objects)
+            headers['X-Eden-Objects'] = ','.join(current_objects)
         if self.tag_ids:
-            headers['X-Odoo-Tags'] = ','.join(self.tag_ids.mapped('name'))
+            headers['X-Eden-Tags'] = ','.join(self.tag_ids.mapped('name'))
         return headers
 
     def _message_post_after_hook(self, message, msg_vals):
@@ -1984,7 +1984,7 @@ class Task(models.Model):
         menu_id = self.env.ref('project.menu_project_management_all_tasks').id
         return {
             'type': 'ir.actions.act_url',
-            'url': f"/odoo/1/action-project.act_project_project_2_project_task_all/{self.id}?menu_id={menu_id}",
+            'url': f"/eden/1/action-project.act_project_project_2_project_task_all/{self.id}?menu_id={menu_id}",
             'target': 'new',
         }
 

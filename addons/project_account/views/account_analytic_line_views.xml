@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="project_view_account_analytic_line_graph" model="ir.ui.view">
         <field name="name">account.analytic.line.graph</field>
         <field name="model">account.analytic.line</field>
@@ -30,4 +30,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</eden>

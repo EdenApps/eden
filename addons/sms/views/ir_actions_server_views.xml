@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data>
+<eden><data>
 
     <record id="ir_actions_server_view_form"  model="ir.ui.view">
         <field name="name">ir.actions.server.view.form.inherit.sms</field>
@@ -35,4 +35,4 @@
         </field>
     </record>
 
-</data></odoo>
+</data></eden>

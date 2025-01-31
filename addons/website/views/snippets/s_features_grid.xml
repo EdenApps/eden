@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_features_grid" name="Features Grid">
     <section class="s_features_grid pt64 pb64" data-vcss="001">
@@ -86,4 +86,4 @@
     <field name="path">website/static/src/snippets/s_features_grid/001.scss</field>
 </record>
 
-</odoo>
+</eden>

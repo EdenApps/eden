@@ -1,13 +1,13 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { stripHistoryIds } from "@html_editor/others/collaboration/collaboration_odoo_plugin";
+import { stripHistoryIds } from "@html_editor/others/collaboration/collaboration_eden_plugin";
 import { HISTORY_SNAPSHOT_INTERVAL } from "@html_editor/others/collaboration/collaboration_plugin";
 import { COLLABORATION_PLUGINS, MAIN_PLUGINS } from "@html_editor/plugin_sets";
 import { normalizeHTML } from "@html_editor/utils/html";
 import { Wysiwyg } from "@html_editor/wysiwyg";
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { advanceTime, animationFrame, tick, waitUntil } from "@odoo/hoot-dom";
-import { Component, xml } from "@odoo/owl";
+import { beforeEach, describe, expect, test } from "@eden/hoot";
+import { advanceTime, animationFrame, tick, waitUntil } from "@eden/hoot-dom";
+import { Component, xml } from "@eden/owl";
 import { mountWithCleanup, onRpc } from "@web/../tests/web_test_helpers";
 import { Mutex } from "@web/core/utils/concurrency";
 import { patch } from "@web/core/utils/patch";
@@ -61,7 +61,7 @@ class PeerTest {
         this.editor.destroy();
     }
     async focus() {
-        return this.plugins["collaborationOdoo"].joinPeerToPeer();
+        return this.plugins["collaborationEden"].joinPeerToPeer();
     }
     async openDataChannel(peer) {
         this.connections.add(peer);
@@ -85,7 +85,7 @@ class PeerTest {
     }
     async writeToServer() {
         this.pool.lastRecordSaved = this.editor.getContent();
-        const lastId = this.plugins.collaborationOdoo.getLastHistoryStepId(
+        const lastId = this.plugins.collaborationEden.getLastHistoryStepId(
             this.pool.lastRecordSaved
         );
         for (const peer of Object.values(this.peers)) {
@@ -93,7 +93,7 @@ class PeerTest {
                 continue;
             }
             peer.onlineMutex.exec(async () => {
-                return peer.plugins.collaborationOdoo.onServerLastIdUpdate(String(lastId));
+                return peer.plugins.collaborationEden.onServerLastIdUpdate(String(lastId));
             });
         }
     }
@@ -185,7 +185,7 @@ class Wysiwygs extends Component {
             const { pool } = this.props;
             const { peers } = this.props.pool;
 
-            patch(plugins["collaborationOdoo"], {
+            patch(plugins["collaborationEden"], {
                 getMetadata() {
                     const result = super.getMetadata();
                     result.avatarUrl = ``;
@@ -400,21 +400,21 @@ describe("Stale detection & recovery", () => {
 
             await peers.p1.writeToServer();
 
-            expect(peers.p1.plugins.collaborationOdoo.isDocumentStale).toBe(false, {
+            expect(peers.p1.plugins.collaborationEden.isDocumentStale).toBe(false, {
                 message: "p1 should not have a stale document",
             });
             expect(peers.p1.getValue()).toBe(`<p>ab[]</p>`, {
                 message: "p1 should have the same document as p2",
             });
 
-            expect(peers.p2.plugins.collaborationOdoo.isDocumentStale).toBe(false, {
+            expect(peers.p2.plugins.collaborationEden.isDocumentStale).toBe(false, {
                 message: "p2 should not have a stale document",
             });
             expect(peers.p2.getValue()).toBe(`<p>[]ab</p>`, {
                 message: "p2 should have the same document as p1",
             });
 
-            expect(peers.p3.plugins.collaborationOdoo.isDocumentStale).toBe(true, {
+            expect(peers.p3.plugins.collaborationEden.isDocumentStale).toBe(true, {
                 message: "p3 should have a stale document",
             });
             expect(peers.p3.getValue()).toBe(`<p>a[]</p>`, {
@@ -426,7 +426,7 @@ describe("Stale detection & recovery", () => {
             // This timeout is necessary for the selection to be set
             await tick();
 
-            expect(peers.p3.plugins.collaborationOdoo.isDocumentStale).toBe(false, {
+            expect(peers.p3.plugins.collaborationEden.isDocumentStale).toBe(false, {
                 message: "p3 should not have a stale document",
             });
             expect(peers.p3.getValue()).toBe(`<p>[]ab</p>`, {
@@ -456,21 +456,21 @@ describe("Stale detection & recovery", () => {
                 await peers.p1.openDataChannel(peers.p3);
                 await peers.p2.openDataChannel(peers.p3);
 
-                const p3Spies = makeSpies(peers.p3.plugins.collaborationOdoo, [
+                const p3Spies = makeSpies(peers.p3.plugins.collaborationEden, [
                     "recoverFromStaleDocument",
                     "resetFromServerAndResyncWithPeers",
                     "processMissingSteps",
                     "applySnapshot",
                 ]);
 
-                expect(peers.p1.plugins.collaborationOdoo.historyShareId).toBe(
-                    peers.p2.plugins.collaborationOdoo.historyShareId,
+                expect(peers.p1.plugins.collaborationEden.historyShareId).toBe(
+                    peers.p2.plugins.collaborationEden.historyShareId,
                     {
                         message: "p1 and p2 should have the same historyShareId",
                     }
                 );
-                expect(peers.p1.plugins.collaborationOdoo.historyShareId).toBe(
-                    peers.p3.plugins.collaborationOdoo.historyShareId,
+                expect(peers.p1.plugins.collaborationEden.historyShareId).toBe(
+                    peers.p3.plugins.collaborationEden.historyShareId,
                     {
                         message: "p1 and p3 should have the same historyShareId",
                     }
@@ -501,13 +501,13 @@ describe("Stale detection & recovery", () => {
                 });
 
                 await peers.p1.writeToServer();
-                expect(peers.p1.plugins.collaborationOdoo.isDocumentStale).toBe(false, {
+                expect(peers.p1.plugins.collaborationEden.isDocumentStale).toBe(false, {
                     message: "p1 should not have a stale document",
                 });
-                expect(peers.p2.plugins.collaborationOdoo.isDocumentStale).toBe(false, {
+                expect(peers.p2.plugins.collaborationEden.isDocumentStale).toBe(false, {
                     message: "p2 should not have a stale document",
                 });
-                expect(peers.p3.plugins.collaborationOdoo.isDocumentStale).toBe(false, {
+                expect(peers.p3.plugins.collaborationEden.isDocumentStale).toBe(false, {
                     message: "p3 should not have a stale document",
                 });
 
@@ -552,13 +552,13 @@ describe("Stale detection & recovery", () => {
                 peers.p2.setOffline();
                 peers.p3.setOffline();
 
-                const p2Spies = makeSpies(peers.p2.plugins.collaborationOdoo, [
+                const p2Spies = makeSpies(peers.p2.plugins.collaborationEden, [
                     "recoverFromStaleDocument",
                     "resetFromServerAndResyncWithPeers",
                     "processMissingSteps",
                     "applySnapshot",
                 ]);
-                const p3Spies = makeSpies(peers.p3.plugins.collaborationOdoo, [
+                const p3Spies = makeSpies(peers.p3.plugins.collaborationEden, [
                     "recoverFromStaleDocument",
                     "resetFromServerAndResyncWithPeers",
                     "processMissingSteps",
@@ -650,13 +650,13 @@ describe("Stale detection & recovery", () => {
                 peers.p2.setOffline();
                 peers.p3.setOffline();
 
-                const p2Spies = makeSpies(peers.p2.plugins.collaborationOdoo, [
+                const p2Spies = makeSpies(peers.p2.plugins.collaborationEden, [
                     "recoverFromStaleDocument",
                     "resetFromServerAndResyncWithPeers",
                     "processMissingSteps",
                     "applySnapshot",
                 ]);
-                const p3Spies = makeSpies(peers.p3.plugins.collaborationOdoo, [
+                const p3Spies = makeSpies(peers.p3.plugins.collaborationEden, [
                     "recoverFromStaleDocument",
                     "resetFromServerAndResyncWithPeers",
                     "processMissingSteps",
@@ -748,7 +748,7 @@ describe("Stale detection & recovery", () => {
                 peers.p2.setOffline();
                 peers.p3.setOffline();
 
-                const p2Spies = makeSpies(peers.p2.plugins.collaborationOdoo, [
+                const p2Spies = makeSpies(peers.p2.plugins.collaborationEden, [
                     "recoverFromStaleDocument",
                     "resetFromServerAndResyncWithPeers",
                     "processMissingSteps",
@@ -757,7 +757,7 @@ describe("Stale detection & recovery", () => {
                     "resetFromPeer",
                 ]);
 
-                const p3Spies = makeSpies(peers.p3.plugins.collaborationOdoo, [
+                const p3Spies = makeSpies(peers.p3.plugins.collaborationEden, [
                     "recoverFromStaleDocument",
                     "resetFromServerAndResyncWithPeers",
                     "processMissingSteps",
@@ -840,7 +840,7 @@ describe("Stale detection & recovery", () => {
                 await peers.p1.openDataChannel(peers.p2);
                 peers.p2.setOffline();
 
-                const p2Spies = makeSpies(peers.p2.plugins.collaborationOdoo, [
+                const p2Spies = makeSpies(peers.p2.plugins.collaborationEden, [
                     "recoverFromStaleDocument",
                     "resetFromServerAndResyncWithPeers",
                     "processMissingSteps",
@@ -914,7 +914,7 @@ describe("Stale detection & recovery", () => {
                 peers.p2.setOffline();
                 peers.p3.setOffline();
 
-                const p2Spies = makeSpies(peers.p2.plugins.collaborationOdoo, [
+                const p2Spies = makeSpies(peers.p2.plugins.collaborationEden, [
                     "recoverFromStaleDocument",
                     "resetFromServerAndResyncWithPeers",
                     "processMissingSteps",
@@ -1033,7 +1033,7 @@ describe("Disconnect & reconnect", () => {
         // should be removed when the fix of undetected missing step
         // will be merged. (task-3208277)
         const p1PromiseForMissingStep = new Promise((resolve) => {
-            patch(peers.p2.plugins.collaborationOdoo, {
+            patch(peers.p2.plugins.collaborationEden, {
                 async processMissingSteps() {
                     // Wait for the p2PromiseForMissingStep to resolve
                     // to avoid undetected missing step.
@@ -1044,7 +1044,7 @@ describe("Disconnect & reconnect", () => {
             });
         });
         const p2PromiseForMissingStep = new Promise((resolve) => {
-            patch(peers.p1.plugins.collaborationOdoo, {
+            patch(peers.p1.plugins.collaborationEden, {
                 async processMissingSteps() {
                     super.processMissingSteps(...arguments);
                     resolve();
@@ -1116,7 +1116,7 @@ describe("History steps Ids", () => {
         await insertEditorText(peers.p1.editor, "b");
         await peers.p1.writeToServer();
 
-        expect(peers.p2.plugins.collaborationOdoo.isDocumentStale).toBe(true, {
+        expect(peers.p2.plugins.collaborationEden.isDocumentStale).toBe(true, {
             message: "p2 should have a stale document",
         });
 
@@ -1125,7 +1125,7 @@ describe("History steps Ids", () => {
         // This timeout is necessary for the selection to be set
         await tick();
 
-        expect(peers.p2.plugins.collaborationOdoo.isDocumentStale).toBe(false, {
+        expect(peers.p2.plugins.collaborationEden.isDocumentStale).toBe(false, {
             message: "p2 should not have a stale document",
         });
         expect(getContent(peers.p2.editor.editable)).toBe(`<p>[]ab</p>`, {

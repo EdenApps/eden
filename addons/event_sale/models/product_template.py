@@ -1,4 +1,4 @@
-from odoo import _, api, models
+from eden import _, api, models
 
 
 class ProductTemplate(models.Model):

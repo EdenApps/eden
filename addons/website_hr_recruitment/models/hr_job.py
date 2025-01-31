@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from werkzeug.urls import url_join
 
-from odoo import api, fields, models, _
-from odoo.tools import mute_logger
-from odoo.tools.translate import html_translate
+from eden import api, fields, models, _
+from eden.tools import mute_logger
+from eden.tools.translate import html_translate
 
 
 class Job(models.Model):
@@ -16,7 +16,7 @@ class Job(models.Model):
         'website.searchable.mixin',
     ]
 
-    @mute_logger('odoo.addons.base.models.ir_qweb')
+    @mute_logger('eden.addons.base.models.ir_qweb')
     def _get_default_website_description(self):
         return self.env['ir.qweb']._render("website_hr_recruitment.default_website_description", raise_if_not_found=False)
 

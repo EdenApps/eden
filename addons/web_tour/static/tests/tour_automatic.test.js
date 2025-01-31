@@ -1,9 +1,9 @@
-/** @odoo-module **/
+/** @eden-module **/
 
-import { afterEach, beforeEach, describe, expect, test } from "@odoo/hoot";
-import { animationFrame, queryFirst } from "@odoo/hoot-dom";
-import { advanceTime, runAllTimers } from "@odoo/hoot-mock";
-import { Component, xml } from "@odoo/owl";
+import { afterEach, beforeEach, describe, expect, test } from "@eden/hoot";
+import { animationFrame, queryFirst } from "@eden/hoot-dom";
+import { advanceTime, runAllTimers } from "@eden/hoot-mock";
+import { Component, xml } from "@eden/owl";
 import {
     clearRegistry,
     getService,
@@ -137,7 +137,7 @@ test("a failing tour logs the step that failed in run", async () => {
             },
         ],
     });
-    await odoo.startTour("tour2", { mode: "auto" }); // Use odoo to run tour from registry because this is a test tour
+    await eden.startTour("tour2", { mode: "auto" }); // Use eden to run tour from registry because this is a test tour
     await waitForStep(true);
     await waitForStep();
     await waitForStep();
@@ -188,7 +188,7 @@ test("a failing tour with disabled element", async () => {
             },
         ],
     });
-    await odoo.startTour("tour3", { mode: "auto" });
+    await eden.startTour("tour3", { mode: "auto" });
     await waitForStep(true);
     await waitForStep();
     await waitForStep();
@@ -279,7 +279,7 @@ test("a failing tour logs the step that failed", async () => {
             },
         ],
     });
-    await odoo.startTour("tour1", { mode: "auto" });
+    await eden.startTour("tour1", { mode: "auto" });
     await waitForStep(true);
     await waitForStep();
     await waitForStep();
@@ -341,7 +341,7 @@ test("check tour with inactive steps", async () => {
             },
         ],
     });
-    await odoo.startTour("pipu_tour", { mode: "auto" });
+    await eden.startTour("pipu_tour", { mode: "auto" });
     await waitForStep(true);
     await waitForStep();
     await waitForStep();
@@ -390,7 +390,7 @@ test("automatic tour with invisible element", async () => {
             },
         ],
     });
-    await odoo.startTour("tour_de_wallonie", { mode: "auto" });
+    await eden.startTour("tour_de_wallonie", { mode: "auto" });
     await waitForStep(true);
     await waitForStep();
     await waitForStep();
@@ -444,7 +444,7 @@ test("automatic tour with invisible element but use :not(:visible))", async () =
             },
         ],
     });
-    await odoo.startTour("tour_de_wallonie", { mode: "auto" });
+    await eden.startTour("tour_de_wallonie", { mode: "auto" });
     await waitForStep(true);
     await waitForStep();
     await waitForStep();
@@ -506,7 +506,7 @@ test("automatic tour with alternative trigger", async () => {
         static props = ["*"];
     }
     await mountWithCleanup(Root);
-    await odoo.startTour("tour_des_flandres", { mode: "auto" });
+    await eden.startTour("tour_des_flandres", { mode: "auto" });
     await waitForStep(true);
     await waitForStep();
     await waitForStep();
@@ -567,7 +567,7 @@ test("check not possible to click below modal", async () => {
             },
         ],
     });
-    await odoo.startTour("tour_check_modal", { mode: "auto" });
+    await eden.startTour("tour_check_modal", { mode: "auto" });
     await waitForStep(true);
     await waitForStep();
     await waitForStep();
@@ -614,7 +614,7 @@ test("a tour where hoot trigger failed", async () => {
             },
         ],
     });
-    await odoo.startTour("tour_hoot_failed", { mode: "auto" });
+    await eden.startTour("tour_hoot_failed", { mode: "auto" });
     await waitForStep(true);
     await waitForStep();
     await waitForStep();
@@ -663,7 +663,7 @@ test("check for undeterminisms", async () => {
             },
         ],
     });
-    await odoo.startTour("tour_und", {
+    await eden.startTour("tour_und", {
         mode: "auto",
         delayToCheckUndeterminisms: 3000,
     });

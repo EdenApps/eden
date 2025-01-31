@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 from datetime import datetime, timedelta
-from odoo import fields
-from odoo.tests import common
-from odoo.addons.lunch.tests.common import TestsCommon
+from eden import fields
+from eden.tests import common
+from eden.addons.lunch.tests.common import TestsCommon
 
 
 class TestAlarm(TestsCommon):

@@ -1,4 +1,4 @@
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 class ProfilingSystrayItem extends Component {
     static template = "web.ProfilingSystrayItem";

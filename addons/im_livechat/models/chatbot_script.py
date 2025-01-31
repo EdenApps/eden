@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, models, fields
-from odoo.http import request
-from odoo.tools import email_normalize, get_lang, html2plaintext, is_html_empty, plaintext2html
+from eden import api, models, fields
+from eden.http import request
+from eden.tools import email_normalize, get_lang, html2plaintext, is_html_empty, plaintext2html
 
 
 class ChatbotScript(models.Model):

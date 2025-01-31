@@ -7,7 +7,7 @@ import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { formatPercentage } from "@web/views/fields/formatters";
 import { PivotHeader } from "@web/views/pivot/pivot_header";
 
-import { Component, onWillUpdateProps, useRef } from "@odoo/owl";
+import { Component, onWillUpdateProps, useRef } from "@eden/owl";
 import { download } from "@web/core/network/download";
 import { useService } from "@web/core/utils/hooks";
 import { ReportViewMeasures } from "@web/views/view_components/report_view_measures";

@@ -1,6 +1,6 @@
 from collections import Counter
 
-from odoo import _, api, Command, fields, models
+from eden import _, api, Command, fields, models
 
 
 class AccountMoveSendBatchWizard(models.TransientModel):

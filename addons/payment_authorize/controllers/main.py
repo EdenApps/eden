@@ -1,13 +1,13 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 import pprint
 
-from odoo import _, http
-from odoo.exceptions import ValidationError
-from odoo.http import request
+from eden import _, http
+from eden.exceptions import ValidationError
+from eden.http import request
 
-from odoo.addons.payment import utils as payment_utils
+from eden.addons.payment import utils as payment_utils
 
 _logger = logging.getLogger(__name__)
 

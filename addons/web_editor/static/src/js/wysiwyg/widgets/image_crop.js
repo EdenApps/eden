@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import {applyModifications, cropperDataFields, activateCropper, loadImage, loadImageInfo} from "@web_editor/js/editor/image_processing";
 import { _t } from "@web/core/l10n/translation";
@@ -10,11 +10,11 @@ import {
     onWillDestroy,
     onWillUpdateProps,
     markup,
-} from "@odoo/owl";
+} from "@eden/owl";
 import { useService } from "@web/core/utils/hooks";
 import { closestScrollableY } from "@web/core/utils/scrolling";
 import { scrollTo } from "@web_editor/js/common/scrolling";
-import { preserveCursor } from "@web_editor/js/editor/odoo-editor/src/utils/utils";
+import { preserveCursor } from "@web_editor/js/editor/eden-editor/src/utils/utils";
 
 export class ImageCrop extends Component {
     static template = 'web_editor.ImageCrop';
@@ -165,7 +165,7 @@ export class ImageCrop extends Component {
 
         if (this.uncroppable) {
             this.notification.add(
-                markup(_t("This type of image is not supported for cropping.<br/>If you want to crop it, please first download it from the original source and upload it in Odoo.")),
+                markup(_t("This type of image is not supported for cropping.<br/>If you want to crop it, please first download it from the original source and upload it in Eden.")),
                 {
                     title: _t("This image is an external image"),
                     type: 'warning',

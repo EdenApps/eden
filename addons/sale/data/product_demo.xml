@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<eden noupdate="1">
 
     <record id="product.consu_delivery_01" model="product.product">
         <field name="invoice_policy">order</field>
@@ -220,4 +220,4 @@
         <field name="optional_product_ids" eval="[Command.set([ref('product.product_product_11_product_template')])]"/>
     </record>
 
-</odoo>
+</eden>

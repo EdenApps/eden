@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
         <!-- Top menu item -->
         <menuitem name="Purchase"
@@ -905,4 +905,4 @@ if isinstance(res, dict):
     action = res
         </field>
     </record>
- </odoo>
+ </eden>

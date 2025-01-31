@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { click, edit, press, queryAllTexts, queryOne, scroll } from "@odoo/hoot-dom";
-import { animationFrame, mockDate, mockTimeZone } from "@odoo/hoot-mock";
+import { expect, test } from "@eden/hoot";
+import { click, edit, press, queryAllTexts, queryOne, scroll } from "@eden/hoot-dom";
+import { animationFrame, mockDate, mockTimeZone } from "@eden/hoot-mock";
 import {
     assertDateTimePicker,
     getPickerCell,

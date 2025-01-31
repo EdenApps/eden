@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <record id="action_open_wizard" model="ir.actions.act_window">
             <field name="name">Update tax tags on existing Journal Entries</field>
@@ -23,4 +23,4 @@
             </field>
         </record>
     </data>
-</odoo>
+</eden>

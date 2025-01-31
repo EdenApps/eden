@@ -1,9 +1,9 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { useBus } from "@web/core/utils/hooks";
 import { BomOverviewLine } from "../bom_overview_line/mrp_bom_overview_line";
 import { BomOverviewExtraBlock } from "../bom_overview_extra_block/mrp_bom_overview_extra_block";
-import { Component, onWillUnmount, onWillUpdateProps, useState } from "@odoo/owl";
+import { Component, onWillUnmount, onWillUpdateProps, useState } from "@eden/owl";
 
 export class BomOverviewComponentsBlock extends Component {
     static template = "mrp.BomOverviewComponentsBlock";

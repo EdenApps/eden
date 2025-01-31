@@ -4,8 +4,8 @@ import {
     start as start2,
     step,
 } from "@mail/../tests/mail_test_helpers";
-import { afterEach, beforeEach, describe, expect, test } from "@odoo/hoot";
-import { reactive, toRaw } from "@odoo/owl";
+import { afterEach, beforeEach, describe, expect, test } from "@eden/hoot";
+import { reactive, toRaw } from "@eden/owl";
 import { mockService } from "@web/../tests/web_test_helpers";
 
 import { Record, Store, makeStore } from "@mail/core/common/record";

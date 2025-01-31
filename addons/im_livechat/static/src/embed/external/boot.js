@@ -1,7 +1,7 @@
 import { LivechatButton } from "@im_livechat/embed/common/livechat_button";
 import { makeShadow, makeRoot } from "@im_livechat/embed/common/boot_helpers";
 
-import { mount, whenReady } from "@odoo/owl";
+import { mount, whenReady } from "@eden/owl";
 
 import { _t } from "@web/core/l10n/translation";
 import { getTemplate } from "@web/core/templates";
@@ -11,7 +11,7 @@ import { registry } from "@web/core/registry";
 import { makeEnv, startServices } from "@web/env";
 import { session } from "@web/session";
 
-odoo.livechatReady = new Deferred();
+eden.livechatReady = new Deferred();
 
 (async function boot() {
     session.origin = session.livechatData.serverUrl;
@@ -20,7 +20,7 @@ odoo.livechatReady = new Deferred();
     mainComponentsRegistry.add("LivechatRoot", { Component: LivechatButton });
     const env = Object.assign(makeEnv(), { embedLivechat: true });
     await startServices(env);
-    odoo.isReady = true;
+    eden.isReady = true;
     const target = await makeShadow(makeRoot(document.body));
     await mount(MainComponentsContainer, target, {
         env,
@@ -28,5 +28,5 @@ odoo.livechatReady = new Deferred();
         translateFn: _t,
         dev: env.debug,
     });
-    odoo.livechatReady.resolve();
+    eden.livechatReady.resolve();
 })();

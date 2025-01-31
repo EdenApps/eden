@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.api import Environment
-import odoo.tests
-from odoo.tools import html2plaintext
+from eden.api import Environment
+import eden.tests
+from eden.tools import html2plaintext
 
-from odoo.addons.website.tools import MockRequest
-from odoo.addons.website_hr_recruitment.controllers.main import WebsiteHrRecruitment
+from eden.addons.website.tools import MockRequest
+from eden.addons.website_hr_recruitment.controllers.main import WebsiteHrRecruitment
 
-@odoo.tests.tagged('post_install', '-at_install')
-class TestWebsiteHrRecruitmentForm(odoo.tests.HttpCase):
+@eden.tests.tagged('post_install', '-at_install')
+class TestWebsiteHrRecruitmentForm(eden.tests.HttpCase):
     def test_tour(self):
         job_guru = self.env['hr.job'].create({
             'name': 'Guru',
@@ -23,7 +23,7 @@ class TestWebsiteHrRecruitmentForm(odoo.tests.HttpCase):
 
         self.start_tour(self.env['website'].get_client_action_url('/jobs'), 'website_hr_recruitment_tour_edit_form', login='admin')
 
-        with odoo.tests.RecordCapturer(self.env['hr.applicant'], []) as capt:
+        with eden.tests.RecordCapturer(self.env['hr.applicant'], []) as capt:
             self.start_tour("/", 'website_hr_recruitment_tour')
 
         # check result

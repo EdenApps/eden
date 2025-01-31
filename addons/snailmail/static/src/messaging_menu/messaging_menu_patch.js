@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { MessagingMenu } from "@mail/core/public_web/messaging_menu";
 import { _t } from "@web/core/l10n/translation";

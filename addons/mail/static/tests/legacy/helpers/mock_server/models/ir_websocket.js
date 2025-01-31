@@ -1,4 +1,4 @@
-/** @odoo-module alias=@mail/../tests/helpers/mock_server/models/ir_websocket default=false */
+/** @eden-module alias=@mail/../tests/helpers/mock_server/models/ir_websocket default=false */
 
 // ensure bus override is applied first.
 import "@bus/../tests/helpers/mock_server";

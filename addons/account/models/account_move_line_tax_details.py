@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from odoo import api, models
-from odoo.tools import SQL
+from eden import api, models
+from eden.tools import SQL
 
 
 class AccountMoveLine(models.Model):

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api
-from odoo.osv.expression import AND
+from eden import models, fields, api
+from eden.osv.expression import AND
 
 
 class PosConfig(models.Model):
@@ -12,7 +12,7 @@ class PosConfig(models.Model):
         help='If left empty, all employees can log in to PoS')
     advanced_employee_ids = fields.Many2many(
         'hr.employee', 'pos_hr_advanced_employee_hr_employee', string="Employees with manager access",
-        help='If left empty, only Odoo users have extended rights in PoS')
+        help='If left empty, only Eden users have extended rights in PoS')
 
     @api.onchange('basic_employee_ids')
     def _onchange_basic_employee_ids(self):

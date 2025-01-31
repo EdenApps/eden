@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models
+from eden import fields, models
 
-from odoo.addons.google_calendar.models.google_sync import google_calendar_token
-from odoo.addons.google_calendar.utils.google_calendar import GoogleCalendarService
+from eden.addons.google_calendar.models.google_sync import google_calendar_token
+from eden.addons.google_calendar.utils.google_calendar import GoogleCalendarService
 
 
 class ResetGoogleAccount(models.TransientModel):
@@ -15,7 +15,7 @@ class ResetGoogleAccount(models.TransientModel):
     delete_policy = fields.Selection(
         [('dont_delete', "Leave them untouched"),
          ('delete_google', "Delete from the current Google Calendar account"),
-         ('delete_odoo', "Delete from Odoo"),
+         ('delete_eden', "Delete from Eden"),
          ('delete_both', "Delete from both"),
         ], string="User's Existing Events", required=True, default='dont_delete',
         help="This will only affect events for which the user is the owner")
@@ -41,7 +41,7 @@ class ResetGoogleAccount(models.TransientModel):
 
         # Delete events according to the selected policy. If the deletion is only in
         # Google, we won't keep track of the 'google_id' field for events and recurrences.
-        if self.delete_policy in ('delete_odoo', 'delete_both', 'delete_google'):
+        if self.delete_policy in ('delete_eden', 'delete_both', 'delete_google'):
             events.google_id = False
             recurrences.google_id = False
             if self.delete_policy != 'delete_google':
@@ -57,7 +57,7 @@ class ResetGoogleAccount(models.TransientModel):
             next_sync_update['need_sync'] = False
 
         # Write the next sync update attribute on the existing events.
-        if self.delete_policy not in ('delete_odoo', 'delete_both'):
+        if self.delete_policy not in ('delete_eden', 'delete_both'):
             events.write(next_sync_update)
 
         self.user_id.res_users_settings_id._set_google_auth_tokens(False, False, 0)

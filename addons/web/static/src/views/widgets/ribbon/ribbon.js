@@ -2,7 +2,7 @@ import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
 import { standardWidgetProps } from "../standard_widget_props";
 
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 /**
  * This widget adds a ribbon on the top right side of the form

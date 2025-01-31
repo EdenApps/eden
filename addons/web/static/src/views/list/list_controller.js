@@ -39,7 +39,7 @@ import {
     useRef,
     useState,
     useSubEnv,
-} from "@odoo/owl";
+} from "@eden/owl";
 
 // -----------------------------------------------------------------------------
 

@@ -1,11 +1,11 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { useService } from '@web/core/utils/hooks';
 import { ActionContainer } from '@web/webclient/actions/action_container';
 import { MainComponentsContainer } from "@web/core/main_components_container";
 import { useOwnDebugContext } from "@web/core/debug/debug_context";
 import { session } from '@web/session';
-import { Component, useEffect, useExternalListener } from "@odoo/owl";
+import { Component, useEffect, useExternalListener } from "@eden/owl";
 
 export class SubcontractingPortalWebClient extends Component {
     static components = { ActionContainer, MainComponentsContainer };

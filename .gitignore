@@ -16,7 +16,7 @@ __pycache__/
 # hg stuff
 *.orig
 status
-# odoo filestore
+# eden filestore
 odoo/filestore
 # maintenance migration scripts
 odoo/addons/base/maintenance

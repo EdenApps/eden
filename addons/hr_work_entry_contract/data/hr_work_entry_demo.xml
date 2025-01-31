@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
         <!-- Work entries -->
         <record id="work_entry_type_extra_hours" model="hr.work.entry.type">
@@ -15,4 +15,4 @@
             <field name="color">4</field>
         </record>
 
-</odoo>
+</eden>

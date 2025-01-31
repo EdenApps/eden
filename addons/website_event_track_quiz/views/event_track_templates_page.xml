@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="event_track_content"
     name="Track: Main Description: add quiz"
@@ -25,4 +25,4 @@
     </xpath>
 </template>
 
-</odoo>
+</eden>

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <record id="event_registration_action_from_lead" model="ir.actions.act_window">
         <field name="name">Event registrations</field>
         <field name="res_model">event.registration</field>
@@ -56,4 +56,4 @@
             </p>
         </field>
     </record>
-</odoo>
+</eden>

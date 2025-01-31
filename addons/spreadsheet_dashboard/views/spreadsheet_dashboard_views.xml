@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <record id="spreadsheet_dashboard_view_list" model="ir.ui.view">
         <field name="name">spreadsheet.dashboard.view.list</field>
@@ -64,4 +64,4 @@
             </form>
         </field>
     </record>
-</odoo>
+</eden>

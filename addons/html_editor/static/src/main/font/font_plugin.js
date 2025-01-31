@@ -18,7 +18,7 @@ import { DIRECTIONS } from "@html_editor/utils/position";
 import { _t } from "@web/core/l10n/translation";
 import { FontSelector } from "./font_selector";
 import { withSequence } from "@html_editor/utils/resource";
-import { reactive } from "@odoo/owl";
+import { reactive } from "@eden/owl";
 
 export const fontItems = [
     {

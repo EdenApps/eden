@@ -27,7 +27,7 @@ import { HintPlugin } from "./main/hint_plugin";
 import { InlineCodePlugin } from "./main/inline_code";
 import { LinkPastePlugin } from "./main/link/link_paste_plugin";
 import { LinkPlugin } from "./main/link/link_plugin";
-import { OdooLinkSelectionPlugin } from "./main/link/link_selection_odoo_plugin";
+import { EdenLinkSelectionPlugin } from "./main/link/link_selection_eden_plugin";
 import { LinkSelectionPlugin } from "./main/link/link_selection_plugin";
 import { ListPlugin } from "./main/list/list_plugin";
 import { LocalOverlayPlugin } from "./main/local_overlay_plugin";
@@ -50,7 +50,7 @@ import { TabulationPlugin } from "./main/tabulation_plugin";
 import { TextDirectionPlugin } from "./main/text_direction_plugin";
 import { ToolbarPlugin } from "./main/toolbar/toolbar_plugin";
 import { YoutubePlugin } from "./main/youtube_plugin";
-import { CollaborationOdooPlugin } from "./others/collaboration/collaboration_odoo_plugin";
+import { CollaborationEdenPlugin } from "./others/collaboration/collaboration_eden_plugin";
 import { CollaborationPlugin } from "./others/collaboration/collaboration_plugin";
 import { CollaborationSelectionAvatarPlugin } from "./others/collaboration/collaboration_selection_avatar_plugin";
 import { CollaborationSelectionPlugin } from "./others/collaboration/collaboration_selection_plugin";
@@ -93,7 +93,7 @@ import { QWebPlugin } from "./others/qweb_plugin";
  * @property { import ("./main/feff_plugin").FeffShared } feff
  *
  * Others
- * @property { import("./others/collaboration/collaboration_odoo_plugin").CollaborationOdooShared } collaborationOdoo
+ * @property { import("./others/collaboration/collaboration_eden_plugin").CollaborationEdenShared } collaborationEden
  * @property { import("./others/collaboration/collaboration_plugin").CollaborationShared } collaboration
  * @property { import("./others/dynamic_placeholder_plugin").DynamicPlaceholderShared } dynamicPlaceholder
  */
@@ -146,7 +146,7 @@ export const MAIN_PLUGINS = [
     LinkPastePlugin,
     FeffPlugin,
     LinkSelectionPlugin,
-    OdooLinkSelectionPlugin,
+    EdenLinkSelectionPlugin,
     PowerButtonsPlugin,
     MoveNodePlugin,
     LocalOverlayPlugin,
@@ -159,7 +159,7 @@ export const MAIN_PLUGINS = [
 
 export const COLLABORATION_PLUGINS = [
     CollaborationPlugin,
-    CollaborationOdooPlugin,
+    CollaborationEdenPlugin,
     CollaborationSelectionPlugin,
     CollaborationSelectionAvatarPlugin,
 ];

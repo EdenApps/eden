@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <!--
             Integrate Livechat in Common Frontend for Website
-            Template registering all the assets required to execute the Livechat from a page containing Odoo
+            Template registering all the assets required to execute the Livechat from a page containing Eden
         -->
         <template id="loader" inherit_id="website.layout" name="Livechat : include loader on Website">
             <xpath expr="//head">
@@ -176,4 +176,4 @@
             </t>
         </template>
     </data>
-</odoo>
+</eden>

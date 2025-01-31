@@ -1,8 +1,8 @@
-import { test } from "@odoo/hoot";
+import { test } from "@eden/hoot";
 import { testEditor } from "../_helpers/editor";
 import { unformat } from "../_helpers/format";
 import { clickCheckbox } from "../_helpers/user_actions";
-import { click } from "@odoo/hoot-dom";
+import { click } from "@eden/hoot-dom";
 
 test("should do nothing if do not click on the checkbox", async () => {
     await testEditor({

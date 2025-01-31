@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
     import {barcodeService} from "@barcodes/barcode_service";
     import { makeTestEnv } from "@web/../tests/helpers/mock_env";

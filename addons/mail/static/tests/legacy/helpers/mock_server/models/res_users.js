@@ -1,4 +1,4 @@
-/** @odoo-module alias=@mail/../tests/helpers/mock_server/models/res_users default=false */
+/** @eden-module alias=@mail/../tests/helpers/mock_server/models/res_users default=false */
 
 import { patch } from "@web/core/utils/patch";
 import { today, serializeDate } from "@web/core/l10n/dates";
@@ -15,7 +15,7 @@ patch(MockServer.prototype, {
                 hasGifPickerFeature: true,
                 hasLinkPreviewFeature: true,
                 hasMessageTranslationFeature: true,
-                odoobot: this._mockResPartnerMailPartnerFormat(this.odoobotId).get(this.odoobotId),
+                edenbot: this._mockResPartnerMailPartnerFormat(this.edenbotId).get(this.edenbotId),
             },
         };
         if (!this.pyEnv.currentUser._is_public()) {

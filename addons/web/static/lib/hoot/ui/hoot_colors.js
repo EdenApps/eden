@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { reactive, useState } from "@odoo/owl";
+import { reactive, useState } from "@eden/owl";
 import { STORAGE, storageGet, storageSet } from "../hoot_utils";
 
 /**

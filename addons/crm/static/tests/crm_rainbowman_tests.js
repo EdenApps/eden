@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import "@crm/../tests/mock_server";
 import { makeView, setupViewRegistries } from "@web/../tests/views/helpers";

@@ -1,4 +1,4 @@
-import { Component } from '@odoo/owl';
+import { Component } from '@eden/owl';
 import { Dialog } from '@web/core/dialog/dialog';
 
 export class PortalLoyaltyCardDialog extends Component {
@@ -7,6 +7,6 @@ export class PortalLoyaltyCardDialog extends Component {
     static props = ['*'];
 
     setup() {
-        this.csrf_token = odoo.csrf_token;
+        this.csrf_token = eden.csrf_token;
     }
 }

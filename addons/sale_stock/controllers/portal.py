@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 from werkzeug.exceptions import NotFound
 
-from odoo import exceptions, SUPERUSER_ID
-from odoo.addons.sale.controllers.portal import CustomerPortal
-from odoo.http import request, route
-from odoo.tools import consteq
+from eden import exceptions, SUPERUSER_ID
+from eden.addons.sale.controllers.portal import CustomerPortal
+from eden.http import request, route
+from eden.tools import consteq
 
 
 class SaleStockPortal(CustomerPortal):

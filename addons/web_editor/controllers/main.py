@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import io
 import json
 import logging
@@ -13,15 +13,15 @@ from base64 import b64decode, b64encode
 from math import floor
 from os.path import join as opj
 
-from odoo.http import request, Response
-from odoo import http, tools, _
-from odoo.tools.misc import file_open
-from odoo.tools.image import image_data_uri, binary_to_image
+from eden.http import request, Response
+from eden import http, tools, _
+from eden.tools.misc import file_open
+from eden.tools.image import image_data_uri, binary_to_image
 
 
 logger = logging.getLogger(__name__)
-DEFAULT_LIBRARY_ENDPOINT = 'https://media-api.odoo.com'
-DEFAULT_OLG_ENDPOINT = 'https://olg.api.odoo.com'
+DEFAULT_LIBRARY_ENDPOINT = 'https://media-api.edencloud.us'
+DEFAULT_OLG_ENDPOINT = 'https://olg.api.edencloud.us'
 
 
 def get_existing_attachment(IrAttachment, vals):

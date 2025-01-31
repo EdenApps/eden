@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="http_error" name="HTTP Error">
         <t t-call="web.frontend_layout">
             <div id="wrap">
@@ -189,4 +189,4 @@
             </body>
         </html>
     </template>
-</odoo>
+</eden>

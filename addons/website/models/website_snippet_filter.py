@@ -1,9 +1,9 @@
 
 from ast import literal_eval
 from collections import OrderedDict
-from odoo import models, fields, api, _
-from odoo.exceptions import ValidationError, MissingError
-from odoo.osv import expression
+from eden import models, fields, api, _
+from eden.exceptions import ValidationError, MissingError
+from eden.osv import expression
 from lxml import etree, html
 import logging
 from random import randint

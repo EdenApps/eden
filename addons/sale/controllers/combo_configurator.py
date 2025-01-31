@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 
-from odoo.http import Controller, request, route
-from odoo.tools import groupby
+from eden.http import Controller, request, route
+from eden.tools import groupby
 
 
 class SaleComboConfiguratorController(Controller):

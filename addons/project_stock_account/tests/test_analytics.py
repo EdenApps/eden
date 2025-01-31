@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import ValidationError
-from odoo.addons.stock.tests.common import TestStockCommon
+from eden.exceptions import ValidationError
+from eden.addons.stock.tests.common import TestStockCommon
 
 
 class TestAnalytics(TestStockCommon):

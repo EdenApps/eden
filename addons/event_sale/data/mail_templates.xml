@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="event_ticket_id_change_exception" name="Message: Alert on event ticket id change">
     <div>
@@ -20,4 +20,4 @@
     </div>
 </template>
 
-</odoo>
+</eden>

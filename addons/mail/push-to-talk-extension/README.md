@@ -4,9 +4,9 @@ This extension enhances your communication experience by providing system-wide
 Push-to-Talk functionality. Say goodbye to tab-specific limitations, as this
 extension allows you to effortlessly utilize Push-to-Talk across your entire
 system. Whether Chrome is in focus or not, on the same tab or not, enjoy
-seamless communication in Odoo Discuss without any constraints.
+seamless communication in Eden Discuss without any constraints.
 
-> Please note that this extension only works for Odoo 17 and higher and is not
+> Please note that this extension only works for Eden 17 and higher and is not
 > compatible with ChromeOS.
 
 ## Installing the extension
@@ -31,7 +31,7 @@ at the extension icon.
 - Command scope must be set to `global`. You can click the extension icon to get
   to `Keyboard shortcuts` settings or access `chrome://extensions/shortcuts`
   directly.
-- Push-to-Talk should be enabled on Odoo Discuss voice settings.
+- Push-to-Talk should be enabled on Eden Discuss voice settings.
 
 ## Commands
 

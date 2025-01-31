@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @eden-module **/
 
-import { useState, useEffect } from "@odoo/owl";
+import { useState, useEffect } from "@eden/owl";
 import { registry } from "@web/core/registry";
 import { reposition } from "@web/core/position/utils";
 import { Many2ManyAttendee, many2ManyAttendee } from "@calendar/views/fields/many2many_attendee";

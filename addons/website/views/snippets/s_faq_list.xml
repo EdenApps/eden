@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_faq_list" name="FAQ List">
     <section class="s_faq_list pt56 pb56">
@@ -38,4 +38,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

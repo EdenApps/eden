@@ -1,5 +1,5 @@
-from odoo import api, models
-from odoo.addons.website.models import ir_http
+from eden import api, models
+from eden.addons.website.models import ir_http
 
 
 class IrRule(models.Model):

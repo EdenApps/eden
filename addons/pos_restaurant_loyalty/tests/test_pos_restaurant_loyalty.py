@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.pos_restaurant.tests.test_frontend import TestFrontend
-from odoo.tests import tagged
-from odoo import Command
+from eden.addons.pos_restaurant.tests.test_frontend import TestFrontend
+from eden.tests import tagged
+from eden import Command
 
 
 @tagged("post_install", "-at_install")

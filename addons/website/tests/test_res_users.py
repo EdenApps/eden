@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.addons.website.tools import MockRequest
-from odoo.exceptions import ValidationError
-from odoo.service.model import retrying
-from odoo.tests.common import TransactionCase, new_test_user
-from odoo.tools import mute_logger
+from eden import Command
+from eden.addons.website.tools import MockRequest
+from eden.exceptions import ValidationError
+from eden.service.model import retrying
+from eden.tests.common import TransactionCase, new_test_user
+from eden.tools import mute_logger
 
 from unittest import TestCase
 
@@ -40,7 +40,7 @@ class TestWebsiteResUsers(TransactionCase):
     def test_change_login(self):
         new_test_user(self.env, login='Pou', website_id=self.website_1.id, groups='base.group_portal')
         user_belle = new_test_user(self.env, login='Belle', website_id=self.website_1.id, groups='base.group_portal')
-        with self.assertRaises(psycopg2.errors.UniqueViolation), mute_logger('odoo.sql_db'):
+        with self.assertRaises(psycopg2.errors.UniqueViolation), mute_logger('eden.sql_db'):
             user_belle.login = 'Pou'
 
     def test_change_login_no_website(self):
@@ -65,7 +65,7 @@ class TestWebsiteResUsers(TransactionCase):
         # IntegrityError. Do not use self.assertRaises as it would try
         # to create and rollback to a savepoint that is removed by the
         # rollback in retrying().
-        with TestCase.assertRaises(self, ValidationError), mute_logger('odoo.sql_db'):
+        with TestCase.assertRaises(self, ValidationError), mute_logger('eden.sql_db'):
             retrying(create_user_pou, env)
 
     def _create_user_via_website(self, website, login):

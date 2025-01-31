@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="purchase_bill_line_match_tree" model="ir.ui.view">
         <field name="name">purchase.bill.line.match.list</field>
         <field name="model">purchase.bill.line.match</field>
@@ -26,4 +26,4 @@
             </list>
         </field>
     </record>
-</odoo>
+</eden>

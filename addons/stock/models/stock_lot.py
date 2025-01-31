@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import operator as py_operator
 from operator import attrgetter
 from re import findall as regex_findall, split as regex_split
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError, ValidationError
-from odoo.osv import expression
+from eden import _, api, fields, models
+from eden.exceptions import UserError, ValidationError
+from eden.osv import expression
 
 OPERATORS = {
     '<': py_operator.lt,

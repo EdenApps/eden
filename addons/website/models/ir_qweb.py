@@ -1,17 +1,17 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import re
 import logging
 
 from collections import OrderedDict
 from urllib3.util import parse_url
 
-from odoo import models
-from odoo.http import request
-from odoo.tools import lazy
-from odoo.addons.base.models.assetsbundle import AssetsBundle
-from odoo.osv import expression
-from odoo.addons.website.models import ir_http
-from odoo.exceptions import AccessError
+from eden import models
+from eden.http import request
+from eden.tools import lazy
+from eden.addons.base.models.assetsbundle import AssetsBundle
+from eden.osv import expression
+from eden.addons.website.models import ir_http
+from eden.exceptions import AccessError
 
 
 _logger = logging.getLogger(__name__)

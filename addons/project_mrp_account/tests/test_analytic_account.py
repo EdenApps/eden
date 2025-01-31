@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import ValidationError
-from odoo.tests.common import TransactionCase
-from odoo.tests import Form
+from eden.exceptions import ValidationError
+from eden.tests.common import TransactionCase
+from eden.tests import Form
 
 
 class TestMrpAnalyticAccount(TransactionCase):

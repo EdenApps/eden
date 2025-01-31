@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import {
     clickOnEditAndWaitEditMode,
@@ -334,7 +334,7 @@ registerWebsitePreviewTour('edit_menus', {
     {
         content: "Check that the mega menu is opened",
         trigger: ':iframe .top_menu .nav-item:has(a.o_mega_menu_toggle:contains("Megaaaaa!")) ' +
-                 '.s_mega_menu_odoo_menu',
+                 '.s_mega_menu_eden_menu',
     },
     ...clickOnEditAndWaitEditMode(),
     {

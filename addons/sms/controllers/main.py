@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 import re
 
-from odoo.exceptions import UserError
-from odoo.http import Controller, request, route
+from eden.exceptions import UserError
+from eden.http import Controller, request, route
 
 _logger = logging.getLogger(__name__)
 

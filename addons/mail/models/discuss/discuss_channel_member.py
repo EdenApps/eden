@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 import requests
@@ -6,10 +6,10 @@ import uuid
 from markupsafe import Markup
 from datetime import timedelta
 
-from odoo import api, fields, models, _
-from odoo.addons.mail.tools.discuss import Store
-from odoo.exceptions import AccessError, UserError, ValidationError
-from odoo.osv import expression
+from eden import api, fields, models, _
+from eden.addons.mail.tools.discuss import Store
+from eden.exceptions import AccessError, UserError, ValidationError
+from eden.osv import expression
 from ...tools import jwt, discuss
 
 _logger = logging.getLogger(__name__)

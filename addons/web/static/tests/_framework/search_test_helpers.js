@@ -1,5 +1,5 @@
-import { queryAll, queryAllTexts, queryOne, queryText } from "@odoo/hoot-dom";
-import { Component, xml } from "@odoo/owl";
+import { queryAll, queryAllTexts, queryOne, queryText } from "@eden/hoot-dom";
+import { Component, xml } from "@eden/owl";
 import { findComponent, mountWithCleanup } from "./component_test_helpers";
 import { contains } from "./dom_test_helpers";
 import { getMockEnv, makeMockEnv } from "./env_test_helpers";

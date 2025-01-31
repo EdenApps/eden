@@ -1,6 +1,6 @@
 import json
 
-from odoo.exceptions import UserError
+from eden.exceptions import UserError
 
 from .common import DashboardTestCommon
 

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
 
-from odoo import models, api
-from odoo.tools import float_is_zero, float_compare
-from odoo.tools.misc import formatLang
+from eden import models, api
+from eden.tools import float_is_zero, float_compare
+from eden.tools.misc import formatLang
 
 
 class AccountMove(models.Model):

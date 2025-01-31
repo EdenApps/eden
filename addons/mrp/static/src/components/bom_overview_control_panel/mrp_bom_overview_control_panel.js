@@ -1,11 +1,11 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { ControlPanel } from "@web/search/control_panel/control_panel";
 import { BomOverviewDisplayFilter } from "../bom_overview_display_filter/mrp_bom_overview_display_filter";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { Many2XAutocomplete } from "@web/views/fields/relational_utils";
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 import { useService } from "@web/core/utils/hooks";
 
 export class BomOverviewControlPanel extends Component {

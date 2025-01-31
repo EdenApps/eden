@@ -1,4 +1,4 @@
-/** @odoo-modules */
+/** @eden-modules */
 
 import { clickOnSave, clickOnEditAndWaitEditMode, registerWebsitePreviewTour } from '@website/js/tours/tour_utils';
 import { registry } from "@web/core/registry";

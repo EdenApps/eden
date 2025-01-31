@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="stock_quant_relocate_view_form" model="ir.ui.view">
         <field name="name">Stock Relocation</field>
         <field name="model">stock.quant.relocate</field>
@@ -31,4 +31,4 @@
             </form>
         </field>
     </record>
-</odoo>
+</eden>

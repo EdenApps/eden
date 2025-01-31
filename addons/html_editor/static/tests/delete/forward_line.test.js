@@ -1,5 +1,5 @@
-import { test } from "@odoo/hoot";
-import { press } from "@odoo/hoot-dom";
+import { test } from "@eden/hoot";
+import { press } from "@eden/hoot-dom";
 import { testEditor } from "../_helpers/editor";
 import { unformat } from "../_helpers/format";
 

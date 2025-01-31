@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import http
+from eden import http
 
-from odoo.addons.website_event_track.controllers.event_track import EventTrackController
-from odoo.osv import expression
+from eden.addons.website_event_track.controllers.event_track import EventTrackController
+from eden.osv import expression
 
 class EventTrackLiveController(EventTrackController):
 

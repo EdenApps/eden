@@ -5,7 +5,7 @@ import {
     useEmbeddedState,
     StateChangeManager,
 } from "@html_editor/others/embedded_component_utils";
-import { Component, useRef, useState, xml } from "@odoo/owl";
+import { Component, useRef, useState, xml } from "@eden/owl";
 
 export class Counter extends Component {
     static props = ["*"];

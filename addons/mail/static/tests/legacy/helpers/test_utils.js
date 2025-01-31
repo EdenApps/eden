@@ -1,4 +1,4 @@
-/** @odoo-module alias=@mail/../tests/helpers/test_utils default=false */
+/** @eden-module alias=@mail/../tests/helpers/test_utils default=false */
 
 import { getPyEnv } from "@bus/../tests/helpers/mock_python_environment";
 import { timings } from "@bus/misc";

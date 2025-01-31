@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <record id="sale_loyalty_program_company_rule" model="ir.rule">
             <field name="name">Loyalty program multi company rule</field>
@@ -31,4 +31,4 @@
             <field name="domain_force">['|', ('company_id', 'in', company_ids + [False]), ('company_id', 'parent_of', company_ids)]</field>
         </record>
     </data>
-</odoo>
+</eden>

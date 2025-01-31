@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from markupsafe import Markup
 
-from odoo import api, fields, models
-from odoo.osv import expression
+from eden import api, fields, models
+from eden.osv import expression
 
 
 class MailActivitySchedule(models.TransientModel):

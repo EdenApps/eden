@@ -11,7 +11,7 @@ import {
 import { UncaughtClientError, ThirdPartyScriptError, UncaughtPromiseError } from "./error_service";
 
 /**
- * @typedef {import("../../env").OdooEnv} OdooEnv
+ * @typedef {import("../../env").EdenEnv} EdenEnv
  * @typedef {import("./error_service").UncaughtError} UncaughError
  */
 
@@ -24,7 +24,7 @@ const errorNotificationRegistry = registry.category("error_notifications");
 // -----------------------------------------------------------------------------
 
 /**
- * @param {OdooEnv} env
+ * @param {EdenEnv} env
  * @param {UncaughError} error
  * @param {Error} originalError
  * @returns {boolean}
@@ -86,7 +86,7 @@ errorHandlerRegistry.add("rpcErrorHandler", rpcErrorHandler, { sequence: 97 });
 
 let connectionLostNotifRemove = null;
 /**
- * @param {OdooEnv} env
+ * @param {EdenEnv} env
  * @param {UncaughError} error
  * @param {Error} originalError
  * @returns {boolean}
@@ -142,7 +142,7 @@ const defaultDialogs = new Map([
  * Handles the errors based on the very general error categories emitted by the
  * error service. Notice how we do not look at the original error at all.
  *
- * @param {OdooEnv} env
+ * @param {EdenEnv} env
  * @param {UncaughError} error
  * @returns {boolean}
  */

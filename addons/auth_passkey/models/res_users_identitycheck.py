@@ -1,6 +1,6 @@
-from odoo import api, fields, _
-from odoo.exceptions import UserError, AccessDenied
-from odoo.addons.base.models.res_users import CheckIdentity
+from eden import api, fields, _
+from eden.exceptions import UserError, AccessDenied
+from eden.addons.base.models.res_users import CheckIdentity
 
 
 class CheckIdentityPasskeys(CheckIdentity):

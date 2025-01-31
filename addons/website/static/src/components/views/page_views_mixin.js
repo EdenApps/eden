@@ -1,10 +1,10 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { _t } from "@web/core/l10n/translation";
 import { rpc } from "@web/core/network/rpc";
 import {useService} from "@web/core/utils/hooks";
 import { AddPageDialog } from "@website/components/dialog/add_page_dialog";
-import { onWillStart, useState } from "@odoo/owl";
+import { onWillStart, useState } from "@eden/owl";
 
 /**
  * Used to share code and keep the same behaviour on different types of 'website
@@ -23,7 +23,7 @@ export const PageControllerMixin = (component) => class extends component {
         this.dialog = useService('dialog');
         this.orm = useService('orm');
 
-        this.websiteSelection = odoo.debug ? [{id: 0, name: _t("All Websites")}] : [];
+        this.websiteSelection = eden.debug ? [{id: 0, name: _t("All Websites")}] : [];
 
         this.state = useState({
             activeWebsite: undefined,

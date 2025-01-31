@@ -1,4 +1,4 @@
-/** @odoo-module alias=@web/../tests/core/condition_tree_editor_helpers default=false */
+/** @eden-module alias=@web/../tests/core/condition_tree_editor_helpers default=false */
 
 import { getNodesTextContent, editInput, click, editSelect } from "../helpers/utils";
 import { fieldService } from "@web/core/field_service";

@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import werkzeug
 
 from lxml import etree
 from unittest.mock import patch
 
-from odoo.tests import common
+from eden.tests import common
 
 
 class MockLinkTracker(common.BaseCase):
@@ -17,7 +17,7 @@ class MockLinkTracker(common.BaseCase):
         def _get_title_from_url(url):
             return "Test_TITLE"
 
-        link_tracker_title_patch = patch('odoo.addons.link_tracker.models.link_tracker.LinkTracker._get_title_from_url', wraps=_get_title_from_url)
+        link_tracker_title_patch = patch('eden.addons.link_tracker.models.link_tracker.LinkTracker._get_title_from_url', wraps=_get_title_from_url)
         self.startPatcher(link_tracker_title_patch)
 
     def _get_href_from_anchor_id(self, body, anchor_id):
@@ -38,7 +38,7 @@ class MockLinkTracker(common.BaseCase):
 
         self.assertLinkShortenedHtml(
             message.body,
-            ('url0', 'http://www.odoo.com',  True),
+            ('url0', 'http://www.edencloud.us',  True),
             {'utm_campaign': self.utm_c.name, 'utm_medium': self.utm_m.name}
         )
         """
@@ -58,7 +58,7 @@ class MockLinkTracker(common.BaseCase):
 
         self.assertLinkShortenedText(
             message.body,
-            ('http://www.odoo.com',  True),
+            ('http://www.edencloud.us',  True),
             {'utm_campaign': self.utm_c.name, 'utm_medium': self.utm_m.name}
         )
         """

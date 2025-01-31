@@ -1,9 +1,9 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { registry } from "@web/core/registry";
 import { listView } from "@web/views/list/list_view";
 import { ListRenderer } from "@web/views/list/list_renderer";
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 import { useActionLinks } from "@web/views/view_hook";
 
 export class StockActionHelper extends Component {

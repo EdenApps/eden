@@ -1,17 +1,17 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from unittest.mock import patch
 
 from werkzeug.exceptions import Forbidden
 
-from odoo import api
-from odoo.fields import Command
-from odoo.tests import tagged
+from eden import api
+from eden.fields import Command
+from eden.tests import tagged
 
-from odoo.addons.base.tests.common import BaseUsersCommon
-from odoo.addons.website.tools import MockRequest
-from odoo.addons.website_sale.controllers.main import WebsiteSale
-from odoo.addons.website_sale.tests.common import WebsiteSaleCommon
+from eden.addons.base.tests.common import BaseUsersCommon
+from eden.addons.website.tools import MockRequest
+from eden.addons.website_sale.controllers.main import WebsiteSale
+from eden.addons.website_sale.tests.common import WebsiteSaleCommon
 
 
 @tagged('post_install', '-at_install')
@@ -149,7 +149,7 @@ class TestCheckoutAddress(BaseUsersCommon, WebsiteSaleCommon):
         shipping_partner = self.env['res.partner'].create(shipping_partner_values)
         order.partner_shipping_id = shipping_partner
         with MockRequest(self.env, website=self.website, sale_order_id=order.id), patch(
-            'odoo.addons.delivery.models.delivery_carrier.DeliveryCarrier.rate_shipment',
+            'eden.addons.delivery.models.delivery_carrier.DeliveryCarrier.rate_shipment',
             return_value={'success': True, 'price': 10, 'warning_message': ''}
         ) as rate_shipment_mock:
             # Change a shipping address of the order in the checkout.

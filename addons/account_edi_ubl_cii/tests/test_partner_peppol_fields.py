@@ -3,9 +3,9 @@
 from contextlib import contextmanager
 from unittest.mock import patch
 
-from odoo.tests import tagged
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.addons.account_edi_ubl_cii.models.account_edi_common import EAS_MAPPING
+from eden.tests import tagged
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
+from eden.addons.account_edi_ubl_cii.models.account_edi_common import EAS_MAPPING
 
 
 @tagged('post_install', '-at_install')
@@ -29,7 +29,7 @@ class TestAccountUblCii(AccountTestInvoicingCommon):
             return f"(0184, {endpoint}) is not a valid peppol couple."
 
     @patch(
-        'odoo.addons.account_edi_ubl_cii.models.res_partner.ResPartner._build_error_peppol_endpoint',
+        'eden.addons.account_edi_ubl_cii.models.res_partner.ResPartner._build_error_peppol_endpoint',
         _build_error_peppol_endpoint,
     )
     @patch.dict(EAS_MAPPING, {'BA': {'0184': 'company_registry', '0198': 'vat'}})

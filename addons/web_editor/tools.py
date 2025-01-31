@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import base64
 import contextlib
@@ -11,10 +11,10 @@ from markupsafe import Markup
 from urllib.parse import parse_qs
 from werkzeug.urls import url_encode
 
-from odoo import _
-from odoo.exceptions import ValidationError
-from odoo.http import request
-from odoo.tools import image_process
+from eden import _
+from eden.exceptions import ValidationError
+from eden.http import request
+from eden.tools import image_process
 
 logger = logging.getLogger(__name__)
 
@@ -188,7 +188,7 @@ def handle_history_divergence(record, html_field_name, vals):
     incoming_html = vals[html_field_name]
     incoming_history_matches = re.search(diverging_history_regex, incoming_html or '')
     # When there is no incoming history id, it means that the value does not
-    # comes from the odoo editor or the collaboration was not activated. In
+    # comes from the eden editor or the collaboration was not activated. In
     # project, it could come from the collaboration pad. In that case, we do not
     # handle history divergences.
     if request:

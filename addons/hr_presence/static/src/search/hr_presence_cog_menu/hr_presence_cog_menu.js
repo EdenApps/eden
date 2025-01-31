@@ -1,5 +1,5 @@
 import { FormCogMenu } from "@web/views/form/form_cog_menu/form_cog_menu";
-import { onWillStart } from "@odoo/owl";
+import { onWillStart } from "@eden/owl";
 import { getActionRecords, getPresenceActionItems } from "../../views/hooks";
 
 /**

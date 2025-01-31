@@ -1,8 +1,8 @@
-import { OdooPivotRuntimeDefinition } from "@spreadsheet/pivot/pivot_runtime";
+import { EdenPivotRuntimeDefinition } from "@spreadsheet/pivot/pivot_runtime";
 import { ORM } from "@web/core/orm_service";
 import { PivotMeasure } from "@spreadsheet/pivot/pivot_runtime";
 import { ServerData } from "@spreadsheet/data_sources/server_data";
-import { Pivot, CommonPivotCoreDefinition, PivotCoreDefinition } from "@odoo/o-spreadsheet";
+import { Pivot, CommonPivotCoreDefinition, PivotCoreDefinition } from "@eden/o-spreadsheet";
 
 declare module "@spreadsheet" {
     interface SortedColumn {
@@ -11,8 +11,8 @@ declare module "@spreadsheet" {
         order: string;
     }
 
-    export interface OdooPivotCoreDefinition extends CommonPivotCoreDefinition {
-        type: "ODOO";
+    export interface EdenPivotCoreDefinition extends CommonPivotCoreDefinition {
+        type: "EDEN";
         model: string;
         domain: Array;
         context: Object;
@@ -20,9 +20,9 @@ declare module "@spreadsheet" {
         actionXmlId: string;
     }
 
-    export type ExtendedPivotCoreDefinition = PivotCoreDefinition | OdooPivotCoreDefinition;
+    export type ExtendedPivotCoreDefinition = PivotCoreDefinition | EdenPivotCoreDefinition;
 
-    interface OdooPivot<T> extends Pivot<T> {
+    interface EdenPivot<T> extends Pivot<T> {
         type: ExtendedPivotCoreDefinition["type"];
     }
     export interface GFLocalPivot {
@@ -30,7 +30,7 @@ declare module "@spreadsheet" {
         fieldMatching: Record<string, any>;
     }
 
-    export interface OdooField {
+    export interface EdenField {
         name: string;
         type: string;
         string: string;
@@ -40,7 +40,7 @@ declare module "@spreadsheet" {
         store?: boolean;
     }
 
-    export type OdooFields = Record<string, Field | undefined>;
+    export type EdenFields = Record<string, Field | undefined>;
 
     export interface PivotMetaData {
         colGroupBys: string[];
@@ -60,15 +60,15 @@ declare module "@spreadsheet" {
         context: Object;
     }
 
-    /* Params used for the odoo pivot model */
+    /* Params used for the eden pivot model */
     export interface WebPivotModelParams {
         metaData: PivotMetaData;
         searchParams: PivotSearchParams;
     }
 
-    export interface OdooPivotModelParams {
-        fields: OdooFields;
-        definition: OdooPivotRuntimeDefinition;
+    export interface EdenPivotModelParams {
+        fields: EdenFields;
+        definition: EdenPivotRuntimeDefinition;
         searchParams: {
             domain: Array;
             context: Object;

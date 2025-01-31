@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { formatMonetary } from "@web/views/fields/formatters";
 import { formatFloat } from "@web/core/utils/numbers";
@@ -13,7 +13,7 @@ import {
     toRaw,
     useRef,
     useState,
-} from "@odoo/owl";
+} from "@eden/owl";
 import { useNumpadDecimal } from "@web/views/fields/numpad_decimal_hook";
 
 /**

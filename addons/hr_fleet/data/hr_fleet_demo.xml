@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="fleet.vehicle_1" model="fleet.vehicle">
         <field name="driver_employee_id" ref="hr.employee_qdp"/>
     </record>
@@ -27,4 +27,4 @@
         <field name="plan_id" ref="hr.onboarding_plan"/>
     </record>
 
-</odoo>
+</eden>

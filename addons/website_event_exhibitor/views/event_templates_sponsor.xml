@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template name="Sponsors" id="event_sponsor" inherit_id="website_event.layout">
     <xpath expr="//div[@id='wrap']" position="inside">
@@ -40,4 +40,4 @@
         class="d-flex justify-content-center badge text-bg-danger o_wevent_online_badge_unpublished">Unpublished</span>
 </template>
 
-</odoo>
+</eden>

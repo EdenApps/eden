@@ -7,9 +7,9 @@ import {
     start,
     startServer,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, test } from "@odoo/hoot";
-import { tick } from "@odoo/hoot-mock";
-import { EventBus } from "@odoo/owl";
+import { describe, test } from "@eden/hoot";
+import { tick } from "@eden/hoot-mock";
+import { EventBus } from "@eden/owl";
 import { Command, patchWithCleanup, withUser } from "@web/../tests/web_test_helpers";
 import { browser } from "@web/core/browser/browser";
 

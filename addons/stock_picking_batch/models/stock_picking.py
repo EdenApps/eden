@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, Command, fields, models
-from odoo.osv import expression
-from odoo.exceptions import ValidationError
+from eden import _, api, Command, fields, models
+from eden.osv import expression
+from eden.exceptions import ValidationError
 
 
 class StockPickingType(models.Model):

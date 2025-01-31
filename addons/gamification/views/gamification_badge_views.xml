@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <!-- Badge views -->
     <record id="gamification_badge_view_search" model="ir.ui.view">
         <field name="name">gamification.badge.view.search</field>
@@ -148,4 +148,4 @@
             </kanban>
         </field>
     </record>
-</odoo>
+</eden>

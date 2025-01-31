@@ -26,7 +26,7 @@ import {
     xml,
     reactive,
     status,
-} from "@odoo/owl";
+} from "@eden/owl";
 import { downloadReport, getReportUrl } from "./reports/utils";
 import { omit, pick, shallowEqual } from "@web/core/utils/objects";
 import { zip } from "@web/core/utils/arrays";

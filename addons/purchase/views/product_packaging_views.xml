@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="product_packaging_form_view_purchase" model="ir.ui.view">
         <field name="name">product.packaging.form.view.purchase</field>
         <field name="model">product.packaging</field>
@@ -21,4 +21,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</eden>

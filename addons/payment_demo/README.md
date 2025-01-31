@@ -17,15 +17,15 @@ to test applications' payment flows without API credentials nor payment method d
 ## Module history
 
 - `17.0`
-  - The support for express checkout is added. odoo/odoo#113644
+  - The support for express checkout is added. eden/eden#113644
   - The support for customer fees is removed as it is no longer supported by the `payment` module.
-    odoo/odoo#132104
+    eden/eden#132104
 - `16.3`
-  - The support for partial manual capture is added. odoo/odoo#117356
+  - The support for partial manual capture is added. eden/eden#117356
 - `16.0`
-  - The module is renamed from `payment_test` to `payment_demo`. odoo/odoo#99397
+  - The module is renamed from `payment_test` to `payment_demo`. eden/eden#99397
   - The support for manual capture, full and partial refunds, customer fees, and the selection of
-    the payment outcome are added. odoo/odoo#78083
+    the payment outcome are added. eden/eden#78083
 
 ## Testing instructions
 

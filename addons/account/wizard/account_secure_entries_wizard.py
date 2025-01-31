@@ -1,9 +1,9 @@
 from datetime import timedelta
 
-from odoo import Command, api, fields, models, _
-from odoo.exceptions import UserError
-from odoo.osv import expression
-from odoo.tools import format_list
+from eden import Command, api, fields, models, _
+from eden.exceptions import UserError
+from eden.osv import expression
+from eden.tools import format_list
 
 
 class AccountSecureEntries(models.TransientModel):

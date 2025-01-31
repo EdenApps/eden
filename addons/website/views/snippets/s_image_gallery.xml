@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_image_gallery" name="Image Gallery">
     <section class="s_image_gallery o_slideshow pt24 pb24 s_image_gallery_controllers_outside s_image_gallery_controllers_outside_arrows_right s_image_gallery_indicators_dots s_image_gallery_arrows_default" data-vcss="002" data-columns="3">
@@ -162,4 +162,4 @@
     <field name="path">website/static/src/snippets/s_image_gallery/001.xml</field>
 </record>
 
-</odoo>
+</eden>

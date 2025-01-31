@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { clamp } from "@web/core/utils/numbers";
 import options from "@web_editor/js/editor/snippets.options";

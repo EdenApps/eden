@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <!--
 For the moment we hack the contenteditable system so that the social media
@@ -51,4 +51,4 @@ title stay editable after a save (see SOCIAL_MEDIA_TITLE_CONTENTEDITABLE).
     <field name="path">website/static/src/snippets/s_social_media/000.scss</field>
 </record>
 
-</odoo>
+</eden>

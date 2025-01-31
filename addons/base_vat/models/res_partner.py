@@ -9,9 +9,9 @@ from stdnum import luhn
 
 import logging
 
-from odoo import api, models, fields
-from odoo.tools import _, zeep, LazyTranslate
-from odoo.exceptions import ValidationError
+from eden import api, models, fields
+from eden.tools import _, zeep, LazyTranslate
+from eden.exceptions import ValidationError
 
 _lt = LazyTranslate(__name__)
 _logger = logging.getLogger(__name__)

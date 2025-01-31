@@ -1,5 +1,5 @@
-import { after } from "@odoo/hoot";
-import { mockTimeZone } from "@odoo/hoot-mock";
+import { after } from "@eden/hoot";
+import { mockTimeZone } from "@eden/hoot-mock";
 import { patch } from "@web/core/utils/patch";
 
 const { FixedOffsetZone, IANAZone, Settings } = luxon;

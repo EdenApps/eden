@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.tests import Form, tagged
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
+from eden.tests import Form, tagged
 
 
 @tagged('post_install', '-at_install')

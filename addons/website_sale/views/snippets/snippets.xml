@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="snippets" inherit_id="website.snippets" name="e-commerce snippets">
     <xpath expr="//t[@id='installed_snippets_hook']" position="after">
@@ -433,7 +433,7 @@
         <attribute name="data-dependencies">!fetch_ecom_categories_opt</attribute>
     </xpath>
     <xpath
-        expr="//div[@data-js='MegaMenuLayout']/we-select[@data-name='mega_menu_template_opt']/we-button[@data-select-template='website.s_mega_menu_odoo_menu']"
+        expr="//div[@data-js='MegaMenuLayout']/we-select[@data-name='mega_menu_template_opt']/we-button[@data-select-template='website.s_mega_menu_eden_menu']"
         position="attributes"
     >
         <attribute name="data-dependencies">!fetch_ecom_categories_opt</attribute>
@@ -494,12 +494,12 @@
             data-img="/website/static/src/img/snippets_thumbs/s_mega_menu_menu_image_menu.svg"
             t-out="_label"
         />
-        <t t-set="_label">Odoo Menu</t>
+        <t t-set="_label">Eden Menu</t>
         <we-button
             t-att-data-select-label="_label"
             data-dependencies="fetch_ecom_categories_opt"
-            data-select-template="website_sale.s_mega_menu_odoo_menu"
-            data-img="/website/static/src/img/snippets_thumbs/s_mega_menu_odoo_menu.svg"
+            data-select-template="website_sale.s_mega_menu_eden_menu"
+            data-img="/website/static/src/img/snippets_thumbs/s_mega_menu_eden_menu.svg"
             t-out="_label"
         />
         <t t-set="_label">Little Icons</t>
@@ -589,4 +589,4 @@
     </xpath>
 </template>
 
-</odoo>
+</eden>

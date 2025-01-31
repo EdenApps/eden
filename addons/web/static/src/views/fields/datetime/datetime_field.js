@@ -1,4 +1,4 @@
-import { Component, onWillRender, useState } from "@odoo/owl";
+import { Component, onWillRender, useState } from "@eden/owl";
 import { useDateTimePicker } from "@web/core/datetime/datetime_hook";
 import { areDatesEqual, deserializeDate, deserializeDateTime, today } from "@web/core/l10n/dates";
 import { evaluateBooleanExpr } from "@web/core/py_js/py";

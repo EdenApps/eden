@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
 
-from odoo.tests.common import TransactionCase, new_test_user
-from odoo.exceptions import AccessError
-from odoo.tools import mute_logger
+from eden.tests.common import TransactionCase, new_test_user
+from eden.exceptions import AccessError
+from eden.tools import mute_logger
 
 
 class TestAccessRights(TransactionCase):
 
     @classmethod
-    @mute_logger('odoo.tests', 'odoo.addons.auth_signup.models.res_users')
+    @mute_logger('eden.tests', 'eden.addons.auth_signup.models.res_users')
     def setUpClass(cls):
         super().setUpClass()
         cls.john = new_test_user(cls.env, login='john', groups='base.group_user')
@@ -38,7 +38,7 @@ class TestAccessRights(TransactionCase):
         return [r[field] for r in data]
 
     # don't spam logs with ACL failures from portal
-    @mute_logger('odoo.addons.base.models.ir_rule')
+    @mute_logger('eden.addons.base.models.ir_rule')
     def test_privacy(self):
         event = self.create_event(
             self.john,
@@ -138,8 +138,8 @@ class TestAccessRights(TransactionCase):
         with self.assertRaises(AccessError):
             self.read_event(self.portal, event, 'location')
 
-    def test_meeting_edit_access_notification_handle_in_odoo(self):
-        # set notifications to "handle in Odoo" in Preferences for john, raoul, and george
+    def test_meeting_edit_access_notification_handle_in_eden(self):
+        # set notifications to "handle in Eden" in Preferences for john, raoul, and george
         (self.john | self.raoul | self.george).write({'notification_type': 'inbox'})
 
         # raoul creates a meeting for john, excluding themselves
@@ -152,7 +152,7 @@ class TestAccessRights(TransactionCase):
         })
 
         # george tries to modify the start date of the meeting to a future date
-        # this verifies that users with "handle in Odoo" notification setting can
+        # this verifies that users with "handle in Eden" notification setting can
         # successfully edit meetings created by other users. If this write fails,
         # it indicates that there might be an issue with access rights for meeting attendees.
         meeting = meeting.with_user(self.george)

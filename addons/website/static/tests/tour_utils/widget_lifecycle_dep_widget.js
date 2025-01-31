@@ -1,8 +1,8 @@
-/** @odoo-module **/
+/** @eden-module **/
 import { browser } from "@web/core/browser/browser";
 const localStorage = browser.localStorage;
 
-odoo.loader.bus.addEventListener("module-started", (e) => {
+eden.loader.bus.addEventListener("module-started", (e) => {
     if (e.detail.moduleName !== "@web/legacy/js/public/public_widget") {
         return;
     }

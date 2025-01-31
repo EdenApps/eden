@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <record id="mail_group_view_list" model="ir.ui.view">
         <field name="name">mail.group.view.list</field>
         <field name="model">mail.group</field>
@@ -174,4 +174,4 @@
             <p>Mailing groups are communities that like to discuss a specific topic together.</p>
         </field>
     </record>
-</odoo>
+</eden>

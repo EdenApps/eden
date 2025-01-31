@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 import pprint
@@ -10,11 +10,11 @@ import psycopg2
 from dateutil import relativedelta
 from markupsafe import Markup
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools import format_amount
+from eden import _, api, fields, models
+from eden.exceptions import UserError, ValidationError
+from eden.tools import format_amount
 
-from odoo.addons.payment import utils as payment_utils
+from eden.addons.payment import utils as payment_utils
 
 _logger = logging.getLogger(__name__)
 

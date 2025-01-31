@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 from collections import deque
 
-from odoo import api, Command, fields, models, _
-from odoo.tools.float_utils import float_round, float_is_zero, float_compare
-from odoo.exceptions import UserError
+from eden import api, Command, fields, models, _
+from eden.tools.float_utils import float_round, float_is_zero, float_compare
+from eden.exceptions import UserError
 
 
 class StockMove(models.Model):
@@ -99,7 +99,7 @@ class StockMove(models.Model):
             # The date must be today, and not the date of the move since the move move is still
             # in assigned state. However, the move date is the scheduled date until move is
             # done, then date of actual move processing. See:
-            # https://github.com/odoo/odoo/blob/2f789b6863407e63f90b3a2d4cc3be09815f7002/addons/stock/models/stock_move.py#L36
+
             convert_date = fields.Date.context_today(self)
             # use currency rate at bill date when invoice before receipt
             if float_compare(line.qty_invoiced, received_qty, precision_rounding=line.product_uom.rounding) > 0:
@@ -255,7 +255,7 @@ class StockMove(models.Model):
             valuation_total_qty += layers_qty
         if float_is_zero(valuation_total_qty, precision_rounding=related_aml.product_uom_id.rounding or related_aml.product_id.uom_id.rounding):
             raise UserError(
-                _('Odoo is not able to generate the anglo saxon entries. The total valuation of %s is zero.',
+                _('Eden is not able to generate the anglo saxon entries. The total valuation of %s is zero.',
                   related_aml.product_id.display_name))
         return valuation_price_unit_total, valuation_total_qty
 

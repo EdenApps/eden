@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from werkzeug.exceptions import NotFound
 
-from odoo import http, _
-from odoo.exceptions import AccessError, MissingError
-from odoo.http import request
-from odoo.osv import expression
+from eden import http, _
+from eden.exceptions import AccessError, MissingError
+from eden.http import request
+from eden.osv import expression
 
-from odoo.addons.account.controllers.portal import PortalAccount
-from odoo.addons.hr_timesheet.controllers.portal import TimesheetCustomerPortal
-from odoo.addons.portal.controllers.portal import pager as portal_pager
-from odoo.addons.project.controllers.portal import ProjectCustomerPortal
+from eden.addons.account.controllers.portal import PortalAccount
+from eden.addons.hr_timesheet.controllers.portal import TimesheetCustomerPortal
+from eden.addons.portal.controllers.portal import pager as portal_pager
+from eden.addons.project.controllers.portal import ProjectCustomerPortal
 
 
 class PortalProjectAccount(PortalAccount, ProjectCustomerPortal):

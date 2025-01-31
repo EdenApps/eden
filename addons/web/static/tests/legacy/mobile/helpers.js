@@ -1,4 +1,4 @@
-/** @odoo-module alias=@web/../tests/mobile/helpers default=false */
+/** @eden-module alias=@web/../tests/mobile/helpers default=false */
 
 import { findElement, triggerEvent } from "../helpers/utils";
 

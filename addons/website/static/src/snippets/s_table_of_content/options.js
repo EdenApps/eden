@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import options from "@web_editor/js/editor/snippets.options";
 
@@ -103,7 +103,7 @@ options.registry.TableOfContent = options.Class.extend({
             this.trigger_up('remove_snippet', {$snippet: this.$target});
             return;
         }
-        this.options.wysiwyg && this.options.wysiwyg.odooEditor.unbreakableStepUnactive();
+        this.options.wysiwyg && this.options.wysiwyg.edenEditor.unbreakableStepUnactive();
         const navEl = this.$target[0].querySelector('.s_table_of_content_navbar');
         const headingsEls = this.$target.find(this.targetedElements).toArray();
         const areHeadingsEqual = this.oldHeadingsEls.length === headingsEls.length

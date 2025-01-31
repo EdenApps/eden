@@ -69,24 +69,24 @@
       ],
       "cells": {
         "A7": {
-          "content": "[Invoiced by Month](odoo://view/{\"viewType\":\"graph\",\"action\":{\"domain\":[\"&\",[\"state\",\"not in\",[\"draft\",\"cancel\"]],\"|\",[\"move_type\",\"=\",\"out_invoice\"],[\"move_type\",\"=\",\"out_refund\"]],\"context\":{\"group_by\":[\"invoice_date\"],\"graph_measure\":\"price_subtotal\",\"graph_mode\":\"line\",\"graph_groupbys\":[\"invoice_date:month\"]},\"modelName\":\"account.invoice.report\",\"views\":[[false,\"graph\"],[false,\"pivot\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Invoices Analysis\",\"positional\":true})"
+          "content": "[Invoiced by Month](eden://view/{\"viewType\":\"graph\",\"action\":{\"domain\":[\"&\",[\"state\",\"not in\",[\"draft\",\"cancel\"]],\"|\",[\"move_type\",\"=\",\"out_invoice\"],[\"move_type\",\"=\",\"out_refund\"]],\"context\":{\"group_by\":[\"invoice_date\"],\"graph_measure\":\"price_subtotal\",\"graph_mode\":\"line\",\"graph_groupbys\":[\"invoice_date:month\"]},\"modelName\":\"account.invoice.report\",\"views\":[[false,\"graph\"],[false,\"pivot\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Invoices Analysis\",\"positional\":true})"
         },
         "A23": {
-          "content": "[Top Invoices](odoo://view/{\"viewType\":\"list\",\"action\":{\"domain\":[[\"move_type\",\"=\",\"out_invoice\"]],\"context\":{\"group_by\":[]},\"modelName\":\"account.move\",\"views\":[[false,\"list\"],[false,\"kanban\"],[false,\"form\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Invoices\"})"
+          "content": "[Top Invoices](eden://view/{\"viewType\":\"list\",\"action\":{\"domain\":[[\"move_type\",\"=\",\"out_invoice\"]],\"context\":{\"group_by\":[]},\"modelName\":\"account.move\",\"views\":[[false,\"list\"],[false,\"kanban\"],[false,\"form\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Invoices\"})"
         },
         "A24": { "content": "=_t(\"Reference\")" },
-        "A25": { "content": "=ODOO.LIST(1,1,\"name\")" },
-        "A26": { "content": "=ODOO.LIST(1,2,\"name\")" },
-        "A27": { "content": "=ODOO.LIST(1,3,\"name\")" },
-        "A28": { "content": "=ODOO.LIST(1,4,\"name\")" },
-        "A29": { "content": "=ODOO.LIST(1,5,\"name\")" },
-        "A30": { "content": "=ODOO.LIST(1,6,\"name\")" },
-        "A31": { "content": "=ODOO.LIST(1,7,\"name\")" },
-        "A32": { "content": "=ODOO.LIST(1,8,\"name\")" },
-        "A33": { "content": "=ODOO.LIST(1,9,\"name\")" },
-        "A34": { "content": "=ODOO.LIST(1,10,\"name\")" },
+        "A25": { "content": "=EDEN.LIST(1,1,\"name\")" },
+        "A26": { "content": "=EDEN.LIST(1,2,\"name\")" },
+        "A27": { "content": "=EDEN.LIST(1,3,\"name\")" },
+        "A28": { "content": "=EDEN.LIST(1,4,\"name\")" },
+        "A29": { "content": "=EDEN.LIST(1,5,\"name\")" },
+        "A30": { "content": "=EDEN.LIST(1,6,\"name\")" },
+        "A31": { "content": "=EDEN.LIST(1,7,\"name\")" },
+        "A32": { "content": "=EDEN.LIST(1,8,\"name\")" },
+        "A33": { "content": "=EDEN.LIST(1,9,\"name\")" },
+        "A34": { "content": "=EDEN.LIST(1,10,\"name\")" },
         "A36": {
-          "content": "[Top Countries](odoo://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[\"&\",[\"state\",\"not in\",[\"draft\",\"cancel\"]],\"&\",[\"country_id\",\"!=\",false],[\"price_subtotal\",\">=\",0]],\"context\":{\"group_by\":[\"country_id\"],\"pivot_measures\":[\"price_subtotal\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"country_id\"]},\"modelName\":\"account.invoice.report\",\"views\":[[false,\"graph\"],[false,\"pivot\"],[false,\"list\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Invoices Analysis\"})"
+          "content": "[Top Countries](eden://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[\"&\",[\"state\",\"not in\",[\"draft\",\"cancel\"]],\"&\",[\"country_id\",\"!=\",false],[\"price_subtotal\",\">=\",0]],\"context\":{\"group_by\":[\"country_id\"],\"pivot_measures\":[\"price_subtotal\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"country_id\"]},\"modelName\":\"account.invoice.report\",\"views\":[[false,\"graph\"],[false,\"pivot\"],[false,\"list\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Invoices Analysis\"})"
         },
         "A37": { "content": "=_t(\"Country\")" },
         "A38": { "content": "=PIVOT.HEADER(2,\"#country_id\",1)" },
@@ -100,7 +100,7 @@
         "A46": { "content": "=PIVOT.HEADER(2,\"#country_id\",9)" },
         "A48": { "content": "=PIVOT.HEADER(2,\"#country_id\",10)" },
         "A49": {
-          "content": "[Top Products](odoo://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[\"&\",[\"state\",\"not in\",[\"draft\",\"cancel\"]],\"&\",[\"product_id\",\"!=\",false],[\"price_subtotal\",\">=\",0]],\"context\":{\"group_by\":[\"product_id\"],\"pivot_measures\":[\"price_subtotal\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"product_id\"]},\"modelName\":\"account.invoice.report\",\"views\":[[false,\"graph\"],[false,\"pivot\"],[false,\"list\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Invoices Analysis\"})"
+          "content": "[Top Products](eden://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[\"&\",[\"state\",\"not in\",[\"draft\",\"cancel\"]],\"&\",[\"product_id\",\"!=\",false],[\"price_subtotal\",\">=\",0]],\"context\":{\"group_by\":[\"product_id\"],\"pivot_measures\":[\"price_subtotal\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"product_id\"]},\"modelName\":\"account.invoice.report\",\"views\":[[false,\"graph\"],[false,\"pivot\"],[false,\"list\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Invoices Analysis\"})"
         },
         "A50": { "content": "=_t(\"Product\")" },
         "A51": { "content": "=PIVOT.HEADER(3,\"#product_id\",1)" },
@@ -114,16 +114,16 @@
         "A59": { "content": "=PIVOT.HEADER(3,\"#product_id\",9)" },
         "A60": { "content": "=PIVOT.HEADER(3,\"#product_id\",10)" },
         "B24": { "content": "=_t(\"Salesperson\")" },
-        "B25": { "content": "=ODOO.LIST(1,1,\"user_id\")" },
-        "B26": { "content": "=ODOO.LIST(1,2,\"user_id\")" },
-        "B27": { "content": "=ODOO.LIST(1,3,\"user_id\")" },
-        "B28": { "content": "=ODOO.LIST(1,4,\"user_id\")" },
-        "B29": { "content": "=ODOO.LIST(1,5,\"user_id\")" },
-        "B30": { "content": "=ODOO.LIST(1,6,\"user_id\")" },
-        "B31": { "content": "=ODOO.LIST(1,7,\"user_id\")" },
-        "B32": { "content": "=ODOO.LIST(1,8,\"user_id\")" },
-        "B33": { "content": "=ODOO.LIST(1,9,\"user_id\")" },
-        "B34": { "content": "=ODOO.LIST(1,10,\"user_id\")" },
+        "B25": { "content": "=EDEN.LIST(1,1,\"user_id\")" },
+        "B26": { "content": "=EDEN.LIST(1,2,\"user_id\")" },
+        "B27": { "content": "=EDEN.LIST(1,3,\"user_id\")" },
+        "B28": { "content": "=EDEN.LIST(1,4,\"user_id\")" },
+        "B29": { "content": "=EDEN.LIST(1,5,\"user_id\")" },
+        "B30": { "content": "=EDEN.LIST(1,6,\"user_id\")" },
+        "B31": { "content": "=EDEN.LIST(1,7,\"user_id\")" },
+        "B32": { "content": "=EDEN.LIST(1,8,\"user_id\")" },
+        "B33": { "content": "=EDEN.LIST(1,9,\"user_id\")" },
+        "B34": { "content": "=EDEN.LIST(1,10,\"user_id\")" },
         "B37": { "content": "=_t(\"Amount\")" },
         "B38": {
           "content": "=PIVOT.VALUE(2,\"price_subtotal\",\"#country_id\",1)"
@@ -187,16 +187,16 @@
           "content": "=PIVOT.VALUE(3,\"price_subtotal\",\"#product_id\",10)"
         },
         "C24": { "content": "=_t(\"Status\")" },
-        "C25": { "content": "=ODOO.LIST(1,1,\"payment_state\")" },
-        "C26": { "content": "=ODOO.LIST(1,2,\"payment_state\")" },
-        "C27": { "content": "=ODOO.LIST(1,3,\"payment_state\")" },
-        "C28": { "content": "=ODOO.LIST(1,4,\"payment_state\")" },
-        "C29": { "content": "=ODOO.LIST(1,5,\"payment_state\")" },
-        "C30": { "content": "=ODOO.LIST(1,6,\"payment_state\")" },
-        "C31": { "content": "=ODOO.LIST(1,7,\"payment_state\")" },
-        "C32": { "content": "=ODOO.LIST(1,8,\"payment_state\")" },
-        "C33": { "content": "=ODOO.LIST(1,9,\"payment_state\")" },
-        "C34": { "content": "=ODOO.LIST(1,10,\"payment_state\")" },
+        "C25": { "content": "=EDEN.LIST(1,1,\"payment_state\")" },
+        "C26": { "content": "=EDEN.LIST(1,2,\"payment_state\")" },
+        "C27": { "content": "=EDEN.LIST(1,3,\"payment_state\")" },
+        "C28": { "content": "=EDEN.LIST(1,4,\"payment_state\")" },
+        "C29": { "content": "=EDEN.LIST(1,5,\"payment_state\")" },
+        "C30": { "content": "=EDEN.LIST(1,6,\"payment_state\")" },
+        "C31": { "content": "=EDEN.LIST(1,7,\"payment_state\")" },
+        "C32": { "content": "=EDEN.LIST(1,8,\"payment_state\")" },
+        "C33": { "content": "=EDEN.LIST(1,9,\"payment_state\")" },
+        "C34": { "content": "=EDEN.LIST(1,10,\"payment_state\")" },
         "C37": { "content": "=_t(\"Ratio\")" },
         "C38": {
           "content": "=iferror(if(B38,B38/PIVOT.VALUE(2,\"price_subtotal\"),\"\"),\"\")"
@@ -260,18 +260,18 @@
           "content": "=iferror(if(B60,B60/PIVOT.VALUE(3,\"price_subtotal\"),\"\"))"
         },
         "D24": { "content": "=_t(\"Customer\")" },
-        "D25": { "content": "=ODOO.LIST(1,1,\"partner_id\")" },
-        "D26": { "content": "=ODOO.LIST(1,2,\"partner_id\")" },
-        "D27": { "content": "=ODOO.LIST(1,3,\"partner_id\")" },
-        "D28": { "content": "=ODOO.LIST(1,4,\"partner_id\")" },
-        "D29": { "content": "=ODOO.LIST(1,5,\"partner_id\")" },
-        "D30": { "content": "=ODOO.LIST(1,6,\"partner_id\")" },
-        "D31": { "content": "=ODOO.LIST(1,7,\"partner_id\")" },
-        "D32": { "content": "=ODOO.LIST(1,8,\"partner_id\")" },
-        "D33": { "content": "=ODOO.LIST(1,9,\"partner_id\")" },
-        "D34": { "content": "=ODOO.LIST(1,10,\"partner_id\")" },
+        "D25": { "content": "=EDEN.LIST(1,1,\"partner_id\")" },
+        "D26": { "content": "=EDEN.LIST(1,2,\"partner_id\")" },
+        "D27": { "content": "=EDEN.LIST(1,3,\"partner_id\")" },
+        "D28": { "content": "=EDEN.LIST(1,4,\"partner_id\")" },
+        "D29": { "content": "=EDEN.LIST(1,5,\"partner_id\")" },
+        "D30": { "content": "=EDEN.LIST(1,6,\"partner_id\")" },
+        "D31": { "content": "=EDEN.LIST(1,7,\"partner_id\")" },
+        "D32": { "content": "=EDEN.LIST(1,8,\"partner_id\")" },
+        "D33": { "content": "=EDEN.LIST(1,9,\"partner_id\")" },
+        "D34": { "content": "=EDEN.LIST(1,10,\"partner_id\")" },
         "E36": {
-          "content": "[Top Categories](odoo://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[\"&\",[\"state\",\"not in\",[\"draft\",\"cancel\"]],\"&\",[\"product_categ_id\",\"!=\",false],[\"price_subtotal\",\">=\",0]],\"context\":{\"group_by\":[\"product_categ_id\"],\"pivot_measures\":[\"price_subtotal\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"product_categ_id\"]},\"modelName\":\"account.invoice.report\",\"views\":[[false,\"graph\"],[false,\"pivot\"],[false,\"list\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Invoices Analysis\"})"
+          "content": "[Top Categories](eden://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[\"&\",[\"state\",\"not in\",[\"draft\",\"cancel\"]],\"&\",[\"product_categ_id\",\"!=\",false],[\"price_subtotal\",\">=\",0]],\"context\":{\"group_by\":[\"product_categ_id\"],\"pivot_measures\":[\"price_subtotal\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"product_categ_id\"]},\"modelName\":\"account.invoice.report\",\"views\":[[false,\"graph\"],[false,\"pivot\"],[false,\"list\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Invoices Analysis\"})"
         },
         "E37": { "content": "=_t(\"Top Categories\")" },
         "E38": { "content": "=PIVOT.HEADER(1,\"#product_categ_id\",1)" },
@@ -285,7 +285,7 @@
         "E46": { "content": "=PIVOT.HEADER(1,\"#product_categ_id\",9)" },
         "E48": { "content": "=PIVOT.HEADER(1,\"#product_categ_id\",10)" },
         "E49": {
-          "content": "[Top Salespeople](odoo://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[\"&\",[\"state\",\"not in\",[\"draft\",\"cancel\"]],\"&\",[\"invoice_user_id\",\"!=\",false],[\"price_subtotal\",\">=\",0]],\"context\":{\"group_by\":[\"invoice_user_id\"],\"pivot_measures\":[\"price_subtotal\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"invoice_user_id\"]},\"modelName\":\"account.invoice.report\",\"views\":[[false,\"graph\"],[false,\"pivot\"],[false,\"list\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Invoices Analysis\"})"
+          "content": "[Top Salespeople](eden://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[\"&\",[\"state\",\"not in\",[\"draft\",\"cancel\"]],\"&\",[\"invoice_user_id\",\"!=\",false],[\"price_subtotal\",\">=\",0]],\"context\":{\"group_by\":[\"invoice_user_id\"],\"pivot_measures\":[\"price_subtotal\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"invoice_user_id\"]},\"modelName\":\"account.invoice.report\",\"views\":[[false,\"graph\"],[false,\"pivot\"],[false,\"list\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Invoices Analysis\"})"
         },
         "E50": { "content": "=_t(\"Salesperson\")" },
         "E51": { "content": "=PIVOT.HEADER(4,\"#invoice_user_id\",1)" },
@@ -299,16 +299,16 @@
         "E59": { "content": "=PIVOT.HEADER(4,\"#invoice_user_id\",9)" },
         "E60": { "content": "=PIVOT.HEADER(4,\"#invoice_user_id\",10)" },
         "F24": { "content": "=_t(\"Date\")" },
-        "F25": { "content": "=ODOO.LIST(1,1,\"invoice_date\")" },
-        "F26": { "content": "=ODOO.LIST(1,2,\"invoice_date\")" },
-        "F27": { "content": "=ODOO.LIST(1,3,\"invoice_date\")" },
-        "F28": { "content": "=ODOO.LIST(1,4,\"invoice_date\")" },
-        "F29": { "content": "=ODOO.LIST(1,5,\"invoice_date\")" },
-        "F30": { "content": "=ODOO.LIST(1,6,\"invoice_date\")" },
-        "F31": { "content": "=ODOO.LIST(1,7,\"invoice_date\")" },
-        "F32": { "content": "=ODOO.LIST(1,8,\"invoice_date\")" },
-        "F33": { "content": "=ODOO.LIST(1,9,\"invoice_date\")" },
-        "F34": { "content": "=ODOO.LIST(1,10,\"invoice_date\")" },
+        "F25": { "content": "=EDEN.LIST(1,1,\"invoice_date\")" },
+        "F26": { "content": "=EDEN.LIST(1,2,\"invoice_date\")" },
+        "F27": { "content": "=EDEN.LIST(1,3,\"invoice_date\")" },
+        "F28": { "content": "=EDEN.LIST(1,4,\"invoice_date\")" },
+        "F29": { "content": "=EDEN.LIST(1,5,\"invoice_date\")" },
+        "F30": { "content": "=EDEN.LIST(1,6,\"invoice_date\")" },
+        "F31": { "content": "=EDEN.LIST(1,7,\"invoice_date\")" },
+        "F32": { "content": "=EDEN.LIST(1,8,\"invoice_date\")" },
+        "F33": { "content": "=EDEN.LIST(1,9,\"invoice_date\")" },
+        "F34": { "content": "=EDEN.LIST(1,10,\"invoice_date\")" },
         "F37": { "content": "=_t(\"Amount\")" },
         "F38": {
           "content": "=PIVOT.VALUE(1,\"price_subtotal\",\"#product_categ_id\",1)"
@@ -372,16 +372,16 @@
           "content": "=PIVOT.VALUE(4,\"price_subtotal\",\"#invoice_user_id\",10)"
         },
         "G24": { "content": "=_t(\"Amount\")" },
-        "G25": { "content": "=ODOO.LIST(1,1,\"amount_untaxed_signed\")" },
-        "G26": { "content": "=ODOO.LIST(1,2,\"amount_untaxed_signed\")" },
-        "G27": { "content": "=ODOO.LIST(1,3,\"amount_untaxed_signed\")" },
-        "G28": { "content": "=ODOO.LIST(1,4,\"amount_untaxed_signed\")" },
-        "G29": { "content": "=ODOO.LIST(1,5,\"amount_untaxed_signed\")" },
-        "G30": { "content": "=ODOO.LIST(1,6,\"amount_untaxed_signed\")" },
-        "G31": { "content": "=ODOO.LIST(1,7,\"amount_untaxed_signed\")" },
-        "G32": { "content": "=ODOO.LIST(1,8,\"amount_untaxed_signed\")" },
-        "G33": { "content": "=ODOO.LIST(1,9,\"amount_untaxed_signed\")" },
-        "G34": { "content": "=ODOO.LIST(1,10,\"amount_untaxed_signed\")" },
+        "G25": { "content": "=EDEN.LIST(1,1,\"amount_untaxed_signed\")" },
+        "G26": { "content": "=EDEN.LIST(1,2,\"amount_untaxed_signed\")" },
+        "G27": { "content": "=EDEN.LIST(1,3,\"amount_untaxed_signed\")" },
+        "G28": { "content": "=EDEN.LIST(1,4,\"amount_untaxed_signed\")" },
+        "G29": { "content": "=EDEN.LIST(1,5,\"amount_untaxed_signed\")" },
+        "G30": { "content": "=EDEN.LIST(1,6,\"amount_untaxed_signed\")" },
+        "G31": { "content": "=EDEN.LIST(1,7,\"amount_untaxed_signed\")" },
+        "G32": { "content": "=EDEN.LIST(1,8,\"amount_untaxed_signed\")" },
+        "G33": { "content": "=EDEN.LIST(1,9,\"amount_untaxed_signed\")" },
+        "G34": { "content": "=EDEN.LIST(1,10,\"amount_untaxed_signed\")" },
         "G37": { "content": "=_t(\"Ratio\")" },
         "G38": {
           "content": "=iferror(if(F38,F38/PIVOT.VALUE(1,\"price_subtotal\"),\"\"),\"\")"
@@ -605,7 +605,7 @@
               "groupBy": ["invoice_date"],
               "orderBy": []
             },
-            "type": "odoo_line",
+            "type": "eden_line",
             "verticalAxisPosition": "left",
             "stacked": false,
             "fillArea": true,
@@ -730,13 +730,13 @@
         "B3": { "content": "=PIVOT.VALUE(6,\"move_id\")" },
         "B4": { "content": "=YEAR(TODAY())" },
         "B5": {
-          "content": "=ODOO.BALANCE(ODOO.ACCOUNT.GROUP(\"asset_receivable\"),$B$4)"
+          "content": "=EDEN.BALANCE(EDEN.ACCOUNT.GROUP(\"asset_receivable\"),$B$4)"
         },
         "B6": {
-          "content": "=-ODOO.BALANCE(ODOO.ACCOUNT.GROUP(\"income\"),$B$4)"
+          "content": "=-EDEN.BALANCE(EDEN.ACCOUNT.GROUP(\"income\"),$B$4)"
         },
         "B7": {
-          "content": "=ODOO.BALANCE(ODOO.ACCOUNT.GROUP(\"expense_direct_cost\"),$B$4)"
+          "content": "=EDEN.BALANCE(EDEN.ACCOUNT.GROUP(\"expense_direct_cost\"),$B$4)"
         },
         "B8": { "content": "=B6-B7" },
         "B9": { "content": "365" },
@@ -827,7 +827,7 @@
   },
   "pivots": {
     "1": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "757a1b4b-e339-4879-beb6-9851050387cf": {
           "chain": "invoice_date",
@@ -879,7 +879,7 @@
       "rows": [{ "fieldName": "product_categ_id" }]
     },
     "2": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "757a1b4b-e339-4879-beb6-9851050387cf": {
           "chain": "invoice_date",
@@ -931,7 +931,7 @@
       "rows": [{ "fieldName": "country_id" }]
     },
     "3": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "757a1b4b-e339-4879-beb6-9851050387cf": {
           "chain": "invoice_date",
@@ -983,7 +983,7 @@
       "rows": [{ "fieldName": "product_id" }]
     },
     "4": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "757a1b4b-e339-4879-beb6-9851050387cf": {
           "chain": "invoice_date",
@@ -1035,7 +1035,7 @@
       "rows": [{ "fieldName": "invoice_user_id" }]
     },
     "5": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "757a1b4b-e339-4879-beb6-9851050387cf": {
           "chain": "invoice_date",
@@ -1077,7 +1077,7 @@
       "rows": []
     },
     "6": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "757a1b4b-e339-4879-beb6-9851050387cf": {
           "chain": "invoice_date",
@@ -1122,7 +1122,7 @@
       "rows": []
     },
     "7": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "757a1b4b-e339-4879-beb6-9851050387cf": {
           "chain": "invoice_date",
@@ -1168,7 +1168,7 @@
   },
   "pivotNextId": 8,
   "customTableStyles": {},
-  "odooVersion": 12,
+  "edenVersion": 12,
   "globalFilters": [
     {
       "id": "757a1b4b-e339-4879-beb6-9851050387cf",
@@ -1264,7 +1264,7 @@
     }
   },
   "listNextId": 2,
-  "chartOdooMenusReferences": {
+  "chartEdenMenusReferences": {
     "5ea5dd7f-9f83-4482-a2bb-2ec72ab35912": "account.menu_finance",
     "1aeea7b2-900b-4067-b8ad-3e4772c54028": "account.menu_action_move_out_invoice_type",
     "bdfb27d0-5902-4a2a-9b7e-514a6625578c": "account.menu_action_account_invoice_report_all",

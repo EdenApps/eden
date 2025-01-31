@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.sale.tests.common import TestSaleCommon
+from eden.addons.sale.tests.common import TestSaleCommon
 
 
 class TestSaleProjectCommon(TestSaleCommon):

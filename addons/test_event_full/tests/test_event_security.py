@@ -1,20 +1,20 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
 
-from odoo.addons.test_event_full.tests.common import TestEventFullCommon
-from odoo.exceptions import AccessError
-from odoo.tests import tagged
-from odoo.tests.common import users
-from odoo.tools import mute_logger
+from eden.addons.test_event_full.tests.common import TestEventFullCommon
+from eden.exceptions import AccessError
+from eden.tests import tagged
+from eden.tests.common import users
+from eden.tools import mute_logger
 
 
 @tagged('security')
 class TestEventSecurity(TestEventFullCommon):
 
     @users('user_employee')
-    @mute_logger('odoo.models.unlink', 'odoo.addons.base.models.ir_model')
+    @mute_logger('eden.models.unlink', 'eden.addons.base.models.ir_model')
     def test_event_access_employee(self):
         # Event: read ok
         event = self.test_event.with_user(self.env.user)
@@ -51,7 +51,7 @@ class TestEventSecurity(TestEventFullCommon):
             self.env['event.registration'].search([])
 
     @users('user_eventregistrationdesk')
-    @mute_logger('odoo.models.unlink', 'odoo.addons.base.models.ir_model')
+    @mute_logger('eden.models.unlink', 'eden.addons.base.models.ir_model')
     def test_event_access_event_registration(self):
         # Event: read ok
         event = self.test_event.with_user(self.env.user)
@@ -73,7 +73,7 @@ class TestEventSecurity(TestEventFullCommon):
             registration.unlink()
 
     @users('user_eventuser')
-    @mute_logger('odoo.models.unlink', 'odoo.addons.base.models.ir_model')
+    @mute_logger('eden.models.unlink', 'eden.addons.base.models.ir_model')
     def test_event_access_event_user(self):
         # Event
         event = self.test_event.with_user(self.env.user)
@@ -99,7 +99,7 @@ class TestEventSecurity(TestEventFullCommon):
             })
 
     @users('user_eventmanager')
-    @mute_logger('odoo.models.unlink', 'odoo.addons.base.models.ir_model')
+    @mute_logger('eden.models.unlink', 'eden.addons.base.models.ir_model')
     def test_event_access_event_manager(self):
         # Event Type
         event_type = self.env['event.type'].create({

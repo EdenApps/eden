@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data noupdate="1">
+<eden><data noupdate="1">
 
     <record id="ir_rule_event_booth_public" model="ir.rule">
         <field name="name">Event Booth: public/portal: published read</field>
@@ -12,4 +12,4 @@
         <field name="perm_unlink" eval="False"/>
     </record>
 
-</data></odoo>
+</data></eden>

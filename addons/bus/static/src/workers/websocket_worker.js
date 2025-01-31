@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { debounce, Deferred } from "@bus/workers/websocket_worker_utils";
 

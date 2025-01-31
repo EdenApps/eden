@@ -107,7 +107,7 @@
     z-index: $zindex-modal;
 
     .o_mobile_search_header {
-        background-color: var(--mobileSearch__header-bg, #{$o-brand-odoo});
+        background-color: var(--mobileSearch__header-bg, #{$o-brand-eden});
         display: flex;
         min-height: $o-navbar-height;
         justify-content: space-between;

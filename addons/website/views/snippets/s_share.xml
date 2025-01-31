@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_share" name="Share">
     <div t-attf-class="s_share text-start o_no_link_popover #{_classes}">
@@ -37,4 +37,4 @@
     <field name="path">website/static/src/snippets/s_share/000.js</field>
 </record>
 
-</odoo>
+</eden>

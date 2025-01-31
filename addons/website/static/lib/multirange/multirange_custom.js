@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 /**
  * This code has been more that widely inspired by the multirange library
  * which can be found on https://github.com/LeaVerou/multirange.

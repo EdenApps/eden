@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, http
-from odoo.exceptions import AccessError
-from odoo.http import request
+from eden import _, http
+from eden.exceptions import AccessError
+from eden.http import request
 
 
 class BaseSetup(http.Controller):

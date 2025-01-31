@@ -946,7 +946,7 @@
     context.imageSmoothingEnabled = imageSmoothingEnabled;
     context.imageSmoothingQuality = imageSmoothingQuality;
     /**
-     * ODOO FIX START
+     * EDEN FIX START
      *
      * Canevas is translated and then translated back. For the second translation the
      * translation distances were rounded to the nearest integer below when it should
@@ -957,7 +957,7 @@
      */
     params = params.map(normalizeDecimalNumber);
     context.drawImage(image, params[0], params[1], Math.floor(params[2]), Math.floor(params[3]));
-    // ODOO FIX END
+    // EDEN FIX END
     context.restore();
     return canvas;
   }

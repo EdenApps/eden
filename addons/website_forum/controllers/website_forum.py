@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import json
 import logging
 
@@ -9,12 +9,12 @@ import werkzeug.exceptions
 import werkzeug.urls
 import werkzeug.wrappers
 
-from odoo import _, http, tools
-from odoo.addons.website.models.ir_http import sitemap_qs2dom
-from odoo.addons.website_profile.controllers.main import WebsiteProfile
-from odoo.exceptions import AccessError, UserError
-from odoo.http import request
-from odoo.osv import expression
+from eden import _, http, tools
+from eden.addons.website.models.ir_http import sitemap_qs2dom
+from eden.addons.website_profile.controllers.main import WebsiteProfile
+from eden.exceptions import AccessError, UserError
+from eden.http import request
+from eden.osv import expression
 
 _logger = logging.getLogger(__name__)
 

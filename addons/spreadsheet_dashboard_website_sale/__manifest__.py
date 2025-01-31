@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 {
     'name': "Spreadsheet dashboard for eCommerce",
     'version': '1.0',

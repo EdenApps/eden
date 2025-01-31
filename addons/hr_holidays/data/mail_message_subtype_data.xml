@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <!-- Holidays-related subtypes for messaging / Chatter -->
         <record id="mt_leave" model="mail.message.subtype">
@@ -25,4 +25,4 @@
             <field name="description">Allocation Request</field>
         </record>
     </data>
-</odoo>
+</eden>

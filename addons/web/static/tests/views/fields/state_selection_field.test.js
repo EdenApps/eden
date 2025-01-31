@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { click, press, queryAll, queryAllTexts, queryFirst } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { expect, test } from "@eden/hoot";
+import { click, press, queryAll, queryAllTexts, queryFirst } from "@eden/hoot-dom";
+import { animationFrame } from "@eden/hoot-mock";
 import { defineModels, fields, models, mountView, onRpc } from "@web/../tests/web_test_helpers";
 
 class Partner extends models.Model {

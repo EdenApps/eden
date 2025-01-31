@@ -18,8 +18,8 @@ import {
 } from "@mail/../tests/mail_test_helpers";
 import { mailDataHelpers } from "@mail/../tests/mock_server/mail_mock_server";
 
-import { describe, expect, test } from "@odoo/hoot";
-import { Deferred, mockUserAgent } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@eden/hoot";
+import { Deferred, mockUserAgent } from "@eden/hoot-mock";
 import {
     Command,
     getService,
@@ -84,7 +84,7 @@ test("counter is taking into account failure notification", async () => {
 test("rendering with chat push notification default permissions", async () => {
     patchBrowserNotification("default");
     const pyEnv = await startServer();
-    const [odoobot] = pyEnv["res.partner"].read(serverState.odoobotId);
+    const [edenbot] = pyEnv["res.partner"].read(serverState.edenbotId);
     await start();
     await contains(".o-mail-MessagingMenu-counter");
     await contains(".o-mail-MessagingMenu-counter", { text: "1" });
@@ -92,8 +92,8 @@ test("rendering with chat push notification default permissions", async () => {
     await contains(".o-mail-NotificationItem");
     await contains(
         `.o-mail-NotificationItem img[data-src='${getOrigin()}/web/image/res.partner/${
-            serverState.odoobotId
-        }/avatar_128?unique=${deserializeDateTime(odoobot.write_date).ts}']`
+            serverState.edenbotId
+        }/avatar_128?unique=${deserializeDateTime(edenbot.write_date).ts}']`
     );
     await contains(".o-mail-NotificationItem", { text: "Turn on notifications" });
 });
@@ -133,7 +133,7 @@ test("respond to notification prompt (denied)", async () => {
     await click(".o_menu_systray i[aria-label='Messages']");
     await click(".o-mail-NotificationItem");
     await contains(".o_notification:has(.o_notification_bar.bg-warning)", {
-        text: "Odoo will not send notifications on this device.",
+        text: "Eden will not send notifications on this device.",
     });
     await contains(".o-mail-MessagingMenu-counter", { count: 0 });
     await click(".o_menu_systray i[aria-label='Messages']");
@@ -146,14 +146,14 @@ test("respond to notification prompt (granted)", async () => {
     await click(".o_menu_systray i[aria-label='Messages']");
     await click(".o-mail-NotificationItem");
     await contains(".o_notification:has(.o_notification_bar.bg-success)", {
-        text: "Odoo will send notifications on this device!",
+        text: "Eden will send notifications on this device!",
     });
 });
 
 test("no suggestion to enable chat push notifications in mobile app", async () => {
     patchBrowserNotification("default");
-    // simulate Android Odoo App
-    mockUserAgent("Chrome/0.0.0 Android (OdooMobile; Linux; Android 13; Odoo TestSuite)");
+    // simulate Android Eden App
+    mockUserAgent("Chrome/0.0.0 Android (EdenMobile; Linux; Android 13; Eden TestSuite)");
     await start();
     await click(".o_menu_systray i[aria-label='Messages']");
     await contains(".o-mail-MessagingMenu-counter", { count: 0 });
@@ -175,7 +175,7 @@ test("rendering with PWA installation request", async () => {
         },
     });
     const pyEnv = await startServer();
-    const [odoobot] = pyEnv["res.partner"].read(serverState.odoobotId);
+    const [edenbot] = pyEnv["res.partner"].read(serverState.edenbotId);
     await start();
     patchWithCleanup(getService("pwa"), {
         show() {
@@ -192,10 +192,10 @@ test("rendering with PWA installation request", async () => {
     await contains(".o-mail-NotificationItem");
     await contains(
         `.o-mail-NotificationItem img[data-src='${getOrigin()}/web/image/res.partner/${
-            serverState.odoobotId
-        }/avatar_128?unique=${deserializeDateTime(odoobot.write_date).ts}']`
+            serverState.edenbotId
+        }/avatar_128?unique=${deserializeDateTime(edenbot.write_date).ts}']`
     );
-    await contains(".o-mail-NotificationItem-name", { text: "Install Odoo" });
+    await contains(".o-mail-NotificationItem-name", { text: "Install Eden" });
     await contains(".o-mail-NotificationItem-text", {
         text: "Come here often? Install the app for quick and easy access!",
     });
@@ -237,7 +237,7 @@ test("installation of the PWA request can be dismissed", async () => {
     await click(".o-mail-NotificationItem .oi-close");
     await assertSteps([
         "getItem pwaService.installationState",
-        'installationState value:  {"/odoo":"dismissed"}',
+        'installationState value:  {"/eden":"dismissed"}',
     ]);
     await click(".o_menu_systray i[aria-label='Messages']");
     await contains(".o-mail-NotificationItem", { count: 0 });
@@ -252,7 +252,7 @@ test("rendering with PWA installation request (dismissed)", async () => {
             if (key === "pwaService.installationState") {
                 step("getItem " + key);
                 // in this test, installation has been previously dismissed by the user
-                return `{"/odoo":"dismissed"}`;
+                return `{"/eden":"dismissed"}`;
             }
             return super.getItem(key);
         },
@@ -755,7 +755,7 @@ test("chat preview should not display correspondent name in body", async () => {
     // DM chat with demo, the conversation is named "Demo" and body is simply message content
     // not prefix like "Demo:"
     const pyEnv = await startServer();
-    const partnerId = pyEnv["res.partner"].create({ name: "Demo", email: "demo@odoo.com" });
+    const partnerId = pyEnv["res.partner"].create({ name: "Demo", email: "demo@eden.com" });
     const userId = pyEnv["res.users"].create({ partner_id: partnerId });
     const channelId = pyEnv["discuss.channel"].create({
         channel_type: "chat",
@@ -897,7 +897,7 @@ test("click on preview should mark as read and open the thread", async () => {
     const messageId = pyEnv["mail.message"].create({
         model: "res.partner",
         body: "not empty",
-        author_id: serverState.odoobotId,
+        author_id: serverState.edenbotId,
         needaction: true,
         res_id: partnerId,
     });
@@ -923,7 +923,7 @@ test("click on expand from chat window should close the chat window and open the
     const messageId = pyEnv["mail.message"].create({
         model: "res.partner",
         body: "not empty",
-        author_id: serverState.odoobotId,
+        author_id: serverState.edenbotId,
         needaction: true,
         res_id: partnerId,
     });

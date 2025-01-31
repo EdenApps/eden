@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import publicWidget from "@web/legacy/js/public/public_widget";
 import multirange from "@website/../lib/multirange/multirange_custom";

@@ -1,4 +1,4 @@
-import { test, expect, describe } from "@odoo/hoot";
+import { test, expect, describe } from "@eden/hoot";
 import { _makeUser, user } from "@web/core/user";
 import { makeMockEnv, onRpc, patchWithCleanup, serverState } from "@web/../tests/web_test_helpers";
 

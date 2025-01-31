@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { _t } from "@web/core/l10n/translation";
 import {
@@ -7,7 +7,7 @@ import {
     registerWebsitePreviewTour,
 } from '@website/js/tours/tour_utils';
 
-import { markup } from "@odoo/owl";
+import { markup } from "@eden/owl";
 
 registerWebsitePreviewTour("test_01_admin_shop_tour", {
     url: '/shop',

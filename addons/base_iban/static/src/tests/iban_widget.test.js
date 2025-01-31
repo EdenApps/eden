@@ -1,7 +1,7 @@
 import { defineBaseIbanModels } from "./base_iban_test_helpers";
 import { DELAY } from "@base_iban/components/iban_widget/iban_widget";
-import { test } from "@odoo/hoot";
-import { advanceTime } from "@odoo/hoot-mock";
+import { test } from "@eden/hoot";
+import { advanceTime } from "@eden/hoot-mock";
 import {
     click,
     contains,

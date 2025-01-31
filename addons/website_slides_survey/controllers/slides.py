@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import werkzeug
 import werkzeug.utils
 import werkzeug.exceptions
 
-from odoo import _
-from odoo import http
-from odoo.exceptions import AccessError
-from odoo.http import request
-from odoo.osv import expression
+from eden import _
+from eden import http
+from eden.exceptions import AccessError
+from eden.http import request
+from eden.osv import expression
 
-from odoo.addons.website_slides.controllers.main import WebsiteSlides
+from eden.addons.website_slides.controllers.main import WebsiteSlides
 
 
 class WebsiteSlidesSurvey(WebsiteSlides):

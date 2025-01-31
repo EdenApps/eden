@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.http import request
-from odoo.osv import expression
+from eden.http import request
+from eden.osv import expression
 
-from odoo.addons.project.controllers.portal import CustomerPortal
+from eden.addons.project.controllers.portal import CustomerPortal
 
 
 class ProjectCustomerPortal(CustomerPortal):

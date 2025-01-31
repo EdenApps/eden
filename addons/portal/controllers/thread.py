@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.http import request
-from odoo.addons.mail.controllers import thread
-from odoo.addons.portal.utils import get_portal_partner
+from eden.http import request
+from eden.addons.mail.controllers import thread
+from eden.addons.portal.utils import get_portal_partner
 
 
 class ThreadController(thread.ThreadController):

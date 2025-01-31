@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 from datetime import date, datetime, timedelta
 from dateutil.relativedelta import relativedelta
 
-from odoo import Command
-from odoo.exceptions import ValidationError
-from odoo.tests import Form, TransactionCase
+from eden import Command
+from eden.exceptions import ValidationError
+from eden.tests import Form, TransactionCase
 
 
 class TestInventory(TransactionCase):

@@ -2,7 +2,7 @@ import { useService } from "@web/core/utils/hooks";
 import { FileUploader } from "@web/views/fields/file_handler";
 import { standardWidgetProps } from "@web/views/widgets/standard_widget_props";
 
-import { Component, markup } from "@odoo/owl";
+import { Component, markup } from "@eden/owl";
 
 export class DocumentFileUploader extends Component {
     static template = "account.DocumentFileUploader";

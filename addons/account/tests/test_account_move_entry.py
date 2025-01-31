@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.tests import Form, tagged, new_test_user
-from odoo import Command, fields
-from odoo.exceptions import UserError, RedirectWarning
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
+from eden.tests import Form, tagged, new_test_user
+from eden import Command, fields
+from eden.exceptions import UserError, RedirectWarning
 
 from dateutil.relativedelta import relativedelta
 from freezegun import freeze_time

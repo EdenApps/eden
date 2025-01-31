@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import base64
 
-from odoo import api, fields, models
+from eden import api, fields, models
 
-from odoo.tools.misc import file_open
+from eden.tools.misc import file_open
 
 
 class LunchProductCategory(models.Model):

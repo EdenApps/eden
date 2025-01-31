@@ -1,7 +1,7 @@
-from odoo import _
-from odoo.addons.portal.controllers.portal import CustomerPortal
-from odoo.addons.account.models.company import PEPPOL_LIST
-from odoo.http import request
+from eden import _
+from eden.addons.portal.controllers.portal import CustomerPortal
+from eden.addons.account.models.company import PEPPOL_LIST
+from eden.http import request
 
 
 class PortalAccount(CustomerPortal):

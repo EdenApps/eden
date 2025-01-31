@@ -1,7 +1,7 @@
 import json
 
-from odoo import http
-from odoo.http import request
+from eden import http
+from eden.http import request
 
 
 class TestsSharedJsPython(http.Controller):

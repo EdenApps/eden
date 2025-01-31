@@ -1,9 +1,9 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { MockServer } from "@web/../tests/helpers/mock_server";
 import testUtils from "@web/../tests/legacy_tests/helpers/test_utils";
 import { patch } from "@web/core/utils/patch";
-import * as OdooEditorLib from "@web_editor/js/editor/odoo-editor/src/OdooEditor";
+import * as EdenEditorLib from "@web_editor/js/editor/eden-editor/src/EdenEditor";
 import { Wysiwyg } from '@web_editor/js/wysiwyg/wysiwyg';
 import options from "@web_editor/js/editor/snippets.options";
 import { TABLE_ATTRIBUTES, TABLE_STYLES } from '@web_editor/js/backend/convert_inline';
@@ -324,9 +324,9 @@ var testKeyboard = function ($editable, assert, keyboardTests, addTests) {
 
     function nextPoint(point) {
         var node, offset;
-        if (OdooEditorLib.nodeSize(point.node) === point.offset) {
+        if (EdenEditorLib.nodeSize(point.node) === point.offset) {
             node = point.node.parentNode;
-            offset = OdooEditorLib.childNodeIndex(point.node) + 1;
+            offset = EdenEditorLib.childNodeIndex(point.node) + 1;
         } else if (point.node.hasChildNodes()) {
             node = point.node.childNodes[point.offset];
             offset = 0;

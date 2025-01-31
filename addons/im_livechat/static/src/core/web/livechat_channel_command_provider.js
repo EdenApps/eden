@@ -1,4 +1,4 @@
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 import { registry } from "@web/core/registry";
 
 class LivechatChannelCommand extends Component {
@@ -14,7 +14,7 @@ class LivechatChannelCommand extends Component {
 
 registry.category("command_provider").add("im_livechat.channel_join_leave", {
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").EdenEnv} env
      */
     async provide(env) {
         const store = env.services["mail.store"];

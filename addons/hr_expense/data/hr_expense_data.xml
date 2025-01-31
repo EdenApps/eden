@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <!-- sgv note - icons will be replaced. Design task is ongoing -->
         <record id="expense_product_meal" model="product.product">
@@ -79,4 +79,4 @@
     <data>
         <function model="ir.config_parameter" name="set_param" eval="('hr_expense.use_mailgateway', True)"/>
     </data>
-</odoo>
+</eden>

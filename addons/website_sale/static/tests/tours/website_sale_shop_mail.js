@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { registry } from "@web/core/registry";
 import * as tourUtils from "@website_sale/js/tours/tour_utils";
@@ -14,7 +14,7 @@ registry.category("web_tour.tours").add('shop_mail', {
         trigger: 'div:has(a>h6:contains("Acoustic Bloc Screens"))',
         run: function () {
             const orderId = document.querySelector(".my_cart_quantity").dataset["orderId"];
-            redirect("/odoo/action-sale.action_orders/" + orderId);
+            redirect("/eden/action-sale.action_orders/" + orderId);
         },
     },
     {

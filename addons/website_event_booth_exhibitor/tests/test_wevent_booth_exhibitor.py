@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo, HttpCaseWithUserPortal
-from odoo.tests import tagged
+from eden.addons.base.tests.common import HttpCaseWithUserDemo, HttpCaseWithUserPortal
+from eden.tests import tagged
 
 
 @tagged('post_install', '-at_install')

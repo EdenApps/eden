@@ -3,7 +3,7 @@ import { Dialog } from '@web/core/dialog/dialog';
 import { formatCurrency } from '@web/core/currency';
 import { rpc } from '@web/core/network/rpc';
 import { useService } from '@web/core/utils/hooks';
-import { Component, useState, useSubEnv } from '@odoo/owl';
+import { Component, useState, useSubEnv } from '@eden/owl';
 import { ProductCard } from '../product_card/product_card';
 import { ProductCombo } from '../models/product_combo';
 import { ProductTemplateAttributeLine } from '../models/product_template_attribute_line';

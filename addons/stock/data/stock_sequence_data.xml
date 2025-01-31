@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
 
         <!-- Sequences for orderpoint -->
@@ -67,4 +67,4 @@ model.run_scheduler(True)
         </record>
 
     </data>
-</odoo>
+</eden>

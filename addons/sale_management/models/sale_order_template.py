@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command, _, api, fields, models
-from odoo.exceptions import ValidationError
+from eden import Command, _, api, fields, models
+from eden.exceptions import ValidationError
 
 
 class SaleOrderTemplate(models.Model):

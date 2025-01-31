@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, _, SUPERUSER_ID
-from odoo.exceptions import ValidationError
+from eden import api, fields, models, _, SUPERUSER_ID
+from eden.exceptions import ValidationError
 
 
 class ProductTemplate(models.Model):

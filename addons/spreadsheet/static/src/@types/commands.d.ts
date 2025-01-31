@@ -7,48 +7,48 @@ import {
     AddPivotCommand,
     UpdatePivotCommand,
     CancelledReason,
-} from "@odoo/o-spreadsheet";
-import * as OdooCancelledReason from "@spreadsheet/o_spreadsheet/cancelled_reason";
+} from "@eden/o-spreadsheet";
+import * as EdenCancelledReason from "@spreadsheet/o_spreadsheet/cancelled_reason";
 
 type CoreDispatch = CorePlugin["dispatch"];
 type UIDispatch = UIPlugin["dispatch"];
 type CoreCommand = Parameters<CorePlugin["allowDispatch"]>[0];
 type Command = Parameters<UIPlugin["allowDispatch"]>[0];
 
-// TODO look for a way to remove this and use the real import * as OdooCancelledReason
-type OdooCancelledReason = string;
+// TODO look for a way to remove this and use the real import * as EdenCancelledReason
+type EdenCancelledReason = string;
 
 declare module "@spreadsheet" {
-    interface OdooCommandDispatcher {
-        dispatch<T extends OdooCommandTypes, C extends Extract<OdooCommand, { type: T }>>(
+    interface EdenCommandDispatcher {
+        dispatch<T extends EdenCommandTypes, C extends Extract<EdenCommand, { type: T }>>(
             type: {} extends Omit<C, "type"> ? T : never
-        ): OdooDispatchResult;
-        dispatch<T extends OdooCommandTypes, C extends Extract<OdooCommand, { type: T }>>(
+        ): EdenDispatchResult;
+        dispatch<T extends EdenCommandTypes, C extends Extract<EdenCommand, { type: T }>>(
             type: T,
             r: Omit<C, "type">
-        ): OdooDispatchResult;
+        ): EdenDispatchResult;
     }
 
-    interface OdooCoreCommandDispatcher {
-        dispatch<T extends OdooCoreCommandTypes, C extends Extract<OdooCoreCommand, { type: T }>>(
+    interface EdenCoreCommandDispatcher {
+        dispatch<T extends EdenCoreCommandTypes, C extends Extract<EdenCoreCommand, { type: T }>>(
             type: {} extends Omit<C, "type"> ? T : never
-        ): OdooDispatchResult;
-        dispatch<T extends OdooCoreCommandTypes, C extends Extract<OdooCoreCommand, { type: T }>>(
+        ): EdenDispatchResult;
+        dispatch<T extends EdenCoreCommandTypes, C extends Extract<EdenCoreCommand, { type: T }>>(
             type: T,
             r: Omit<C, "type">
-        ): OdooDispatchResult;
+        ): EdenDispatchResult;
     }
 
-    interface OdooDispatchResult extends DispatchResult {
-        readonly reasons: (CancelledReason | OdooCancelledReason)[];
-        isCancelledBecause(reason: CancelledReason | OdooCancelledReason): boolean;
+    interface EdenDispatchResult extends DispatchResult {
+        readonly reasons: (CancelledReason | EdenCancelledReason)[];
+        isCancelledBecause(reason: CancelledReason | EdenCancelledReason): boolean;
     }
 
-    type OdooCommandTypes = OdooCommand["type"];
-    type OdooCoreCommandTypes = OdooCoreCommand["type"];
+    type EdenCommandTypes = EdenCommand["type"];
+    type EdenCoreCommandTypes = EdenCoreCommand["type"];
 
-    type OdooDispatch = UIDispatch & OdooCommandDispatcher["dispatch"];
-    type OdooCoreDispatch = CoreDispatch & OdooCoreCommandDispatcher["dispatch"];
+    type EdenDispatch = UIDispatch & EdenCommandDispatcher["dispatch"];
+    type EdenCoreDispatch = CoreDispatch & EdenCoreCommandDispatcher["dispatch"];
 
     // CORE
 
@@ -87,7 +87,7 @@ declare module "@spreadsheet" {
 
     // this command is deprecated. use UPDATE_PIVOT instead
     export interface UpdatePivotDomainCommand {
-        type: "UPDATE_ODOO_PIVOT_DOMAIN";
+        type: "UPDATE_EDEN_PIVOT_DOMAIN";
         pivotId: string;
         domain: Array;
     }
@@ -138,7 +138,7 @@ declare module "@spreadsheet" {
         id: string;
     }
 
-    type OdooCoreCommand =
+    type EdenCoreCommand =
         | ExtendedAddPivotCommand
         | ExtendedUpdatePivotCommand
         | UpdatePivotDomainCommand
@@ -150,15 +150,15 @@ declare module "@spreadsheet" {
         | RemoveGlobalFilterCommand
         | MoveGlobalFilterCommand;
 
-    export type AllCoreCommand = OdooCoreCommand | CoreCommand;
+    export type AllCoreCommand = EdenCoreCommand | CoreCommand;
 
-    type OdooLocalCommand =
+    type EdenLocalCommand =
         | RefreshAllDataSourcesCommand
         | SetGlobalFilterValueCommand
         | SetManyGlobalFilterValueCommand
         | ClearGlobalFilterValueCommand;
 
-    type OdooCommand = OdooCoreCommand | OdooLocalCommand;
+    type EdenCommand = EdenCoreCommand | EdenLocalCommand;
 
-    export type AllCommand = OdooCommand | Command;
+    export type AllCommand = EdenCommand | Command;
 }

@@ -1,7 +1,7 @@
 import { HighlightText } from "../highlight_text/highlight_text";
 import { escapeRegExp } from "@web/core/utils/strings";
 
-import { Component, useState, useRef, useEffect, onWillRender, useChildSubEnv } from "@odoo/owl";
+import { Component, useState, useRef, useEffect, onWillRender, useChildSubEnv } from "@eden/owl";
 
 export class SettingsBlock extends Component {
     static template = "web.SettingsBlock";

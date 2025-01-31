@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <!-- Product Tags -->
     <record id="product_tag_form_view_inherit_website_sale" model="ir.ui.view">
@@ -44,4 +44,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

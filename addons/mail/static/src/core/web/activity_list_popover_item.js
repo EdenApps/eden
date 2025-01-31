@@ -3,7 +3,7 @@ import { ActivityMailTemplate } from "@mail/core/web/activity_mail_template";
 import { ActivityMarkAsDone } from "@mail/core/web/activity_markasdone_popover";
 import { computeDelay } from "@mail/utils/common/dates";
 
-import { Component, useState } from "@odoo/owl";
+import { Component, useState } from "@eden/owl";
 
 import { _t } from "@web/core/l10n/translation";
 import { url } from "@web/core/utils/urls";

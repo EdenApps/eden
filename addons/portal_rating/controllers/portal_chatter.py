@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.osv import expression
+from eden.osv import expression
 
-from odoo.addons.portal.controllers import mail
+from eden.addons.portal.controllers import mail
 
 
 class PortalChatter(mail.PortalChatter):

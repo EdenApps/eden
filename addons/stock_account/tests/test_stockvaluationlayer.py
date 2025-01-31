@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 """ Implementation of "INVENTORY VALUATION TESTS (With valuation layers)" spreadsheet. """
 
-from odoo import Command
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.addons.stock_account.tests.test_stockvaluation import _create_accounting_data
-from odoo.exceptions import ValidationError
-from odoo.tests import Form, tagged
-from odoo.tests.common import TransactionCase
+from eden import Command
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
+from eden.addons.stock_account.tests.test_stockvaluation import _create_accounting_data
+from eden.exceptions import ValidationError
+from eden.tests import Form, tagged
+from eden.tests.common import TransactionCase
 
 
 class TestStockValuationCommon(TransactionCase):
@@ -345,7 +345,7 @@ class TestStockValuationStandard(TestStockValuationCommon):
 
     def test_currency_precision_and_standard_svl_value(self):
         currency = self.env['res.currency'].create({
-            'name': 'Odoo',
+            'name': 'Eden',
             'symbol': 'O',
             'rounding': 1,
         })
@@ -844,7 +844,7 @@ class TestStockValuationFIFO(TestStockValuationCommon):
 
     def test_currency_precision_and_fifo_svl_value(self):
         currency = self.env['res.currency'].create({
-            'name': 'Odoo',
+            'name': 'Eden',
             'symbol': 'O',
             'rounding': 1,
         })

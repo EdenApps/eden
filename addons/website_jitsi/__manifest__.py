@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 
 {
@@ -7,7 +7,7 @@
     'category': 'Hidden',
     'version': '1.0',
     "summary": "Create Jitsi room on website.",
-    'website': 'https://www.odoo.com/app/events',
+    'website': 'https://www.edencloud.us/app/events',
     "description": "Create Jitsi room on website.",
     "depends": [
         "website"

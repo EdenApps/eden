@@ -1,5 +1,5 @@
-from odoo import fields
-from odoo.addons.website_forum.tests.common import TestForumCommon
+from eden import fields
+from eden.addons.website_forum.tests.common import TestForumCommon
 
 
 class TestForumPost(TestForumCommon):

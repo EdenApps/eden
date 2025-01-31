@@ -1,6 +1,6 @@
 import { EmojisFieldCommon } from "@mail/views/web/fields/emojis_field_common/emojis_field_common";
 
-import { useRef } from "@odoo/owl";
+import { useRef } from "@eden/owl";
 
 import { registry } from "@web/core/registry";
 import { CharField, charField } from "@web/views/fields/char/char_field";

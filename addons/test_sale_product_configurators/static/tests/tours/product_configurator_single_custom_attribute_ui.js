@@ -1,13 +1,13 @@
-/** @odoo-module **/
+/** @eden-module **/
 
-import { queryOne } from "@odoo/hoot-dom";
+import { queryOne } from "@eden/hoot-dom";
 import { registry } from "@web/core/registry";
 import { stepUtils } from "@web_tour/tour_service/tour_utils";
 import configuratorTourUtils from "@sale/js/tours/product_configurator_tour_utils";
 import tourUtils from "@sale/js/tours/tour_utils";
 
 registry.category("web_tour.tours").add('sale_product_configurator_single_custom_attribute_tour', {
-    url: '/odoo',
+    url: '/eden',
     steps: () => [
         ...stepUtils.goToAppSteps("sale.sale_menu_root", "Go to the Sales App"),
         ...tourUtils.createNewSalesOrder(),

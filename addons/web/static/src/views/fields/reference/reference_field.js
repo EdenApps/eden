@@ -3,7 +3,7 @@ import { registry } from "@web/core/registry";
 import { useRecordObserver } from "@web/model/relational_model/utils";
 import { many2OneField, Many2OneField } from "../many2one/many2one_field";
 
-import { Component, useState } from "@odoo/owl";
+import { Component, useState } from "@eden/owl";
 
 /**
  * @typedef ReferenceValue

@@ -1,8 +1,8 @@
-/* @odoo-module */
+/* @eden-module */
 
 import { threadActionsRegistry } from "@mail/core/common/thread_actions";
 import { _t } from "@web/core/l10n/translation";
-import { useComponent } from "@odoo/owl";
+import { useComponent } from "@eden/owl";
 import { useService } from "@web/core/utils/hooks";
 
 threadActionsRegistry.add("open-hr-profile", {

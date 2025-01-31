@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { _t } from "@web/core/l10n/translation";
 import { rpc } from "@web/core/network/rpc";
@@ -10,7 +10,7 @@ import { WebsiteDialog } from "@website/components/dialog/dialog";
 import { AddPageDialog } from "@website/components/dialog/add_page_dialog";
 import { useHotkey } from "@web/core/hotkeys/hotkey_hook";
 import { sprintf } from '@web/core/utils/strings';
-import { Component, xml, useState, onWillStart } from "@odoo/owl";
+import { Component, xml, useState, onWillStart } from "@eden/owl";
 
 export const MODULE_STATUS = {
     NOT_INSTALLED: 'NOT_INSTALLED',
@@ -208,7 +208,7 @@ export class NewContentModal extends Component {
             // A reload is needed after installing a new module, to instantiate
             // a NewContentModal with patches from the installed module.
             this.website.prepareOutLoader();
-            redirect(`/odoo/action-website.website_preview?website_id=${id}&path=${encodeURIComponent(url.toString())}&display_new_content=true`);
+            redirect(`/eden/action-website.website_preview?website_id=${id}&path=${encodeURIComponent(url.toString())}&display_new_content=true`);
         }
     }
 

@@ -1,4 +1,4 @@
-import { Component, useState, onWillUnmount, status } from "@odoo/owl";
+import { Component, useState, onWillUnmount, status } from "@eden/owl";
 import { useService } from "@web/core/utils/hooks";
 import { _t } from "@web/core/l10n/translation";
 import { browser } from "@web/core/browser/browser";

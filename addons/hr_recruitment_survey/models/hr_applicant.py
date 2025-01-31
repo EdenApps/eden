@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import timedelta
-from odoo import fields, models, _
-from odoo.exceptions import UserError
+from eden import fields, models, _
+from eden.exceptions import UserError
 
 
 class Applicant(models.Model):

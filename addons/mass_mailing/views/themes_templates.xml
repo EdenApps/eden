@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <!-- Theme "Basic" template -->
     <template id="theme_basic_template">
         <div class="o_mail_no_options">
@@ -63,4 +63,4 @@
         </div>
         <t t-call="mass_mailing.s_mail_block_footer_social_left"/>
     </template>
-</odoo>
+</eden>

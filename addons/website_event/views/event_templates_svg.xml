@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="website_event.event_empty_events_svg">
         <svg width="211" height="179" viewBox="0 0 211 179" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g fill="var(--o-color-1, #000)">
@@ -46,4 +46,4 @@
             </g>
         </svg>
     </template>
-</odoo>
+</eden>

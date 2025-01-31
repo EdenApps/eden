@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import timedelta
 
-from odoo.addons.mrp.tests.common import TestMrpCommon
-from odoo.addons.stock_account.tests.test_account_move import TestAccountMoveStockCommon
-from odoo.tests import Form, tagged
-from odoo.tests.common import new_test_user
-from odoo import fields, Command
+from eden.addons.mrp.tests.common import TestMrpCommon
+from eden.addons.stock_account.tests.test_account_move import TestAccountMoveStockCommon
+from eden.tests import Form, tagged
+from eden.tests.common import new_test_user
+from eden import fields, Command
 
 
 class TestMrpAccount(TestMrpCommon):

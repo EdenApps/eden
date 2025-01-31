@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="event_track_main" name="Event Exhibitor">
     <t t-call="website_event.layout">
@@ -247,4 +247,4 @@
     </div>
 </template>
 
-</odoo>
+</eden>

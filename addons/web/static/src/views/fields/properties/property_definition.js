@@ -13,7 +13,7 @@ import { PropertyTags } from "./property_tags";
 import { SelectCreateDialog } from "@web/views/view_dialogs/select_create_dialog";
 import { uuid } from "../../utils";
 
-import { Component, useState, onWillUpdateProps, useEffect, useRef } from "@odoo/owl";
+import { Component, useState, onWillUpdateProps, useEffect, useRef } from "@eden/owl";
 
 export class PropertyDefinition extends Component {
     static template = "web.PropertyDefinition";

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="0">
 
         <!-- Work Entry Type -->
@@ -51,4 +51,4 @@
         </record>
 
     </data>
-</odoo>
+</eden>

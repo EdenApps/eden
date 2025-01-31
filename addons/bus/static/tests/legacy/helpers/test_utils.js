@@ -1,4 +1,4 @@
-/** @odoo-module alias=@bus/../tests/helpers/test_utils default=false */
+/** @eden-module alias=@bus/../tests/helpers/test_utils default=false */
 
 import { busParametersService } from "@bus/bus_parameters_service";
 import { busService } from "@bus/services/bus_service";

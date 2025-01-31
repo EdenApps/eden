@@ -2,7 +2,7 @@ import { registry } from "@web/core/registry";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { ActionMenus } from "@web/search/action_menus/action_menus";
 
-import { onWillStart, onWillUpdateProps } from "@odoo/owl";
+import { onWillStart, onWillUpdateProps } from "@eden/owl";
 
 const cogMenuRegistry = registry.category("cogMenu");
 

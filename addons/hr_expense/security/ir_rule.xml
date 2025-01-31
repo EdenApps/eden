@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<eden noupdate="1">
 
         <record id="ir_rule_hr_expense_manager" model="ir.rule">
             <field name="name">Manager Expense</field>
@@ -88,4 +88,4 @@
             <field name="groups" eval="[(4, ref('hr_expense.group_hr_expense_team_approver'))]"/>
         </record>
 
-</odoo>
+</eden>

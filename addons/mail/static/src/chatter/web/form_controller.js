@@ -2,7 +2,7 @@ import { useService } from "@web/core/utils/hooks";
 import { patch } from "@web/core/utils/patch";
 import { FormController } from "@web/views/form/form_controller";
 import { x2ManyCommands } from "@web/core/orm_service";
-import { useSubEnv } from "@odoo/owl";
+import { useSubEnv } from "@eden/owl";
 
 patch(FormController.prototype, {
     setup() {

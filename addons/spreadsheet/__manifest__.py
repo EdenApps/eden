@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 {
     'name': "Spreadsheet",
     'version': '1.0',
@@ -54,7 +54,7 @@
             'web/static/src/libs/fontawesome/css/font-awesome.css',
             'web/static/lib/owl/owl.js',
             'web/static/lib/luxon/luxon.js',
-            'web/static/lib/owl/odoo_module.js',
+            'web/static/lib/owl/eden_module.js',
             'web/static/src/core/utils/**/*.js',
             'web/static/src/core/browser/browser.js',
             'web/static/src/core/browser/feature_detection.js',
@@ -72,9 +72,9 @@
             'spreadsheet/static/src/o_spreadsheet/icons.xml',
             'spreadsheet/static/src/o_spreadsheet/o_spreadsheet_extended.scss',
             'spreadsheet/static/src/o_spreadsheet/migration.js',
-            'spreadsheet/static/src/helpers/odoo_functions_helpers.js',
+            'spreadsheet/static/src/helpers/eden_functions_helpers.js',
             'spreadsheet/static/src/pivot/pivot_helpers.js',
-            'spreadsheet/static/src/o_spreadsheet/odoo_module.js',
+            'spreadsheet/static/src/o_spreadsheet/eden_module.js',
             'spreadsheet/static/src/helpers/helpers.js',
             'spreadsheet/static/src/public_readonly_app/**/*.xml',
             'spreadsheet/static/src/public_readonly_app/**/*.scss',

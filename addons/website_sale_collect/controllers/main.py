@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import _
-from odoo.http import request
+from eden import _
+from eden.http import request
 
-from odoo.addons.website_sale.controllers.main import WebsiteSale
+from eden.addons.website_sale.controllers.main import WebsiteSale
 
 
 class WebsiteSaleCollect(WebsiteSale):

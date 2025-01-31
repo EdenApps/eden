@@ -1,6 +1,6 @@
 /** @ts-check */
 
-import { Component, onWillUpdateProps } from "@odoo/owl";
+import { Component, onWillUpdateProps } from "@eden/owl";
 import { DateTimeInput } from "@web/core/datetime/datetime_input";
 import { monthsOptions } from "@spreadsheet/assets_backend/constants";
 import { QUARTER_OPTIONS } from "@web/search/utils/dates";

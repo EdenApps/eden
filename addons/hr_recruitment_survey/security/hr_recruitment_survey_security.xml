@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
     <!--
         Specific survey access rules for recruitment
@@ -185,4 +185,4 @@
             <field name="perm_create" eval="1"/>
         </record>
     </data>
-</odoo>
+</eden>

@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 from dateutil import relativedelta
 
-from odoo import _, api, Command, fields, models, SUPERUSER_ID
-from odoo.tools import str2bool
+from eden import _, api, Command, fields, models, SUPERUSER_ID
+from eden.tools import str2bool
 
 
 class PaymentTransaction(models.Model):

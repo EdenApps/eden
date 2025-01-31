@@ -9,7 +9,7 @@ import {
     startServer,
     step,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 
 import { getOrigin } from "@web/core/utils/urls";
 
@@ -79,7 +79,7 @@ test("link-type attachment should have open button instead of download button", 
             name: "url.example",
             mimetype: "text/plain",
             type: "url",
-            url: "https://www.odoo.com",
+            url: "https://www.edencloud.us",
         },
         {
             name: "test.txt",

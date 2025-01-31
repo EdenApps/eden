@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { _t } from "@web/core/l10n/translation";
 import { debounce as debounceFn } from "@web/core/utils/timing";
@@ -31,7 +31,7 @@ publicWidget.registry.SaleOrderPortalReorderWidget = publicWidget.Widget.extend(
 
 import { useService } from "@web/core/utils/hooks";
 import { Dialog } from "@web/core/dialog/dialog";
-import { Component, onWillStart } from "@odoo/owl";
+import { Component, onWillStart } from "@eden/owl";
 
 // Reorder Dialog
 

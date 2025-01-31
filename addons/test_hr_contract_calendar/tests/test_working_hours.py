@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-from odoo.tests import tagged
+# Part of Eden. See LICENSE file for full copyright and licensing details.
+from eden.tests import tagged
 from datetime import datetime
-from odoo.addons.test_hr_contract_calendar.tests.common import TestHrContractCalendarCommon
+from eden.addons.test_hr_contract_calendar.tests.common import TestHrContractCalendarCommon
 
 
 @tagged('work_hours')

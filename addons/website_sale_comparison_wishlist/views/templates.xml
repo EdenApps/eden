@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="product_wishlist" inherit_id="website_sale_wishlist.product_wishlist">
         <xpath expr="//button[hasclass('o_wish_rm')]" position="after">
             <t t-set="categories" t-value="wish.product_id.product_tmpl_id.valid_product_template_attribute_line_ids._prepare_categories_for_display()"/>
@@ -13,4 +13,4 @@
             </button>
         </xpath>
     </template>
-</odoo>
+</eden>

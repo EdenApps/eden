@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-from odoo import api, fields, models, _
+# Part of Eden. See LICENSE file for full copyright and licensing details.
+from eden import api, fields, models, _
 
 
 class PortalShare(models.TransientModel):

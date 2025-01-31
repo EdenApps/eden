@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.mail_group.tests.common import TestMailListCommon
-from odoo.exceptions import ValidationError, AccessError
-from odoo.tests.common import tagged, users
-from odoo.tools import mute_logger
-from odoo.tools.mail import append_content_to_html
+from eden.addons.mail.tests.common import mail_new_test_user
+from eden.addons.mail_group.tests.common import TestMailListCommon
+from eden.exceptions import ValidationError, AccessError
+from eden.tests.common import tagged, users
+from eden.tools import mute_logger
+from eden.tools.mail import append_content_to_html
 
 
 @tagged("mail_group")
@@ -154,7 +154,7 @@ class TestMailGroup(TestMailListCommon):
         self.assertEqual(member.email, 'new_portal_email@example.com', 'Should have change the email of the partner')
         self.assertEqual(member.email_normalized, 'new_portal_email@example.com')
 
-    @mute_logger('odoo.addons.base.models.ir_rule', 'odoo.addons.base.models.ir_model')
+    @mute_logger('eden.addons.base.models.ir_rule', 'eden.addons.base.models.ir_model')
     @users('employee')
     def test_mail_group_access_mode_groups(self):
         test_group = self.env.ref('base.group_partner_manager')
@@ -192,7 +192,7 @@ class TestMailGroup(TestMailListCommon):
         with self.assertRaises(AccessError):
             mail_group.with_user(public_user).check_access('write')
 
-    @mute_logger('odoo.addons.base.models.ir_rule', 'odoo.addons.base.models.ir_model')
+    @mute_logger('eden.addons.base.models.ir_rule', 'eden.addons.base.models.ir_model')
     @users('employee')
     def test_mail_group_access_mode_public(self):
         mail_group = self.env['mail.group'].browse(self.test_group.ids)
@@ -210,7 +210,7 @@ class TestMailGroup(TestMailListCommon):
         mail_group.moderator_ids |= self.user_employee_2
         mail_group.with_user(self.user_employee_2).check_access('write')
 
-    @mute_logger('odoo.addons.base.models.ir_rule', 'odoo.addons.base.models.ir_model')
+    @mute_logger('eden.addons.base.models.ir_rule', 'eden.addons.base.models.ir_model')
     @users('employee')
     def test_mail_group_access_mode_members(self):
         mail_group = self.env['mail.group'].browse(self.test_group.ids)
@@ -238,7 +238,7 @@ class TestMailGroup(TestMailListCommon):
         mail_group.moderator_ids |= self.user_employee_2
         mail_group.with_user(self.user_employee_2).check_access('write')
 
-    @mute_logger('odoo.addons.base.models.ir_rule', 'odoo.addons.base.models.ir_model')
+    @mute_logger('eden.addons.base.models.ir_rule', 'eden.addons.base.models.ir_model')
     @users('employee')
     def test_mail_group_member_security(self):
         member = self.env['mail.group.member'].browse(self.test_group_member_1.ids)

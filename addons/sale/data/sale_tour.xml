@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="sale_tour" model="web_tour.tour">
         <field name="name">sale_tour</field>
         <field name="sequence">20</field>
@@ -7,4 +7,4 @@
             <b>Congratulations</b>, your first quotation is sent!<br>Check your email to validate the quote.
         ]]></field>
     </record>
-</odoo>
+</eden>

@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from functools import partial
 
-from odoo.http import request
+from eden.http import request
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.website_sale.controllers.delivery import Delivery
+from eden.addons.payment import utils as payment_utils
+from eden.addons.website_sale.controllers.delivery import Delivery
 
 
 class WebsiteSaleLoyaltyDelivery(Delivery):

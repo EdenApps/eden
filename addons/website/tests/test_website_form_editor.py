@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.http import request
-from odoo.addons.base.tests.common import HttpCaseWithUserPortal
-from odoo.addons.website.controllers.form import WebsiteForm
-from odoo.addons.website.tools import MockRequest
-from odoo.tests.common import tagged, TransactionCase
+from eden.http import request
+from eden.addons.base.tests.common import HttpCaseWithUserPortal
+from eden.addons.website.controllers.form import WebsiteForm
+from eden.addons.website.tools import MockRequest
+from eden.tests.common import tagged, TransactionCase
 
 
 @tagged('post_install', '-at_install')
@@ -24,7 +24,7 @@ class TestWebsiteFormEditor(HttpCaseWithUserPortal):
         self.start_tour('/', 'website_form_editor_tour_results', login="admin")
 
     def test_website_form_contact_us_edition_with_email(self):
-        self.start_tour('/odoo', 'website_form_contactus_edition_with_email', login="admin")
+        self.start_tour('/eden', 'website_form_contactus_edition_with_email', login="admin")
         self.start_tour('/contactus', 'website_form_contactus_submit', login="portal")
         mail = self.env['mail.mail'].search([], order='id desc', limit=1)
         self.assertEqual(
@@ -34,7 +34,7 @@ class TestWebsiteFormEditor(HttpCaseWithUserPortal):
 
     def test_website_form_contact_us_edition_no_email(self):
         self.env.company.email = 'website_form_contactus_edition_no_email@mail.com'
-        self.start_tour('/odoo', 'website_form_contactus_edition_no_email', login="admin")
+        self.start_tour('/eden', 'website_form_contactus_edition_no_email', login="admin")
         self.start_tour('/contactus', 'website_form_contactus_submit', login="portal")
         mail = self.env['mail.mail'].search([], order='id desc', limit=1)
         self.assertEqual(
@@ -75,7 +75,7 @@ class TestWebsiteForm(TransactionCase):
             WebsiteFormController.insert_record(
                 request,
                 self.env['ir.model'].search([('model', '=', 'mail.mail')]),
-                {'email_from': 'odoobot@example.com', 'subject': 'John <b>Smith</b>', 'email_to': 'company@company.company'},
+                {'email_from': 'edenbot@example.com', 'subject': 'John <b>Smith</b>', 'email_to': 'company@company.company'},
                 "John <b>Smith</b>",
             )
             mail = self.env['mail.mail'].search([], order='id desc', limit=1)

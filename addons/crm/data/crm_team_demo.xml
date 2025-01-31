@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <record id="sales_team.team_sales_department" model="crm.team" forcecreate="False">
             <field name="assignment_domain">[['probability', '>=', 20]]</field>
@@ -10,4 +10,4 @@
             <field name="assignment_domain">[['phone', '!=', False]]</field>
         </record>
     </data>
-</odoo>
+</eden>

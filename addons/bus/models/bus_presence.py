@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from datetime import timedelta
 
-from odoo import api, fields, models
-from odoo import tools
-from odoo.service.model import PG_CONCURRENCY_EXCEPTIONS_TO_RETRY
+from eden import api, fields, models
+from eden import tools
+from eden.service.model import PG_CONCURRENCY_EXCEPTIONS_TO_RETRY
 
 UPDATE_PRESENCE_DELAY = 60
 DISCONNECTION_TIMER = UPDATE_PRESENCE_DELAY + 5
@@ -58,7 +58,7 @@ class BusPresence(models.Model):
         try:
             # Hide transaction serialization errors, which can be ignored, the presence update is not essential
             # The errors are supposed from presence.write(...) call only
-            with tools.mute_logger('odoo.sql_db'):
+            with tools.mute_logger('eden.sql_db'):
                 self._update_presence(inactivity_period=inactivity_period, identity_field=identity_field, identity_value=identity_value)
                 # commit on success
                 self.env.cr.commit()

@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { _t } from "@web/core/l10n/translation";
 import { browser } from '@web/core/browser/browser';
@@ -27,7 +27,7 @@ import {
     useEffect,
     useState,
     useExternalListener,
-} from "@odoo/owl";
+} from "@eden/owl";
 import { getScrollingElement } from "@web/core/utils/scrolling";
 
 class BlockPreview extends Component {
@@ -80,7 +80,7 @@ export class WebsitePreview extends Component {
             this.backendWebsiteId = unslugHtmlDataObject(backendWebsiteRepr).id;
 
             const encodedPath = encodeURIComponent(this.path);
-            if (!session.website_bypass_domain_redirect // Used by the Odoo support (bugs to be expected)
+            if (!session.website_bypass_domain_redirect // Used by the Eden support (bugs to be expected)
                     && this.websiteDomain
                     && !wUtils.isHTTPSorNakedDomainRedirection(this.websiteDomain, window.location.origin)) {
                 // The website domain might be the naked one while the naked one
@@ -98,7 +98,7 @@ export class WebsitePreview extends Component {
                     showSecondaryButton: false,
                 }, {
                     onClose: () => {
-                        window.location.href = `${encodeURI(this.websiteDomain)}/odoo/action-website.website_preview?path=${encodedPath}&website_id=${encodeURIComponent(this.websiteId)}`;
+                        window.location.href = `${encodeURI(this.websiteDomain)}/eden/action-website.website_preview?path=${encodedPath}&website_id=${encodeURIComponent(this.websiteId)}`;
                     }
                 });
             } else {
@@ -145,9 +145,9 @@ export class WebsitePreview extends Component {
             this.websiteService.blockPreview(true, 'load-iframe');
             this.iframe.el.addEventListener('load', () => this.websiteService.unblockPreview('load-iframe'), { once: true });
             // For a frontend page, it is better to use the
-            // OdooFrameContentLoaded event to unblock the iframe, as it is
+            // EdenFrameContentLoaded event to unblock the iframe, as it is
             // triggered faster than the load event.
-            this.iframe.el.addEventListener('OdooFrameContentLoaded', () => this.websiteService.unblockPreview('load-iframe'), { once: true });
+            this.iframe.el.addEventListener('EdenFrameContentLoaded', () => this.websiteService.unblockPreview('load-iframe'), { once: true });
         });
 
         onWillUnmount(() => {
@@ -160,7 +160,7 @@ export class WebsitePreview extends Component {
         });
 
         /**
-         * This removes the 'Odoo' prefix of the title service to display
+         * This removes the 'Eden' prefix of the title service to display
          * cleanly the frontend's document title (see _replaceBrowserUrl), and
          * replaces the backend favicon with the frontend's one.
          * These changes are reverted when the component is unmounted.
@@ -192,8 +192,8 @@ export class WebsitePreview extends Component {
 
         // Toggle the 'o_is_mobile' class according to 'isMobile' on iframe load
         useEffect(() => {
-            this.iframe.el.addEventListener('OdooFrameContentLoaded', toggleIsMobile);
-            return () => this.iframe.el.removeEventListener('OdooFrameContentLoaded', toggleIsMobile);
+            this.iframe.el.addEventListener('EdenFrameContentLoaded', toggleIsMobile);
+            return () => this.iframe.el.removeEventListener('EdenFrameContentLoaded', toggleIsMobile);
         }, () => []);
     }
 
@@ -253,7 +253,7 @@ export class WebsitePreview extends Component {
     reloadIframe(url) {
         return new Promise((resolve, reject) => {
             this.websiteService.websiteRootInstance = undefined;
-            this.iframe.el.addEventListener('OdooFrameContentLoaded', resolve, { once: true });
+            this.iframe.el.addEventListener('EdenFrameContentLoaded', resolve, { once: true });
             if (url) {
                 this.iframe.el.contentWindow.location = url;
             } else {
@@ -301,12 +301,12 @@ export class WebsitePreview extends Component {
      * @private
      */
     _isTopWindowURL({ host, pathname }) {
-        const backendRoutes = ['/web', '/web/session/logout', '/odoo'];
+        const backendRoutes = ['/web', '/web/session/logout', '/eden'];
         return host !== window.location.host
             || (pathname
                 && (backendRoutes.includes(pathname)
                     || pathname.startsWith('/@/')
-                    || pathname.startsWith('/odoo/')
+                    || pathname.startsWith('/eden/')
                     || pathname.startsWith('/web/content/')
                     // This is defined here to avoid creating a
                     // website_documents module for just one patch.
@@ -314,7 +314,7 @@ export class WebsitePreview extends Component {
     }
 
     /**
-     * This replaces the browser url (/odoo/action-website...) with
+     * This replaces the browser url (/eden/action-website...) with
      * the iframe's url (it is clearer for the user).
      */
     _replaceBrowserUrl() {
@@ -324,7 +324,7 @@ export class WebsitePreview extends Component {
             // loads "about:blank"), do not push that into the history
             // state as that could prevent the user from going back and could
             // trigger a traceback.
-            history.replaceState(history.state, document.title, '/odoo');
+            history.replaceState(history.state, document.title, '/eden');
             return;
         }
         const currentTitle = this.iframe.el.contentDocument.title;
@@ -539,7 +539,7 @@ export class WebsitePreview extends Component {
         ev.preventDefault();
         const path = this.websiteService.contentWindow.location;
         const debugMode = this.env.debug ? `&debug=${this.env.debug}` : "";
-        redirect(`/odoo/action-website.website_preview?path=${encodeURIComponent(path)}${debugMode}`);
+        redirect(`/eden/action-website.website_preview?path=${encodeURIComponent(path)}${debugMode}`);
     }
 }
 

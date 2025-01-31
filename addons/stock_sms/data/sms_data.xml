@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<odoo>
+<eden>
     <data noupdate="1">
         <record id="sms_template_data_stock_delivery" model="sms.template">
             <field name="name">Delivery: Send by SMS Text Message</field>
@@ -9,4 +9,4 @@
             </field>
         </record>
     </data>
-</odoo>
+</eden>

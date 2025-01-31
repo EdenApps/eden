@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import json
 from uuid import uuid4
 
-from odoo.tests import common
+from eden.tests import common
 
 
 class TestSessionInfo(common.HttpCase):

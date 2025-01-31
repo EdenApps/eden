@@ -1,10 +1,10 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { click, queryAllTexts, queryAllValues } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@eden/hoot";
+import { click, queryAllTexts, queryAllValues } from "@eden/hoot-dom";
+import { animationFrame } from "@eden/hoot-mock";
 import { defineSpreadsheetModels } from "@spreadsheet/../tests/helpers/data";
 import { contains, makeMockEnv, mountWithCleanup, onRpc } from "@web/../tests/web_test_helpers";
 
-import { Model } from "@odoo/o-spreadsheet";
+import { Model } from "@eden/o-spreadsheet";
 import {
     addGlobalFilter,
     setCellContent,
@@ -14,7 +14,7 @@ import { toRangeData } from "@spreadsheet/../tests/helpers/zones";
 import { FilterValue } from "@spreadsheet/global_filters/components/filter_value/filter_value";
 import { user } from "@web/core/user";
 
-import { OdooDataProvider } from "@spreadsheet/data_sources/odoo_data_provider";
+import { EdenDataProvider } from "@spreadsheet/data_sources/eden_data_provider";
 
 describe.current.tags("headless");
 defineSpreadsheetModels();
@@ -29,7 +29,7 @@ async function mountFilterValueComponent(props) {
 
 test("basic text filter", async function () {
     const env = await makeMockEnv();
-    const model = new Model({}, { custom: { odooDataProvider: new OdooDataProvider(env) } });
+    const model = new Model({}, { custom: { edenDataProvider: new EdenDataProvider(env) } });
     await addGlobalFilter(model, {
         id: "42",
         type: "text",
@@ -42,7 +42,7 @@ test("basic text filter", async function () {
 
 test("text filter with range", async function () {
     const env = await makeMockEnv();
-    const model = new Model({}, { custom: { odooDataProvider: new OdooDataProvider(env) } });
+    const model = new Model({}, { custom: { edenDataProvider: new EdenDataProvider(env) } });
     const sheetId = model.getters.getActiveSheetId();
     await addGlobalFilter(model, {
         id: "42",
@@ -70,7 +70,7 @@ test("relational filter with domain", async function () {
         expect(kwargs.args).toEqual(["&", ["display_name", "=", "Bob"], "!", ["id", "in", []]]);
     });
     const env = await makeMockEnv();
-    const model = new Model({}, { custom: { odooDataProvider: new OdooDataProvider(env) } });
+    const model = new Model({}, { custom: { edenDataProvider: new EdenDataProvider(env) } });
     await addGlobalFilter(model, {
         id: "42",
         type: "relation",
@@ -95,7 +95,7 @@ test("relational filter with a contextual domain", async function () {
         ]);
     });
     const env = await makeMockEnv();
-    const model = new Model({}, { custom: { odooDataProvider: new OdooDataProvider(env) } });
+    const model = new Model({}, { custom: { edenDataProvider: new EdenDataProvider(env) } });
     await addGlobalFilter(model, {
         id: "42",
         type: "relation",

@@ -1,6 +1,6 @@
 import { Record } from "./record";
 import { IS_DELETED_SYM, STORE_SYM } from "./misc";
-import { reactive, toRaw } from "@odoo/owl";
+import { reactive, toRaw } from "@eden/owl";
 
 /** @typedef {import("./record_list").RecordList} RecordList */
 

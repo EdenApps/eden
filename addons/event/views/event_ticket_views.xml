@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo><data>
+<eden><data>
 
 	<!-- EVENT.TYPE.TICKET -->
 	<record id="event_type_ticket_view_tree_from_type" model="ir.ui.view">
@@ -169,4 +169,4 @@
             </form>
         </field>
     </record>
-</data></odoo>
+</data></eden>

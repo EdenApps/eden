@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo><data>
+<eden><data>
 
     <menuitem id="event_quiz_menu"
         name="Quizzes"
@@ -14,4 +14,4 @@
         groups="base.group_no_one"
         sequence="55"/>
 
-</data></odoo>
+</data></eden>

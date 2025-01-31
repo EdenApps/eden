@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="view_order_line_tree_with_create" model="ir.ui.view">
         <field name="name">sale.order.line.list.with.create</field>
         <field name="model">sale.order.line</field>
@@ -33,4 +33,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

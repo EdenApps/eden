@@ -1,6 +1,6 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from . import test_odoobot
+from . import test_edenbot
 from . import test_mail_performance
 from . import test_mail_thread_internals
 from . import test_mass_mailing

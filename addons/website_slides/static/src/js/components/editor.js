@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { WebsiteEditorComponent } from '@website/components/editor/editor';
 import { WebsiteTranslator } from '@website/components/translator/translator';

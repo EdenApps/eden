@@ -1,20 +1,20 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 from unittest.mock import patch
 
-import odoo.tests
-from odoo import Command
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.pos_online_payment.tests.online_payment_common import OnlinePaymentCommon
-from odoo.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
-from odoo.addons.pos_restaurant.tests.test_frontend import TestFrontendCommon
+import eden.tests
+from eden import Command
+from eden.addons.mail.tests.common import mail_new_test_user
+from eden.addons.pos_online_payment.tests.online_payment_common import OnlinePaymentCommon
+from eden.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
+from eden.addons.pos_restaurant.tests.test_frontend import TestFrontendCommon
 
 
-@odoo.tests.tagged("post_install", "-at_install")
+@eden.tests.tagged("post_install", "-at_install")
 class TestSelfOrderFrontendMobile(SelfOrderCommonTest):
     pass
 
-@odoo.tests.tagged("post_install", "-at_install")
+@eden.tests.tagged("post_install", "-at_install")
 class TestUi(TestFrontendCommon, OnlinePaymentCommon):
     @classmethod
     def setUpClass(cls):

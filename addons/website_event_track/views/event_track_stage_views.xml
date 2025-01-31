@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
 
     <!-- EVENTS TRACK STAGES-->
     <record id="event_track_stage_view_search" model="ir.ui.view">
@@ -103,4 +103,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

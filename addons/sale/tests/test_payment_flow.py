@@ -1,16 +1,16 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from unittest.mock import ANY, patch
 
-from odoo.exceptions import AccessError
-from odoo.tests import JsonRpcException, tagged
-from odoo.tools import mute_logger
+from eden.exceptions import AccessError
+from eden.tests import JsonRpcException, tagged
+from eden.tools import mute_logger
 
-from odoo.addons.account_payment.tests.common import AccountPaymentCommon
-from odoo.addons.payment.tests.http_common import PaymentHttpCommon
-from odoo.addons.portal.controllers.portal import CustomerPortal
-from odoo.addons.sale.controllers.portal import PaymentPortal
-from odoo.addons.sale.tests.common import SaleCommon
+from eden.addons.account_payment.tests.common import AccountPaymentCommon
+from eden.addons.payment.tests.http_common import PaymentHttpCommon
+from eden.addons.portal.controllers.portal import CustomerPortal
+from eden.addons.sale.controllers.portal import PaymentPortal
+from eden.addons.sale.tests.common import SaleCommon
 
 
 @tagged('-at_install', 'post_install')
@@ -35,7 +35,7 @@ class TestSalePayment(AccountPaymentCommon, SaleCommon, PaymentHttpCommon):
         route_values['sale_order_id'] = self.sale_order.id
 
         with patch(
-            'odoo.addons.payment.controllers.portal.PaymentPortal'
+            'eden.addons.payment.controllers.portal.PaymentPortal'
             '._compute_show_tokenize_input_mapping'
         ) as patched:
             tx_context = self._get_portal_pay_context(**route_values)
@@ -56,7 +56,7 @@ class TestSalePayment(AccountPaymentCommon, SaleCommon, PaymentHttpCommon):
             'landing_route': tx_context['landing_route'],
             'access_token': tx_context['access_token'],
         }
-        with mute_logger('odoo.addons.payment.models.payment_transaction'):
+        with mute_logger('eden.addons.payment.models.payment_transaction'):
             processing_values = self._get_processing_values(
                 tx_route=tx_context['transaction_route'], **tx_route_values
             )
@@ -112,7 +112,7 @@ class TestSalePayment(AccountPaymentCommon, SaleCommon, PaymentHttpCommon):
             'landing_route': tx_context['landing_route'],
             'access_token': tx_context['access_token'],
         }
-        with mute_logger('odoo.addons.payment.models.payment_transaction'):
+        with mute_logger('eden.addons.payment.models.payment_transaction'):
             processing_values = self._get_processing_values(
                 tx_route=tx_context['transaction_route'], **tx_route_values
             )
@@ -129,7 +129,7 @@ class TestSalePayment(AccountPaymentCommon, SaleCommon, PaymentHttpCommon):
 
         self.sale_order.require_payment = True
         self.assertTrue(self.sale_order._has_to_be_paid())
-        with mute_logger('odoo.addons.sale.models.payment_transaction'):
+        with mute_logger('eden.addons.sale.models.payment_transaction'):
             tx_sudo._post_process()
         self.assertEqual(self.sale_order.state, 'draft') # Only a partial amount was paid
 
@@ -153,7 +153,7 @@ class TestSalePayment(AccountPaymentCommon, SaleCommon, PaymentHttpCommon):
             'landing_route': tx_context['landing_route'],
             'access_token': tx_context['access_token'],
         }
-        with mute_logger('odoo.addons.payment.models.payment_transaction'):
+        with mute_logger('eden.addons.payment.models.payment_transaction'):
             processing_values = self._get_processing_values(
                 tx_route=tx_context['transaction_route'], **tx_route_values
             )
@@ -192,14 +192,14 @@ class TestSalePayment(AccountPaymentCommon, SaleCommon, PaymentHttpCommon):
             'landing_route': tx_context['landing_route'],
             'access_token': tx_context['access_token'],
         }
-        with mute_logger('odoo.addons.payment.models.payment_transaction'):
+        with mute_logger('eden.addons.payment.models.payment_transaction'):
             processing_values = self._get_processing_values(
                 tx_route=tx_context['transaction_route'], **tx_route_values
             )
         tx_sudo = self._get_tx(processing_values['reference'])
 
         tx_sudo._set_done()
-        with mute_logger('odoo.addons.sale.models.payment_transaction'):
+        with mute_logger('eden.addons.sale.models.payment_transaction'):
             tx_sudo._post_process()
 
         self.assertEqual(self.sale_order.state, 'draft', 'a partial transaction with automatic invoice and invoice_policy = delivery should not validate a quote')
@@ -233,7 +233,7 @@ class TestSalePayment(AccountPaymentCommon, SaleCommon, PaymentHttpCommon):
         # Create the payment
         self.amount = self.sale_order.amount_total
         tx = self._create_transaction(flow='redirect', sale_order_ids=[self.sale_order.id], state='done')
-        with mute_logger('odoo.addons.sale.models.payment_transaction'):
+        with mute_logger('eden.addons.sale.models.payment_transaction'):
             tx._post_process()
 
         self.assertEqual(self.sale_order.state, 'sale')
@@ -249,7 +249,7 @@ class TestSalePayment(AccountPaymentCommon, SaleCommon, PaymentHttpCommon):
         # Create the payment
         self.amount = self.sale_order.amount_total
         tx = self._create_transaction(flow='redirect', sale_order_ids=[self.sale_order.id], state='done')
-        with mute_logger('odoo.addons.sale.models.payment_transaction'):
+        with mute_logger('eden.addons.sale.models.payment_transaction'):
             tx._post_process()
 
         self.assertEqual(self.sale_order.state, 'sale')
@@ -265,7 +265,7 @@ class TestSalePayment(AccountPaymentCommon, SaleCommon, PaymentHttpCommon):
         # Create the payment
         self.amount = self.sale_order.amount_total / 10.
         tx = self._create_transaction(flow='redirect', sale_order_ids=[self.sale_order.id], state='done')
-        with mute_logger('odoo.addons.sale.models.payment_transaction'):
+        with mute_logger('eden.addons.sale.models.payment_transaction'):
             tx._post_process()
 
         self.assertEqual(self.sale_order.state, 'draft')
@@ -299,8 +299,8 @@ class TestSalePayment(AccountPaymentCommon, SaleCommon, PaymentHttpCommon):
             sale_order_ids=[self.sale_order.id],
             state='done',
         )
-        with mute_logger('odoo.addons.sale.models.payment_transaction'), patch(
-            'odoo.addons.sale.models.sale_order.SaleOrder._create_invoices',
+        with mute_logger('eden.addons.sale.models.payment_transaction'), patch(
+            'eden.addons.sale.models.sale_order.SaleOrder._create_invoices',
             return_value=self.env['account.move']
         ) as _create_invoices_mock:
             tx._post_process()
@@ -318,7 +318,7 @@ class TestSalePayment(AccountPaymentCommon, SaleCommon, PaymentHttpCommon):
             state='done',
             reference='partial_tx_done',
         )
-        with mute_logger('odoo.addons.sale.models.payment_transaction'):
+        with mute_logger('eden.addons.sale.models.payment_transaction'):
             partial_tx_done._post_process()
         partial_tx_pending = self._create_transaction(
             flow='direct',
@@ -384,7 +384,7 @@ class TestSalePayment(AccountPaymentCommon, SaleCommon, PaymentHttpCommon):
             sale_order_ids=[self.sale_order.id],
             state='done',
         )
-        with mute_logger('odoo.addons.sale.models.payment_transaction'):
+        with mute_logger('eden.addons.sale.models.payment_transaction'):
             tx._post_process()
 
         self.assertTrue(self.sale_order.state == 'sale')
@@ -402,7 +402,7 @@ class TestSalePayment(AccountPaymentCommon, SaleCommon, PaymentHttpCommon):
             sale_order_ids=[self.sale_order.id],
             state='done',
         )
-        with mute_logger('odoo.addons.sale.models.payment_transaction'):
+        with mute_logger('eden.addons.sale.models.payment_transaction'):
             tx._post_process()
 
         self.assertTrue(self.sale_order.state == 'draft')
@@ -453,7 +453,7 @@ class TestSalePayment(AccountPaymentCommon, SaleCommon, PaymentHttpCommon):
             sale_order_ids=[self.sale_order.id],
             state='done')
 
-        with mute_logger('odoo.addons.sale.models.payment_transaction'):
+        with mute_logger('eden.addons.sale.models.payment_transaction'):
             tx._post_process()
 
         invoice = self.sale_order.invoice_ids
@@ -490,7 +490,7 @@ class TestSalePayment(AccountPaymentCommon, SaleCommon, PaymentHttpCommon):
 
         with patch.object(
             CustomerPortal, '_document_check_access', _document_check_access_mock
-        ), patch('odoo.addons.payment.utils.check_access_token') as check_payment_access_token_mock:
+        ), patch('eden.addons.payment.utils.check_access_token') as check_payment_access_token_mock:
             try:
                 payment_portal_controller._get_extra_payment_form_values(
                     sale_order_id=self.sale_order.id, access_token='whatever'
@@ -504,14 +504,14 @@ class TestSalePayment(AccountPaymentCommon, SaleCommon, PaymentHttpCommon):
                     " check as a portal access token failed.",
             )
 
-    @mute_logger('odoo.http')
+    @mute_logger('eden.http')
     def test_transaction_route_rejects_unexpected_kwarg(self):
         url = self._build_url(f'/my/orders/{self.sale_order.id}/transaction')
         route_kwargs = {
             'access_token': self.sale_order._portal_ensure_token(),
             'partner_id': self.partner.id,  # This should be rejected.
         }
-        with self.assertRaises(JsonRpcException, msg='odoo.exceptions.ValidationError'):
+        with self.assertRaises(JsonRpcException, msg='eden.exceptions.ValidationError'):
             self.make_jsonrpc_request(url, route_kwargs)
 
     def test_partial_payment_confirm_order(self):
@@ -523,7 +523,7 @@ class TestSalePayment(AccountPaymentCommon, SaleCommon, PaymentHttpCommon):
         self.amount = self.sale_order.amount_total / 2
 
         with patch(
-            'odoo.addons.sale.models.sale_order.SaleOrder._send_order_notification_mail',
+            'eden.addons.sale.models.sale_order.SaleOrder._send_order_notification_mail',
         ) as notification_mail_mock:
             tx_pending = self._create_transaction(
                 flow='direct',

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.stock_landed_costs.tests.test_stockvaluationlayer import TestStockValuationLCCommon
-from odoo.tests import tagged, Form
+from eden.addons.stock_landed_costs.tests.test_stockvaluationlayer import TestStockValuationLCCommon
+from eden.tests import tagged, Form
 
 
 @tagged('post_install', '-at_install')

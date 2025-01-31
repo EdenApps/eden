@@ -1,17 +1,17 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from markupsafe import Markup
 import re
 from werkzeug.exceptions import NotFound
 from urllib.parse import urlsplit
 
-from odoo import http, tools, _, release
-from odoo.exceptions import UserError
-from odoo.http import request
-from odoo.tools import replace_exceptions
-from odoo.addons.base.models.assetsbundle import AssetsBundle
-from odoo.addons.mail.models.discuss.mail_guest import add_guest_to_context
-from odoo.addons.mail.tools.discuss import Store
+from eden import http, tools, _, release
+from eden.exceptions import UserError
+from eden.http import request
+from eden.tools import replace_exceptions
+from eden.addons.base.models.assetsbundle import AssetsBundle
+from eden.addons.mail.models.discuss.mail_guest import add_guest_to_context
+from eden.addons.mail.tools.discuss import Store
 
 
 class LivechatController(http.Controller):
@@ -48,9 +48,9 @@ class LivechatController(http.Controller):
     def fontawesome(self, **kwargs):
         return http.Stream.from_path('web/static/src/libs/fontawesome/fonts/fontawesome-webfont.woff2').get_response()
 
-    @http.route('/im_livechat/odoo_ui_icons', type='http', auth='none', cors="*")
-    def odoo_ui_icons(self, **kwargs):
-        return http.Stream.from_path('web/static/lib/odoo_ui_icons/fonts/odoo_ui_icons.woff2').get_response()
+    @http.route('/im_livechat/eden_ui_icons', type='http', auth='none', cors="*")
+    def eden_ui_icons(self, **kwargs):
+        return http.Stream.from_path('web/static/lib/eden_ui_icons/fonts/eden_ui_icons.woff2').get_response()
 
     @http.route('/im_livechat/emoji_bundle', type='http', auth='public', cors='*')
     def get_emoji_bundle(self):

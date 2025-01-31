@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from lxml import etree
-from odoo import Command
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.tests import tagged
-from odoo.tools import file_open
+from eden import Command
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
+from eden.tests import tagged
+from eden.tools import file_open
 
 
 @tagged('post_install', '-at_install')

@@ -1,7 +1,7 @@
-/** @odoo-module **/
+/** @eden-module **/
 import { useService } from "@web/core/utils/hooks";
 import { formatFloat } from "@web/views/fields/formatters";
-import { Component, markup } from "@odoo/owl";
+import { Component, markup } from "@eden/owl";
 
 export class ForecastedHeader extends Component {
     static template = "stock.ForecastedHeader";

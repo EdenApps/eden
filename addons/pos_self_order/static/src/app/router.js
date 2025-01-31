@@ -1,4 +1,4 @@
-import { Component, onWillRender, useState, xml } from "@odoo/owl";
+import { Component, onWillRender, useState, xml } from "@eden/owl";
 import { escapeRegExp } from "@web/core/utils/strings";
 import { zip } from "@web/core/utils/arrays";
 import { useService } from "@web/core/utils/hooks";

@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { after, describe, expect, getFixture, test } from "@odoo/hoot";
+import { after, describe, expect, getFixture, test } from "@eden/hoot";
 import {
     clear,
     click,
@@ -25,9 +25,9 @@ import {
     setInputFiles,
     setInputRange,
     uncheck,
-} from "@odoo/hoot-dom";
-import { advanceTime, animationFrame, mockFetch, mockTouch, mockUserAgent } from "@odoo/hoot-mock";
-import { Component, xml } from "@odoo/owl";
+} from "@eden/hoot-dom";
+import { advanceTime, animationFrame, mockFetch, mockTouch, mockUserAgent } from "@eden/hoot-mock";
+import { Component, xml } from "@eden/owl";
 import { EventList } from "@web/../lib/hoot-dom/helpers/events";
 import { mountForTest, parseUrl, waitForIframes } from "../local_helpers";
 

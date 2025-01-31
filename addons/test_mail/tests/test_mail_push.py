@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 import socket
 
 from datetime import datetime, timedelta
 
-import odoo
+import eden
 
-from odoo.tools.misc import mute_logger
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.mail.tools.jwt import InvalidVapidError
-from odoo.addons.sms.tests.common import SMSCommon
-from odoo.addons.test_mail.data.test_mail_data import MAIL_TEMPLATE
-from odoo.tests import tagged
+from eden.tools.misc import mute_logger
+from eden.addons.mail.tests.common import mail_new_test_user
+from eden.addons.mail.tools.jwt import InvalidVapidError
+from eden.addons.sms.tests.common import SMSCommon
+from eden.addons.test_mail.data.test_mail_data import MAIL_TEMPLATE
+from eden.tests import tagged
 from markupsafe import Markup
 from unittest.mock import patch
 from types import SimpleNamespace
@@ -46,7 +46,7 @@ class TestWebPushNotification(SMSCommon):
         cls.vapid_public_key = cls.env['mail.push.device'].get_web_push_vapid_public_key()
         cls.env['mail.push.device'].sudo().create([
             {
-                'endpoint': f'https://test.odoo.com/webpush/user{(idx + 1)}',
+                'endpoint': f'https://test.edencloud.us/webpush/user{(idx + 1)}',
                 'expiration_time': None,
                 'keys': json.dumps({
                     'p256dh': 'BGbhnoP_91U7oR59BaaSx0JnDv2oEooYnJRV2AbY5TBeKGCRCf0HcIJ9bOKchUCDH4cHYWo9SYDz3U-8vSxPL_A',
@@ -63,10 +63,10 @@ class TestWebPushNotification(SMSCommon):
         notification_count = self.env['mail.push'].search_count([])
         self.assertEqual(notification_count, number_of_notification)
 
-    @patch.object(odoo.addons.mail.models.mail_thread, 'push_to_end_point')
-    @mute_logger('odoo.tests')
+    @patch.object(eden.addons.mail.models.mail_thread, 'push_to_end_point')
+    @mute_logger('eden.tests')
     def test_notify_by_push(self, push_to_end_point):
-        """ When posting a comment, notify both inbox and people outside of Odoo
+        """ When posting a comment, notify both inbox and people outside of Eden
         aka email """
         self.record_simple.with_user(self.user_admin).message_post(
             body=Markup('<p>Hello</p>'),
@@ -79,7 +79,7 @@ class TestWebPushNotification(SMSCommon):
         # two recipients, comment notifies both inbox and email people
         self.assertEqual(push_to_end_point.call_count, 2)
 
-    @patch.object(odoo.addons.mail.models.mail_thread, 'push_to_end_point')
+    @patch.object(eden.addons.mail.models.mail_thread, 'push_to_end_point')
     def test_notify_by_push_channel(self, push_to_end_point):
         """ Test various use case with discuss.channel. Chat and group channels
         sends push notifications, channel not. """
@@ -123,7 +123,7 @@ class TestWebPushNotification(SMSCommon):
                     else:
                         self.assertEqual(payload_value['title'], f'#{channel.name}')
                     icon = (
-                        '/web/static/img/odoo-icon-192x192.png'
+                        '/web/static/img/eden-icon-192x192.png'
                         if sender == self.guest
                         else f'/web/image/res.partner/{self.user_email.partner_id.id}/avatar_128'
                     )
@@ -131,7 +131,7 @@ class TestWebPushNotification(SMSCommon):
                     self.assertEqual(payload_value['options']['body'], 'Test Push')
                     self.assertEqual(payload_value['options']['data']['res_id'], channel.id)
                     self.assertEqual(payload_value['options']['data']['model'], channel._name)
-                    self.assertEqual(push_to_end_point.call_args.kwargs['device']['endpoint'], 'https://test.odoo.com/webpush/user2')
+                    self.assertEqual(push_to_end_point.call_args.kwargs['device']['endpoint'], 'https://test.edencloud.us/webpush/user2')
                 push_to_end_point.reset_mock()
 
         # Test Direct Message with channel muted -> should skip push notif
@@ -166,7 +166,7 @@ class TestWebPushNotification(SMSCommon):
         )
         push_to_end_point.assert_called_once()
 
-    @patch.object(odoo.addons.mail.models.mail_thread, "push_to_end_point")
+    @patch.object(eden.addons.mail.models.mail_thread, "push_to_end_point")
     def test_notify_by_push_channel_with_channel_notifications_settings(self, push_to_end_point):
         """ Test various use case with the channel notification settings."""
         all_test_user = mail_new_test_user(
@@ -200,7 +200,7 @@ class TestWebPushNotification(SMSCommon):
         self.env["mail.push.device"].sudo().create(
             [
                 {
-                    "endpoint": f"https://test.odoo.com/webpush/user{(idx + 20)}",
+                    "endpoint": f"https://test.edencloud.us/webpush/user{(idx + 20)}",
                     "expiration_time": None,
                     "keys": json.dumps(
                         {
@@ -236,7 +236,7 @@ class TestWebPushNotification(SMSCommon):
         )
         push_to_end_point.assert_called_once()
         # all_test_user should be notified
-        self.assertEqual(push_to_end_point.call_args.kwargs["device"]["endpoint"], "https://test.odoo.com/webpush/user20")
+        self.assertEqual(push_to_end_point.call_args.kwargs["device"]["endpoint"], "https://test.edencloud.us/webpush/user20")
         push_to_end_point.reset_mock()
 
         # mention messages in channel
@@ -248,8 +248,8 @@ class TestWebPushNotification(SMSCommon):
         )
         self.assertEqual(push_to_end_point.call_count, 2)
         # all_test_user and mentions_test_user should be notified
-        self.assertEqual(push_to_end_point.call_args_list[0].kwargs["device"]["endpoint"], "https://test.odoo.com/webpush/user20")
-        self.assertEqual(push_to_end_point.call_args_list[1].kwargs["device"]["endpoint"], "https://test.odoo.com/webpush/user21")
+        self.assertEqual(push_to_end_point.call_args_list[0].kwargs["device"]["endpoint"], "https://test.edencloud.us/webpush/user20")
+        self.assertEqual(push_to_end_point.call_args_list[1].kwargs["device"]["endpoint"], "https://test.edencloud.us/webpush/user21")
         push_to_end_point.reset_mock()
 
         # muted channel
@@ -278,8 +278,8 @@ class TestWebPushNotification(SMSCommon):
         )
         push_to_end_point.assert_not_called()
 
-    @patch.object(odoo.addons.mail.models.mail_thread, 'push_to_end_point')
-    @mute_logger('odoo.addons.mail.models.mail_thread')
+    @patch.object(eden.addons.mail.models.mail_thread, 'push_to_end_point')
+    @mute_logger('eden.addons.mail.models.mail_thread')
     def test_notify_by_push_mail_gateway(self, push_to_end_point):
         test_record = self.env['mail.test.gateway'].with_context(self._test_context).create({
             'name': 'Test',
@@ -313,8 +313,8 @@ class TestWebPushNotification(SMSCommon):
             'The body must contain the text send by mail'
         )
 
-    @patch.object(odoo.addons.mail.models.mail_thread, 'push_to_end_point')
-    @mute_logger('odoo.tests')
+    @patch.object(eden.addons.mail.models.mail_thread, 'push_to_end_point')
+    @mute_logger('eden.tests')
     def test_notify_by_push_message_notify(self, push_to_end_point):
         """ In case of notification, only inbox users are notified """
         for recipient, has_notification in [(self.user_email, False), (self.user_inbox, True)]:
@@ -341,14 +341,14 @@ class TestWebPushNotification(SMSCommon):
                     self.assertEqual(payload_value['options']['body'], 'Test Push Notif')
                     self.assertEqual(payload_value['options']['data']['res_id'], self.record_simple.id)
                     self.assertEqual(payload_value['options']['data']['model'], self.record_simple._name)
-                    self.assertEqual(push_to_end_point.call_args.kwargs['device']['endpoint'], 'https://test.odoo.com/webpush/user2')
+                    self.assertEqual(push_to_end_point.call_args.kwargs['device']['endpoint'], 'https://test.edencloud.us/webpush/user2')
                     self.assertIn('vapid_private_key', push_to_end_point.call_args.kwargs)
                     self.assertIn('vapid_public_key', push_to_end_point.call_args.kwargs)
                 else:
                     push_to_end_point.assert_not_called()
                 push_to_end_point.reset_mock()
 
-    @patch.object(odoo.addons.mail.models.mail_thread, 'push_to_end_point')
+    @patch.object(eden.addons.mail.models.mail_thread, 'push_to_end_point')
     def test_notify_by_push_tracking(self, push_to_end_point):
         """ Test tracking message included in push notifications """
         container_update_subtype = self.env.ref('test_mail.st_mail_test_ticket_container_upd')
@@ -390,12 +390,12 @@ class TestWebPushNotification(SMSCommon):
             'Tracking changes should be included in push notif payload'
         )
 
-    @patch.object(odoo.addons.mail.models.mail_push, 'push_to_end_point')
+    @patch.object(eden.addons.mail.models.mail_push, 'push_to_end_point')
     def test_push_notifications_cron(self, push_to_end_point):
         # Add 4 more devices to force sending via cron queue
         for index in range(10, 14):
             self.env['mail.push.device'].sudo().create([{
-                'endpoint': 'https://test.odoo.com/webpush/user%d' % index,
+                'endpoint': 'https://test.edencloud.us/webpush/user%d' % index,
                 'expiration_time': None,
                 'keys': json.dumps({
                     'p256dh': 'BGbhnoP_91U7oR59BaaSx0JnDv2oEooYnJRV2AbY5TBeKGCRCf0HcIJ9bOKchUCDH4cHYWo9SYDz3U-8vSxPL_A',
@@ -416,10 +416,10 @@ class TestWebPushNotification(SMSCommon):
         self._trigger_cron_job()
         self.assertEqual(push_to_end_point.call_count, 5)
 
-    @patch.object(odoo.addons.mail.models.mail_thread.Session, 'post',
+    @patch.object(eden.addons.mail.models.mail_thread.Session, 'post',
                   return_value=SimpleNamespace(**{'status_code': 404, 'text': 'Device Unreachable'}))
     def test_push_notifications_error_device_unreachable(self, post):
-        with mute_logger('odoo.addons.mail.tools.web_push'):
+        with mute_logger('eden.addons.mail.tools.web_push'):
             self.record_simple.with_user(self.user_email).message_notify(
                 partner_ids=self.user_inbox.partner_id.ids,
                 body='Test message send via Web Push',
@@ -430,10 +430,10 @@ class TestWebPushNotification(SMSCommon):
         self._assert_notification_count_for_cron(0)
         post.assert_called_once()
         # Test that the unreachable device is deleted from the DB
-        notification_count = self.env['mail.push.device'].search_count([('endpoint', '=', 'https://test.odoo.com/webpush/user2')])
+        notification_count = self.env['mail.push.device'].search_count([('endpoint', '=', 'https://test.edencloud.us/webpush/user2')])
         self.assertEqual(notification_count, 0)
 
-    @patch.object(odoo.addons.mail.models.mail_thread.Session, 'post',
+    @patch.object(eden.addons.mail.models.mail_thread.Session, 'post',
                   return_value=SimpleNamespace(**{'status_code': 201, 'text': 'Ok'}))
     def test_push_notifications_error_encryption_simple(self, post):
         """ Test to see if all parameters sent to the endpoint are present.
@@ -447,7 +447,7 @@ class TestWebPushNotification(SMSCommon):
 
         self._assert_notification_count_for_cron(0)
         post.assert_called_once()
-        self.assertEqual(post.call_args.args[0], 'https://test.odoo.com/webpush/user2')
+        self.assertEqual(post.call_args.args[0], 'https://test.edencloud.us/webpush/user2')
         self.assertIn('headers', post.call_args.kwargs)
         self.assertIn('vapid', post.call_args.kwargs['headers']['Authorization'])
         self.assertIn('t=', post.call_args.kwargs['headers']['Authorization'])
@@ -467,7 +467,7 @@ class TestWebPushNotification(SMSCommon):
         self.assertNotEqual(self.vapid_public_key, new_vapid_public_key)
         with self.assertRaises(InvalidVapidError):
             self.env['mail.push.device'].register_devices(
-                endpoint='https://test.odoo.com/webpush/user1',
+                endpoint='https://test.edencloud.us/webpush/user1',
                 expiration_time=None,
                 keys=json.dumps({
                     'p256dh': 'BGbhnoP_91U7oR59BaaSx0JnDv2oEooYnJRV2AbY5TBeKGCRCf0HcIJ9bOKchUCDH4cHYWo9SYDz3U-8vSxPL_A',

@@ -3,11 +3,11 @@
 from ast import literal_eval
 from unittest.mock import patch
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.addons.account.models.account_payment_method import AccountPaymentMethod
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.tests import Form, tagged
-from odoo.exceptions import UserError, ValidationError
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
+from eden.addons.account.models.account_payment_method import AccountPaymentMethod
+from eden.addons.mail.tests.common import MailCommon
+from eden.tests import Form, tagged
+from eden.exceptions import UserError, ValidationError
 
 
 @tagged('post_install', '-at_install')
@@ -205,7 +205,7 @@ class TestAccountJournalAlias(AccountTestInvoicingCommon, MailCommon):
 
     def test_alias_name_creation(self):
         """ Test alias creation, notably avoid raising constraints due to ascii
-        characters removal. See odoo/odoo@339cdffb68f91eb1455d447d1bdd7133c68723bd """
+        characters removal. See eden/eden@339cdffb68f91eb1455d447d1bdd7133c68723bd """
         # check base test data
         journal1 = self.company_data['default_journal_purchase']
         company1 = journal1.company_id
@@ -269,7 +269,7 @@ class TestAccountJournalAlias(AccountTestInvoicingCommon, MailCommon):
 
     def test_alias_from_type(self):
         """ Test alias behavior on journal, especially alias_name management as
-        well as defaults update, see odoo/odoo@400b6860271a11b9914166ff7e42939c4c6192dc """
+        well as defaults update, see eden/eden@400b6860271a11b9914166ff7e42939c4c6192dc """
         journal = self.company_data['default_journal_purchase']
 
         # assert base test data

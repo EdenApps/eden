@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 
@@ -7,21 +7,21 @@ from datetime import datetime
 from werkzeug.exceptions import Forbidden, NotFound
 from werkzeug.urls import url_decode, url_encode, url_parse
 
-from odoo import fields
-from odoo.exceptions import ValidationError
-from odoo.fields import Command
-from odoo.http import request, route
-from odoo.osv import expression
-from odoo.tools import clean_context, float_round, groupby, lazy, single_email_re, str2bool, SQL
-from odoo.tools.json import scriptsafe as json_scriptsafe
-from odoo.tools.translate import _
+from eden import fields
+from eden.exceptions import ValidationError
+from eden.fields import Command
+from eden.http import request, route
+from eden.osv import expression
+from eden.tools import clean_context, float_round, groupby, lazy, single_email_re, str2bool, SQL
+from eden.tools.json import scriptsafe as json_scriptsafe
+from eden.tools.translate import _
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.controllers import portal as payment_portal
-from odoo.addons.portal.controllers.portal import _build_url_w_params
-from odoo.addons.sale.controllers import portal as sale_portal
-from odoo.addons.website.controllers.main import QueryURL
-from odoo.addons.website.models.ir_http import sitemap_qs2dom
+from eden.addons.payment import utils as payment_utils
+from eden.addons.payment.controllers import portal as payment_portal
+from eden.addons.portal.controllers.portal import _build_url_w_params
+from eden.addons.sale.controllers import portal as sale_portal
+from eden.addons.website.controllers.main import QueryURL
+from eden.addons.website.models.ir_http import sitemap_qs2dom
 
 
 class TableCompute:

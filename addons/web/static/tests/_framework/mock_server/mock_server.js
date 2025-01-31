@@ -1,5 +1,5 @@
-import { before, createJobScopedGetter, expect, getCurrent, registerDebugInfo } from "@odoo/hoot";
-import { mockFetch, mockWebSocket } from "@odoo/hoot-mock";
+import { before, createJobScopedGetter, expect, getCurrent, registerDebugInfo } from "@eden/hoot";
+import { mockFetch, mockWebSocket } from "@eden/hoot-mock";
 import { RPCError } from "@web/core/network/rpc";
 import { registry } from "@web/core/registry";
 import { ensureArray, isIterable } from "@web/core/utils/arrays";
@@ -379,7 +379,7 @@ export class MockServer {
     started = false;
 
     // WebSocket connections
-    /** @type {import("@odoo/hoot-mock").ServerWebSocket[]} */
+    /** @type {import("@eden/hoot-mock").ServerWebSocket[]} */
     websockets = [];
 
     constructor() {
@@ -540,7 +540,7 @@ export class MockServer {
         });
         if (!actions.length) {
             throw makeServerError({
-                errorName: "odoo.addons.web.controllers.action.MissingActionError",
+                errorName: "eden.addons.web.controllers.action.MissingActionError",
                 message: `The action ${JSON.stringify(id)} does not exist`,
             });
         } else if (actions.length > 1) {

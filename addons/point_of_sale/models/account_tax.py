@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from odoo import _, api, models
-from odoo.exceptions import UserError
-from odoo.tools import split_every
+from eden import _, api, models
+from eden.exceptions import UserError
+from eden.tools import split_every
 
 
 class AccountTax(models.Model):

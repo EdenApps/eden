@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import exceptions, tools
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.addons.mail.tests.mail_tracking_duration_mixin_case import MailTrackingDurationMixinCase
-from odoo.addons.test_mail.tests.common import TestRecipients
-from odoo.tests.common import tagged, users
-from odoo.tools import mute_logger
+from eden import exceptions, tools
+from eden.addons.mail.tests.common import MailCommon
+from eden.addons.mail.tests.mail_tracking_duration_mixin_case import MailTrackingDurationMixinCase
+from eden.addons.test_mail.tests.common import TestRecipients
+from eden.tests.common import tagged, users
+from eden.tools import mute_logger
 
 
 @tagged('mail_thread', 'mail_track')
@@ -29,7 +29,7 @@ class TestMailTrackingDurationMixin(MailTrackingDurationMixinCase):
 @tagged('mail_thread', 'mail_blacklist')
 class TestMailThread(MailCommon, TestRecipients):
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('eden.models.unlink')
     def test_blacklist_mixin_email_normalized(self):
         """ Test email_normalized and is_blacklisted fields behavior, notably
         when dealing with encapsulated email fields and multi-email input. """
@@ -83,7 +83,7 @@ class TestMailThread(MailCommon, TestRecipients):
 class TestMailThreadCC(MailCommon):
 
     @users("employee")
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('eden.addons.mail.models.mail_mail')
     def test_suggested_recipients_mail_cc(self):
         """ MailThreadCC mixin adds its own suggested recipients management
         coming from CC (carbon copy) management. """

@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import models, fields, api, _
-from odoo.api import ondelete
-from odoo.exceptions import UserError
-from odoo.tools.misc import frozendict
+from eden import models, fields, api, _
+from eden.api import ondelete
+from eden.exceptions import UserError
+from eden.tools.misc import frozendict
 
 
 class AccountMove(models.Model):

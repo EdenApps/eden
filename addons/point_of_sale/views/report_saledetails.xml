@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <template id="pos_daily_sales_report_layout" name="Daily Sales Report layout">&lt;!DOCTYPE html&gt;
             <html t-att-lang="lang and lang.replace('_', '-')"
@@ -12,7 +12,7 @@
                 <head>
                     <meta charset="utf-8"/>
                     <meta name="viewport" content="initial-scale=1"/>
-                    <title><t t-esc="title or 'Odoo Report'"/></title>
+                    <title><t t-esc="title or 'Eden Report'"/></title>
                     <t t-call-assets="web.report_assets_common"/>
                     <script type="text/javascript">
                         document.addEventListener('DOMContentLoaded', () => {
@@ -48,4 +48,4 @@
             </t>
         </template>
     </data>
-</odoo>
+</eden>

@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 
 from requests import Session
 
-from odoo import api, fields, models
-from odoo.addons.mail.tools.web_push import push_to_end_point, DeviceUnreachableError
+from eden import api, fields, models
+from eden.addons.mail.tools.web_push import push_to_end_point, DeviceUnreachableError
 
 _logger = logging.getLogger(__name__)
 

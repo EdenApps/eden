@@ -1,9 +1,9 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { registry } from "@web/core/registry";
 import { zip } from "@web/core/utils/arrays";
 import { accessSurveysteps } from "./survey_tour_session_tools";
-import { press } from "@odoo/hoot-dom";
+import { press } from "@eden/hoot-dom";
 
 let rootWidget = null;
 
@@ -134,7 +134,7 @@ const checkAnswersCount = (chartData, expectedCount) => {
  * - Close the survey session
  */
 registry.category("web_tour.tours").add('test_survey_session_manage_tour', {
-    url: "/odoo",
+    url: "/eden",
     steps: () => [].concat(accessSurveysteps, [{
     trigger: 'button[name="action_open_session_manager"]',
     run: "click",
@@ -143,7 +143,7 @@ registry.category("web_tour.tours").add('test_survey_session_manage_tour', {
     trigger: 'h1:contains("Nickname")',
 }, {
     trigger: 'body',
-    run: async () => { rootWidget = await odoo.loader.modules.get('root.widget'); }
+    run: async () => { rootWidget = await eden.loader.modules.get('root.widget'); }
 }, {
     trigger: 'h1',
     run: nextScreen

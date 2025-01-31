@@ -1,8 +1,8 @@
-/** @odoo-module */
+/** @eden-module */
 
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@eden/o-spreadsheet";
 import { _t } from "@web/core/l10n/translation";
-import { OdooChart } from "./odoo_chart";
+import { EdenChart } from "./eden_chart";
 
 const { chartRegistry } = spreadsheet.registries;
 
@@ -18,7 +18,7 @@ const {
 
 const { TREND_LINE_XAXIS_ID } = spreadsheet.constants;
 
-export class OdooBarChart extends OdooChart {
+export class EdenBarChart extends EdenChart {
     constructor(definition, sheetId, getters) {
         super(definition, sheetId, getters);
         this.verticalAxisPosition = definition.verticalAxisPosition;
@@ -38,18 +38,18 @@ export class OdooBarChart extends OdooChart {
     }
 }
 
-chartRegistry.add("odoo_bar", {
-    match: (type) => type === "odoo_bar",
-    createChart: (definition, sheetId, getters) => new OdooBarChart(definition, sheetId, getters),
-    getChartRuntime: createOdooChartRuntime,
+chartRegistry.add("eden_bar", {
+    match: (type) => type === "eden_bar",
+    createChart: (definition, sheetId, getters) => new EdenBarChart(definition, sheetId, getters),
+    getChartRuntime: createEdenChartRuntime,
     validateChartDefinition: (validator, definition) =>
-        OdooBarChart.validateChartDefinition(validator, definition),
-    transformDefinition: (definition) => OdooBarChart.transformDefinition(definition),
-    getChartDefinitionFromContextCreation: () => OdooBarChart.getDefinitionFromContextCreation(),
+        EdenBarChart.validateChartDefinition(validator, definition),
+    transformDefinition: (definition) => EdenBarChart.transformDefinition(definition),
+    getChartDefinitionFromContextCreation: () => EdenBarChart.getDefinitionFromContextCreation(),
     name: _t("Bar"),
 });
 
-function createOdooChartRuntime(chart, getters) {
+function createEdenChartRuntime(chart, getters) {
     const background = chart.background || "#FFFFFF";
     const { datasets, labels } = chart.dataSource.getData();
     const locale = getters.getLocale();
@@ -114,7 +114,7 @@ function createOdooChartRuntime(chart, getters) {
 function getBarConfiguration(chart, labels, locale) {
     const color = chartFontColor(chart.background);
     const config = getDefaultChartJsRuntime(chart, labels, color, { locale });
-    config.type = chart.type.replace("odoo_", "");
+    config.type = chart.type.replace("eden_", "");
     const legend = {
         ...config.options.legend,
         display: chart.legendPosition !== "none",

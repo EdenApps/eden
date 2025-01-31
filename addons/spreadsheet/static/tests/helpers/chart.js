@@ -1,23 +1,23 @@
-import { animationFrame } from "@odoo/hoot-mock";
+import { animationFrame } from "@eden/hoot-mock";
 
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@eden/o-spreadsheet";
 import { createModelWithDataSource } from "@spreadsheet/../tests/helpers/model";
 const uuidGenerator = new spreadsheet.helpers.UuidGenerator();
 
 /**
- * @typedef {import("@odoo/o-spreadsheet").Model} Model
- * @typedef {import("@spreadsheet").OdooSpreadsheetModel} OdooSpreadsheetModel
+ * @typedef {import("@eden/o-spreadsheet").Model} Model
+ * @typedef {import("@spreadsheet").EdenSpreadsheetModel} EdenSpreadsheetModel
  */
 
 /**
  *
  * @param {Model} model
  * @param {string} type
- * @param {import("@spreadsheet/chart/odoo_chart/odoo_chart").OdooChartDefinition} definition
+ * @param {import("@spreadsheet/chart/eden_chart/eden_chart").EdenChartDefinition} definition
  */
 export function insertChartInSpreadsheet(
     model,
-    type = "odoo_bar",
+    type = "eden_bar",
     definition = getChartDefinition(type)
 ) {
     model.dispatch("CREATE_CHART", {
@@ -38,7 +38,7 @@ export function insertChartInSpreadsheet(
  * @param {string} [params.type]
  * @param {import("./data").ServerData} [params.serverData]
  *
- * @returns { Promise<{ model: OdooSpreadsheetModel, env: Object }>}
+ * @returns { Promise<{ model: EdenSpreadsheetModel, env: Object }>}
  */
 export async function createSpreadsheetWithChart(params = {}) {
     const model = await createModelWithDataSource(params);

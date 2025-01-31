@@ -1,4 +1,4 @@
-/** @odoo-module alias=@web/../tests/mobile/webclient/burger_menu/burger_user_menu_tests default=false */
+/** @eden-module alias=@web/../tests/mobile/webclient/burger_menu/burger_user_menu_tests default=false */
 
 import { ormService } from "@web/core/orm_service";
 import { registry } from "@web/core/registry";
@@ -8,7 +8,7 @@ import { preferencesItem } from "@web/webclient/user_menu/user_menu_items";
 import { makeTestEnv } from "@web/../tests/helpers/mock_env";
 import { makeFakeLocalizationService } from "@web/../tests/helpers/mock_services";
 import { click, getFixture, mount } from "@web/../tests/helpers/utils";
-import { markup } from "@odoo/owl";
+import { markup } from "@eden/owl";
 
 const serviceRegistry = registry.category("services");
 const userMenuRegistry = registry.category("user_menuitems");

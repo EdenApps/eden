@@ -1,6 +1,6 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { queryAll } from "@odoo/hoot-dom";
-import { runAllTimers } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@eden/hoot";
+import { queryAll } from "@eden/hoot-dom";
+import { runAllTimers } from "@eden/hoot-mock";
 import {
     contains,
     defineModels,

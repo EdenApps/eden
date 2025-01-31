@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { browser } from '@web/core/browser/browser';
 import {

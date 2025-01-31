@@ -1,16 +1,16 @@
 declare module "@spreadsheet" {
-    import { Model } from "@odoo/o-spreadsheet";
+    import { Model } from "@eden/o-spreadsheet";
 
-    export interface OdooSpreadsheetModel extends Model {
-        getters: OdooGetters;
-        dispatch: OdooDispatch;
+    export interface EdenSpreadsheetModel extends Model {
+        getters: EdenGetters;
+        dispatch: EdenDispatch;
     }
 
-    export interface OdooSpreadsheetModelConstructor {
+    export interface EdenSpreadsheetModelConstructor {
         new (
             data: object,
             config: Partial<Model["config"]>,
             revisions: object[]
-        ): OdooSpreadsheetModel;
+        ): EdenSpreadsheetModel;
     }
 }

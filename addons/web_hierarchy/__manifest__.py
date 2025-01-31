@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 {
     'name': 'Web Hierarchy',
@@ -6,7 +6,7 @@
     'version': '1.0',
     'description':
         """
-Odoo Web Hierarchy view
+Eden Web Hierarchy view
 =======================
 
 This module adds a new view called to be able to define a view to display

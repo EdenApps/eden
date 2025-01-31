@@ -1,9 +1,9 @@
-import { animationFrame } from "@odoo/hoot-mock";
-import { describe, expect, test } from "@odoo/hoot";
+import { animationFrame } from "@eden/hoot-mock";
+import { describe, expect, test } from "@eden/hoot";
 
-import { OdooBarChart } from "@spreadsheet/chart/odoo_chart/odoo_bar_chart";
-import { OdooChart } from "@spreadsheet/chart/odoo_chart/odoo_chart";
-import { OdooLineChart } from "@spreadsheet/chart/odoo_chart/odoo_line_chart";
+import { EdenBarChart } from "@spreadsheet/chart/eden_chart/eden_bar_chart";
+import { EdenChart } from "@spreadsheet/chart/eden_chart/eden_chart";
+import { EdenLineChart } from "@spreadsheet/chart/eden_chart/eden_line_chart";
 
 import {
     createSpreadsheetWithChart,
@@ -14,7 +14,7 @@ import { createModelWithDataSource } from "@spreadsheet/../tests/helpers/model";
 import { addGlobalFilter } from "@spreadsheet/../tests/helpers/commands";
 import { THIS_YEAR_GLOBAL_FILTER } from "@spreadsheet/../tests/helpers/global_filter";
 import { mockService, makeServerError } from "@web/../tests/web_test_helpers";
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@eden/o-spreadsheet";
 
 import { user } from "@web/core/user";
 import {
@@ -40,35 +40,35 @@ describe.current.tags("headless");
 defineSpreadsheetModels();
 defineSpreadsheetActions();
 
-test("Can add an Odoo Bar chart", async () => {
-    const { model } = await createSpreadsheetWithChart({ type: "odoo_bar" });
+test("Can add an Eden Bar chart", async () => {
+    const { model } = await createSpreadsheetWithChart({ type: "eden_bar" });
     const sheetId = model.getters.getActiveSheetId();
     expect(model.getters.getChartIds(sheetId).length).toBe(1);
     const chartId = model.getters.getChartIds(sheetId)[0];
     const chart = model.getters.getChart(chartId);
-    expect(chart instanceof OdooBarChart).toBe(true);
+    expect(chart instanceof EdenBarChart).toBe(true);
     expect(chart.getDefinitionForExcel()).toBe(undefined);
     expect(model.getters.getChartRuntime(chartId).chartJsConfig.type).toBe("bar");
 });
 
-test("Can add an Odoo Line chart", async () => {
-    const { model } = await createSpreadsheetWithChart({ type: "odoo_line" });
+test("Can add an Eden Line chart", async () => {
+    const { model } = await createSpreadsheetWithChart({ type: "eden_line" });
     const sheetId = model.getters.getActiveSheetId();
     expect(model.getters.getChartIds(sheetId).length).toBe(1);
     const chartId = model.getters.getChartIds(sheetId)[0];
     const chart = model.getters.getChart(chartId);
-    expect(chart instanceof OdooLineChart).toBe(true);
+    expect(chart instanceof EdenLineChart).toBe(true);
     expect(chart.getDefinitionForExcel()).toBe(undefined);
     expect(model.getters.getChartRuntime(chartId).chartJsConfig.type).toBe("line");
 });
 
-test("Can add an Odoo Pie chart", async () => {
-    const { model } = await createSpreadsheetWithChart({ type: "odoo_pie" });
+test("Can add an Eden Pie chart", async () => {
+    const { model } = await createSpreadsheetWithChart({ type: "eden_pie" });
     const sheetId = model.getters.getActiveSheetId();
     expect(model.getters.getChartIds(sheetId).length).toBe(1);
     const chartId = model.getters.getChartIds(sheetId)[0];
     const chart = model.getters.getChart(chartId);
-    expect(chart instanceof OdooChart).toBe(true);
+    expect(chart instanceof EdenChart).toBe(true);
     expect(chart.getDefinitionForExcel()).toBe(undefined);
     expect(model.getters.getChartRuntime(chartId).chartJsConfig.type).toBe("pie");
 });
@@ -80,9 +80,9 @@ test("A data source is added after a chart creation", async () => {
     expect(model.getters.getChartDataSource(chartId)).not.toBe(undefined);
 });
 
-test("Odoo bar chart runtime loads the data", async () => {
+test("Eden bar chart runtime loads the data", async () => {
     const { model } = await createSpreadsheetWithChart({
-        type: "odoo_bar",
+        type: "eden_bar",
         mockRPC: async function (route, args) {
             if (args.method === "web_read_group") {
                 expect.step("web_read_group");
@@ -114,9 +114,9 @@ test("Odoo bar chart runtime loads the data", async () => {
     expect.verifySteps(["web_read_group"]);
 });
 
-test("Odoo pie chart runtime loads the data", async () => {
+test("Eden pie chart runtime loads the data", async () => {
     const { model } = await createSpreadsheetWithChart({
-        type: "odoo_pie",
+        type: "eden_pie",
         mockRPC: async function (route, args) {
             if (args.method === "web_read_group") {
                 expect.step("web_read_group");
@@ -148,9 +148,9 @@ test("Odoo pie chart runtime loads the data", async () => {
     expect.verifySteps(["web_read_group"]);
 });
 
-test("Odoo line chart runtime loads the data", async () => {
+test("Eden line chart runtime loads the data", async () => {
     const { model } = await createSpreadsheetWithChart({
-        type: "odoo_line",
+        type: "eden_line",
         mockRPC: async function (route, args) {
             if (args.method === "web_read_group") {
                 expect.step("web_read_group");
@@ -185,7 +185,7 @@ test("Odoo line chart runtime loads the data", async () => {
 });
 
 test("Area charts are supported", async () => {
-    const { model } = await createSpreadsheetWithChart({ type: "odoo_line" });
+    const { model } = await createSpreadsheetWithChart({ type: "eden_line" });
     await waitForDataLoaded(model);
     const sheetId = model.getters.getActiveSheetId();
     const chartId = model.getters.getChartIds(sheetId)[0];
@@ -212,7 +212,7 @@ test("Area charts are supported", async () => {
 
 test("Data reloaded strictly upon domain update", async () => {
     const { model } = await createSpreadsheetWithChart({
-        type: "odoo_line",
+        type: "eden_line",
         mockRPC: async function (route, args) {
             if (args.method === "web_read_group") {
                 expect.step("web_read_group");
@@ -259,15 +259,15 @@ test("Data reloaded strictly upon domain update", async () => {
     expect.verifySteps([]);
 });
 
-test("Can import/export an Odoo chart", async () => {
+test("Can import/export an Eden chart", async () => {
     const model = await createModelWithDataSource();
-    insertChartInSpreadsheet(model, "odoo_line");
+    insertChartInSpreadsheet(model, "eden_line");
     const data = model.exportData();
     const figures = data.sheets[0].figures;
     expect(figures.length).toBe(1);
     const figure = figures[0];
     expect(figure.tag).toBe("chart");
-    expect(figure.data.type).toBe("odoo_line");
+    expect(figure.data.type).toBe("eden_line");
     const m1 = await createModelWithDataSource({ spreadsheetData: data });
     const sheetId = m1.getters.getActiveSheetId();
     expect(m1.getters.getChartIds(sheetId).length).toBe(1);
@@ -291,7 +291,7 @@ test("can import (export) contextual domain", async function () {
                         height: 335,
                         tag: "chart",
                         data: {
-                            type: "odoo_line",
+                            type: "eden_line",
                             title: { text: "Partners" },
                             legendPosition: "top",
                             searchParams: {
@@ -328,9 +328,9 @@ test("can import (export) contextual domain", async function () {
     expect.verifySteps(["web_read_group"]);
 });
 
-test("Can undo/redo an Odoo chart creation", async () => {
+test("Can undo/redo an Eden chart creation", async () => {
     const model = await createModelWithDataSource();
-    insertChartInSpreadsheet(model, "odoo_line");
+    insertChartInSpreadsheet(model, "eden_line");
     const sheetId = model.getters.getActiveSheetId();
     const chartId = model.getters.getChartIds(sheetId)[0];
     expect(model.getters.getChartDataSource(chartId)).not.toBe(undefined);
@@ -342,9 +342,9 @@ test("Can undo/redo an Odoo chart creation", async () => {
 });
 
 test("charts with no legend", async () => {
-    const { model } = await createSpreadsheetWithChart({ type: "odoo_pie" });
-    insertChartInSpreadsheet(model, "odoo_bar");
-    insertChartInSpreadsheet(model, "odoo_line");
+    const { model } = await createSpreadsheetWithChart({ type: "eden_pie" });
+    insertChartInSpreadsheet(model, "eden_bar");
+    insertChartInSpreadsheet(model, "eden_line");
     const sheetId = model.getters.getActiveSheetId();
     const [pieChartId, barChartId, lineChartId] = model.getters.getChartIds(sheetId);
     const pie = model.getters.getChartDefinition(pieChartId);
@@ -395,7 +395,7 @@ test("charts with no legend", async () => {
 });
 
 test("Bar chart with stacked attribute is supported", async () => {
-    const { model } = await createSpreadsheetWithChart({ type: "odoo_bar" });
+    const { model } = await createSpreadsheetWithChart({ type: "eden_bar" });
     const sheetId = model.getters.getActiveSheetId();
     const chartId = model.getters.getChartIds(sheetId)[0];
     const definition = model.getters.getChartDefinition(chartId);
@@ -429,8 +429,8 @@ test("Bar chart with stacked attribute is supported", async () => {
     );
 });
 
-test("Can copy/paste Odoo chart", async () => {
-    const { model } = await createSpreadsheetWithChart({ type: "odoo_pie" });
+test("Can copy/paste Eden chart", async () => {
+    const { model } = await createSpreadsheetWithChart({ type: "eden_pie" });
     const sheetId = model.getters.getActiveSheetId();
     const chartId = model.getters.getChartIds(sheetId)[0];
     model.dispatch("SELECT_FIGURE", { id: chartId });
@@ -438,7 +438,7 @@ test("Can copy/paste Odoo chart", async () => {
     model.dispatch("PASTE", { target: [toZone("A1")] });
     const chartIds = model.getters.getChartIds(sheetId);
     expect(chartIds.length).toBe(2);
-    expect(model.getters.getChart(chartIds[1]) instanceof OdooChart).toBe(true);
+    expect(model.getters.getChart(chartIds[1]) instanceof EdenChart).toBe(true);
     expect(JSON.stringify(model.getters.getChartRuntime(chartIds[1]))).toBe(
         JSON.stringify(model.getters.getChartRuntime(chartId))
     );
@@ -449,8 +449,8 @@ test("Can copy/paste Odoo chart", async () => {
     );
 });
 
-test("Can cut/paste Odoo chart", async () => {
-    const { model } = await createSpreadsheetWithChart({ type: "odoo_pie" });
+test("Can cut/paste Eden chart", async () => {
+    const { model } = await createSpreadsheetWithChart({ type: "eden_pie" });
     const sheetId = model.getters.getActiveSheetId();
     const chartId = model.getters.getChartIds(sheetId)[0];
     const chartRuntime = model.getters.getChartRuntime(chartId);
@@ -460,21 +460,21 @@ test("Can cut/paste Odoo chart", async () => {
     const chartIds = model.getters.getChartIds(sheetId);
     expect(chartIds.length).toBe(1);
     expect(chartIds[0]).not.toBe(chartId);
-    expect(model.getters.getChart(chartIds[0]) instanceof OdooChart).toBe(true);
+    expect(model.getters.getChart(chartIds[0]) instanceof EdenChart).toBe(true);
     expect(JSON.stringify(model.getters.getChartRuntime(chartIds[0]))).toBe(
         JSON.stringify(chartRuntime)
     );
 });
 
-test("Duplicating a sheet correctly duplicates Odoo chart", async () => {
-    const { model } = await createSpreadsheetWithChart({ type: "odoo_bar" });
+test("Duplicating a sheet correctly duplicates Eden chart", async () => {
+    const { model } = await createSpreadsheetWithChart({ type: "eden_bar" });
     const sheetId = model.getters.getActiveSheetId();
     const secondSheetId = "secondSheetId";
     const chartId = model.getters.getChartIds(sheetId)[0];
     model.dispatch("DUPLICATE_SHEET", { sheetId, sheetIdTo: secondSheetId });
     const chartIds = model.getters.getChartIds(secondSheetId);
     expect(chartIds.length).toBe(1);
-    expect(model.getters.getChart(chartIds[0]) instanceof OdooChart).toBe(true);
+    expect(model.getters.getChart(chartIds[0]) instanceof EdenChart).toBe(true);
     expect(JSON.stringify(model.getters.getChartRuntime(chartIds[0]))).toBe(
         JSON.stringify(model.getters.getChartRuntime(chartId))
     );
@@ -486,7 +486,7 @@ test("Duplicating a sheet correctly duplicates Odoo chart", async () => {
 });
 
 test("Line chart with stacked attribute is supported", async () => {
-    const { model } = await createSpreadsheetWithChart({ type: "odoo_line" });
+    const { model } = await createSpreadsheetWithChart({ type: "eden_line" });
     const sheetId = model.getters.getActiveSheetId();
     const chartId = model.getters.getChartIds(sheetId)[0];
     const definition = model.getters.getChartDefinition(chartId);
@@ -520,7 +520,7 @@ test("Line chart with stacked attribute is supported", async () => {
     );
 });
 
-test("Load odoo chart spreadsheet with models that cannot be accessed", async function () {
+test("Load eden chart spreadsheet with models that cannot be accessed", async function () {
     let hasAccessRights = true;
     const { model } = await createSpreadsheetWithChart({
         mockRPC: async function (route, args) {
@@ -543,7 +543,7 @@ test("Load odoo chart spreadsheet with models that cannot be accessed", async fu
 });
 
 test("Line chart to support cumulative data", async () => {
-    const { model } = await createSpreadsheetWithChart({ type: "odoo_line" });
+    const { model } = await createSpreadsheetWithChart({ type: "eden_line" });
     const sheetId = model.getters.getActiveSheetId();
     const chartId = model.getters.getChartIds(sheetId)[0];
     const definition = model.getters.getChartDefinition(chartId);
@@ -585,10 +585,10 @@ test("cumulative line chart with past data before domain period", async () => {
         { date: "2022-06-01", probability: 5 },
     ];
     const { model } = await createSpreadsheetWithChart({
-        type: "odoo_line",
+        type: "eden_line",
         serverData,
         definition: {
-            type: "odoo_line",
+            type: "eden_line",
             metaData: {
                 groupBy: ["date"],
                 measure: "probability",
@@ -619,7 +619,7 @@ test("cumulative line chart with past data before domain period", async () => {
     ]);
 });
 
-test("Can insert odoo chart from a different model", async () => {
+test("Can insert eden chart from a different model", async () => {
     const model = await createModelWithDataSource();
     insertListInSpreadsheet(model, { model: "product", columns: ["name"] });
     await addGlobalFilter(model, THIS_YEAR_GLOBAL_FILTER);
@@ -629,8 +629,8 @@ test("Can insert odoo chart from a different model", async () => {
     expect(model.getters.getChartIds(sheetId).length).toBe(1);
 });
 
-test("Odoo chart legend color changes with background color update", async () => {
-    const { model } = await createSpreadsheetWithChart({ type: "odoo_bar" });
+test("Eden chart legend color changes with background color update", async () => {
+    const { model } = await createSpreadsheetWithChart({ type: "eden_bar" });
     const sheetId = model.getters.getActiveSheetId();
     const chartId = model.getters.getChartIds(sheetId)[0];
     const definition = model.getters.getChartDefinition(chartId);
@@ -650,24 +650,24 @@ test("Odoo chart legend color changes with background color update", async () =>
     ).toBe("#FFFFFF");
 });
 
-test("Remove odoo chart when sheet is deleted", async () => {
-    const { model } = await createSpreadsheetWithChart({ type: "odoo_line" });
+test("Remove eden chart when sheet is deleted", async () => {
+    const { model } = await createSpreadsheetWithChart({ type: "eden_line" });
     const sheetId = model.getters.getActiveSheetId();
     model.dispatch("CREATE_SHEET", {
         sheetId: model.uuidGenerator.uuidv4(),
         position: model.getters.getSheetIds().length,
     });
-    expect(model.getters.getOdooChartIds().length).toBe(1);
+    expect(model.getters.getEdenChartIds().length).toBe(1);
     model.dispatch("DELETE_SHEET", { sheetId });
-    expect(model.getters.getOdooChartIds().length).toBe(0);
+    expect(model.getters.getEdenChartIds().length).toBe(0);
 });
 
-test("Odoo chart datasource display name has a default when the chart title is empty", async () => {
-    const { model } = await createSpreadsheetWithChart({ type: "odoo_line" });
+test("Eden chart datasource display name has a default when the chart title is empty", async () => {
+    const { model } = await createSpreadsheetWithChart({ type: "eden_line" });
     const sheetId = model.getters.getActiveSheetId();
     const chartId = model.getters.getChartIds(sheetId)[0];
     const definition = model.getters.getChartDefinition(chartId);
-    expect(model.getters.getOdooChartDisplayName(chartId)).toBe("(#1) Partners");
+    expect(model.getters.getEdenChartDisplayName(chartId)).toBe("(#1) Partners");
     model.dispatch("UPDATE_CHART", {
         definition: {
             ...definition,
@@ -676,7 +676,7 @@ test("Odoo chart datasource display name has a default when the chart title is e
         id: chartId,
         sheetId,
     });
-    expect(model.getters.getOdooChartDisplayName(chartId)).toBe("(#1) Odoo Line Chart");
+    expect(model.getters.getEdenChartDisplayName(chartId)).toBe("(#1) Eden Line Chart");
 });
 
 test("See records when clicking on a bar chart bar", async () => {
@@ -720,10 +720,10 @@ test("See records when clicking on a bar chart bar", async () => {
         { date: "2022-06-01", probability: 5 },
     ];
     const { model } = await createSpreadsheetWithChart({
-        type: "odoo_bar",
+        type: "eden_bar",
         serverData,
         definition: {
-            type: "odoo_bar",
+            type: "eden_bar",
             metaData: {
                 groupBy: ["date"],
                 measure: "probability",
@@ -793,10 +793,10 @@ test("See records when clicking on a pie chart slice", async () => {
         { date: "2022-06-01", probability: 5 },
     ];
     const { model } = await createSpreadsheetWithChart({
-        type: "odoo_pie",
+        type: "eden_pie",
         serverData,
         definition: {
-            type: "odoo_pie",
+            type: "eden_pie",
             metaData: {
                 groupBy: ["date"],
                 measure: "probability",
@@ -831,9 +831,9 @@ test("See records when clicking on a pie chart slice", async () => {
 
 test("import/export action xml id", async () => {
     const { model } = await createSpreadsheetWithChart({
-        type: "odoo_bar",
+        type: "eden_bar",
         definition: {
-            type: "odoo_bar",
+            type: "eden_bar",
             metaData: {
                 groupBy: [],
                 measure: "probability",
@@ -861,7 +861,7 @@ test("import/export action xml id", async () => {
 });
 
 test("Show values is taken into account in the runtime", async () => {
-    const { model } = await createSpreadsheetWithChart({ type: "odoo_bar" });
+    const { model } = await createSpreadsheetWithChart({ type: "eden_bar" });
     const sheetId = model.getters.getActiveSheetId();
     const chartId = model.getters.getChartIds(sheetId)[0];
     const definition = model.getters.getChartDefinition(chartId);
@@ -877,8 +877,8 @@ test("Show values is taken into account in the runtime", async () => {
     expect(runtime.chartJsConfig.options.plugins.chartShowValuesPlugin.showValues).toBe(true);
 });
 
-test("Displays correct thousand separator for positive value in Odoo Bar chart Y-axis", async () => {
-    const { model } = await createSpreadsheetWithChart({ type: "odoo_bar" });
+test("Displays correct thousand separator for positive value in Eden Bar chart Y-axis", async () => {
+    const { model } = await createSpreadsheetWithChart({ type: "eden_bar" });
     const sheetId = model.getters.getActiveSheetId();
     const chartId = model.getters.getChartIds(sheetId)[0];
     const runtime = model.getters.getChartRuntime(chartId);
@@ -886,8 +886,8 @@ test("Displays correct thousand separator for positive value in Odoo Bar chart Y
     expect(runtime.chartJsConfig.options.scales.y?.ticks.callback(-60000000)).toBe("-60,000,000");
 });
 
-test("Thousand separator in Odoo Bar chart Y-axis is locale-dependent", async () => {
-    const { model } = await createSpreadsheetWithChart({ type: "odoo_bar" });
+test("Thousand separator in Eden Bar chart Y-axis is locale-dependent", async () => {
+    const { model } = await createSpreadsheetWithChart({ type: "eden_bar" });
     model.dispatch("UPDATE_LOCALE", { locale: fr_FR });
     const sheetId = model.getters.getActiveSheetId();
     const chartId = model.getters.getChartIds(sheetId)[0];
@@ -897,14 +897,14 @@ test("Thousand separator in Odoo Bar chart Y-axis is locale-dependent", async ()
 });
 
 test("Chart data source is recreated when chart type is updated", async () => {
-    const { model } = await createSpreadsheetWithChart({ type: "odoo_bar" });
+    const { model } = await createSpreadsheetWithChart({ type: "eden_bar" });
     const sheetId = model.getters.getActiveSheetId();
     const chartId = model.getters.getChartIds(sheetId)[0];
     const chartDataSource = model.getters.getChartDataSource(chartId);
     model.dispatch("UPDATE_CHART", {
         definition: {
             ...model.getters.getChartDefinition(chartId),
-            type: "odoo_line",
+            type: "eden_line",
         },
         id: chartId,
         sheetId,

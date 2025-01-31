@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <!--Blanket Order Agreement-->
         <record id="bo_requisition" model="purchase.requisition">
@@ -87,4 +87,4 @@
             <field name="order_ids" eval="[Command.set([ref('purchase_requisition.rfq3'), ref('purchase_requisition.rfq4')])]"/>
         </record>
     </data>
-</odoo>
+</eden>

@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import itertools
 from collections import defaultdict
@@ -8,11 +8,11 @@ import pytz
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, fields, models, _
-from odoo.addons.resource.models.utils import string_to_datetime, Intervals
-from odoo.osv import expression
-from odoo.tools import ormcache, format_list
-from odoo.exceptions import UserError
+from eden import api, fields, models, _
+from eden.addons.resource.models.utils import string_to_datetime, Intervals
+from eden.osv import expression
+from eden.tools import ormcache, format_list
+from eden.exceptions import UserError
 
 from .hr_work_intervals import WorkIntervals
 

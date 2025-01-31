@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import models
+from eden import models
 
-from odoo.addons.website_sale_collect import utils
+from eden.addons.website_sale_collect import utils
 
 
 class ProductTemplate(models.Model):

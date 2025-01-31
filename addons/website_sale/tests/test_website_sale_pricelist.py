@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 
@@ -6,12 +6,12 @@ from datetime import datetime, timedelta
 from freezegun import freeze_time
 from unittest.mock import patch
 
-from odoo.fields import Command
-from odoo.tests import tagged
-from odoo.tools import SQL
+from eden.fields import Command
+from eden.tests import tagged
+from eden.tools import SQL
 
-from odoo.addons.base.tests.common import HttpCaseWithUserPortal, TransactionCaseWithUserDemo
-from odoo.addons.website_sale.tests.common import WebsiteSaleCommon
+from eden.addons.base.tests.common import HttpCaseWithUserPortal, TransactionCaseWithUserDemo
+from eden.addons.website_sale.tests.common import WebsiteSaleCommon
 
 
 r''' /!\/!\
@@ -114,7 +114,7 @@ class TestWebsitePriceList(WebsiteSaleCommon):
 
     def setUp(self):
         super().setUp()
-        patcher = patch('odoo.addons.website_sale.models.website.Website.get_pricelist_available', wraps=self._get_pricelist_available)
+        patcher = patch('eden.addons.website_sale.models.website.Website.get_pricelist_available', wraps=self._get_pricelist_available)
         self.startPatcher(patcher)
 
     # Mock nedded because request.session doesn't exist during test
@@ -421,7 +421,7 @@ def simulate_frontend_context(self, website_id=1):
     # Mock this method will be enough to simulate frontend context in most methods
     def get_request_website():
         return self.env['website'].browse(website_id)
-    patcher = patch('odoo.addons.website.models.ir_http.get_request_website', wraps=get_request_website)
+    patcher = patch('eden.addons.website.models.ir_http.get_request_website', wraps=get_request_website)
     self.startPatcher(patcher)
 
 
@@ -588,21 +588,21 @@ class TestWebsitePriceListAvailableGeoIP(TestWebsitePriceListAvailable):
         # property_product_pricelist will also be returned in the available pricelists
         self.website1_be_pl += self.env.user.partner_id.property_product_pricelist
 
-        with patch('odoo.addons.website_sale.models.website.Website._get_geoip_country_code', return_value=self.BE.code):
+        with patch('eden.addons.website_sale.models.website.Website._get_geoip_country_code', return_value=self.BE.code):
             pls = self.website.get_pricelist_available()
         self.assertEqual(pls, self.website1_be_pl, "Only pricelists for BE and accessible on website should be returned, and the partner pl")
 
     def test_get_pricelist_available_geoip2(self):
         # Test get all available pricelists with geoip and a partner pricelist not website compliant
         self.env.user.partner_id.property_product_pricelist = self.backend_pl
-        with patch('odoo.addons.website_sale.models.website.Website._get_geoip_country_code', return_value=self.BE.code):
+        with patch('eden.addons.website_sale.models.website.Website._get_geoip_country_code', return_value=self.BE.code):
             pls = self.website.get_pricelist_available()
         self.assertEqual(pls, self.website1_be_pl, "Only pricelists for BE and accessible on website should be returned as partner pl is not website compliant")
 
     def test_get_pricelist_available_geoip3(self):
         # Test get all available pricelists with geoip and a partner pricelist website compliant (but not geoip compliant)
         self.env.user.partner_id.property_product_pricelist = self.w1_pl_code_select
-        with patch('odoo.addons.website_sale.models.website.Website._get_geoip_country_code', return_value=self.BE.code):
+        with patch('eden.addons.website_sale.models.website.Website._get_geoip_country_code', return_value=self.BE.code):
             pls = self.website.get_pricelist_available()
         self.assertEqual(pls, self.website1_be_pl, "Only pricelists for BE and accessible on website should be returned, but not the partner pricelist as it is website compliant but not GeoIP compliant.")
 
@@ -613,15 +613,15 @@ class TestWebsitePriceListAvailableGeoIP(TestWebsitePriceListAvailable):
         pls_to_return += self.env.user.partner_id.property_product_pricelist
 
         current_pl = self.w1_pl_code
-        with patch('odoo.addons.website_sale.models.website.Website._get_geoip_country_code', return_value=self.BE.code), \
-            patch('odoo.addons.website_sale.models.website.Website._get_cached_pricelist_id', return_value=current_pl.id):
+        with patch('eden.addons.website_sale.models.website.Website._get_geoip_country_code', return_value=self.BE.code), \
+            patch('eden.addons.website_sale.models.website.Website._get_cached_pricelist_id', return_value=current_pl.id):
             pls = self.website.get_pricelist_available(show_visible=True)
         self.assertEqual(pls, pls_to_return + current_pl, "Only pricelists for BE, accessible en website and selectable should be returned. It should also return the applied promo pl")
 
     def test_get_pricelist_available_geoip5(self):
         # Test get all available pricelists with geoip for a country not existing in any pricelists
 
-        with patch('odoo.addons.website_sale.models.website.Website._get_geoip_country_code', return_value=self.US.code):
+        with patch('eden.addons.website_sale.models.website.Website._get_geoip_country_code', return_value=self.US.code):
             pricelists = self.website.get_pricelist_available()
         self.assertFalse(pricelists, "Pricelists specific to NL and BE should not be returned for US.")
 
@@ -633,7 +633,7 @@ class TestWebsitePriceListAvailableGeoIP(TestWebsitePriceListAvailable):
         self.website1_be_pl -= exclude
 
         with patch(
-            'odoo.addons.website_sale.models.website.Website._get_geoip_country_code',
+            'eden.addons.website_sale.models.website.Website._get_geoip_country_code',
             return_value=self.BE.code,
         ):
             pls = self.website.get_pricelist_available()

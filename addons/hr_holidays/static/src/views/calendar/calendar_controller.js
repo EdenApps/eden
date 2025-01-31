@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { _t } from "@web/core/l10n/translation";
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
@@ -11,7 +11,7 @@ import { serializeDate } from "@web/core/l10n/dates";
 import { TimeOffCalendarFilterPanel } from "./filter_panel/calendar_filter_panel";
 import { TimeOffFormViewDialog } from "../view_dialog/form_view_dialog";
 import { useLeaveCancelWizard } from "../hooks";
-import { EventBus, useSubEnv } from "@odoo/owl";
+import { EventBus, useSubEnv } from "@eden/owl";
 
 export class TimeOffCalendarController extends CalendarController {
     static components = {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <record id="bs_debug_view" model="ir.ui.view">
             <field name="name">BS Debug</field>
@@ -8,7 +8,7 @@
             <field name="arch" type="xml">
                 <t name="Debug" t-name="website.bs_debug_page_view">
                     <t t-call="website.layout">
-                        <t t-set="odoo_theme_colors" t-value="[['o-color-1', 'Color 1'], ['o-color-2', 'Color 2'], ['o-color-3', 'Color 3'], ['o-color-4', 'Color 4'], ['o-color-5', 'Color 5']]"/>
+                        <t t-set="eden_theme_colors" t-value="[['o-color-1', 'Color 1'], ['o-color-2', 'Color 2'], ['o-color-3', 'Color 3'], ['o-color-4', 'Color 4'], ['o-color-5', 'Color 5']]"/>
                         <t t-set="bs_theme_colors" t-value="[['primary', 'Primary'], ['secondary', 'Secondary'], ['success', 'Success'], ['info', 'Info'], ['warning', 'Warning'], ['danger', 'Danger'], ['light', 'Light'], ['dark', 'Dark']]"/>
                         <t t-set="bs_gray_colors" t-value="[['white', 'White'], ['100', '100'], ['200', '200'], ['300', '300'], ['400', '400'], ['500', '500'], ['600', '600'], ['700', '700'], ['800', '800'], ['900', '900'], ['black', 'Black']]"/>
                         <div id="wrap" class="oe_structure">
@@ -361,7 +361,7 @@
                                     <div class="row">
                                         <div class="col-md">
                                             <div class="row g-0">
-                                                <t t-foreach="odoo_theme_colors" t-as="color">
+                                                <t t-foreach="eden_theme_colors" t-as="color">
                                                     <div t-attf-class="col-auto bg-#{color[0]}">
                                                         <div class="py-1 px-3"><t t-esc="color[1]"/></div>
                                                     </div>
@@ -382,7 +382,7 @@
                                                 </t>
                                             </div>
                                             <div class="row g-0 mt-4">
-                                                <t t-foreach="odoo_theme_colors" t-as="color">
+                                                <t t-foreach="eden_theme_colors" t-as="color">
                                                     <div t-attf-class="col-auto text-#{color[0]}">
                                                         <div class="py-1 px-3"><t t-esc="color[1]"/></div>
                                                     </div>
@@ -648,4 +648,4 @@
             <field name="view_id" ref="snippets_debug_view"/>
         </record>
     </data>
-</odoo>
+</eden>

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from datetime import timedelta
 
-from odoo import fields
-from odoo.addons.stock.tests.common import TestStockCommon
-from odoo import tools
+from eden import fields
+from eden.addons.stock.tests.common import TestStockCommon
+from eden import tools
 
 
 class PurchaseTestCommon(TestStockCommon):

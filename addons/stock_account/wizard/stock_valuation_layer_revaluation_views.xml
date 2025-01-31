@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <record id="action_revalue_layers" model="ir.actions.act_window">
         <field name="name">Adjust Valuation</field>
@@ -54,4 +54,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

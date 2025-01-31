@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
 
         <!--Sample sale orders with carrier defined-->
@@ -85,4 +85,4 @@
             ]"/>
         </function>
     </data>
-</odoo>
+</eden>

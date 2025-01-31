@@ -5,8 +5,8 @@ import { RELATIVE_DATE_RANGE_TYPES } from "@spreadsheet/helpers/constants";
 import { DateFilterValue } from "../filter_date_value/filter_date_value";
 import { DateFromToValue } from "../filter_date_from_to_value/filter_date_from_to_value";
 
-import { Component, onWillStart } from "@odoo/owl";
-import { components } from "@odoo/o-spreadsheet";
+import { Component, onWillStart } from "@eden/owl";
+import { components } from "@eden/o-spreadsheet";
 import { _t } from "@web/core/l10n/translation";
 import { useService } from "@web/core/utils/hooks";
 import { Domain } from "@web/core/domain";
@@ -41,8 +41,8 @@ export class FilterValue extends Component {
                 return;
             }
             try {
-                const odooDataProvider = this.props.model.config.custom.odooDataProvider;
-                await getFields(odooDataProvider.serverData, this.filter.modelName);
+                const edenDataProvider = this.props.model.config.custom.edenDataProvider;
+                await getFields(edenDataProvider.serverData, this.filter.modelName);
                 this.isValid = true;
             } catch (e) {
                 if (e instanceof ModelNotFoundError) {

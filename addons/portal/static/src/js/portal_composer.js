@@ -1,11 +1,11 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { _t } from "@web/core/l10n/translation";
 import { escape } from "@web/core/utils/strings";
 import { renderToElement } from "@web/core/utils/render";
 import publicWidget from "@web/legacy/js/public/public_widget";
 import { post } from "@web/core/network/http_service";
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 import { rpc, RPCError } from "@web/core/network/rpc";
 
 /**
@@ -31,7 +31,7 @@ var PortalComposer = publicWidget.Widget.extend({
         this.options = Object.assign({
             'allow_composer': true,
             'display_composer': false,
-            'csrf_token': odoo.csrf_token,
+            'csrf_token': eden.csrf_token,
             'token': false,
             'res_model': false,
             'res_id': false,
@@ -117,8 +117,8 @@ var PortalComposer = publicWidget.Widget.extend({
         return Promise.all([...this.$fileInput[0].files].map((file) => {
             return new Promise(function (resolve, reject) {
                 var data = self._prepareAttachmentData(file);
-                if (odoo.csrf_token) {
-                    data.csrf_token = odoo.csrf_token;
+                if (eden.csrf_token) {
+                    data.csrf_token = eden.csrf_token;
                 }
                 post('/mail/attachment/upload', data).then(function (res) {
                     let attachment = res.data["ir.attachment"][0]

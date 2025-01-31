@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 
 import { fuzzyLookup, fuzzyTest } from "@web/core/utils/search";
 

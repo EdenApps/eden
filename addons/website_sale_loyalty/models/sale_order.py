@@ -1,12 +1,12 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
 from datetime import timedelta
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError
-from odoo.http import request
-from odoo.osv import expression
+from eden import api, fields, models
+from eden.exceptions import UserError
+from eden.http import request
+from eden.osv import expression
 
 
 class SaleOrder(models.Model):

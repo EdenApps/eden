@@ -14,8 +14,8 @@ registry.category("web_tour.tours").add("portal_chatter_bundle", {
             content: "Wait for the whole page to load",
             trigger: "#chatterRoot:shadow .o-mail-Chatter",
             run: () => {
-                odoo.portalChatterReady.then(() => {
-                    const errors = odoo.loader.findErrors();
+                eden.portalChatterReady.then(() => {
+                    const errors = eden.loader.findErrors();
                     if (Object.keys(errors).length) {
                         console.error("Couldn't load all JS modules.", errors);
                     } else {

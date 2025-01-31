@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import datetime
 from freezegun import freeze_time
 from dateutil.relativedelta import relativedelta
 
-from odoo.tests import Form, tagged
+from eden.tests import Form, tagged
 
-from odoo.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from eden.addons.hr_holidays.tests.common import TestHrHolidaysCommon
 
 
 @tagged('post_install', '-at_install', 'accruals')

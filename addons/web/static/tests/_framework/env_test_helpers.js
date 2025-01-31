@@ -1,4 +1,4 @@
-import { after, afterEach, beforeEach, registerDebugInfo } from "@odoo/hoot";
+import { after, afterEach, beforeEach, registerDebugInfo } from "@eden/hoot";
 import { startRouter } from "@web/core/browser/router";
 import { createDebugContext } from "@web/core/debug/debug_context";
 import { translatedTerms, translationLoaded } from "@web/core/l10n/translation";
@@ -11,7 +11,7 @@ import { pick } from "@web/core/utils/objects";
 /**
  * @typedef {Record<keyof Services, any>} Dependencies
  *
- * @typedef {import("@web/env").OdooEnv} OdooEnv
+ * @typedef {import("@web/env").EdenEnv} EdenEnv
  *
  * @typedef {import("@web/core/registry").Registry} Registry
  *
@@ -39,7 +39,7 @@ const registerRegistryForCleanup = (registry) => {
 };
 
 const registriesContent = new WeakMap();
-/** @type {OdooEnv | null} */
+/** @type {EdenEnv | null} */
 let currentEnv = null;
 
 // Registers all registries for cleanup in all tests
@@ -77,7 +77,7 @@ export function getService(name) {
 /**
  * Makes a mock environment along with a mock server
  *
- * @param {Partial<OdooEnv>} [partialEnv]
+ * @param {Partial<EdenEnv>} [partialEnv]
  */
 export async function makeMockEnv(partialEnv, { makeNew = false } = {}) {
     if (currentEnv && !makeNew) {
@@ -116,8 +116,8 @@ export async function makeMockEnv(partialEnv, { makeNew = false } = {}) {
 /**
  * Makes a mock environment for dialog tests
  *
- * @param {Partial<OdooEnv>} [partialEnv]
- * @returns {Promise<OdooEnv>}
+ * @param {Partial<EdenEnv>} [partialEnv]
+ * @returns {Promise<EdenEnv>}
  */
 export async function makeDialogMockEnv(partialEnv) {
     return makeMockEnv({
@@ -135,7 +135,7 @@ export async function makeDialogMockEnv(partialEnv) {
  * @template {keyof Services} T
  * @param {T} name
  * @param {Partial<Services[T]> |
- *  (env: OdooEnv, dependencies: Dependencies) => Services[T]
+ *  (env: EdenEnv, dependencies: Dependencies) => Services[T]
  * } serviceFactory
  */
 export function mockService(name, serviceFactory) {

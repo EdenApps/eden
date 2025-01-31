@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, fields, models
-from odoo.exceptions import AccessError
-from odoo.tools.translate import _
-from odoo.addons.mail.tools.discuss import Store
+from eden import api, fields, models
+from eden.exceptions import AccessError
+from eden.tools.translate import _
+from eden.addons.mail.tools.discuss import Store
 
 
 class MailNotification(models.Model):

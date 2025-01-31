@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mass_mailing_sms.tests.common import MassSMSCommon
-from odoo.tests import Form, users
+from eden.addons.mass_mailing_sms.tests.common import MassSMSCommon
+from eden.tests import Form, users
 
 
 class TestMailingListSms(MassSMSCommon):

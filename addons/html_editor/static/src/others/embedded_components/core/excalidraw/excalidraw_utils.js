@@ -1,5 +1,5 @@
 import { useDebounced } from "@web/core/utils/timing";
-import { onWillUnmount, useComponent } from "@odoo/owl";
+import { onWillUnmount, useComponent } from "@eden/owl";
 
 /**
  * This hook can be used to setup temporary mouse events. The returned callback

@@ -4,9 +4,9 @@ import pytz
 from datetime import datetime
 from unittest.mock import patch
 
-from odoo import fields
-from odoo.tests import new_test_user
-from odoo.tests.common import tagged, TransactionCase
+from eden import fields
+from eden.tests import new_test_user
+from eden.tests.common import tagged, TransactionCase
 
 
 @tagged('attendance_process')

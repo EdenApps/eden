@@ -3,7 +3,7 @@ import { useChildRef, useService } from "@web/core/utils/hooks";
 import { CallbackRecorder } from "@web/search/action_hook";
 import { View } from "@web/views/view";
 
-import { Component, onMounted } from "@odoo/owl";
+import { Component, onMounted } from "@eden/owl";
 
 export class FormViewDialog extends Component {
     static template = "web.FormViewDialog";

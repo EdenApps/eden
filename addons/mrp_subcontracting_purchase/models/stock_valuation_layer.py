@@ -1,6 +1,6 @@
 
 
-from odoo import models
+from eden import models
 
 
 class StockValuationLayer(models.Model):

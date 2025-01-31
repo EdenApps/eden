@@ -1,4 +1,4 @@
-import { after, beforeEach, describe, expect, getFixture, test } from "@odoo/hoot";
+import { after, beforeEach, describe, expect, getFixture, test } from "@eden/hoot";
 import {
     click,
     edit,
@@ -8,8 +8,8 @@ import {
     queryAllTexts,
     queryFirst,
     resize,
-} from "@odoo/hoot-dom";
-import { animationFrame, Deferred, mockSendBeacon, runAllTimers } from "@odoo/hoot-mock";
+} from "@eden/hoot-dom";
+import { animationFrame, Deferred, mockSendBeacon, runAllTimers } from "@eden/hoot-mock";
 import {
     clickSave,
     defineActions,
@@ -113,7 +113,7 @@ test("change setting on nav bar click in base settings", async () => {
                         </setting>
                     </block>
                     <block title="Title of group Foo">
-                        <setting help="this is foo" documentation="https://www.odoo.com/documentation/1.0/applications/technical/web/settings/this_is_another_test.html">
+                        <setting help="this is foo" documentation="https://www.edencloud.us/documentation/1.0/applications/technical/web/settings/this_is_another_test.html">
                             <field name="foo"/>
                         </setting>
                         <setting string="Personalize setting" help="this is full personalize setting">
@@ -156,11 +156,11 @@ test("change setting on nav bar click in base settings", async () => {
     expect(".o_setting_box a").toHaveCount(2);
     expect(".o_setting_box a:eq(0)").toHaveAttribute(
         "href",
-        "https://www.odoo.com/documentation/1.0/applications/technical/web/settings/this_is_a_test.html"
+        "https://www.edencloud.us/documentation/1.0/applications/technical/web/settings/this_is_a_test.html"
     );
     expect(".o_setting_box a:eq(1)").toHaveAttribute(
         "href",
-        "https://www.odoo.com/documentation/1.0/applications/technical/web/settings/this_is_another_test.html"
+        "https://www.edencloud.us/documentation/1.0/applications/technical/web/settings/this_is_another_test.html"
     );
 
     await editSearch("Hello there");
@@ -788,7 +788,7 @@ test("settings views does not write the id on the url", async () => {
 
     await getService("action").doAction(1);
     await runAllTimers();
-    expect(browser.location.pathname).toBe("/odoo/settings");
+    expect(browser.location.pathname).toBe("/eden/settings");
     expect(".o_field_boolean input").toHaveProperty("disabled", false);
     await click(".o_field_boolean input");
     await animationFrame();
@@ -797,7 +797,7 @@ test("settings views does not write the id on the url", async () => {
 
     await animationFrame();
     expect(router.current.resId).toBe(undefined);
-    expect(browser.location.pathname).toBe("/odoo/settings");
+    expect(browser.location.pathname).toBe("/eden/settings");
 });
 
 test("settings views can search when coming back in breadcrumbs", async () => {
@@ -1979,7 +1979,7 @@ test("Open settings from url, with app anchor", async () => {
     `;
     ResConfigSettings._views.search = /* xml */ `<search/>`;
 
-    redirect("/odoo/settings#crm");
+    redirect("/eden/settings#crm");
     await mountWithCleanup(WebClient);
     await animationFrame();
     expect(".selected").toHaveAttribute("data-key", "crm", { message: "crm setting selected" });
@@ -2016,7 +2016,7 @@ test("Open settings from url, with setting id anchor", async () => {
     `;
     ResConfigSettings._views.search = /* xml */ `<search/>`;
 
-    redirect("/odoo/settings#setting_id");
+    redirect("/eden/settings#setting_id");
     await mountWebClient();
     expect(".selected").toHaveAttribute("data-key", "crm", { message: "crm setting selected" });
     expect(queryAllTexts(".settings .o_settings_container .o_form_label")).toEqual(["Foo"]);

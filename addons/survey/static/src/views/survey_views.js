@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { registry } from '@web/core/registry';
 import { ListRenderer } from "@web/views/list/list_renderer";
@@ -6,7 +6,7 @@ import { KanbanRenderer } from "@web/views/kanban/kanban_renderer";
 import { listView } from '@web/views/list/list_view';
 import { kanbanView } from '@web/views/kanban/kanban_view';
 import { useService } from "@web/core/utils/hooks";
-import { useEffect, useRef } from "@odoo/owl";
+import { useEffect, useRef } from "@eden/owl";
 
 export function useSurveyLoadSampleHook(selector) {
     const rootRef = useRef("root");

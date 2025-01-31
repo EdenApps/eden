@@ -1,16 +1,16 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 # Copyright (c) 2005-2006 Axelor SARL. (http://www.axelor.com)
 
 from datetime import datetime, date, time
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, fields, models, _
-from odoo.addons.resource.models.utils import HOURS_PER_DAY
-from odoo.addons.hr_holidays.models.hr_leave import get_employee_from_context
-from odoo.exceptions import AccessError, UserError, ValidationError
-from odoo.tools.float_utils import float_round
-from odoo.tools.date_utils import get_timedelta
+from eden import api, fields, models, _
+from eden.addons.resource.models.utils import HOURS_PER_DAY
+from eden.addons.hr_holidays.models.hr_leave import get_employee_from_context
+from eden.exceptions import AccessError, UserError, ValidationError
+from eden.tools.float_utils import float_round
+from eden.tools.date_utils import get_timedelta
 
 
 MONTHS_TO_INTEGER = {"jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6, "jul": 7, "aug": 8, "sep": 9, "oct": 10, "nov": 11, "dec": 12}

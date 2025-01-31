@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<eden noupdate="1">
     <record id="vehicle_tag_transport" model="fleet.vehicle.tag" >
         <field name="name">Transport</field>
         <field name="color" eval="5"/>
@@ -65,4 +65,4 @@
         <field name="is_a_dock">True</field>
         <field name="location_id" ref="stock.stock_location_output"/>
     </record>
-</odoo>
+</eden>

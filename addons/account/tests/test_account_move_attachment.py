@@ -1,5 +1,5 @@
-from odoo import http
-from odoo.tests import tagged, HttpCase
+from eden import http
+from eden.tests import tagged, HttpCase
 
 
 @tagged("-at_install", "post_install")

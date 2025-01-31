@@ -1,8 +1,8 @@
-/** @odoo-module */
+/** @eden-module */
 
 const { DateTime } = luxon;
 import { Domain } from "@web/core/domain";
-import { expect } from "@odoo/hoot";
+import { expect } from "@eden/hoot";
 
 function getDateDomainBounds(domain) {
     const startDateStr = domain[1][2];

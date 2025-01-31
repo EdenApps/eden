@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_references" name="References">
     <div class="s_references o_mail_snippet_general pt32 pb32">
@@ -24,4 +24,4 @@
     </div>
 </template>
 
-</odoo>
+</eden>

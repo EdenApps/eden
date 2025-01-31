@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
 
     <record id="sale_order_line_wizard_form" model="ir.ui.view">
         <field name="name">sale.order.line.wizard.form</field>
@@ -43,4 +43,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

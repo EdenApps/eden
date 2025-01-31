@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <record id="view_module_filter_inherit_account" model="ir.ui.view">
             <field name="name">ir.module.module.list.inherit.account</field>
@@ -13,4 +13,4 @@
             </field>
         </record>
     </data>
-</odoo>
+</eden>

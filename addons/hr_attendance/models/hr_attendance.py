@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import pytz
 
@@ -10,13 +10,13 @@ from operator import itemgetter
 from pytz import timezone
 from random import randint
 
-from odoo.http import request
-from odoo import models, fields, api, exceptions, _
-from odoo.addons.resource.models.utils import Intervals
-from odoo.osv.expression import AND, OR
-from odoo.tools.float_utils import float_is_zero
-from odoo.exceptions import AccessError
-from odoo.tools import convert, format_duration, format_time, format_datetime
+from eden.http import request
+from eden import models, fields, api, exceptions, _
+from eden.addons.resource.models.utils import Intervals
+from eden.osv.expression import AND, OR
+from eden.tools.float_utils import float_is_zero
+from eden.exceptions import AccessError
+from eden.tools import convert, format_duration, format_time, format_datetime
 
 def get_google_maps_url(latitude, longitude):
     return "https://maps.google.com?q=%s,%s" % (latitude, longitude)

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
 
         <!-- Users -->
@@ -1691,4 +1691,4 @@ Send it ASAP, its urgent.</field>
             <field name="user_id" ref="base.user_admin"/>
         </record>
     </data>
-</odoo>
+</eden>

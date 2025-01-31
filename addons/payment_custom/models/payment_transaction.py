@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 
-from odoo import _, api, models
-from odoo.exceptions import ValidationError
+from eden import _, api, models
+from eden.exceptions import ValidationError
 
-from odoo.addons.payment_custom.controllers.main import CustomController
+from eden.addons.payment_custom.controllers.main import CustomController
 
 _logger = logging.getLogger(__name__)
 

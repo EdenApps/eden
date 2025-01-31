@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <!-- Snippets' Default Images -->
         <record id="mass_mailing.s_cover_default_image" model="ir.attachment">
@@ -159,4 +159,4 @@
             <field name="url">/mass_mailing/static/src/img/theme_default/s_default_image_three_cols_3.jpg</field>
         </record>
     </data>
-</odoo>
+</eden>

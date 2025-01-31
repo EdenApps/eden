@@ -18,9 +18,9 @@ import {
     step,
     triggerHotkey,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, expect, test } from "@odoo/hoot";
-import { mockDate, tick } from "@odoo/hoot-mock";
-import { EventBus } from "@odoo/owl";
+import { describe, expect, test } from "@eden/hoot";
+import { mockDate, tick } from "@eden/hoot-mock";
+import { EventBus } from "@eden/owl";
 import {
     Command,
     getService,
@@ -85,7 +85,7 @@ test("Message post in chat window of chatter should log a note", async () => {
     const messageId = pyEnv["mail.message"].create({
         model: "res.partner",
         body: "A needaction message to have it in messaging menu",
-        author_id: serverState.odoobotId,
+        author_id: serverState.edenbotId,
         needaction: true,
         res_id: partnerId,
     });
@@ -123,7 +123,7 @@ test("Chatter in chat window should scroll to most recent message", async () => 
             .map((_, index) => ({
                 model: "res.partner",
                 body: "Non Empty Body ".repeat(25),
-                author_id: serverState.odoobotId,
+                author_id: serverState.edenbotId,
                 needaction: true,
                 res_id: partnerId,
             }))
@@ -131,7 +131,7 @@ test("Chatter in chat window should scroll to most recent message", async () => 
     const lastMessageId = pyEnv["mail.message"].create({
         model: "res.partner",
         body: "A needaction message to have it in messaging menu",
-        author_id: serverState.odoobotId,
+        author_id: serverState.edenbotId,
         needaction: true,
         res_id: partnerId,
     });
@@ -285,7 +285,7 @@ test("Open chatwindow as a non member", async () => {
     const messageId = pyEnv["mail.message"].create({
         model: "discuss.channel",
         body: "A needaction message to have it in messaging menu",
-        author_id: serverState.odoobotId,
+        author_id: serverState.edenbotId,
         needaction: true,
         res_id: channelId,
     });
@@ -392,7 +392,7 @@ test("chat window: close on ESCAPE (multi)", async () => {
 test("Close composer suggestions in chat window with ESCAPE does not also close the chat window", async () => {
     const pyEnv = await startServer();
     const partnerId = pyEnv["res.partner"].create({
-        email: "testpartner@odoo.com",
+        email: "testpartner@eden.com",
         name: "TestPartner",
     });
     pyEnv["res.users"].create({ partner_id: partnerId });
@@ -666,10 +666,10 @@ test("chat window should open when receiving a new DM", async () => {
     await contains(".o-mail-ChatBubble-counter", { text: "1" });
 });
 
-test("chat window should not open when receiving a new DM from odoobot", async () => {
+test("chat window should not open when receiving a new DM from edenbot", async () => {
     mockDate("2023-01-03 12:00:00"); // so that it's after last interest (mock server is in 2019 by default!)
     const pyEnv = await startServer();
-    const userId = pyEnv["res.users"].create({ partner_id: serverState.odoobotId });
+    const userId = pyEnv["res.users"].create({ partner_id: serverState.edenbotId });
     const channelId = pyEnv["discuss.channel"].create({
         channel_member_ids: [
             Command.create({
@@ -677,7 +677,7 @@ test("chat window should not open when receiving a new DM from odoobot", async (
                 last_interest_dt: "2021-01-01 10:00:00",
                 partner_id: serverState.partnerId,
             }),
-            Command.create({ partner_id: serverState.odoobotId }),
+            Command.create({ partner_id: serverState.edenbotId }),
         ],
         channel_type: "chat",
     });

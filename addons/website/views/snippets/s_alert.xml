@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_alert" name="Alert">
     <div class="s_alert s_alert_md alert alert-info w-100 clearfix">
@@ -45,4 +45,4 @@
     <field name="path">website/static/src/snippets/s_alert/000.scss</field>
 </record>
 
-</odoo>
+</eden>

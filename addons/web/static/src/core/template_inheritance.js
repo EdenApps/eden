@@ -257,7 +257,7 @@ export function applyInheritance(root, operations, url = "") {
         const target = getElement(root, operation);
         const position = operation.getAttribute("position") || "inside";
 
-        if (odoo.debug && url) {
+        if (eden.debug && url) {
             const attributes = [...operation.attributes].map(
                 ({ name, value }) =>
                     `${name}=${JSON.stringify(name === "position" ? position : value)}`

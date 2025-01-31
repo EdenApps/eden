@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models, _
-from odoo.exceptions import UserError
-from odoo.tools import float_compare, float_is_zero
+from eden import fields, models, _
+from eden.exceptions import UserError
+from eden.tools import float_compare, float_is_zero
 
 
 class AccountMoveLine(models.Model):

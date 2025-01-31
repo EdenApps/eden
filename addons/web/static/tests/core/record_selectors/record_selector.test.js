@@ -1,6 +1,6 @@
-import { test, expect } from "@odoo/hoot";
+import { test, expect } from "@eden/hoot";
 import { RecordSelector } from "@web/core/record_selectors/record_selector";
-import { Component, useState, xml } from "@odoo/owl";
+import { Component, useState, xml } from "@eden/owl";
 import {
     defineModels,
     fields,
@@ -8,8 +8,8 @@ import {
     mountWithCleanup,
     onRpc,
 } from "@web/../tests/web_test_helpers";
-import { animationFrame } from "@odoo/hoot-mock";
-import { click } from "@odoo/hoot-dom";
+import { animationFrame } from "@eden/hoot-mock";
+import { click } from "@eden/hoot-dom";
 
 class Partner extends models.Model {
     _name = "partner";

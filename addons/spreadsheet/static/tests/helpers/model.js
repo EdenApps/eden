@@ -1,6 +1,6 @@
-import { Model } from "@odoo/o-spreadsheet";
-import { OdooDataProvider } from "@spreadsheet/data_sources/odoo_data_provider";
-import { animationFrame } from "@odoo/hoot-mock";
+import { Model } from "@eden/o-spreadsheet";
+import { EdenDataProvider } from "@spreadsheet/data_sources/eden_data_provider";
+import { animationFrame } from "@eden/hoot-mock";
 import { defineActions, defineParams, makeMockEnv, onRpc } from "@web/../tests/web_test_helpers";
 import { addRecordsFromServerData, addViewsFromServerData } from "./data";
 import { getMockEnv } from "@web/../tests/_framework/env_test_helpers";
@@ -8,12 +8,12 @@ import { setCellContent } from "./commands";
 
 /**
  * @typedef {import("@spreadsheet/../tests/helpers/data").ServerData} ServerData
- * @typedef {import("@spreadsheet/helpers/model").OdooSpreadsheetModel} OdooSpreadsheetModel
+ * @typedef {import("@spreadsheet/helpers/model").EdenSpreadsheetModel} EdenSpreadsheetModel
  * @typedef {import("@web/../tests/_framework/mock_server/mock_server").MockServerEnvironment} MockServerEnvironment
  */
 
 export function setupDataSourceEvaluation(model) {
-    model.config.custom.odooDataProvider.addEventListener("data-source-updated", () => {
+    model.config.custom.edenDataProvider.addEventListener("data-source-updated", () => {
         const sheetId = model.getters.getActiveSheetId();
         model.dispatch("EVALUATE_CELLS", { sheetId });
     });
@@ -27,7 +27,7 @@ export function setupDataSourceEvaluation(model) {
  * @param {object} [params.modelConfig]
  * @param {ServerData} [params.serverData] Data to be injected in the mock server
  * @param {function} [params.mockRPC] Mock rpc function
- * @returns {Promise<OdooSpreadsheetModel>}
+ * @returns {Promise<EdenSpreadsheetModel>}
  */
 export async function createModelWithDataSource(params = {}) {
     const env = await makeSpreadsheetMockEnv(params);
@@ -37,7 +37,7 @@ export async function createModelWithDataSource(params = {}) {
         ...config,
         custom: {
             env,
-            odooDataProvider: new OdooDataProvider(env),
+            edenDataProvider: new EdenDataProvider(env),
             ...config?.custom,
         },
     });

@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from collections import deque
 import io
 import json
 
-from odoo import http, _
-from odoo.http import content_disposition, request
-from odoo.tools import osutil
-from odoo.tools.misc import xlsxwriter
+from eden import http, _
+from eden.http import content_disposition, request
+from eden.tools import osutil
+from eden.tools.misc import xlsxwriter
 
 
 class TableExporter(http.Controller):

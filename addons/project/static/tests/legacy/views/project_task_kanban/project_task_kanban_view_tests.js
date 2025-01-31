@@ -1,4 +1,4 @@
-/* @odoo-module */
+/* @eden-module */
 
 import { startServer } from "@bus/../tests/helpers/mock_python_environment";
 import { addModelNamesToFetch } from "@bus/../tests/helpers/model_definitions_helpers";

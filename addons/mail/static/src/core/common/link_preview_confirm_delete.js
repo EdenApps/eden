@@ -1,5 +1,5 @@
 import { rpc } from "@web/core/network/rpc";
-import { Component, useState } from "@odoo/owl";
+import { Component, useState } from "@eden/owl";
 
 import { Dialog } from "@web/core/dialog/dialog";
 import { useService } from "@web/core/utils/hooks";

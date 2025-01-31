@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_intro_pill" name="Intro Pill">
     <section class="s_intro_pill pt40 pb40">
@@ -26,4 +26,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

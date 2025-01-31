@@ -1,6 +1,6 @@
 declare module "registries" {
     import { FieldDefinition, FieldType } from "fields";
-    import { Component } from "@odoo/owl";
+    import { Component } from "@eden/owl";
     import { Domain } from "@web/core/domain";
 
     interface DynamicFieldInfo {

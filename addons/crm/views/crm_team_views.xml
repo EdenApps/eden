@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
         <!-- CRM lead search by Salesteams -->
         <record id="crm_case_form_view_salesteams_lead" model="ir.actions.act_window">
@@ -49,7 +49,7 @@
                 <p class="o_view_nocontent_smiling_face">
                     Create a new lead
                 </p><p>
-                    Odoo helps you keep track of your sales pipeline to follow
+                    Eden helps you keep track of your sales pipeline to follow
                     up potential sales and better forecast your future revenues.
                 </p><p>
                     You will be able to plan meetings and phone calls from
@@ -337,4 +337,4 @@
             </field>
         </record>
 
-</odoo>
+</eden>

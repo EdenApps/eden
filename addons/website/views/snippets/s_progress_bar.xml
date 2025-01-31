@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template name="Progress Bar" id="s_progress_bar">
     <div class="s_progress_bar s_progress_bar_label_inline mb-2" data-display="inline" data-vcss="001">
@@ -45,4 +45,4 @@
     <field name="path">website/static/src/snippets/s_progress_bar/001.scss</field>
 </record>
 
-</odoo>
+</eden>

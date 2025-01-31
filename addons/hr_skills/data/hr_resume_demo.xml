@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 <data noupdate="1">
 
     <!-- Resume -->
@@ -24,7 +24,7 @@
 
     <record id="employee_resume_line_admin_4" model="hr.resume.line">
         <field name="employee_id" ref="hr.employee_admin"/>
-        <field name="name">Odoo SA</field>
+        <field name="name">Eden Cloud</field>
         <field name="date_start" eval="(datetime.now()+relativedelta(years=-3)).strftime('%Y-11-01')"/>
         <field name="line_type_id" ref="resume_type_experience"/>
         <field name="description">Job position: Development team leader
@@ -81,4 +81,4 @@
         <field name="study_field">Civil Engineering: Applied Mathematics</field>
         <field name="study_school">Université Catholique de Louvain (UCL)</field>
     </record>
-</odoo>
+</eden>

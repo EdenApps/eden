@@ -1,4 +1,4 @@
-import { App, Component, useState, xml } from "@odoo/owl";
+import { App, Component, useState, xml } from "@eden/owl";
 import { getTemplate } from "@web/core/templates";
 import { _t } from "@web/core/l10n/translation";
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo noupdate="1">
+<eden noupdate="1">
 
     <!-- Size -->
     <record id="product_attribute_size" model="product.attribute">
@@ -103,4 +103,4 @@
         <field name="attribute_id" ref="product.product_attribute_2"/>
         <field name="value_ids" eval="[(6, 0, [ref('product_attribute_value_color_1'), ref('product_attribute_value_color_2'), ref('product_attribute_value_color_3'), ref('product_attribute_value_color_4')])]"/>
     </record>
-</odoo>
+</eden>

@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 import re
 import werkzeug
 
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
-from odoo.tools.mail import email_split_and_format, email_normalize
+from eden import api, fields, models, _
+from eden.exceptions import UserError
+from eden.tools.mail import email_split_and_format, email_normalize
 
 _logger = logging.getLogger(__name__)
 

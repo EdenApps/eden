@@ -1,6 +1,6 @@
 import { hasTouch, isMobileOS } from "@web/core/browser/feature_detection";
 
-import { status, useComponent, useEffect, useRef, onWillUnmount } from "@odoo/owl";
+import { status, useComponent, useEffect, useRef, onWillUnmount } from "@eden/owl";
 
 /**
  * This file contains various custom hooks.
@@ -70,7 +70,7 @@ export function useAutofocus({ refName, selectAll, mobile } = {}) {
 /**
  * Ensures a bus event listener is attached and cleared the proper way.
  *
- * @param {import("@odoo/owl").EventBus} bus
+ * @param {import("@eden/owl").EventBus} bus
  * @param {string} eventName
  * @param {EventListener} callback
  */

@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import datetime
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError
-from odoo.osv import expression
-from odoo.tools.misc import clean_context
+from eden import _, api, fields, models
+from eden.exceptions import UserError
+from eden.osv import expression
+from eden.tools.misc import clean_context
 
 
 class ProductReplenish(models.TransientModel):
@@ -146,7 +146,7 @@ class ProductReplenish(models.TransientModel):
             action = self.env.ref('stock.stock_picking_action_picking_type')
             return [{
                 'label': move.picking_id.name,
-                'url': f'/odoo/action-stock.stock_picking_action_picking_type/{move.picking_id.id}'
+                'url': f'/eden/action-stock.stock_picking_action_picking_type/{move.picking_id.id}'
             }]
         return False
 

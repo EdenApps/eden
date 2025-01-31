@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <!-- Tracks of: "OpenWood: Furniture Collection Online Reveal" -->
     <record id="website_event_track.event_7_track_3" model="event.track">
         <!-- Easy Way To Build a Wooden House -->
@@ -56,4 +56,4 @@
         <field name="youtube_video_url">https://www.youtube.com/watch?v=tI5zCo-zLkY</field>
         <field name="is_youtube_replay" eval="True"/>
     </record>
-</odoo>
+</eden>

@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { registry } from '@web/core/registry';
 

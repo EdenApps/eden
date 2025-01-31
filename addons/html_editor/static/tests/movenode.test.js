@@ -1,6 +1,6 @@
-import { describe, expect, getFixture, test } from "@odoo/hoot";
-import { hover } from "@odoo/hoot-dom";
-import { animationFrame, tick } from "@odoo/hoot-mock";
+import { describe, expect, getFixture, test } from "@eden/hoot";
+import { hover } from "@eden/hoot-dom";
+import { animationFrame, tick } from "@eden/hoot-mock";
 import { contains } from "@web/../tests/web_test_helpers";
 import { setupEditor } from "./_helpers/editor";
 import { getContent } from "./_helpers/selection";
@@ -8,7 +8,7 @@ import { getContent } from "./_helpers/selection";
 describe.current.tags("desktop")
 
 const styles = `
-.odoo-editor-editable {
+.eden-editor-editable {
     position: fixed;
     top: 0;
     left: 30px;

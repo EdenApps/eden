@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import PopupWidget from '@website/snippets/s_popup/000';
 

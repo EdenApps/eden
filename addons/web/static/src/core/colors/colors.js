@@ -96,7 +96,7 @@ const COLORS_XL = [
  */
 export function getColors(colorScheme, paletteName) {
     switch (paletteName) {
-        case "odoo":
+        case "eden":
             return colorScheme === "dark" ? COLORS_ENT_DARK : COLORS_ENT_BRIGHT;
         case "sm":
             return COLORS_SM;
@@ -116,8 +116,8 @@ export function getColors(colorScheme, paletteName) {
  */
 export function getColor(index, colorScheme, paletteSizeOrName) {
     let paletteName;
-    if (paletteSizeOrName === "odoo") {
-        paletteName = "odoo";
+    if (paletteSizeOrName === "eden") {
+        paletteName = "eden";
     } else if (paletteSizeOrName <= 6 || paletteSizeOrName === "sm") {
         paletteName = "sm";
     } else if (paletteSizeOrName <= 12 || paletteSizeOrName === "md") {

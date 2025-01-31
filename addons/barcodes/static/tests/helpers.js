@@ -1,4 +1,4 @@
-/* @odoo-module */
+/* @eden-module */
 
 import { triggerEvent } from "@web/../tests/helpers/utils";
 

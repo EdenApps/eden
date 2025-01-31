@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="message_body" inherit_id="stock.message_body">
         <xpath expr="//t[contains(@t-if, 'move.state')]" position="inside">
             <t groups="point_of_sale.group_pos_user">
@@ -17,4 +17,4 @@
             </t>
         </xpath>
     </template>
-</odoo>
+</eden>

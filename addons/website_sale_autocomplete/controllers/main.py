@@ -1,10 +1,10 @@
 # -*- encoding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import requests
 
-from odoo import http
-from odoo.http import request
-from odoo.tools import html2plaintext
+from eden import http
+from eden.http import request
+from eden.tools import html2plaintext
 
 import logging
 _logger = logging.getLogger(__name__)
@@ -38,7 +38,7 @@ class AutoCompleteController(http.Controller):
             for field_standard in fields_standard:
                 if field_standard in standard_data:  # if a value is already assigned, do not overwrite it.
                     continue
-                # Convert state and countries to odoo ids
+                # Convert state and countries to eden ids
                 if field_standard == 'country':
                     standard_data[field_standard] = request.env['res.country'].search(
                         [('code', '=', google_field['short_name'].upper())])[0].id

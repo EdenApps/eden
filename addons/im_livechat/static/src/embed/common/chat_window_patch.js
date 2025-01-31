@@ -3,7 +3,7 @@ import { CloseConfirmation } from "@im_livechat/embed/common/close_confirmation"
 
 import { ChatWindow } from "@mail/core/common/chat_window";
 
-import { toRaw, useState } from "@odoo/owl";
+import { toRaw, useState } from "@eden/owl";
 
 import { useService } from "@web/core/utils/hooks";
 import { patch } from "@web/core/utils/patch";

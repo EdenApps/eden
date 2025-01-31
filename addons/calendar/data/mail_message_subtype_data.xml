@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <record id="calendar.subtype_invitation" model="mail.message.subtype">
             <field name="name">Invitation</field>
@@ -8,4 +8,4 @@
             <field name="default" eval="False"/>
         </record>
     </data>
-</odoo>
+</eden>

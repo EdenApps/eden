@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <record id="view_account_invoice_report_search_inherit" model="ir.ui.view">
         <field name="name">account.invoice.report.search.inherit</field>
@@ -34,4 +34,4 @@
         <field name="context">{'search_default_month':1, 'search_default_team_id': [active_id]}</field>
         <field name="help">From this report, you can have an overview of the amount invoiced to your customer. The search tool can also be used to personalise your Invoices reports and so, match this analysis to your needs.</field>
     </record>
-</odoo>
+</eden>

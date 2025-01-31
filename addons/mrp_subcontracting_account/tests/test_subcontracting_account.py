@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command, fields
-from odoo.tests import Form, tagged
-from odoo.tools.float_utils import float_round, float_compare
+from eden import Command, fields
+from eden.tests import Form, tagged
+from eden.tools.float_utils import float_round, float_compare
 
-from odoo.addons.mrp_subcontracting.tests.common import TestMrpSubcontractingCommon
-from odoo.addons.mrp_account.tests.test_bom_price import TestBomPriceCommon
+from eden.addons.mrp_subcontracting.tests.common import TestMrpSubcontractingCommon
+from eden.addons.mrp_account.tests.test_bom_price import TestBomPriceCommon
 
 
 @tagged('post_install', '-at_install')

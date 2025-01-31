@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import first, Command
-from odoo.tests import tagged, TransactionCase
-from odoo.tools import float_compare
+from eden.fields import first, Command
+from eden.tests import tagged, TransactionCase
+from eden.tools import float_compare
 
 
 @tagged('post_install', '-at_install')

@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
+import { beforeEach, describe, expect, test } from "@eden/hoot";
 import { makeMockEnv, serverState } from "@web/../tests/web_test_helpers";
 
 import { formatCurrency } from "@web/core/currency";

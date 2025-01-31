@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { WebsiteSale } from '@website_sale/js/website_sale';
 import { rpc } from "@web/core/network/rpc";

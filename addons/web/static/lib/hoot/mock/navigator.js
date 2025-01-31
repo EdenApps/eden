@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { createMock, HootError, makePublicListeners, MIME_TYPE } from "../hoot_utils";
 import { getSyncValue, setSyncValue } from "./sync_values";

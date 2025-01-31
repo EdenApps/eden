@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="pos_note_wait" model="pos.note">
         <field name="name">Wait</field>
         <field name="sequence">1</field>
@@ -16,4 +16,4 @@
         <field name="name">No Dressing</field>
         <field name="sequence">4</field>
     </record>
-</odoo>
+</eden>

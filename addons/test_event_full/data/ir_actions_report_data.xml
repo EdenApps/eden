@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="event_registration_report_test" model="ir.actions.report">
         <field name="name">Test Report</field>
         <field name="model">event.registration</field>
@@ -10,4 +10,4 @@
         <field name="binding_model_id" ref="event.model_event_registration"/>
         <field name="binding_type">report</field>
     </record>
-</odoo>
+</eden>

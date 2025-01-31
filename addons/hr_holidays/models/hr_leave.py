@@ -8,16 +8,16 @@ from dateutil.relativedelta import relativedelta
 from math import ceil
 from pytz import timezone, UTC
 
-from odoo.addons.base.models.ir_model import MODULE_UNINSTALL_FLAG
+from eden.addons.base.models.ir_model import MODULE_UNINSTALL_FLAG
 
-from odoo import api, Command, fields, models, tools
-from odoo.addons.base.models.res_partner import _tz_get
-from odoo.addons.resource.models.utils import float_to_time, HOURS_PER_DAY
-from odoo.exceptions import AccessError, UserError, ValidationError
-from odoo.tools.float_utils import float_round, float_compare
-from odoo.tools.misc import format_date
-from odoo.tools.translate import _
-from odoo.osv import expression
+from eden import api, Command, fields, models, tools
+from eden.addons.base.models.res_partner import _tz_get
+from eden.addons.resource.models.utils import float_to_time, HOURS_PER_DAY
+from eden.exceptions import AccessError, UserError, ValidationError
+from eden.tools.float_utils import float_round, float_compare
+from eden.tools.misc import format_date
+from eden.tools.translate import _
+from eden.osv import expression
 
 _logger = logging.getLogger(__name__)
 
@@ -752,7 +752,7 @@ Attempting to double-book your time off won't magically make your vacation 2x be
                     # Automatic validation should be done in sudo, because user might not have the rights to do it by himself
                     holiday_sudo.action_validate()
                     holiday_sudo.message_subscribe(partner_ids=holiday._get_responsible_for_approval().partner_id.ids)
-                    holiday_sudo.message_post(body=_("The time off has been automatically approved"), subtype_xmlid="mail.mt_comment") # Message from OdooBot (sudo)
+                    holiday_sudo.message_post(body=_("The time off has been automatically approved"), subtype_xmlid="mail.mt_comment") # Message from EdenBot (sudo)
                 elif not self._context.get('import_file'):
                     holiday_sudo.activity_update()
         return holidays

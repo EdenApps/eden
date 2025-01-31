@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="view_resource_calendar_search" model="ir.ui.view">
         <field name="name">resource.calendar.search</field>
         <field name="model">resource.calendar</field>
@@ -103,4 +103,4 @@
           </p>
         </field>
     </record>
-</odoo>
+</eden>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo noupdate="1">
+<eden noupdate="1">
 
     <record id="sale_order_line_rule_project_manager" model="ir.rule">
         <field name="name">Project Manager Sales Orders Line</field>
@@ -12,4 +12,4 @@
         <field name="perm_read" eval="1"/>
     </record>
 
-</odoo>
+</eden>

@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import io
 import logging
 import unittest
 import zipfile
-from odoo.fields import Command
+from eden.fields import Command
 
-from odoo.tests.common import HttpCase, tagged
+from eden.tests.common import HttpCase, tagged
 from base64 import b64decode
 
-from odoo.tools import mute_logger
+from eden.tools import mute_logger
 _logger = logging.getLogger(__name__)
 
 try:
@@ -101,7 +101,7 @@ class TestPartnerVCard(HttpCase):
             'password': 'testuser',
         })
         self.authenticate('testuser', 'testuser')
-        with mute_logger('odoo.http'):  # mute 403 warning
+        with mute_logger('eden.http'):  # mute 403 warning
             res = self.url_open('/web/partner/vcard?partner_ids=%s,%s' %
                             (self.partners[0].id, self.partners[1].id))
         self.assertEqual(res.status_code, 403)

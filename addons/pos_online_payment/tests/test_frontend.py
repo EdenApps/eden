@@ -1,21 +1,21 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import uuid
 from unittest.mock import patch
 
-from odoo import Command, fields
-from odoo.tools import mute_logger
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.pos_online_payment.tests.online_payment_common import OnlinePaymentCommon
-from odoo.addons.account.models.account_payment_method import AccountPaymentMethod
-from odoo.osv.expression import AND
-from odoo.addons.point_of_sale.tests.common import archive_products
+from eden import Command, fields
+from eden.tools import mute_logger
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
+from eden.addons.mail.tests.common import mail_new_test_user
+from eden.addons.pos_online_payment.tests.online_payment_common import OnlinePaymentCommon
+from eden.addons.account.models.account_payment_method import AccountPaymentMethod
+from eden.osv.expression import AND
+from eden.addons.point_of_sale.tests.common import archive_products
 
-import odoo.tests
+import eden.tests
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@eden.tests.tagged('post_install', '-at_install')
 class TestUi(AccountTestInvoicingCommon, OnlinePaymentCommon):
 
     def _get_url(self):
@@ -268,7 +268,7 @@ class TestUi(AccountTestInvoicingCommon, OnlinePaymentCommon):
     def test_invalid_access_token(self):
         order = self._open_session_fake_cashier_unpaid_order()
 
-        with mute_logger('odoo.http'): # Mutes "The provided order or access token is invalid." online payment portal error.
+        with mute_logger('eden.http'): # Mutes "The provided order or access token is invalid." online payment portal error.
             self.assertRaises(AssertionError, self._fake_open_pos_order_pay_page, order.id, order.access_token[:-1])
             self.assertRaises(AssertionError, self._fake_open_pos_order_pay_page, order.id, '')
 

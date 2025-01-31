@@ -1,5 +1,5 @@
-import { before } from "@odoo/hoot";
-import { mockFetch } from "@odoo/hoot-mock";
+import { before } from "@eden/hoot";
+import { mockFetch } from "@eden/hoot-mock";
 import { loadBundle } from "@web/core/assets";
 import * as _fields from "./_framework/mock_server/mock_fields";
 import * as _models from "./_framework/mock_server/mock_model";

@@ -1,6 +1,6 @@
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
-import { expect, test } from "@odoo/hoot";
-import { queryOne } from "@odoo/hoot-dom";
+import { expect, test } from "@eden/hoot";
+import { queryOne } from "@eden/hoot-dom";
 import { defineModels, fields, models, mountView, onRpc } from "@web/../tests/web_test_helpers";
 
 class Employee extends models.Model {

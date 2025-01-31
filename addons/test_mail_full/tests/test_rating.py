@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import lxml
 from datetime import datetime
 
-from odoo import http
-from odoo.addons.test_mail_full.tests.common import TestMailFullCommon
-from odoo.addons.test_mail_sms.tests.common import TestSMSRecipients
-from odoo.tests import tagged
-from odoo.tests.common import HttpCase, users, warmup
-from odoo.tools import mute_logger
+from eden import http
+from eden.addons.test_mail_full.tests.common import TestMailFullCommon
+from eden.addons.test_mail_sms.tests.common import TestSMSRecipients
+from eden.tests import tagged
+from eden.tests.common import HttpCase, users, warmup
+from eden.tools import mute_logger
 
 
 class TestRatingCommon(TestMailFullCommon, TestSMSRecipients):
@@ -41,7 +41,7 @@ class TestRatingFlow(TestRatingCommon):
             self.assertEqual(len(record_rating.message_ids), 1)
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('eden.addons.mail.models.mail_mail')
     def test_rating_prepare(self):
         for record_rating, desc in ((self.record_rating, 'With rating mixin'),
                                     (self.record_rating_thread, 'Without rating mixin')):
@@ -61,7 +61,7 @@ class TestRatingFlow(TestRatingCommon):
                 self.assertFalse(rating.rating)
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('eden.addons.mail.models.mail_mail')
     def test_rating_rating_apply(self):
         for record_rating, expected_subtype, is_rating_mixin_test in (
             (self.record_rating_thread, self.env.ref('mail.mt_comment'), False),

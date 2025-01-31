@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<odoo>
+<eden>
     <record id="certificate_key_view_form" model="ir.ui.view">
         <field name="name">certificate.key.form</field>
         <field name="model">certificate.key</field>
@@ -46,4 +46,4 @@
             </search>
         </field>
     </record>
-</odoo>
+</eden>

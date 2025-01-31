@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { _t } from "@web/core/l10n/translation";
 import { ProductCatalogOrderLine } from "@product/product_catalog/order_line/order_line";

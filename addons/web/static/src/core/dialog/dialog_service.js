@@ -1,4 +1,4 @@
-import { Component, markRaw, reactive, useChildSubEnv, xml } from "@odoo/owl";
+import { Component, markRaw, reactive, useChildSubEnv, xml } from "@eden/owl";
 import { registry } from "@web/core/registry";
 
 class DialogWrapper extends Component {
@@ -17,7 +17,7 @@ class DialogWrapper extends Component {
 /**
  *  @typedef {{
  *      add(
- *          Component: typeof import("@odoo/owl").Component,
+ *          Component: typeof import("@eden/owl").Component,
  *          props: {},
  *          options?: DialogServiceInterfaceAddOptions
  *      ): () => void;

@@ -1,11 +1,11 @@
-import { CorePlugin, Model, UID } from "@odoo/o-spreadsheet";
-import { ChartOdooMenuPlugin, OdooChartCorePlugin, OdooChartUIPlugin } from "@spreadsheet/chart";
+import { CorePlugin, Model, UID } from "@eden/o-spreadsheet";
+import { ChartEdenMenuPlugin, EdenChartCorePlugin, EdenChartUIPlugin } from "@spreadsheet/chart";
 import { CurrencyPlugin } from "@spreadsheet/currency/plugins/currency";
 import { AccountingPlugin } from "addons/spreadsheet_account/static/src/plugins/accounting_plugin";
 import { GlobalFiltersCorePlugin, GlobalFiltersUIPlugin } from "@spreadsheet/global_filters";
 import { ListCorePlugin, ListUIPlugin } from "@spreadsheet/list";
 import { IrMenuPlugin } from "@spreadsheet/ir_ui_menu/ir_ui_menu_plugin";
-import { PivotOdooCorePlugin } from "@spreadsheet/pivot";
+import { PivotEdenCorePlugin } from "@spreadsheet/pivot";
 import { PivotCoreGlobalFilterPlugin } from "@spreadsheet/pivot/plugins/pivot_core_global_filter_plugin";
 
 type Getters = Model["getters"];
@@ -52,23 +52,23 @@ type PluginGetters<Plugin extends { new (...args: unknown[]): any; getters: read
 
 declare module "@spreadsheet" {
     /**
-     * Add getters from custom plugins defined in odoo
+     * Add getters from custom plugins defined in eden
      */
 
-    interface OdooCoreGetters extends CoreGetters {}
-    interface OdooCoreGetters extends PluginGetters<typeof GlobalFiltersCorePlugin> {}
-    interface OdooCoreGetters extends PluginGetters<typeof ListCorePlugin> {}
-    interface OdooCoreGetters extends PluginGetters<typeof OdooChartCorePlugin> {}
-    interface OdooCoreGetters extends PluginGetters<typeof ChartOdooMenuPlugin> {}
-    interface OdooCoreGetters extends PluginGetters<typeof IrMenuPlugin> {}
-    interface OdooCoreGetters extends PluginGetters<typeof PivotOdooCorePlugin> {}
-    interface OdooCoreGetters extends PluginGetters<typeof PivotCoreGlobalFilterPlugin> {}
+    interface EdenCoreGetters extends CoreGetters {}
+    interface EdenCoreGetters extends PluginGetters<typeof GlobalFiltersCorePlugin> {}
+    interface EdenCoreGetters extends PluginGetters<typeof ListCorePlugin> {}
+    interface EdenCoreGetters extends PluginGetters<typeof EdenChartCorePlugin> {}
+    interface EdenCoreGetters extends PluginGetters<typeof ChartEdenMenuPlugin> {}
+    interface EdenCoreGetters extends PluginGetters<typeof IrMenuPlugin> {}
+    interface EdenCoreGetters extends PluginGetters<typeof PivotEdenCorePlugin> {}
+    interface EdenCoreGetters extends PluginGetters<typeof PivotCoreGlobalFilterPlugin> {}
 
-    interface OdooGetters extends Getters {}
-    interface OdooGetters extends OdooCoreGetters {}
-    interface OdooGetters extends PluginGetters<typeof GlobalFiltersUIPlugin> {}
-    interface OdooGetters extends PluginGetters<typeof ListUIPlugin> {}
-    interface OdooGetters extends PluginGetters<typeof OdooChartUIPlugin> {}
-    interface OdooGetters extends PluginGetters<typeof CurrencyPlugin> {}
-    interface OdooGetters extends PluginGetters<typeof AccountingPlugin> {}
+    interface EdenGetters extends Getters {}
+    interface EdenGetters extends EdenCoreGetters {}
+    interface EdenGetters extends PluginGetters<typeof GlobalFiltersUIPlugin> {}
+    interface EdenGetters extends PluginGetters<typeof ListUIPlugin> {}
+    interface EdenGetters extends PluginGetters<typeof EdenChartUIPlugin> {}
+    interface EdenGetters extends PluginGetters<typeof CurrencyPlugin> {}
+    interface EdenGetters extends PluginGetters<typeof AccountingPlugin> {}
 }

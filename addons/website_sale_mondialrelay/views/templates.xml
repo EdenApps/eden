@@ -1,4 +1,4 @@
-<odoo>
+<eden>
 
     <template
         id="website_sale_mondialrelay_billing_address_row"
@@ -30,4 +30,4 @@
         </xpath>
     </template>
 
-</odoo>
+</eden>

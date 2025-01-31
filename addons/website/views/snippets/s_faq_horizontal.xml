@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_faq_horizontal" name="Topics List">
     <section class="s_faq_horizontal">
@@ -95,4 +95,4 @@
     <field name="path">website/static/src/snippets/s_faq_horizontal/000.js</field>
 </record>
 
-</odoo>
+</eden>

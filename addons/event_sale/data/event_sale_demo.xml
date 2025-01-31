@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data>
+<eden><data>
     <record id="event_product.product_product_event_standard" model="product.product">
         <field name="invoice_policy">order</field>
     </record>
@@ -172,4 +172,4 @@
         <field name="event_id" ref="event.event_7"/>
         <field name="event_ticket_id" ref="event.event_7_ticket_2"/>
     </record>
-</data></odoo>
+</data></eden>

@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { registries } from "@odoo/o-spreadsheet";
+import { describe, expect, test } from "@eden/hoot";
+import { registries } from "@eden/o-spreadsheet";
 import { createSpreadsheetWithChart } from "@spreadsheet/../tests/helpers/chart";
 import {
     addGlobalFilter,
@@ -13,8 +13,8 @@ import { getCell, getEvaluatedCell } from "@spreadsheet/../tests/helpers/getters
 import { THIS_YEAR_GLOBAL_FILTER } from "@spreadsheet/../tests/helpers/global_filter";
 import { createModelWithDataSource } from "@spreadsheet/../tests/helpers/model";
 import { createSpreadsheetWithPivot } from "@spreadsheet/../tests/helpers/pivot";
-import { freezeOdooData } from "@spreadsheet/helpers/model";
-import { OdooPivot, OdooPivotRuntimeDefinition } from "@spreadsheet/pivot/odoo_pivot";
+import { freezeEdenData } from "@spreadsheet/helpers/model";
+import { EdenPivot, EdenPivotRuntimeDefinition } from "@spreadsheet/pivot/eden_pivot";
 
 const { pivotRegistry } = registries;
 
@@ -24,7 +24,7 @@ import { createSpreadsheetWithList } from "../helpers/list";
 describe.current.tags("headless");
 defineSpreadsheetModels();
 
-test("odoo pivot functions are replaced with their value", async function () {
+test("eden pivot functions are replaced with their value", async function () {
     const { model } = await createSpreadsheetWithPivot();
     expect(getCell(model, "A3").content).toBe('=PIVOT.HEADER(1,"bar",FALSE)');
     expect(getCell(model, "C3").content).toBe(
@@ -32,18 +32,18 @@ test("odoo pivot functions are replaced with their value", async function () {
     );
     expect(getEvaluatedCell(model, "A3").value).toBe("No");
     expect(getEvaluatedCell(model, "C3").value).toBe(15);
-    const data = await freezeOdooData(model);
+    const data = await freezeEdenData(model);
     const cells = data.sheets[0].cells;
     expect(cells.A3.content).toBe("No", { message: "the content is replaced with the value" });
     expect(cells.C3.content).toBe("15", { message: "the content is replaced with the value" });
     expect(data.formats[data.sheets[0].formats.C3]).toBe("#,##0.00");
 });
 
-test("Pivot with a type different of ODOO is not converted", async function () {
-    // Add a pivot with a type different of ODOO
+test("Pivot with a type different of EDEN is not converted", async function () {
+    // Add a pivot with a type different of EDEN
     pivotRegistry.add("NEW_KIND_OF_PIVOT", {
-        ui: OdooPivot,
-        definition: OdooPivotRuntimeDefinition,
+        ui: EdenPivot,
+        definition: EdenPivotRuntimeDefinition,
         externalData: true,
         onIterationEndEvaluation: () => {},
         granularities: [],
@@ -67,7 +67,7 @@ test("Pivot with a type different of ODOO is not converted", async function () {
     const model = await createModelWithDataSource({ spreadsheetData });
     setCellContent(model, "A1", `=PIVOT.VALUE(1, "probability:avg")`);
     setCellContent(model, "A2", `=PIVOT.HEADER(1, "measure", "probability:avg")`);
-    const data = await freezeOdooData(model);
+    const data = await freezeEdenData(model);
     const cells = data.sheets[0].cells;
     expect(cells.A1.content).toBe(`=PIVOT.VALUE(1, "probability:avg")`, {
         message: "the content is not replaced with the value",
@@ -89,7 +89,7 @@ test("values are not exported formatted", async function () {
     expect(getEvaluatedCell(model, "C3").formattedValue).toBe("January 1900");
     expect(getEvaluatedCell(model, "C4").value).toBe(46);
     expect(getEvaluatedCell(model, "C4").formattedValue).toBe("February 1900");
-    const data = await freezeOdooData(model);
+    const data = await freezeEdenData(model);
     const sharedModel = await createModelWithDataSource({ spreadsheetData: data });
     expect(getEvaluatedCell(sharedModel, "C3").value).toBe(15);
     expect(getEvaluatedCell(sharedModel, "C3").formattedValue).toBe("January 1900");
@@ -101,17 +101,17 @@ test("invalid expression with pivot function", async function () {
     const { model } = await createSpreadsheetWithPivot();
     setCellContent(model, "A1", "=PIVOT.VALUE(1)+"); // invalid expression
     expect(getEvaluatedCell(model, "A1").value).toBe("#BAD_EXPR");
-    const data = await freezeOdooData(model);
+    const data = await freezeEdenData(model);
     const cells = data.sheets[0].cells;
     expect(cells.A1.content).toBe("=PIVOT.VALUE(1)+", {
         message: "the content is left as is when the expression is invalid",
     });
 });
 
-test("odoo pivot functions detection is not case sensitive", async function () {
+test("eden pivot functions detection is not case sensitive", async function () {
     const { model } = await createSpreadsheetWithPivot();
     setCellContent(model, "A1", '=pivot.value(1,"probability:avg")');
-    const data = await freezeOdooData(model);
+    const data = await freezeEdenData(model);
     const A1 = data.sheets[0].cells.A1;
     expect(A1.content).toBe("131", { message: "the content is replaced with the value" });
 });
@@ -127,7 +127,7 @@ test("computed format is exported", async function () {
     setCellContent(model, "A1", '=PIVOT.VALUE(1,"pognon:avg")');
     expect(getCell(model, "A1").format).toBe(undefined);
     expect(getEvaluatedCell(model, "A1").format).toBe("#,##0.00[$€]");
-    const data = await freezeOdooData(model);
+    const data = await freezeEdenData(model);
     const formatId = data.sheets[0].formats.A1;
     const format = data.formats[formatId];
     expect(format).toBe("#,##0.00[$€]");
@@ -135,9 +135,9 @@ test("computed format is exported", async function () {
     expect(getCell(sharedModel, "A1").format).toBe("#,##0.00[$€]");
 });
 
-test("odoo charts are replaced with an image", async function () {
-    const { model } = await createSpreadsheetWithChart({ type: "odoo_bar" });
-    const data = await freezeOdooData(model);
+test("eden charts are replaced with an image", async function () {
+    const { model } = await createSpreadsheetWithChart({ type: "eden_bar" });
+    const data = await freezeEdenData(model);
     expect(data.sheets[0].figures.length).toBe(1);
     expect(data.sheets[0].figures[0].tag).toBe("image");
 });
@@ -148,7 +148,7 @@ test("translation function are replaced with their value", async function () {
     setCellContent(model, "A2", `=CONCATENATE("for",_t(" example"))`);
     expect(getEvaluatedCell(model, "A1").value).toBe("example");
     expect(getEvaluatedCell(model, "A2").value).toBe("for example");
-    const data = await freezeOdooData(model);
+    const data = await freezeEdenData(model);
     const cells = data.sheets[0].cells;
     expect(cells.A1.content).toBe("example", {
         message: "the content is replaced with the value",
@@ -161,7 +161,7 @@ test("translation function are replaced with their value", async function () {
 test("a new sheet is added for global filters", async function () {
     const model = await createModelWithDataSource();
     await addGlobalFilter(model, THIS_YEAR_GLOBAL_FILTER);
-    const data = await freezeOdooData(model);
+    const data = await freezeEdenData(model);
     expect(data.sheets.length).toBe(2);
     expect(data.sheets[1].name).toBe("Active Filters");
     expect(data.sheets[1].cells.A2.content).toBe("This Year");
@@ -170,7 +170,7 @@ test("a new sheet is added for global filters", async function () {
 test("global filters and their display value are exported", async function () {
     const model = await createModelWithDataSource();
     await addGlobalFilter(model, THIS_YEAR_GLOBAL_FILTER);
-    const data = await freezeOdooData(model);
+    const data = await freezeEdenData(model);
     expect(data.globalFilters.length).toBe(1);
     expect(data.globalFilters[0].label).toBe("This Year");
     expect(data.globalFilters[0].value).toBe(new Date().getFullYear().toString());
@@ -191,7 +191,7 @@ test("from/to global filters are exported", async function () {
             to: "2021-01-01",
         },
     });
-    const data = await freezeOdooData(model);
+    const data = await freezeEdenData(model);
     const filterSheet = data.sheets[1];
     expect(filterSheet.cells.B2.content).toBe("43831");
     expect(filterSheet.cells.C2.content).toBe("44197");
@@ -211,7 +211,7 @@ test("from/to global filter without value is exported", async function () {
         label: "Date Filter",
         rangeType: "from_to",
     });
-    const data = await freezeOdooData(model);
+    const data = await freezeEdenData(model);
     const filterSheet = data.sheets[1];
     expect(filterSheet.cells.A2.content).toBe("Date Filter");
     expect(filterSheet.cells.B2).toEqual({ content: "" });
@@ -224,9 +224,9 @@ test("from/to global filter without value is exported", async function () {
     expect(data.globalFilters[0].value).toBe("");
 });
 
-test("odoo links are replaced with their label", async function () {
+test("eden links are replaced with their label", async function () {
     const view = {
-        name: "an odoo view",
+        name: "an eden view",
         viewType: "list",
         action: {
             modelName: "partner",
@@ -237,10 +237,10 @@ test("odoo links are replaced with their label", async function () {
         sheets: [
             {
                 cells: {
-                    A1: { content: "[menu_xml](odoo://ir_menu_xml_id/test_menu)" },
-                    A2: { content: "[menu_id](odoo://ir_menu_id/12)" },
-                    A3: { content: `[odoo_view](odoo://view/${JSON.stringify(view)})` },
-                    A4: { content: "[external_link](https://odoo.com)" },
+                    A1: { content: "[menu_xml](eden://ir_menu_xml_id/test_menu)" },
+                    A2: { content: "[menu_id](eden://ir_menu_id/12)" },
+                    A3: { content: `[eden_view](eden://view/${JSON.stringify(view)})` },
+                    A4: { content: "[external_link](https://edencloud.us)" },
                     A5: { content: "[internal_link](o-spreadsheet://Sheet1)" },
                 },
             },
@@ -251,11 +251,11 @@ test("odoo links are replaced with their label", async function () {
         spreadsheetData: data,
         serverData: getMenuServerData(),
     });
-    const frozenData = await freezeOdooData(model);
+    const frozenData = await freezeEdenData(model);
     expect(frozenData.sheets[0].cells.A1.content).toBe("menu_xml");
     expect(frozenData.sheets[0].cells.A2.content).toBe("menu_id");
-    expect(frozenData.sheets[0].cells.A3.content).toBe("odoo_view");
-    expect(frozenData.sheets[0].cells.A4.content).toBe("[external_link](https://odoo.com)");
+    expect(frozenData.sheets[0].cells.A3.content).toBe("eden_view");
+    expect(frozenData.sheets[0].cells.A4.content).toBe("[external_link](https://edencloud.us)");
     expect(frozenData.sheets[0].cells.A5.content).toBe("[internal_link](o-spreadsheet://Sheet1)");
 });
 
@@ -269,7 +269,7 @@ test("spilled pivot table", async function () {
     });
     setCellContent(model, "A10", "=PIVOT(1)");
     setCellStyle(model, "B12", { bold: true });
-    const data = await freezeOdooData(model);
+    const data = await freezeEdenData(model);
     const sheet = data.sheets[0];
     const cells = sheet.cells;
     expect(cells.A10.content).toBe("(#1) Partner Pivot");
@@ -289,6 +289,6 @@ test("spilled pivot table", async function () {
 
 test("Lists are purged from the frozen data", async function () {
     const { model } = await createSpreadsheetWithList();
-    const data = await freezeOdooData(model);
+    const data = await freezeEdenData(model);
     expect(data.lists).toEqual({});
 });

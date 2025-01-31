@@ -1,4 +1,4 @@
-/** @odoo-module alias=@bus/../tests/multi_tab_service_tests default=false */
+/** @eden-module alias=@bus/../tests/multi_tab_service_tests default=false */
 
 import { addBusServicesToRegistry } from "@bus/../tests/helpers/test_utils";
 

@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, models
-from odoo.exceptions import ValidationError
-from odoo.osv.expression import OR
-from odoo.tools import format_list
+from eden import _, models
+from eden.exceptions import ValidationError
+from eden.osv.expression import OR
+from eden.tools import format_list
 
 
 class StockMove(models.Model):

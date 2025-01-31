@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
     <record id="view_stock_orderpoint_snooze" model="ir.ui.view">
         <field name="name">Stock Orderpoint Snooze</field>
         <field name="model">stock.orderpoint.snooze</field>
@@ -24,4 +24,4 @@
         <field name="view_mode">form</field>
         <field name="target">new</field>
     </record>
-</odoo>
+</eden>

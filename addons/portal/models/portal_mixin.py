@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import uuid
 from ast import literal_eval
 from werkzeug.urls import url_encode
-from odoo import api, exceptions, fields, models, _
+from eden import api, exceptions, fields, models, _
 
 
 class PortalMixin(models.AbstractModel):

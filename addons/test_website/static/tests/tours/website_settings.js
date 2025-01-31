@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { registry } from "@web/core/registry";
 import { stepUtils } from "@web_tour/tour_service/tour_utils";
@@ -6,7 +6,7 @@ import { stepUtils } from "@web_tour/tour_service/tour_utils";
 const websiteName = "Website Test Settings";
 
 registry.category("web_tour.tours").add("website_settings_m2o_dirty", {
-    url: "/odoo",
+    url: "/eden",
     checkDelay: 500,
     steps: () => [
         stepUtils.showAppsMenuItem(),

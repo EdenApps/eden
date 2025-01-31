@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="stock_report_delivery_document_inherit_product_expiry" inherit_id="stock.report_delivery_document">
         <xpath expr="//th[@name='lot_serial']" position="after">
             <t t-set="has_expiry_date" t-value="False"/>
@@ -19,4 +19,4 @@
             </t>
         </xpath>
     </template>
-</odoo>
+</eden>

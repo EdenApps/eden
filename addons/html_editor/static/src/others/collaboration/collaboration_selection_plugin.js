@@ -12,7 +12,7 @@ import { _t } from "@web/core/l10n/translation";
 
 export class CollaborationSelectionPlugin extends Plugin {
     static id = "collaborationSelection";
-    static dependencies = ["history", "collaborationOdoo", "position", "localOverlay"];
+    static dependencies = ["history", "collaborationEden", "position", "localOverlay"];
     resources = {
         /** Handlers */
         collaboration_notification_handlers: this.handleCollaborationNotification.bind(this),
@@ -37,17 +37,17 @@ export class CollaborationSelectionPlugin extends Plugin {
         }
     }
     /**
-     * @param {import("./collaboration_odoo_plugin").CollaborationSelection} selection
+     * @param {import("./collaboration_eden_plugin").CollaborationSelection} selection
      */
     updateSelection(selection) {
         this.selectionInfos.set(selection.peerId, selection);
         this.drawPeerSelection(selection);
     }
     /**
-     * @param {import("./collaboration_odoo_plugin").CollaborationSelection} selection
+     * @param {import("./collaboration_eden_plugin").CollaborationSelection} selection
      */
     drawPeerSelection({ selection, peerId }) {
-        const peerMetadata = this.dependencies.collaborationOdoo.getPeerMetadata(peerId);
+        const peerMetadata = this.dependencies.collaborationEden.getPeerMetadata(peerId);
         if (!peerMetadata) {
             return;
         }

@@ -1,4 +1,4 @@
-<odoo>
+<eden>
      <record id="product_view_search_catalog" model="ir.ui.view">
          <field name="name">product.view.search.catalog.inherit.account</field>
          <field name="model">product.product</field>
@@ -28,4 +28,4 @@
          </field>
      </record>
 
-</odoo>
+</eden>

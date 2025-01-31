@@ -1,4 +1,4 @@
-/** @odoo-module alias=@mail/../tests/helpers/webclient_setup default=false */
+/** @eden-module alias=@mail/../tests/helpers/webclient_setup default=false */
 
 import { DiscussClientAction } from "@mail/core/public_web/discuss_client_action";
 

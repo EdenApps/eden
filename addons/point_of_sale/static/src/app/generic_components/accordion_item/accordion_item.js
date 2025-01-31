@@ -1,4 +1,4 @@
-import { Component, useState, useRef, useEffect, onMounted } from "@odoo/owl";
+import { Component, useState, useRef, useEffect, onMounted } from "@eden/owl";
 
 export class AccordionItem extends Component {
     static template = "pos_hr.AccordionItem";

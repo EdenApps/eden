@@ -1,14 +1,14 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import date
 from dateutil.relativedelta import relativedelta
 from freezegun import freeze_time
 
-from odoo.addons.base.tests.common import HttpCase
-from odoo.tests.common import tagged
-from odoo.tests.common import users
+from eden.addons.base.tests.common import HttpCase
+from eden.tests.common import tagged
+from eden.tests.common import users
 
-from odoo.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from eden.addons.hr_holidays.tests.common import TestHrHolidaysCommon
 
 
 @tagged('post_install', '-at_install', 'carryover_expiring_leaves')

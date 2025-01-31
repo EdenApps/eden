@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <record id="route_resupply_subcontractor_mto" model='stock.route'>
             <field name="name">Resupply Subcontractor on Order</field>
@@ -12,4 +12,4 @@
             <value eval="{'subcontracting_to_resupply': True}"/>
         </function>
     </data>
-</odoo>
+</eden>

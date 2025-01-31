@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <record model="ir.ui.view" id="stock_package_type_form">
     <field name="name">stock.package.type.form</field>
@@ -79,4 +79,4 @@
 <menuitem id="menu_delivery" name="Delivery" parent="stock.menu_stock_config_settings" groups="stock.group_stock_manager" sequence="50"/>
 <menuitem id="menu_packaging_types" name="Package Types" parent="menu_delivery" action="action_package_type_view" groups="stock.group_tracking_lot"/>
 
-</odoo>
+</eden>

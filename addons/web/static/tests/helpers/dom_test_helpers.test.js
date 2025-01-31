@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { on } from "@odoo/hoot-dom";
+import { expect, test } from "@eden/hoot";
+import { on } from "@eden/hoot-dom";
 import { contains, getMockEnv, mountWithCleanup } from "@web/../tests/web_test_helpers";
 
 test("contains: all actions", async () => {

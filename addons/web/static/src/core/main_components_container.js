@@ -1,4 +1,4 @@
-import { Component, xml } from "@odoo/owl";
+import { Component, xml } from "@eden/owl";
 import { registry } from "@web/core/registry";
 import { useRegistry } from "@web/core/registry_hook";
 import { ErrorHandler } from "@web/core/utils/components";

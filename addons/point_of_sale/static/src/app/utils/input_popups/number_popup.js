@@ -1,6 +1,6 @@
 import { _t } from "@web/core/l10n/translation";
 import { useBus, useService } from "@web/core/utils/hooks";
-import { Component, useState } from "@odoo/owl";
+import { Component, useState } from "@eden/owl";
 import { Dialog } from "@web/core/dialog/dialog";
 import { Numpad, buttonsType } from "@point_of_sale/app/generic_components/numpad/numpad";
 

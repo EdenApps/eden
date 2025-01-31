@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-from odoo import fields, models
+# Part of Eden. See LICENSE file for full copyright and licensing details.
+from eden import fields, models
 
 
 class User(models.Model):

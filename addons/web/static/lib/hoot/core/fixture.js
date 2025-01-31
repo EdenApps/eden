@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { App } from "@odoo/owl";
+import { App } from "@eden/owl";
 import {
     defineRootNode,
     getActiveElement,
@@ -10,13 +10,13 @@ import { setupEventActions } from "@web/../lib/hoot-dom/helpers/events";
 import { HootError } from "../hoot_utils";
 
 /**
- * @typedef {Parameters<typeof import("@odoo/owl").mount>[2] & {
+ * @typedef {Parameters<typeof import("@eden/owl").mount>[2] & {
  *  className: string | string[];
- *  target?: import("@odoo/hoot-dom").Target;
+ *  target?: import("@eden/hoot-dom").Target;
  * }} MountOnFixtureOptions
  *
  * @typedef {{
- *  component: import("@odoo/owl").ComponentConstructor;
+ *  component: import("@eden/owl").ComponentConstructor;
  *  props: unknown;
  * }} TestRootProps
  */
@@ -70,7 +70,7 @@ customElements.define("hoot-fixture", HootFixtureElement);
 //-----------------------------------------------------------------------------
 
 /**
- * @param {App | import("@odoo/owl").Component} target
+ * @param {App | import("@eden/owl").Component} target
  */
 export function destroy(target) {
     const app = target instanceof App ? target : target.__owl__.app;

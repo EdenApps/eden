@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from .common import DashboardTestCommon
 
-from odoo.tests import tagged
-from odoo.tests.common import HttpCase
+from eden.tests import tagged
+from eden.tests.common import HttpCase
 
 @tagged("post_install", "-at_install")
 class TestDashboardShareTour(DashboardTestCommon, HttpCase):
@@ -16,5 +16,5 @@ class TestDashboardShareTour(DashboardTestCommon, HttpCase):
         self.browser_js(
             "/dashboard/share/%s/%s" % (share.id, share.access_token),
             "console.log('test successful');",
-            ready="odoo.isReady",
+            ready="eden.isReady",
         )

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import base64
 import json
@@ -8,10 +8,10 @@ import requests
 from markupsafe import Markup
 from werkzeug.exceptions import Forbidden
 
-from odoo import http, tools, _
-from odoo.addons.iap.tools import iap_tools
-from odoo.exceptions import AccessError
-from odoo.http import request
+from eden import http, tools, _
+from eden.addons.iap.tools import iap_tools
+from eden.exceptions import AccessError
+from eden.http import request
 
 _logger = logging.getLogger(__name__)
 
@@ -160,7 +160,7 @@ class MailPluginController(http.Controller):
                     'name': _('Notification'),
                     'email': normalized_email,
                     'enrichment_info': {
-                        'type': 'odoo_custom_error', 'info': _('This is your notification address. Search the Contact manually to link this email to a record.'),
+                        'type': 'eden_custom_error', 'info': _('This is your notification address. Search the Contact manually to link this email to a record.'),
                     },
                 },
             }

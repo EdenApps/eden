@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <template id="course_main" inherit_id="website_slides.course_main" name="Certification Course Main">
             <xpath expr="//div[@id='wrap']" position="attributes">
@@ -36,4 +36,4 @@
             </xpath>
         </template>
     </data>
-</odoo>
+</eden>

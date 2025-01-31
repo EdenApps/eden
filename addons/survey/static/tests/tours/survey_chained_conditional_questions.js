@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @eden-module **/
 
-import { queryAll } from "@odoo/hoot-dom";
+import { queryAll } from "@eden/hoot-dom";
 import { registry } from "@web/core/registry";
 
 registry.category("web_tour.tours").add('test_survey_chained_conditional_questions', {

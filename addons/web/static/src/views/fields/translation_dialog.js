@@ -4,7 +4,7 @@ import { useService } from "@web/core/utils/hooks";
 import { loadLanguages, _t } from "@web/core/l10n/translation";
 import { jsToPyLocale } from "@web/core/l10n/utils";
 
-import { Component, onWillStart } from "@odoo/owl";
+import { Component, onWillStart } from "@eden/owl";
 
 export class TranslationDialog extends Component {
     static template = "web.TranslationDialog";

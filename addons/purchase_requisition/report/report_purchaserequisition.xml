@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 <data>
 <template id="report_purchaserequisition_document">
     <t t-set="o" t-value="o.with_context(lang=o.vendor_id.lang)"/>
@@ -123,4 +123,4 @@
     </t>
 </template>
 </data>
-</odoo>
+</eden>

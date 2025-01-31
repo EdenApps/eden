@@ -1,6 +1,6 @@
 import { patch } from "@web/core/utils/patch";
 import { Message } from "@mail/core/common/message";
-import { onWillUnmount } from "@odoo/owl";
+import { onWillUnmount } from "@eden/owl";
 import { _t } from "@web/core/l10n/translation";
 
 patch(Message.prototype, {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="tracks_display_list" inherit_id="website_event_track.tracks_display_list">
     <!-- TRACK LIST: ADD REPLAY TAG FOR FINISHED TRACKS -->
@@ -19,4 +19,4 @@
     </xpath>
 </template>
 
-</odoo>
+</eden>

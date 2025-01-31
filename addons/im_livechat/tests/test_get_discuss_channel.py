@@ -1,14 +1,14 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import timedelta
 from freezegun import freeze_time
 from unittest.mock import patch, PropertyMock
 
-from odoo import fields
-from odoo.tools.misc import limited_field_access_token
-from odoo.addons.im_livechat.tests.common import TestImLivechatCommon
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.tests import new_test_user, tagged
+from eden import fields
+from eden.tools.misc import limited_field_access_token
+from eden.addons.im_livechat.tests.common import TestImLivechatCommon
+from eden.addons.mail.tests.common import MailCommon
+from eden.tests import new_test_user, tagged
 
 
 @tagged("post_install", "-at_install")
@@ -30,7 +30,7 @@ class TestGetDiscussChannel(TestImLivechatCommon, MailCommon):
 
         # ensure visitor info are correct with anonymous
         operator = self.operators[0]
-        with patch('odoo.http.GeoIP.country_code', new_callable=PropertyMock(return_value=belgium.code)):
+        with patch('eden.http.GeoIP.country_code', new_callable=PropertyMock(return_value=belgium.code)):
             data = self.make_jsonrpc_request(
                 '/im_livechat/get_session',
                 {
@@ -82,7 +82,7 @@ class TestGetDiscussChannel(TestImLivechatCommon, MailCommon):
                     "im_status": "bot",
                     "isInternalUser": True,
                     "is_company": False,
-                    "name": "OdooBot",
+                    "name": "EdenBot",
                     "out_of_office_date_end": False,
                     "userId": self.user_root.id,
                     "write_date": fields.Datetime.to_string(self.user_root.partner_id.write_date),
@@ -151,12 +151,12 @@ class TestGetDiscussChannel(TestImLivechatCommon, MailCommon):
                     "avatar_128_access_token": limited_field_access_token(
                         self.partner_root, "avatar_128"
                     ),
-                    "email": "odoobot@example.com",
+                    "email": "edenbot@example.com",
                     "id": self.user_root.partner_id.id,
                     "im_status": "bot",
                     "isInternalUser": True,
                     "is_company": False,
-                    "name": "OdooBot",
+                    "name": "EdenBot",
                     "out_of_office_date_end": False,
                     "userId": self.user_root.id,
                     "write_date": fields.Datetime.to_string(self.user_root.partner_id.write_date),
@@ -239,12 +239,12 @@ class TestGetDiscussChannel(TestImLivechatCommon, MailCommon):
                     "avatar_128_access_token": limited_field_access_token(
                         self.partner_root, "avatar_128"
                     ),
-                    "email": "odoobot@example.com",
+                    "email": "edenbot@example.com",
                     "id": self.user_root.partner_id.id,
                     "im_status": "bot",
                     "isInternalUser": True,
                     "is_company": False,
-                    "name": "OdooBot",
+                    "name": "EdenBot",
                     "out_of_office_date_end": False,
                     "userId": self.user_root.id,
                     "write_date": fields.Datetime.to_string(self.user_root.partner_id.write_date),

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<eden noupdate="1">
 
     <record id="payment_method_wire_transfer" model="payment.method">
         <field name="name">Wire Transfer</field>
@@ -12,4 +12,4 @@
         <field name="support_refund">none</field>
     </record>
 
-</odoo>
+</eden>

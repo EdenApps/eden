@@ -1,6 +1,6 @@
 import { SuggestedRecipient } from "@mail/core/web/suggested_recipient";
 
-import { Component, useState } from "@odoo/owl";
+import { Component, useState } from "@eden/owl";
 
 /**
  * @typedef {Object} Props

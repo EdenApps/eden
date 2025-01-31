@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { rpc } from "@web/core/network/rpc";
 import { Record } from "@web/model/relational_model/record";

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 <data>
 <template id="report_repairorder">
         <t t-set="o" t-value="doc"/>
@@ -80,4 +80,4 @@
     </t>
 </template>
 </data>
-</odoo>
+</eden>

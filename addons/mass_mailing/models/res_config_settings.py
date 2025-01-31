@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
+from eden import api, fields, models
 
 
 class ResConfigSettings(models.TransientModel):
@@ -14,7 +14,7 @@ class ResConfigSettings(models.TransientModel):
     mass_mailing_outgoing_mail_server = fields.Boolean(
         string="Dedicated Server",
         config_parameter='mass_mailing.outgoing_mail_server',
-        help='Use a specific mail server in priority. Otherwise Odoo relies on the first outgoing mail server available (based on their sequencing) as it does for normal mails.')
+        help='Use a specific mail server in priority. Otherwise Eden relies on the first outgoing mail server available (based on their sequencing) as it does for normal mails.')
     mass_mailing_mail_server_id = fields.Many2one(
         'ir.mail_server', string='Mail Server',
         config_parameter='mass_mailing.mail_server_id')

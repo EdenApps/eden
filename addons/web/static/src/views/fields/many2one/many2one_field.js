@@ -12,7 +12,7 @@ import * as BarcodeScanner from "@web/core/barcode/barcode_dialog";
 import { isBarcodeScannerSupported } from "@web/core/barcode/barcode_video_scanner";
 import { standardFieldProps } from "../standard_field_props";
 
-import { Component, markup, onWillUpdateProps, useState } from "@odoo/owl";
+import { Component, markup, onWillUpdateProps, useState } from "@eden/owl";
 import { getFieldDomain } from "@web/model/relational_model/utils";
 
 class CreateConfirmationDialog extends Component {

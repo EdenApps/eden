@@ -1,6 +1,6 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { press, queryAllTexts, queryOne, scroll } from "@odoo/hoot-dom";
-import { advanceFrame, animationFrame } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@eden/hoot";
+import { press, queryAllTexts, queryOne, scroll } from "@eden/hoot-dom";
+import { advanceFrame, animationFrame } from "@eden/hoot-mock";
 import {
     contains,
     defineModels,

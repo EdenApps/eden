@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_comparisons" name="Comparisons">
     <section class="s_comparisons pt48 pb48" data-vxml="001" data-vcss="001">
@@ -87,4 +87,4 @@
     <field name="active" eval="False"/>
 </record>
 
-</odoo>
+</eden>

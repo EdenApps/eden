@@ -60,15 +60,15 @@ $spacers: (
 // Settings for the `<body>` element.
 
 // Bootstrap uses `$body-bg` as default value for multiple variables but also in
-// the creation of CSS rules (not controlled by variables). In case of Odoo
+// the creation of CSS rules (not controlled by variables). In case of Eden
 // boxed layout, `$body-bg` should thus be used to control the box background
 // color so that components displayed inside are consistent (as they use the
 // variable to compute some of their colors too). The background color behind
-// the box will be forced by an Odoo CSS rule instead of relying on Bootstrap
+// the box will be forced by an Eden CSS rule instead of relying on Bootstrap
 // CSS rule (the <body> background color CSS rule) which uses `$body-bg`.
 // TODO lots of variables are still using $body-bg directly, they should use
 // var(--body-bg) instead, as the new bootstrap version intended.
-// grep: BOXED_BODY_BG_ODOO
+// grep: BOXED_BODY_BG_EDEN
 $body-bg: o-color('o-cc1-bg') !default;
 $body-color: o-color('o-cc1-text') or color-contrast($body-bg) !default;
 
@@ -132,7 +132,7 @@ $display-font-sizes: (
     3: o-website-value('display-3-font-size') or 4rem,
     4: o-website-value('display-4-font-size') or 3.5rem,
 
-    // Unused in Odoo templates and not configurable through the editor but we
+    // Unused in Eden templates and not configurable through the editor but we
     // still want default Bootstrap classes to work for now. Also using
     // o-website-value for those still allows to configure them through custom
     // code more easily if needed.

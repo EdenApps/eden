@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
         <record id="rating_rating_view_tree" model="ir.ui.view">
             <field name="name">rating.rating.list</field>
             <field name="model">rating.rating</field>
@@ -255,4 +255,4 @@
             action="rating_rating_action"
             sequence="30"/>
 
-</odoo>
+</eden>

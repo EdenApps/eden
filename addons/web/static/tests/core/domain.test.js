@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 
 import { patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { Domain } from "@web/core/domain";

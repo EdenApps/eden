@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <template id="message_notification_limit_email">
             <p>Dear Sender,</p>
@@ -42,4 +42,4 @@
 </div>
         </template>
     </data>
-</odoo>
+</eden>

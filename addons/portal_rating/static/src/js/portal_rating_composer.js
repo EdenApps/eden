@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import publicWidget from "@web/legacy/js/public/public_widget";
 import portalComposer from "@portal/js/portal_composer";
@@ -33,7 +33,7 @@ const RatingPopupComposer = publicWidget.Widget.extend({
             'res_id': false,
             'pid': 0,
             'display_rating': true,
-            'csrf_token': odoo.csrf_token,
+            'csrf_token': eden.csrf_token,
             'user_id': user.userId,
         }, options, {});
         this.options.send_button_label = this.options.default_message_id ? _t("Update review") : _t("Post review");
@@ -101,7 +101,7 @@ const RatingPopupComposer = publicWidget.Widget.extend({
 
     /**
      * @private
-     * @param {OdooEvent} event
+     * @param {EdenEvent} event
      */
     _onReloadRatingPopupComposer: function (event) {
         const data = event.data;

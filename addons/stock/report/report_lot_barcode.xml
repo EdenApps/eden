@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 <data>
 <template id="report_lot_label">
     <t t-call="web.basic_layout">
@@ -48,4 +48,4 @@
     </t>
 </template>
 </data>
-</odoo>
+</eden>

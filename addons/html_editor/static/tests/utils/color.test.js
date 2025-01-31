@@ -1,5 +1,5 @@
 import { rgbToHex } from "@html_editor/utils/color";
-import { expect, getFixture, test } from "@odoo/hoot";
+import { expect, getFixture, test } from "@eden/hoot";
 
 test("should convert an rgb color to hexadecimal", async () => {
     expect(rgbToHex("rgb(0, 0, 255)")).toBe("#0000ff");

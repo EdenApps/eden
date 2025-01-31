@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.tests import tagged, users
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
+from eden import Command
+from eden.tests import tagged, users
+from eden.addons.base.tests.common import HttpCaseWithUserDemo
 
 
 @tagged('post_install', '-at_install')
@@ -48,7 +48,7 @@ class TestTodoUi(HttpCaseWithUserDemo):
         # Ensure that all activities appear in the systray under the good category
         # name and that clicking on this category opens the correct view where only
         # records of this category are listed.
-        self.start_tour("/odoo", 'project_task_activities_split', login="admin")
+        self.start_tour("/eden", 'project_task_activities_split', login="admin")
 
     def test_tour_todo_main_ui_functions(self):
         """ This test ensure that the main ui functionalities are working including:
@@ -59,4 +59,4 @@ class TestTodoUi(HttpCaseWithUserDemo):
         - Mark a task as done from the todo form view
         - Convert a todo to a task
         """
-        self.start_tour("/odoo", 'project_todo_main_functions', login='admin')
+        self.start_tour("/eden", 'project_todo_main_functions', login='admin')

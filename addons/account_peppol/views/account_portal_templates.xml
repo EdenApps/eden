@@ -1,4 +1,4 @@
-<odoo>
+<eden>
     <template id="portal_my_details_fields" inherit_id="account.portal_my_details_fields">
         <xpath expr="//select[@name='invoice_sending_method']/../.." position="after">
             <div t-if="peppol_eas_list" class="col-xl-6 portal_peppol_toggle">
@@ -18,4 +18,4 @@
             </div>
         </xpath>
     </template>
-</odoo>
+</eden>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="stock_report_delivery_document_inherit_mrp" inherit_id="stock.report_delivery_document">
         <!-- needs to be set before so elif directly follows if later on -->
         <xpath expr="//t[@name='has_packages']" position="before">
@@ -86,4 +86,4 @@
             </t>
         </t>
     </template>
-</odoo>
+</eden>

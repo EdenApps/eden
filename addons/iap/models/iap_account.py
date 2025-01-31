@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 import secrets
@@ -6,14 +6,14 @@ import threading
 import uuid
 import werkzeug.urls
 
-from odoo import api, fields, models, _
-from odoo.addons.iap.tools import iap_tools
-from odoo.exceptions import AccessError, UserError
-from odoo.tools import get_lang
+from eden import api, fields, models, _
+from eden.addons.iap.tools import iap_tools
+from eden.exceptions import AccessError, UserError
+from eden.tools import get_lang
 
 _logger = logging.getLogger(__name__)
 
-DEFAULT_ENDPOINT = 'https://iap.odoo.com'
+DEFAULT_ENDPOINT = 'https://iap.edencloud.us'
 
 
 class IapAccount(models.Model):
@@ -232,9 +232,9 @@ class IapAccount(models.Model):
         if not self.env.user.has_group('base.group_no_one'):
             return False
         if account:
-            url = f"/odoo/action-iap.iap_account_action/{account.id}?menu_id={menu.id}"
+            url = f"/eden/action-iap.iap_account_action/{account.id}?menu_id={menu.id}"
         else:
-            url = f"/odoo/action-iap.iap_account_action?menu_id={menu.id}"
+            url = f"/eden/action-iap.iap_account_action?menu_id={menu.id}"
         return url
 
     @api.model

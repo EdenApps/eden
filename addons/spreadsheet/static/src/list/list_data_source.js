@@ -1,7 +1,7 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { OdooViewsDataSource } from "@spreadsheet/data_sources/odoo_views_data_source";
-import { EvaluationError } from "@odoo/o-spreadsheet";
+import { EdenViewsDataSource } from "@spreadsheet/data_sources/eden_views_data_source";
+import { EvaluationError } from "@eden/o-spreadsheet";
 import { _t } from "@web/core/l10n/translation";
 import {
     formatDateTime,
@@ -11,19 +11,19 @@ import {
 } from "@web/core/l10n/dates";
 import { orderByToString } from "@web/search/utils/order_by";
 
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@eden/o-spreadsheet";
 import { LOADING_ERROR } from "@spreadsheet/data_sources/data_source";
 
 const { toNumber } = spreadsheet.helpers;
 const { DEFAULT_LOCALE } = spreadsheet.constants;
 
 /**
- * @typedef {import("@spreadsheet").OdooFields} OdooFields
+ * @typedef {import("@spreadsheet").EdenFields} EdenFields
  *
  * @typedef {Object} ListMetaData
  * @property {Array<string>} columns
  * @property {string} resModel
- * @property {OdooFields} fields
+ * @property {EdenFields} fields
  *
  * @typedef {Object} ListSearchParams
  * @property {Array<string>} orderBy
@@ -31,7 +31,7 @@ const { DEFAULT_LOCALE } = spreadsheet.constants;
  * @property {Object} context
  */
 
-export class ListDataSource extends OdooViewsDataSource {
+export class ListDataSource extends EdenViewsDataSource {
     /**
      * @override
      * @param {Object} services Services (see DataSource)

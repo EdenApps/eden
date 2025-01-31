@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 {
     'name': 'Website Events CRM',
     'version': '1.0',
     'category': 'Website/Website',
-    'website': 'https://www.odoo.com/app/events',
+    'website': 'https://www.edencloud.us/app/events',
     'description': "Allow per-order lead creation mode",
     'depends': ['event_crm', 'website_event'],
     'data': [

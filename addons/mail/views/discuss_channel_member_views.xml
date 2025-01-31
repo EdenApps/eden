@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo><data>
+<eden><data>
     <!-- discuss.channel.member -->
     <record id="discuss_channel_member_view_tree" model="ir.ui.view">
         <field name="name">discuss.channel.member.list</field>
@@ -51,4 +51,4 @@
         <field name="view_mode">list,form</field>
     </record>
 
-</data></odoo>
+</data></eden>

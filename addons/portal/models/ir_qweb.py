@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import models
-from odoo.tools import is_html_empty, lazy
+from eden import models
+from eden.tools import is_html_empty, lazy
 
 
 class IrQWeb(models.AbstractModel):

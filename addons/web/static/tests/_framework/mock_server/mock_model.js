@@ -1,4 +1,4 @@
-import { createJobScopedGetter } from "@odoo/hoot";
+import { createJobScopedGetter } from "@eden/hoot";
 import { Domain } from "@web/core/domain";
 import {
     deserializeDate,

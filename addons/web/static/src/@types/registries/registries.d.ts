@@ -1,18 +1,18 @@
 declare module "registries" {
-    import { Component } from "@odoo/owl";
-    import { OdooEnv } from "@web/env";
+    import { Component } from "@eden/owl";
+    import { EdenEnv } from "@web/env";
     import { NotificationOptions } from "@web/core/notifications/notification_service";
     import { Compiler } from "@web/views/view_compiler";
     import { ActionDescription } from "@web/webclient/actions/action_service";
 
     interface ActionHandlerParams {
         action: object;
-        env: OdooEnv;
+        env: EdenEnv;
         options: ActionOptions;
     }
     export type ActionHandlersRegistryItemShape = (params: ActionHandlerParams) => (void | Promise<void>);
 
-    export type ActionsRegistryItemShape = (((env: OdooEnv, action: ActionDescription) => void) | typeof Component) & {
+    export type ActionsRegistryItemShape = (((env: EdenEnv, action: ActionDescription) => void) | typeof Component) & {
         displayName?: string;
         path?: string;
         target?: ActionMode;
@@ -21,23 +21,23 @@ declare module "registries" {
     export interface CogMenuRegistryItemShape {
         Component: typeof Component;
         groupNumber: number;
-        isDisplayed?: (env: OdooEnv) => boolean;
+        isDisplayed?: (env: EdenEnv) => boolean;
     }
 
     export type DialogsRegistryItemShape = typeof Component;
 
-    export type EffectsRegistryItemShape = (env: OdooEnv, params: object) => ({ Component: typeof Component, props: object } | undefined);
+    export type EffectsRegistryItemShape = (env: EdenEnv, params: object) => ({ Component: typeof Component, props: object } | undefined);
 
     export type ErrorDialogsRegistryItemShape = typeof Component;
 
-    export type ErrorHandlersRegistryItemShape = (env: OdooEnv, error: Error, originalError: Error) => boolean;
+    export type ErrorHandlersRegistryItemShape = (env: EdenEnv, error: Error, originalError: Error) => boolean;
 
     export type ErrorNotificationsRegistryItemShape = NotificationOptions & { message?: string };
 
     export interface FavoriteMenuRegistryItemShape {
         Component: typeof Component;
         groupNumber: number;
-        isDisplayed?: (env: OdooEnv) => boolean;
+        isDisplayed?: (env: EdenEnv) => boolean;
     }
 
     export type FormattersRegistryItemShape = (value: any) => any;
@@ -75,10 +75,10 @@ declare module "registries" {
 
     export interface SystrayRegistryItemShape {
         Component: typeof Component;
-        isDisplayed?: (env: OdooEnv) => boolean;
+        isDisplayed?: (env: EdenEnv) => boolean;
     }
 
-    export type IrActionsReportHandlers = (action: ActionRequest, options: ActionOptions, env: OdooEnv) => (void | boolean | Promise<void | boolean>);
+    export type IrActionsReportHandlers = (action: ActionRequest, options: ActionOptions, env: EdenEnv) => (void | boolean | Promise<void | boolean>);
 
     interface GlobalRegistryCategories {
         action_handlers: ActionHandlersRegistryItemShape;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="submenu" name="Submenu">
     <t t-set="show_dropdown" t-value="(submenu.is_mega_menu and submenu.is_visible) or submenu.child_id.filtered(lambda menu: menu.is_visible)"/>
@@ -72,7 +72,7 @@
         - Only for non-designers (especially visitors) (hence the "editable or
           translatable" check).
         - Only if not in any debug mode (we want any correct value of debug mode
-          to correctly appear in the `odoo` object + assets may depend on this
+          to correctly appear in the `eden` object + assets may depend on this
           (e.g. debug=assets or debug=tests)).
         -->
         <attribute name="t-cache">main_object if main_object and main_object._name == 'website.page' and not request.session.debug and not editable and not translatable else None</attribute>
@@ -94,7 +94,7 @@
         <t t-set="x_icon" t-value="website.image_url(website, 'favicon')"/>
     </xpath>
     <xpath expr="//head/meta[last()]" position="after">
-        <meta name="generator" content="Odoo"/>
+        <meta name="generator" content="Eden"/>
         <t t-set="website_meta" t-value="seo_object and seo_object.get_website_meta() or {}"/>
         <meta name="default_title" t-att-content="default_title" groups="website.group_website_designer"/>
         <meta t-if="(main_object and 'website_indexed' in main_object
@@ -267,11 +267,11 @@
                 <path fill="#FFF" d="M8 8V1a1 1 0 1 1 2 0v8a1 1 0 0 1-1 1H1a1 1 0 1 1 0-2h7z"/>
             </svg>
             <div class="o_frontend_to_backend_buttons d-flex">
-                <a href="#" title="Go to your Odoo Apps" class="o_frontend_to_backend_apps_btn fa fa-th d-flex align-items-center justify-content-center text-decoration-none" data-bs-toggle="dropdown"/>
+                <a href="#" title="Go to your Eden Apps" class="o_frontend_to_backend_apps_btn fa fa-th d-flex align-items-center justify-content-center text-decoration-none" data-bs-toggle="dropdown"/>
                 <div class="dropdown-menu o_frontend_to_backend_apps_menu" role="menu">
                     <a role="menuitem" class="dropdown-item" t-esc="menu['name']"
                        t-as="menu" t-foreach="env['ir.ui.menu'].with_context(force_action=True).load_menus_root()['children']"
-                       t-attf-href="/odoo/action-#{menu['action'] and menu['action'].split(',')[1] or ''}"/>
+                       t-attf-href="/eden/action-#{menu['action'] and menu['action'].split(',')[1] or ''}"/>
                 </div>
                 <a groups="website.group_website_restricted_editor" href="#" title="Edit this content" class="o_frontend_to_backend_edit_btn px-3 d-flex align-items-center justify-content-center text-decoration-none">
                     <img src="/website/static/description/icon.png" alt=""/>Editor
@@ -321,7 +321,7 @@
     <xpath expr="//t[@t-call='web.brand_promotion_message']" position="replace">
         <t t-call="web.brand_promotion_message">
             <t t-set="_message">
-                Create a <a target="_blank" href="http://www.odoo.com/app/website?utm_source=db&amp;utm_medium=website">free website</a>
+                Create a <a target="_blank" href="http://www.edencloud.us/app/website?utm_source=db&amp;utm_medium=website">free website</a>
             </t>
             <t t-set="_utm_medium" t-valuef="website"/>
         </t>
@@ -1971,7 +1971,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-9">
-                            <h3>50,000+ companies run Odoo to grow their businesses.</h3>
+                            <h3>50,000+ companies run Eden to grow their businesses.</h3>
                             <p class="lead">Join us and make your company a better place.</p>
                         </div>
                         <div class="col-lg-3">
@@ -2313,7 +2313,7 @@
             <button type="button" t-attf-class="btn btn-default dropdown-toggle dropdown-toggle-split" t-att-id="'dopprod-%s' % object.id" data-bs-toggle="dropdown"/>
             <div class="dropdown-menu" role="menu" t-att-aria-labelledby="'dopprod-%s' % object.id">
                 <t t-out="0"/>
-                <a role="menuitem" t-attf-href="/odoo/action-#{action}/#{object.id}?menu_id=#{menu or object.env['ir.model.data']._xmlid_to_res_id('website.menu_website_configuration')}"
+                <a role="menuitem" t-attf-href="/eden/action-#{action}/#{object.id}?menu_id=#{menu or object.env['ir.model.data']._xmlid_to_res_id('website.menu_website_configuration')}"
                     title='Edit in backend' class="dropdown-item" t-if="publish_edit">Edit</a>
             </div>
         </div>
@@ -2341,21 +2341,21 @@
 </record>
 
 <!-- Error and special pages -->
-<template id="website_info" name="Odoo Information">
+<template id="website_info" name="Eden Information">
     <t t-call="website.layout">
         <div id="wrap" class="o_website_info"/>
     </t>
 </template>
 
-<template id="show_website_info" inherit_id="website.website_info" name="Show Odoo Information">
+<template id="show_website_info" inherit_id="website.website_info" name="Show Eden Information">
     <xpath expr="//div[@id='wrap']" position="inside">
         <div class="oe_structure">
             <section class="container">
                 <h1><t t-esc="res_company.name"/>
-                    <small groups='base.group_no_one'>Odoo Version <t t-out="version.get('server_version')"/></small>
+                    <small groups='base.group_no_one'>Eden Version <t t-out="version.get('server_version')"/></small>
                 </h1>
                 <p>
-                    Information about the <t t-esc="res_company.name"/> instance of Odoo, the <a target="_blank" href="https://www.odoo.com">Open Source ERP</a>.
+                    Information about the <t t-esc="res_company.name"/> instance of Eden, the <a target="_blank" href="https://www.edencloud.us">Open Source ERP</a>.
                 </p>
 
                 <div class="alert alert-warning alert-dismissable mt16" groups="website.group_website_restricted_editor" role="status">
@@ -2383,7 +2383,7 @@
                     <h2 class='mt32'>Installed Localizations / Account Charts</h2>
                     <dl class="dl-horizontal" t-foreach="l10n" t-as="app">
                         <dt>
-                            <a t-att-href="app.website or 'https://www.odoo.com/app/accounting/' + app.name">
+                            <a t-att-href="app.website or 'https://www.edencloud.us/app/accounting/' + app.name">
                                 <t t-out="app.shortdesc"/>
                             </a>
                         </dt>
@@ -2425,14 +2425,14 @@
 <template id="default_less">
     <style type="text/less">
         div#wrap div &gt; h1 {
-            color: @o-brand-odoo;
+            color: @o-brand-eden;
         }
     </style>
 </template>
 <template id="default_scss">
     <style type="text/scss">
         div#wrap div &gt; h1 {
-            color: $o-brand-odoo;
+            color: $o-brand-eden;
         }
     </style>
 </template>
@@ -3030,4 +3030,4 @@ Sitemap: <t t-esc="url_root"/>sitemap.xml
         </li>
     </xpath>
 </template>
-</odoo>
+</eden>

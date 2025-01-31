@@ -1,5 +1,5 @@
-from odoo.addons.account.tests.common import TestTaxCommon
-from odoo.tests import tagged
+from eden.addons.account.tests.common import TestTaxCommon
+from eden.tests import tagged
 
 
 @tagged('post_install', '-at_install')

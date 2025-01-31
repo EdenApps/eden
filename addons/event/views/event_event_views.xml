@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo><data>
+<eden><data>
     <record id="event_barcode_action_main_view" model="ir.actions.client">
         <field name="name">Barcode Interface</field>
         <field name="tag">event.event_barcode_scan_view</field>
@@ -367,4 +367,4 @@
         parent="event.event_main_menu"
         groups="event.group_event_registration_desk"
     />
-</data></odoo>
+</data></eden>

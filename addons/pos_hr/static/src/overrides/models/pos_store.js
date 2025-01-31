@@ -6,7 +6,7 @@ patch(PosStore.prototype, {
     async setup() {
         await super.setup(...arguments);
         if (this.config.module_pos_hr) {
-            this.login = Boolean(odoo.from_backend) && !this.config.module_pos_hr;
+            this.login = Boolean(eden.from_backend) && !this.config.module_pos_hr;
             if (!this.hasLoggedIn) {
                 this.showScreen("LoginScreen");
             }

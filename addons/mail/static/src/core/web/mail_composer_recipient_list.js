@@ -2,7 +2,7 @@ import { registry } from "@web/core/registry";
 import { standardWidgetProps } from "@web/views/widgets/standard_widget_props";
 import { useService } from "@web/core/utils/hooks";
 
-import { Component, useState, onWillStart } from "@odoo/owl";
+import { Component, useState, onWillStart } from "@eden/owl";
 import { BaseRecipientsList } from "@mail/core/web/base_recipients_list";
 
 export class MailComposerRecipientList extends Component {

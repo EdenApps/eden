@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_blockquote" name="Blockquote">
     <div class="s_mail_blockquote blockquote o_mail_snippet_general o_cc o_cc2 pt16 pb16 mb-0 w-100">
@@ -25,4 +25,4 @@
     </div>
 </template>
 
-</odoo>
+</eden>

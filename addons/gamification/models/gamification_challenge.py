@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import ast
 import itertools
 import logging
@@ -8,8 +8,8 @@ from datetime import date, timedelta
 from dateutil.relativedelta import relativedelta, MO
 from markupsafe import Markup
 
-from odoo import _, api, exceptions, fields, models
-from odoo.http import SESSION_LIFETIME
+from eden import _, api, exceptions, fields, models
+from eden.http import SESSION_LIFETIME
 
 _logger = logging.getLogger(__name__)
 

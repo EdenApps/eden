@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.tools.float_utils import float_compare
+from eden import api, fields, models
+from eden.tools.float_utils import float_compare
 
 
 class StockBackorderConfirmationLine(models.TransientModel):

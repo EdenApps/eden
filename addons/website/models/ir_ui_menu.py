@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, models, tools
-from odoo.http import request
+from eden import api, models, tools
+from eden.http import request
 
 
 class IrUiMenu(models.Model):

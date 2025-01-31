@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="ir_cron_peppol_get_new_documents" model="ir.cron">
         <field name="name">PEPPOL: retrieve new documents</field>
         <field name="interval_number">12</field>
@@ -26,4 +26,4 @@
         <field name="code">model._cron_peppol_get_participant_status()</field>
         <field name="state">code</field>
     </record>
-</odoo>
+</eden>

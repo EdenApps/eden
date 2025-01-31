@@ -3,8 +3,8 @@
 import copy
 import json
 from collections import defaultdict
-from odoo import _, api, fields, models
-from odoo.tools import float_compare, float_repr, float_round, float_is_zero, format_date, get_lang
+from eden import _, api, fields, models
+from eden.tools import float_compare, float_repr, float_round, float_is_zero, format_date, get_lang
 from datetime import datetime, timedelta
 from math import log10
 

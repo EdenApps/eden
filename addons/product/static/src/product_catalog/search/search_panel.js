@@ -1,7 +1,7 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { SearchPanel } from "@web/search/search_panel/search_panel";
-import { useState } from "@odoo/owl";
+import { useState } from "@eden/owl";
 
 
 export class ProductCatalogSearchPanel extends SearchPanel {

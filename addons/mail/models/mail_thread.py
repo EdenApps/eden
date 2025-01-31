@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import ast
 import base64
@@ -26,17 +26,17 @@ from markupsafe import Markup, escape
 from requests import Session
 from werkzeug import urls
 
-from odoo import _, api, exceptions, fields, models, Command
-from odoo.addons.mail.tools.discuss import Store
-from odoo.addons.mail.tools.web_push import push_to_end_point, DeviceUnreachableError
-from odoo.exceptions import MissingError, AccessError
-from odoo.osv import expression
-from odoo.tools import (
+from eden import _, api, exceptions, fields, models, Command
+from eden.addons.mail.tools.discuss import Store
+from eden.addons.mail.tools.web_push import push_to_end_point, DeviceUnreachableError
+from eden.exceptions import MissingError, AccessError
+from eden.osv import expression
+from eden.tools import (
     is_html_empty, html_escape, html2plaintext, parse_contact_from_email,
     clean_context, split_every, Query, SQL, email_normalize_all,
     ormcache, is_list_of,
 )
-from odoo.tools.mail import (
+from eden.tools.mail import (
     append_content_to_html, decode_message_header, email_normalize, email_split,
     email_split_and_format, formataddr, html_sanitize,
     generate_tracking_message_id,
@@ -58,7 +58,7 @@ class MailThread(models.AbstractModel):
         communication history. ``mail.thread`` also manages followers of
         inheriting classes. All features and expected behavior are managed
         by mail.thread. Widgets has been designed for the 7.0 and following
-        versions of Odoo.
+        versions of Eden.
 
         Inheriting classes are not required to implement any method, as the
         default implementation will work for any model. However it is common
@@ -955,7 +955,7 @@ class MailThread(models.AbstractModel):
         """This method returns True if the incoming email should be ignored.
 
         The goal of this method is to prevent loops which can occur if an auto-replier
-        send emails to Odoo.
+        send emails to Eden.
         """
         email_from = message_dict.get('email_from')
         if not email_from:
@@ -1052,7 +1052,7 @@ class MailThread(models.AbstractModel):
     def _detect_write_to_catchall(self, msg_dict):
         """Return True if directly contacts catchall."""
         # Note: tweaked in stable to avoid doing two times same search due to bugfix
-        # (see odoo/odoo#161782), to clean when reaching master
+        # (see eden/eden#161782), to clean when reaching master
         if self.env.context.get("mail_catchall_aliases"):
             catchall_aliases = self.env.context["mail_catchall_aliases"]
         else:
@@ -1319,7 +1319,7 @@ class MailThread(models.AbstractModel):
                 thread_id = thread.id
                 subtype_id = thread._creation_subtype().id
 
-            # switch to odoobot for all incoming message creation
+            # switch to edenbot for all incoming message creation
             # to have a priviledged archived user so real_author_id is correctly computed
             thread_root = thread.with_user(self.env.ref('base.user_root'))
             # replies to internal message are considered as notes, but parent message
@@ -1338,14 +1338,14 @@ class MailThread(models.AbstractModel):
 
             post_params = dict(subtype_id=subtype_id, partner_ids=partner_ids, **message_dict)
             # remove computational values not stored on mail.message and avoid warnings when creating it
-            for x in ('from', 'to', 'cc', 'recipients', 'references', 'in_reply_to', 'x_odoo_message_id',
+            for x in ('from', 'to', 'cc', 'recipients', 'references', 'in_reply_to', 'x_eden_message_id',
                       'is_bounce', 'bounced_email', 'bounced_message', 'bounced_msg_ids', 'bounced_partner'):
                 post_params.pop(x, None)
             new_msg = False
             if thread_root._name == 'mail.thread':  # message with parent_id not linked to record
                 new_msg = thread_root.message_notify(**post_params)
             else:
-                # parsing should find an author independently of user running mail gateway, and ensure it is not odoobot
+                # parsing should find an author independently of user running mail gateway, and ensure it is not edenbot
                 partner_from_found = message_dict.get('author_id') and message_dict['author_id'] != self.env['ir.model.data']._xmlid_to_res_id('base.partner_root')
                 thread_root = thread_root.with_context(from_alias=True, mail_create_nosubscribe=not partner_from_found)
                 new_msg = thread_root.message_post(**post_params)
@@ -1401,13 +1401,13 @@ class MailThread(models.AbstractModel):
             msg_dict.pop('attachments', None)
 
         message_ids = [msg_dict['message_id']]
-        if msg_dict.get('x_odoo_message_id'):
-            message_ids.append(msg_dict['x_odoo_message_id'])
+        if msg_dict.get('x_eden_message_id'):
+            message_ids.append(msg_dict['x_eden_message_id'])
         existing_msg_ids = self.env['mail.message'].search([('message_id', 'in', message_ids)], limit=1)
         if existing_msg_ids:
-            if msg_dict.get('x_odoo_message_id'):
+            if msg_dict.get('x_eden_message_id'):
                 _logger.info('Ignored mail from %s to %s with Message-Id %s / Context Message-Id %s: found duplicated Message-Id during processing',
-                             msg_dict.get('email_from'), msg_dict.get('to'), msg_dict.get('message_id'), msg_dict.get('x_odoo_message_id'))
+                             msg_dict.get('email_from'), msg_dict.get('to'), msg_dict.get('message_id'), msg_dict.get('x_eden_message_id'))
             else:
                 _logger.info('Ignored mail from %s to %s with Message-Id %s: found duplicated Message-Id during processing',
                              msg_dict.get('email_from'), msg_dict.get('to'), msg_dict.get('message_id'))
@@ -1735,7 +1735,7 @@ class MailThread(models.AbstractModel):
             # Very unusual situation, be we should be fault-tolerant here
             message_id = "<%s@localhost>" % time.time()
             _logger.debug('Parsing Message without message-id, generating a random one: %s', message_id)
-        msg_dict['x_odoo_message_id'] = (message.get('X-Odoo-Message-Id') or '').strip()
+        msg_dict['x_eden_message_id'] = (message.get('X-Eden-Message-Id') or '').strip()
         msg_dict['message_id'] = message_id.strip()
 
         if message.get('Subject'):
@@ -1819,7 +1819,7 @@ class MailThread(models.AbstractModel):
             - The list of references ids used to find the bounced mail message
         """
         reference_ids = []
-        headers = ('Message-Id', 'X-Odoo-Message-Id', 'X-Microsoft-Original-Message-ID')
+        headers = ('Message-Id', 'X-Eden-Message-Id', 'X-Microsoft-Original-Message-ID')
         for header in headers:
             value = decode_message_header(message, header)
             references = unfold_references(value)
@@ -3666,7 +3666,7 @@ class MailThread(models.AbstractModel):
 
         # compute references: set references to the parent and add current message just to
         # have a fallback in case replies mess with Messsage-Id in the In-Reply-To (e.g. amazon
-        # SES SMTP may replace Message-Id and In-Reply-To refers an internal ID not stored in Odoo)
+        # SES SMTP may replace Message-Id and In-Reply-To refers an internal ID not stored in Eden)
         message_sudo = message.sudo()
         if message_sudo.parent_id:
             references = f'{message_sudo.parent_id.message_id} {message_sudo.message_id}'
@@ -3810,7 +3810,7 @@ class MailThread(models.AbstractModel):
             res_id = message.res_id
             body = message.body
 
-        icon = '/web/static/img/odoo-icon-192x192.png'
+        icon = '/web/static/img/eden-icon-192x192.png'
 
         if author_name:
             title = "%s: %s" % (author_name, title)
@@ -4171,7 +4171,7 @@ class MailThread(models.AbstractModel):
         msg_sudo = message.sudo()
         msg_type = msg_vals.get('message_type') or msg_sudo.message_type
         author_id = [msg_vals.get('author_id')] if 'author_id' in msg_vals else msg_sudo.author_id.ids
-        # never send to author and to people outside Odoo (email), except comments
+        # never send to author and to people outside Eden (email), except comments
         pids = set()
         if msg_type in {'comment', 'whatsapp_message'}:
             pids = set(notif_pids) - set(author_id)

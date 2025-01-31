@@ -1,5 +1,5 @@
 
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 import { evaluateExpr } from "@web/core/py_js/py";
 import { formatDate, formatDateTime } from "@web/core/l10n/dates";
 import { getClassNameFromDecoration } from "@web/views/utils";

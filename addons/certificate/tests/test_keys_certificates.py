@@ -5,9 +5,9 @@ from cryptography.hazmat.primitives import hashes, serialization
 from cryptography.hazmat.primitives.asymmetric import ec, rsa
 from datetime import datetime, timedelta, timezone
 
-from odoo.exceptions import UserError
-from odoo.tests import TransactionCase, tagged
-from odoo.tools import file_open
+from eden.exceptions import UserError
+from eden.tests import TransactionCase, tagged
+from eden.tools import file_open
 
 
 @tagged('post_install', '-at_install')
@@ -21,8 +21,8 @@ class TestKeysCertificates(TransactionCase):
             x509.NameAttribute(x509.oid.NameOID.COUNTRY_NAME, "BE"),
             x509.NameAttribute(x509.oid.NameOID.STATE_OR_PROVINCE_NAME, "Brabant wallon"),
             x509.NameAttribute(x509.oid.NameOID.LOCALITY_NAME, "Grand Rosière"),
-            x509.NameAttribute(x509.oid.NameOID.ORGANIZATION_NAME, "Odoo S.A."),
-            x509.NameAttribute(x509.oid.NameOID.COMMON_NAME, "odoo.com"),
+            x509.NameAttribute(x509.oid.NameOID.ORGANIZATION_NAME, "Eden Cloud"),
+            x509.NameAttribute(x509.oid.NameOID.COMMON_NAME, "eden.com"),
         ])
 
         private_key = rsa.generate_private_key(public_exponent=65537, key_size=2048)

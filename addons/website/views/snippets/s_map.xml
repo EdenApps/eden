@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template name="Map" id="s_map">
     <section class="s_map pb56 pt56" data-map-type="m" data-map-zoom="12" t-att-data-map-address="' '.join(filter(None, (user_id.company_id.street, user_id.company_id.city, user_id.company_id.state_id.display_name, user_id.company_id.country_id.display_name)))">
@@ -65,4 +65,4 @@
     <field name="path">website/static/src/snippets/s_map/000.js</field>
 </record>
 
-</odoo>
+</eden>

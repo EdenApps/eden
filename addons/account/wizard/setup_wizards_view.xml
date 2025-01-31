@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<odoo>
+<eden>
     <data>
         <record id="setup_financial_year_opening_form" model="ir.ui.view">
             <field name="name">account.financial.year.op.setup.wizard.form</field>
@@ -77,4 +77,4 @@
         </record>
 
     </data>
-</odoo>
+</eden>

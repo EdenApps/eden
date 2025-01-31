@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from unittest.mock import patch
 
-from odoo.tests import tagged
+from eden.tests import tagged
 
-from odoo.addons.sale.tests.common import SaleCommon
+from eden.addons.sale.tests.common import SaleCommon
 
 
 @tagged('post_install', '-at_install')
@@ -21,7 +21,7 @@ class TestSaleOrder(SaleCommon):
         self.env['ir.config_parameter'].set_param('sale.async_emails', 'True')
 
         with patch(
-            'odoo.addons.sale.models.sale_order.SaleOrder._send_order_notification_mail'
+            'eden.addons.sale.models.sale_order.SaleOrder._send_order_notification_mail'
         ) as sync_email_send_mock:
             self.sale_order._send_order_notification_mail(self.confirmation_email_template)
             self.assertTrue(
@@ -45,7 +45,7 @@ class TestSaleOrder(SaleCommon):
         self.env['ir.config_parameter'].set_param('sale.async_emails', 'False')
 
         with patch(
-            'odoo.addons.sale.models.sale_order.SaleOrder._send_order_notification_mail'
+            'eden.addons.sale.models.sale_order.SaleOrder._send_order_notification_mail'
         ) as sync_email_send_mock:
             self.sale_order._send_order_notification_mail(self.confirmation_email_template)
             self.assertEqual(
@@ -60,7 +60,7 @@ class TestSaleOrder(SaleCommon):
         self.sale_order.pending_email_template_id = self.confirmation_email_template
 
         with patch(
-            'odoo.addons.sale.models.sale_order.SaleOrder._send_order_notification_mail'
+            'eden.addons.sale.models.sale_order.SaleOrder._send_order_notification_mail'
         ) as sync_email_send_mock:
             self.env['sale.order']._cron_send_pending_emails(auto_commit=False)
             self.assertFalse(

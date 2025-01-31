@@ -1,7 +1,7 @@
 import { browser } from "@web/core/browser/browser";
 import { isVisible } from "@web/core/utils/ui";
 import { delay, Mutex } from "@web/core/utils/concurrency";
-import { validate } from "@odoo/owl";
+import { validate } from "@eden/owl";
 
 const macroSchema = {
     name: { type: String, optional: true },

@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 from freezegun import freeze_time
 from unittest.mock import patch
 
-from odoo import exceptions
-from odoo.addons.mass_mailing.tests.common import MassMailCommon
-from odoo.tests import Form, tagged, users
+from eden import exceptions
+from eden.addons.mass_mailing.tests.common import MassMailCommon
+from eden.tests import Form, tagged, users
 
 
 @tagged('mailing_list')

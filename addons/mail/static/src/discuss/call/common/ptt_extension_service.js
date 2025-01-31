@@ -1,4 +1,4 @@
-import { markup } from "@odoo/owl";
+import { markup } from "@eden/owl";
 
 import { parseVersion } from "@mail/utils/common/misc";
 import { browser } from "@web/core/browser/browser";

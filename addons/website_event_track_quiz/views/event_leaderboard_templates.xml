@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
 
 <template id="event_leaderboard" name="Leaderboard">
     <t t-call="website_event.layout">
@@ -128,4 +128,4 @@
         </div>
     </div>
 </template>
-</odoo>
+</eden>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="s_group" name="Discussion Group">
         <div class="s_group o_mail_group"
              data-id="0" data-object="mail.group" data-follow="off">
@@ -29,4 +29,4 @@
         <field name="bundle">web.assets_frontend</field>
         <field name="path">website_mail_group/static/src/snippets/s_group/000.js</field>
     </record>
-</odoo>
+</eden>

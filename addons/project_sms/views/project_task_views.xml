@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="project_task_act_window_sms_composer" model="ir.actions.act_window">
         <field name="name">Send SMS</field>
         <field name="res_model">sms.composer</field>
@@ -13,4 +13,4 @@
         <field name="binding_model_id" ref="model_project_task"/>
         <field name="binding_view_types">list,form</field>
     </record>
-</odoo>
+</eden>

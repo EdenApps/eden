@@ -1,12 +1,12 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.tests import HttpCase, tagged
+from eden import Command
+from eden.tests import HttpCase, tagged
 
-from odoo.addons.base.tests.common import DISABLED_MAIL_CONTEXT
-from odoo.addons.website.tools import MockRequest
-from odoo.addons.website_sale.tests.common import WebsiteSaleCommon
-from odoo.addons.website_sale_loyalty.controllers.delivery import WebsiteSaleLoyaltyDelivery
+from eden.addons.base.tests.common import DISABLED_MAIL_CONTEXT
+from eden.addons.website.tools import MockRequest
+from eden.addons.website_sale.tests.common import WebsiteSaleCommon
+from eden.addons.website_sale_loyalty.controllers.delivery import WebsiteSaleLoyaltyDelivery
 
 
 @tagged('post_install', '-at_install')

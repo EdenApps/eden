@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import random
 import werkzeug.urls
@@ -7,7 +7,7 @@ import werkzeug.urls
 from collections import defaultdict
 from datetime import datetime, timedelta
 
-from odoo import api, exceptions, fields, models, tools, _
+from eden import api, exceptions, fields, models, tools, _
 
 class SignupError(Exception):
     pass
@@ -62,7 +62,7 @@ class ResPartner(models.Model):
                 query['redirect'] = url
             else:
                 fragment = dict()
-                base = '/odoo/'
+                base = '/eden/'
                 if action == '/mail/view':
                     base = '/mail/view?'
                 elif action:

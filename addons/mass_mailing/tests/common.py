@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import datetime
 import random
@@ -8,10 +8,10 @@ import werkzeug
 
 from unittest.mock import patch
 
-from odoo.tools import email_normalize, mail
-from odoo.addons.link_tracker.tests.common import MockLinkTracker
-from odoo.addons.mail.tests.common import MailCase, MailCommon, mail_new_test_user
-from odoo.sql_db import Cursor
+from eden.tools import email_normalize, mail
+from eden.addons.link_tracker.tests.common import MockLinkTracker
+from eden.addons.mail.tests.common import MailCase, MailCommon, mail_new_test_user
+from eden.sql_db import Cursor
 
 
 class MassMailCase(MailCase, MockLinkTracker):

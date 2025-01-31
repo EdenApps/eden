@@ -1,4 +1,4 @@
-import { markRaw, EventBus } from "@odoo/owl";
+import { markRaw, EventBus } from "@eden/owl";
 import { Plugin } from "../plugin";
 import { EditorOverlay } from "./overlay";
 import { throttleForAnimation } from "@web/core/utils/timing";

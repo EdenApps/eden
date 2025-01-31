@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from PIL import Image
 
-from odoo.tests import tagged
-from odoo.tests.common import TransactionCase
-from odoo.tools.image import base64_to_image, image_to_base64
+from eden.tests import tagged
+from eden.tests.common import TransactionCase
+from eden.tools.image import base64_to_image, image_to_base64
 
 
 @tagged('post_install', '-at_install')

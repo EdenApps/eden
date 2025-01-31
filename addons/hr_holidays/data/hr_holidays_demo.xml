@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 <data noupdate="1">
 
     <record id="base.user_demo" model="res.users">
@@ -439,4 +439,4 @@
         <field name="color">9</field>
     </record>
 </data>
-</odoo>
+</eden>

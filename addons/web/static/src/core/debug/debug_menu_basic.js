@@ -4,7 +4,7 @@ import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { _t } from "@web/core/l10n/translation";
 import { groupBy, sortBy } from "@web/core/utils/arrays";
 
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 import { registry } from "@web/core/registry";
 
 const debugSectionRegistry = registry.category("debug_section");

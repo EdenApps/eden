@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <template id="payment_paypal.method_form" inherit_id="payment.method_form">
         <input name="o_payment_radio" position="attributes">
@@ -26,4 +26,4 @@
         </button>
     </template>
 
-</odoo>
+</eden>

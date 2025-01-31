@@ -2,7 +2,7 @@ import { Reactive, effect } from "@web/core/utils/reactive";
 import { createRelatedModels } from "@point_of_sale/app/models/related_models";
 import { registry } from "@web/core/registry";
 import { Mutex } from "@web/core/utils/concurrency";
-import { markRaw } from "@odoo/owl";
+import { markRaw } from "@eden/owl";
 import { batched } from "@web/core/utils/timing";
 import IndexedDB from "./utils/indexed_db";
 import { DataServiceOptions } from "./data_service_options";
@@ -33,7 +33,7 @@ export class PosData extends Reactive {
         this.records = {};
         this.opts = new DataServiceOptions();
         this.channels = [];
-        this.onNotified = getOnNotified(this.bus, odoo.access_token);
+        this.onNotified = getOnNotified(this.bus, eden.access_token);
 
         this.network = {
             warningTriggered: false,
@@ -69,7 +69,7 @@ export class PosData extends Reactive {
     }
 
     reconnectWebSocket() {
-        this.onNotified = getOnNotified(this.bus, odoo.access_token);
+        this.onNotified = getOnNotified(this.bus, eden.access_token);
 
         const channels = [...this.channels];
         this.channels = [];
@@ -95,7 +95,7 @@ export class PosData extends Reactive {
     }
 
     get databaseName() {
-        return `config-id_${odoo.pos_config_id}_${odoo.access_token}`;
+        return `config-id_${eden.pos_config_id}_${eden.access_token}`;
     }
 
     initIndexedDB() {
@@ -230,7 +230,7 @@ export class PosData extends Reactive {
     async loadInitialData() {
         try {
             return await this.orm.call("pos.session", "load_data", [
-                odoo.pos_session_id,
+                eden.pos_session_id,
                 PosData.modelToLoad,
             ]);
         } catch (error) {

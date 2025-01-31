@@ -1,4 +1,4 @@
-<odoo>
+<eden>
   <data>
     <record id="fleet_vehicle_model_category_view_tree_stock_fleet" model="ir.ui.view">
         <field name="name">fleet.vehicle.model.category.view.list.inherit.stock.fleet</field>
@@ -36,4 +36,4 @@
         </field>
     </record>
   </data>
-</odoo>
+</eden>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="fleet_costs_report_view_search" model="ir.ui.view">
         <field name="name">fleet.vehicle.cost.view.search</field>
         <field name="model">fleet.vehicle.cost.report</field>
@@ -97,7 +97,7 @@
               No data for analysis
             </p>
             <p>
-              Manage efficiently your different effective vehicles Costs with Odoo.
+              Manage efficiently your different effective vehicles Costs with Eden.
             </p>
         </field>
     </record>
@@ -109,4 +109,4 @@
               action="fleet_costs_reporting_action"
               sequence="1"
               groups="fleet_group_manager"/>
-</odoo>
+</eden>

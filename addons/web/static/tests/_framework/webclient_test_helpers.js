@@ -1,5 +1,5 @@
-import { animationFrame } from "@odoo/hoot-mock";
-import { Component, xml } from "@odoo/owl";
+import { animationFrame } from "@eden/hoot-mock";
+import { Component, xml } from "@eden/owl";
 import { registry } from "@web/core/registry";
 import { WebClient } from "@web/webclient/webclient";
 import { mountWithCleanup } from "./component_test_helpers";

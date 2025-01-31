@@ -1,14 +1,14 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 from collections import defaultdict, OrderedDict
 
-from odoo import api, fields, models
-from odoo.addons.base.models.ir_model import MODULE_UNINSTALL_FLAG
-from odoo.exceptions import MissingError
-from odoo.http import request
-from odoo.modules.module import get_manifest
-from odoo.tools import escape_psql, split_every, SQL
+from eden import api, fields, models
+from eden.addons.base.models.ir_model import MODULE_UNINSTALL_FLAG
+from eden.exceptions import MissingError
+from eden.http import request
+from eden.modules.module import get_manifest
+from eden.tools import escape_psql, split_every, SQL
 
 _logger = logging.getLogger(__name__)
 

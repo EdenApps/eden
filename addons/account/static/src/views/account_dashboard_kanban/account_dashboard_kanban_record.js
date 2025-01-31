@@ -4,7 +4,7 @@ import { UploadDropZone } from "@account/components/upload_drop_zone/upload_drop
 import { KanbanDropdownMenuWrapper } from "@web/views/kanban/kanban_dropdown_menu_wrapper";
 import { KanbanRecord } from "@web/views/kanban/kanban_record";
 
-import { useState, onWillStart } from "@odoo/owl";
+import { useState, onWillStart } from "@eden/owl";
 
 // Accounting Dashboard
 export class DashboardKanbanDropdownMenuWrapper extends KanbanDropdownMenuWrapper {

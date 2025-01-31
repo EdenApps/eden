@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import unittest
 
 from psycopg2 import IntegrityError
 
-from odoo import Command
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.onboarding.tests.common import TestOnboardingCommon
-from odoo.exceptions import ValidationError
-from odoo.tools import mute_logger
+from eden import Command
+from eden.addons.mail.tests.common import mail_new_test_user
+from eden.addons.onboarding.tests.common import TestOnboardingCommon
+from eden.exceptions import ValidationError
+from eden.tools import mute_logger
 
 
 class TestOnboarding(TestOnboardingCommon):
@@ -152,7 +152,7 @@ class TestOnboarding(TestOnboardingCommon):
         self.assert_onboarding_is_not_done(self.onboarding_1)
         self.assert_onboarding_is_done(self.onboarding_2)
 
-    @mute_logger('odoo.sql_db')
+    @mute_logger('eden.sql_db')
     def test_progress_no_company_uniqueness(self):
         """Check that there cannot be two progress records created for
         the same onboarding when it is configured to be completed only
@@ -166,7 +166,7 @@ class TestOnboarding(TestOnboardingCommon):
                 'company_id': False
             })
 
-    @mute_logger('odoo.sql_db')
+    @mute_logger('eden.sql_db')
     def test_progress_per_company_uniqueness(self):
         """Check that there cannot be two progress records created for
         the same company and the same onboarding when the onboarding is

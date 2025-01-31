@@ -1,9 +1,9 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { describe, expect, test } from "@odoo/hoot";
-import { queryOne } from "@odoo/hoot-dom";
-import { watchListeners } from "@odoo/hoot-mock";
-import { EventBus } from "@odoo/owl";
+import { describe, expect, test } from "@eden/hoot";
+import { queryOne } from "@eden/hoot-dom";
+import { watchListeners } from "@eden/hoot-mock";
+import { EventBus } from "@eden/owl";
 import { mountForTest, parseUrl } from "../local_helpers";
 
 describe(parseUrl(import.meta.url), () => {

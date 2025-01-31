@@ -11,7 +11,7 @@ import {
     start,
     startServer,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, test } from "@odoo/hoot";
+import { describe, test } from "@eden/hoot";
 import { onRpc, patchWithCleanup, preloadBundle } from "@web/../tests/web_test_helpers";
 
 import { GifPicker } from "@mail/discuss/gif_picker/common/gif_picker";

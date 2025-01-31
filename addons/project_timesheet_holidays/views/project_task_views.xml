@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <record model="ir.ui.view" id="leave_task_form_view">
         <field name="name">project.task.leave.form.view</field>
@@ -15,4 +15,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

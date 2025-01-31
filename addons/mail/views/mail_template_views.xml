@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
     <data>
         <record model="ir.ui.view" id="email_template_form">
             <field name="name">email.template.form</field>
@@ -163,4 +163,4 @@
         </record>
 
     </data>
-</odoo>
+</eden>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data noupdate="1">
+<eden><data noupdate="1">
 
     <!-- This channel will gain a forum -->
     <record id="slide_channel_demo_0_gard_0" model="slide.channel">
@@ -157,4 +157,4 @@ will learn the basics of wood characteristics.</field>
         <field name="name">HowTo</field>
     </record>
 
-</data></odoo>
+</data></eden>

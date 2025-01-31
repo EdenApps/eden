@@ -1,9 +1,9 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { expect, test } from "@odoo/hoot";
-import { queryAll, queryAllTexts, queryFirst, queryOne, queryText } from "@odoo/hoot-dom";
-import { Deferred, animationFrame, mockDate } from "@odoo/hoot-mock";
-import { markup } from "@odoo/owl";
+import { expect, test } from "@eden/hoot";
+import { queryAll, queryAllTexts, queryFirst, queryOne, queryText } from "@eden/hoot-dom";
+import { Deferred, animationFrame, mockDate } from "@eden/hoot-mock";
+import { markup } from "@eden/owl";
 import {
     contains,
     defineModels,

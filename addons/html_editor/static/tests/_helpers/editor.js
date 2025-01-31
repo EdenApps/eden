@@ -1,10 +1,10 @@
 import { Wysiwyg } from "@html_editor/wysiwyg";
-import { expect, getFixture } from "@odoo/hoot";
-import { queryOne } from "@odoo/hoot-dom";
-import { Component, xml } from "@odoo/owl";
+import { expect, getFixture } from "@eden/hoot";
+import { queryOne } from "@eden/hoot-dom";
+import { Component, xml } from "@eden/owl";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { getContent, getSelection, setContent } from "./selection";
-import { animationFrame } from "@odoo/hoot-mock";
+import { animationFrame } from "@eden/hoot-mock";
 import { dispatchCleanForSave } from "./dispatch";
 import { fixInvalidHTML } from "@html_editor/utils/sanitize";
 
@@ -196,7 +196,7 @@ export async function setupWysiwyg(props = {}) {
     delete props.content;
     const wysiwyg = await mountWithCleanup(Wysiwyg, { props });
     const el = /** @type {HTMLElement} **/ (
-        queryOne(`${props.iframe ? ":iframe " : ""}.odoo-editor-editable`)
+        queryOne(`${props.iframe ? ":iframe " : ""}.eden-editor-editable`)
     );
     if (content) {
         // force selection to be put properly
@@ -207,7 +207,7 @@ export async function setupWysiwyg(props = {}) {
 
 export function insertTestHtml(innerHtml) {
     const container = getFixture();
-    container.classList.add("odoo-editor-editable");
+    container.classList.add("eden-editor-editable");
     container.setAttribute("contenteditable", "true");
     container.innerHTML = innerHtml;
     return container.childNodes;

@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models, api
+from eden import fields, models, api
 
-from odoo.addons.hr_homeworking.models.hr_homeworking import DAYS
+from eden.addons.hr_homeworking.models.hr_homeworking import DAYS
 
 class HomeworkLocationWizard(models.TransientModel):
     _name = 'homework.location.wizard'

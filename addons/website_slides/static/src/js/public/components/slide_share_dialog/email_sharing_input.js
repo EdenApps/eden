@@ -1,11 +1,11 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { rpc } from "@web/core/network/rpc";
 import { session } from "@web/session";
 import { useService } from "@web/core/utils/hooks";
 import { _t } from "@web/core/l10n/translation";
 
-import { Component, useRef, useState } from "@odoo/owl";
+import { Component, useRef, useState } from "@eden/owl";
 
 export class EmailSharingInput extends Component {
     static template = "website_slides.EmailSharingInput";

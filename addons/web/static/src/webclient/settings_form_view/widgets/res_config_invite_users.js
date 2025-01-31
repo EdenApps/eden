@@ -4,7 +4,7 @@ import { formatList } from "@web/core/l10n/utils";
 import { unique } from "@web/core/utils/arrays";
 import { useService } from "@web/core/utils/hooks";
 
-import { Component, useState, onWillStart } from "@odoo/owl";
+import { Component, useState, onWillStart } from "@eden/owl";
 import { standardWidgetProps } from "@web/views/widgets/standard_widget_props";
 
 class ResConfigInviteUsers extends Component {

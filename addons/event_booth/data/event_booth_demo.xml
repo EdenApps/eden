@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<odoo><data>
+<eden><data>
 
     <!-- EVENT BOOTH FOR "Design Fair Los Angeles" EVENT -->
     <record id="event_booth_0_event_0" model="event.booth">
@@ -125,4 +125,4 @@
         <field name="booth_category_id" ref="event_booth_category_vip"/>
     </record>
 
-</data></odoo>
+</data></eden>

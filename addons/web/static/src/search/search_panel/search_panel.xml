@@ -92,13 +92,13 @@
                 class="o_search_panel_filter_group list-group-item p-0 border-0"
                 t-att-class="groupId_last? 'mb-0' : 'mb-3'"
                 >
-                <!-- TODO: this is a workaround for issue https://github.com/odoo/owl/issues/695 (remove when solved) -->
+                <!-- TODO: this is a workaround for issue https://github.com/eden/owl/issues/695 (remove when solved) -->
                 <t t-set="_section" t-value="section"/>
                 <t t-set="group" t-value="section.groups.get(groupId)"/>
                 <header class="o_search_panel_group_header pb-1">
                     <div class="form-check w-100">
                         <!-- TODO: "indeterminate" could not be set in the template and had to be set in
-                            JS manually. See https://github.com/odoo/owl/issues/713 (adapt when solved)
+                            JS manually. See https://github.com/eden/owl/issues/713 (adapt when solved)
                         -->
                         <input type="checkbox"
                             class="form-check-input"
@@ -122,7 +122,7 @@
                     <t t-call="{{ constructor.subTemplates.filtersGroup }}">
                         <t t-set="values" t-value="group.values"/>
                         <t t-set="isChildList" t-value="true"/>
-                        <!-- TODO: this is a workaround for issue https://github.com/odoo/owl/issues/695 (remove when solved) -->
+                        <!-- TODO: this is a workaround for issue https://github.com/eden/owl/issues/695 (remove when solved) -->
                         <t t-set="section" t-value="_section"/>
                     </t>
                 </ul>
@@ -131,7 +131,7 @@
                 <t t-call="{{ constructor.subTemplates.filtersGroup }}">
                     <t t-set="group" t-value="section.groups.get(false)"/>
                     <t t-set="values" t-value="group.values"/>
-                    <!-- TODO: this is a workaround for issue https://github.com/odoo/owl/issues/695 (remove when solved) -->
+                    <!-- TODO: this is a workaround for issue https://github.com/eden/owl/issues/695 (remove when solved) -->
                     <t t-set="section" t-value="section"/>
                 </t>
             </ul>

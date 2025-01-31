@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
+import eden.tests
 
 
-@odoo.tests.tagged('post_install', '-at_install')
-class TestWebsiteCrm(odoo.tests.HttpCase):
+@eden.tests.tagged('post_install', '-at_install')
+class TestWebsiteCrm(eden.tests.HttpCase):
 
     def test_tour(self):
         all_utm_campaign = self.env['utm.campaign'].search([])
@@ -20,7 +20,7 @@ class TestWebsiteCrm(odoo.tests.HttpCase):
         self.assertEqual(len(record), 1)
         self.assertEqual(record.contact_name, 'John Smith')
         self.assertEqual(record.email_from, 'john@smith.com')
-        self.assertEqual(record.partner_name, 'Odoo S.A.')
+        self.assertEqual(record.partner_name, 'Eden Cloud')
 
         # check UTM records
         self.assertEqual(record.source_id, utm_source)
@@ -41,12 +41,12 @@ class TestWebsiteCrm(odoo.tests.HttpCase):
         # no edit on prefilled data from logged partner : propagate partner_id on created lead
         self.start_tour(self.env['website'].get_client_action_url('/contactus'), 'website_crm_pre_tour', login=user_login)
 
-        with odoo.tests.RecordCapturer(self.env['crm.lead'], []) as capt:
+        with eden.tests.RecordCapturer(self.env['crm.lead'], []) as capt:
             self.start_tour("/", "website_crm_catch_logged_partner_info_tour", login=user_login)
         self.assertEqual(capt.records.partner_id, user_partner)
 
         # edited contact us partner info : do not propagate partner_id on lead
-        with odoo.tests.RecordCapturer(self.env['crm.lead'], []) as capt:
+        with eden.tests.RecordCapturer(self.env['crm.lead'], []) as capt:
             self.start_tour("/", "website_crm_tour", login=user_login)
         self.assertFalse(capt.records.partner_id)
 

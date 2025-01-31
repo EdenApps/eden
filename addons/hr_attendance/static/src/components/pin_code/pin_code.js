@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @eden-module **/
 
-import { Component, onWillStart, useState, onWillDestroy } from "@odoo/owl";
+import { Component, onWillStart, useState, onWillDestroy } from "@eden/owl";
 import { browser } from "@web/core/browser/browser";
 
 export class KioskPinCode extends Component {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_chart" name="Chart">
     <div class="s_chart" data-type="bar" data-legend-position="top" data-tooltip-display="true" data-stacked="false" data-border-width="2"
@@ -74,4 +74,4 @@
     <field name="path">website/static/src/snippets/s_chart/000.js</field>
 </record>
 
-</odoo>
+</eden>

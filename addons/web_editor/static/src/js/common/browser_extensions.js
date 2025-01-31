@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 // Redefine the getRangeAt function in order to avoid an error appearing
 // sometimes when an input element is focused on Firefox.

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 from datetime import timedelta
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.addons.mail.tests.common import MailCase
-from odoo.tests import tagged, Form, new_test_user
-from odoo.tools import mute_logger, format_amount
-from odoo import fields
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
+from eden.addons.mail.tests.common import MailCase
+from eden.tests import tagged, Form, new_test_user
+from eden.tools import mute_logger, format_amount
+from eden import fields
 
 @tagged('-at_install', 'post_install')
 class TestPurchaseDashboard(AccountTestInvoicingCommon, MailCase):
@@ -31,7 +31,7 @@ class TestPurchaseDashboard(AccountTestInvoicingCommon, MailCase):
         # OVERRIDE
         return {}
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('eden.addons.mail.models.mail_mail')
     def test_purchase_dashboard(self):
         '''
         Test purchase dashboard values with multiple users.

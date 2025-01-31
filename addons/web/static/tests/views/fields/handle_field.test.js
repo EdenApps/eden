@@ -1,7 +1,7 @@
 import { defineModels, fields, models, mountView, onRpc } from "@web/../tests/web_test_helpers";
-import { expect, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
-import { click, queryFirst } from "@odoo/hoot-dom";
+import { expect, test } from "@eden/hoot";
+import { animationFrame } from "@eden/hoot-mock";
+import { click, queryFirst } from "@eden/hoot-dom";
 
 class Partner extends models.Model {
     display_name = fields.Char({ string: "Displayed name", searchable: true });

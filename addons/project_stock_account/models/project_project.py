@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.osv import expression
+from eden.osv import expression
 
-from odoo import models, _lt
+from eden import models, _lt
 
 
 class Project(models.Model):

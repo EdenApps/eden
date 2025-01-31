@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <menuitem name="eLearning"
         id="website_slides_menu_root"
         web_icon="website_slides,static/description/icon.png"
@@ -79,4 +79,4 @@
         sequence="3"
         action="action_slide_tag"/>
 
-</odoo>
+</eden>

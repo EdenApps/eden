@@ -1,14 +1,14 @@
 # -*- coding:utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
 from datetime import datetime, time
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, fields, models, _
-from odoo.exceptions import ValidationError
-from odoo.osv.expression import AND
-from odoo.tools import format_date
+from eden import api, fields, models, _
+from eden.exceptions import ValidationError
+from eden.osv.expression import AND
+from eden.tools import format_date
 
 
 class HrLeaveType(models.Model):

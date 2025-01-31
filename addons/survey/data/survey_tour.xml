@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="survey_tour" model="web_tour.tour">
         <field name="name">survey_tour</field>
         <field name="sequence">225</field>
@@ -7,4 +7,4 @@
             Congratulations! You are now ready to collect feedback like a pro :-)
         ]]></field>
     </record>
-</odoo>
+</eden>

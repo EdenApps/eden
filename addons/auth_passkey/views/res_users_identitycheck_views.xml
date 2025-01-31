@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="res_users_identitycheck_view_form_passkey" model="ir.ui.view">
         <field name="model">res.users.identitycheck</field>
         <field name="inherit_id" ref="base.res_users_identitycheck_view_form"/>
@@ -19,4 +19,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</eden>

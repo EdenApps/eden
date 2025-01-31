@@ -1,7 +1,7 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { ListRenderer } from "@web/views/list/list_renderer";
-import { useEffect } from "@odoo/owl";
+import { useEffect } from "@eden/owl";
 
 export class SectionListRenderer extends ListRenderer {
     setup() {

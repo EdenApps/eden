@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { insertSnippet, registerWebsitePreviewTour } from '@website/js/tours/tour_utils';
 

@@ -1,9 +1,9 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { registry } from "@web/core/registry";
 
 registry.category("web_tour.tours").add('project_task_activities_split', {
-    url: '/odoo',
+    url: '/eden',
     steps: () => [
         {
             content: 'Open Activity Systray',

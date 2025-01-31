@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
     <data>
         <template id="report_packagingbarcode">
             <t t-call="web.basic_layout">
@@ -45,4 +45,4 @@
             </t>
         </template>
     </data>
-</odoo>
+</eden>

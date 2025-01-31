@@ -4,7 +4,7 @@ import { TourStepAutomatic } from "./tour_step_automatic";
 import { Macro } from "@web/core/macro";
 import { browser } from "@web/core/browser/browser";
 import { setupEventActions } from "@web/../lib/hoot-dom/helpers/events";
-import * as hoot from "@odoo/hoot-dom";
+import * as hoot from "@eden/hoot-dom";
 
 export class TourAutomatic {
     mode = "auto";

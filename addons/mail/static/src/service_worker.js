@@ -3,9 +3,9 @@
 
 async function openDiscussChannel(channelId, action) {
     const discussURLRegexes = [
-        new RegExp("/odoo/discuss"),
-        new RegExp(`/odoo/\\d+/action-${action}`),
-        new RegExp(`/odoo/action-${action}`),
+        new RegExp("/eden/discuss"),
+        new RegExp(`/eden/\\d+/action-${action}`),
+        new RegExp(`/eden/action-${action}`),
     ];
     let targetClient;
     for (const client of await self.clients.matchAll({
@@ -18,7 +18,7 @@ async function openDiscussChannel(channelId, action) {
     }
     if (!targetClient) {
         targetClient = await self.clients.openWindow(
-            `/odoo/action-${action}?active_id=discuss.channel_${channelId}`
+            `/eden/action-${action}?active_id=discuss.channel_${channelId}`
         );
     }
     await targetClient.focus();
@@ -33,7 +33,7 @@ self.addEventListener("notificationclick", (event) => {
             event.waitUntil(openDiscussChannel(res_id, action));
         } else {
             const modelPath = model.includes(".") ? model : `m-${model}`;
-            clients.openWindow(`/odoo/${modelPath}/${res_id}`);
+            clients.openWindow(`/eden/${modelPath}/${res_id}`);
         }
     }
 });

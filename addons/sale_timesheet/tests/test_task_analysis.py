@@ -1,4 +1,4 @@
-from odoo.tests import tagged
+from eden.tests import tagged
 
 from .common import TestCommonSaleTimesheet
 

@@ -1,9 +1,9 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { manuallyDispatchProgrammaticEvent, press, queryFirst } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@eden/hoot";
+import { manuallyDispatchProgrammaticEvent, press, queryFirst } from "@eden/hoot-dom";
 import { setupEditor, testEditor } from "./_helpers/editor";
 import { getContent, setSelection } from "./_helpers/selection";
 import { insertText, tripleClick, undo } from "./_helpers/user_actions";
-import { animationFrame, tick } from "@odoo/hoot-mock";
+import { animationFrame, tick } from "@eden/hoot-mock";
 
 function setTag(tagName) {
     return (editor) => editor.shared.dom.setTag({ tagName });
@@ -440,7 +440,7 @@ describe("to blockquote", () => {
 
     test("setTag should work when we move the selection outside of the editor", async () => {
         const { editor, el } = await setupEditor("<p>ab[]cd</p>");
-        const anchorNode = queryFirst(".odoo-editor-editable").parentElement;
+        const anchorNode = queryFirst(".eden-editor-editable").parentElement;
         setSelection({ anchorNode, anchorOffset: 0 });
         expect(getContent(el)).toBe("<p>abcd</p>");
 

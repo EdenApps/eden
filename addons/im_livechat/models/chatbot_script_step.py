@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, models, fields
-from odoo.exceptions import ValidationError
-from odoo.fields import Command
-from odoo.osv import expression
-from odoo.tools import html2plaintext, is_html_empty, email_normalize, plaintext2html
-from odoo.addons.mail.tools.discuss import Store
+from eden import _, api, models, fields
+from eden.exceptions import ValidationError
+from eden.fields import Command
+from eden.osv import expression
+from eden.tools import html2plaintext, is_html_empty, email_normalize, plaintext2html
+from eden.addons.mail.tools.discuss import Store
 
 from collections import defaultdict
 from markupsafe import Markup

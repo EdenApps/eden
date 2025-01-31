@@ -1,8 +1,8 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@eden/hoot";
 import { setupEditor, testEditor } from "../_helpers/editor";
 import { insertText, switchDirection } from "../_helpers/user_actions";
-import { animationFrame } from "@odoo/hoot-mock";
-import { press, queryAllTexts } from "@odoo/hoot-dom";
+import { animationFrame } from "@eden/hoot-mock";
+import { press, queryAllTexts } from "@eden/hoot-dom";
 import { getContent } from "../_helpers/selection";
 
 test("should switch direction on a collapsed range", async () => {

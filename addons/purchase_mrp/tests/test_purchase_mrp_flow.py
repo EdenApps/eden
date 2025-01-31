@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import timedelta
 
-from odoo.tests import Form, TransactionCase, tagged
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo import fields
-from odoo.fields import Command
+from eden.tests import Form, TransactionCase, tagged
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
+from eden import fields
+from eden.fields import Command
 
 
 @tagged('post_install', '-at_install')

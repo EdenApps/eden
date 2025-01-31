@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<odoo>
+<eden>
     <record id="certificate_certificate_action_view_list" model="ir.actions.act_window">
         <field name="name">Certificates</field>
         <field name="res_model">certificate.certificate</field>
@@ -18,4 +18,4 @@
             <p class="o_view_nocontent_smiling_face">Create a first key</p>
         </field>
     </record>
-</odoo>
+</eden>

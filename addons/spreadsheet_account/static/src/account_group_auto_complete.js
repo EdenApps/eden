@@ -1,6 +1,6 @@
 import { _t } from "@web/core/l10n/translation";
 
-import { registries, tokenColors, helpers } from "@odoo/o-spreadsheet";
+import { registries, tokenColors, helpers } from "@eden/o-spreadsheet";
 
 const { insertTokenAfterLeftParenthesis } = helpers;
 
@@ -32,7 +32,7 @@ registries.autoCompleteProviders.add("account_group_types", {
     getProposals(tokenAtCursor) {
         const functionContext = tokenAtCursor.functionContext;
         if (
-            functionContext?.parent.toUpperCase() === "ODOO.ACCOUNT.GROUP" &&
+            functionContext?.parent.toUpperCase() === "EDEN.ACCOUNT.GROUP" &&
             functionContext.argPosition === 0
         ) {
             return ACCOUNT_TYPES.map(([technicalName, displayName]) => {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<odoo>
+<eden>
 
     <template
         id="payment_confirmation_status"
@@ -39,4 +39,4 @@
         </xpath>
     </template>
 
-</odoo>
+</eden>

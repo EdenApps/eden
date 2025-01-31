@@ -1,12 +1,12 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import timedelta
 
 import requests
 
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
-from odoo.addons.google_account.models.google_service import GOOGLE_TOKEN_ENDPOINT
+from eden import api, fields, models, _
+from eden.exceptions import UserError
+from eden.addons.google_account.models.google_service import GOOGLE_TOKEN_ENDPOINT
 
 class ResUsersSettings(models.Model):
     _inherit = "res.users.settings"
@@ -17,7 +17,7 @@ class ResUsersSettings(models.Model):
     google_calendar_token_validity = fields.Datetime('Token Validity', copy=False, groups='base.group_system')
     google_calendar_sync_token = fields.Char('Next Sync Token', copy=False, groups='base.group_system')
     google_calendar_cal_id = fields.Char('Calendar ID', copy=False, groups='base.group_system',
-        help='Last Calendar ID who has been synchronized. If it is changed, we remove all links between GoogleID and Odoo Google Internal ID')
+        help='Last Calendar ID who has been synchronized. If it is changed, we remove all links between GoogleID and Eden Google Internal ID')
     google_synchronization_stopped = fields.Boolean('Google Synchronization stopped', copy=False, groups='base.group_system')
 
     @api.model

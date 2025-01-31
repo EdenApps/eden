@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, tools
-from odoo.tools import formatLang
+from eden import api, fields, models, tools
+from eden.tools import formatLang
 
 class PurchaseBillUnion(models.Model):
     _name = 'purchase.bill.union'

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <!--
         Templates used for the portal view.
@@ -59,7 +59,7 @@
                     <span>No Mail Group yet.</span>
                     <br/>
                     <a t-if="is_mail_group_manager" class="btn btn-link"
-                        href="/odoo/action-mail_group.mail_group_action?view_type=form">
+                        href="/eden/action-mail_group.mail_group_action?view_type=form">
                         Create a new group
                     </a>
                 </div>
@@ -319,4 +319,4 @@
         </div>
     </template>
 
-</odoo>
+</eden>

@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
     /*
      * The "deferredPrompt" Promise will resolve only if the "beforeinstallprompt" event

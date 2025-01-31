@@ -11,7 +11,7 @@ from urllib.parse import quote
 
 # +--------+ 3. search_read ir.attachments with cloud urls +---------+
 # |        | --------------------------------------------> |         |
-# |        | <-------------------------------------------- |  Odoo   |
+# |        | <-------------------------------------------- |  Eden   |
 # |        | 4. used urls                                  |         |
 # |        |                                               |         |
 # | Script |                                               +---------+
@@ -30,11 +30,11 @@ from urllib.parse import quote
 # 1, 2, 3, 4 are done in batch
 # 5, 6 are done with threadpool
 
-# odoo
-odoo_url = 'http://localhost:8069'
-odoo_db = 'odoo_db'
-odoo_username = 'admin'
-odoo_password = 'admin'
+# eden
+eden_url = 'http://localhost:8069'
+eden_db = 'eden_db'
+eden_username = 'admin'
+eden_password = 'admin'
 
 # Azure
 X_MS_VERSION = '2023-11-03'
@@ -93,12 +93,12 @@ def split_every(n, iterable, piece_maker=tuple):
 
 
 def get_blobs_to_be_deleted(blob_urls, batch_size=1000):
-    common = xmlrpc.client.ServerProxy(f'{odoo_url}/xmlrpc/2/common')
-    uid = common.authenticate(odoo_db, odoo_username, odoo_password, {})
-    models = xmlrpc.client.ServerProxy(f'{odoo_url}/xmlrpc/2/object')
+    common = xmlrpc.client.ServerProxy(f'{eden_url}/xmlrpc/2/common')
+    uid = common.authenticate(eden_db, eden_username, eden_password, {})
+    models = xmlrpc.client.ServerProxy(f'{eden_url}/xmlrpc/2/object')
     for blob_urls_ in split_every(batch_size, blob_urls):
         blob_urls_ = list(blob_urls_)
-        attachments = models.execute_kw(odoo_db, uid, odoo_password, 'ir.attachment', 'search_read', [
+        attachments = models.execute_kw(eden_db, uid, eden_password, 'ir.attachment', 'search_read', [
             [('type', '=', 'cloud_storage'), ('url', 'in', blob_urls_)],
             ['url']
         ])

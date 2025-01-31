@@ -11,7 +11,7 @@ import { defineWebsiteLivechatModels } from "./website_livechat_test_helpers";
 import { Command, serverState } from "@web/../tests/web_test_helpers";
 import { url } from "@web/core/utils/urls";
 import { deserializeDateTime } from "@web/core/l10n/dates";
-import { describe, test } from "@odoo/hoot";
+import { describe, test } from "@eden/hoot";
 
 describe.current.tags("desktop");
 defineWebsiteLivechatModels();

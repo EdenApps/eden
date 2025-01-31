@@ -5,8 +5,8 @@ import {
 } from "@bus/../tests/bus_test_helpers";
 import { busMonitoringservice } from "@bus/services/bus_monitoring_service";
 import { WEBSOCKET_CLOSE_CODES } from "@bus/workers/websocket_worker";
-import { describe, expect, test } from "@odoo/hoot";
-import { runAllTimers } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@eden/hoot";
+import { runAllTimers } from "@eden/hoot-dom";
 import {
     asyncStep,
     makeMockEnv,

@@ -1,4 +1,4 @@
-import { markRaw } from "@odoo/owl";
+import { markRaw } from "@eden/owl";
 import { Popover } from "@web/core/popover/popover";
 import { registry } from "@web/core/registry";
 
@@ -28,7 +28,7 @@ export const popoverService = {
          * Signals the manager to add a popover.
          *
          * @param {HTMLElement} target
-         * @param {typeof import("@odoo/owl").Component} component
+         * @param {typeof import("@eden/owl").Component} component
          * @param {object} [props]
          * @param {PopoverServiceAddOptions} [options]
          * @returns {() => void}

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="mail_plugin.app_auth" name="Accept app">
         <t t-call="web.login_layout">
             <t t-set="disable_database_manager" t-value="1"/>
@@ -10,7 +10,7 @@
                 <input type="hidden" name="state" t-att-value="state"/>
                 <input type="hidden" name="friendlyname" t-att-value="friendlyname"/>
                 <p class="text-center">
-                    Let <t t-esc="friendlyname" /> access your Odoo database?
+                    Let <t t-esc="friendlyname" /> access your Eden database?
                 </p>
                 <p class="text-center">
                     <button type="submit" name="do" value="1" class="btn btn-link btn-sm">Allow</button>
@@ -24,4 +24,4 @@
             <div class="alert alert-danger" role="alert" t-out="error"/>
         </t>
     </template>
-</odoo>
+</eden>

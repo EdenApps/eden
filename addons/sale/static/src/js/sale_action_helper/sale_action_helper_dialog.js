@@ -1,7 +1,7 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { Dialog } from "@web/core/dialog/dialog";
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 export class SaleActionHelperDialog extends Component {
     static components = { Dialog };

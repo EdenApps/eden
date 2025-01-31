@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="timesheet_sale_page">
         <t t-set="show_project" t-value="true"/>
         <t t-set="show_task" t-value="true"/>
@@ -60,4 +60,4 @@
         <field name="binding_model_id" ref="model_account_move"/>
         <field name="domain" eval="[('timesheet_ids', '!=', False)]"/>
     </record>
-</odoo>
+</eden>

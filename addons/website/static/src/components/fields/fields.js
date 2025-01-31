@@ -1,11 +1,11 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import {PageDependencies} from '@website/components/dialog/page_properties';
 import {standardFieldProps} from '@web/views/fields/standard_field_props';
 import { UrlField, urlField } from "@web/views/fields/url/url_field";
 import {registry} from '@web/core/registry';
 import { _t } from '@web/core/l10n/translation';
-import { Component, useEffect, useRef } from "@odoo/owl";
+import { Component, useEffect, useRef } from "@eden/owl";
 
 /**
  * Displays website page dependencies and URL redirect options when the page URL

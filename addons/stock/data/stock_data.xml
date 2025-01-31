@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <record id="removal_fifo" model="product.removal">
             <field name="name">First In First Out (FIFO)</field>
@@ -123,4 +123,4 @@
             <field name="value">,</field>
         </record>
     </data>
-</odoo>
+</eden>

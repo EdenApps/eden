@@ -1,7 +1,7 @@
 import { Plugin } from "@html_editor/plugin";
 import { MAIN_PLUGINS } from "@html_editor/plugin_sets";
-import { expect, test } from "@odoo/hoot";
-import { click } from "@odoo/hoot-dom";
+import { expect, test } from "@eden/hoot";
+import { click } from "@eden/hoot-dom";
 import { setupEditor, testEditor } from "./_helpers/editor";
 import { getContent, setContent } from "./_helpers/selection";
 import { withSequence } from "@html_editor/utils/resource";

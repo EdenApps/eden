@@ -1,5 +1,5 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { Registry } from "@odoo/o-spreadsheet";
+import { Registry } from "@eden/o-spreadsheet";
 
 export const initCallbackRegistry = new Registry();

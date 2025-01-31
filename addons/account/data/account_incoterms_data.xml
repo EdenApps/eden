@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <record id="incoterm_EXW" model="account.incoterms">
             <field name="code">EXW</field>
@@ -47,4 +47,4 @@
         </record>
 
     </data>
-</odoo>
+</eden>

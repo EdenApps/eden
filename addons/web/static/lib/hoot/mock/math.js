@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { isNil, stringToNumber } from "../hoot_utils";
 

@@ -3,7 +3,7 @@ import { CollaborationPlugin } from "@html_editor/others/collaboration/collabora
 import { MAIN_PLUGINS } from "@html_editor/plugin_sets";
 import { createDOMPathGenerator } from "@html_editor/utils/dom_traversal";
 import { DIRECTIONS } from "@html_editor/utils/position";
-import { after, expect } from "@odoo/hoot";
+import { after, expect } from "@eden/hoot";
 import { setupEditor } from "./editor";
 
 /**

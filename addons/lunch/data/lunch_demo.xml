@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
 
         <record id="lunch_location_main" model="lunch.location">
@@ -483,4 +483,4 @@
             <field name="lunch_location_id" ref="location_office_2"/>
         </record>
     </data>
-</odoo>
+</eden>

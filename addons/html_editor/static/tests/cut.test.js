@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { press } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@eden/hoot";
+import { press } from "@eden/hoot-dom";
 import { setupEditor, testEditor } from "./_helpers/editor";
 import { undo } from "./_helpers/user_actions";
 
@@ -30,14 +30,14 @@ describe("range collapsed", () => {
 });
 
 describe("range not collapsed", () => {
-    test("should cut a selection as text/plain, text/html and application/vnd.odoo.odoo-editor", async () => {
+    test("should cut a selection as text/plain, text/html and application/vnd.eden.eden-editor", async () => {
         await testEditor({
             contentBefore: "<p>a[bcd]e</p>",
             stepFunction: async (editor) => {
                 const clipboardData = cut(editor);
                 expect(clipboardData.getData("text/plain")).toBe("bcd");
                 expect(clipboardData.getData("text/html")).toBe("<p>bcd</p>");
-                expect(clipboardData.getData("application/vnd.odoo.odoo-editor")).toBe(
+                expect(clipboardData.getData("application/vnd.eden.eden-editor")).toBe(
                     "<p>bcd</p>"
                 );
             },
@@ -49,7 +49,7 @@ describe("range not collapsed", () => {
                 const clipboardData = cut(editor);
                 expect(clipboardData.getData("text/plain")).toBe("abc\nefg");
                 expect(clipboardData.getData("text/html")).toBe("<p>abc<br>efg</p>");
-                expect(clipboardData.getData("application/vnd.odoo.odoo-editor")).toBe(
+                expect(clipboardData.getData("application/vnd.eden.eden-editor")).toBe(
                     "<p>abc<br>efg</p>"
                 );
             },

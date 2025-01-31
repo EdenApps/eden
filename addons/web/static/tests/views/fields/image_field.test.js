@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@eden/hoot";
 import {
     click,
     edit,
@@ -7,8 +7,8 @@ import {
     queryFirst,
     setInputFiles,
     waitFor,
-} from "@odoo/hoot-dom";
-import { animationFrame, runAllTimers } from "@odoo/hoot-mock";
+} from "@eden/hoot-dom";
+import { animationFrame, runAllTimers } from "@eden/hoot-mock";
 import {
     clickSave,
     defineModels,

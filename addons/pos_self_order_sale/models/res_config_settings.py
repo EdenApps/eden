@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, api
+from eden import models, api
 
 
 class ResConfigSettings(models.TransientModel):

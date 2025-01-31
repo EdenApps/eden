@@ -1,8 +1,8 @@
-/** @odoo-module */
+/** @eden-module */
 
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@eden/o-spreadsheet";
 import { _t } from "@web/core/l10n/translation";
-import { OdooChart } from "./odoo_chart";
+import { EdenChart } from "./eden_chart";
 
 const { chartRegistry } = spreadsheet.registries;
 
@@ -24,7 +24,7 @@ const { TREND_LINE_XAXIS_ID } = spreadsheet.constants;
 
 const LINE_FILL_TRANSPARENCY = 0.4;
 
-export class OdooLineChart extends OdooChart {
+export class EdenLineChart extends EdenChart {
     constructor(definition, sheetId, getters) {
         super(definition, sheetId, getters);
         this.verticalAxisPosition = definition.verticalAxisPosition;
@@ -48,18 +48,18 @@ export class OdooLineChart extends OdooChart {
     }
 }
 
-chartRegistry.add("odoo_line", {
-    match: (type) => type === "odoo_line",
-    createChart: (definition, sheetId, getters) => new OdooLineChart(definition, sheetId, getters),
-    getChartRuntime: createOdooChartRuntime,
+chartRegistry.add("eden_line", {
+    match: (type) => type === "eden_line",
+    createChart: (definition, sheetId, getters) => new EdenLineChart(definition, sheetId, getters),
+    getChartRuntime: createEdenChartRuntime,
     validateChartDefinition: (validator, definition) =>
-        OdooLineChart.validateChartDefinition(validator, definition),
-    transformDefinition: (definition) => OdooLineChart.transformDefinition(definition),
-    getChartDefinitionFromContextCreation: () => OdooLineChart.getDefinitionFromContextCreation(),
+        EdenLineChart.validateChartDefinition(validator, definition),
+    transformDefinition: (definition) => EdenLineChart.transformDefinition(definition),
+    getChartDefinitionFromContextCreation: () => EdenLineChart.getDefinitionFromContextCreation(),
     name: _t("Line"),
 });
 
-function createOdooChartRuntime(chart, getters) {
+function createEdenChartRuntime(chart, getters) {
     const background = chart.background || "#FFFFFF";
     const { datasets, labels } = chart.dataSource.getData();
     const locale = getters.getLocale();
@@ -77,7 +77,7 @@ function createOdooChartRuntime(chart, getters) {
         let backgroundColor = color;
         if (chart.fillArea) {
             const backgroundRGBA = colorToRGBA(color);
-            // use the transparency of Odoo to keep consistency
+            // use the transparency of Eden to keep consistency
             backgroundRGBA.a = LINE_FILL_TRANSPARENCY;
             backgroundColor = rgbaToHex(backgroundRGBA);
         }
@@ -142,7 +142,7 @@ function createOdooChartRuntime(chart, getters) {
 function getLineConfiguration(chart, labels, locale) {
     const fontColor = chartFontColor(chart.background);
     const config = getDefaultChartJsRuntime(chart, labels, fontColor, { locale });
-    config.type = chart.type.replace("odoo_", "");
+    config.type = chart.type.replace("eden_", "");
     const legend = {
         ...config.options.legend,
         display: chart.legendPosition !== "none",

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
     <record id="stock_lot_customer_report_view_list" model="ir.ui.view">
         <field name="name">stock.lot.report.view.list</field>
         <field name="model">stock.lot.report</field>
@@ -50,4 +50,4 @@
             </search>
         </field>
     </record>
-</odoo>
+</eden>

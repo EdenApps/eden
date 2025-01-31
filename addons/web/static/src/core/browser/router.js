@@ -1,4 +1,4 @@
-import { EventBus } from "@odoo/owl";
+import { EventBus } from "@eden/owl";
 import { omit, pick } from "../utils/objects";
 import { compareUrls, objectToUrlEncodedString } from "../utils/urls";
 import { browser } from "./browser";
@@ -150,7 +150,7 @@ export function stateToUrl(state) {
         pathKeysToOmit.splice(pathKeysToOmit.indexOf("resId"), 1);
     }
     const search = objectToUrlEncodedString(omit(state, ...pathKeysToOmit));
-    const start_url = isScopedApp() ? "scoped_app" : "odoo";
+    const start_url = isScopedApp() ? "scoped_app" : "eden";
     return `/${start_url}${path}${search ? `?${search}` : ""}`;
 }
 
@@ -181,7 +181,7 @@ export function urlToState(urlObj) {
 
     const [prefix, ...splitPath] = urlObj.pathname.split("/").filter(Boolean);
 
-    if (prefix === "odoo" || isScopedApp()) {
+    if (prefix === "eden" || isScopedApp()) {
         const actionParts = [...splitPath.entries()].filter(
             ([_, part]) => !isNumeric(part) && part !== "new"
         );
@@ -282,7 +282,7 @@ browser.addEventListener("popstate", (ev) => {
 /**
  * When the user navigates the history using the back/forward button, some browsers (Safari iOS and
  * Safari MacOS) can restore the page using the `bfcache` (especially when we come back from an
- * external website). Unfortunately, Odoo wasn't designed to be compatible with this cache, which
+ * external website). Unfortunately, Eden wasn't designed to be compatible with this cache, which
  * leads to inconsistencies. When the `bfcache` is used to restore a page, we reload the current
  * page, to be sure that all the elements have been rendered correctly.
  */
@@ -312,13 +312,13 @@ browser.addEventListener("click", (ev) => {
         }
         if (
             browser.location.host === url.host &&
-            browser.location.pathname.startsWith("/odoo") &&
-            (["/web", "/odoo"].includes(url.pathname) || url.pathname.startsWith("/odoo/")) &&
+            browser.location.pathname.startsWith("/eden") &&
+            (["/web", "/eden"].includes(url.pathname) || url.pathname.startsWith("/eden/")) &&
             ev.target.target !== "_blank"
         ) {
             ev.preventDefault();
             state = router.urlToState(url);
-            if (url.pathname.startsWith("/odoo") && url.hash) {
+            if (url.pathname.startsWith("/eden") && url.hash) {
                 browser.history.pushState({}, "", url.href);
             }
             new Promise((res) => setTimeout(res, 0)).then(() => routerBus.trigger("ROUTE_CHANGE"));

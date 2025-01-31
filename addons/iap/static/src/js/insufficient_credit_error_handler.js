@@ -1,9 +1,9 @@
-/** @odoo-module */
+/** @eden-module */
 import { Dialog } from "@web/core/dialog/dialog";
 import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
 import { _t } from "@web/core/l10n/translation";
-import { Component, onWillStart } from "@odoo/owl";
+import { Component, onWillStart } from "@eden/owl";
 
 class InsufficientCreditDialog extends Component {
     static components = { Dialog };
@@ -26,9 +26,9 @@ class InsufficientCreditDialog extends Component {
             trial: errorData.trial,
         });
         this.style = errorData.body ? "padding:0;" : "";
-        const { isEnterprise } = odoo.info;
+        const { isEnterprise } = eden.info;
         if (errorData.trial && isEnterprise) {
-            this.buttonMessage = _t("Start a Trial at Odoo");
+            this.buttonMessage = _t("Start a Trial at Eden");
         } else {
             this.buttonMessage = _t("Buy credits");
         }
@@ -45,7 +45,7 @@ function insufficientCreditHandler(env, error, originalError) {
         return false;
     }
     const { data } = originalError;
-    if (data && data.name === "odoo.addons.iap.tools.iap_tools.InsufficientCreditError") {
+    if (data && data.name === "eden.addons.iap.tools.iap_tools.InsufficientCreditError") {
         env.services.dialog.add(InsufficientCreditDialog, {
             errorData: JSON.parse(data.message),
         });

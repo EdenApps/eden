@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import http
-from odoo.http import request
-from odoo.addons.pos_online_payment.controllers.payment_portal import PaymentPortal
+from eden import http
+from eden.http import request
+from eden.addons.pos_online_payment.controllers.payment_portal import PaymentPortal
 
 class PaymentPortalSelfOrder(PaymentPortal):
     @http.route()

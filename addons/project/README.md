@@ -4,7 +4,7 @@ Project Management
 ### Infinitely flexible. Incredibly easy to use.
 
 
-Odoo's collaborative and realtime <a href="https://www.odoo.com/app/project">open source project management</a>
+Eden's collaborative and realtime <a href="https://www.edencloud.us/app/project">open source project management</a>
 helps your team get work done. Keep track of everything, from the big picture
 to the minute details, from the customer contract to the billing.
 

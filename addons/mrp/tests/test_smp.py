@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mrp.tests.common import TestMrpCommon
-from odoo.tests import Form
-from odoo import Command
+from eden.addons.mrp.tests.common import TestMrpCommon
+from eden.tests import Form
+from eden import Command
 
 
 class TestMrpSerialMassProduce(TestMrpCommon):

@@ -43,9 +43,9 @@ export default class DevicesSynchronisation {
         }, {});
 
         await this.pos.data.call("pos.config", "notify_synchronisation", [
-            odoo.pos_config_id,
-            odoo.pos_session_id,
-            odoo.login_number,
+            eden.pos_config_id,
+            eden.pos_session_id,
+            eden.login_number,
             recordIds,
         ]);
     }
@@ -62,13 +62,13 @@ export default class DevicesSynchronisation {
     async collect(data) {
         const { static_records, session_id, login_number } = data;
 
-        if (odoo.debug === "assets") {
+        if (eden.debug === "assets") {
             console.info("Incoming synchronisation", data);
-            console.info("Login number", odoo.login_number, login_number);
-            console.info("Session Ids", odoo.pos_session_id, session_id);
+            console.info("Login number", eden.login_number, login_number);
+            console.info("Session Ids", eden.pos_session_id, session_id);
         }
 
-        if (login_number == odoo.login_number || session_id != odoo.pos_session_id) {
+        if (login_number == eden.login_number || session_id != eden.pos_session_id) {
             return;
         }
 
@@ -89,7 +89,7 @@ export default class DevicesSynchronisation {
         const recordIds = this.getDynamicRecordServerIds();
         const domain = this.constructOrdersDomain(serverOpenOrders);
         const response = await this.pos.data.call("pos.config", "read_config_open_orders", [
-            odoo.pos_config_id,
+            eden.pos_config_id,
             domain,
             recordIds,
         ]);
@@ -167,7 +167,7 @@ export default class DevicesSynchronisation {
         const localIds = serverOpenOrders.map((o) => o.id);
         let domain = new Domain(["&", ["state", "=", "draft"], ["id", "not in", localIds]]);
         domain = Domain.or([domain, ...localDomain]);
-        domain = Domain.and([domain, new Domain([["config_id", "=", odoo.pos_config_id]])]);
+        domain = Domain.and([domain, new Domain([["config_id", "=", eden.pos_config_id]])]);
         return domain.toList();
     }
 

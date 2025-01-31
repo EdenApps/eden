@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import {SIZES, MEDIAS_BREAKPOINTS} from "@web/core/ui/ui_service";
 import {
@@ -397,7 +397,7 @@ function _backgroundImagePartsToCss(parts) {
  * @returns {boolean}
  */
 function _isColorGradient(value) {
-    // FIXME duplicated in odoo-editor/utils.js
+    // FIXME duplicated in eden-editor/utils.js
     return value && value.includes('-gradient(');
 }
 /**
@@ -521,7 +521,7 @@ async function _isImageCorsProtected(img) {
         // CORS protected. We check upfront if it's the case.
         // Two possible cases:
         // 1. the `src` is an absolute URL from another domain.
-        //    For instance, abc.odoo.com vs abc.com which are actually the
+        //    For instance, abc.eden.com vs abc.com which are actually the
         //    same database behind.
         // 2. A "attachment-url" which is just a redirect to the real image
         //    which could be hosted on another website.

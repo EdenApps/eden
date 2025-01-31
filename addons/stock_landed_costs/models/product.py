@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models, _
-from odoo.addons.stock_landed_costs.models.stock_landed_cost import SPLIT_METHOD
-from odoo.exceptions import UserError
+from eden import fields, models, _
+from eden.addons.stock_landed_costs.models.stock_landed_cost import SPLIT_METHOD
+from eden.exceptions import UserError
 
 
 class ProductTemplate(models.Model):

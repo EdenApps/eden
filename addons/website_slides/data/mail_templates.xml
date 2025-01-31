@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data noupdate="1">
+<eden><data noupdate="1">
         <!-- QWeb templates -->
         <!-- Note: mail_notification_channel_invite: record should be a slide.channel.partner record -->
         <template id="mail_notification_channel_invite">
@@ -66,8 +66,8 @@
 </td></tr>
 <!-- POWERED BY -->
 <tr><td align="center" style="min-width: 590px;">
-        Powered by <a target="_blank" href="https://www.odoo.com?utm_source=db&amp;utm_medium=email" style="color: #875A7B;">Odoo</a>
+        Powered by <a target="_blank" href="https://www.edencloud.us?utm_source=db&amp;utm_medium=email" style="color: #875A7B;">Eden</a>
 </td></tr>
 </table>
         </template>
-</data></odoo>
+</data></eden>

@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { setInputFiles } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { expect, test } from "@eden/hoot";
+import { setInputFiles } from "@eden/hoot-dom";
+import { animationFrame } from "@eden/hoot-mock";
 import {
     clickSave,
     contains,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <record id="mail_template_presence" model="mail.template">
             <field name="name">HR: Employee Absence email</field>
@@ -20,4 +20,4 @@ Thank you for your prompt attention to this matter.
             </field>
         </record>
     </data>
-</odoo>
+</eden>

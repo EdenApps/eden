@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from odoo import models, fields, api
-from odoo.tools.translate import _
-from odoo.exceptions import UserError
+from eden import models, fields, api
+from eden.tools.translate import _
+from eden.exceptions import UserError
 
 
 class AccountDebitNote(models.TransientModel):

@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, _
-from odoo.osv import expression
-from odoo.tools import format_duration
+from eden import api, fields, models, _
+from eden.osv import expression
+from eden.tools import format_duration
 
 
 class SaleOrderLine(models.Model):

@@ -1,6 +1,6 @@
-import { expect, test, describe } from "@odoo/hoot";
-import { click, getActiveElement, press, queryOne, waitFor } from "@odoo/hoot-dom";
-import { animationFrame, tick } from "@odoo/hoot-mock";
+import { expect, test, describe } from "@eden/hoot";
+import { click, getActiveElement, press, queryOne, waitFor } from "@eden/hoot-dom";
+import { animationFrame, tick } from "@eden/hoot-mock";
 import { setupEditor } from "./_helpers/editor";
 import { makeMockEnv, onRpc } from "@web/../tests/web_test_helpers";
 import { getContent } from "./_helpers/selection";

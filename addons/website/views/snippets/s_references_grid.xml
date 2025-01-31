@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_references_grid" name="References Grid">
     <section class="s_references_grid o_cc o_cc1 pt64 pb64">
@@ -33,4 +33,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

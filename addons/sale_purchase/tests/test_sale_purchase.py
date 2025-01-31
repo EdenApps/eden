@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.exceptions import UserError, AccessError
-from odoo.tests import tagged
-from odoo.addons.sale_purchase.tests.common import TestCommonSalePurchaseNoChart
+from eden import Command
+from eden.exceptions import UserError, AccessError
+from eden.tests import tagged
+from eden.addons.sale_purchase.tests.common import TestCommonSalePurchaseNoChart
 
 
 @tagged('-at_install', 'post_install')

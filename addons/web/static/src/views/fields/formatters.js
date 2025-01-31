@@ -10,7 +10,7 @@ import {
 } from "@web/core/utils/numbers";
 import { escape, exprToBoolean } from "@web/core/utils/strings";
 
-import { markup } from "@odoo/owl";
+import { markup } from "@eden/owl";
 import { formatCurrency } from "@web/core/currency";
 
 // -----------------------------------------------------------------------------

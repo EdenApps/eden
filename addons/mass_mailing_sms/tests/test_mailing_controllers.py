@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import werkzeug.urls
 
-from odoo.tests.common import users
-from odoo.addons.mass_mailing_sms.tests.common import MassSMSCommon
-from odoo.tests import HttpCase
+from eden.tests.common import users
+from eden.addons.mass_mailing_sms.tests.common import MassSMSCommon
+from eden.tests import HttpCase
 
 class TestMailingListSms(HttpCase, MassSMSCommon):
 

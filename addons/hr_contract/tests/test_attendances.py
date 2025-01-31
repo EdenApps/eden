@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from pytz import timezone
 
 from datetime import datetime, date
 
-from odoo.addons.hr_contract.tests.common import TestContractCommon
+from eden.addons.hr_contract.tests.common import TestContractCommon
 
 
 class TestAttendances(TestContractCommon):

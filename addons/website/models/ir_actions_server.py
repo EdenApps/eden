@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 from werkzeug import urls
 
-from odoo import api, fields, models
-from odoo.http import request
-from odoo.tools.json import scriptsafe as json_scriptsafe
+from eden import api, fields, models
+from eden.http import request
+from eden.tools.json import scriptsafe as json_scriptsafe
 
 
 class ServerAction(models.Model):

@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { makeView, setupViewRegistries } from "@web/../tests/views/helpers";
 import { patchUserWithCleanup } from "@web/../tests/helpers/mock_services";

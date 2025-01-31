@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record model="ir.ui.view" id="utm_campaign_view_form">
         <field name="name">utm.campaign.view.form</field>
         <field name="model">utm.campaign</field>
@@ -69,4 +69,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</eden>

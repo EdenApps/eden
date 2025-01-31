@@ -11,8 +11,8 @@ import {
     startServer,
     triggerHotkey,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, test } from "@odoo/hoot";
-import { mockUserAgent } from "@odoo/hoot-mock";
+import { describe, test } from "@eden/hoot";
+import { mockUserAgent } from "@eden/hoot-mock";
 import { mockService } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");

@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@eden/hoot";
 import {
     click,
     hover,
@@ -9,9 +9,9 @@ import {
     queryAllTexts,
     queryAllValues,
     queryFirst,
-} from "@odoo/hoot-dom";
-import { Deferred, animationFrame, mockDate, mockTimeZone } from "@odoo/hoot-mock";
-import { Component, onWillUpdateProps, xml } from "@odoo/owl";
+} from "@eden/hoot-dom";
+import { Deferred, animationFrame, mockDate, mockTimeZone } from "@eden/hoot-mock";
+import { Component, onWillUpdateProps, xml } from "@eden/owl";
 import {
     SELECTORS,
     clickOnButtonDeleteNode,

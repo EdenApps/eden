@@ -1,12 +1,12 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from werkzeug.urls import iri_to_uri
 
-from odoo import api, fields, models
-from odoo.http import request
+from eden import api, fields, models
+from eden.http import request
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.const import REPORT_REASONS_MAPPING
+from eden.addons.payment import utils as payment_utils
+from eden.addons.payment.const import REPORT_REASONS_MAPPING
 
 
 class PaymentProvider(models.Model):

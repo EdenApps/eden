@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <data>
         <record id="livechat_channel_session_4" model="discuss.channel">
             <field name="channel_type">livechat</field>
@@ -32,7 +32,7 @@
             <field name="model">discuss.channel</field>
             <field name="res_id" ref="im_livechat.livechat_channel_session_4"/>
             <field name="author_id" ref="base.partner_demo"/>
-            <field name="body">Hello Joel Willis, you're at the right place! You can customize Odoo using our Studio application in just a few clicks.</field>
+            <field name="body">Hello Joel Willis, you're at the right place! You can customize Eden using our Studio application in just a few clicks.</field>
             <field name="message_type">comment</field>
             <field name="subtype_id" ref="mail.mt_comment"/>
             <field eval="DateTime.today() + relativedelta(months=-2, days=-3, minutes=16)" name="date"/>
@@ -66,4 +66,4 @@
         <function model="discuss.channel" name="rating_apply"
             eval="([ref('im_livechat.livechat_channel_session_4')], 5, 'LIVECHAT_4', None, 'Good Job')"/>
     </data>
-</odoo>
+</eden>

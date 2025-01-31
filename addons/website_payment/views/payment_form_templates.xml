@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <!-- Insert the donation form inside the payment form's <form/> element. -->
     <template id="website_payment.payment_form" inherit_id="payment.form">
@@ -133,4 +133,4 @@
         />
     </template>
 
-</odoo>
+</eden>

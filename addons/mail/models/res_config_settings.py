@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import datetime
 
-from odoo import _, fields, models
-from odoo.exceptions import UserError
+from eden import _, fields, models
+from eden.exceptions import UserError
 
 
 class ResConfigSettings(models.TransientModel):
@@ -19,7 +19,7 @@ class ResConfigSettings(models.TransientModel):
     alias_domain_id = fields.Many2one(
         'mail.alias.domain', 'Alias Domain',
         readonly=False, related='company_id.alias_domain_id',
-        help="If you have setup a catch-all email domain redirected to the Odoo server, enter the domain name here.")
+        help="If you have setup a catch-all email domain redirected to the Eden server, enter the domain name here.")
     module_google_gmail = fields.Boolean('Support Gmail Authentication')
     module_microsoft_outlook = fields.Boolean('Support Outlook Authentication')
     restrict_template_rendering = fields.Boolean(

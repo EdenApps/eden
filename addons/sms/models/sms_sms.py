@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 import threading
@@ -7,8 +7,8 @@ from uuid import uuid4
 
 from werkzeug.urls import url_join
 
-from odoo import api, fields, models, tools, _
-from odoo.addons.sms.tools.sms_api import SmsApi
+from eden import api, fields, models, tools, _
+from eden.addons.sms.tools.sms_api import SmsApi
 
 _logger = logging.getLogger(__name__)
 

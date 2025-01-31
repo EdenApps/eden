@@ -1,7 +1,7 @@
-import { after, expect, test } from "@odoo/hoot";
-import { queryFirst } from "@odoo/hoot-dom";
-import { mockDate } from "@odoo/hoot-mock";
-import { Component, onWillUpdateProps, xml } from "@odoo/owl";
+import { after, expect, test } from "@eden/hoot";
+import { queryFirst } from "@eden/hoot-dom";
+import { mockDate } from "@eden/hoot-mock";
+import { Component, onWillUpdateProps, xml } from "@eden/owl";
 import { editValue } from "@web/../tests/core/tree_editor/condition_tree_editor_test_helpers";
 import {
     contains,

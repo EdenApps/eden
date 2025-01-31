@@ -4,7 +4,7 @@ import {
     getClientActionUrl,
     registerWebsitePreviewTour,
 } from "@website/js/tours/tour_utils";
-import { waitFor } from "@odoo/hoot-dom";
+import { waitFor } from "@eden/hoot-dom";
 import { stepUtils } from "@web_tour/tour_service/tour_utils";
 
 const openPagePropertiesDialog = [

@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from contextlib import contextmanager
 from unittest.mock import patch
 
-from odoo import exceptions
-from odoo.addons.iap.tools import iap_tools
-from odoo.addons.partner_autocomplete.models.iap_autocomplete_api import IapAutocompleteEnrichAPI
-from odoo.tests import common
+from eden import exceptions
+from eden.addons.iap.tools import iap_tools
+from eden.addons.partner_autocomplete.models.iap_autocomplete_api import IapAutocompleteEnrichAPI
+from eden.tests import common
 
 
 class MockIAPPartnerAutocomplete(common.BaseCase):

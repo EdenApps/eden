@@ -1,4 +1,4 @@
-import { Component, onWillDestroy, useEffect, useExternalListener, useRef, xml } from "@odoo/owl";
+import { Component, onWillDestroy, useEffect, useExternalListener, useRef, xml } from "@eden/owl";
 import { usePosition } from "@web/core/position/position_hook";
 import { useActiveElement } from "@web/core/ui/ui_service";
 

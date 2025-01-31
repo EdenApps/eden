@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import exceptions, Command, fields
-from odoo.tests import Form
-from odoo.addons.mrp.tests.common import TestMrpCommon
-from odoo.tests.common import HttpCase, tagged, freeze_time
-from odoo.tools import float_compare, float_round, float_repr
+from eden import exceptions, Command, fields
+from eden.tests import Form
+from eden.addons.mrp.tests.common import TestMrpCommon
+from eden.tests.common import HttpCase, tagged, freeze_time
+from eden.tools import float_compare, float_round, float_repr
 
 
 @freeze_time(fields.Date.today())
@@ -2040,7 +2040,7 @@ class TestBoM(TestMrpCommon):
         ]])
 
         # simulate resequence from UI (reverse C->D and C->E)
-        # (see odoo/addons/web/controllers/main.py:1352)
+        # (see eden/addons/web/controllers/main.py:1352)
         boms.invalidate_recordset()
         for i, record in enumerate(boms[0] | boms[1] | boms[3] | boms[2] | boms[4] | boms[5]):
             record.write({'sequence': i})
@@ -2564,7 +2564,7 @@ class TestTourBoM(HttpCase):
 
         self.assertEqual(len(self.bom.bom_line_ids), 0)
 
-        url = f'/odoo/action-mrp.mrp_bom_form_action/{self.bom.id}'
+        url = f'/eden/action-mrp.mrp_bom_form_action/{self.bom.id}'
 
         self.start_tour(url, 'test_mrp_bom_product_catalog', login='admin')
         self.assertEqual(len(self.bom.bom_line_ids), 1)
@@ -2573,5 +2573,5 @@ class TestTourBoM(HttpCase):
         """
         Create a new MO by pressing the "Manufacture" button in BoM Overview
         """
-        url = '/odoo/action-mrp.mrp_bom_form_action'
+        url = '/eden/action-mrp.mrp_bom_form_action'
         self.start_tour(url, 'test_manufacture_from_bom', login='admin', timeout=100)

@@ -6,5 +6,5 @@ Adding new libs to this can be trivial or not.
 It can be a one liner or the addition of a complete typescript declaration file.
 It should be handled by someone that knows what they are doing.
 
-Note that if odoo adds methods to a lib, manual additions must likely will be required to get full automcompletion.
+Note that if eden adds methods to a lib, manual additions must likely will be required to get full automcompletion.
 Just like the qunit lib.

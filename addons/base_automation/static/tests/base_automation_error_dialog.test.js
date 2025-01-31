@@ -1,7 +1,7 @@
 import { BaseAutomationErrorDialog } from "@base_automation/base_automation_error_dialog";
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
-import { expect, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
+import { expect, test } from "@eden/hoot";
+import { animationFrame } from "@eden/hoot-mock";
 import {
     makeServerError,
     mountWithCleanup,
@@ -21,7 +21,7 @@ test("Error due to an automation rule", async () => {
         },
     };
     const error = makeServerError({
-        subType: "Odoo Client Error",
+        subType: "Eden Client Error",
         message: "Message",
         context: errorContext,
         errorName: "automation error",
@@ -46,7 +46,7 @@ test("Error due to an automation rule", async () => {
 test("Error not due to an automation rule", async () => {
     expect.errors(1);
     const error = makeServerError({
-        subType: "Odoo Client Error",
+        subType: "Eden Client Error",
         message: "Message",
         errorName: "non automation error",
     });
@@ -70,7 +70,7 @@ test("display automation rule id and name in Error dialog", async () => {
         },
     };
     const error = makeServerError({
-        subType: "Odoo Client Error",
+        subType: "Eden Client Error",
         message: "Message",
         context: errorContext,
         errorName: "automation error",

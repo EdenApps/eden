@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import base64
 import functools
@@ -8,12 +8,12 @@ import qrcode
 import re
 import werkzeug.urls
 
-from odoo import _, api, fields, models
-from odoo.addons.base.models.res_users import check_identity
-from odoo.exceptions import UserError
-from odoo.http import request
+from eden import _, api, fields, models
+from eden.addons.base.models.res_users import check_identity
+from eden.exceptions import UserError
+from eden.http import request
 
-from odoo.addons.auth_totp.models.totp import ALGORITHM, DIGITS, TIMESTEP
+from eden.addons.auth_totp.models.totp import ALGORITHM, DIGITS, TIMESTEP
 
 compress = functools.partial(re.sub, r'\s', '')
 

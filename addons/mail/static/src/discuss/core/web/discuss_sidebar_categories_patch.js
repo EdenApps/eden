@@ -8,7 +8,7 @@ import {
 } from "../public_web/discuss_sidebar_categories";
 import { _t } from "@web/core/l10n/translation";
 import { useService } from "@web/core/utils/hooks";
-import { useEffect, useState } from "@odoo/owl";
+import { useEffect, useState } from "@eden/owl";
 
 DiscussSidebarCategory.components = { ...DiscussSidebarCategory.components, ChannelSelector };
 

@@ -1,14 +1,14 @@
-/** @odoo-module **/
+/** @eden-module **/
 
-import { OdooEditor } from "@web_editor/js/editor/odoo-editor/src/OdooEditor";
+import { EdenEditor } from "@web_editor/js/editor/eden-editor/src/EdenEditor";
 import { patch } from "@web/core/utils/patch";
 import { removeTextHighlight } from "@website/js/text_processing";
 
 /**
- * The goal of this patch is to correctly handle OdooEditor's behaviour for text
+ * The goal of this patch is to correctly handle EdenEditor's behaviour for text
  * highlight elements.
  */
-patch(OdooEditor.prototype, {
+patch(EdenEditor.prototype, {
     /**
      * @override
      */
@@ -32,7 +32,7 @@ patch(OdooEditor.prototype, {
             const html = data.innerHTML;
             e.clipboardData.setData("text/plain", selection.toString());
             e.clipboardData.setData("text/html", html);
-            e.clipboardData.setData("text/odoo-editor", html);
+            e.clipboardData.setData("text/eden-editor", html);
         }
     },
 });

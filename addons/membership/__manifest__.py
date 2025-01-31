@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 
 {
@@ -29,6 +29,6 @@ invoice and send propositions for membership renewal.
         'views/partner_views.xml',
         'report/report_membership_views.xml',
     ],
-    'website': 'https://www.odoo.com/app/forum',
+    'website': 'https://www.edencloud.us/app/forum',
     'license': 'LGPL-3',
 }

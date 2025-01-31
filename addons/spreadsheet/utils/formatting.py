@@ -2,7 +2,7 @@ import json
 import base64
 import re
 
-from odoo import _
+from eden import _
 
 strftime_to_spreadsheet_time_format_table = {
     "%H": "hh",

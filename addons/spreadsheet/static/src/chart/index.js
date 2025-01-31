@@ -1,16 +1,16 @@
-/** @odoo-module */
+/** @eden-module */
 
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@eden/o-spreadsheet";
 
 const { chartComponentRegistry } = spreadsheet.registries;
 const { ChartJsComponent } = spreadsheet.components;
 
-chartComponentRegistry.add("odoo_bar", ChartJsComponent);
-chartComponentRegistry.add("odoo_line", ChartJsComponent);
-chartComponentRegistry.add("odoo_pie", ChartJsComponent);
+chartComponentRegistry.add("eden_bar", ChartJsComponent);
+chartComponentRegistry.add("eden_line", ChartJsComponent);
+chartComponentRegistry.add("eden_pie", ChartJsComponent);
 
-import { OdooChartCorePlugin } from "./plugins/odoo_chart_core_plugin";
-import { ChartOdooMenuPlugin } from "./plugins/chart_odoo_menu_plugin";
-import { OdooChartUIPlugin } from "./plugins/odoo_chart_ui_plugin";
+import { EdenChartCorePlugin } from "./plugins/eden_chart_core_plugin";
+import { ChartEdenMenuPlugin } from "./plugins/chart_eden_menu_plugin";
+import { EdenChartUIPlugin } from "./plugins/eden_chart_ui_plugin";
 
-export { OdooChartCorePlugin, ChartOdooMenuPlugin, OdooChartUIPlugin };
+export { EdenChartCorePlugin, ChartEdenMenuPlugin, EdenChartUIPlugin };

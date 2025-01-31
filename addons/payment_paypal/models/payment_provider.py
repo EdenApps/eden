@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 import logging
@@ -8,11 +8,11 @@ import requests
 from datetime import timedelta
 from werkzeug import urls
 
-from odoo import _, fields, models
-from odoo.exceptions import UserError, ValidationError
+from eden import _, fields, models
+from eden.exceptions import UserError, ValidationError
 
-from odoo.addons.payment_paypal import const
-from odoo.addons.payment_paypal.controllers.main import PaypalController
+from eden.addons.payment_paypal import const
+from eden.addons.payment_paypal.controllers.main import PaypalController
 
 
 _logger = logging.getLogger(__name__)

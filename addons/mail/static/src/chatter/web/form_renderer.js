@@ -1,7 +1,7 @@
 import { AttachmentView } from "@mail/core/common/attachment_view";
 import { Chatter } from "@mail/chatter/web_portal/chatter";
 
-import { onMounted, onWillUnmount, useState } from "@odoo/owl";
+import { onMounted, onWillUnmount, useState } from "@eden/owl";
 
 import { browser } from "@web/core/browser/browser";
 import { router } from "@web/core/browser/router";

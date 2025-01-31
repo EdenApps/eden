@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <template id="report_invoice_document">
             <t t-call="web.external_layout">
@@ -288,8 +288,8 @@
                                         <t t-set="qr_code_url" t-value="o._generate_qr_code(silent_errors=True)"/>
                                         <p t-if="qr_code_url" class="position-relative mb-0">
                                             <img t-att-src="qr_code_url"/>
-                                            <img src="/account/static/src/img/Odoo_logo_O.svg"
-                                                 id="qrcode_odoo_logo"
+                                            <img src="/account/static/src/img/Eden_logo_O.svg"
+                                                 id="qrcode_eden_logo"
                                                  class="top-50 start-50 position-absolute bg-white border border-white border-3 rounded-circle"
                                             />
                                         </p>
@@ -480,4 +480,4 @@
             </t>
         </template>
     </data>
-</odoo>
+</eden>

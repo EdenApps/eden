@@ -1,4 +1,4 @@
-import { after, beforeEach, expect, test } from "@odoo/hoot";
+import { after, beforeEach, expect, test } from "@eden/hoot";
 import {
     click,
     dblclick,
@@ -15,9 +15,9 @@ import {
     queryText,
     resize,
     setInputFiles,
-} from "@odoo/hoot-dom";
-import { Deferred, advanceFrame, animationFrame, runAllTimers, tick } from "@odoo/hoot-mock";
-import { Component, onRendered, onWillRender, xml } from "@odoo/owl";
+} from "@eden/hoot-dom";
+import { Deferred, advanceFrame, animationFrame, runAllTimers, tick } from "@eden/hoot-mock";
+import { Component, onRendered, onWillRender, xml } from "@eden/owl";
 import {
     MockServer,
     clickKanbanLoadMore,
@@ -3241,7 +3241,7 @@ test("quick create record: cancel when modal is opened", async () => {
     // will NOT close the quick create.
     // This can happen when the user clicks out of the input because of a race condition between
     // the focusout of the m2o and the global 'click' handler of the quick create.
-    // Check odoo/odoo#61981 for more details.
+    // Check eden/eden#61981 for more details.
     expect(".o_dialog").toHaveCount(1, { message: "modal should be opening after m2o focusout" });
     expect(document.body).toHaveClass("modal-open");
     await click(document.body);

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
-from odoo import fields, models
-from odoo.tools import float_compare, float_is_zero
+from eden import fields, models
+from eden.tools import float_compare, float_is_zero
 
 
 class ProductLabelLayout(models.TransientModel):

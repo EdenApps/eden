@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <record id="mail_activity_plan_view_search" model="ir.ui.view">
             <field name="name">mail.activity.plan.view.search</field>
@@ -179,4 +179,4 @@
         </record>
 
     </data>
-</odoo>
+</eden>

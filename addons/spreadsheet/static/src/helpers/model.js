@@ -1,21 +1,21 @@
-/** @odoo-module */
+/** @eden-module */
 // @ts-check
 
-import { parse, helpers, iterateAstNodes } from "@odoo/o-spreadsheet";
+import { parse, helpers, iterateAstNodes } from "@eden/o-spreadsheet";
 import { isLoadingError } from "@spreadsheet/o_spreadsheet/errors";
 import { loadBundle } from "@web/core/assets";
-import { OdooSpreadsheetModel } from "@spreadsheet/model";
-import { OdooDataProvider } from "@spreadsheet/data_sources/odoo_data_provider";
+import { EdenSpreadsheetModel } from "@spreadsheet/model";
+import { EdenDataProvider } from "@spreadsheet/data_sources/eden_data_provider";
 
 const { formatValue, isDefined, toCartesian, toXC } = helpers;
 import {
     isMarkdownViewUrl,
     isMarkdownIrMenuIdUrl,
     isIrMenuXmlUrl,
-} from "@spreadsheet/ir_ui_menu/odoo_menu_link_cell";
+} from "@spreadsheet/ir_ui_menu/eden_menu_link_cell";
 
 /**
- * @typedef {import("@spreadsheet").OdooSpreadsheetModel} OdooSpreadsheetModel
+ * @typedef {import("@spreadsheet").EdenSpreadsheetModel} EdenSpreadsheetModel
  */
 
 export async function fetchSpreadsheetModel(env, resModel, resId) {
@@ -26,22 +26,22 @@ export async function fetchSpreadsheetModel(env, resModel, resId) {
 }
 
 export function createSpreadsheetModel({ env, data, revisions }) {
-    const odooDataProvider = new OdooDataProvider(env);
-    const model = new OdooSpreadsheetModel(data, { custom: { odooDataProvider } }, revisions);
+    const edenDataProvider = new EdenDataProvider(env);
+    const model = new EdenSpreadsheetModel(data, { custom: { edenDataProvider } }, revisions);
     return model;
 }
 
 /**
- * @param {OdooSpreadsheetModel} model
+ * @param {EdenSpreadsheetModel} model
  */
-export async function waitForOdooSources(model) {
+export async function waitForEdenSources(model) {
     const promises = model.getters
-        .getOdooChartIds()
+        .getEdenChartIds()
         .map((chartId) => model.getters.getChartDataSource(chartId).load());
     promises.push(
         ...model.getters
             .getPivotIds()
-            .filter((pivotId) => model.getters.getPivotCoreDefinition(pivotId).type === "ODOO")
+            .filter((pivotId) => model.getters.getPivotCoreDefinition(pivotId).type === "EDEN")
             .map((pivotId) => model.getters.getPivot(pivotId))
             .map((pivot) => pivot.load())
     );
@@ -56,29 +56,29 @@ export async function waitForOdooSources(model) {
 
 /**
  * Ensure that the spreadsheet does not contains cells that are in loading state
- * @param {OdooSpreadsheetModel} model
+ * @param {EdenSpreadsheetModel} model
  * @returns {Promise<void>}
  */
 export async function waitForDataLoaded(model) {
-    await waitForOdooSources(model);
-    const odooDataProvider = model.config.custom.odooDataProvider;
-    if (!odooDataProvider) {
+    await waitForEdenSources(model);
+    const edenDataProvider = model.config.custom.edenDataProvider;
+    if (!edenDataProvider) {
         return;
     }
     await new Promise((resolve, reject) => {
         function check() {
             model.dispatch("EVALUATE_CELLS");
             if (isLoaded(model)) {
-                odooDataProvider.removeEventListener("data-source-updated", check);
+                edenDataProvider.removeEventListener("data-source-updated", check);
                 resolve();
             }
         }
-        odooDataProvider.addEventListener("data-source-updated", check);
+        edenDataProvider.addEventListener("data-source-updated", check);
         check();
     });
 }
 
-function containsLinkToOdoo(link) {
+function containsLinkToEden(link) {
     if (link && link.url) {
         return (
             isMarkdownViewUrl(link.url) ||
@@ -89,10 +89,10 @@ function containsLinkToOdoo(link) {
 }
 
 /**
- * @param {OdooSpreadsheetModel} model
+ * @param {EdenSpreadsheetModel} model
  * @returns {Promise<object>}
  */
-export async function freezeOdooData(model) {
+export async function freezeEdenData(model) {
     await waitForDataLoaded(model);
     const data = model.exportData();
     for (const sheet of Object.values(data.sheets)) {
@@ -102,9 +102,9 @@ export async function freezeOdooData(model) {
             const sheetId = sheet.id;
             const position = { sheetId, col, row };
             const evaluatedCell = model.getters.getEvaluatedCell(position);
-            if (containsOdooFunction(cell.content)) {
+            if (containsEdenFunction(cell.content)) {
                 const pivotId = model.getters.getPivotIdFromPosition(position);
-                if (pivotId && model.getters.getPivotCoreDefinition(pivotId).type !== "ODOO") {
+                if (pivotId && model.getters.getPivotCoreDefinition(pivotId).type !== "EDEN") {
                     continue;
                 }
                 cell.content = evaluatedCell.value.toString();
@@ -133,14 +133,14 @@ export async function freezeOdooData(model) {
                     }
                 }
             }
-            if (containsLinkToOdoo(evaluatedCell.link)) {
+            if (containsLinkToEden(evaluatedCell.link)) {
                 cell.content = evaluatedCell.link.label;
             }
         }
         for (const figure of sheet.figures) {
-            if (figure.tag === "chart" && figure.data.type.startsWith("odoo_")) {
+            if (figure.tag === "chart" && figure.data.type.startsWith("eden_")) {
                 await loadBundle("web.chartjs_lib");
-                const img = odooChartToImage(model, figure);
+                const img = edenChartToImage(model, figure);
                 figure.tag = "image";
                 figure.data = {
                     path: img,
@@ -151,7 +151,7 @@ export async function freezeOdooData(model) {
     }
     if (data.pivots) {
         data.pivots = Object.fromEntries(
-            Object.entries(data.pivots).filter(([id, def]) => def.type !== "ODOO")
+            Object.entries(data.pivots).filter(([id, def]) => def.type !== "EDEN")
         );
     }
     data.lists = {};
@@ -160,7 +160,7 @@ export async function freezeOdooData(model) {
 }
 
 /**
- * @param {OdooSpreadsheetModel} model
+ * @param {EdenSpreadsheetModel} model
  * @returns {object}
  */
 function exportGlobalFiltersToSheet(model, data) {
@@ -202,11 +202,11 @@ export function getItemId(item, itemsDic) {
  * @param {string | undefined} content
  * @returns {boolean}
  */
-function containsOdooFunction(content) {
+function containsEdenFunction(content) {
     if (
         !content ||
         !content.startsWith("=") ||
-        (!content.toUpperCase().includes("ODOO.") &&
+        (!content.toUpperCase().includes("EDEN.") &&
             !content.toUpperCase().includes("_T") &&
             !content.toUpperCase().includes("PIVOT"))
     ) {
@@ -217,7 +217,7 @@ function containsOdooFunction(content) {
         return iterateAstNodes(ast).some(
             (ast) =>
                 ast.type === "FUNCALL" &&
-                (ast.value.toUpperCase().startsWith("ODOO.") ||
+                (ast.value.toUpperCase().startsWith("EDEN.") ||
                     ast.value.toUpperCase().startsWith("_T") ||
                     ast.value.toUpperCase().startsWith("PIVOT"))
         );
@@ -227,7 +227,7 @@ function containsOdooFunction(content) {
 }
 
 /**
- * @param {OdooSpreadsheetModel} model
+ * @param {EdenSpreadsheetModel} model
  * @returns {boolean}
  */
 function isLoaded(model) {
@@ -244,11 +244,11 @@ function isLoaded(model) {
 /**
  * Return the chart figure as a base64 image.
  * "data:image/png;base64,iVBORw0KGg..."
- * @param {OdooSpreadsheetModel} model
+ * @param {EdenSpreadsheetModel} model
  * @param {object} figure
  * @returns {string}
  */
-function odooChartToImage(model, figure) {
+function edenChartToImage(model, figure) {
     const runtime = model.getters.getChartRuntime(figure.id);
     // wrap the canvas in a div with a fixed size because chart.js would
     // fill the whole page otherwise

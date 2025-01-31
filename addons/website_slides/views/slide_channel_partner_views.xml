@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <record id="slide_channel_partner_view_search" model="ir.ui.view">
             <field name="name">slide.channel.partner.search</field>
@@ -129,4 +129,4 @@
         </record>
 
     </data>
-</odoo>
+</eden>

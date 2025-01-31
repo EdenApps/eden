@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @eden-module **/
 
-import {Component, onWillDestroy} from "@odoo/owl";
+import {Component, onWillDestroy} from "@eden/owl";
 import { registry } from "@web/core/registry";
 import { deserializeDateTime } from "@web/core/l10n/dates";
 

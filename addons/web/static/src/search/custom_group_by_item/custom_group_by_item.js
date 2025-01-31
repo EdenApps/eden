@@ -1,4 +1,4 @@
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 export class CustomGroupByItem extends Component {
     static template = "web.CustomGroupByItem";

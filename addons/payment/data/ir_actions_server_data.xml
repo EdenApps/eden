@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
 
     <record id="action_activate_stripe" model="ir.actions.server">
         <field name="name">Activate Stripe</field>
@@ -10,4 +10,4 @@ action = env.company._run_payment_onboarding_step()
         </field>
     </record>
 
-</odoo>
+</eden>

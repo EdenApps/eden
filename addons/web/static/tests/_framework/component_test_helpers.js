@@ -1,6 +1,6 @@
-import { after, destroy, getFixture } from "@odoo/hoot";
-import { queryFirst, queryOne } from "@odoo/hoot-dom";
-import { App, Component, xml } from "@odoo/owl";
+import { after, destroy, getFixture } from "@eden/hoot";
+import { queryFirst, queryOne } from "@eden/hoot-dom";
+import { App, Component, xml } from "@eden/owl";
 import { _t } from "@web/core/l10n/translation";
 import { MainComponentsContainer } from "@web/core/main_components_container";
 import { getPopoverForTarget } from "@web/core/popover/popover";
@@ -10,19 +10,19 @@ import { patch } from "@web/core/utils/patch";
 import { getMockEnv, makeMockEnv } from "./env_test_helpers";
 
 /**
- * @typedef {import("@odoo/owl").Component} Component
+ * @typedef {import("@eden/owl").Component} Component
  *
- * @typedef {import("@web/env").OdooEnv} OdooEnv
+ * @typedef {import("@web/env").EdenEnv} EdenEnv
  *
- * @typedef {Parameters<typeof import("@odoo/owl").mount>[2]} MountOptions
+ * @typedef {Parameters<typeof import("@eden/owl").mount>[2]} MountOptions
  *
- * @typedef {import("@odoo/hoot-dom").Target} Target
+ * @typedef {import("@eden/hoot-dom").Target} Target
  */
 
 /**
  * @template [P=any]
  * @template [E=any]
- * @typedef {import("@odoo/owl").ComponentConstructor<P, E>} ComponentConstructor
+ * @typedef {import("@eden/owl").ComponentConstructor<P, E>} ComponentConstructor
  */
 
 /**
@@ -95,7 +95,7 @@ export function getDropdownMenu(togglerSelector) {
  *
  * @template {ComponentConstructor<P, E>} C
  * @template [P={}]
- * @template [E=OdooEnv]
+ * @template [E=EdenEnv]
  * @param {C | string} ComponentClass
  * @param {MountOptions & {
  *  fixtureClassName?: string | string[] | null;

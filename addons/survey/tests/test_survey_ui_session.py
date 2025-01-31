@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from dateutil.relativedelta import relativedelta
 from unittest.mock import patch
 
-from odoo import fields
-from odoo.tests.common import tagged, HttpCase
+from eden import fields
+from eden.tests.common import tagged, HttpCase
 
 
 @tagged('post_install', '-at_install')
@@ -181,8 +181,8 @@ class TestUiSession(HttpCase):
         # PART 2 : OPEN SESSION AND CHECK ATTENDEES
         # =========================================
 
-        with patch('odoo.addons.survey.models.survey_survey.Survey.action_open_session_manager', action_open_session_manager_mock):
-            self.start_tour('/odoo', 'test_survey_session_start_tour', login='admin')
+        with patch('eden.addons.survey.models.survey_survey.Survey.action_open_session_manager', action_open_session_manager_mock):
+            self.start_tour('/eden', 'test_survey_session_start_tour', login='admin')
 
         self.assertEqual('in_progress', survey_session.session_state)
         self.assertTrue(bool(survey_session.session_start_time))
@@ -224,8 +224,8 @@ class TestUiSession(HttpCase):
         attendee_2._save_lines(scale_question, '5')
         attendee_3._save_lines(scale_question, '6')
 
-        with patch('odoo.addons.survey.models.survey_survey.Survey.action_open_session_manager', action_open_session_manager_mock):
-            self.start_tour('/odoo', 'test_survey_session_manage_tour', login='admin')
+        with patch('eden.addons.survey.models.survey_survey.Survey.action_open_session_manager', action_open_session_manager_mock):
+            self.start_tour('/eden', 'test_survey_session_manage_tour', login='admin')
 
         self.assertFalse(bool(survey_session.session_state))
         self.assertTrue(all(answer.state == 'done' for answer in all_attendees))

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="act_product_location_open" model="ir.actions.act_window">
         <field name="name">Products</field>
         <field name="res_model">product.product</field>
@@ -144,15 +144,15 @@
             Add a new location
           </p><p>
             Define your locations to reflect your warehouse structure and
-            organization. Odoo is able to manage physical locations
+            organization. Eden is able to manage physical locations
             (warehouses, shelves, bin, etc), partner locations (customers,
             vendors) and virtual locations which are the counterpart of
             the stock operations like the manufacturing orders
             consumptions, inventories, etc.
           </p><p>
-            Every stock operation in Odoo moves the products from one
+            Every stock operation in Eden moves the products from one
             location to another one.  For instance, if you receive products
-            from a vendor, Odoo will move products from the Vendor
+            from a vendor, Eden will move products from the Vendor
             location to the Stock location. Each report can be performed on
             physical, partner or virtual locations.
           </p>
@@ -266,4 +266,4 @@
 
         <menuitem id="menu_routes_config" action="action_routes_form" name="Routes" parent="menu_warehouse_config" sequence="4" groups="stock.group_adv_location"/>
 
-</odoo>
+</eden>

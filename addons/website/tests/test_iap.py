@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import threading
 from unittest.mock import patch
 
-import odoo.tests
+import eden.tests
 
-@odoo.tests.tagged('website_nightly', '-standard')
-class TestIap(odoo.tests.HttpCase):
+@eden.tests.tagged('website_nightly', '-standard')
+class TestIap(eden.tests.HttpCase):
 
     def test_01_industries_lang(self):
         """Ensure that the industries are translated in all the languages

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <template
-        id="website_sale.s_mega_menu_odoo_menu"
-        name="eCommerce: Odoo Menu"
+        id="website_sale.s_mega_menu_eden_menu"
+        name="eCommerce: Eden Menu"
         groups="base.group_user"
     >
-        <section class="s_mega_menu_odoo_menu pt16 o_colored_level o_cc o_cc1">
+        <section class="s_mega_menu_eden_menu pt16 o_colored_level o_cc o_cc1">
             <div class="container">
                 <div class="row">
                     <t
@@ -43,4 +43,4 @@
         </section>
     </template>
 
-</odoo>
+</eden>

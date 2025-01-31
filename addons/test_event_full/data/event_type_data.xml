@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data noupdate="0">
+<eden><data noupdate="0">
 
     <record id="event_booth_category_data_1" model="event.booth.category">
         <field name="description" type="html"><p>Standard</p></field>
@@ -115,4 +115,4 @@
         <field name="title">Question3</field>
     </record>
 
-</data></odoo>
+</data></eden>

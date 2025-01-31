@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import base64
 import werkzeug
@@ -11,9 +11,9 @@ import math
 from dateutil.relativedelta import relativedelta
 from operator import itemgetter
 
-from odoo import _, fields, http, tools
-from odoo.http import request
-from odoo.osv import expression
+from eden import _, fields, http, tools
+from eden.http import request
+from eden.osv import expression
 
 
 class WebsiteProfile(http.Controller):

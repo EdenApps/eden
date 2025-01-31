@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<odoo>
+<eden>
     <record id="hr_leave_report_calendar_view" model="ir.ui.view">
         <field name="name">hr.leave.report.calendar.view</field>
         <field name="model">hr.leave.report.calendar</field>
@@ -85,4 +85,4 @@
         <field name="domain">[('employee_id.active','=',True)]</field>
         <field name="context">{'hide_employee_name': 1, 'search_default_my_team': 1, 'search_default_current_year': 1}</field>
     </record>
-</odoo>
+</eden>

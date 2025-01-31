@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-from odoo import Command
-from odoo.addons.hr_expense.tests.common import TestExpenseCommon
-from odoo.tests import tagged
+# Part of Eden. See LICENSE file for full copyright and licensing details.
+from eden import Command
+from eden.addons.hr_expense.tests.common import TestExpenseCommon
+from eden.tests import tagged
 
 @tagged('-at_install', 'post_install')
 class TestExpenseMargin(TestExpenseCommon):

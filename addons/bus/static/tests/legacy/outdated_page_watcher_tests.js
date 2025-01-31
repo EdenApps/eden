@@ -1,4 +1,4 @@
-/** @odoo-module alias=@bus/../tests/assets_watchdog_tests default=false */
+/** @eden-module alias=@bus/../tests/assets_watchdog_tests default=false */
 
 import { startServer } from "@bus/../tests/helpers/mock_python_environment";
 import { addBusServicesToRegistry } from "@bus/../tests/helpers/test_utils";

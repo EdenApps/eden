@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import SUPERUSER_ID, api, fields, models, tools
-from odoo.http import request
-from odoo.osv import expression
-from odoo.tools.translate import _, LazyTranslate
+from eden import SUPERUSER_ID, api, fields, models, tools
+from eden.http import request
+from eden.osv import expression
+from eden.tools.translate import _, LazyTranslate
 
 _lt = LazyTranslate(__name__)
 

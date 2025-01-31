@@ -1,5 +1,5 @@
 import { registry } from "@web/core/registry";
-import { App } from "@odoo/owl";
+import { App } from "@eden/owl";
 import { getTemplate } from "@web/core/templates";
 import { browser } from "@web/core/browser/browser";
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <!-- base structure of product.template, common with product.product -->
     <record id="product_template_form_view" model="ir.ui.view">
@@ -343,7 +343,7 @@
                         <field name="image_1920" widget="image" class="oe_avatar" options="{'convert_to_webp': True,'preview_image': 'image_128'}"/>
                         <div class="oe_title">
                             <label for="name" string="Product Name"/>
-                            <h1><field name="name" readonly="1" placeholder="e.g. Odoo Enterprise Subscription"/></h1>
+                            <h1><field name="name" readonly="1" placeholder="e.g. Eden Enterprise Subscription"/></h1>
                             <field name="product_template_attribute_value_ids" widget="many2many_tags" readonly="1"/>
                             <p>
                                 <span>All general settings about this product are managed on</span>
@@ -731,4 +731,4 @@ action = {
         </field>
     </record>
 
-</odoo>
+</eden>

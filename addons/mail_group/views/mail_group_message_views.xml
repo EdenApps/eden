@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="mail_group_message_view_list" model="ir.ui.view">
         <field name="name">mail.group.message.view.list</field>
         <field name="model">mail.group.message</field>
@@ -114,4 +114,4 @@
             <p>When people send an email to the alias of the list, they will appear here.</p>
         </field>
     </record>
-</odoo>
+</eden>

@@ -1,4 +1,4 @@
-import { Component, xml } from "@odoo/owl";
+import { Component, xml } from "@eden/owl";
 
 export class CenteredIcon extends Component {
     static props = {

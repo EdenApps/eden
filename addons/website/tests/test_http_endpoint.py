@@ -1,5 +1,5 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-from odoo.tests import HttpCase, tagged
+# Part of Eden. See LICENSE file for full copyright and licensing details.
+from eden.tests import HttpCase, tagged
 
 
 @tagged('-at_install', 'post_install')

@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 {
     'name': 'Email Marketing',
     'summary': 'Design, send and track emails',
     'version': '2.7',
     'sequence': 60,
-    'website': 'https://www.odoo.com/app/email-marketing',
+    'website': 'https://www.edencloud.us/app/email-marketing',
     'category': 'Marketing/Email Marketing',
     'depends': [
         'contacts',

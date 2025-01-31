@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 <data noupdate="1">
     <!-- Maintenance Request-related subtypes for messaging / Chatter -->
     <record id="mt_req_created" model="mail.message.subtype">
@@ -42,4 +42,4 @@
         <field name="name">Internal Maintenance</field>
     </record>
 </data>
-</odoo>
+</eden>

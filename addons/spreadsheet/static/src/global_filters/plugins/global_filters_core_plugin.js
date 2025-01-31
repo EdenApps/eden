@@ -6,7 +6,7 @@ import { CommandResult } from "@spreadsheet/o_spreadsheet/cancelled_reason";
 import { checkFilterValueIsValid } from "@spreadsheet/global_filters/helpers";
 import { _t } from "@web/core/l10n/translation";
 import { escapeRegExp } from "@web/core/utils/strings";
-import { OdooCorePlugin } from "@spreadsheet/plugins";
+import { EdenCorePlugin } from "@spreadsheet/plugins";
 
 /**
  * @typedef {import("@spreadsheet").GlobalFilter} GlobalFilter
@@ -14,7 +14,7 @@ import { OdooCorePlugin } from "@spreadsheet/plugins";
  * @typedef {import("@spreadsheet").FieldMatching} FieldMatching
  */
 
-export class GlobalFiltersCorePlugin extends OdooCorePlugin {
+export class GlobalFiltersCorePlugin extends EdenCorePlugin {
     static getters = /** @type {const} */ ([
         "getGlobalFilter",
         "getGlobalFilters",
@@ -291,7 +291,7 @@ export class GlobalFiltersCorePlugin extends OdooCorePlugin {
     // ---------------------------------------------------------------------
 
     /**
-     * Update all ODOO.FILTER.VALUE formulas to reference a filter
+     * Update all EDEN.FILTER.VALUE formulas to reference a filter
      * by its new label.
      *
      * @param {string} currentLabel

@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { calendarView } from '@web/views/calendar/calendar_view';
 

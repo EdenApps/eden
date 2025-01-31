@@ -1,25 +1,25 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from freezegun import freeze_time
 from unittest.mock import patch
 
-from odoo.addons.google_calendar.utils.google_event import GoogleEvent
-from odoo.addons.google_calendar.utils.google_calendar import GoogleCalendarService
-from odoo.addons.google_calendar.models.res_users import User
-from odoo.addons.google_calendar.tests.test_sync_common import TestSyncGoogle, patch_api
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.tests.common import users, warmup
-from odoo.tests import tagged
-from odoo import tools
+from eden.addons.google_calendar.utils.google_event import GoogleEvent
+from eden.addons.google_calendar.utils.google_calendar import GoogleCalendarService
+from eden.addons.google_calendar.models.res_users import User
+from eden.addons.google_calendar.tests.test_sync_common import TestSyncGoogle, patch_api
+from eden.addons.mail.tests.common import MailCommon
+from eden.tests.common import users, warmup
+from eden.tests import tagged
+from eden import tools
 
 from .test_token_access import TestTokenAccess
 
-@tagged('odoo2google')
+@tagged('eden2google')
 @patch.object(User, '_get_google_calendar_token', lambda user: 'dummy-token')
-class TestSyncOdoo2Google(TestSyncGoogle):
+class TestSyncEden2Google(TestSyncGoogle):
 
     def setUp(self):
         super().setUp()
@@ -48,7 +48,7 @@ class TestSyncOdoo2Google(TestSyncGoogle):
             'need_sync': False,
             'description': description,
         })
-        event._sync_odoo2google(self.google_service)
+        event._sync_eden2google(self.google_service)
         self.assertGoogleEventInserted({
             'id': False,
             'start': {'dateTime': '2020-01-15T08:00:00+00:00', 'date': None},
@@ -59,9 +59,9 @@ class TestSyncOdoo2Google(TestSyncGoogle):
             'visibility': 'private',
             'guestsCanModify': True,
             'reminders': {'useDefault': False, 'overrides': [{'method': 'popup', 'minutes': alarm.duration_minutes}]},
-            'organizer': {'email': 'odoobot@example.com', 'self': True},
+            'organizer': {'email': 'edenbot@example.com', 'self': True},
             'attendees': [{'email': 'jean-luc@opoo.com', 'responseStatus': 'needsAction'}],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: event.id}},
+            'extendedProperties': {'shared': {'%s_eden_id' % self.env.cr.dbname: event.id}},
             'transparency': 'opaque',
         })
 
@@ -93,7 +93,7 @@ class TestSyncOdoo2Google(TestSyncGoogle):
                 'res_id': partner.id,
             } for i in range(EVENT_COUNT)])
 
-            events._sync_odoo2google(self.google_service)
+            events._sync_eden2google(self.google_service)
 
         with self.assertQueryCount(__system__=28):
             events.unlink()
@@ -160,7 +160,7 @@ class TestSyncOdoo2Google(TestSyncGoogle):
         attendee_2.write({
             'state': False,
         })
-        event._sync_odoo2google(self.google_service)
+        event._sync_eden2google(self.google_service)
         self.assertGoogleEventInserted({
             'id': False,
             'start': {'dateTime': '2020-01-15T08:00:00+00:00', 'date': None},
@@ -171,10 +171,10 @@ class TestSyncOdoo2Google(TestSyncGoogle):
             'visibility': 'private',
             'guestsCanModify': True,
             'reminders': {'useDefault': False, 'overrides': []},
-            'organizer': {'email': 'odoobot@example.com', 'self': True},
+            'organizer': {'email': 'edenbot@example.com', 'self': True},
             'attendees': [{'email': 'jean-luc@opoo.com', 'responseStatus': 'needsAction'},
                           {'email': 'phineas@opoo.com', 'responseStatus': 'needsAction'}],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: event.id}},
+            'extendedProperties': {'shared': {'%s_eden_id' % self.env.cr.dbname: event.id}},
             'transparency': 'opaque',
         })
 
@@ -187,7 +187,7 @@ class TestSyncOdoo2Google(TestSyncGoogle):
             'stop': datetime(2020, 1, 15),
             'need_sync': False,
         })
-        event._sync_odoo2google(self.google_service)
+        event._sync_eden2google(self.google_service)
         self.assertGoogleEventInserted({
             'id': False,
             'start': {'date': '2020-01-15', 'dateTime': None},
@@ -197,9 +197,9 @@ class TestSyncOdoo2Google(TestSyncGoogle):
             'location': '',
             'guestsCanModify': True,
             'reminders': {'overrides': [], 'useDefault': False},
-            'organizer': {'email': 'odoobot@example.com', 'self': True},
-            'attendees': [{'email': 'odoobot@example.com', 'responseStatus': 'accepted'}],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: event.id}},
+            'organizer': {'email': 'edenbot@example.com', 'self': True},
+            'attendees': [{'email': 'edenbot@example.com', 'responseStatus': 'accepted'}],
+            'extendedProperties': {'shared': {'%s_eden_id' % self.env.cr.dbname: event.id}},
             'transparency': 'opaque',
         })
 
@@ -212,7 +212,7 @@ class TestSyncOdoo2Google(TestSyncGoogle):
             'active': False,
             'need_sync': False,
         })
-        event._sync_odoo2google(self.google_service)
+        event._sync_eden2google(self.google_service)
         self.assertGoogleEventNotInserted()
         self.assertGoogleEventNotDeleted()
 
@@ -229,7 +229,7 @@ class TestSyncOdoo2Google(TestSyncGoogle):
             'active': False,
             'need_sync': True,
         })
-        event._sync_odoo2google(self.google_service)
+        event._sync_eden2google(self.google_service)
         self.assertGoogleEventDeleted(google_id)
 
     @patch_api
@@ -248,7 +248,7 @@ class TestSyncOdoo2Google(TestSyncGoogle):
             'calendar_event_ids': [(4, event.id)],
             'need_sync': False,
         })
-        recurrence._sync_odoo2google(self.google_service)
+        recurrence._sync_eden2google(self.google_service)
         self.assertGoogleEventInserted({
             'id': False,
             'start': {'date': '2020-01-15', 'dateTime': None},
@@ -258,10 +258,10 @@ class TestSyncOdoo2Google(TestSyncGoogle):
             'location': '',
             'guestsCanModify': True,
             'reminders': {'overrides': [], 'useDefault': False},
-            'organizer': {'email': 'odoobot@example.com', 'self': True},
-            'attendees': [{'email': 'odoobot@example.com', 'responseStatus': 'accepted'}],
+            'organizer': {'email': 'edenbot@example.com', 'self': True},
+            'attendees': [{'email': 'edenbot@example.com', 'responseStatus': 'accepted'}],
             'recurrence': ['RRULE:FREQ=WEEKLY;COUNT=2;BYDAY=WE'],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: recurrence.id}},
+            'extendedProperties': {'shared': {'%s_eden_id' % self.env.cr.dbname: recurrence.id}},
             'transparency': 'opaque',
         })
 
@@ -293,10 +293,10 @@ class TestSyncOdoo2Google(TestSyncGoogle):
             'location': '',
             'guestsCanModify': True,
             'reminders': {'overrides': [], 'useDefault': False},
-            'organizer': {'email': 'odoobot@example.com', 'self': True},
-            'attendees': [{'email': 'odoobot@example.com', 'responseStatus': 'accepted'}],
+            'organizer': {'email': 'edenbot@example.com', 'self': True},
+            'attendees': [{'email': 'edenbot@example.com', 'responseStatus': 'accepted'}],
             'recurrence': ['RRULE:FREQ=WEEKLY;COUNT=2;BYDAY=WE'],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: event.recurrence_id.id}},
+            'extendedProperties': {'shared': {'%s_eden_id' % self.env.cr.dbname: event.recurrence_id.id}},
             'transparency': 'opaque',
         }, timeout=3)
 
@@ -340,9 +340,9 @@ class TestSyncOdoo2Google(TestSyncGoogle):
             'description': '',
             'location': '',
             'guestsCanModify': True,
-            'organizer': {'email': 'odoobot@example.com', 'self': True},
-            'attendees': [{'email': 'odoobot@example.com', 'responseStatus': 'accepted'}],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: event.recurrence_id.id}},
+            'organizer': {'email': 'edenbot@example.com', 'self': True},
+            'attendees': [{'email': 'edenbot@example.com', 'responseStatus': 'accepted'}],
+            'extendedProperties': {'shared': {'%s_eden_id' % self.env.cr.dbname: event.recurrence_id.id}},
             'reminders': {'overrides': [], 'useDefault': False},
             'recurrence': ['RRULE:FREQ=WEEKLY;WKST=SU;COUNT=1;BYDAY=WE'],
             'transparency': 'opaque',
@@ -394,7 +394,7 @@ class TestSyncOdoo2Google(TestSyncGoogle):
             'reminders': {'overrides': [], 'useDefault': False},
             'organizer': {'email': 'jean-luc@opoo.com', 'self': True},
             'attendees': [{'email': 'jean-luc@opoo.com', 'responseStatus': 'accepted'}],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: event.id}},
+            'extendedProperties': {'shared': {'%s_eden_id' % self.env.cr.dbname: event.id}},
             'transparency': 'opaque',
         }, timeout=3)
 
@@ -428,10 +428,10 @@ class TestSyncOdoo2Google(TestSyncGoogle):
             'description': '',
             'location': '',
             'guestsCanModify': True,
-            'organizer': {'email': 'odoobot@example.com', 'self': True},
-            'attendees': [{'email': 'odoobot@example.com', 'responseStatus': 'accepted'}],
+            'organizer': {'email': 'edenbot@example.com', 'self': True},
+            'attendees': [{'email': 'edenbot@example.com', 'responseStatus': 'accepted'}],
             'recurrence': ['RRULE:FREQ=WEEKLY;WKST=SU;COUNT=2;BYDAY=WE'],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: new_recurrence.id}},
+            'extendedProperties': {'shared': {'%s_eden_id' % self.env.cr.dbname: new_recurrence.id}},
             'reminders': {'overrides': [], 'useDefault': False},
             'transparency': 'opaque',
         }, timeout=3)
@@ -558,9 +558,9 @@ class TestSyncOdoo2Google(TestSyncGoogle):
             'description': '',
             'location': '',
             'guestsCanModify': True,
-            'organizer': {'email': 'odoobot@example.com', 'self': True},
+            'organizer': {'email': 'edenbot@example.com', 'self': True},
             'attendees': [{'email': 'jean-luc@opoo.com', 'responseStatus': 'declined'}],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: event.id}},
+            'extendedProperties': {'shared': {'%s_eden_id' % self.env.cr.dbname: event.id}},
             'reminders': {'overrides': [], 'useDefault': False},
             'transparency': 'opaque',
         })
@@ -595,10 +595,10 @@ class TestSyncOdoo2Google(TestSyncGoogle):
             'description': '',
             'location': '',
             'guestsCanModify': True,
-            'organizer': {'email': 'odoobot@example.com', 'self': True},
-            'attendees': [{'email': 'odoobot@example.com', 'responseStatus': 'accepted'}],
+            'organizer': {'email': 'edenbot@example.com', 'self': True},
+            'attendees': [{'email': 'edenbot@example.com', 'responseStatus': 'accepted'}],
             'recurrence': ['RRULE:FREQ=WEEKLY;WKST=SU;COUNT=2;BYDAY=WE'],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: new_recurrence.id}},
+            'extendedProperties': {'shared': {'%s_eden_id' % self.env.cr.dbname: new_recurrence.id}},
             'reminders': {'overrides': [], 'useDefault': False},
             'transparency': 'opaque',
         }, timeout=3)
@@ -613,7 +613,7 @@ class TestSyncOdoo2Google(TestSyncGoogle):
                 'stop': datetime(2020, 1, 15),
                 'need_sync': False,
             })
-            event.with_context(send_updates=True)._sync_odoo2google(self.google_service)
+            event.with_context(send_updates=True)._sync_eden2google(self.google_service)
             self.call_post_commit_hooks()
         self.assertGoogleEventSendUpdates('all')
 
@@ -626,7 +626,7 @@ class TestSyncOdoo2Google(TestSyncGoogle):
                 'stop': datetime(2020, 1, 15),
                 'need_sync': False,
             })
-            event.with_context(send_updates=False)._sync_odoo2google(self.google_service)
+            event.with_context(send_updates=False)._sync_eden2google(self.google_service)
             self.call_post_commit_hooks()
         self.assertGoogleEventSendUpdates('none')
 
@@ -666,9 +666,9 @@ class TestSyncOdoo2Google(TestSyncGoogle):
             'description': '',
             'location': '',
             'guestsCanModify': True,
-            'organizer': {'email': 'odoobot@example.com', 'self': True},
-            'attendees': [{'email': 'odoobot@example.com', 'responseStatus': 'accepted'}],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: event_1.id}},
+            'organizer': {'email': 'edenbot@example.com', 'self': True},
+            'attendees': [{'email': 'edenbot@example.com', 'responseStatus': 'accepted'}],
+            'extendedProperties': {'shared': {'%s_eden_id' % self.env.cr.dbname: event_1.id}},
             'reminders': {'overrides': [], 'useDefault': False},
             'status': 'cancelled',
             'transparency': 'opaque',
@@ -699,7 +699,7 @@ class TestSyncOdoo2Google(TestSyncGoogle):
             'stop': datetime(2023, 6, 29, 18, 0),
             'need_sync': True
         })
-        record._sync_odoo2google(self.google_service)
+        record._sync_eden2google(self.google_service)
 
         # Assert that synchronization is paused, insert wasn't called and record is waiting to be synced.
         self.assertFalse(self.env.user.google_synchronization_stopped)
@@ -729,19 +729,19 @@ class TestSyncOdoo2Google(TestSyncGoogle):
         # Pause synchronization and update synced event. It will only update it locally.
         self.env.user.sudo().pause_google_synchronization()
         record.write({'name': "Updated Event"})
-        record._sync_odoo2google(self.google_service)
+        record._sync_eden2google(self.google_service)
 
         # Assert that synchronization is paused, patch wasn't called and record is waiting to be synced.
         self.assertFalse(self.env.user.google_synchronization_stopped)
         self.assertEqual(self.env.user._get_google_sync_status(), "sync_paused")
-        self.assertEqual(record.name, "Updated Event", "Assert that event name was updated in Odoo Calendar")
+        self.assertEqual(record.name, "Updated Event", "Assert that event name was updated in Eden Calendar")
         self.assertTrue(record.need_sync, "Sync variable must be true for updating event when sync re-activates")
         self.assertGoogleEventNotPatched()
 
     @patch_api
     def test_delete_synced_event_with_sync_config_paused(self):
         """
-        Deletes a synced event with synchronization paused, event must be archived in Odoo and
+        Deletes a synced event with synchronization paused, event must be archived in Eden and
         have its field 'need_sync' as True for later synchronizing it with Google Calendar.
         """
         # Set synchronization as active and then pause synchronization.
@@ -761,10 +761,10 @@ class TestSyncOdoo2Google(TestSyncGoogle):
         self.env.user.sudo().pause_google_synchronization()
         record.unlink()
 
-        # Assert that synchronization is paused, delete wasn't called and record was archived in Odoo.
+        # Assert that synchronization is paused, delete wasn't called and record was archived in Eden.
         self.assertFalse(self.env.user.google_synchronization_stopped)
         self.assertEqual(self.env.user._get_google_sync_status(), "sync_paused")
-        self.assertFalse(record.active, "Event must be archived in Odoo after unlinking it")
+        self.assertFalse(record.active, "Event must be archived in Eden after unlinking it")
         self.assertTrue(record.need_sync, "Sync variable must be true for updating event in Google when sync re-activates")
         self.assertGoogleEventNotDeleted()
 
@@ -779,7 +779,7 @@ class TestSyncOdoo2Google(TestSyncGoogle):
             'need_sync': False,
             'location' : 'Event Location'
         })
-        event._sync_odoo2google(self.google_service)
+        event._sync_eden2google(self.google_service)
         self.assertGoogleEventInserted({'conferenceData': False})
 
     @patch_api
@@ -792,7 +792,7 @@ class TestSyncOdoo2Google(TestSyncGoogle):
             'need_sync': False,
             'show_as': 'free'
         })
-        event._sync_odoo2google(self.google_service)
+        event._sync_eden2google(self.google_service)
         self.assertGoogleEventInserted({
             'id': False,
             'start': {'dateTime': '2024-03-29T10:00:00+00:00', 'date': None},
@@ -802,9 +802,9 @@ class TestSyncOdoo2Google(TestSyncGoogle):
             'location': '',
             'guestsCanModify': True,
             'reminders': {'overrides': [], 'useDefault': False},
-            'organizer': {'email': 'odoobot@example.com', 'self': True},
-            'attendees': [{'email': 'odoobot@example.com', 'responseStatus': 'accepted'}],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: event.id}},
+            'organizer': {'email': 'edenbot@example.com', 'self': True},
+            'attendees': [{'email': 'edenbot@example.com', 'responseStatus': 'accepted'}],
+            'extendedProperties': {'shared': {'%s_eden_id' % self.env.cr.dbname: event.id}},
             'transparency': 'transparent',
         })
 
@@ -818,7 +818,7 @@ class TestSyncOdoo2Google(TestSyncGoogle):
             'need_sync': False,
             'show_as': 'busy'
         })
-        event._sync_odoo2google(self.google_service)
+        event._sync_eden2google(self.google_service)
         self.assertGoogleEventInserted({
             'id': False,
             'start': {'dateTime': '2024-03-29T10:00:00+00:00', 'date': None},
@@ -828,9 +828,9 @@ class TestSyncOdoo2Google(TestSyncGoogle):
             'location': '',
             'guestsCanModify': True,
             'reminders': {'overrides': [], 'useDefault': False},
-            'organizer': {'email': 'odoobot@example.com', 'self': True},
-            'attendees': [{'email': 'odoobot@example.com', 'responseStatus': 'accepted'}],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: event.id}},
+            'organizer': {'email': 'edenbot@example.com', 'self': True},
+            'attendees': [{'email': 'edenbot@example.com', 'responseStatus': 'accepted'}],
+            'extendedProperties': {'shared': {'%s_eden_id' % self.env.cr.dbname: event.id}},
             'transparency': 'opaque',
         })
 
@@ -880,7 +880,7 @@ class TestSyncOdoo2Google(TestSyncGoogle):
                             {'email': self.attendee_user.email, 'responseStatus': 'needsAction'},
                             {'email': self.organizer_user.email, 'responseStatus': 'accepted'}
                          ],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: record.id}},
+            'extendedProperties': {'shared': {'%s_eden_id' % self.env.cr.dbname: record.id}},
         })
 
     @patch_api
@@ -919,13 +919,13 @@ class TestSyncOdoo2Google(TestSyncGoogle):
             'organizer': {'email': self.organizer_user.email, 'self': True},
             'attendees': [{'email': self.organizer_user.email, 'responseStatus': 'accepted'}],
             'recurrence': ['RRULE:FREQ=WEEKLY;COUNT=1;BYDAY=WE'],
-            'extendedProperties': {'shared': {'%s_odoo_id' % self.env.cr.dbname: recurrence.id}},
+            'extendedProperties': {'shared': {'%s_eden_id' % self.env.cr.dbname: recurrence.id}},
             'transparency': 'opaque',
         }, timeout=3)
 
 
-@tagged('odoo2google')
-class TestSyncOdoo2GoogleMail(TestTokenAccess, TestSyncGoogle, MailCommon):
+@tagged('eden2google')
+class TestSyncEden2GoogleMail(TestTokenAccess, TestSyncGoogle, MailCommon):
 
     @patch.object(User, '_get_google_calendar_token', lambda user: user.google_calendar_token)
     @freeze_time("2020-01-01")

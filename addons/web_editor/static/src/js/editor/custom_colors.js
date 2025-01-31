@@ -1,5 +1,5 @@
 
-/** @odoo-module **/
+/** @eden-module **/
 
 // These colors are already normalized as per normalizeCSSColor in @web/legacy/js/widgets/colorpicker
 export default [

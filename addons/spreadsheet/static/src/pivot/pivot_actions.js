@@ -1,11 +1,11 @@
 // @ts-check
 
 import { navigateTo } from "../actions/helpers";
-import { helpers } from "@odoo/o-spreadsheet";
+import { helpers } from "@eden/o-spreadsheet";
 const { getNumberOfPivotFunctions } = helpers;
 
 /**
- * @param {import("@odoo/o-spreadsheet").CellPosition} position
+ * @param {import("@eden/o-spreadsheet").CellPosition} position
  * @param {import("@spreadsheet").SpreadsheetChildEnv} env
  * @returns {Promise<void>}
  */
@@ -38,8 +38,8 @@ export const SEE_RECORDS_PIVOT = async (position, env) => {
 };
 
 /**
- * @param {import("@odoo/o-spreadsheet").CellPosition} position
- * @param {import("@spreadsheet").OdooGetters} getters
+ * @param {import("@eden/o-spreadsheet").CellPosition} position
+ * @param {import("@spreadsheet").EdenGetters} getters
  * @returns {boolean}
  */
 export const SEE_RECORDS_PIVOT_VISIBLE = (position, getters) => {
@@ -56,7 +56,7 @@ export const SEE_RECORDS_PIVOT_VISIBLE = (position, getters) => {
         cell &&
         cell.isFormula &&
         getNumberOfPivotFunctions(cell.compiledFormula.tokens) === 1 &&
-        getters.getPivotCoreDefinition(pivotId).type === "ODOO" &&
+        getters.getPivotCoreDefinition(pivotId).type === "EDEN" &&
         getters.getPivot(pivotId).getPivotCellDomain(pivotCell.domain)
     );
 };

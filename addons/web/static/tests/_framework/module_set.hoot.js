@@ -1,9 +1,9 @@
 // ! WARNING: this module cannot depend on modules not ending with ".hoot" (except libs) !
 
-import { describe, dryRun, globals, start, stop } from "@odoo/hoot";
-import { Deferred, microTick } from "@odoo/hoot-dom";
-import { watchKeys, watchListeners } from "@odoo/hoot-mock";
-import { whenReady } from "@odoo/owl";
+import { describe, dryRun, globals, start, stop } from "@eden/hoot";
+import { Deferred, microTick } from "@eden/hoot-dom";
+import { watchKeys, watchListeners } from "@eden/hoot-mock";
+import { whenReady } from "@eden/owl";
 
 import { mockBrowserFactory } from "./mock_browser.hoot";
 import { mockCurrencyFactory } from "./mock_currency.hoot";
@@ -25,7 +25,7 @@ import { mockUserFactory } from "./mock_user.hoot";
  */
 
 const { fetch: realFetch } = globals;
-const { define, loader } = odoo;
+const { define, loader } = eden;
 
 //-----------------------------------------------------------------------------
 // Internal
@@ -381,7 +381,7 @@ const __gcAndLogMemory = async (label, testCount) => {
     console.log(...logs);
 };
 
-/** @extends {OdooModuleLoader} */
+/** @extends {EdenModuleLoader} */
 class ModuleSetLoader extends loader.constructor {
     cleanups = [];
 
@@ -395,8 +395,8 @@ class ModuleSetLoader extends loader.constructor {
         this.modules = new Map(loader.modules);
         this.moduleSet = moduleSet;
 
-        odoo.define = this.define.bind(this);
-        odoo.loader = this;
+        eden.define = this.define.bind(this);
+        eden.loader = this;
     }
 
     /**
@@ -418,8 +418,8 @@ class ModuleSetLoader extends loader.constructor {
     }
 
     cleanup() {
-        odoo.define = define;
-        odoo.loader = loader;
+        eden.define = define;
+        eden.loader = loader;
 
         while (this.cleanups.length) {
             this.cleanups.pop()();
@@ -445,7 +445,7 @@ class ModuleSetLoader extends loader.constructor {
 
     setup() {
         this.cleanups.push(
-            watchKeys(window.odoo),
+            watchKeys(window.eden),
             watchKeys(window, ALLOWED_GLOBAL_KEYS),
             watchListeners()
         );
@@ -487,21 +487,21 @@ const ALLOWED_GLOBAL_KEYS = [
     "L", // Leaflet
     "lamejs", // LameJS
     "luxon", // Luxon
-    "odoo",
+    "eden",
     "owl",
 ];
 const AUTO_INCLUDED_ADDONS = {
     /**
-     * spreadsheet addons defines a module that does not starts with `@spreadsheet` but `@odoo` (`@odoo/o-spreadsheet)
-     * To ensure that this module is loaded, we have to include `odoo` in the dependencies
+     * spreadsheet addons defines a module that does not starts with `@spreadsheet` but `@eden` (`@eden/o-spreadsheet)
+     * To ensure that this module is loaded, we have to include `eden` in the dependencies
      */
-    spreadsheet: ["odoo"],
+    spreadsheet: ["eden"],
     /**
      * Add all view types by default
      */
     web_enterprise: ["web_gantt", "web_grid", "web_map"],
 };
-const CSRF_TOKEN = odoo.csrf_token;
+const CSRF_TOKEN = eden.csrf_token;
 const DEFAULT_ADDONS = ["base", "web"];
 const MODULE_MOCKS_BY_NAME = new Map([
     // Fixed modules
@@ -517,7 +517,7 @@ const MODULE_MOCKS_BY_REGEX = new Map([
     // Fixed modules
     [/\.bundle\.xml$/, makeFixedFactory],
 ]);
-const R_DEFAULT_MODULE = /^@odoo\/(owl|hoot)/;
+const R_DEFAULT_MODULE = /^@eden\/(owl|hoot)/;
 const R_PATH_ADDON = /^[@/]?(\w+)/;
 const TEMPLATE_MODULE_NAME = "@web/core/templates";
 

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.website.tools import MockRequest
-from odoo.tests import standalone
+from eden.addons.website.tools import MockRequest
+from eden.tests import standalone
 
 
 @standalone('cow_views', 'website_standalone')
@@ -93,12 +93,12 @@ def test_02_copy_ids_views_unlink_on_module_update(env):
       theme for a particular website should:
       1. Remove the theme.ir.ui.view record, which is the record pointed by the
          ir.model.data
-         -> This is done through the regular Odoo behavior related to the
+         -> This is done through the regular Eden behavior related to the
             ir.model.data and XML file check on upgrade.
       2. Remove the theme.ir.ui.view's copy_ids (sort of the COW views)
          -> Not working for now
       3. (not impact other website using this theme, see below)
-         -> This is done through odoo/odoo@96ef4885a79 but did not come with
+         -> This is done through eden/eden@96ef4885a79 but did not come with
             tests
 
       Point 2. was not working, this test aims to ensure it will now.

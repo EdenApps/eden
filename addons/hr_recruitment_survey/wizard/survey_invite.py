@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from markupsafe import Markup
 
-from odoo import fields, models, _
-from odoo.tools.misc import clean_context
+from eden import fields, models, _
+from eden.tools.misc import clean_context
 
 
 class SurveyInvite(models.TransientModel):

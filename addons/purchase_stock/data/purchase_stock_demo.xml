@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
 
         <record id="stock.res_company_1" model="res.company">
@@ -77,4 +77,4 @@
 
     </data>
 
-</odoo>
+</eden>

@@ -1,8 +1,8 @@
-import { expect, test } from "@odoo/hoot";
-import { Component, xml } from "@odoo/owl";
+import { expect, test } from "@eden/hoot";
+import { Component, xml } from "@eden/owl";
 import { getService, mountWithCleanup } from "@web/../tests/web_test_helpers";
-import { click, queryOne } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { click, queryOne } from "@eden/hoot-dom";
+import { animationFrame } from "@eden/hoot-mock";
 import { browser } from "@web/core/browser/browser";
 import { scrollTo } from "@web/core/utils/scrolling";
 import { WebClient } from "@web/webclient/webclient";
@@ -534,7 +534,7 @@ test("scroll to anchor from load", async () => {
         static path = "my_component";
     }
     registry.category("actions").add("my_component", MyComponent);
-    redirect("/odoo/my_component#scrollToHere");
+    redirect("/eden/my_component#scrollToHere");
     await mountWithCleanup(WebClient);
     await animationFrame();
 

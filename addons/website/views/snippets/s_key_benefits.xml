@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_key_benefits" name="Key benefits">
     <section class="s_key_benefits pt48 pb48">
@@ -40,4 +40,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

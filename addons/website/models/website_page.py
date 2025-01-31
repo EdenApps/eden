@@ -1,12 +1,12 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import re
 
-from odoo.addons.website.tools import text_from_html
-from odoo import api, fields, models
-from odoo.osv import expression
-from odoo.tools import escape_psql, SQL
-from odoo.tools.translate import _
+from eden.addons.website.tools import text_from_html
+from eden import api, fields, models
+from eden.osv import expression
+from eden.tools import escape_psql, SQL
+from eden.tools.translate import _
 
 
 class Page(models.Model):

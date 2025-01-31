@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="event_sale_report_view_graph" model="ir.ui.view">
         <field name="name">event.sale.report.view.graph</field>
         <field name="model">event.sale.report</field>
@@ -149,4 +149,4 @@
         sequence="5"
         parent="event.menu_reporting_events"
         groups="event.group_event_user"/>
-</odoo>
+</eden>

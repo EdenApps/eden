@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import uuid
 
-from odoo import models, fields, _
-from odoo.exceptions import UserError
-from odoo.http import Stream
+from eden import models, fields, _
+from eden.exceptions import UserError
+from eden.http import Stream
 
 
 class CloudStorageAttachment(models.Model):

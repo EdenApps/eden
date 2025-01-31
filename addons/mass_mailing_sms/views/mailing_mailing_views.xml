@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data>
+<eden><data>
 
     <record model="ir.ui.view" id="mailing_mailing_view_search_sms">
         <field name="name">mailing.mailing.search</field>
@@ -293,4 +293,4 @@
         <field name="act_window_id" ref="mailing_mailing_action_sms"/>
     </record>
 
-</data></odoo>
+</data></eden>

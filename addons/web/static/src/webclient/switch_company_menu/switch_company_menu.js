@@ -3,7 +3,7 @@ import { DropdownGroup } from "@web/core/dropdown/dropdown_group";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { registry } from "@web/core/registry";
 
-import { Component, useChildSubEnv, useRef, useState } from "@odoo/owl";
+import { Component, useChildSubEnv, useRef, useState } from "@eden/owl";
 import { useCommand } from "@web/core/commands/command_hook";
 import { _t } from "@web/core/l10n/translation";
 import { symmetricalDifference } from "@web/core/utils/arrays";

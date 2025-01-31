@@ -1,14 +1,14 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import itertools
 import logging
 
 from collections import defaultdict
 
-from odoo import _, api, fields, models, tools
-from odoo.exceptions import UserError, ValidationError
-from odoo.osv import expression
-from odoo.tools.image import is_image_size_above
+from eden import _, api, fields, models, tools
+from eden.exceptions import UserError, ValidationError
+from eden.osv import expression
+from eden.tools.image import is_image_size_above
 
 _logger = logging.getLogger(__name__)
 PRICE_CONTEXT_KEYS = ['pricelist', 'quantity', 'uom', 'date']
@@ -648,7 +648,7 @@ class ProductTemplate(models.Model):
                     %s
                 </p>
                 <p>
-                    <a class="oe_link" href="https://www.odoo.com/documentation/18.0/_downloads/5f0840ed187116c425fdac2ab4b592e1/pdfquotebuilderexamples.zip">
+                    <a class="oe_link" href="https://www.edencloud.us/documentation/18.0/_downloads/5f0840ed187116c425fdac2ab4b592e1/pdfquotebuilderexamples.zip">
                     %s
                     </a>
                 </p>

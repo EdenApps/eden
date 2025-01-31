@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 import logging
@@ -8,7 +8,7 @@ import json
 import requests
 from werkzeug import urls
 
-from odoo import api, fields, models, _
+from eden import api, fields, models, _
 
 _logger = logging.getLogger(__name__)
 
@@ -44,7 +44,7 @@ class GoogleService(models.AbstractModel):
 
     @api.model
     def _get_authorize_uri(self, service, scope, redirect_uri, state=None, approval_prompt=None, access_type=None):
-        """ This method return the url needed to allow this instance of Odoo to access to the scope
+        """ This method return the url needed to allow this instance of Eden to access to the scope
             of gmail specified as parameters
         """
         params = {

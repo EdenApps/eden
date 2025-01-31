@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import timedelta
 
-from odoo.fields import Datetime
-from odoo.tests.common import TransactionCase
+from eden.fields import Datetime
+from eden.tests.common import TransactionCase
 
 
 class TestWebsiteEventSaleCommon(TransactionCase):

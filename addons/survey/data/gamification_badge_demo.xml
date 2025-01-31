@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data noupdate="1">
+<eden><data noupdate="1">
 
     <record id="vendor_certification_badge" model="gamification.badge">
         <field name="name">MyCompany Vendor</field>
@@ -8,4 +8,4 @@
         <field name="image_1920" type="base64" file="gamification/static/img/badge_good_job-image.png"/>
     </record>
 
-</data></odoo>
+</data></eden>

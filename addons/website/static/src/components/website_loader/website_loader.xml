@@ -11,7 +11,7 @@
                 <i class="oi oi-close oi-large" role="presentation"/>
             </a>
 
-            <div class="o_website_loader_odoo_logo mb-5" style="height: 31px; width: 78px;"/>
+            <div class="o_website_loader_eden_logo mb-5" style="height: 31px; width: 78px;"/>
 
             <div t-if="state.showWaitingMessages" t-out="currentWaitingMessage.title" class="h4-fs text-muted mb-3"/>
             <div t-elif="state.title" t-out="state.title"/>

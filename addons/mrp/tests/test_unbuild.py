@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.tests import Form
-from odoo.addons.mrp.tests.common import TestMrpCommon
-from odoo.exceptions import UserError
+from eden import Command
+from eden.tests import Form
+from eden.addons.mrp.tests.common import TestMrpCommon
+from eden.exceptions import UserError
 
 
 class TestUnbuild(TestMrpCommon):

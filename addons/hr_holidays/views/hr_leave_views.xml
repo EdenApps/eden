@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<odoo>
+<eden>
 
     <record model="ir.actions.server" id="action_manager_approval">
         <field name="name">Manager Approval</field>
@@ -803,4 +803,4 @@
         <field name="act_window_id" ref="action_hr_available_holidays_report"/>
     </record>
 
-</odoo>
+</eden>

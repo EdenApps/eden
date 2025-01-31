@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "@odoo/owl";
+import { useEffect, useRef } from "@eden/owl";
 import { useService } from "@web/core/utils/hooks";
 import { scrollTo } from "@web/core/utils/scrolling";
 import { debounce, throttleForAnimation } from "@web/core/utils/timing";

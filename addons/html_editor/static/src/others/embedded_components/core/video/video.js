@@ -1,6 +1,6 @@
 import { getEmbeddedProps } from "@html_editor/others/embedded_component_utils";
 import { getVideoUrl } from "@html_editor/utils/url";
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 export class EmbeddedVideoIframe extends Component {
     static template = "html_editor.EmbeddedVideoIframe";

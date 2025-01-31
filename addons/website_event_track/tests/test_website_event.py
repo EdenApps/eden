@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 # -*- coding: utf-8 -*-
 
-from odoo.tests import tagged
-from odoo.tests.common import TransactionCase
-from odoo.tools.image import base64_to_image
+from eden.tests import tagged
+from eden.tests.common import TransactionCase
+from eden.tools.image import base64_to_image
 from io import BytesIO
 from PIL import Image
 import base64

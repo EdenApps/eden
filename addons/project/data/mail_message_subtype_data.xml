@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<eden noupdate="1">
     <!-- Task-related subtypes for messaging / Chatter -->
     <record id="mt_task_new" model="mail.message.subtype">
         <field name="name">Task Created</field>
@@ -164,4 +164,4 @@
         <field name="relation_field">project_id</field>
         <field name="hidden" eval="True"/>
     </record>
-</odoo>
+</eden>

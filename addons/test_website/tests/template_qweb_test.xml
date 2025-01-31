@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <template id="test_website.test_template" name="test template 2">
 &lt;!DOCTYPE html&gt;
@@ -21,4 +21,4 @@
 </html>
     </template>
 
-</odoo>
+</eden>

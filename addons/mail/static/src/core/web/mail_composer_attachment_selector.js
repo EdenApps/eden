@@ -4,7 +4,7 @@ import { standardFieldProps } from "@web/views/fields/standard_field_props";
 import { useService } from "@web/core/utils/hooks";
 import { useX2ManyCrud } from "@web/views/fields/relational_utils";
 
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 import { FileUploader } from "@web/views/fields/file_handler";
 
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <!-- The following cron is trigger-only. When the user triggers it, the cron processes some
          products to add an image from an external provider and schedules itself until all products
@@ -14,4 +14,4 @@
         <field name="code">model._cron_fetch_image()</field>
     </record>
 
-</odoo>
+</eden>

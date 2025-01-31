@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <record id="payment_provider_form" model="ir.ui.view">
         <field name="name">payment.provider.form</field>
@@ -38,7 +38,7 @@
                     <div class="oe_title">
                         <h1><field name="name" placeholder="Name"/></h1>
                         <div invisible="module_state == 'installed' or not module_id">
-                            <a invisible="not module_to_buy" href="https://odoo.com/pricing?utm_source=db&amp;utm_medium=module" target="_blank" class="btn btn-info" role="button">Upgrade</a>
+                            <a invisible="not module_to_buy" href="https://edencloud.us/pricing?utm_source=db&amp;utm_medium=module" target="_blank" class="btn btn-info" role="button">Upgrade</a>
                             <button invisible="module_to_buy" type="object" class="btn btn-primary" name="button_immediate_install" string="Install"/>
                         </div>
                     </div>
@@ -179,7 +179,7 @@
                             <footer>
                                 <button t-if="!installed and !selection_mode and !to_buy" type="object" class="btn btn-sm btn-primary ms-auto" name="button_immediate_install">Install</button>
                                 <button t-if="installed and is_disabled and !selection_mode" type="edit" class="btn btn-sm btn-secondary ms-auto">Activate</button>
-                                <button t-if="!installed and to_buy" href="https://odoo.com/pricing?utm_source=db&amp;utm_medium=module" target="_blank" class="btn btn-sm btn-primary ms-auto">Upgrade</button>
+                                <button t-if="!installed and to_buy" href="https://edencloud.us/pricing?utm_source=db&amp;utm_medium=module" target="_blank" class="btn btn-sm btn-primary ms-auto">Upgrade</button>
                             </footer>
                         </main>
                     </t>
@@ -224,4 +224,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

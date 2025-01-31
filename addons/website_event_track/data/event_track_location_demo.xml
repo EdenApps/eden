@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <record id="event_track_location5" model="event.track.location">
         <field name="name">Le Foyer du lac</field>
@@ -30,4 +30,4 @@
         <field name="name">Live with Customers</field>
     </record>
 
-</odoo>
+</eden>

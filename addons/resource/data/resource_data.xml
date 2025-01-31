@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <record id="resource_calendar_std" model="resource.calendar">
             <field name="name">Standard 40 hours/week</field>
@@ -16,4 +16,4 @@
             name="_init_data_resource_calendar"
             eval="[]"/>
     </data>
-</odoo>
+</eden>

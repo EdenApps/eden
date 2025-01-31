@@ -53,7 +53,7 @@ $-seen-urls: ();
         }
     }
 
-    // 4) The Odoo values map, $o-website-values, must be printed.
+    // 4) The Eden values map, $o-website-values, must be printed.
     @each $key, $value in $o-website-values {
         @include print-variable($key, $value);
     }
@@ -182,9 +182,9 @@ $-seen-urls: ();
 };
 
 body {
-    // The color behind the boxed layout is forced by Odoo. The box background
+    // The color behind the boxed layout is forced by Eden. The box background
     // color uses the `$body-bg` variable.
-    // grep: BOXED_BODY_BG_ODOO
+    // grep: BOXED_BODY_BG_EDEN
     @if o-website-value('layout') != 'full' {
         background-color: o-color('body');
     }
@@ -197,9 +197,9 @@ body {
 
     @if o-website-value('layout') != 'full' {
         > main {
-            // The color behind the boxed layout is forced by Odoo. The box
+            // The color behind the boxed layout is forced by Eden. The box
             // background color uses the `$body-bg` variable.
-            // grep: BOXED_BODY_BG_ODOO
+            // grep: BOXED_BODY_BG_EDEN
             background-color: $body-bg;
         }
 
@@ -317,7 +317,7 @@ body {
 }
 
 .navbar-light {
-    // Style only navbar-light which Odoo is only supposed to use in standard
+    // Style only navbar-light which Eden is only supposed to use in standard
     // anyway. Automatically mimic navbar-dark if the user's menu color is dark.
     // Note: this only works because navbar-light is defined before navbar-dark,
     // we may want to use a safest way when possible.
@@ -2845,7 +2845,7 @@ input[value*="data-oe-translation-source-sha"] {
     animation-delay: 2500ms;
 }
 
-// Odoo dropdown menu
+// Eden dropdown menu
 .o_dropdown_menu {
     @extend .dropdown-menu;
 }

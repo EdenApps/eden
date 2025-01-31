@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <record id="website_sale.s_popup_000_js" model="ir.asset">
     <field name="name">Popup 000 JS Website Sale Override</field>
@@ -7,4 +7,4 @@
     <field name="path">website_sale/static/src/snippets/s_popup/000.js</field>
 </record>
 
-</odoo>
+</eden>

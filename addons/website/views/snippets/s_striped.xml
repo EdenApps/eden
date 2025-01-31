@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_striped" name="Striped section">
     <section class="s_striped o_cc o_cc5 pt56 pb96" style="position: relative;" data-oe-shape-data="{'shape':'web_editor/Origins/04_001','colors':{'c3': '#FFFFFF'},'flip':['y'], 'showOnMobile':true}">
@@ -18,4 +18,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

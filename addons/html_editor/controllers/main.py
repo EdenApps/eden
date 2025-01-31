@@ -8,20 +8,20 @@ import werkzeug.urls
 import requests
 from os.path import join as opj
 
-from odoo import _, http, tools, SUPERUSER_ID
-from odoo.addons.html_editor.tools import get_video_url_data
-from odoo.exceptions import UserError, MissingError, AccessError
-from odoo.http import request
-from odoo.tools.mimetypes import guess_mimetype
-from odoo.tools.misc import file_open
-from odoo.addons.iap.tools import iap_tools
-from odoo.addons.mail.tools import link_preview
+from eden import _, http, tools, SUPERUSER_ID
+from eden.addons.html_editor.tools import get_video_url_data
+from eden.exceptions import UserError, MissingError, AccessError
+from eden.http import request
+from eden.tools.mimetypes import guess_mimetype
+from eden.tools.misc import file_open
+from eden.addons.iap.tools import iap_tools
+from eden.addons.mail.tools import link_preview
 from lxml import html
 
 from ..models.ir_attachment import SUPPORTED_IMAGE_MIMETYPES
 
-DEFAULT_LIBRARY_ENDPOINT = 'https://media-api.odoo.com'
-DEFAULT_OLG_ENDPOINT = 'https://olg.api.odoo.com'
+DEFAULT_LIBRARY_ENDPOINT = 'https://media-api.edencloud.us'
+DEFAULT_OLG_ENDPOINT = 'https://olg.api.edencloud.us'
 
 # Regex definitions to apply speed modification in SVG files
 # Note : These regex patterns are duplicated on the server side for
@@ -575,7 +575,7 @@ class HTML_Editor(http.Controller):
             record_id = int(words.pop())
             action_name = words.pop()
             if (action_name.startswith('m-') or '.' in action_name) and action_name in request.env and not request.env[action_name]._abstract:
-                # if path format is `odoo/<model>/<record_id>` so we use `action_name` as model name
+                # if path format is `eden/<model>/<record_id>` so we use `action_name` as model name
                 model_name = action_name.removeprefix('m-')
                 model = request.env[model_name].with_context(context)
             else:

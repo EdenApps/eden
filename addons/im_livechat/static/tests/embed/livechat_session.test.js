@@ -13,8 +13,8 @@ import {
     startServer,
     triggerHotkey,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, expect, test } from "@odoo/hoot";
-import { advanceTime } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@eden/hoot";
+import { advanceTime } from "@eden/hoot-mock";
 import {
     getService,
     mountWithCleanup,
@@ -24,7 +24,7 @@ import {
 
 import { LivechatButton } from "@im_livechat/embed/common/livechat_button";
 import { rpc } from "@web/core/network/rpc";
-import { queryFirst } from "@odoo/hoot-dom";
+import { queryFirst } from "@eden/hoot-dom";
 
 describe.current.tags("desktop");
 defineLivechatModels();

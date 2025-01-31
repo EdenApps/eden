@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, Command, fields, models, _
-from odoo.tools.float_utils import float_compare, float_is_zero, float_round
-from odoo.exceptions import UserError
+from eden import api, Command, fields, models, _
+from eden.tools.float_utils import float_compare, float_is_zero, float_round
+from eden.exceptions import UserError
 
 
 class PurchaseOrderLine(models.Model):

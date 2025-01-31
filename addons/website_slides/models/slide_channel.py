@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import ast
 import logging
@@ -9,10 +9,10 @@ from collections import defaultdict
 from dateutil.relativedelta import relativedelta
 from markupsafe import Markup
 
-from odoo import api, fields, models, tools, _
-from odoo.exceptions import AccessError, UserError, ValidationError
-from odoo.osv import expression
-from odoo.tools import is_html_empty
+from eden import api, fields, models, tools, _
+from eden.exceptions import AccessError, UserError, ValidationError
+from eden.osv import expression
+from eden.tools import is_html_empty
 
 _logger = logging.getLogger(__name__)
 
@@ -289,7 +289,7 @@ class Channel(models.Model):
 
     def _default_cover_properties(self):
         """ Cover properties defaults are overridden to keep a consistent look for the slides
-        channels headers across Odoo versions (pre-customization, with purple gradient fitting the
+        channels headers across Eden versions (pre-customization, with purple gradient fitting the
         homepage images, etc). Furthermore, as adding padding to the cover would not look great,
         its height is set to fit to content (snippet option to change this also disabled on the view)."""
         res = super()._default_cover_properties()
@@ -715,7 +715,7 @@ class Channel(models.Model):
     @api.model_create_multi
     def create(self, vals_list):
         for vals in vals_list:
-            # Ensure creator is member of its channel it is easier for them to manage it (unless it is odoobot)
+            # Ensure creator is member of its channel it is easier for them to manage it (unless it is edenbot)
             if not vals.get('channel_partner_ids') and not self.env.is_superuser():
                 vals['channel_partner_ids'] = [(0, 0, {
                     'partner_id': self.env.user.partner_id.id

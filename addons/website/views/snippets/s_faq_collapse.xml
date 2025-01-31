@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_faq_collapse" name="FAQ">
     <section class="s_faq_collapse pt32 pb32" data-vcss="001">
@@ -26,4 +26,4 @@
     <field name="active" eval="False"/>
 </record>
 
-</odoo>
+</eden>

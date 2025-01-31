@@ -1,4 +1,4 @@
-import { useState } from "@odoo/owl";
+import { useState } from "@eden/owl";
 import { FormController } from "@web/views/form/form_controller";
 
 export class FormControllerWithHTMLExpander extends FormController {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <record id="mass_mailing_themes.s_tech_default_image" model="ir.attachment">
             <field name="public" eval="True"/>
@@ -16,4 +16,4 @@
             <field name="url">/mass_mailing_themes/static/src/img/theme_training/s_default_image_block_image.jpg</field>
         </record>
     </data>
-</odoo>
+</eden>

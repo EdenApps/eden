@@ -1,10 +1,10 @@
-/** @odoo-module */
+/** @eden-module */
 import { _t } from "@web/core/l10n/translation";
 
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@eden/o-spreadsheet";
 
 import { SEE_RECORDS_PIVOT, SEE_RECORDS_PIVOT_VISIBLE } from "./pivot_actions";
-import { PivotOdooCorePlugin } from "./plugins/pivot_odoo_core_plugin";
+import { PivotEdenCorePlugin } from "./plugins/pivot_eden_core_plugin";
 import { PivotUIGlobalFilterPlugin } from "./plugins/pivot_ui_global_filter_plugin";
 
 const { coreTypes, invalidateEvaluationCommands } = spreadsheet;
@@ -17,9 +17,9 @@ function identity(cmd) {
     return [cmd];
 }
 
-coreTypes.add("UPDATE_ODOO_PIVOT_DOMAIN");
+coreTypes.add("UPDATE_EDEN_PIVOT_DOMAIN");
 
-invalidateEvaluationCommands.add("UPDATE_ODOO_PIVOT_DOMAIN");
+invalidateEvaluationCommands.add("UPDATE_EDEN_PIVOT_DOMAIN");
 
 cellMenuRegistry.add("pivot_see_records", {
     name: _t("See records"),
@@ -35,6 +35,6 @@ cellMenuRegistry.add("pivot_see_records", {
     icon: "o-spreadsheet-Icon.SEE_RECORDS",
 });
 
-inverseCommandRegistry.add("UPDATE_ODOO_PIVOT_DOMAIN", identity);
+inverseCommandRegistry.add("UPDATE_EDEN_PIVOT_DOMAIN", identity);
 
-export { PivotOdooCorePlugin, PivotUIGlobalFilterPlugin };
+export { PivotEdenCorePlugin, PivotUIGlobalFilterPlugin };

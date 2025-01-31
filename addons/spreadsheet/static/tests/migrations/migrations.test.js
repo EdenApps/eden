@@ -1,6 +1,6 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { ODOO_VERSION } from "@spreadsheet/o_spreadsheet/migration";
-import { Model, load } from "@odoo/o-spreadsheet";
+import { describe, expect, test } from "@eden/hoot";
+import { EDEN_VERSION } from "@spreadsheet/o_spreadsheet/migration";
+import { Model, load } from "@eden/o-spreadsheet";
 import { defineSpreadsheetActions, defineSpreadsheetModels } from "../helpers/data";
 
 defineSpreadsheetModels();
@@ -8,7 +8,7 @@ defineSpreadsheetActions();
 
 describe.current.tags("headless");
 
-test("Odoo formulas are migrated", () => {
+test("Eden formulas are migrated", () => {
     const data = {
         version: 16,
         sheets: [
@@ -28,25 +28,25 @@ test("Odoo formulas are migrated", () => {
     const migratedData = load(data);
     expect(migratedData.sheets[0].cells.A1.content).toBe(`=PIVOT.VALUE("1")`);
     expect(migratedData.sheets[0].cells.A2.content).toBe(`=PIVOT.HEADER("1")`);
-    expect(migratedData.sheets[0].cells.A3.content).toBe(`=ODOO.FILTER.VALUE("1")`);
-    expect(migratedData.sheets[0].cells.A4.content).toBe(`=ODOO.LIST("1")`);
-    expect(migratedData.sheets[0].cells.A5.content).toBe(`=ODOO.LIST.HEADER("1")`);
-    expect(migratedData.sheets[0].cells.A6.content).toBe(`=ODOO.PIVOT.POSITION("1")`);
+    expect(migratedData.sheets[0].cells.A3.content).toBe(`=EDEN.FILTER.VALUE("1")`);
+    expect(migratedData.sheets[0].cells.A4.content).toBe(`=EDEN.LIST("1")`);
+    expect(migratedData.sheets[0].cells.A5.content).toBe(`=EDEN.LIST.HEADER("1")`);
+    expect(migratedData.sheets[0].cells.A6.content).toBe(`=EDEN.PIVOT.POSITION("1")`);
     expect(migratedData.sheets[0].cells.A7.content).toBe(`=PIVOT.VALUE("1")`);
 });
 
 test("Pivot 'day' arguments are migrated", () => {
     const data = {
         version: 16,
-        odooVersion: 1,
+        edenVersion: 1,
         sheets: [
             {
                 cells: {
-                    A1: { content: `=ODOO.PIVOT("1","21/07/2022")` },
-                    A2: { content: `=ODOO.PIVOT.HEADER("1","11/12/2022")` },
-                    A3: { content: `=odoo.pivot("1","21/07/2021")` },
-                    A4: { content: `=ODOO.PIVOT("1","test")` },
-                    A5: { content: `=odoo.pivot("1","21/07/2021")+"21/07/2021"` },
+                    A1: { content: `=EDEN.PIVOT("1","21/07/2022")` },
+                    A2: { content: `=EDEN.PIVOT.HEADER("1","11/12/2022")` },
+                    A3: { content: `=eden.pivot("1","21/07/2021")` },
+                    A4: { content: `=EDEN.PIVOT("1","test")` },
+                    A5: { content: `=eden.pivot("1","21/07/2021")+"21/07/2021"` },
                     A6: { content: `=BAD_FORMULA(` },
                 },
             },
@@ -223,7 +223,7 @@ test("fieldMatchings are moved from filters to their respective datasources", ()
                         id: "fig1",
                         tag: "chart",
                         data: {
-                            type: "odoo_bar",
+                            type: "eden_bar",
                         },
                     },
                 ],
@@ -293,7 +293,7 @@ test("fieldMatchings offsets are correctly preserved after migration", () => {
                         id: "fig1",
                         tag: "chart",
                         data: {
-                            type: "odoo_bar",
+                            type: "eden_bar",
                         },
                     },
                 ],
@@ -315,7 +315,7 @@ test("fieldMatchings offsets are correctly preserved after migration", () => {
 test("group year/quarter/month filters to a single filter type", () => {
     const data = {
         version: 14,
-        odooVersion: 5,
+        edenVersion: 5,
         globalFilters: [
             {
                 id: "1",
@@ -415,7 +415,7 @@ test("Pivot are migrated from 6 to 9", () => {
     const migratedData = load(data);
     expect(Object.values(migratedData.pivots).length).toBe(1);
     expect(migratedData.pivots["1"]).toEqual({
-        type: "ODOO",
+        type: "EDEN",
         fieldMatching: { 1: { chain: "foo", type: "char" } },
         name: "Name",
         model: "Model",
@@ -429,10 +429,10 @@ test("Pivot are migrated from 6 to 9", () => {
 test("Pivot are migrated from 9 to 10", () => {
     const data = {
         version: 16,
-        odooVersion: 9,
+        edenVersion: 9,
         pivots: {
             1: {
-                type: "ODOO",
+                type: "EDEN",
                 name: "Name",
                 model: "res.model",
                 measures: ["probability"],
@@ -445,7 +445,7 @@ test("Pivot are migrated from 9 to 10", () => {
     const migratedData = load(data);
     expect(Object.values(migratedData.pivots).length).toBe(1);
     expect(migratedData.pivots["1"]).toEqual({
-        type: "ODOO",
+        type: "EDEN",
         name: "Name",
         model: "res.model",
         measures: [{ id: "probability", fieldName: "probability", aggregator: undefined }],
@@ -458,15 +458,15 @@ test("Pivot are migrated from 9 to 10", () => {
 test("Pivot formulas are migrated from 9 to 10", () => {
     const data = {
         version: 16,
-        odooVersion: 9,
+        edenVersion: 9,
         sheets: [
             {
                 cells: {
-                    A1: { content: `=ODOO.PIVOT("1")` },
-                    A2: { content: `=ODOO.PIVOT.HEADER("1")` },
-                    A3: { content: `=ODOO.PIVOT.POSITION("1")` },
-                    A4: { content: `=ODOO.PIVOT.TABLE("1")` },
-                    A5: { content: `=odoo.pivot("1")` },
+                    A1: { content: `=EDEN.PIVOT("1")` },
+                    A2: { content: `=EDEN.PIVOT.HEADER("1")` },
+                    A3: { content: `=EDEN.PIVOT.POSITION("1")` },
+                    A4: { content: `=EDEN.PIVOT.TABLE("1")` },
+                    A5: { content: `=eden.pivot("1")` },
                 },
             },
         ],
@@ -474,7 +474,7 @@ test("Pivot formulas are migrated from 9 to 10", () => {
     const migratedData = load(data);
     expect(migratedData.sheets[0].cells.A1.content).toBe(`=PIVOT.VALUE("1")`);
     expect(migratedData.sheets[0].cells.A2.content).toBe(`=PIVOT.HEADER("1")`);
-    expect(migratedData.sheets[0].cells.A3.content).toBe(`=ODOO.PIVOT.POSITION("1")`);
+    expect(migratedData.sheets[0].cells.A3.content).toBe(`=EDEN.PIVOT.POSITION("1")`);
     expect(migratedData.sheets[0].cells.A4.content).toBe(`=PIVOT("1")`);
     expect(migratedData.sheets[0].cells.A5.content).toBe(`=PIVOT.VALUE("1")`);
 });
@@ -482,34 +482,34 @@ test("Pivot formulas are migrated from 9 to 10", () => {
 test("Pivot formulas using pivot positions are migrated (11 to 12)", () => {
     const data = {
         version: 16,
-        odooVersion: 9,
+        edenVersion: 9,
         sheets: [
             {
                 cells: {
                     A1: {
-                        content: `=-PIVOT.VALUE("1","balance","account_id",ODOO.PIVOT.POSITION("1","account_id",12),"date:quarter","4/"&ODOO.FILTER.VALUE("Year"))`,
+                        content: `=-PIVOT.VALUE("1","balance","account_id",EDEN.PIVOT.POSITION("1","account_id",12),"date:quarter","4/"&EDEN.FILTER.VALUE("Year"))`,
                     },
                     A2: {
-                        content: `=PIVOT.HEADER("1","account_id",ODOO.PIVOT.POSITION("1","account_id",14))`,
+                        content: `=PIVOT.HEADER("1","account_id",EDEN.PIVOT.POSITION("1","account_id",14))`,
                     },
-                    A3: { content: `=ODOO.PIVOT.POSITION("1","account_id",14)` },
-                    A4: { content: `=ODOO.PIVOT.POSITION("1",14)` },
+                    A3: { content: `=EDEN.PIVOT.POSITION("1","account_id",14)` },
+                    A4: { content: `=EDEN.PIVOT.POSITION("1",14)` },
                 },
             },
         ],
     };
     const migratedData = load(data);
     expect(migratedData.sheets[0].cells.A1.content).toBe(
-        `=-PIVOT.VALUE("1","balance","#account_id",12,"date:quarter","4/"&ODOO.FILTER.VALUE("Year"))`
+        `=-PIVOT.VALUE("1","balance","#account_id",12,"date:quarter","4/"&EDEN.FILTER.VALUE("Year"))`
     );
     expect(migratedData.sheets[0].cells.A2.content).toBe(`=PIVOT.HEADER("1","#account_id",14)`);
     expect(migratedData.sheets[0].cells.A3.content).toBe(
-        `=ODOO.PIVOT.POSITION("1","account_id",14)`
+        `=EDEN.PIVOT.POSITION("1","account_id",14)`
     );
-    expect(migratedData.sheets[0].cells.A4.content).toBe(`=ODOO.PIVOT.POSITION("1",14)`);
+    expect(migratedData.sheets[0].cells.A4.content).toBe(`=EDEN.PIVOT.POSITION("1",14)`);
 });
 
-test("Odoo version is exported", () => {
+test("Eden version is exported", () => {
     const model = new Model();
-    expect(model.exportData().odooVersion).toBe(ODOO_VERSION);
+    expect(model.exportData().edenVersion).toBe(EDEN_VERSION);
 });

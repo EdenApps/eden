@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <!--  MAILING TRACE !-->
     <record model="ir.ui.view" id="mailing_trace_view_search">
         <field name="name">mailing.trace.view.search</field>
@@ -148,4 +148,4 @@
             </p>
         </field>
     </record>
-</odoo>
+</eden>

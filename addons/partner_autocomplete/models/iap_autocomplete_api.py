@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 
-from odoo import api, models, exceptions, _
-from odoo.addons.iap.tools import iap_tools
+from eden import api, models, exceptions, _
+from eden.addons.iap.tools import iap_tools
 from requests.exceptions import HTTPError
 
 _logger = logging.getLogger(__name__)
@@ -13,7 +13,7 @@ _logger = logging.getLogger(__name__)
 class IapAutocompleteEnrichAPI(models.AbstractModel):
     _name = 'iap.autocomplete.api'
     _description = 'IAP Partner Autocomplete API'
-    _DEFAULT_ENDPOINT = 'https://partner-autocomplete.odoo.com'
+    _DEFAULT_ENDPOINT = 'https://partner-autocomplete.edencloud.us'
 
     @api.model
     def _contact_iap(self, local_endpoint, action, params, timeout=15):

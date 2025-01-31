@@ -1,4 +1,4 @@
-from odoo import api, fields, models, Command
+from eden import api, fields, models, Command
 import json
 import base64
 
@@ -10,7 +10,7 @@ class Tour(models.Model):
 
     name = fields.Char(required=True)
     step_ids = fields.One2many("web_tour.tour.step", "tour_id")
-    url = fields.Char(string="Starting URL", default="/odoo")
+    url = fields.Char(string="Starting URL", default="/eden")
     sharing_url = fields.Char(compute="_compute_sharing_url", string="Sharing URL")
     rainbow_man_message = fields.Html(default="<b>Good job!</b> You went through all steps of this tour.", translate=True)
     sequence = fields.Integer(default=1000)
@@ -24,7 +24,7 @@ class Tour(models.Model):
     @api.depends("name")
     def _compute_sharing_url(self):
         for tour in self:
-            tour.sharing_url = f"{tour.get_base_url()}/odoo?tour={tour.name}"
+            tour.sharing_url = f"{tour.get_base_url()}/eden?tour={tour.name}"
 
     @api.model
     def consume(self, tourName):

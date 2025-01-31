@@ -1,9 +1,9 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { after, describe, expect, test } from "@odoo/hoot";
-import { click } from "@odoo/hoot-dom";
-import { animationFrame, Deferred } from "@odoo/hoot-mock";
-import { Component, reactive, useState, xml } from "@odoo/owl";
+import { after, describe, expect, test } from "@eden/hoot";
+import { click } from "@eden/hoot-dom";
+import { animationFrame, Deferred } from "@eden/hoot-mock";
+import { Component, reactive, useState, xml } from "@eden/owl";
 import { mountForTest, parseUrl } from "../local_helpers";
 
 import { logger } from "../../core/logger";

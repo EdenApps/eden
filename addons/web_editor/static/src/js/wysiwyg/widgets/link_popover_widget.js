@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { _t } from "@web/core/l10n/translation";
 import { ancestors } from '@web_editor/js/common/wysiwyg_utils';
@@ -14,9 +14,9 @@ export class LinkPopoverWidget {
             return null;
         }
         const popoverWidget = new this(params);
-        params.wysiwyg?.odooEditor.observerUnactive('LinkPopoverWidget');
+        params.wysiwyg?.edenEditor.observerUnactive('LinkPopoverWidget');
         popoverWidget.start(); // This is not async
-        params.wysiwyg?.odooEditor.observerActive('LinkPopoverWidget');
+        params.wysiwyg?.edenEditor.observerActive('LinkPopoverWidget');
         return popoverWidget;
     };
 
@@ -146,8 +146,8 @@ export class LinkPopoverWidget {
             }
         };
         $(document).on('mouseup.link_popover', onClickDocument);
-        if (document !== this.wysiwyg.odooEditor.document) {
-            $(this.wysiwyg.odooEditor.document).on('mouseup.link_popover', onClickDocument);
+        if (document !== this.wysiwyg.edenEditor.document) {
+            $(this.wysiwyg.edenEditor.document).on('mouseup.link_popover', onClickDocument);
         }
 
         // Update popover's content and position upon changes
@@ -178,7 +178,7 @@ export class LinkPopoverWidget {
         // mode so this should not be a huge problem.
         this.$target.off('.link_popover');
         $(document).off('.link_popover');
-        $(this.wysiwyg.odooEditor.document).off('.link_popover');
+        $(this.wysiwyg.edenEditor.document).off('.link_popover');
         this.$target.popover('dispose');
         this._observer.disconnect();
     }

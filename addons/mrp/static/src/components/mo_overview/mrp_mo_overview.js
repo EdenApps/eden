@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @eden-module **/
 
-import { Component, EventBus, onWillStart, useSubEnv, useState } from "@odoo/owl";
+import { Component, EventBus, onWillStart, useSubEnv, useState } from "@eden/owl";
 import { registry } from "@web/core/registry";
 import { useBus, useService } from "@web/core/utils/hooks";
 import { Layout } from "@web/search/layout";

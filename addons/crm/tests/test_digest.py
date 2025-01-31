@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
 
-from odoo.addons.digest.tests.common import TestDigestCommon
-from odoo.tools import mute_logger
+from eden.addons.digest.tests.common import TestDigestCommon
+from eden.tools import mute_logger
 
 
 class TestCrmDigest(TestDigestCommon):
     @classmethod
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('eden.models.unlink')
     def setUpClass(cls):
         super().setUpClass()
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <t t-name="google_recaptcha.recaptcha_legal_terms">
     <small class="o_recaptcha_legal_terms">
@@ -11,4 +11,4 @@
     </small>
 </t>
 
-</odoo>
+</eden>

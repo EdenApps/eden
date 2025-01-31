@@ -1,9 +1,9 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { _t } from "@web/core/l10n/translation";
 import { FormController } from '@web/views/form/form_controller';
 import { useService } from '@web/core/utils/hooks';
-import { useExternalListener } from "@odoo/owl";
+import { useExternalListener } from "@eden/owl";
 
 export class ProjectSharingFormController extends FormController {
     static components = {

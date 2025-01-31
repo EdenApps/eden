@@ -1,4 +1,4 @@
-/* @odoo-module */
+/* @eden-module */
 
 import { Persona } from "@mail/core/common/persona_model";
 

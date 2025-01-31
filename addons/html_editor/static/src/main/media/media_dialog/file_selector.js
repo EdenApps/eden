@@ -7,7 +7,7 @@ import { KeepLast } from "@web/core/utils/concurrency";
 import { useDebounced } from "@web/core/utils/timing";
 import { SearchMedia } from "./search_media";
 
-import { Component, xml, useState, useRef, onWillStart, useEffect } from "@odoo/owl";
+import { Component, xml, useState, useRef, onWillStart, useEffect } from "@eden/owl";
 
 export const IMAGE_MIMETYPES = [
     "image/jpg",
@@ -45,7 +45,7 @@ export class AttachmentError extends Component {
                     following pages or views:</p>
                 <ul t-foreach="props.views"  t-as="view" t-key="view.id">
                     <li>
-                        <a t-att-href="'/odoo/ir.ui.view/' + window.encodeURIComponent(view.id)">
+                        <a t-att-href="'/eden/ir.ui.view/' + window.encodeURIComponent(view.id)">
                             <t t-esc="view.name"/>
                         </a>
                     </li>
@@ -305,7 +305,7 @@ export class FileSelector extends Component {
             // Reading attachments as a portal user is not permitted and will raise
             // an access error so we catch the error silently and don't return any
             // attachment so he can still use the wizard and upload an attachment
-            if (e.exceptionName !== "odoo.exceptions.AccessError") {
+            if (e.exceptionName !== "eden.exceptions.AccessError") {
                 throw e;
             }
         }

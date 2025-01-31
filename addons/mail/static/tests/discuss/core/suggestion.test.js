@@ -7,8 +7,8 @@ import {
     start,
     startServer,
 } from "@mail/../tests/mail_test_helpers";
-import { beforeEach, describe, test } from "@odoo/hoot";
-import { mockDate } from "@odoo/hoot-mock";
+import { beforeEach, describe, test } from "@eden/hoot";
+import { mockDate } from "@eden/hoot-mock";
 import { Command, patchWithCleanup, serverState } from "@web/../tests/web_test_helpers";
 
 import { Composer } from "@mail/core/common/composer";
@@ -186,7 +186,7 @@ test("command suggestion are shown after deleting a character", async () => {
     await contains(".o-mail-Composer-suggestion strong", { text: "help" });
 });
 
-test("mention suggestion displays OdooBot before archived partners", async () => {
+test("mention suggestion displays EdenBot before archived partners", async () => {
     const pyEnv = await startServer();
     const partnerId = pyEnv["res.partner"].create({ name: "Jane", active: false });
     const channelId = pyEnv["discuss.channel"].create({
@@ -195,7 +195,7 @@ test("mention suggestion displays OdooBot before archived partners", async () =>
         channel_member_ids: [
             Command.create({ partner_id: serverState.partnerId }),
             Command.create({ partner_id: partnerId }),
-            Command.create({ partner_id: serverState.odoobotId }),
+            Command.create({ partner_id: serverState.edenbotId }),
         ],
     });
     await start();
@@ -207,7 +207,7 @@ test("mention suggestion displays OdooBot before archived partners", async () =>
         before: [
             ".o-mail-Composer-suggestion",
             {
-                text: "OdooBot",
+                text: "EdenBot",
                 before: [".o-mail-Composer-suggestion", { text: "Jane" }],
             },
         ],

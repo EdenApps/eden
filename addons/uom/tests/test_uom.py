@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import ValidationError
+from eden.exceptions import ValidationError
 
-from odoo.addons.uom.tests.common import UomCommon
+from eden.addons.uom.tests.common import UomCommon
 
 
 class TestUom(UomCommon):

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 from contextlib import contextmanager
@@ -9,23 +9,23 @@ import pytz
 from dateutil.parser import parse
 from markupsafe import Markup
 
-from odoo import api, fields, models, _
-from odoo.modules.registry import Registry
-from odoo.tools import ormcache_context, email_normalize
-from odoo.osv import expression
-from odoo.sql_db import BaseCursor
+from eden import api, fields, models, _
+from eden.modules.registry import Registry
+from eden.tools import ormcache_context, email_normalize
+from eden.osv import expression
+from eden.sql_db import BaseCursor
 
-from odoo.addons.google_calendar.utils.google_event import GoogleEvent
-from odoo.addons.google_calendar.utils.google_calendar import GoogleCalendarService
-from odoo.addons.google_account.models.google_service import TIMEOUT
+from eden.addons.google_calendar.utils.google_event import GoogleEvent
+from eden.addons.google_calendar.utils.google_calendar import GoogleCalendarService
+from eden.addons.google_account.models.google_service import TIMEOUT
 
 _logger = logging.getLogger(__name__)
 
 
 # API requests are sent to Google Calendar after the current transaction ends.
-# This ensures changes are sent to Google only if they really happened in the Odoo database.
+# This ensures changes are sent to Google only if they really happened in the Eden database.
 # It is particularly important for event creation , otherwise the event might be created
-# twice in Google if the first creation crashed in Odoo.
+# twice in Google if the first creation crashed in Eden.
 def after_commit(func):
     @wraps(func)
     def wrapped(self, *args, **kwargs):
@@ -120,7 +120,7 @@ class GoogleSync(models.AbstractModel):
         elif synced:
             # Since we can not delete such an event (see method comment), we archive it.
             # Notice that archiving an event will delete the associated event on Google.
-            # Then, since it has been deleted on Google, the event is also deleted on Odoo DB (_sync_google2odoo).
+            # Then, since it has been deleted on Google, the event is also deleted on Eden DB (_sync_google2eden).
             self.action_archive()
             return True
         return super().unlink()
@@ -135,7 +135,7 @@ class GoogleSync(models.AbstractModel):
     def _event_ids_from_google_ids(self, google_ids):
         return self.search([('google_id', 'in', google_ids)]).ids
 
-    def _sync_odoo2google(self, google_service: GoogleCalendarService):
+    def _sync_eden2google(self, google_service: GoogleCalendarService):
         if not self:
             return
         if self._active_name:
@@ -160,28 +160,28 @@ class GoogleSync(models.AbstractModel):
         self.unlink()
 
     @api.model
-    def _sync_google2odoo(self, google_events: GoogleEvent, write_dates=None, default_reminders=()):
-        """Synchronize Google recurrences in Odoo. Creates new recurrences, updates
+    def _sync_google2eden(self, google_events: GoogleEvent, write_dates=None, default_reminders=()):
+        """Synchronize Google recurrences in Eden. Creates new recurrences, updates
         existing ones.
 
-        :param google_recurrences: Google recurrences to synchronize in Odoo
-        :param write_dates: A dictionary mapping Odoo record IDs to their write dates.
-        :return: synchronized odoo recurrences
+        :param google_recurrences: Google recurrences to synchronize in Eden
+        :param write_dates: A dictionary mapping Eden record IDs to their write dates.
+        :return: synchronized eden recurrences
         """
         write_dates = dict(write_dates or {})
         existing = google_events.exists(self.env)
         new = google_events - existing - google_events.cancelled()
 
-        odoo_values = [
-            dict(self._odoo_values(e, default_reminders), need_sync=False)
+        eden_values = [
+            dict(self._eden_values(e, default_reminders), need_sync=False)
             for e in new
         ]
-        new_odoo = self.with_context(dont_notify=True)._create_from_google(new, odoo_values)
+        new_eden = self.with_context(dont_notify=True)._create_from_google(new, eden_values)
         cancelled = existing.cancelled()
-        cancelled_odoo = self.browse(cancelled.odoo_ids(self.env))
+        cancelled_eden = self.browse(cancelled.eden_ids(self.env))
 
         # Check if it is a recurring event that has been rescheduled.
-        # We have to check if an event already exists in Odoo.
+        # We have to check if an event already exists in Eden.
         # Explanation:
         # A recurrent event with `google_id` is equal to ID_RANGE_TIMESTAMP can be rescheduled.
         # The new `google_id` will be equal to ID_TIMESTAMP.
@@ -189,27 +189,27 @@ class GoogleSync(models.AbstractModel):
         rescheduled_events = new.filter(lambda gevent: not gevent.is_recurrence_follower())
         if rescheduled_events:
             google_ids_to_remove = [event.full_recurring_event_id() for event in rescheduled_events]
-            cancelled_odoo += self.env['calendar.event'].search([('google_id', 'in', google_ids_to_remove)])
+            cancelled_eden += self.env['calendar.event'].search([('google_id', 'in', google_ids_to_remove)])
 
-        cancelled_odoo.exists()._cancel()
-        synced_records = new_odoo + cancelled_odoo
+        cancelled_eden.exists()._cancel()
+        synced_records = new_eden + cancelled_eden
         pending = existing - cancelled
-        pending_odoo = self.browse(pending.odoo_ids(self.env)).exists()
+        pending_eden = self.browse(pending.eden_ids(self.env)).exists()
         for gevent in pending:
-            odoo_record = self.browse(gevent.odoo_id(self.env))
-            if odoo_record not in pending_odoo:
+            eden_record = self.browse(gevent.eden_id(self.env))
+            if eden_record not in pending_eden:
                 # The record must have been deleted in the mean time; nothing left to sync
                 continue
             # Last updated wins.
-            # This could be dangerous if google server time and odoo server time are different
+            # This could be dangerous if google server time and eden server time are different
             updated = parse(gevent.updated)
-            # Use the record's write_date to apply Google updates only if they are newer than Odoo's write_date.
-            odoo_record_write_date = write_dates.get(odoo_record.id, odoo_record.write_date)
+            # Use the record's write_date to apply Google updates only if they are newer than Eden's write_date.
+            eden_record_write_date = write_dates.get(eden_record.id, eden_record.write_date)
             # Migration from 13.4 does not fill write_date. Therefore, we force the update from Google.
-            if not odoo_record_write_date or updated >= pytz.utc.localize(odoo_record_write_date):
-                vals = dict(self._odoo_values(gevent, default_reminders), need_sync=False)
-                odoo_record.with_context(dont_notify=True)._write_from_google(gevent, vals)
-                synced_records |= odoo_record
+            if not eden_record_write_date or updated >= pytz.utc.localize(eden_record_write_date):
+                vals = dict(self._eden_values(gevent, default_reminders), need_sync=False)
+                eden_record.with_context(dont_notify=True)._write_from_google(gevent, vals)
+                synced_records |= eden_record
 
         return synced_records
 
@@ -317,7 +317,7 @@ class GoogleSync(models.AbstractModel):
                         self.with_context(dont_notify=True).need_sync = False
 
     def _get_records_to_sync(self, full_sync=False):
-        """Return records that should be synced from Odoo to Google
+        """Return records that should be synced from Eden to Google
 
         :param full_sync: If True, all events attended by the user are returned
         :return: events
@@ -337,7 +337,7 @@ class GoogleSync(models.AbstractModel):
         return self.with_context(active_test=False).search(domain, limit=200)
 
     def _check_any_records_to_sync(self):
-        """ Returns True if there are pending records to be synchronized from Odoo to Google, False otherwise. """
+        """ Returns True if there are pending records to be synchronized from Eden to Google, False otherwise. """
         is_active_clause = (self._active_name, '=', True) if self._active_name else expression.TRUE_LEAF
         domain = expression.AND([self._get_sync_domain(), [
             '|',
@@ -369,10 +369,10 @@ class GoogleSync(models.AbstractModel):
         return result
 
     @api.model
-    def _odoo_values(self, google_event: GoogleEvent, default_reminders=()):
-        """Implements this method to return a dict of Odoo values corresponding
+    def _eden_values(self, google_event: GoogleEvent, default_reminders=()):
+        """Implements this method to return a dict of Eden values corresponding
         to the Google event given as parameter
-        :return: dict of Odoo formatted values
+        :return: dict of Eden formatted values
         """
         raise NotImplementedError()
 

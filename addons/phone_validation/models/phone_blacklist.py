@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError
-from odoo.tools import _, SQL
+from eden import api, fields, models
+from eden.exceptions import UserError
+from eden.tools import _, SQL
 
 
 class PhoneBlackList(models.Model):

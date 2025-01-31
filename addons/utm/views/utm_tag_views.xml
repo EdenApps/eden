@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="utm_tag_view_tree" model="ir.ui.view">
         <field name="name">utm.tag.view.list</field>
         <field name="model">utm.tag</field>
@@ -21,4 +21,4 @@
             </p>
         </field>
     </record>
-</odoo>
+</eden>

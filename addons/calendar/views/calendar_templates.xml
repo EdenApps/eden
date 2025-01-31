@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <!-- Template rendered in route auth=None, for anonymous user. This allow them to see meeting details -->
     <template id="invitation_page_anonymous" name="Calendar Invitation Page for anonymous users">
         <t t-call="web.layout">
@@ -61,4 +61,4 @@
             </div>
         </t>
     </template>
-</odoo>
+</eden>

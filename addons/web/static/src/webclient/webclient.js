@@ -7,7 +7,7 @@ import { useBus, useService } from "@web/core/utils/hooks";
 import { ActionContainer } from "./actions/action_container";
 import { NavBar } from "./navbar/navbar";
 
-import { Component, onMounted, onWillStart, useExternalListener, useState } from "@odoo/owl";
+import { Component, onMounted, onWillStart, useExternalListener, useState } from "@eden/owl";
 import { router, routerBus } from "@web/core/browser/router";
 import { browser } from "@web/core/browser/browser";
 
@@ -144,7 +144,7 @@ export class WebClient extends Component {
     registerServiceWorker() {
         if (navigator.serviceWorker) {
             navigator.serviceWorker
-                .register("/web/service-worker.js", { scope: "/odoo" })
+                .register("/web/service-worker.js", { scope: "/eden" })
                 .catch((error) => {
                     console.error("Service worker registration failed, error:", error);
                 });

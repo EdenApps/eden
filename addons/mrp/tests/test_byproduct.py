@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.tests import Form
-from odoo.tests import common
-from odoo.exceptions import ValidationError
+from eden import Command
+from eden.tests import Form
+from eden.tests import common
+from eden.exceptions import ValidationError
 
 
 class TestMrpByProduct(common.TransactionCase):

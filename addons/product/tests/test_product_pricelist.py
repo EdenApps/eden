@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 import time
 
-from odoo.fields import Command, first
-from odoo.tools import float_compare
+from eden.fields import Command, first
+from eden.tools import float_compare
 
-from odoo.addons.product.tests.common import ProductCommon
+from eden.addons.product.tests.common import ProductCommon
 
 
 class TestProductPricelist(ProductCommon):

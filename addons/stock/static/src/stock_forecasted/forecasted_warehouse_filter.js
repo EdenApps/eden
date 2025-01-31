@@ -1,8 +1,8 @@
-/** @odoo-module **/
+/** @eden-module **/
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { useService } from "@web/core/utils/hooks";
-import { Component, onWillStart } from "@odoo/owl";
+import { Component, onWillStart } from "@eden/owl";
 
 export class ForecastedWarehouseFilter extends Component {
     static template = "stock.ForecastedWarehouseFilter";

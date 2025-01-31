@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <function model="hr.leave" name="_remove_resource_leave">
             <value eval="[ref('hr_holidays.hr_holidays_sl'), ref('hr_holidays.hr_holidays_cl_qdp'), ref('hr_holidays.hr_holidays_sl_qdp')]"/>
@@ -11,4 +11,4 @@
             <value eval="[ref('hr_holidays.hr_holidays_sl'), ref('hr_holidays.hr_holidays_cl_qdp'), ref('hr_holidays.hr_holidays_sl_qdp')]"/>
         </function>
     </data>
-</odoo>
+</eden>

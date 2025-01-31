@@ -2,7 +2,7 @@ import { browser } from "@web/core/browser/browser";
 import { registry } from "@web/core/registry";
 import { standardWidgetProps } from "@web/views/widgets/standard_widget_props";
 
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 export class NotificationAlert extends Component {
     static props = standardWidgetProps;

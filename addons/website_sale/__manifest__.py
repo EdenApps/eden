@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 {
     'name': 'eCommerce',
     'category': 'Website/Website',
     'sequence': 50,
     'summary': 'Sell your products online',
-    'website': 'https://www.odoo.com/app/ecommerce',
+    'website': 'https://www.edencloud.us/app/ecommerce',
     'version': '1.1',
     'depends': [
         'website', 'sale', 'website_payment', 'website_mail', 'portal_rating', 'digest', 'delivery'
@@ -67,7 +67,7 @@
         'views/snippets/s_mega_menu/little_icons.xml',
         'views/snippets/s_mega_menu/logos.xml',
         'views/snippets/s_mega_menu/multi_menus.xml',
-        'views/snippets/s_mega_menu/odoo_menu.xml',
+        'views/snippets/s_mega_menu/eden_menu.xml',
         'views/snippets/s_mega_menu/thumbnails.xml',
     ],
     'demo': [

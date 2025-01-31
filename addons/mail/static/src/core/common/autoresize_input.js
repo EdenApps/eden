@@ -1,4 +1,4 @@
-import { Component, useRef, useState, onWillUpdateProps, onMounted } from "@odoo/owl";
+import { Component, useRef, useState, onWillUpdateProps, onMounted } from "@eden/owl";
 
 import { useAutoresize } from "@web/core/utils/autoresize";
 

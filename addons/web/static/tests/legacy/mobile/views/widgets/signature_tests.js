@@ -1,4 +1,4 @@
-/** @odoo-module alias=@web/../tests/mobile/views/widgets/signature_tests default=false */
+/** @eden-module alias=@web/../tests/mobile/views/widgets/signature_tests default=false */
 import { click, getFixture, patchWithCleanup, editInput, nextTick } from "@web/../tests/helpers/utils";
 import { makeView, setupViewRegistries } from "@web/../tests/views/helpers";
 import { SignatureWidget } from "@web/views/widgets/signature/signature";

@@ -2,8 +2,8 @@ import ast
 
 import werkzeug
 
-from odoo.http import Controller, request, route
-from odoo.osv.expression import AND, OR
+from eden.http import Controller, request, route
+from eden.osv.expression import AND, OR
 
 
 class ModelPageController(Controller):

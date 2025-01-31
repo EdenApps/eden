@@ -1,14 +1,14 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 import pprint
 
-from odoo import _, fields, models
-from odoo.exceptions import ValidationError
+from eden import _, fields, models
+from eden.exceptions import ValidationError
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment_paypal import utils as paypal_utils
-from odoo.addons.payment_paypal.const import PAYMENT_STATUS_MAPPING
+from eden.addons.payment import utils as payment_utils
+from eden.addons.payment_paypal import utils as paypal_utils
+from eden.addons.payment_paypal.const import PAYMENT_STATUS_MAPPING
 
 _logger = logging.getLogger(__name__)
 
@@ -17,7 +17,7 @@ class PaymentTransaction(models.Model):
     _inherit = 'payment.transaction'
 
     # See https://developer.paypal.com/docs/api-basics/notifications/ipn/IPNandPDTVariables/
-    # this field has no use in Odoo except for debugging
+    # this field has no use in Eden except for debugging
     paypal_type = fields.Char(string="PayPal Transaction Type")
 
     def _get_specific_processing_values(self, processing_values):

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <record id="view_google_calendar_event" model="ir.ui.view">
         <field name="name">google_calendar.event.calendar</field>
         <field name="model">calendar.event</field>
@@ -10,4 +10,4 @@
             </field>
         </field>
     </record>
-</odoo>
+</eden>

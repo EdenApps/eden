@@ -1,7 +1,7 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 
 import { getFirstListFunction, getNumberOfListFormulas } from "@spreadsheet/list/list_helpers";
-import { constants, tokenize, helpers } from "@odoo/o-spreadsheet";
+import { constants, tokenize, helpers } from "@eden/o-spreadsheet";
 import { patchTranslations } from "@web/../tests/web_test_helpers";
 const {
     getFirstPivotFunction,
@@ -20,7 +20,7 @@ describe.current.tags("headless");
 
 describe("pivot_helpers", () => {
     test("Basic formula extractor", async function () {
-        const formula = `=PIVOT.VALUE("1", "test") + ODOO.LIST("2", "hello", "bla")`;
+        const formula = `=PIVOT.VALUE("1", "test") + EDEN.LIST("2", "hello", "bla")`;
         const tokens = tokenize(formula);
         let functionName;
         let args;
@@ -30,7 +30,7 @@ describe("pivot_helpers", () => {
         expect(args[0]).toEqual(stringArg("1"));
         expect(args[1]).toEqual(stringArg("test"));
         ({ functionName, args } = getFirstListFunction(tokens));
-        expect(functionName).toBe("ODOO.LIST");
+        expect(functionName).toBe("EDEN.LIST");
         expect(args.length).toBe(3);
         expect(args[0]).toEqual(stringArg("2"));
         expect(args[1]).toEqual(stringArg("hello"));
@@ -49,7 +49,7 @@ describe("pivot_helpers", () => {
     });
 
     test("Number of formulas", async function () {
-        const formula = `=PIVOT.VALUE("1", "test") + PIVOT.VALUE("2", "hello", "bla") + ODOO.LIST("1", "bla")`;
+        const formula = `=PIVOT.VALUE("1", "test") + PIVOT.VALUE("2", "hello", "bla") + EDEN.LIST("1", "bla")`;
         expect(getNumberOfPivotFunctions(tokenize(formula))).toBe(2);
         expect(getNumberOfListFormulas(tokenize(formula))).toBe(1);
         expect(getNumberOfPivotFunctions(tokenize("=1+1"))).toBe(0);

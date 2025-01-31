@@ -1,11 +1,11 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { download } from "@web/core/network/download";
 import { registry } from "@web/core/registry";
 import { createSpreadsheetModel, waitForDataLoaded } from "@spreadsheet/helpers/model";
 
 /**
- * @param {import("@web/env").OdooEnv} env
+ * @param {import("@web/env").EdenEnv} env
  * @param {object} action
  */
 async function downloadSpreadsheet(env, action) {

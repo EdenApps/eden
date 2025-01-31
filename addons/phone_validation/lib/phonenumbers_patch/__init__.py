@@ -15,7 +15,7 @@
 
 # https://github.com/google/libphonenumber
 
-from odoo.tools.parse_version import parse_version
+from eden.tools.parse_version import parse_version
 
 
 def _local_load_region(code):
@@ -29,7 +29,7 @@ except ImportError:
     pass
 else:
     # Over time, phone number formats change. The following monkey patches ensure phone number parsing stays up to date:
-    # The most common type of patch occurs when the phonenumbers library is updated, but Odoo is still using an older version.
+    # The most common type of patch occurs when the phonenumbers library is updated, but Eden is still using an older version.
     # In such cases, we need to:
     # 1. Grab the newest metadata describing the phone number for a certain country.
     # 2. Create/update a metadata file in the current directory (e.g., files named like region_SN for the Senegal patch).

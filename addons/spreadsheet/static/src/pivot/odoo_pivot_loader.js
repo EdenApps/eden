@@ -1,6 +1,6 @@
 //@ts-check
 
-import { EvaluationError, CellErrorType } from "@odoo/o-spreadsheet";
+import { EvaluationError, CellErrorType } from "@eden/o-spreadsheet";
 import { RPCError } from "@web/core/network/rpc";
 import { KeepLast } from "@web/core/utils/concurrency";
 import {
@@ -11,18 +11,18 @@ import {
 import { _t } from "@web/core/l10n/translation";
 
 /**
- * @typedef {import("@spreadsheet").OdooFields} OdooFields
- * @typedef {import("@spreadsheet/data_sources/odoo_data_provider").OdooDataProvider} OdooDataProvider
+ * @typedef {import("@spreadsheet").EdenFields} EdenFields
+ * @typedef {import("@spreadsheet/data_sources/eden_data_provider").EdenDataProvider} EdenDataProvider
  */
 
-export class OdooPivotLoader {
+export class EdenPivotLoader {
     /**
-     * @param {OdooDataProvider} odooDataProvider
+     * @param {EdenDataProvider} edenDataProvider
      * @param {Function} load Function to fetch data
      */
-    constructor(odooDataProvider, load) {
-        /** @private @type {OdooDataProvider} */
-        this.odooDataProvider = odooDataProvider;
+    constructor(edenDataProvider, load) {
+        /** @private @type {EdenDataProvider} */
+        this.edenDataProvider = edenDataProvider;
         /** @protected */
         this.loadFn = load;
 
@@ -54,7 +54,7 @@ export class OdooPivotLoader {
      */
     async load(options) {
         if (options && options.reload) {
-            this.odooDataProvider.cancelPromise(this.loadPromise);
+            this.edenDataProvider.cancelPromise(this.loadPromise);
             this.loadPromise = undefined;
         }
         if (!this.loadPromise) {
@@ -86,24 +86,24 @@ export class OdooPivotLoader {
                     this.lastUpdate = Date.now();
                     this.isFullyLoaded = true;
                 });
-            await this.odooDataProvider.notifyWhenPromiseResolves(this.loadPromise);
+            await this.edenDataProvider.notifyWhenPromiseResolves(this.loadPromise);
         }
         return this.loadPromise;
     }
 
     /**
      * @param {string} model Technical name of the model
-     * @returns {Promise<OdooFields>} Fields of the model
+     * @returns {Promise<EdenFields>} Fields of the model
      */
     async getFields(model) {
-        return getFields(this.odooDataProvider.serverData, model);
+        return getFields(this.edenDataProvider.serverData, model);
     }
     /**
      * @param {string} model Technical name of the model
      * @returns {Promise<string>} Display name of the model
      */
     async getModelLabel(model) {
-        const result = await this.odooDataProvider.serverData.fetch(
+        const result = await this.edenDataProvider.serverData.fetch(
             "ir.model",
             "display_name_for",
             [[model]]

@@ -1,11 +1,11 @@
-import { SpreadsheetChildEnv as SSChildEnv } from "@odoo/o-spreadsheet";
+import { SpreadsheetChildEnv as SSChildEnv } from "@eden/o-spreadsheet";
 import { Services } from "services";
 
 declare module "@spreadsheet" {
-    import { Model } from "@odoo/o-spreadsheet";
+    import { Model } from "@eden/o-spreadsheet";
 
     export interface SpreadsheetChildEnv extends SSChildEnv {
-        model: OdooSpreadsheetModel;
+        model: EdenSpreadsheetModel;
         services: Services;
     }
 }

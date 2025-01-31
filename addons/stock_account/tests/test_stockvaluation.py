@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import timedelta
 
-from odoo.exceptions import UserError
-from odoo.fields import Datetime
-from odoo.tests import Form, TransactionCase
-from odoo import Command
+from eden.exceptions import UserError
+from eden.fields import Datetime
+from eden.tests import Form, TransactionCase
+from eden import Command
 
 
 def _create_accounting_data(env):
@@ -4124,7 +4124,7 @@ class TestStockValuation(TestStockValuationBase):
             ('stock_move_id', '=', False),
         ]).account_move_id
 
-        self.assertIn('OdooBot changed stock valuation from  15.0 to 25.0 -', account_move.line_ids[0].name)
+        self.assertIn('EdenBot changed stock valuation from  15.0 to 25.0 -', account_move.line_ids[0].name)
 
     def test_journal_entries_from_change_product_cost_method(self):
         """ Changing between non-standard cost methods when an underlying product has real_time

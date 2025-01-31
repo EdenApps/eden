@@ -1,29 +1,29 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
-import odoo.tests
+import eden.tests
 
 from requests import Session, PreparedRequest, Response
 
 from datetime import datetime
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
+from eden.addons.base.tests.common import HttpCaseWithUserDemo
 from dateutil.relativedelta import relativedelta
 
 _logger = logging.getLogger(__name__)
 
 
-@odoo.tests.tagged('click_all', 'post_install', '-at_install', '-standard')
-class TestMenusAdmin(odoo.tests.HttpCase):
+@eden.tests.tagged('click_all', 'post_install', '-at_install', '-standard')
+class TestMenusAdmin(eden.tests.HttpCase):
     allow_end_on_form = True
     def test_01_click_everywhere_as_admin(self):
         menus = self.env['ir.ui.menu'].load_menus(False)
         for app_id in menus['root']['children']:
             with self.subTest(app=menus[app_id]['name']):
                 _logger.runbot('Testing %s', menus[app_id]['name'])
-                self.browser_js("/odoo", "odoo.loader.modules.get('@web/webclient/clickbot/clickbot_loader').startClickEverywhere('%s');" % menus[app_id]['xmlid'], "odoo.isReady === true", login="admin", timeout=1200, success_signal="clickbot test succeeded")
+                self.browser_js("/eden", "eden.loader.modules.get('@web/webclient/clickbot/clickbot_loader').startClickEverywhere('%s');" % menus[app_id]['xmlid'], "eden.isReady === true", login="admin", timeout=1200, success_signal="clickbot test succeeded")
 
 
-@odoo.tests.tagged('click_all', 'post_install', '-at_install', '-standard')
+@eden.tests.tagged('click_all', 'post_install', '-at_install', '-standard')
 class TestMenusDemo(HttpCaseWithUserDemo):
     allow_end_on_form = True
     def test_01_click_everywhere_as_demo(self):
@@ -32,15 +32,15 @@ class TestMenusDemo(HttpCaseWithUserDemo):
         for app_id in menus['root']['children']:
             with self.subTest(app=menus[app_id]['name']):
                 _logger.runbot('Testing %s', menus[app_id]['name'])
-                self.browser_js("/odoo", "odoo.loader.modules.get('@web/webclient/clickbot/clickbot_loader').startClickEverywhere('%s');" % menus[app_id]['xmlid'], "odoo.isReady === true", login="demo", timeout=1200, success_signal="clickbot test succeeded")
+                self.browser_js("/eden", "eden.loader.modules.get('@web/webclient/clickbot/clickbot_loader').startClickEverywhere('%s');" % menus[app_id]['xmlid'], "eden.isReady === true", login="demo", timeout=1200, success_signal="clickbot test succeeded")
 
-@odoo.tests.tagged('post_install', '-at_install')
-class TestMenusAdminLight(odoo.tests.HttpCase):
+@eden.tests.tagged('post_install', '-at_install')
+class TestMenusAdminLight(eden.tests.HttpCase):
     allow_end_on_form = True
 
     @classmethod
     def _request_handler(cls, s: Session, r: PreparedRequest, /, **kw):
-        # mock odoofin requests
+        # mock edenfin requests
         if 'proxy/v1/get_dashboard_institutions' in r.url:
             r = Response()
             r.status_code = 200
@@ -72,9 +72,9 @@ class TestMenusAdminLight(odoo.tests.HttpCase):
                 'date_deadline': datetime.now() + relativedelta(hour=12),
                 'planned_date_begin': datetime.now() + relativedelta(hour=10),
             })
-        self.browser_js("/odoo", "odoo.loader.modules.get('@web/webclient/clickbot/clickbot_loader').startClickEverywhere(undefined, true);", "odoo.isReady === true", login="admin", timeout=120, success_signal="clickbot test succeeded")
+        self.browser_js("/eden", "eden.loader.modules.get('@web/webclient/clickbot/clickbot_loader').startClickEverywhere(undefined, true);", "eden.isReady === true", login="admin", timeout=120, success_signal="clickbot test succeeded")
 
-@odoo.tests.tagged('post_install', '-at_install')
+@eden.tests.tagged('post_install', '-at_install')
 class TestMenusDemoLight(HttpCaseWithUserDemo):
     allow_end_on_form = True
 
@@ -87,4 +87,4 @@ class TestMenusDemoLight(HttpCaseWithUserDemo):
         group_website_designer = self.env.ref('website.group_website_designer', raise_if_not_found=False)
         if group_website_designer:
             self.env.ref('base.group_user').write({"implied_ids": [(4, group_website_designer.id)]})
-        self.browser_js("/odoo", "odoo.loader.modules.get('@web/webclient/clickbot/clickbot_loader').startClickEverywhere(undefined, true);", "odoo.isReady === true", login="demo", timeout=120, success_signal="clickbot test succeeded")
+        self.browser_js("/eden", "eden.loader.modules.get('@web/webclient/clickbot/clickbot_loader').startClickEverywhere(undefined, true);", "eden.isReady === true", login="demo", timeout=120, success_signal="clickbot test succeeded")

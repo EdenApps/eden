@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <record id="event_sponsor_type1" model="event.sponsor.type">
         <field name="name">Bronze</field>
@@ -17,4 +17,4 @@
         <field name="display_ribbon_style">Gold</field>
     </record>
 
-</odoo>
+</eden>

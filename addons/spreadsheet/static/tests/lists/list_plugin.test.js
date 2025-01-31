@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 import { makeServerError, mockService, serverState } from "@web/../tests/web_test_helpers";
 import { user } from "@web/core/user";
 
@@ -23,8 +23,8 @@ import { createSpreadsheetWithList } from "@spreadsheet/../tests/helpers/list";
 import { createModelWithDataSource } from "@spreadsheet/../tests/helpers/model";
 import { CommandResult } from "@spreadsheet/o_spreadsheet/cancelled_reason";
 
-import { animationFrame } from "@odoo/hoot-mock";
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import { animationFrame } from "@eden/hoot-mock";
+import * as spreadsheet from "@eden/o-spreadsheet";
 import {
     defineSpreadsheetActions,
     defineSpreadsheetModels,
@@ -46,16 +46,16 @@ test("List export", async () => {
     const { model } = await createSpreadsheetWithList();
     const total = 4 + 10 * 4; // 4 Headers + 10 lines
     expect(Object.values(getCells(model)).length).toBe(total);
-    expect(getCellFormula(model, "A1")).toBe(`=ODOO.LIST.HEADER(1,"foo")`);
-    expect(getCellFormula(model, "B1")).toBe(`=ODOO.LIST.HEADER(1,"bar")`);
-    expect(getCellFormula(model, "C1")).toBe(`=ODOO.LIST.HEADER(1,"date")`);
-    expect(getCellFormula(model, "D1")).toBe(`=ODOO.LIST.HEADER(1,"product_id")`);
-    expect(getCellFormula(model, "A2")).toBe(`=ODOO.LIST(1,1,"foo")`);
-    expect(getCellFormula(model, "B2")).toBe(`=ODOO.LIST(1,1,"bar")`);
-    expect(getCellFormula(model, "C2")).toBe(`=ODOO.LIST(1,1,"date")`);
-    expect(getCellFormula(model, "D2")).toBe(`=ODOO.LIST(1,1,"product_id")`);
-    expect(getCellFormula(model, "A3")).toBe(`=ODOO.LIST(1,2,"foo")`);
-    expect(getCellFormula(model, "A11")).toBe(`=ODOO.LIST(1,10,"foo")`);
+    expect(getCellFormula(model, "A1")).toBe(`=EDEN.LIST.HEADER(1,"foo")`);
+    expect(getCellFormula(model, "B1")).toBe(`=EDEN.LIST.HEADER(1,"bar")`);
+    expect(getCellFormula(model, "C1")).toBe(`=EDEN.LIST.HEADER(1,"date")`);
+    expect(getCellFormula(model, "D1")).toBe(`=EDEN.LIST.HEADER(1,"product_id")`);
+    expect(getCellFormula(model, "A2")).toBe(`=EDEN.LIST(1,1,"foo")`);
+    expect(getCellFormula(model, "B2")).toBe(`=EDEN.LIST(1,1,"bar")`);
+    expect(getCellFormula(model, "C2")).toBe(`=EDEN.LIST(1,1,"date")`);
+    expect(getCellFormula(model, "D2")).toBe(`=EDEN.LIST(1,1,"product_id")`);
+    expect(getCellFormula(model, "A3")).toBe(`=EDEN.LIST(1,2,"foo")`);
+    expect(getCellFormula(model, "A11")).toBe(`=EDEN.LIST(1,10,"foo")`);
     expect(getCellFormula(model, "A12")).toBe("");
 });
 
@@ -105,7 +105,7 @@ test("properties field displays property display names", async () => {
 
 test("Can display a field which is not in the columns", async function () {
     const { model } = await createSpreadsheetWithList();
-    setCellContent(model, "A1", `=ODOO.LIST(1,1,"active")`);
+    setCellContent(model, "A1", `=EDEN.LIST(1,1,"active")`);
     expect(getCellValue(model, "A1")).toBe("Loading...");
     await waitForDataLoaded(model); // Await for batching collection of missing fields
     await animationFrame();
@@ -114,7 +114,7 @@ test("Can display a field which is not in the columns", async function () {
 
 test("Can remove a list with undo after editing a cell", async function () {
     const { model } = await createSpreadsheetWithList();
-    expect(getCellContent(model, "B1").startsWith("=ODOO.LIST.HEADER")).toBe(true);
+    expect(getCellContent(model, "B1").startsWith("=EDEN.LIST.HEADER")).toBe(true);
     setCellContent(model, "G10", "should be undoable");
     model.dispatch("REQUEST_UNDO");
     expect(getCellContent(model, "G10")).toBe("");
@@ -180,8 +180,8 @@ test("Json fields are not supported in list formulas", async function () {
         columns: ["foo", "jsonField"],
         linesNumber: 2,
     });
-    setCellContent(model, "A1", `=ODOO.LIST(1,1,"foo")`);
-    setCellContent(model, "A2", `=ODOO.LIST(1,1,"jsonField")`);
+    setCellContent(model, "A1", `=EDEN.LIST(1,1,"foo")`);
+    setCellContent(model, "A2", `=EDEN.LIST(1,1,"jsonField")`);
     await waitForDataLoaded(model);
     expect(getEvaluatedCell(model, "A1").value).toBe(12);
     expect(getEvaluatedCell(model, "A2").value).toBe("#ERROR");
@@ -197,14 +197,14 @@ test("can get a listId from cell formula", async function () {
 
 test("can get a listId from cell formula with '-' before the formula", async function () {
     const { model } = await createSpreadsheetWithList();
-    setCellContent(model, "A1", `=-ODOO.LIST("1","1","foo")`);
+    setCellContent(model, "A1", `=-EDEN.LIST("1","1","foo")`);
     const sheetId = model.getters.getActiveSheetId();
     const listId = model.getters.getListIdFromPosition({ sheetId, col: 0, row: 0 });
     expect(listId).toBe("1");
 });
 test("can get a listId from cell formula with other numerical values", async function () {
     const { model } = await createSpreadsheetWithList();
-    setCellContent(model, "A1", `=3*ODOO.LIST("1","1","foo")`);
+    setCellContent(model, "A1", `=3*EDEN.LIST("1","1","foo")`);
     const sheetId = model.getters.getActiveSheetId();
     const listId = model.getters.getListIdFromPosition({ sheetId, col: 0, row: 0 });
     expect(listId).toBe("1");
@@ -227,7 +227,7 @@ test("List datasource is loaded with correct linesNumber", async function () {
 
 test("can get a listId from cell formula within a formula", async function () {
     const { model } = await createSpreadsheetWithList();
-    setCellContent(model, "A1", `=SUM(ODOO.LIST("1","1","foo"),1)`);
+    setCellContent(model, "A1", `=SUM(EDEN.LIST("1","1","foo"),1)`);
     const sheetId = model.getters.getActiveSheetId();
     const listId = model.getters.getListIdFromPosition({ sheetId, col: 0, row: 0 });
     expect(listId).toBe("1");
@@ -235,7 +235,7 @@ test("can get a listId from cell formula within a formula", async function () {
 
 test("can get a listId from cell formula where the id is a reference", async function () {
     const { model } = await createSpreadsheetWithList();
-    setCellContent(model, "A1", `=ODOO.LIST(G10,"1","foo")`);
+    setCellContent(model, "A1", `=EDEN.LIST(G10,"1","foo")`);
     setCellContent(model, "G10", "1");
     const sheetId = model.getters.getActiveSheetId();
     const listId = model.getters.getListIdFromPosition({ sheetId, col: 0, row: 0 });
@@ -265,8 +265,8 @@ test("Referencing non-existing fields does not crash", async function () {
     spreadsheetLoaded = true;
     model.dispatch("REFRESH_ALL_DATA_SOURCES");
     await animationFrame();
-    setCellContent(model, "A1", `=ODOO.LIST.HEADER("1", "${forbiddenFieldName}")`);
-    setCellContent(model, "A2", `=ODOO.LIST("1","1","${forbiddenFieldName}")`);
+    setCellContent(model, "A1", `=EDEN.LIST.HEADER("1", "${forbiddenFieldName}")`);
+    setCellContent(model, "A2", `=EDEN.LIST("1","1","${forbiddenFieldName}")`);
 
     expect(model.getters.getListDataSource(listId).getFields()[forbiddenFieldName]).toBe(undefined);
     expect(getCellValue(model, "A1")).toBe(forbiddenFieldName);
@@ -301,7 +301,7 @@ test("don't fetch list data if no formula use it", async function () {
     });
     expect.verifySteps([]);
 
-    setCellContent(model, "A1", `=ODOO.LIST("1", "1", "foo")`);
+    setCellContent(model, "A1", `=EDEN.LIST("1", "1", "foo")`);
     /*
      * Ask a first time the value => It will trigger a loading of the data source.
      */
@@ -325,7 +325,7 @@ test("user context is combined with list context to fetch data", async function 
             {
                 id: "sheet1",
                 cells: {
-                    A1: { content: `=ODOO.LIST("1", "1", "name")` },
+                    A1: { content: `=EDEN.LIST("1", "1", "name")` },
                 },
             },
         ],
@@ -375,7 +375,7 @@ test("user context is combined with list context to fetch data", async function 
 
 test("rename list with empty name is refused", async () => {
     const { model } = await createSpreadsheetWithList();
-    const result = model.dispatch("RENAME_ODOO_LIST", {
+    const result = model.dispatch("RENAME_EDEN_LIST", {
         listId: "1",
         name: "",
     });
@@ -384,17 +384,17 @@ test("rename list with empty name is refused", async () => {
 
 test("rename list with incorrect id is refused", async () => {
     const { model } = await createSpreadsheetWithList();
-    const result = model.dispatch("RENAME_ODOO_LIST", {
+    const result = model.dispatch("RENAME_EDEN_LIST", {
         listId: "invalid",
         name: "name",
     });
     expect(result.reasons).toEqual([CommandResult.ListIdNotFound]);
 });
 
-test("Undo/Redo for RENAME_ODOO_LIST", async function () {
+test("Undo/Redo for RENAME_EDEN_LIST", async function () {
     const { model } = await createSpreadsheetWithList();
     expect(model.getters.getListName("1")).toBe("List");
-    model.dispatch("RENAME_ODOO_LIST", { listId: "1", name: "test" });
+    model.dispatch("RENAME_EDEN_LIST", { listId: "1", name: "test" });
     expect(model.getters.getListName("1")).toBe("test");
     model.dispatch("REQUEST_UNDO");
     expect(model.getters.getListName("1")).toBe("List");
@@ -404,7 +404,7 @@ test("Undo/Redo for RENAME_ODOO_LIST", async function () {
 
 test("Can delete list", async function () {
     const { model } = await createSpreadsheetWithList();
-    model.dispatch("REMOVE_ODOO_LIST", { listId: "1" });
+    model.dispatch("REMOVE_EDEN_LIST", { listId: "1" });
     expect(model.getters.getListIds().length).toBe(0);
     const B4 = getEvaluatedCell(model, "B4");
     expect(B4.message).toBe('There is no list with id "1"');
@@ -414,7 +414,7 @@ test("Can delete list", async function () {
 test("Can undo/redo a delete list", async function () {
     const { model } = await createSpreadsheetWithList();
     const value = getEvaluatedCell(model, "B4").value;
-    model.dispatch("REMOVE_ODOO_LIST", { listId: "1" });
+    model.dispatch("REMOVE_EDEN_LIST", { listId: "1" });
     model.dispatch("REQUEST_UNDO");
     expect(model.getters.getListIds().length).toBe(1);
     let B4 = getEvaluatedCell(model, "B4");
@@ -464,7 +464,7 @@ test("can update a list", async () => {
             domain: [["name", "in", ["hola"]]],
         },
     };
-    model.dispatch("UPDATE_ODOO_LIST", {
+    model.dispatch("UPDATE_EDEN_LIST", {
         listId,
         list: newListDef,
     });
@@ -499,7 +499,7 @@ test("can edit list domain", async () => {
     const [listId] = model.getters.getListIds();
     expect(model.getters.getListDefinition(listId).domain).toEqual([]);
     expect(getCellValue(model, "B2")).toBe(true);
-    model.dispatch("UPDATE_ODOO_LIST_DOMAIN", {
+    model.dispatch("UPDATE_EDEN_LIST_DOMAIN", {
         listId,
         domain: [["foo", "in", [55]]],
     });
@@ -545,7 +545,7 @@ test("can edit list sorting", async () => {
         { name: "pognon", asc: true },
     ];
     const listDefinition = model.getters.getListModelDefinition(listId);
-    model.dispatch("UPDATE_ODOO_LIST", {
+    model.dispatch("UPDATE_EDEN_LIST", {
         listId,
         list: {
             ...listDefinition,
@@ -570,7 +570,7 @@ test("can edit list sorting", async () => {
 
 test("editing the sorting of a list of that does not exist should throw an error", async () => {
     const { model } = await createSpreadsheetWithList();
-    const result = model.dispatch("UPDATE_ODOO_LIST", {
+    const result = model.dispatch("UPDATE_EDEN_LIST", {
         listId: "invalid",
         list: undefined,
     });
@@ -580,12 +580,12 @@ test("editing the sorting of a list of that does not exist should throw an error
 test("edited domain is exported", async () => {
     const { model } = await createSpreadsheetWithList();
     const [listId] = model.getters.getListIds();
-    model.dispatch("UPDATE_ODOO_LIST_DOMAIN", {
+    model.dispatch("UPDATE_EDEN_LIST_DOMAIN", {
         listId,
         domain: [["foo", "in", [55]]],
     });
     expect(model.exportData().lists["1"].domain).toEqual([["foo", "in", [55]]]);
-    const result = model.dispatch("UPDATE_ODOO_LIST_DOMAIN", {
+    const result = model.dispatch("UPDATE_EDEN_LIST_DOMAIN", {
         listId: "invalid",
         domain: [],
     });
@@ -600,7 +600,7 @@ test("edited list sorting is exported", async () => {
         { name: "bar", asc: false },
     ];
     const listDefinition = model.getters.getListModelDefinition(listId);
-    model.dispatch("UPDATE_ODOO_LIST", {
+    model.dispatch("UPDATE_EDEN_LIST", {
         listId,
         list: {
             ...listDefinition,
@@ -626,7 +626,7 @@ test("Cannot see record of a list in dashboard mode if wrong list formula", asyn
         col: 0,
         row: 1,
         sheetId,
-        content: "=ODOO.LIST()",
+        content: "=EDEN.LIST()",
     });
     model.updateMode("dashboard");
     selectCell(model, "A2");
@@ -649,7 +649,7 @@ test("Can see record on vectorized list index", async function () {
     setCellContent(model, "C2", "2");
     setCellContent(model, "D1", "3");
     setCellContent(model, "D2", "4");
-    setCellContent(model, "A1", '=ODOO.LIST(1, C1:D2, "foo")');
+    setCellContent(model, "A1", '=EDEN.LIST(1, C1:D2, "foo")');
     const seeRecordAction = cellMenuRegistry.getAll().find((item) => item.id === "list_see_record");
 
     selectCell(model, "A1");
@@ -742,9 +742,9 @@ test("fetch all and only required fields", async function () {
             {
                 id: "sheet1",
                 cells: {
-                    A1: { content: '=ODOO.LIST(1, 1, "foo")' }, // in the definition
-                    A2: { content: '=ODOO.LIST(1, 1, "product_id")' }, // not in the definition
-                    A3: { content: '=ODOO.LIST(1, 1, "invalid_field")' },
+                    A1: { content: '=EDEN.LIST(1, 1, "foo")' }, // in the definition
+                    A2: { content: '=EDEN.LIST(1, 1, "product_id")' }, // not in the definition
+                    A3: { content: '=EDEN.LIST(1, 1, "invalid_field")' },
                 },
             },
         ],
@@ -784,8 +784,8 @@ test("fetch all required positions, including the evaluated ones", async functio
             {
                 id: "sheet1",
                 cells: {
-                    A1: { content: '=ODOO.LIST(1, 11, "foo")' },
-                    A2: { content: '=ODOO.LIST(1, A3, "foo")' },
+                    A1: { content: '=EDEN.LIST(1, 11, "foo")' },
+                    A2: { content: '=EDEN.LIST(1, A3, "foo")' },
                     A3: { content: "111" },
                 },
             },
@@ -817,8 +817,8 @@ test("list with both a monetary field and the related currency field 1", async f
     const { model } = await createSpreadsheetWithList({
         columns: ["pognon", "currency_id"],
     });
-    setCellContent(model, "A1", '=ODOO.LIST(1, 1, "pognon")');
-    setCellContent(model, "A2", '=ODOO.LIST(1, 1, "currency_id")');
+    setCellContent(model, "A1", '=EDEN.LIST(1, 1, "pognon")');
+    setCellContent(model, "A2", '=EDEN.LIST(1, 1, "currency_id")');
     await animationFrame();
     expect(getEvaluatedCell(model, "A1").formattedValue).toBe("74.40€");
     expect(getEvaluatedCell(model, "A2").value).toBe("EUR");
@@ -828,8 +828,8 @@ test("list with both a monetary field and the related currency field 2", async f
     const { model } = await createSpreadsheetWithList({
         columns: ["currency_id", "pognon"],
     });
-    setCellContent(model, "A1", '=ODOO.LIST(1, 1, "pognon")');
-    setCellContent(model, "A2", '=ODOO.LIST(1, 1, "currency_id")');
+    setCellContent(model, "A1", '=EDEN.LIST(1, 1, "pognon")');
+    setCellContent(model, "A2", '=EDEN.LIST(1, 1, "currency_id")');
     await animationFrame();
     expect(getEvaluatedCell(model, "A1").formattedValue).toBe("74.40€");
     expect(getEvaluatedCell(model, "A2").value).toBe("EUR");
@@ -841,7 +841,7 @@ test("List record limit is computed during the import and UPDATE_CELL", async fu
             {
                 id: "sheet1",
                 cells: {
-                    A1: { content: `=ODOO.LIST("1", "1", "foo")` },
+                    A1: { content: `=EDEN.LIST("1", "1", "foo")` },
                 },
             },
         ],
@@ -860,7 +860,7 @@ test("List record limit is computed during the import and UPDATE_CELL", async fu
     const ds = model.getters.getListDataSource("1");
     expect(ds.maxPosition).toBe(1);
     expect(ds.maxPositionFetched).toBe(1);
-    setCellContent(model, "A1", `=ODOO.LIST("1", "42", "foo")`);
+    setCellContent(model, "A1", `=EDEN.LIST("1", "42", "foo")`);
     expect(ds.maxPosition).toBe(42);
     expect(ds.maxPositionFetched).toBe(1);
     await waitForDataLoaded(model);
@@ -900,9 +900,9 @@ test("Spec of web_search_read is minimal", async function () {
             }
         },
     });
-    setCellContent(model, "A1", '=ODOO.LIST(1, 1, "pognon")');
-    setCellContent(model, "A2", '=ODOO.LIST(1, 1, "currency_id")');
-    setCellContent(model, "A3", '=ODOO.LIST(1, 1, "foo")');
+    setCellContent(model, "A1", '=EDEN.LIST(1, 1, "pognon")');
+    setCellContent(model, "A2", '=EDEN.LIST(1, 1, "currency_id")');
+    setCellContent(model, "A3", '=EDEN.LIST(1, 1, "foo")');
     await waitForDataLoaded(model);
     expect.verifySteps(["web_search_read"]);
 });
@@ -929,7 +929,7 @@ test("can import (export) contextual domain", async function () {
             }
         },
     });
-    setCellContent(model, "A1", '=ODOO.LIST("1", "1", "foo")');
+    setCellContent(model, "A1", '=EDEN.LIST("1", "1", "foo")');
     await animationFrame();
     expect(model.exportData().lists[1].domain).toBe('[("foo", "=", uid)]', {
         message: "the domain is exported with the dynamic parts",
@@ -994,7 +994,7 @@ test("Can duplicate a list", async () => {
     await addGlobalFilter(model, filter, {
         list: { [listId]: matching },
     });
-    model.dispatch("DUPLICATE_ODOO_LIST", { listId, newListId: "2" });
+    model.dispatch("DUPLICATE_EDEN_LIST", { listId, newListId: "2" });
 
     const listIds = model.getters.getListIds();
     expect(model.getters.getListIds().length).toBe(2);
@@ -1011,7 +1011,7 @@ test("Can duplicate a list", async () => {
 
 test("Cannot duplicate unknown list", async () => {
     const { model } = await createSpreadsheetWithList();
-    const result = model.dispatch("DUPLICATE_ODOO_LIST", {
+    const result = model.dispatch("DUPLICATE_EDEN_LIST", {
         listId: "hello",
         newListId: model.getters.getNextListId(),
     });
@@ -1021,7 +1021,7 @@ test("Cannot duplicate unknown list", async () => {
 test("Cannot duplicate list with id different from nextId", async () => {
     const { model } = await createSpreadsheetWithList();
     const [listId] = model.getters.getListIds();
-    const result = model.dispatch("DUPLICATE_ODOO_LIST", {
+    const result = model.dispatch("DUPLICATE_EDEN_LIST", {
         listId,
         newListId: "66",
     });
@@ -1037,10 +1037,10 @@ test("isListUnused getter", async () => {
     model.dispatch("DELETE_SHEET", { sheetId: sheetId });
     expect(model.getters.isListUnused("1")).toBe(true);
 
-    setCellContent(model, "A1", '=ODOO.LIST.HEADER(1, "foo")');
+    setCellContent(model, "A1", '=EDEN.LIST.HEADER(1, "foo")');
     expect(model.getters.isListUnused("1")).toBe(false);
 
-    setCellContent(model, "A1", '=ODOO.LIST.HEADER(A2, "foo")');
+    setCellContent(model, "A1", '=EDEN.LIST.HEADER(A2, "foo")');
     expect(model.getters.isListUnused("1")).toBe(true);
 
     setCellContent(model, "A2", "1");
@@ -1050,7 +1050,7 @@ test("isListUnused getter", async () => {
     expect(model.getters.isListUnused("1")).toBe(true);
 });
 
-test("INSERT_ODOO_LIST_WITH_TABLE adds a table that maches the list dimension", async function () {
+test("INSERT_EDEN_LIST_WITH_TABLE adds a table that maches the list dimension", async function () {
     const { model } = await createSpreadsheetWithList({
         linesNumber: 4,
     });
@@ -1060,7 +1060,7 @@ test("INSERT_ODOO_LIST_WITH_TABLE adds a table that maches the list dimension", 
     const row = 19;
     const threshold = 5;
     const { definition, columns } = generateListDefinition(resModel, currentColumns);
-    model.dispatch("INSERT_ODOO_LIST_WITH_TABLE", {
+    model.dispatch("INSERT_EDEN_LIST_WITH_TABLE", {
         sheetId,
         col,
         row,
@@ -1085,7 +1085,7 @@ test("An error is displayed if the list has invalid model", async function () {
     });
     const listId = model.getters.getListIds()[0];
     const listDefinition = model.getters.getListModelDefinition(listId);
-    model.dispatch("UPDATE_ODOO_LIST", {
+    model.dispatch("UPDATE_EDEN_LIST", {
         listId,
         list: {
             ...listDefinition,
@@ -1095,7 +1095,7 @@ test("An error is displayed if the list has invalid model", async function () {
             },
         },
     });
-    setCellContent(model, "A1", `=ODOO.LIST(1,1,"foo")`);
+    setCellContent(model, "A1", `=EDEN.LIST(1,1,"foo")`);
     await animationFrame();
     expect(getCellValue(model, "A1")).toBe("#ERROR");
     expect(getEvaluatedCell(model, "A1").message).toBe(`The model "unknown" does not exist.`);

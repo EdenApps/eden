@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from markupsafe import Markup
 
-from odoo import fields, models, _
-from odoo.tools import html2plaintext
+from eden import fields, models, _
+from eden.tools import html2plaintext
 
 
 class SlideChannelPartner(models.Model):

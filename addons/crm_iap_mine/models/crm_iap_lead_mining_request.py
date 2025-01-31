@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 
-from odoo import api, fields, models, _
-from odoo.addons.iap.tools import iap_tools
-from odoo.exceptions import UserError
-from odoo.tools import is_html_empty
+from eden import api, fields, models, _
+from eden.addons.iap.tools import iap_tools
+from eden.exceptions import UserError
+from eden.tools import is_html_empty
 
 _logger = logging.getLogger(__name__)
 
-DEFAULT_ENDPOINT = 'https://iap-services.odoo.com'
+DEFAULT_ENDPOINT = 'https://iap-services.edencloud.us'
 
 MAX_LEAD = 200
 
@@ -270,7 +270,7 @@ class CRMLeadMiningRequest(models.Model):
 
             template_values = data['company_data']
             template_values.update({
-                'flavor_text': _("Opportunity created by Odoo Lead Generation"),
+                'flavor_text': _("Opportunity created by Eden Lead Generation"),
                 'people_data': data.get('people_data'),
             })
             messages_to_post[data['company_data']['clearbit_id']] = template_values
@@ -283,7 +283,7 @@ class CRMLeadMiningRequest(models.Model):
                     subtype_xmlid='mail.mt_note',
                 )
 
-    # Methods responsible for format response data into valid odoo lead data
+    # Methods responsible for format response data into valid eden lead data
     @api.model
     def _lead_vals_from_response(self, data):
         self.ensure_one()

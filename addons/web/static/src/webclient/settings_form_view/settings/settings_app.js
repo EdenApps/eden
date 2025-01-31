@@ -1,4 +1,4 @@
-import { Component, useState, useEffect, useRef } from "@odoo/owl";
+import { Component, useState, useEffect, useRef } from "@eden/owl";
 
 export class SettingsApp extends Component {
     static template = "web.SettingsApp";

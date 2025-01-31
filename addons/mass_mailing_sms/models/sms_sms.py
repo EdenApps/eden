@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import re
 
-from odoo import fields, models
-from odoo.tools.mail import TEXT_URL_REGEX
+from eden import fields, models
+from eden.tools.mail import TEXT_URL_REGEX
 
 
 class SmsSms(models.Model):

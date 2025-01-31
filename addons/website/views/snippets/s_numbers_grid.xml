@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template name="Numbers Grid" id="s_numbers_grid">
     <section class="s_numbers_grid o_cc o_cc2 pt56 pb56">
@@ -42,4 +42,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

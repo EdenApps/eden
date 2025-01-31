@@ -1,5 +1,5 @@
 import { _t } from "@web/core/l10n/translation";
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 export class ReceiptHeader extends Component {
     static template = "point_of_sale.ReceiptHeader";

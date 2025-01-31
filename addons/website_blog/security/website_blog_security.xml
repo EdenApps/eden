@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<eden noupdate="1">
 
     <record model="ir.rule" id="website_blog_post_public">
         <field name="name">Blog Post: public: published only</field>
@@ -15,4 +15,4 @@
         <field name="groups" eval="[(4, ref('base.group_public')), (4, ref('base.group_portal'))]"/>
     </record>
 
-</odoo>
+</eden>

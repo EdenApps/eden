@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 import { createRelatedModels } from "@point_of_sale/app/models/related_models";
 
 describe("models with backlinks", () => {

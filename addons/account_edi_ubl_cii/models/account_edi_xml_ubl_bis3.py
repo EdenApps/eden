@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, _
-from odoo.addons.account_edi_ubl_cii.models.account_edi_xml_ubl_20 import UBL_NAMESPACES
+from eden import models, _
+from eden.addons.account_edi_ubl_cii.models.account_edi_xml_ubl_20 import UBL_NAMESPACES
 
 from stdnum.no import mva
 

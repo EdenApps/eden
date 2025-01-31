@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models
+from eden import fields, models
 
-from odoo.addons.microsoft_calendar.models.microsoft_sync import microsoft_calendar_token
+from eden.addons.microsoft_calendar.models.microsoft_sync import microsoft_calendar_token
 
 
 class ResetMicrosoftAccount(models.TransientModel):
@@ -14,7 +14,7 @@ class ResetMicrosoftAccount(models.TransientModel):
     delete_policy = fields.Selection(
         [('dont_delete', "Leave them untouched"),
          ('delete_microsoft', "Delete from the current Microsoft Calendar account"),
-         ('delete_odoo', "Delete from Odoo"),
+         ('delete_eden', "Delete from Eden"),
          ('delete_both', "Delete from both"),
     ], string="User's Existing Events", required=True, default='dont_delete',
     help="This will only affect events for which the user is the owner")
@@ -43,7 +43,7 @@ class ResetMicrosoftAccount(models.TransientModel):
                 'need_sync_m': True,
             })
 
-        if self.delete_policy in ('delete_odoo', 'delete_both'):
+        if self.delete_policy in ('delete_eden', 'delete_both'):
             events.with_context(dont_notify=True).microsoft_id = False
             events.unlink()
 

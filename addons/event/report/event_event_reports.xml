@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <record id="paperformat_event_badge" model="report.paperformat">
         <field name="name">Custom Paperformat for the Event Badge report</field>
@@ -125,4 +125,4 @@
         <field name="binding_type">report</field>
         <field name="print_report_name">'Attendee List - %s' % (object.name)</field>
     </record>
-</odoo>
+</eden>

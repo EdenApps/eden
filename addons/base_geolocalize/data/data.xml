@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="geoprovider_open_street" model="base.geo_provider">
         <field name="tech_name">openstreetmap</field>
         <field name="name">Open Street Map</field>
@@ -9,4 +9,4 @@
         <field name="tech_name">googlemap</field>
         <field name="name">Google Place Map</field>
     </record>
-</odoo>
+</eden>

@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { Component, useRef, useState, xml } from "@odoo/owl";
+import { Component, useRef, useState, xml } from "@eden/owl";
 import { logLevels } from "../core/logger";
 import { refresh } from "../core/url";
 import { useAutofocus, useWindowListener } from "../hoot_utils";

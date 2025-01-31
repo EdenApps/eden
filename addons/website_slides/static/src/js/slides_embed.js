@@ -1,4 +1,4 @@
-// @odoo-module ignore
+// @eden-module ignore
 /**
  * This is a minimal version of the PDFViewer widget.
  * It is NOT use in the website_slides module, but it is called when embedding

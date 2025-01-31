@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import publicWidget from "@web/legacy/js/public/public_widget";
 import { rpc } from "@web/core/network/rpc";
@@ -19,7 +19,7 @@ publicWidget.registry.websiteEventCreateMeetingRoom = publicWidget.Widget.extend
             const langs = await rpc("/event/active_langs");
 
             this.createModalEl = renderToElement("event_meet_create_room_modal", {
-                csrf_token: odoo.csrf_token,
+                csrf_token: eden.csrf_token,
                 eventId: this.el.dataset.eventId,
                 defaultLangCode: this.el.dataset.defaultLangCode,
                 langs: langs,

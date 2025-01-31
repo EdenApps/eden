@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<eden noupdate="1">
 
     <record model="ir.rule" id="resource_calendar_leaves_rule_group_user_create">
         <field name="name">resource.calendar.leaves: employee reads own or global</field>
@@ -38,4 +38,4 @@
         <field name="model_id" ref="model_resource_calendar_leaves"/>
         <field name="domain_force">[('company_id', 'in', company_ids + [False])]</field>
     </record>
-</odoo>
+</eden>

@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.base.tests.common import TransactionCaseWithUserDemo
-from odoo import Command
+from eden.addons.base.tests.common import TransactionCaseWithUserDemo
+from eden import Command
 
-import odoo.tests
+import eden.tests
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@eden.tests.tagged('post_install', '-at_install')
 class TestAutomation(TransactionCaseWithUserDemo):
 
     def test_01_on_create_or_write(self):

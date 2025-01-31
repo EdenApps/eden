@@ -1,5 +1,5 @@
-from odoo import _, models
-from odoo.exceptions import UserError
+from eden import _, models
+from eden.exceptions import UserError
 
 
 class ReSequenceWizard(models.TransientModel):

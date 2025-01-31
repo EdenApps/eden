@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="s_dynamic_snippet_carousel" name="Dynamic Carousel">
         <t t-call="website.s_dynamic_snippet_template">
             <t t-set="snippet_name" t-value="'s_dynamic_snippet_carousel'"/>
@@ -42,4 +42,4 @@
     <field name="path">website/static/src/snippets/s_dynamic_snippet_carousel/000.xml</field>
 </record>
 
-</odoo>
+</eden>

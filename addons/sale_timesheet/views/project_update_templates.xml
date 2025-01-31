@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <template id="project_update_default_description" inherit_id="project.project_update_default_description">
         <!--As this template is rendered in an html field, the spaces may be interpreted as nbsp while editing. -->
         <xpath expr="//div[@name='milestone']" position="after">
@@ -92,4 +92,4 @@
         </xpath>
     </template>
 
-</odoo>
+</eden>

@@ -1,15 +1,15 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import werkzeug.exceptions
 import werkzeug.urls
 
 from werkzeug.urls import url_parse
 
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
-from odoo.fields import Command
-from odoo.http import request
-from odoo.tools.translate import html_translate
+from eden import api, fields, models, _
+from eden.exceptions import UserError
+from eden.fields import Command
+from eden.http import request
+from eden.tools.translate import html_translate
 
 
 class Menu(models.Model):
@@ -33,7 +33,7 @@ class Menu(models.Model):
         for menu in self:
             if menu.is_mega_menu:
                 if not menu.mega_menu_content:
-                    menu.mega_menu_content = self.env['ir.ui.view']._render_template('website.s_mega_menu_odoo_menu')
+                    menu.mega_menu_content = self.env['ir.ui.view']._render_template('website.s_mega_menu_eden_menu')
             else:
                 menu.mega_menu_content = False
                 menu.mega_menu_classes = False

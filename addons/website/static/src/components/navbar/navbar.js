@@ -1,11 +1,11 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { NavBar } from '@web/webclient/navbar/navbar';
 import { useService, useBus } from '@web/core/utils/hooks';
 import { registry } from "@web/core/registry";
 import { patch } from "@web/core/utils/patch";
 import { UserMenu } from "@web/webclient/user_menu/user_menu";
-import { useEffect } from "@odoo/owl";
+import { useEffect } from "@eden/owl";
 
 const websiteSystrayRegistry = registry.category('website_systray');
 websiteSystrayRegistry.add("UserMenu", { Component: UserMenu }, { sequence: 14 });

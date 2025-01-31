@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import os
 from collections import defaultdict
 from datetime import date, datetime
 
-from odoo import fields, models
-from odoo.tools import groupby
+from eden import fields, models
+from eden.tools import groupby
 
 
 def get_twilio_credentials(env) -> (str, str):
@@ -22,7 +22,7 @@ def get_twilio_credentials(env) -> (str, str):
 def get_sfu_url(env) -> str | None:
     sfu_url = env['ir.config_parameter'].sudo().get_param("mail.sfu_server_url")
     if not sfu_url:
-        sfu_url = os.getenv("ODOO_SFU_URL")
+        sfu_url = os.getenv("EDEN_SFU_URL")
     if sfu_url:
         return sfu_url.rstrip("/")
 
@@ -30,7 +30,7 @@ def get_sfu_url(env) -> str | None:
 def get_sfu_key(env) -> str | None:
     sfu_key = env['ir.config_parameter'].sudo().get_param('mail.sfu_server_key')
     if not sfu_key:
-        return os.getenv("ODOO_SFU_KEY")
+        return os.getenv("EDEN_SFU_KEY")
     return sfu_key
 
 

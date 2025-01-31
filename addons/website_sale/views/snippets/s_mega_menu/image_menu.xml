@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <template
         id="website_sale.s_mega_menu_menu_image_menu"
@@ -73,4 +73,4 @@
         </section>
     </template>
 
-</odoo>
+</eden>

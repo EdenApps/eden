@@ -1,4 +1,4 @@
-import { useEnv, useSubEnv, useState, onWillRender } from "@odoo/owl";
+import { useEnv, useSubEnv, useState, onWillRender } from "@eden/owl";
 
 /**
  * @typedef PagerUpdateParams

@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 
 import { DEFAULT_INTERVAL } from "@web/search/utils/dates";
 import { getGroupBy } from "@web/search/utils/group_by";

@@ -1,5 +1,5 @@
-import { after, describe, expect, test } from "@odoo/hoot";
-import { Deferred, mockFetch } from "@odoo/hoot-mock";
+import { after, describe, expect, test } from "@eden/hoot";
+import { Deferred, mockFetch } from "@eden/hoot-mock";
 import { patchTranslations } from "@web/../tests/web_test_helpers";
 
 import { download } from "@web/core/network/download";
@@ -25,11 +25,11 @@ test("handles business error from server", async () => {
     const serverError = {
         code: 200,
         data: {
-            name: "odoo.exceptions.RedirectWarning",
+            name: "eden.exceptions.RedirectWarning",
             arguments: ["Business Error Message", "someArg"],
             message: "Business Error Message",
         },
-        message: "Odoo Server Error",
+        message: "Eden Server Error",
     };
 
     mockFetch(() => new Blob([JSON.stringify(serverError)], { type: "text/html" }));

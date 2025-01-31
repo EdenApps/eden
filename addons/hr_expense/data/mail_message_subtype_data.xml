@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <!-- Expense-related subtypes for messaging / Chatter -->
         <record id="mt_expense_approved" model="mail.message.subtype">
@@ -39,4 +39,4 @@
             <field name="description">Journal entry reset to draft</field>
         </record>
     </data>
-</odoo>
+</eden>

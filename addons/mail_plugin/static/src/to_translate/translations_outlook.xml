@@ -18,10 +18,10 @@
     <string>Address</string>
     <string>Contact created</string>
     <string>Buy More</string>
-    <string>Search In Odoo</string>
+    <string>Search In Eden</string>
     <string>Search In Database</string>
     <string>Contacts Found (%(count)s)</string>
-    <string>Search contact in Odoo...</string>
+    <string>Search contact in Eden...</string>
     <string>Refresh Contact</string>
     <string>Add Contact To Database</string>
     <string>Contact Details</string>
@@ -30,7 +30,7 @@
     <string>No company attached to this contact</string>
     <string>Create a Company</string>
     <string>No company linked to this contact could be enriched</string>
-    <string>No company linked to this contact could be enriched or found in Odoo</string>
+    <string>No company linked to this contact could be enriched or found in Eden</string>
     <string>No data found for this email address.</string>
     <string>You don't have enough credit to enrich.</string>
     <string>Something bad happened. Please, try again later.</string>
@@ -42,7 +42,7 @@
     <string>No additional insights were found for this company</string>
     <string>Company updated</string>
     <string>Enrich Company</string>
-    <string>Warning: Attachments could not be logged in Odoo because their total size exceeded the allowed maximum.</string>
+    <string>Warning: Attachments could not be logged in Eden because their total size exceeded the allowed maximum.</string>
     <string>Could not display image %(attachmentName)s, size is over limit.</string>
     <string>Warning: Could not fetch the attachments %(attachments)s as their sizes are bigger then the maximum size of %(size)sMB per each attachment.</string>
     <string>From : %(email)s</string>

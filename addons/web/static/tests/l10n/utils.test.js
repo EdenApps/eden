@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 
 import { formatList, jsToPyLocale, pyToJsLocale } from "@web/core/l10n/utils";
 import { user } from "@web/core/user";

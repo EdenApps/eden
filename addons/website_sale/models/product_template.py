@@ -1,13 +1,13 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 
-from odoo import api, fields, models
-from odoo.osv import expression
-from odoo.tools import float_is_zero, is_html_empty
-from odoo.tools.translate import html_translate
+from eden import api, fields, models
+from eden.osv import expression
+from eden.tools import float_is_zero, is_html_empty
+from eden.tools.translate import html_translate
 
-from odoo.addons.website.models import ir_http
+from eden.addons.website.models import ir_http
 
 _logger = logging.getLogger(__name__)
 

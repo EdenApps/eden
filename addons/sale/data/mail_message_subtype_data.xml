@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <!-- Sale-related subtypes for messaging / Chatter -->
         <record id="mt_order_sent" model="mail.message.subtype">
@@ -61,4 +61,4 @@
             <field name="relation_field">team_id</field>
         </record>
     </data>
-</odoo>
+</eden>

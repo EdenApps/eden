@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import FormEditorRegistry from "@website/js/form_editor_registry";
 import options from "@web_editor/js/editor/snippets.options";
@@ -939,7 +939,7 @@ options.registry.WebsiteFormEditor = FormEditor.extend({
      * @param {string} action
      */
     _redirectToAction: function (action) {
-        redirect(`/odoo/action-${encodeURIComponent(action)}`);
+        redirect(`/eden/action-${encodeURIComponent(action)}`);
     },
 
     //--------------------------------------------------------------------------

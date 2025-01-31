@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from collections import OrderedDict
 from itertools import chain
 from lxml import etree
 
-from odoo.addons.hr.tests.common import TestHrCommon
-from odoo.tests import new_test_user, tagged, Form
-from odoo.exceptions import AccessError
+from eden.addons.hr.tests.common import TestHrCommon
+from eden.tests import new_test_user, tagged, Form
+from eden.exceptions import AccessError
 
 @tagged('post_install', '-at_install')
 class TestSelfAccessProfile(TestHrCommon):

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
         <!-- We want to activate SO template by default for easier demoing. -->
         <record id="base.group_user" model="res.groups">
             <field name="implied_ids" eval="[(4, ref('sale_management.group_sale_order_template'))]"/>
@@ -11,4 +11,4 @@
         </record>
 
         <function model="sale.order.template" name="_demo_configure_template"/>
-</odoo>
+</eden>

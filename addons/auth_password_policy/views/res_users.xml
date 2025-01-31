@@ -1,4 +1,4 @@
-<odoo>
+<eden>
     <record id="change_password" model="ir.ui.view">
         <field name="name">Enable password meter on own password wizard</field>
         <field name="inherit_id" ref="base.change_password_own_form"/>
@@ -19,4 +19,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</eden>

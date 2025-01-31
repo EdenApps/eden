@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="mrp_bom_form_view_inherited_project_mrp" model="ir.ui.view">
         <field name="name">mrp.bom.form.inherited.project_mrp</field>
         <field name="model">mrp.bom</field>
@@ -10,4 +10,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</eden>

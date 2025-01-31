@@ -6,7 +6,7 @@ import { useInputField } from "../input_field_hook";
 import { standardFieldProps } from "../standard_field_props";
 import { useNumpadDecimal } from "../numpad_decimal_hook";
 
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 export class FloatTimeField extends Component {
     static template = "web.FloatTimeField";

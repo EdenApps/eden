@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { compensateScrollbar, getScrollingElement } from "@web/core/utils/scrolling";
 

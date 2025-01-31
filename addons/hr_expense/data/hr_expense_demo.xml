@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <record id="base.user_demo" model="res.users">
             <field name="groups_id" eval="[
@@ -222,4 +222,4 @@
         </record>
 
     </data>
-</odoo>
+</eden>

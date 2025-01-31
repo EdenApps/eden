@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import http
-from odoo.addons.base.tests.common import TransactionCaseWithUserDemo
-from odoo.addons.website.tools import MockRequest
-from odoo.tests.common import TransactionCase
+from eden import http
+from eden.addons.base.tests.common import TransactionCaseWithUserDemo
+from eden.addons.website.tools import MockRequest
+from eden.tests.common import TransactionCase
 
 
 class TestQweb(TransactionCaseWithUserDemo):

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <data noupdate="1">
 
         <record id="route_subcontracting_dropshipping" model='stock.route'>
@@ -19,4 +19,4 @@
         </function>
 
     </data>
-</odoo>
+</eden>

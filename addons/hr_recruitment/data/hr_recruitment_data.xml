@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
 <data noupdate="1">
 
     <record model="hr.recruitment.degree" id="degree_graduate">
@@ -114,4 +114,4 @@
         <field name="regex">^([^ ]+ [^ ]+)</field>
     </record>
 </data>
-</odoo>
+</eden>

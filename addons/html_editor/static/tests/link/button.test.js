@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 import { setupEditor } from "../_helpers/editor";
 import { unformat } from "../_helpers/format";
 

@@ -1,7 +1,7 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { _t } from "@web/core/l10n/translation";
-import { useEffect } from '@odoo/owl';
+import { useEffect } from '@eden/owl';
 import { WarningDialog } from "@web/core/errors/error_dialogs";
 import { serializeDateTime } from "@web/core/l10n/dates";
 import { x2ManyCommands } from "@web/core/orm_service";

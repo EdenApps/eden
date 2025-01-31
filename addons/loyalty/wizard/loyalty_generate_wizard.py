@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, fields, models
-from odoo.exceptions import ValidationError
-from odoo.osv import expression
+from eden import _, api, fields, models
+from eden.exceptions import ValidationError
+from eden.osv import expression
 
 class LoyaltyGenerateWizard(models.TransientModel):
     _name = 'loyalty.generate.wizard'

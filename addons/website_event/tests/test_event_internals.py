@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
 
-from odoo.fields import Datetime as FieldsDatetime
-from odoo.tests.common import users
-from odoo.addons.website.tests.test_website_visitor import MockVisitor
-from odoo.addons.website.tools import MockRequest
-from odoo.addons.website_event.controllers.main import WebsiteEventController
-from odoo.addons.event.tests.common import EventCase
+from eden.fields import Datetime as FieldsDatetime
+from eden.tests.common import users
+from eden.addons.website.tests.test_website_visitor import MockVisitor
+from eden.addons.website.tools import MockRequest
+from eden.addons.website_event.controllers.main import WebsiteEventController
+from eden.addons.event.tests.common import EventCase
 
 
 class TestEventData(EventCase, MockVisitor):

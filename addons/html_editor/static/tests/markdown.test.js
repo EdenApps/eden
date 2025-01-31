@@ -1,4 +1,4 @@
-import { describe, test } from "@odoo/hoot";
+import { describe, test } from "@eden/hoot";
 import { patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { testEditor } from "./_helpers/editor";
 import { insertText } from "./_helpers/user_actions";

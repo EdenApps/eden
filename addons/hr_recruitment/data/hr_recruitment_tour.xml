@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="hr_recruitment_tour" model="web_tour.tour">
         <field name="name">hr_recruitment_tour</field>
         <field name="sequence">230</field>
@@ -7,4 +7,4 @@
             <div>Great job! You hired a new colleague!</div><div>Try the Website app to publish job offers online.</div>
         ]]></field>
     </record>
-</odoo>
+</eden>

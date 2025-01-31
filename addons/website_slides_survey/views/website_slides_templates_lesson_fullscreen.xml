@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data>
+<eden><data>
 
     <template id="slide_fullscreen_sidebar_category" inherit_id="website_slides.slide_fullscreen_sidebar_category">
         <xpath expr="//li[@t-att-data-id='slide.id']" position="attributes">
@@ -9,4 +9,4 @@
         </xpath>
     </template>
 
-</data></odoo>
+</data></eden>

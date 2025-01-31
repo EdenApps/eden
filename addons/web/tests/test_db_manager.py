@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 import operator
@@ -10,10 +10,10 @@ from unittest.mock import patch
 
 import requests
 
-import odoo
-from odoo.modules.registry import Registry
-from odoo.tests.common import BaseCase, HttpCase, tagged
-from odoo.tools import config
+import eden
+from eden.modules.registry import Registry
+from eden.tests.common import BaseCase, HttpCase, tagged
+from eden.tools import config
 
 
 class TestDatabaseManager(HttpCase):
@@ -40,7 +40,7 @@ class TestDatabaseOperations(BaseCase):
 
         # monkey-patch password verification
         self.verify_admin_password_patcher = patch(
-            'odoo.tools.config.verify_admin_password', self.password.__eq__,
+            'eden.tools.config.verify_admin_password', self.password.__eq__,
         )
         self.startPatcher(self.verify_admin_password_patcher)
 
@@ -63,7 +63,7 @@ class TestDatabaseOperations(BaseCase):
         )
 
     def list_dbs_filtered(self):
-        return set(db for db in odoo.service.db.list_dbs(True) if re.match(config['dbfilter'], db))
+        return set(db for db in eden.service.db.list_dbs(True) if re.match(config['dbfilter'], db))
 
     def url(self, path):
         return HttpCase.base_url() + path
@@ -81,7 +81,7 @@ class TestDatabaseOperations(BaseCase):
 
     def test_database_creation(self):
         # check verify_admin_password patch
-        self.assertTrue(odoo.tools.config.verify_admin_password(self.password))
+        self.assertTrue(eden.tools.config.verify_admin_password(self.password))
 
         # create a database
         test_db_name = self.db_name + '-test-database-creation'
@@ -95,7 +95,7 @@ class TestDatabaseOperations(BaseCase):
             'phone': '',
         }, allow_redirects=False)
         self.assertEqual(res.status_code, 303)
-        self.assertIn('/odoo', res.headers['Location'])
+        self.assertIn('/eden', res.headers['Location'])
         self.assertDbs([test_db_name])
 
         # delete the created database
@@ -148,7 +148,7 @@ class TestDatabaseOperations(BaseCase):
 
         # upload the backup under a new name (create a duplicate)
         with self.subTest(DEFAULT_MAX_CONTENT_LENGTH=None), \
-             patch.object(odoo.http, 'DEFAULT_MAX_CONTENT_LENGTH', None):
+             patch.object(eden.http, 'DEFAULT_MAX_CONTENT_LENGTH', None):
             backup_file.seek(0)
             self.session.post(
                 self.url('/web/database/restore'),
@@ -169,7 +169,7 @@ class TestDatabaseOperations(BaseCase):
         # too large under the default size limit, the default size limit
         # shouldn't apply to /web/database URLs
         with self.subTest(DEFAULT_MAX_CONTENT_LENGTH=1024), \
-             patch.object(odoo.http, 'DEFAULT_MAX_CONTENT_LENGTH', 1024):
+             patch.object(eden.http, 'DEFAULT_MAX_CONTENT_LENGTH', 1024):
             backup_file.seek(0)
             self.session.post(
                 self.url('/web/database/restore'),
@@ -209,15 +209,15 @@ class TestDatabaseOperations(BaseCase):
         self.assertIn(test_db_name, Registry.registries)
 
         # delete the created database but keep the cursor
-        with patch('odoo.sql_db.close_db') as close_db:
+        with patch('eden.sql_db.close_db') as close_db:
             res = self.url_open_drop(test_db_name)
         close_db.assert_called_once_with(test_db_name)
 
         # simulate that some customers were connected to that dropped db
-        session_store = odoo.http.root.session_store
+        session_store = eden.http.root.session_store
         session = session_store.new()
-        session.update(odoo.http.get_default_session(), db=test_db_name)
-        session.context['lang'] = odoo.http.DEFAULT_LANG
+        session.update(eden.http.get_default_session(), db=test_db_name)
+        session.context['lang'] = eden.http.DEFAULT_LANG
         self.session.cookies['session_id'] = session.sid
 
         # make it possible to inject the registry back
@@ -234,12 +234,12 @@ class TestDatabaseOperations(BaseCase):
         with self.subTest(msg="Registry.init() fails"):
             session_store.save(session)
             registries.pop('test_db_name', None)
-            with self.assertLogs('odoo.sql_db', logging.INFO) as capture:
+            with self.assertLogs('eden.sql_db', logging.INFO) as capture:
                 res = self.session.get(self.url('/web/health'))
             self.assertEqual(res.status_code, 200)
             self.assertEqual(session_store.get(session.sid)['db'], None)
             self.assertEqual(capture.output, [
-                "INFO:odoo.sql_db:Connection to the database failed",
+                "INFO:eden.sql_db:Connection to the database failed",
             ])
 
 
@@ -249,13 +249,13 @@ class TestDatabaseOperations(BaseCase):
         with self.subTest(msg="Registry.cursor() fails"):
             session_store.save(session)
             registries[test_db_name] = registry
-            with self.assertLogs('odoo.sql_db', logging.INFO) as capture, \
+            with self.assertLogs('eden.sql_db', logging.INFO) as capture, \
                  patch.object(Registry, '__new__', return_value=registry):
                 res = self.session.get(self.url('/web/health'))
             self.assertEqual(res.status_code, 200)
             self.assertEqual(session_store.get(session.sid)['db'], None)
             self.assertEqual(capture.output, [
-                "INFO:odoo.sql_db:Connection to the database failed",
+                "INFO:eden.sql_db:Connection to the database failed",
             ])
 
         # The other worker has a registry in its LRU cache for that
@@ -264,7 +264,7 @@ class TestDatabaseOperations(BaseCase):
         with self.subTest(msg="Registry.check_signaling() fails"):
             session_store.save(session)
             registries[test_db_name] = registry
-            with self.assertLogs('odoo.sql_db', logging.ERROR) as capture, \
+            with self.assertLogs('eden.sql_db', logging.ERROR) as capture, \
                  patch.object(Registry, '__new__', return_value=registry), \
                  patch.object(Registry, 'cursor', return_value=cr):
                 res = self.session.get(self.url('/web/health'))
@@ -272,7 +272,7 @@ class TestDatabaseOperations(BaseCase):
             self.assertEqual(session_store.get(session.sid)['db'], None)
             self.maxDiff = None
             self.assertRegex(capture.output[0], (
-                r"^ERROR:odoo\.sql_db:bad query:(?s:.*?)"
+                r"^ERROR:eden\.sql_db:bad query:(?s:.*?)"
                 r"ERROR: terminating connection due to administrator command\s+"
                 r"server closed the connection unexpectedly\s+"
                 r"This probably means the server terminated abnormally\s+"

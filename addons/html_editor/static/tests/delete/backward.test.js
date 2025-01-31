@@ -1,8 +1,8 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 import { setupEditor, testEditor } from "../_helpers/editor";
 import { unformat } from "../_helpers/format";
-import { microTick, press } from "@odoo/hoot-dom";
-import { animationFrame, tick } from "@odoo/hoot-mock";
+import { microTick, press } from "@eden/hoot-dom";
+import { animationFrame, tick } from "@eden/hoot-mock";
 import { deleteBackward, insertText, tripleClick, undo } from "../_helpers/user_actions";
 import { getContent } from "../_helpers/selection";
 

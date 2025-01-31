@@ -7,7 +7,7 @@ import {
     startServer,
     step,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 import { defineSMSModels } from "@sms/../tests/sms_test_helpers";
 import { mockService } from "@web/../tests/web_test_helpers";
 

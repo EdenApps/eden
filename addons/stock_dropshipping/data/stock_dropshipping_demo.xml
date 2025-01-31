@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<eden noupdate="1">
 
     <record id="product.product_product_6" model="product.product">
         <field name="route_ids" eval="[(4, ref('route_drop_shipping'))]"/>
@@ -16,4 +16,4 @@
 
     <function model="sale.order" name="action_confirm" eval="[[ref('sale_order_purchase')]]"/>
 
-</odoo>
+</eden>

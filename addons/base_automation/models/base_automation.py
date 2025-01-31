@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import datetime
 import logging
@@ -8,9 +8,9 @@ from collections import defaultdict
 from uuid import uuid4
 
 from dateutil.relativedelta import relativedelta
-from odoo import _, api, exceptions, fields, models
-from odoo.http import request
-from odoo.tools import DEFAULT_SERVER_DATETIME_FORMAT, safe_eval
+from eden import _, api, exceptions, fields, models
+from eden.http import request
+from eden.tools import DEFAULT_SERVER_DATETIME_FORMAT, safe_eval
 
 _logger = logging.getLogger(__name__)
 
@@ -478,7 +478,7 @@ class BaseAutomation(models.Model):
         # wondering why we use a regex instead of safe_eval?
         # because this method is called on a compute method hence could be triggered
         # from an onchange call (i.e. a manually crafted malicious one)
-        # see: https://github.com/odoo/odoo/pull/189772#issuecomment-2548804283
+        # see: https://github.com/eden/eden/pull/189772#issuecomment-2548804283
         for match in DOMAIN_FIELDS_RE.finditer(self.filter_domain):
             if field := match.groupdict().get('field'):
                 fields |= self.env["ir.model.fields"]._get(model, field)

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data noupdate="1">
+<eden><data noupdate="1">
 
     <!--base.user_demo-->
     <record id="karma_tracking_user_demo_1st_day_last_month" model="gamification.karma.tracking">
@@ -107,4 +107,4 @@
     </function>
 
 </data>
-</odoo>
+</eden>

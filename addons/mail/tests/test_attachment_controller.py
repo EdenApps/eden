@@ -1,14 +1,14 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 from requests.exceptions import HTTPError
 
-import odoo
-from odoo.tools import file_open, mute_logger
-from odoo.addons.mail.tests.test_controller_common import TestControllerCommon
+import eden
+from eden.tools import file_open, mute_logger
+from eden.addons.mail.tests.test_controller_common import TestControllerCommon
 
 
-@odoo.tests.tagged("-at_install", "post_install")
+@eden.tests.tagged("-at_install", "post_install")
 class TestAttachmentControllerCommon(TestControllerCommon):
     @classmethod
     def setUpClass(cls):
@@ -36,11 +36,11 @@ class TestAttachmentControllerCommon(TestControllerCommon):
                         self._upload_attachment(record.id, record._name, route_kw)
 
     def _upload_attachment(self, thread_id, thread_model, route_kw):
-        with mute_logger("odoo.http"), file_open("addons/web/__init__.py") as file:
+        with mute_logger("eden.http"), file_open("addons/web/__init__.py") as file:
             res = self.url_open(
                 url="/mail/attachment/upload",
                 data={
-                    "csrf_token": odoo.http.Request.csrf_token(self),
+                    "csrf_token": eden.http.Request.csrf_token(self),
                     "is_pending": True,
                     "thread_id": thread_id,
                     "thread_model": thread_model,
@@ -62,7 +62,7 @@ class TestAttachmentControllerCommon(TestControllerCommon):
         )
 
 
-@odoo.tests.tagged("-at_install", "post_install")
+@eden.tests.tagged("-at_install", "post_install")
 class TestAttachmentController(TestAttachmentControllerCommon):
     def test_attachment_partner(self):
         """Test access to upload an attachment on a non channel thread"""

@@ -12,7 +12,7 @@ import {
     useRef,
     useState,
     useExternalListener,
-} from "@odoo/owl";
+} from "@eden/owl";
 import { usePopover } from "@web/core/popover/popover_hook";
 import { useService } from "@web/core/utils/hooks";
 import { rpc } from "@web/core/network/rpc";

@@ -1,9 +1,9 @@
 
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, models
-from odoo.addons.snailmail.country_utils import SNAILMAIL_COUNTRIES
+from eden import api, models
+from eden.addons.snailmail.country_utils import SNAILMAIL_COUNTRIES
 
 
 class ResPartner(models.Model):

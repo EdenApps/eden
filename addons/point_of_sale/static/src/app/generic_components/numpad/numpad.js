@@ -1,5 +1,5 @@
 import { useService } from "@web/core/utils/hooks";
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 import { localization } from "@web/core/l10n/localization";
 
 export const buttonsType = {

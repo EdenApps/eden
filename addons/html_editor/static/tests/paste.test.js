@@ -1,12 +1,12 @@
 import { CLIPBOARD_WHITELISTS } from "@html_editor/core/clipboard_plugin";
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { manuallyDispatchProgrammaticEvent as dispatch, press, waitFor } from "@odoo/hoot-dom";
-import { animationFrame, tick } from "@odoo/hoot-mock";
+import { beforeEach, describe, expect, test } from "@eden/hoot";
+import { manuallyDispatchProgrammaticEvent as dispatch, press, waitFor } from "@eden/hoot-dom";
+import { animationFrame, tick } from "@eden/hoot-mock";
 import { onRpc, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { setupEditor, testEditor } from "./_helpers/editor";
 import { cleanLinkArtifacts, unformat } from "./_helpers/format";
 import { getContent, setSelection } from "./_helpers/selection";
-import { pasteHtml, pasteOdooEditorHtml, pasteText, undo } from "./_helpers/user_actions";
+import { pasteHtml, pasteEdenEditorHtml, pasteText, undo } from "./_helpers/user_actions";
 
 function isInline(node) {
     return ["I", "B", "U", "S", "EM", "STRONG", "IMG", "BR", "A", "FONT"].includes(node);
@@ -2116,7 +2116,7 @@ describe("Special cases", () => {
             });
         });
 
-        test("should paste a deeply nested list copied outside from odoo", async () => {
+        test("should paste a deeply nested list copied outside from eden", async () => {
             await testEditor({
                 contentBefore: "<ul><li>[]<br></li></ul>",
                 stepFunction: async (editor) => {
@@ -2286,8 +2286,8 @@ describe("pasting within pre", () => {
     });
 });
 
-const url = "https://www.odoo.com";
-const imgUrl = "https://download.odoocdn.com/icons/website/static/description/icon.png";
+const url = "https://www.edencloud.us";
+const imgUrl = "https://cdn.edencloud.us/icons/website/static/description/icon.png";
 const videoUrl = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 
 describe("link", () => {
@@ -2370,11 +2370,11 @@ describe("link", () => {
             const { el, editor } = await setupEditor(
                 `<p>xy<a href="#" oe-zws-empty-inline="">\u200B[]</a>z</p>`
             );
-            pasteText(editor, "http://odoo.com");
+            pasteText(editor, "http://edencloud.us");
             await animationFrame();
             expect(".o-we-powerbox").toHaveCount(0);
             expect(cleanLinkArtifacts(getContent(el))).toBe(
-                `<p>xy<a href="http://odoo.com">http://odoo.com</a>[]z</p>`
+                `<p>xy<a href="http://edencloud.us">http://edencloud.us</a>[]z</p>`
             );
         });
 
@@ -2414,17 +2414,17 @@ describe("link", () => {
             await testEditor({
                 contentBefore: '<p><a href="#">[]\u200B</a></p>',
                 stepFunction: async (editor) => {
-                    pasteText(editor, "abc www.odoo.com xyz");
+                    pasteText(editor, "abc www.eden.com xyz");
                 },
-                contentAfter: '<p>abc <a href="http://www.odoo.com">www.odoo.com</a> xyz[]</p>',
+                contentAfter: '<p>abc <a href="http://www.eden.com">www.eden.com</a> xyz[]</p>',
             });
             await testEditor({
                 contentBefore: '<p><a href="#">[]\u200B</a></p>',
                 stepFunction: async (editor) => {
-                    pasteText(editor, "odoo.com\ngoogle.com");
+                    pasteText(editor, "eden.com\ngoogle.com");
                 },
                 contentAfter:
-                    '<p style="margin-bottom: 0px;"><a href="http://odoo.com">odoo.com</a></p>' +
+                    '<p style="margin-bottom: 0px;"><a href="http://eden.com">eden.com</a></p>' +
                     '<p><a href="http://google.com">google.com</a>[]</p>',
             });
         });
@@ -2435,11 +2435,11 @@ describe("link", () => {
                 stepFunction: async (editor) => {
                     pasteHtml(
                         editor,
-                        '<a href="www.odoo.com">odoo.com</a><br><a href="www.google.com">google.com</a>'
+                        '<a href="www.eden.com">eden.com</a><br><a href="www.google.com">google.com</a>'
                     );
                 },
                 contentAfter:
-                    '<p><a href="www.odoo.com">odoo.com</a></p><p><a href="www.google.com">google.com</a>[]</p>',
+                    '<p><a href="www.eden.com">eden.com</a></p><p><a href="www.google.com">google.com</a>[]</p>',
             });
         });
 
@@ -2562,7 +2562,7 @@ describe("link", () => {
             await testEditor({
                 contentBefore: "<p>[abc]</p>",
                 stepFunction: async (editor) => {
-                    pasteText(editor, "www.odoo.com");
+                    pasteText(editor, "www.eden.com");
                     undo(editor);
                 },
                 contentAfter: "<p>[abc]</p>",
@@ -2573,7 +2573,7 @@ describe("link", () => {
             await testEditor({
                 contentBefore: "<p>[abc]</p>",
                 stepFunction: async (editor) => {
-                    pasteText(editor, "def www.odoo.com xyz");
+                    pasteText(editor, "def www.eden.com xyz");
                     undo(editor);
                 },
                 contentAfter: "<p>[abc]</p>",
@@ -2586,7 +2586,7 @@ describe("link", () => {
                 stepFunction: async (editor) => {
                     pasteHtml(
                         editor,
-                        '<a href="www.odoo.com">odoo.com</a><br><a href="www.google.com">google.com</a>'
+                        '<a href="www.eden.com">eden.com</a><br><a href="www.google.com">google.com</a>'
                     );
                     undo(editor);
                 },
@@ -2668,16 +2668,16 @@ describe("link", () => {
             await testEditor({
                 contentBefore: '<p><a href="#">[xyz]</a></p>',
                 stepFunction: async (editor) => {
-                    pasteText(editor, "www.odoo.com");
+                    pasteText(editor, "www.eden.com");
                 },
-                contentAfter: '<p><a href="http://www.odoo.com">www.odoo.com</a>[]</p>',
+                contentAfter: '<p><a href="http://www.eden.com">www.eden.com</a>[]</p>',
             });
             await testEditor({
                 contentBefore: '<p><a href="#">[xyz]</a></p>',
                 stepFunction: async (editor) => {
-                    pasteText(editor, "abc www.odoo.com xyz");
+                    pasteText(editor, "abc www.eden.com xyz");
                 },
-                contentAfter: '<p>abc <a href="http://www.odoo.com">www.odoo.com</a> xyz[]</p>',
+                contentAfter: '<p>abc <a href="http://www.eden.com">www.eden.com</a> xyz[]</p>',
             });
         });
 
@@ -2689,7 +2689,7 @@ describe("link", () => {
             await animationFrame();
             expect(".o-we-powerbox").toHaveCount(1);
             expect(getContent(el)).toBe(
-                `<p>abhttps://download.odoocdn.com/icons/website/static/description/icon.png[]cd</p>`
+                `<p>abhttps://cdn.edencloud.us/icons/website/static/description/icon.png[]cd</p>`
             );
             await press("Enter");
             expect(getContent(el)).toBe(`<p>ab<img src="${imgUrl}">[]cd</p>`);
@@ -2703,7 +2703,7 @@ describe("link", () => {
             await animationFrame();
             expect(".o-we-powerbox").toHaveCount(1);
             expect(getContent(el)).toBe(
-                `<p>abhttps://download.odoocdn.com/icons/website/static/description/icon.png[]cd</p>`
+                `<p>abhttps://cdn.edencloud.us/icons/website/static/description/icon.png[]cd</p>`
             );
             await press("ArrowDown");
             await press("Enter");
@@ -2718,11 +2718,11 @@ describe("link", () => {
                 stepFunction: async (editor) => {
                     pasteHtml(
                         editor,
-                        '<a href="www.odoo.com">odoo.com</a><br><a href="www.google.com">google.com</a>'
+                        '<a href="www.eden.com">eden.com</a><br><a href="www.google.com">google.com</a>'
                     );
                 },
                 contentAfter:
-                    '<p><a href="www.odoo.com">odoo.com</a></p><p><a href="www.google.com">google.com</a>[]</p>',
+                    '<p><a href="www.eden.com">eden.com</a></p><p><a href="www.google.com">google.com</a>[]</p>',
             });
         });
     });
@@ -3097,12 +3097,12 @@ describe("youtube video", () => {
     });
 });
 
-describe("Odoo editor own html", () => {
+describe("Eden editor own html", () => {
     test("should paste html as is", async () => {
         await testEditor({
             contentBefore: "<p>a[]b</p>",
             stepFunction: async (editor) => {
-                pasteOdooEditorHtml(editor, '<div class="custom-paste">b</div>');
+                pasteEdenEditorHtml(editor, '<div class="custom-paste">b</div>');
             },
             contentAfter: '<p>a</p><div class="custom-paste">b</div><p>[]b</p>',
         });
@@ -3112,7 +3112,7 @@ describe("Odoo editor own html", () => {
         await testEditor({
             contentBefore: "<p>a[]b</p>",
             stepFunction: async (editor) => {
-                pasteOdooEditorHtml(editor, `<script>console.log('xss attack')</script>`);
+                pasteEdenEditorHtml(editor, `<script>console.log('xss attack')</script>`);
             },
             contentAfter: "<p>a[]b</p>",
         });
@@ -3120,9 +3120,9 @@ describe("Odoo editor own html", () => {
 });
 
 describe("editable in iframe", () => {
-    test("should paste odoo-editor html", async () => {
+    test("should paste eden-editor html", async () => {
         const { el, editor } = await setupEditor("<p>[]</p>", { props: { iframe: true } });
-        pasteOdooEditorHtml(editor, `<p>text<b>bold text</b>more text</p>`);
+        pasteEdenEditorHtml(editor, `<p>text<b>bold text</b>more text</p>`);
         expect(getContent(el)).toBe("<p>text<b>bold text</b>more text[]</p>");
     });
 });
@@ -3183,7 +3183,7 @@ describe("Paste HTML tables", () => {
                 font-weight: 400;
                 font-style: italic;
                 text-decoration: none;
-                font-family: "Odoo Unicode Support Noto";
+                font-family: "Eden Unicode Support Noto";
                 mso-generic-font-family: auto;
                 mso-font-charset: 0;
             }
@@ -3194,7 +3194,7 @@ describe("Paste HTML tables", () => {
                 font-weight: 700;
                 font-style: italic;
                 text-decoration: none;
-                font-family: "Odoo Unicode Support Noto";
+                font-family: "Eden Unicode Support Noto";
                 mso-generic-font-family: auto;
                 mso-font-charset: 0;
             }
@@ -3205,7 +3205,7 @@ describe("Paste HTML tables", () => {
                 font-weight: 700;
                 font-style: normal;
                 text-decoration: none;
-                font-family: "Odoo Unicode Support Noto";
+                font-family: "Eden Unicode Support Noto";
                 mso-generic-font-family: auto;
                 mso-font-charset: 0;
             }
@@ -3222,7 +3222,7 @@ describe("Paste HTML tables", () => {
                 color: #495057;
                 font-size: 10.0pt;
                 font-style: italic;
-                font-family: "Odoo Unicode Support Noto";
+                font-family: "Eden Unicode Support Noto";
                 mso-generic-font-family: auto;
                 mso-font-charset: 0;
                 text-align: center;
@@ -3242,7 +3242,7 @@ describe("Paste HTML tables", () => {
                 color: #495057;
                 font-size: 10.0pt;
                 font-weight: 700;
-                font-family: "Odoo Unicode Support Noto";
+                font-family: "Eden Unicode Support Noto";
                 mso-generic-font-family: auto;
                 mso-font-charset: 0;
                 text-align: center;
@@ -3283,7 +3283,7 @@ describe("Paste HTML tables", () => {
             .xl94 {
                 color: #495057;
                 font-size: 10.0pt;
-                font-family: "Odoo Unicode Support Noto";
+                font-family: "Eden Unicode Support Noto";
                 mso-generic-font-family: auto;
                 mso-font-charset: 1;
                 text-align: center;
@@ -3394,7 +3394,7 @@ ${"    "}
         </colgroup>
         <tbody>
             <tr style="height:21px;">
-                <td style="overflow:hidden;padding:2px 3px 2px 3px;vertical-align:bottom;font-family:Odoo Unicode Support Noto;font-weight:normal;font-style:italic;color:#495057;"
+                <td style="overflow:hidden;padding:2px 3px 2px 3px;vertical-align:bottom;font-family:Eden Unicode Support Noto;font-weight:normal;font-style:italic;color:#495057;"
                     data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Italic then also BOLD&quot;}"
                     data-sheets-textstyleruns="{&quot;1&quot;:0,&quot;2&quot;:{&quot;3&quot;:&quot;Arial&quot;}}{&quot;1&quot;:17,&quot;2&quot;:{&quot;3&quot;:&quot;Arial&quot;,&quot;5&quot;:1}}">
                     <span style="font-size:10pt;font-family:Arial;font-style:italic;color:#495057;">Italic then also
@@ -3405,7 +3405,7 @@ ${"    "}
                     data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Italic strike&quot;}">Italic strike</td>
             </tr>
             <tr style="height:21px;">
-                <td style="overflow:hidden;padding:2px 3px 2px 3px;vertical-align:bottom;font-family:Odoo Unicode Support Noto;font-weight:bold;color:#495057;"
+                <td style="overflow:hidden;padding:2px 3px 2px 3px;vertical-align:bottom;font-family:Eden Unicode Support Noto;font-weight:bold;color:#495057;"
                     data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Just bold Just italic&quot;}"
                     data-sheets-textstyleruns="{&quot;1&quot;:0,&quot;2&quot;:{&quot;3&quot;:&quot;Arial&quot;}}{&quot;1&quot;:10,&quot;2&quot;:{&quot;3&quot;:&quot;Arial&quot;,&quot;5&quot;:0,&quot;6&quot;:1}}">
                     <span
@@ -3424,7 +3424,7 @@ ${"    "}
                     strike and underline</td>
             </tr>
             <tr style="height:21px;">
-                <td style="overflow:hidden;padding:2px 3px 2px 3px;vertical-align:bottom;background-color:#ffff00;font-family:Odoo Unicode Support Noto;font-weight:normal;color:#495057;"
+                <td style="overflow:hidden;padding:2px 3px 2px 3px;vertical-align:bottom;background-color:#ffff00;font-family:Eden Unicode Support Noto;font-weight:normal;color:#495057;"
                     data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Color background&quot;}">Color background
                 </td>
                 <td style="overflow:hidden;padding:2px 3px 2px 3px;vertical-align:bottom;background-color:#ffff00;color:#ff0000;"
@@ -3688,7 +3688,7 @@ describe("onDrop", () => {
         const dragdata = new DataTransfer();
         await dispatch(imgElement, "dragstart", { dataTransfer: dragdata });
         await animationFrame();
-        const imageHTML = dragdata.getData("application/vnd.odoo.odoo-editor-node");
+        const imageHTML = dragdata.getData("application/vnd.eden.eden-editor-node");
         expect(imageHTML).toBe(
             `<img class="img-fluid" data-file-name="image.png" src="${base64Image}">`
         );
@@ -3698,8 +3698,8 @@ describe("onDrop", () => {
             "text/html",
             `<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"><img src="${base64Image}">`
         );
-        // Simulate the application/vnd.odoo.odoo-editor-node data that the browser would do.
-        dropData.setData("application/vnd.odoo.odoo-editor-node", imageHTML);
+        // Simulate the application/vnd.eden.eden-editor-node data that the browser would do.
+        dropData.setData("application/vnd.eden.eden-editor-node", imageHTML);
         await dispatch(pElement, "drop", { dataTransfer: dropData });
         await animationFrame();
 

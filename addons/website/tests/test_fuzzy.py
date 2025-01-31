@@ -1,19 +1,19 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 from lxml import etree
 import re
 from markupsafe import Markup
 
-from odoo.addons.website.controllers.main import Website
-from odoo.addons.website.tools import distance, MockRequest
-import odoo.tests
-from odoo.tests.common import TransactionCase
+from eden.addons.website.controllers.main import Website
+from eden.addons.website.tools import distance, MockRequest
+import eden.tests
+from eden.tests.common import TransactionCase
 
 _logger = logging.getLogger(__name__)
 
 
-@odoo.tests.tagged('-at_install', 'post_install')
+@eden.tests.tagged('-at_install', 'post_install')
 class TestFuzzy(TransactionCase):
     def test_01_fuzzy_names(self):
         # Models from other modules commented out on commit: they make the test much longer
@@ -102,7 +102,7 @@ class TestFuzzy(TransactionCase):
         self.assertEqual(distance("", "", 10), 0)
 
 
-@odoo.tests.tagged('-at_install', 'post_install')
+@eden.tests.tagged('-at_install', 'post_install')
 class TestAutoComplete(TransactionCase):
     @classmethod
     def setUpClass(cls):

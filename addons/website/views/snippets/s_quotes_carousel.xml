@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_quotes_carousel" name="Quotes">
     <section class="s_quotes_carousel_wrapper" data-vxml="001" data-vcss="002">
@@ -104,4 +104,4 @@
     <field name="path">website/static/src/snippets/s_quotes_carousel/002.scss</field>
 </record>
 
-</odoo>
+</eden>

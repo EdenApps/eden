@@ -1,14 +1,14 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 from unittest.mock import patch
 
 from dateutil.relativedelta import relativedelta
 
-from odoo.tests import tagged
+from eden.tests import tagged
 
-from odoo.addons.base.tests.common import TransactionCaseWithUserPortal
-from odoo.addons.mail.models.mail_template import MailTemplate
+from eden.addons.base.tests.common import TransactionCaseWithUserPortal
+from eden.addons.mail.models.mail_template import MailTemplate
 
 
 class TestWebsiteSaleCartAbandonedCommon(TransactionCaseWithUserPortal):

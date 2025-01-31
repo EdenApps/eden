@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="spreadsheet.public_spreadsheet_layout" name="Public spreadsheet layout">
     <t t-call="web.layout">
         <t t-set="head">
             <script>
-                odoo.__session_info__ = <t t-out="json.dumps(session_info)"/>;
-                odoo.__session_info__.spreadsheet_public_props = <t t-out="json.dumps(props)"/>;
+                eden.__session_info__ = <t t-out="json.dumps(session_info)"/>;
+                eden.__session_info__.spreadsheet_public_props = <t t-out="json.dumps(props)"/>;
             </script>
             <t t-call-assets="spreadsheet.public_spreadsheet"/>
         </t>
@@ -36,4 +36,4 @@
     </t>
 </template>
 
-</odoo>
+</eden>

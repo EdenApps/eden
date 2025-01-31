@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_big_number" name="Big number">
     <section class="s_big_number o_half_screen_height o_cc o_cc5 pt104 pb104" data-oe-shape-data="{'shape':'web_editor/Rainy/09_001','flip':[],'showOnMobile':false}">
@@ -19,4 +19,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

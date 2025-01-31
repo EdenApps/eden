@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
     import { rpc } from "@web/core/network/rpc";
     import { registry } from "@web/core/registry";
@@ -59,7 +59,7 @@
     },
     {
         trigger: `input[name="email"]`,
-        run: "edit abc@odoo.com",
+        run: "edit abc@eden.com",
     },
     {
         trigger: `input[name="street"]`,
@@ -111,7 +111,7 @@
     },
     {
         trigger: `input[name="email"]`,
-        run: "edit abc@odoo.com",
+        run: "edit abc@eden.com",
     },
     {
         trigger: `input[name="street"]`,
@@ -328,7 +328,7 @@
     },
     {
         trigger: `.oe_login_form input[name="login"]`,
-        run: "edit abc@odoo.com",
+        run: "edit abc@eden.com",
     },
     {
         trigger: `.oe_login_form input[name="password"]`,
@@ -467,7 +467,7 @@
     },
     {
         trigger: `.oe_login_form input[name="login"]`,
-        run: "edit abc@odoo.com",
+        run: "edit abc@eden.com",
     },
     {
         trigger: `.oe_login_form input[name="password"]`,

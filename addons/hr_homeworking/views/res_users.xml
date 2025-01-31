@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <record id="res_useurs_view_form_profile" model="ir.ui.view">
             <field name="name">res.users.preferences.form.inherit</field>
@@ -21,4 +21,4 @@
             </field>
         </record>
     </data>
-</odoo>
+</eden>

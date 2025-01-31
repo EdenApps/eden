@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mail.tests.mail_tracking_duration_mixin_case import MailTrackingDurationMixinCase
-from odoo.tests import Form
+from eden.addons.mail.tests.mail_tracking_duration_mixin_case import MailTrackingDurationMixinCase
+from eden.tests import Form
 
 
 class TestProjectTaskMailTrackingDuration(MailTrackingDurationMixinCase):

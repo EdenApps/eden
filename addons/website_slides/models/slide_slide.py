@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import base64
 import datetime
@@ -12,11 +12,11 @@ from dateutil.relativedelta import relativedelta
 from markupsafe import Markup
 from werkzeug import urls
 
-from odoo import api, fields, models, _
-from odoo.exceptions import RedirectWarning, UserError, AccessError
-from odoo.http import request
-from odoo.tools import html2plaintext, sql
-from odoo.tools.pdf import PdfFileReader
+from eden import api, fields, models, _
+from eden.exceptions import RedirectWarning, UserError, AccessError
+from eden.http import request
+from eden.tools import html2plaintext, sql
+from eden.tools.pdf import PdfFileReader
 
 _logger = logging.getLogger(__name__)
 

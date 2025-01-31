@@ -2,8 +2,8 @@ import base64
 import uuid
 from werkzeug.exceptions import Forbidden
 
-from odoo import models, fields, api, _
-from odoo.tools import consteq
+from eden import models, fields, api, _
+from eden.tools import consteq
 
 class SpreadsheetDashboardShare(models.Model):
     _name = 'spreadsheet.dashboard.share'

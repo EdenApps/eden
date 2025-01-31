@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import timedelta
 
-from odoo.fields import Datetime
-from odoo.tests import HttpCase, tagged
+from eden.fields import Datetime
+from eden.tests import HttpCase, tagged
 
 
 @tagged('post_install', '-at_install')
@@ -39,4 +39,4 @@ class TestUi(HttpCase):
             'event_id': event.id,
             'product_id': self.product_event.id,
         }])
-        self.start_tour("/odoo", 'event_configurator_tour', login="admin")
+        self.start_tour("/eden", 'event_configurator_tour', login="admin")

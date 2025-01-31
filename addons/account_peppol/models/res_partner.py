@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import contextlib
 import logging
@@ -8,9 +8,9 @@ from markupsafe import Markup
 from hashlib import md5
 from urllib import parse
 
-from odoo import api, fields, models
-from odoo.addons.account_peppol.tools.demo_utils import handle_demo
-from odoo.addons.account.models.company import PEPPOL_LIST
+from eden import api, fields, models
+from eden.addons.account_peppol.tools.demo_utils import handle_demo
+from eden.addons.account.models.company import PEPPOL_LIST
 
 TIMEOUT = 10
 _logger = logging.getLogger(__name__)

@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import {
     formatXml,
@@ -51,11 +51,11 @@ import { Test } from "./test";
  *  message?: AssertionMessage;
  * }} ExpectOptions
  *
- * @typedef {import("@odoo/hoot-dom").Dimensions} Dimensions
- * @typedef {import("@odoo/hoot-dom").FormatXmlOptions} FormatXmlOptions
- * @typedef {import("@odoo/hoot-dom").QueryRectOptions} QueryRectOptions
- * @typedef {import("@odoo/hoot-dom").QueryTextOptions} QueryTextOptions
- * @typedef {import("@odoo/hoot-dom").Target} Target
+ * @typedef {import("@eden/hoot-dom").Dimensions} Dimensions
+ * @typedef {import("@eden/hoot-dom").FormatXmlOptions} FormatXmlOptions
+ * @typedef {import("@eden/hoot-dom").QueryRectOptions} QueryRectOptions
+ * @typedef {import("@eden/hoot-dom").QueryTextOptions} QueryTextOptions
+ * @typedef {import("@eden/hoot-dom").Target} Target
  */
 
 /**
@@ -1889,7 +1889,7 @@ export class Matcher {
      * @example
      *  expect("p").toHaveText("lorem ipsum dolor sit amet");
      * @example
-     *  expect("header h1").toHaveText(/odoo/i);
+     *  expect("header h1").toHaveText(/eden/i);
      */
     toHaveText(text, options) {
         this._saveStack();

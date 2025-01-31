@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import datetime
 
-from odoo import tests, _
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
-from odoo.addons.website_livechat.tests.common import TestLivechatCommon
-from odoo.tests.common import new_test_user
+from eden import tests, _
+from eden.addons.base.tests.common import HttpCaseWithUserDemo
+from eden.addons.website_livechat.tests.common import TestLivechatCommon
+from eden.tests.common import new_test_user
 
 
 @tests.tagged('post_install', '-at_install')
@@ -79,7 +79,7 @@ class TestLivechatBasicFlowHttpCase(HttpCaseWithUserDemo, TestLivechatCommon):
         channel._close_livechat_session()
 
         self.assertEqual(len(channel.message_ids), 4)
-        self.assertEqual(channel.message_ids[0].author_id, self.env.ref('base.partner_root'), "Odoobot must be the sender of the 'left the conversation' message.")
+        self.assertEqual(channel.message_ids[0].author_id, self.env.ref('base.partner_root'), "Edenbot must be the sender of the 'left the conversation' message.")
         self.assertIn(f"Visitor #{channel.livechat_visitor_id.id}", channel.message_ids[0].body)
         self.assertEqual(channel.livechat_active, False, "The livechat session must be inactive as the visitor sent his feedback.")
 
@@ -89,7 +89,7 @@ class TestLivechatBasicFlowHttpCase(HttpCaseWithUserDemo, TestLivechatCommon):
         # left the conversation
         channel._close_livechat_session()
         self.assertEqual(len(channel.message_ids), 3)
-        self.assertEqual(channel.message_ids[0].author_id, self.env.ref('base.partner_root'), "Odoobot must be the author the message.")
+        self.assertEqual(channel.message_ids[0].author_id, self.env.ref('base.partner_root'), "Edenbot must be the author the message.")
         self.assertIn(f"Visitor #{channel.livechat_visitor_id.id}", channel.message_ids[0].body)
         self.assertEqual(channel.livechat_active, False, "The livechat session must be inactive since visitor left the conversation.")
 

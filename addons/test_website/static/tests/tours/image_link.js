@@ -34,12 +34,12 @@ registerWebsitePreviewTour('test_image_link', {
     }, {
         content: "enter site URL",
         trigger: "#oe_snippets we-customizeblock-options:has(we-title:contains('Image')) we-input:contains(Your URL) input",
-        run: "edit odoo.com && click body",
+        run: "edit eden.com && click body",
     },
     ...selectImageSteps,
     {
         content: "check popover content has site URL",
-        trigger: ":iframe .o_edit_menu_popover a.o_we_url_link[href='http://odoo.com/']:contains(http://odoo.com/)",
+        trigger: ":iframe .o_edit_menu_popover a.o_we_url_link[href='http://edencloud.us/']:contains(http://edencloud.us/)",
     }, {
         content: "remove URL",
         trigger: "#oe_snippets we-customizeblock-options:has(we-title:contains('Image')) we-input:contains(Your URL) input",

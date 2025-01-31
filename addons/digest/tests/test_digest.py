@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from ast import literal_eval
 from contextlib import contextmanager
@@ -10,13 +10,13 @@ from lxml import html
 from unittest.mock import patch
 from werkzeug.urls import url_encode, url_join
 
-from odoo import SUPERUSER_ID
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
-from odoo.addons.digest.tests.common import TestDigestCommon
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.tests import tagged
-from odoo.tests.common import users
-from odoo.tools import mute_logger
+from eden import SUPERUSER_ID
+from eden.addons.base.tests.common import HttpCaseWithUserDemo
+from eden.addons.digest.tests.common import TestDigestCommon
+from eden.addons.mail.tests.common import MailCommon
+from eden.tests import tagged
+from eden.tests.common import users
+from eden.tools import mute_logger
 
 
 class TestDigest(TestDigestCommon):
@@ -362,7 +362,7 @@ class TestUnsubscribe(MailCommon, HttpCaseWithUserDemo):
         self.assertIn(self.user_demo, self.test_digest.user_ids)
         self.authenticate(None, None)
 
-        with mute_logger('odoo.addons.http_routing.models.ir_http'):
+        with mute_logger('eden.addons.http_routing.models.ir_http'):
             # Ensure we cannot unregister using GET method (method not allowed)
             response = self._url_unsubscribe(token=self.user_demo_unsubscribe_token, user_id=self.user_demo.id,
                                              one_click='1', method='GET')

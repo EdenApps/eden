@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo><data>
+<eden><data>
     <!-- TAG VIEWS -->
     <record id="forum_tag_view_list" model="ir.ui.view">
         <field name="name">forum.tag.view.list</field>
@@ -40,4 +40,4 @@
             </p>
         </field>
     </record>
-</data></odoo>
+</data></eden>

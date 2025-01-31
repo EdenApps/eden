@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="pos_order_form_view_inherit" model="ir.ui.view">
         <field name="name">pos.order.form.view.inherit</field>
         <field name="model">pos.order</field>
@@ -17,4 +17,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</eden>

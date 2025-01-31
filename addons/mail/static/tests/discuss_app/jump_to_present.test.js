@@ -12,10 +12,10 @@ import {
     start,
     startServer,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 
 import { PRESENT_VIEWPORT_THRESHOLD } from "@mail/core/common/thread";
-import { queryFirst, tick } from "@odoo/hoot-dom";
+import { queryFirst, tick } from "@eden/hoot-dom";
 import { serverState } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");

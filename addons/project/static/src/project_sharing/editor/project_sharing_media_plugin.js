@@ -18,7 +18,7 @@ export class ProjectSharingMediaPlugin extends MediaPlugin {
                     data: imageData,
                     res_id: resId,
                     access_token: "",
-                    csrf_token: odoo.csrf_token,
+                    csrf_token: eden.csrf_token,
                 },
                 "text"
             )

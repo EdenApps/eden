@@ -3,10 +3,10 @@ import re
 
 from datetime import datetime, timedelta
 
-from odoo import http, _
-from odoo.exceptions import AccessDenied
-from odoo.http import request
-from odoo.addons.web.controllers import home as web_home
+from eden import http, _
+from eden.exceptions import AccessDenied
+from eden.http import request
+from eden.addons.web.controllers import home as web_home
 
 TRUSTED_DEVICE_COOKIE = 'td_id'
 TRUSTED_DEVICE_AGE = 90*86400 # 90 days expiration
@@ -74,11 +74,11 @@ class Home(web_home.Home):
                         httponly=True,
                         samesite='Lax'
                     )
-                # Crapy workaround for unupdatable Odoo Mobile App iOS (Thanks Apple :@)
+                # Crapy workaround for unupdatable Eden Mobile App iOS (Thanks Apple :@)
                 request.session.touch()
                 return response
 
-        # Crapy workaround for unupdatable Odoo Mobile App iOS (Thanks Apple :@)
+        # Crapy workaround for unupdatable Eden Mobile App iOS (Thanks Apple :@)
         request.session.touch()
         return request.render('auth_totp.auth_totp_form', {
             'user': user,

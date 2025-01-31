@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="view_picking_internal_search_inherit_stock_dropshipping" model="ir.ui.view">
         <field name="name">stock.picking.search</field>
         <field name="model">stock.picking</field>
@@ -35,4 +35,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</eden>

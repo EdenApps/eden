@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { leave } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@eden/hoot";
+import { leave } from "@eden/hoot-dom";
 
 import { withUser } from "@web/../tests/_framework/mock_server/mock_server";
 import { Command, serverState } from "@web/../tests/web_test_helpers";

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="product_template_search_view_pos" model="ir.ui.view">
         <field name="name">product.template.search.pos.form</field>
         <field name="model">product.template</field>
@@ -208,4 +208,4 @@
         <field name="context" eval="{'dialog_size': 'medium'}"/>
         <field name="view_id" ref="point_of_sale.product_product_view_form_normalized_pos"/>
     </record>
-</odoo>
+</eden>

@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import re
 from operator import itemgetter
 
-from odoo import api, fields, models, tools, _
-from odoo.exceptions import ValidationError
-from odoo.osv import expression
-from odoo.tools import float_compare, format_list, groupby
-from odoo.tools.image import is_image_size_above
-from odoo.tools.misc import unique
+from eden import api, fields, models, tools, _
+from eden.exceptions import ValidationError
+from eden.osv import expression
+from eden.tools import float_compare, format_list, groupby
+from eden.tools.image import is_image_size_above
+from eden.tools.misc import unique
 
 
 class ProductProduct(models.Model):
@@ -436,7 +436,7 @@ class ProductProduct(models.Model):
             self = to_unlink
 
         try:
-            with self.env.cr.savepoint(), tools.mute_logger('odoo.sql_db'):
+            with self.env.cr.savepoint(), tools.mute_logger('eden.sql_db'):
                 self.unlink()
         except Exception:
             # We catch all kind of exceptions to be sure that the operation
@@ -458,7 +458,7 @@ class ProductProduct(models.Model):
         For convenience the template is copied instead and its first variant is
         returned.
         """
-        # copy variant is disabled in https://github.com/odoo/odoo/pull/38303
+        # copy variant is disabled in https://github.com/eden/eden/pull/38303
         # this returns the first possible combination of variant to make it
         # works for now, need to be fixed to return product_variant_id if it's
         # possible in the future

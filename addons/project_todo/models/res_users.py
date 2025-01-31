@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 
-from odoo import _, api, models, modules
+from eden import _, api, models, modules
 
 
 class Users(models.Model):

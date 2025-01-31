@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.models import ValidationError
-from odoo.tests import TransactionCase, tagged
+from eden.models import ValidationError
+from eden.tests import TransactionCase, tagged
 
 
 @tagged('-at_install', 'post_install')

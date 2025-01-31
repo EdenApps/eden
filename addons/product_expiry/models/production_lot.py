@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import datetime
-from odoo import api, fields, models, SUPERUSER_ID, _
+from eden import api, fields, models, SUPERUSER_ID, _
 
 
 class StockLot(models.Model):

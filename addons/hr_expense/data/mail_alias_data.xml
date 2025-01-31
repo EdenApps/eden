@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <!-- default alias for expenses -->
         <record id="mail_alias_expense" model="mail.alias">
@@ -8,4 +8,4 @@
             <field name="alias_contact">employees</field>
         </record>
     </data>
-</odoo>
+</eden>

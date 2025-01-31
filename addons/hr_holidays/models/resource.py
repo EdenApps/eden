@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models, api, _
-from odoo.exceptions import ValidationError
-from odoo.osv import expression
+from eden import fields, models, api, _
+from eden.exceptions import ValidationError
+from eden.osv import expression
 import pytz
 from datetime import datetime
 

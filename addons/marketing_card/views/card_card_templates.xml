@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
 <!--Notable pitfalls-->
 <!--Unpatched wkhtmltoimage uses an old version of webkit, meaning things like standard flexbox
     are not supported and -webkit flags should be used.-->
@@ -570,4 +570,4 @@
         </div>
     </xpath>
 </template>
-</odoo>
+</eden>

@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
 
-from odoo import Command
-from odoo.tools import float_round
+from eden import Command
+from eden.tools import float_round
 
-from odoo.exceptions import UserError
-from odoo.tests import Form, HttpCase, tagged
-from odoo.tests.common import TransactionCase
+from eden.exceptions import UserError
+from eden.tests import Form, HttpCase, tagged
+from eden.tests.common import TransactionCase
 
 
 class TestBatchPicking(TransactionCase):
@@ -1204,7 +1204,7 @@ class TestBatchPickingSynchronization(HttpCase):
         })
 
         action_id = self.env.ref('stock_picking_batch.stock_picking_batch_menu').action
-        url = f'/odoo/action-{action_id.id}/{batch.id}'
+        url = f'/eden/action-{action_id.id}/{batch.id}'
         self.start_tour(url, "test_stock_picking_batch_sm_to_sml_synchronization", login="admin", timeout=100)
         self.assertEqual(batch.picking_ids.move_ids.quantity, 7)
         self.assertEqual(batch.picking_ids.move_ids.move_line_ids.quantity, 7)

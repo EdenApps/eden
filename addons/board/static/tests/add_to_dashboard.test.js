@@ -1,8 +1,8 @@
 import { addToBoardItem } from "@board/add_to_board/add_to_board";
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { hover, press, queryOne } from "@odoo/hoot-dom";
-import { animationFrame, mockDate } from "@odoo/hoot-mock";
+import { beforeEach, describe, expect, test } from "@eden/hoot";
+import { hover, press, queryOne } from "@eden/hoot-dom";
+import { animationFrame, mockDate } from "@eden/hoot-mock";
 import * as dsHelpers from "@web/../tests/core/domain_selector/domain_selector_helpers";
 import {
     contains,

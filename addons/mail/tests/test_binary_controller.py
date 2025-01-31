@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-import odoo
-from odoo.addons.mail.tests.test_controller_common import TestControllerCommon
+import eden
+from eden.addons.mail.tests.test_controller_common import TestControllerCommon
 
 
-@odoo.tests.tagged("-at_install", "post_install")
+@eden.tests.tagged("-at_install", "post_install")
 class TestBinaryControllerCommon(TestControllerCommon):
     @classmethod
     def setUpClass(cls):
@@ -38,7 +38,7 @@ class TestBinaryControllerCommon(TestControllerCommon):
                     )
 
     def _get_avatar_url(self, record):
-        url = f"/web/image?field=avatar_128&id={record.id}&model={record._name}&unique={odoo.fields.Datetime.to_string(record.write_date)}"
+        url = f"/web/image?field=avatar_128&id={record.id}&model={record._name}&unique={eden.fields.Datetime.to_string(record.write_date)}"
         return self.url_open(url)
 
     def _send_message(self, author, thread_model, thread_id):
@@ -59,7 +59,7 @@ class TestBinaryControllerCommon(TestControllerCommon):
         )
 
 
-@odoo.tests.tagged("-at_install", "post_install")
+@eden.tests.tagged("-at_install", "post_install")
 class TestBinaryController(TestBinaryControllerCommon):
     def test_open_partner_avatar(self):
         """Test access to open the partner avatar."""

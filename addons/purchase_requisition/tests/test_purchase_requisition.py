@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.purchase_requisition.tests.common import TestPurchaseRequisitionCommon
-from odoo import Command, fields
-from odoo.tests import Form
+from eden.addons.purchase_requisition.tests.common import TestPurchaseRequisitionCommon
+from eden import Command, fields
+from eden.tests import Form
 
 from datetime import timedelta
 
-from odoo.tests.common import tagged
+from eden.tests.common import tagged
 
 
 @tagged('post_install', '-at_install')

@@ -1,7 +1,7 @@
 import base64
 import json
-from odoo.tests import Form, TransactionCase
-from odoo.exceptions import ValidationError
+from eden.tests import Form, TransactionCase
+from eden.exceptions import ValidationError
 
 class ValidateSpreadsheetMixinData(TransactionCase):
     def test_onchange_json_data(self):

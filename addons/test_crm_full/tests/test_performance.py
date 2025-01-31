@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from freezegun import freeze_time
 
-from odoo.addons.test_crm_full.tests.common import TestCrmFullCommon
-from odoo.tests import Form, users, warmup, tagged
+from eden.addons.test_crm_full.tests.common import TestCrmFullCommon
+from eden.tests import Form, users, warmup, tagged
 
 
 @tagged('crm_performance', 'post_install', '-at_install', '-standard')

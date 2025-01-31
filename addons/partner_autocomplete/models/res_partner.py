@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import base64
 import json
@@ -9,8 +9,8 @@ import requests
 
 from stdnum.eu.vat import check_vies
 
-from odoo import api, fields, models, _
-from odoo.tools.image import base64_to_image
+from eden import api, fields, models, _
+from eden.tools.image import base64_to_image
 
 _logger = logging.getLogger(__name__)
 
@@ -215,7 +215,7 @@ class ResPartner(models.Model):
             partners._update_autocomplete_data(vals_list[0].get('vat', False))
             if partners.additional_info:
                 template_values = json.loads(partners.additional_info)
-                template_values['flavor_text'] = _("Partner created by Odoo Partner Autocomplete Service")
+                template_values['flavor_text'] = _("Partner created by Eden Partner Autocomplete Service")
                 partners.message_post_with_source(
                     'iap_mail.enrich_company',
                     render_values=template_values,

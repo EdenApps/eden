@@ -1,5 +1,5 @@
-from odoo import fields, models, api
-from odoo.tools import Query
+from eden import fields, models, api
+from eden.tools import Query
 
 COMPANY_OFFSET = 10000
 

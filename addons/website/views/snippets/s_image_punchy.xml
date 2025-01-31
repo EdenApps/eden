@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_image_punchy" name="Image Punchy">
     <section class="s_image_punchy o_cc o_cc2 pt64 pb64">
@@ -16,4 +16,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
 
-from odoo.addons.auth_totp.controllers.home import TRUSTED_DEVICE_AGE
-from odoo.addons.mail.tests.test_res_users import TestNotifySecurityUpdate
-from odoo.tests import users
+from eden.addons.auth_totp.controllers.home import TRUSTED_DEVICE_AGE
+from eden.addons.mail.tests.test_res_users import TestNotifySecurityUpdate
+from eden.tests import users
 
 
 class TestNotifySecurityUpdateTotp(TestNotifySecurityUpdate):

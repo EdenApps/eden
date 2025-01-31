@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import datetime
 import logging
@@ -8,15 +8,15 @@ import tempfile
 
 from lxml import html
 
-import odoo
-import odoo.modules.registry
-from odoo import http
-from odoo.http import content_disposition, dispatch_rpc, request, Response
-from odoo.service import db
-from odoo.tools.misc import file_open, str2bool
-from odoo.tools.translate import _
+import eden
+import eden.modules.registry
+from eden import http
+from eden.http import content_disposition, dispatch_rpc, request, Response
+from eden.service import db
+from eden.tools.misc import file_open, str2bool
+from eden.tools.translate import _
 
-from odoo.addons.base.models.ir_qweb import render as qweb_render
+from eden.addons.base.models.ir_qweb import render as qweb_render
 
 
 _logger = logging.getLogger(__name__)
@@ -29,16 +29,16 @@ class Database(http.Controller):
 
     def _render_template(self, **d):
         d.setdefault('manage', True)
-        d['insecure'] = odoo.tools.config.verify_admin_password('admin')
-        d['list_db'] = odoo.tools.config['list_db']
-        d['langs'] = odoo.service.db.exp_list_lang()
-        d['countries'] = odoo.service.db.exp_list_countries()
+        d['insecure'] = eden.tools.config.verify_admin_password('admin')
+        d['list_db'] = eden.tools.config['list_db']
+        d['langs'] = eden.service.db.exp_list_lang()
+        d['countries'] = eden.service.db.exp_list_countries()
         d['pattern'] = DBNAME_PATTERN
         # databases list
         try:
             d['databases'] = http.db_list()
-            d['incompatible_databases'] = odoo.service.db.list_db_incompatible(d['databases'])
-        except odoo.exceptions.AccessDenied:
+            d['incompatible_databases'] = eden.service.db.list_db_incompatible(d['databases'])
+        except eden.exceptions.AccessDenied:
             d['databases'] = [request.db] if request.db else []
 
         templates = {}
@@ -70,7 +70,7 @@ class Database(http.Controller):
 
     @http.route('/web/database/create', type='http', auth="none", methods=['POST'], csrf=False)
     def create(self, master_pwd, name, lang, password, **post):
-        insecure = odoo.tools.config.verify_admin_password('admin')
+        insecure = eden.tools.config.verify_admin_password('admin')
         if insecure and master_pwd:
             dispatch_rpc('db', 'change_admin_password', ["admin", master_pwd])
         try:
@@ -82,7 +82,7 @@ class Database(http.Controller):
             credential = {'login': post['login'], 'password': password, 'type': 'password'}
             request.session.authenticate(name, credential)
             request.session.db = name
-            return request.redirect('/odoo')
+            return request.redirect('/eden')
         except Exception as e:
             _logger.exception("Database creation error.")
             error = "Database creation error: %s" % (str(e) or repr(e))
@@ -90,7 +90,7 @@ class Database(http.Controller):
 
     @http.route('/web/database/duplicate', type='http', auth="none", methods=['POST'], csrf=False)
     def duplicate(self, master_pwd, name, new_name, neutralize_database=False):
-        insecure = odoo.tools.config.verify_admin_password('admin')
+        insecure = eden.tools.config.verify_admin_password('admin')
         if insecure and master_pwd:
             dispatch_rpc('db', 'change_admin_password', ["admin", master_pwd])
         try:
@@ -107,7 +107,7 @@ class Database(http.Controller):
 
     @http.route('/web/database/drop', type='http', auth="none", methods=['POST'], csrf=False)
     def drop(self, master_pwd, name):
-        insecure = odoo.tools.config.verify_admin_password('admin')
+        insecure = eden.tools.config.verify_admin_password('admin')
         if insecure and master_pwd:
             dispatch_rpc('db', 'change_admin_password', ["admin", master_pwd])
         try:
@@ -122,11 +122,11 @@ class Database(http.Controller):
 
     @http.route('/web/database/backup', type='http', auth="none", methods=['POST'], csrf=False)
     def backup(self, master_pwd, name, backup_format='zip'):
-        insecure = odoo.tools.config.verify_admin_password('admin')
+        insecure = eden.tools.config.verify_admin_password('admin')
         if insecure and master_pwd:
             dispatch_rpc('db', 'change_admin_password', ["admin", master_pwd])
         try:
-            odoo.service.db.check_super(master_pwd)
+            eden.service.db.check_super(master_pwd)
             if name not in http.db_list():
                 raise Exception("Database %r is not known" % name)
             ts = datetime.datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S")
@@ -135,7 +135,7 @@ class Database(http.Controller):
                 ('Content-Type', 'application/octet-stream; charset=binary'),
                 ('Content-Disposition', content_disposition(filename)),
             ]
-            dump_stream = odoo.service.db.dump_db(name, None, backup_format)
+            dump_stream = eden.service.db.dump_db(name, None, backup_format)
             response = Response(dump_stream, headers=headers, direct_passthrough=True)
             return response
         except Exception as e:
@@ -145,7 +145,7 @@ class Database(http.Controller):
 
     @http.route('/web/database/restore', type='http', auth="none", methods=['POST'], csrf=False, max_content_length=None)
     def restore(self, master_pwd, backup_file, name, copy=False, neutralize_database=False):
-        insecure = odoo.tools.config.verify_admin_password('admin')
+        insecure = eden.tools.config.verify_admin_password('admin')
         if insecure and master_pwd:
             dispatch_rpc('db', 'change_admin_password', ["admin", master_pwd])
         try:

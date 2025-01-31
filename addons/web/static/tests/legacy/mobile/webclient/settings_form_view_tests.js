@@ -1,11 +1,11 @@
-/** @odoo-module alias=@web/../tests/mobile/webclient/settings_form_view_tests default=false */
+/** @eden-module alias=@web/../tests/mobile/webclient/settings_form_view_tests default=false */
 
 import { getFixture, mockTimeout, nextTick } from "@web/../tests/helpers/utils";
 import { makeView, setupViewRegistries } from "@web/../tests/views/helpers";
 import { swipeLeft, swipeRight } from "@web/../tests/mobile/helpers";
 import { registry } from "@web/core/registry";
 
-import { EventBus } from "@odoo/owl";
+import { EventBus } from "@eden/owl";
 
 let serverData, target;
 

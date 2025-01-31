@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <record id="view_account_debit_note" model="ir.ui.view">
             <field name="name">account.debit.note.form</field>
@@ -37,4 +37,4 @@
             <field name="binding_view_types">list</field>
         </record>
     </data>
-</odoo>
+</eden>

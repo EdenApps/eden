@@ -1,9 +1,9 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { Model } from "@odoo/o-spreadsheet";
+import { Model } from "@eden/o-spreadsheet";
 
 /**
- * An o-spreadsheet model with all custom Odoo plugins
- * @type {import("@spreadsheet").OdooSpreadsheetModelConstructor}
+ * An o-spreadsheet model with all custom Eden plugins
+ * @type {import("@spreadsheet").EdenSpreadsheetModelConstructor}
  **/
-export const OdooSpreadsheetModel = Model;
+export const EdenSpreadsheetModel = Model;

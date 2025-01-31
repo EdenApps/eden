@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data noupdate="1">
+<eden><data noupdate="1">
     <record id="sales_team.team_sales_department" model="crm.team" forcecreate="False">
         <field name="alias_name">info</field>
     </record>
@@ -12,4 +12,4 @@
         <field name="use_opportunities" eval="False"/>
     </record>
 
-</data></odoo>
+</data></eden>

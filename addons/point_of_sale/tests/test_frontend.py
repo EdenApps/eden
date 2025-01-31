@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 from contextlib import contextmanager
 from unittest.mock import patch
-from odoo import Command
+from eden import Command
 
-from odoo.tools import DEFAULT_SERVER_DATE_FORMAT
-from odoo.tests import tagged
-from odoo.addons.account.tests.common import AccountTestInvoicingHttpCommon
-from odoo.addons.point_of_sale.tests.common_setup_methods import setup_product_combo_items
+from eden.tools import DEFAULT_SERVER_DATE_FORMAT
+from eden.tests import tagged
+from eden.addons.account.tests.common import AccountTestInvoicingHttpCommon
+from eden.addons.point_of_sale.tests.common_setup_methods import setup_product_combo_items
 from datetime import date, timedelta
-from odoo.addons.point_of_sale.tests.common import archive_products
-from odoo.exceptions import UserError
-from odoo.addons.point_of_sale.models.pos_config import PosConfig
+from eden.addons.point_of_sale.tests.common import archive_products
+from eden.exceptions import UserError
+from eden.addons.point_of_sale.models.pos_config import PosConfig
 
 _logger = logging.getLogger(__name__)
 

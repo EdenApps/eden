@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { Deferred } from "@odoo/hoot-mock";
+import { expect, test } from "@eden/hoot";
+import { Deferred } from "@eden/hoot-mock";
 import {
     contains,
     makeMockEnv,
@@ -18,7 +18,7 @@ test("Barcode scanner crop overlay", async () => {
     const env = await makeMockEnv();
     await mountWithCleanup(WebClient, { env });
 
-    const firstBarcodeValue = "Odoo";
+    const firstBarcodeValue = "Eden";
     const secondBarcodeValue = "OCDTEST";
 
     let barcodeToGenerate = firstBarcodeValue;

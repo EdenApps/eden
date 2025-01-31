@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
+from eden.fields import Command
 
-from odoo.addons.base.tests.common import BaseCommon
-from odoo.addons.uom.tests.common import UomCommon
+from eden.addons.base.tests.common import BaseCommon
+from eden.addons.uom.tests.common import UomCommon
 
 
 class ProductCommon(

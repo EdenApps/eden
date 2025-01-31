@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="report_invoice_document" inherit_id="account.report_invoice_document">
         <xpath expr="//td[@name='account_invoice_line_name']" position="inside">
             <t t-set="pos_orders" t-value="o.sudo().pos_order_ids"/>
@@ -27,4 +27,4 @@
             </t>
         </xpath>
     </template>
-</odoo>
+</eden>

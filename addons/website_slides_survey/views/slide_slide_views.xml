@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="slide_slide_view_form" model="ir.ui.view">
         <field name="name">slide.slide.view.form.inherit.survey</field>
         <field name="model">slide.slide</field>
@@ -30,4 +30,4 @@
         </field>
         <field name="view_id" ref="website_slides.view_slide_slide_tree"/>
     </record>
-</odoo>
+</eden>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <!-- Add themes in editor -->
     <template id="email_designer_themes" inherit_id="mass_mailing.email_designer_themes">
         <xpath expr="." position="inside">
@@ -59,19 +59,19 @@
                         </a>
                     </div>
                     <div class="col-lg-8 o_mail_header_social" style="text-align: right;" t-translation="off">
-                        <a title="Facebook" href="https://www.facebook.com/Odoo">
+                        <a title="Facebook" href="https://www.facebook.com/Eden">
                             <span class="fa fa-facebook text-white" style="background-color: rgb(43, 59, 88) !important;"/>
                         </a>&amp;nbsp;&amp;nbsp;
-                        <a style="margin-left:10px" title="LinkedIn" href="https://www.linkedin.com/company/odoo">
+                        <a style="margin-left:10px" title="LinkedIn" href="https://www.linkedin.com/company/eden">
                             <span class="fa fa-linkedin text-white" style="background-color: rgb(43, 59, 88) !important;"/>
                         </a>&amp;nbsp;&amp;nbsp;
-                        <a style="margin-left:10px" title="X" href="https://twitter.com/Odoo">
+                        <a style="margin-left:10px" title="X" href="https://twitter.com/Eden">
                             <span class="fa fa-twitter text-white" style="background-color: rgb(43, 59, 88) !important;"/>​
                         </a>&amp;nbsp;&amp;nbsp;
-                        <a style="margin-left:10px" title="Instagram" href="https://www.instagram.com/explore/tags/odoo/">
+                        <a style="margin-left:10px" title="Instagram" href="https://www.instagram.com/explore/tags/eden/">
                             <span class="fa fa-instagram text-white" style="background-color: rgb(43, 59, 88) !important;"/>
                         </a>&amp;nbsp;&amp;nbsp;
-                        <a style="margin-left:10px" title="TikTok" href="https://www.tiktok.com/@odoo">
+                        <a style="margin-left:10px" title="TikTok" href="https://www.tiktok.com/@eden">
                             <span class="fa fa-tiktok text-white" style="background-color: rgb(43, 59, 88) !important;"/>
                         </a>
                     </div>
@@ -81,7 +81,7 @@
         <div class="s_text_block o_mail_snippet_general pb16 pt32" style="background-color: rgb(43, 59, 88) !important; padding-left: 15px; padding-right: 15px;" data-snippet="s_text_block" data-name="Text">
             <div class="container s_allow_columns">
                 <p><font style="color: rgb(255, 255, 255);">Hi there!</font></p>
-                <p><font style="color: rgb(255, 255, 255);">The next edition of <span style="font-weight: bolder;">Odoo Experience Online</span> is coming soon!
+                <p><font style="color: rgb(255, 255, 255);">The next edition of <span style="font-weight: bolder;">Eden Experience Online</span> is coming soon!
                     <br/>To stir up your curiosity, have a look at all the great talks scheduled and highlighted in our agenda!</font>
                 </p>
             </div>
@@ -100,7 +100,7 @@
                                         <h3>Get 6-months' worth of knowledge<br/>in just 2 days</h3>
                                     </div>
                                 </div>
-                                <p>Learn through workshops, product demos, and inspiring talks from Odoo Experts and Partners.</p>
+                                <p>Learn through workshops, product demos, and inspiring talks from Eden Experts and Partners.</p>
                                 <a class="btn btn-primary" t-att-href="website_url_or_none">See what we've got planned</a>
                             </div>
                         </div>
@@ -145,7 +145,7 @@
                 <div class="row">
                     <div class="col-lg-12" style="border-color: rgb(56, 62, 69) !important;">
                         <h3 style="text-align: center;"><font style="color: rgb(255, 255, 255);">And it won't cost you a thing!</font></h3>
-                        <p style="text-align: center;"><font style="color: rgb(255, 255, 255);">Zero, zilch, nada! Odoo Experience is free for everyone!</font></p>
+                        <p style="text-align: center;"><font style="color: rgb(255, 255, 255);">Zero, zilch, nada! Eden Experience is free for everyone!</font></p>
                     </div>
                     <div class="col-lg-12" style="text-align: center;">
                         <a class="btn btn-primary btn-lg" t-att-href="website_url_or_none">Register now!</a>
@@ -214,23 +214,23 @@
                         </a>
                     </div>
                     <div class="col-lg-8 o_mail_header_social" style="text-align:right;">
-                        <a title="Facebook" href="https://www.facebook.com/Odoo">
+                        <a title="Facebook" href="https://www.facebook.com/Eden">
                             <span class="fa fa-facebook" style="color: rgb(54, 166, 210) !important; font-size: 18px;"/>​
                         </a>
                         &amp;nbsp; &amp;nbsp;
-                        <a style="margin-left:10px" title="LinkedIn" href="https://www.linkedin.com/company/odoo">
+                        <a style="margin-left:10px" title="LinkedIn" href="https://www.linkedin.com/company/eden">
                             <span class="fa fa-linkedin" style="color: rgb(54, 166, 210) !important; font-size: 18px;"/>​
                         </a>
                         &amp;nbsp; &amp;nbsp;
-                        <a style="margin-left:10px" title="X" href="https://twitter.com/Odoo">
+                        <a style="margin-left:10px" title="X" href="https://twitter.com/Eden">
                             <span class="fa fa-twitter" style="color: rgb(54, 166, 210) !important; font-size: 18px;"/>​
                         </a>
                         &amp;nbsp; &amp;nbsp;
-                        <a style="margin-left:10px" title="Instagram" href="https://www.instagram.com/explore/tags/odoo/">
+                        <a style="margin-left:10px" title="Instagram" href="https://www.instagram.com/explore/tags/eden/">
                             <span class="fa fa-instagram" style="color: rgb(54, 166, 210) !important; font-size: 18px;"/>
                         </a>
                         &amp;nbsp; &amp;nbsp;
-                        <a style="margin-left:10px" title="TikTok" href="https://www.tiktok.com/@odoo">
+                        <a style="margin-left:10px" title="TikTok" href="https://www.tiktok.com/@eden">
                             <span class="fa fa-tiktok" style="color: rgb(54, 166, 210) !important; font-size: 18px;"/>
                         </a>
                         &amp;nbsp; &amp;nbsp;
@@ -449,19 +449,19 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12" style="text-align: center;" t-translation="off">
-                        <a aria-label="Facebook" title="Facebook" href="https://www.facebook.com/Odoo">
+                        <a aria-label="Facebook" title="Facebook" href="https://www.facebook.com/Eden">
                             <span class="fa fa-facebook" style="background-color: rgb(198, 150, 120) !important; color: rgb(36, 37, 48) !important;"></span>
                         </a>&amp;nbsp;&amp;nbsp;
-                        <a style="margin-left:10px" aria-label="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/company/odoo">
+                        <a style="margin-left:10px" aria-label="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/company/eden">
                             <span class="fa fa-linkedin" style="background-color: rgb(198, 150, 120) !important; color: rgb(36, 37, 48) !important;"></span>
                         </a>&amp;nbsp;&amp;nbsp;
-                        <a style="margin-left:10px" aria-label="X" title="X" href="https://twitter.com/Odoo">
+                        <a style="margin-left:10px" aria-label="X" title="X" href="https://twitter.com/Eden">
                             <span class="fa fa-twitter" style="background-color: rgb(198, 150, 120) !important; color: rgb(36, 37, 48) !important;"></span>
                         </a>&amp;nbsp;&amp;nbsp;
-                        <a style="margin-left:10px" aria-label="Instagram" title="Instagram" href="https://www.instagram.com/explore/tags/odoo/">
+                        <a style="margin-left:10px" aria-label="Instagram" title="Instagram" href="https://www.instagram.com/explore/tags/eden/">
                             <span class="fa fa-instagram" style="background-color: rgb(198, 150, 120) !important; color: rgb(36, 37, 48) !important;"></span>
                         </a>&amp;nbsp;&amp;nbsp;
-                        <a style="margin-left:10px" aria-label="TikTok" title="TikTok" href="https://www.tiktok.com/@odoo">
+                        <a style="margin-left:10px" aria-label="TikTok" title="TikTok" href="https://www.tiktok.com/@eden">
                             <span class="fa fa-tiktok" style="background-color: rgb(198, 150, 120) !important; color: rgb(36, 37, 48) !important;"></span>
                         </a>
                     </div>
@@ -639,19 +639,19 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12" style="text-align: center;" t-translation="off">
-                        <a aria-label="Facebook" title="Facebook" href="https://www.facebook.com/Odoo">
+                        <a aria-label="Facebook" title="Facebook" href="https://www.facebook.com/Eden">
                             <span class="fa fa-facebook"></span>
                         </a>&amp;nbsp;&amp;nbsp;
-                        <a style="margin-left:10px" aria-label="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/company/odoo">
+                        <a style="margin-left:10px" aria-label="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/company/eden">
                             <span class="fa fa-linkedin"></span>
                         </a>&amp;nbsp;&amp;nbsp;
-                        <a style="margin-left:10px" aria-label="X" title="X" href="https://twitter.com/Odoo">
+                        <a style="margin-left:10px" aria-label="X" title="X" href="https://twitter.com/Eden">
                             <span class="fa fa-twitter"></span>
                         </a>&amp;nbsp;&amp;nbsp;
-                        <a style="margin-left:10px" aria-label="Instagram" title="Instagram" href="https://www.instagram.com/explore/tags/odoo/">
+                        <a style="margin-left:10px" aria-label="Instagram" title="Instagram" href="https://www.instagram.com/explore/tags/eden/">
                             <span class="fa fa-instagram"></span>
                         </a>&amp;nbsp;&amp;nbsp;
-                        <a style="margin-left:10px" aria-label="TikTok" title="TikTok" href="https://www.tiktok.com/@odoo">
+                        <a style="margin-left:10px" aria-label="TikTok" title="TikTok" href="https://www.tiktok.com/@eden">
                             <span class="fa fa-tiktok"></span>
                         </a>
                     </div>
@@ -744,19 +744,19 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12" style="text-align: center;" t-translation="off">
-                        <a aria-label="Facebook" title="Facebook" href="https://www.facebook.com/Odoo">
+                        <a aria-label="Facebook" title="Facebook" href="https://www.facebook.com/Eden">
                             <span class="fa fa-facebook" style="color: rgb(186, 0, 19) !important;"/>​
                         </a>&amp;nbsp;&amp;nbsp;
-                        <a style="margin-left:10px" aria-label="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/company/odoo">
+                        <a style="margin-left:10px" aria-label="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/company/eden">
                             <span class="fa fa-linkedin" style="color: rgb(186, 0, 19) !important;"/>​
                         </a>&amp;nbsp;&amp;nbsp;
-                        <a style="margin-left:10px" aria-label="X" title="X" href="https://twitter.com/Odoo">
+                        <a style="margin-left:10px" aria-label="X" title="X" href="https://twitter.com/Eden">
                             <span class="fa fa-twitter" style="color: rgb(186, 0, 19) !important;"/>​
                         </a>&amp;nbsp;&amp;nbsp;
-                        <a style="margin-left:10px" aria-label="Instagram" title="Instagram" href="https://www.instagram.com/explore/tags/odoo/">
+                        <a style="margin-left:10px" aria-label="Instagram" title="Instagram" href="https://www.instagram.com/explore/tags/eden/">
                             <span class="fa fa-instagram" style="color: rgb(186, 0, 19) !important;"/>​
                         </a>&amp;nbsp;&amp;nbsp;
-                        <a style="margin-left:10px" aria-label="TikTok" title="TikTok" href="https://www.tiktok.com/@odoo">
+                        <a style="margin-left:10px" aria-label="TikTok" title="TikTok" href="https://www.tiktok.com/@eden">
                             <span class="fa fa-tiktok" style="color: rgb(186, 0, 19) !important;"/>​
                         </a>
                     </div>
@@ -885,19 +885,19 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="pb16" style="text-align: right;" t-translation="off">
-                            <a aria-label="Facebook" title="Facebook" href="https://www.facebook.com/Odoo">
+                            <a aria-label="Facebook" title="Facebook" href="https://www.facebook.com/Eden">
                                 <span class="fa fa-facebook bg-black" style="color: rgb(255, 187, 0) !important;"/>
                             </a>&amp;nbsp;&amp;nbsp;
-                            <a style="margin-left:10px" aria-label="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/company/odoo">
+                            <a style="margin-left:10px" aria-label="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/company/eden">
                                 <span class="fa fa-linkedin bg-black" style="color: rgb(255, 187, 0) !important;"/>
                             </a>&amp;nbsp;&amp;nbsp;
-                            <a style="margin-left:10px" aria-label="X" title="X" href="https://twitter.com/Odoo">
+                            <a style="margin-left:10px" aria-label="X" title="X" href="https://twitter.com/Eden">
                                 <span class="fa fa-twitter bg-black" style="color: rgb(255, 187, 0) !important;"/>​
                             </a>&amp;nbsp;&amp;nbsp;
-                            <a aria-label="Instagram" title="Instagram" href="https://www.instagram.com/explore/tags/odoo/">
+                            <a aria-label="Instagram" title="Instagram" href="https://www.instagram.com/explore/tags/eden/">
                                 <span class="fa fa-instagram bg-black" style="color: rgb(255, 187, 0) !important;"/>
                             </a>&amp;nbsp;&amp;nbsp;
-                            <a aria-label="TikTok" title="TikTok" href="https://www.tiktok.com/@odoo">
+                            <a aria-label="TikTok" title="TikTok" href="https://www.tiktok.com/@eden">
                                 <span class="fa fa-tiktok bg-black" style="color: rgb(255, 187, 0) !important;"/>
                             </a>
                         </div>
@@ -955,13 +955,13 @@
                         </a>
                     </div>
                     <div class="col-lg-4 o_mail_header_social" style="text-align: right">
-                            <a aria-label="Facebook" title="Facebook" target="_blank" href="https://www.facebook.com/Odoo">
+                            <a aria-label="Facebook" title="Facebook" target="_blank" href="https://www.facebook.com/Eden">
                                 <span class="fa fa-facebook" style="color: rgb(84, 52, 39) !important; background-color: rgb(211, 197, 177) !important;">​</span>
                             </a>&amp;nbsp;&amp;nbsp;
-                            <a style="margin-left:10px" aria-label="X" title="X" target="_blank" href="https://twitter.com/Odoo">
+                            <a style="margin-left:10px" aria-label="X" title="X" target="_blank" href="https://twitter.com/Eden">
                                 <span class="fa fa-twitter" style="color: rgb(84, 52, 39) !important; background-color: rgb(211, 197, 177) !important;">​</span>
                             </a>&amp;nbsp;&amp;nbsp;
-                            <a style="margin-left:10px" aria-label="Instagram" title="Instagram" target="_blank" href="https://www.instagram.com/explore/tags/odoo/" contenteditable="true">
+                            <a style="margin-left:10px" aria-label="Instagram" title="Instagram" target="_blank" href="https://www.instagram.com/explore/tags/eden/" contenteditable="true">
                                 <span class="fa fa-instagram" style="color: rgb(84, 52, 39) !important; background-color: rgb(211, 197, 177) !important;">​</span>
                             </a>
                     </div>
@@ -1064,9 +1064,9 @@
                 <div class="row">
                     <div class="col-10 offset-lg-1">
                         <div class="o_mail_footer_social p16">
-                            <a aria-label="Facebook" title="Facebook" target="_blank" href="https://www.facebook.com/Odoo"><span class="fa fa-facebook text-o-color-4"></span></a> &amp;nbsp;&amp;nbsp;
-                            <a style="margin-left:10px" aria-label="X" target="_blank" title="X" href="https://twitter.com/Odoo"><span class="fa fa-twitter text-o-color-4"></span></a>  &amp;nbsp;&amp;nbsp;
-                            <a style="margin-left:10px" aria-label="Instagram" title="Instagram" target="_blank" href="https://www.instagram.com/explore/tags/odoo/"><span class="fa fa-instagram text-o-color-4"></span></a>
+                            <a aria-label="Facebook" title="Facebook" target="_blank" href="https://www.facebook.com/Eden"><span class="fa fa-facebook text-o-color-4"></span></a> &amp;nbsp;&amp;nbsp;
+                            <a style="margin-left:10px" aria-label="X" target="_blank" title="X" href="https://twitter.com/Eden"><span class="fa fa-twitter text-o-color-4"></span></a>  &amp;nbsp;&amp;nbsp;
+                            <a style="margin-left:10px" aria-label="Instagram" title="Instagram" target="_blank" href="https://www.instagram.com/explore/tags/eden/"><span class="fa fa-instagram text-o-color-4"></span></a>
                         </div>
                         <div class="o_mail_footer_links">
                             <a role="button" class="text-o-color-4" href="/unsubscribe_from_list">Unsubscribe</a> | <a role="button" class="text-o-color-4" href="/contactus">Contact</a>
@@ -1119,19 +1119,19 @@
         </div>
         <div class="s_title o_mail_snippet_general px-3 pb0 pt0" data-snippet="s_title" data-name="Title">
             <div class="container s_allow_columns">
-                    <h2 style="" class="">The story of Odoo</h2>
+                    <h2 style="" class="">The story of Eden</h2>
             </div>
         </div>
         <div class="s_header_social o_mail_block_header_social o_mail_snippet_general bg-white px-3 pt24 pb24" style="" data-snippet="s_mail_block_header_social" data-name="Left Logo">
             <div class="container" style="">
                 <div class="col-lg-12 o_mail_header_social" style="background-color: rgb(255, 255, 255) !important; text-align: left;">
-                    <a aria-label="Facebook" target="_blank" href="https://www.facebook.com/Odoo" data-original-title="Facebook" rel="noreferrer">
+                    <a aria-label="Facebook" target="_blank" href="https://www.facebook.com/Eden" data-original-title="Facebook" rel="noreferrer">
                         <img class="img-fluid o_we_custom_image" src="/mass_mailing_themes/static/src/img/theme_newsletter/social-facebook.png" data-original-id="435" data-original-src="/mass_mailing_themes/static/src/img/theme_newsletter/social-facebook.png" data-mimetype="image/png" style="width: 30px;"/>
                     </a>&amp;nbsp;&amp;nbsp;
-                    <a aria-label="X" target="_blank" href="https://twitter.com/Odoo" data-original-title="X" rel="noreferrer">
+                    <a aria-label="X" target="_blank" href="https://twitter.com/Eden" data-original-title="X" rel="noreferrer">
                         <img class="img-fluid o_we_custom_image" src="/mass_mailing_themes/static/src/img/theme_newsletter/social-twitter.png" data-original-id="436" data-original-src="/mass_mailing_themes/static/src/img/theme_newsletter/social-twitter.png" data-mimetype="image/png" style="width: 30px;"/>
                     </a>&amp;nbsp;&amp;nbsp;
-                    <a  aria-label="Instagram" target="_blank" href="https://www.linkedin.com/company/odoo" data-original-title="Linkedin" rel="noreferrer">
+                    <a  aria-label="Instagram" target="_blank" href="https://www.linkedin.com/company/eden" data-original-title="Linkedin" rel="noreferrer">
                         <img class="img-fluid o_we_custom_image" src="/mass_mailing_themes/static/src/img/theme_newsletter/social-linkedin.png" data-original-id="437" data-original-src="/mass_mailing_themes/static/src/img/theme_newsletter/social-linkedin.png" data-mimetype="image/png" style="width: 30px;"/>
                     </a>
                 </div>
@@ -1139,7 +1139,7 @@
         </div>
          <div class="s_text_block o_mail_snippet_general px-3 pb24" data-snippet="s_text_block" data-name="Text">
             <div class="container s_allow_columns">
-                <p style="font-size: 14px;" class="small text-muted">Musings on the week from <a style="font-size: 14px;" href="https://twitter.com/fpodoo?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">@fpodoo</a></p>
+                <p style="font-size: 14px;" class="small text-muted">Musings on the week from <a style="font-size: 14px;" href="https://twitter.com/fpeden?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">@fpeden</a></p>
             </div>
         </div>
         <div class="s_title o_mail_snippet_general px-3 pb0 pt0" data-snippet="s_title" data-name="Title">
@@ -1227,7 +1227,7 @@
         </div>
         <div class="s_title o_mail_snippet_general px-3 pb0 pt0" data-snippet="s_title" data-name="Title">
             <div class="container s_allow_columns">
-                <h3>The Rise of Odoo</h3>
+                <h3>The Rise of Eden</h3>
             </div>
         </div>
         <div class="s_text_block o_mail_snippet_general px-3 pt16" data-snippet="s_text_block" data-name="Text">
@@ -1236,7 +1236,7 @@
                 <p>Our exceptional technology allowed us to move to newer markets (CMS &amp; eCommerce) and propose a product that disrupts existing open source players (Wordpress, Magento, etc). The OpenERP CMS is so good that even top competitors admitted it publicly when we released the beta version.</p>
                 <p>If current open source players have a real technical challenge to follow us, we also have a huge marketing challenge. Wordpress has 22% of all internet websites. We were the leader in management software, but we start with 0% of the website market.</p>
                 <p>To move forward, we raised 10 million USD in May 2014 in order to boost marketing and sales activities. In order to support our vision, we had to change the name that is not restricted to ERPs functions. We needed a name that allowed us to support our ambitions; build business solutions like CMS, eCommerce, Business Intelligence and, who knows, even sky rockets or driverless cars in the future...</p>
-                <p>In May 2014, we renamed the company and product to Odoo.</p>
+                <p>In May 2014, we renamed the company and product to Eden.</p>
                 <p>And a new story just started...</p>
             </div>
         </div>
@@ -1251,13 +1251,13 @@
         <div class="s_footer_social o_mail_block_footer_social o_mail_footer_social_center o_mail_snippet_general o_cc o_cc1 pt0 pb0" data-snippet="s_mail_block_footer_social" data-name="Footer Center">
             <div class="container">
                 <div class="col-lg-12 o_mail_footer_social pt0 pb0" style="text-align: center;">
-                    <a aria-label="Facebook" class="text-white" target="_blank" href="https://www.facebook.com/Odoo" data-original-title="Facebook" rel="noreferrer">
+                    <a aria-label="Facebook" class="text-white" target="_blank" href="https://www.facebook.com/Eden" data-original-title="Facebook" rel="noreferrer">
                         <img class="img-fluid o_we_custom_image" src="/mass_mailing_themes/static/src/img/theme_newsletter/social-facebook.png" data-original-id="435" data-original-src="/mass_mailing_themes/static/src/img/theme_newsletter/social-facebook.png" data-mimetype="image/png" style="width: 30px;"/>
                     </a>&amp;nbsp;&amp;nbsp;
-                    <a class="text-white" aria-label="X" target="_blank" href="https://twitter.com/Odoo" data-original-title="X" rel="noreferrer">
+                    <a class="text-white" aria-label="X" target="_blank" href="https://twitter.com/Eden" data-original-title="X" rel="noreferrer">
                         <img class="img-fluid o_we_custom_image" src="/mass_mailing_themes/static/src/img/theme_newsletter/social-twitter.png" data-original-id="436" data-original-src="/mass_mailing_themes/static/src/img/theme_newsletter/social-twitter.png" data-mimetype="image/png" style="width: 30px;"/>
                     </a>&amp;nbsp;&amp;nbsp;
-                    <a class="text-white" aria-label="Instagram" target="_blank" href="https://www.linkedin.com/company/odoo" data-original-title="Linkedin" rel="noreferrer">
+                    <a class="text-white" aria-label="Instagram" target="_blank" href="https://www.linkedin.com/company/eden" data-original-title="Linkedin" rel="noreferrer">
                         <img class="img-fluid o_we_custom_image" src="/mass_mailing_themes/static/src/img/theme_newsletter/social-linkedin.png" data-original-id="437" data-original-src="/mass_mailing_themes/static/src/img/theme_newsletter/social-linkedin.png" data-mimetype="image/png" style="width: 30px;"/>
                     </a>
                 </div>
@@ -1304,7 +1304,7 @@
                         <h1>We're almost there!</h1>
                     </div>
                 </div>
-                <p>Odoo invites you on <span class="font-weight: bolder">[date]</span> at <span class="font-weight: bolder">[time]</span> for their infamous roadshow in <span class="font-weight: bolder">[city]</span>: an event that combines learning and networking in a casual afterwork-like atmosphere.</p>
+                <p>Eden invites you on <span class="font-weight: bolder">[date]</span> at <span class="font-weight: bolder">[time]</span> for their infamous roadshow in <span class="font-weight: bolder">[city]</span>: an event that combines learning and networking in a casual afterwork-like atmosphere.</p>
             </div>
         </div>
         <div class="s_text_block o_mail_snippet_general px-3 pt8 pb0" data-snippet="s_text_block" data-name="Text">
@@ -1322,7 +1322,7 @@
         </div>
         <div class="s_text_block o_mail_snippet_general px-3 pt0 pb0" data-snippet="s_text_block" data-name="Text">
             <div class="container s_allow_columns">
-                <p>Discover Odoo, the all-in-one management platform, and its apps designed to improve employees' daily tasks. From sales and deliveries, to logistics, marketing and accounting ; learn what are the best available options to digitize your company.</p>
+                <p>Discover Eden, the all-in-one management platform, and its apps designed to improve employees' daily tasks. From sales and deliveries, to logistics, marketing and accounting ; learn what are the best available options to digitize your company.</p>
             </div>
         </div>
         <div class="s_text_block o_mail_snippet_general px-3 pt0 pb0" data-snippet="s_text_block" data-name="Text">
@@ -1369,7 +1369,7 @@
                         <td class="p-2">
                             <span class="font-weight: bolder">[speaker] &amp; [speaker]'s conference</span>
                             <ul>
-                                <li>Interactive Odoo demo</li>
+                                <li>Interactive Eden demo</li>
                                 <li>Best practices to digitize your company</li>
                             </ul>
                         </td>
@@ -1446,8 +1446,8 @@
         </div>
         <div class="s_text_block o_mail_snippet_general px-3 pt8 pb0" data-snippet="s_text_block" data-name="Text">
             <div class="container s_allow_columns">
-                <p>You had the chance to discover Odoo during a full 3 hours, how great is that?
-                    <br/>Now that you've seen Odoo in action and asked some questions, you likely need more information to move forward in your project and to work with us. You'll find additional points just below.
+                <p>You had the chance to discover Eden during a full 3 hours, how great is that?
+                    <br/>Now that you've seen Eden in action and asked some questions, you likely need more information to move forward in your project and to work with us. You'll find additional points just below.
                 </p>
             </div>
         </div>
@@ -1455,10 +1455,10 @@
             <div class="container s_allow_columns">
                 <div class="s_title o_mail_snippet_general pb0 pt0" data-snippet="s_title" data-name="Title">
                     <div class="container s_allow_columns">
-                        <h3>Do you wish to use Odoo?</h3>
+                        <h3>Do you wish to use Eden?</h3>
                     </div>
                 </div>
-                <p>If you wish to evaluate Odoo while taking into account your company's specific needs, you can book a free appointment with one of our <a href="https://odoo.com/r/meeting" target="_blank">Odoo Experts</a> or <a href="https://odoo.com/page/tour" target="_blank">watch our videos about the product</a>.</p>
+                <p>If you wish to evaluate Eden while taking into account your company's specific needs, you can book a free appointment with one of our <a href="https://edencloud.us/r/meeting" target="_blank">Eden Experts</a> or <a href="https://edencloud.us/page/tour" target="_blank">watch our videos about the product</a>.</p>
             </div>
         </div>
         <div class="s_text_block o_mail_snippet_general px-3 pt8 pb0" data-snippet="s_text_block" data-name="Text">
@@ -1470,7 +1470,7 @@
                     <li><a href="#" target="_blank">Link 3</a></li>
                     <li><a href="#" target="_blank">Link 4</a></li>
                 </ul>
-                <p>You may test Odoo for free by clicking <a href="https://odoo.com/trial" target="_blank">here</a>.</p>
+                <p>You may test Eden for free by clicking <a href="https://edencloud.us/trial" target="_blank">here</a>.</p>
             </div>
         </div>
         <div class="s_text_block o_mail_snippet_general px-3 pt8 pb0" data-snippet="s_text_block" data-name="Text">
@@ -1480,8 +1480,8 @@
                         <h3>Do you wish to become a partner?</h3>
                     </div>
                 </div>
-                <p>If you wish to become a partner and offer your services in [country], take a look at <a href="https://odoo.com/r/meeting" target="_blank">this page</a>.</p>
-                <p>Learn more about our pricing <a href="https://odoo.com/r/meeting" target="_blank">here</a>.</p>
+                <p>If you wish to become a partner and offer your services in [country], take a look at <a href="https://edencloud.us/r/meeting" target="_blank">this page</a>.</p>
+                <p>Learn more about our pricing <a href="https://edencloud.us/r/meeting" target="_blank">here</a>.</p>
             </div>
         </div>
         <div class="s_text_block o_mail_snippet_general px-3 pt8 pb0" data-snippet="s_text_block" data-name="Text">
@@ -1620,16 +1620,16 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg o_mail_footer_social pt8 pb8">
-                        <a aria-label="Facebook" title="Facebook" href="https://www.facebook.com/Odoo">
+                        <a aria-label="Facebook" title="Facebook" href="https://www.facebook.com/Eden">
                             <span class="fa fa-facebook" contenteditable="false">​</span>
                         </a>
-                        <a style="margin-left:10px" aria-label="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/company/odoo">
+                        <a style="margin-left:10px" aria-label="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/company/eden">
                             <span class="fa fa-linkedin" contenteditable="false">​</span>
                         </a>
-                        <a style="margin-left:10px" aria-label="X" title="X" href="https://twitter.com/Odoo">
+                        <a style="margin-left:10px" aria-label="X" title="X" href="https://twitter.com/Eden">
                             <span class="fa fa-twitter" contenteditable="false">​</span>
                         </a>
-                        <a style="margin-left:10px" aria-label="Instagram" title="Instagram" href="https://www.instagram.com/explore/tags/odoo/">
+                        <a style="margin-left:10px" aria-label="Instagram" title="Instagram" href="https://www.instagram.com/explore/tags/eden/">
                             <span class="fa fa-instagram" contenteditable="false">​</span>
                         </a>
                     </div>
@@ -1649,4 +1649,4 @@
             </div>
         </div>
     </template>
-</odoo>
+</eden>

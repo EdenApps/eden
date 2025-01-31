@@ -3,7 +3,7 @@ import { localization } from "@web/core/l10n/localization";
 import { session } from "@web/session";
 import { hasTouch } from "@web/core/browser/feature_detection";
 import { user } from "@web/core/user";
-import { Component, whenReady } from "@odoo/owl";
+import { Component, whenReady } from "@eden/owl";
 
 /**
  * Function to start a webclient.
@@ -14,16 +14,16 @@ import { Component, whenReady } from "@odoo/owl";
  * @param {Component} Webclient
  */
 export async function startWebClient(Webclient) {
-    odoo.info = {
+    eden.info = {
         db: session.db,
         server_version: session.server_version,
         server_version_info: session.server_version_info,
         isEnterprise: session.server_version_info.slice(-1)[0] === "e",
     };
-    odoo.isReady = false;
+    eden.isReady = false;
 
     await whenReady();
-    const app = await mountComponent(Webclient, document.body, { name: "Odoo Web Client" });
+    const app = await mountComponent(Webclient, document.body, { name: "Eden Web Client" });
     const { env } = app;
     Component.env = env;
 
@@ -40,6 +40,6 @@ export async function startWebClient(Webclient) {
     if (hasTouch()) {
         classList.add("o_touch_device");
     }
-    // delete odoo.debug; // FIXME: some legacy code rely on this
-    odoo.isReady = true;
+    // delete eden.debug; // FIXME: some legacy code rely on this
+    eden.isReady = true;
 }

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-from odoo import fields, models, api, _
-from odoo.tools import plaintext2html
+# Part of Eden. See LICENSE file for full copyright and licensing details.
+from eden import fields, models, api, _
+from eden.tools import plaintext2html
 
 
 class PosSession(models.Model):

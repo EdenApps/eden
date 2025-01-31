@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-from odoo.addons.hr_expense.tests.common import TestExpenseCommon
-from odoo.tests import tagged
-from odoo.exceptions import UserError
+# Part of Eden. See LICENSE file for full copyright and licensing details.
+from eden.addons.hr_expense.tests.common import TestExpenseCommon
+from eden.tests import tagged
+from eden.exceptions import UserError
 
 
 @tagged('-at_install', 'post_install')

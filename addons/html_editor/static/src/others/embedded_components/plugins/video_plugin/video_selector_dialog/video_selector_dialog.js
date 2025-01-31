@@ -1,7 +1,7 @@
 import { VideoSelector } from "@html_editor/main/media/media_dialog/video_selector";
 import { Dialog } from "@web/core/dialog/dialog";
 
-import { Component, useState } from "@odoo/owl";
+import { Component, useState } from "@eden/owl";
 
 export class VideoSelectorDialog extends Component {
     static template = "html_editor.VideoSelectorDialog";

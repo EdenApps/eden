@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_title_form" name="Title - Form">
     <section class="s_title_form o_cc o_cc2 pt64 pb48">
@@ -11,4 +11,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<odoo><data>
+<eden><data>
 
     <record id="event_booth_configurator_view_form" model="ir.ui.view">
         <field name="name">event.booth.configurator.view.form</field>
@@ -41,4 +41,4 @@
         <field name="target">new</field>
     </record>
 
-</data></odoo>
+</data></eden>

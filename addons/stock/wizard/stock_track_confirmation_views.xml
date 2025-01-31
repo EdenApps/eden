@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
     <record id="view_stock_track_confirmation" model="ir.ui.view">
         <field name="name">stock.track.confirmation.view.form</field>
         <field name="model">stock.track.confirmation</field>
@@ -25,4 +25,4 @@
             </form>
         </field>
     </record>
-</odoo>
+</eden>

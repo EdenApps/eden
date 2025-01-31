@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.osv import expression
+from eden import api, fields, models
+from eden.osv import expression
 
 
 class RecurrenceRule(models.Model):
@@ -24,7 +24,7 @@ class RecurrenceRule(models.Model):
     def _inverse_rrule(self):
         # Note: 'need_sync_m' is set to False to avoid syncing the updated recurrence with
         # Outlook, as this update mainly comes from Outlook (the 'rrule' field is not directly
-        # modified in Odoo but computed from other fields).
+        # modified in Eden but computed from other fields).
         for recurrence in self.filtered('rrule'):
             values = self._rrule_parse(recurrence.rrule, recurrence.dtstart)
             recurrence.with_context(dont_notify=True).write(dict(values, need_sync_m=False))
@@ -96,10 +96,10 @@ class RecurrenceRule(models.Model):
 
     def _write_from_microsoft(self, microsoft_event, vals):
         current_rrule = self.rrule
-        # event_tz is written on event in Microsoft but on recurrence in Odoo
+        # event_tz is written on event in Microsoft but on recurrence in Eden
         vals['event_tz'] = microsoft_event.start.get('timeZone')
         super()._write_from_microsoft(microsoft_event, vals)
-        new_event_values = self.env["calendar.event"]._microsoft_to_odoo_values(microsoft_event)
+        new_event_values = self.env["calendar.event"]._microsoft_to_eden_values(microsoft_event)
         # Edge case:  if the base event was deleted manually in 'self_only' update, skip applying recurrence.
         if self._has_base_event_time_fields_changed(new_event_values) and (new_event_values['start'] >= self.base_event_id.start):
             # we need to recreate the recurrence, time_fields were modified.
@@ -136,7 +136,7 @@ class RecurrenceRule(models.Model):
             detached_events.unlink()
 
     def _get_microsoft_sync_domain(self):
-        # Do not sync Odoo recurrences with Outlook Calendar anymore.
+        # Do not sync Eden recurrences with Outlook Calendar anymore.
         domain = expression.FALSE_DOMAIN
         return self._extend_microsoft_domain(domain)
 
@@ -145,7 +145,7 @@ class RecurrenceRule(models.Model):
         super()._cancel_microsoft()
 
     @api.model
-    def _microsoft_to_odoo_values(self, microsoft_recurrence, default_reminders=(), default_values=None, with_ids=False):
+    def _microsoft_to_eden_values(self, microsoft_recurrence, default_reminders=(), default_values=None, with_ids=False):
         recurrence = microsoft_recurrence.get_recurrence()
 
         if with_ids:

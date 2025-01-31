@@ -5,7 +5,7 @@
     'sequence': 210,
     'summary': 'Chat with your website visitors',
     'category': 'Website/Live Chat',
-    'website': 'https://www.odoo.com/app/live-chat',
+    'website': 'https://www.edencloud.us/app/live-chat',
     'description':
         """
 Live Chat Support
@@ -109,7 +109,7 @@ Help your customers with this chat, and analyse their feedback.
             'web/static/src/scss/bootstrap_overridden.scss',
             'web/static/src/scss/ui.scss',
             'web/static/src/libs/fontawesome/css/font-awesome.css',
-            'web/static/lib/odoo_ui_icons/style.css',
+            'web/static/lib/eden_ui_icons/style.css',
             'web/static/src/webclient/webclient.scss',
             ('include', 'web._assets_core'),
             'web/static/src/libs/pdfjs.js',

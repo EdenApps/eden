@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<odoo>
+<eden>
 
 <template id="s_website_controller_page_listing_layout" name="Default layout" inherit_id="website.snippet_options">
     <xpath expr="." position="inside">
@@ -14,4 +14,4 @@
     </xpath>
 </template>
 
-</odoo>
+</eden>

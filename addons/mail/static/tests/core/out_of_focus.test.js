@@ -8,7 +8,7 @@ import {
     startServer,
     step,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, test } from "@odoo/hoot";
+import { describe, test } from "@eden/hoot";
 import { Command, mockService, serverState, withUser } from "@web/../tests/web_test_helpers";
 
 import { rpc } from "@web/core/network/rpc";
@@ -22,7 +22,7 @@ test("Spaces in notifications are not encoded", async () => {
             step(`/mail/data - ${JSON.stringify(args)}`);
         }
     });
-    mockService("presence", { isOdooFocused: () => false });
+    mockService("presence", { isEdenFocused: () => false });
     const pyEnv = await startServer();
     const bobUserId = pyEnv["res.users"].create({ name: "bob" });
     const bobPartnerId = pyEnv["res.partner"].create({ name: "bob", user_ids: [bobUserId] });

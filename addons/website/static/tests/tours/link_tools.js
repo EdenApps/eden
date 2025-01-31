@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import {
     changeOption,
@@ -8,7 +8,7 @@ import {
     insertSnippet,
     registerWebsitePreviewTour,
 } from '@website/js/tours/tour_utils';
-import { boundariesIn, setSelection, nodeSize } from '@web_editor/js/editor/odoo-editor/src/utils/utils';
+import { boundariesIn, setSelection, nodeSize } from '@web_editor/js/editor/eden-editor/src/utils/utils';
 
 const clickOnImgStep = {
     content: "Click somewhere else to save.",
@@ -30,7 +30,7 @@ registerWebsitePreviewTour('link_tools', {
     {
         content: "Replace first paragraph, to insert a new link",
         trigger: ':iframe #wrap .s_text_image p',
-        run: 'editor Go to odoo: ',
+        run: 'editor Go to eden: ',
     },
     {
         content: "Open link tools",
@@ -38,14 +38,14 @@ registerWebsitePreviewTour('link_tools', {
         run: "click",
     },
     {
-        content: "Type the link URL odoo.com",
+        content: "Type the link URL eden.com",
         trigger: '#toolbar:not(.oe-floating) #o_link_dialog_url_input',
-        run: 'edit odoo.com',
+        run: 'edit eden.com',
     },
     clickOnImgStep,
     {
         content: "Select the newly created link",
-        trigger: ':iframe #wrap .s_text_image a[href="http://odoo.com"]:contains("odoo.com")',
+        trigger: ':iframe #wrap .s_text_image a[href="http://edencloud.us"]:contains("eden.com")',
         run() {
             setSelection(this.anchor, 0, this.anchor, nodeSize(this.anchor));
         }
@@ -53,17 +53,17 @@ registerWebsitePreviewTour('link_tools', {
     // Remove the link.
     {
         content: "Click on the newly created link",
-        trigger: ':iframe #wrap .s_text_image a[href="http://odoo.com"]:contains("odoo.com")',
+        trigger: ':iframe #wrap .s_text_image a[href="http://edencloud.us"]:contains("eden.com")',
         run: 'click',
     },
     {
         content: "Remove the link.",
-        trigger: ':iframe .popover:contains("http://odoo.com") a .fa-chain-broken',
+        trigger: ':iframe .popover:contains("http://edencloud.us") a .fa-chain-broken',
         run: 'click',
     },
     {
         content: "Check that the link was removed",
-        trigger: ':iframe #wrap .s_text_image p:contains("Go to odoo:"):not(:has(a))',
+        trigger: ':iframe #wrap .s_text_image p:contains("Go to eden:"):not(:has(a))',
     },
     // Recreate the link.
     {
@@ -77,53 +77,53 @@ registerWebsitePreviewTour('link_tools', {
         run: 'click',
     },
     {
-        content: "Type the link URL odoo.com",
+        content: "Type the link URL eden.com",
         trigger: '#o_link_dialog_url_input',
-        run: 'edit odoo.com'
+        run: 'edit eden.com'
     },
     clickOnImgStep,
     // 2. Edit the link with the link tools.
     {
         content: "Click on the newly created link",
-        trigger: ':iframe .s_text_image a[href="http://odoo.com"]:contains("odoo.com")',
+        trigger: ':iframe .s_text_image a[href="http://edencloud.us"]:contains("eden.com")',
         run: "click",
     },
     {
-        content: "Change content (editing the label input) to odoo website_2",
-        trigger: '#o_link_dialog_label_input:value(odoo.com)',
-        run: 'edit odoo website_2',
+        content: "Change content (editing the label input) to eden website_2",
+        trigger: '#o_link_dialog_label_input:value(eden.com)',
+        run: 'edit eden website_2',
     },
     {
-        content: "Change content (editing the DOM) to odoo website",
-        trigger: ':iframe .s_text_image a[href="http://odoo.com"]:contains("odoo website_2")',
-        run: 'editor odoo website',
+        content: "Change content (editing the DOM) to eden website",
+        trigger: ':iframe .s_text_image a[href="http://edencloud.us"]:contains("eden website_2")',
+        run: 'editor eden website',
     },
     clickOnImgStep,
     {
         content: "Click again on the link",
-        trigger: ':iframe .s_text_image a[href="http://odoo.com"]:contains("odoo website")',
+        trigger: ':iframe .s_text_image a[href="http://edencloud.us"]:contains("eden website")',
         run: "click",
     },
     {
         content: "Check that the label input contains the new content",
-        trigger: '#o_link_dialog_label_input:value(odoo website)',
+        trigger: '#o_link_dialog_label_input:value(eden website)',
     },
     {
         content: "Link tools, should be open, change the url",
         trigger: '#o_link_dialog_url_input',
-        run: "edit odoo.be",
+        run: "edit eden.be",
     },
 
     ...clickOnSave(),
     // 3. Edit a link after saving the page.
     ...clickOnEditAndWaitEditMode(),
     {
-        content: "The new link content should be odoo website and url odoo.be",
-        trigger: ':iframe .s_text_image a[href="http://odoo.be"]:contains("odoo website")',
+        content: "The new link content should be eden website and url eden.be",
+        trigger: ':iframe .s_text_image a[href="http://eden.be"]:contains("eden website")',
         run: "click",
     },
     {
-        content: "The new link content should be odoo website and url odoo.be",
+        content: "The new link content should be eden website and url eden.be",
         trigger: '#toolbar:not(.oe-floating) .dropdown:has([name="link_style_color"]) > button',
         run: "click",
     },
@@ -135,7 +135,7 @@ registerWebsitePreviewTour('link_tools', {
     ...clickOnSave(),
     {
         content: "The link should have the secondary button style.",
-        trigger: ':iframe .s_text_image a.btn.btn-secondary[href="http://odoo.be"]:contains("odoo website")',
+        trigger: ':iframe .s_text_image a.btn.btn-secondary[href="http://eden.be"]:contains("eden website")',
     },
     // 4. Add link on image.
     ...clickOnEditAndWaitEditMode(),
@@ -158,7 +158,7 @@ registerWebsitePreviewTour('link_tools', {
         content: "Set URL.",
         trigger: '.o_we_customize_panel we-input:contains("Your URL") input',
         // TODO: remove && click
-        run: "edit odoo.com && click(we-title:contains(Your URL))",
+        run: "edit eden.com && click(we-title:contains(Your URL))",
     },
     {
         content: "Deselect image.",
@@ -176,7 +176,7 @@ registerWebsitePreviewTour('link_tools', {
     },
     {
         content: "Check that link tools appear.",
-        trigger: ':iframe .popover div a:contains("http://odoo.com")',
+        trigger: ':iframe .popover div a:contains("http://edencloud.us")',
     },
     ...clickOnSave(),
     {
@@ -196,11 +196,11 @@ registerWebsitePreviewTour('link_tools', {
     },
     {
         content: "Check that link tools appear.",
-        trigger: ':iframe .popover div a:contains("http://odoo.com")',
+        trigger: ':iframe .popover div a:contains("http://edencloud.us")',
     },
     {
         content: "Remove link.",
-        trigger: ':iframe .popover:contains("http://odoo.com") a .fa-chain-broken',
+        trigger: ':iframe .popover:contains("http://edencloud.us") a .fa-chain-broken',
         run: "click",
     },
     {
@@ -256,11 +256,11 @@ registerWebsitePreviewTour('link_tools', {
     {
         content: "Enter an URL",
         trigger: "#o_link_dialog_url_input",
-        run: "edit https://www.odoo.com",
+        run: "edit https://www.edencloud.us",
     },
     {
         content: "Check nothing is lost",
-        trigger: ":iframe header .s_mega_menu_cards a[href='https://www.odoo.com']:has(img):has(h4):has(span)",
+        trigger: ":iframe header .s_mega_menu_cards a[href='https://www.edencloud.us']:has(img):has(h4):has(span)",
     },
     // 7. Create new a link from a URL-like text.
     // TODO: the two following steps should be removed.
@@ -277,11 +277,11 @@ registerWebsitePreviewTour('link_tools', {
     {
         content: "Replace first paragraph, write a URL",
         trigger: ':iframe #wrap .s_text_image p',
-        run: "editor odoo.com",
+        run: "editor eden.com",
     },
     {
         content: "Select text",
-        trigger: ':iframe #wrap .s_text_image p:contains(odoo.com)',
+        trigger: ':iframe #wrap .s_text_image p:contains(eden.com)',
         run() {
             setSelection(...boundariesIn(this.anchor), false);
         }
@@ -296,11 +296,11 @@ registerWebsitePreviewTour('link_tools', {
         // URL transformation into link should persist, without the need for
         // input at input[name=url]
         content: "Check that link was created",
-        trigger: ":iframe .s_text_image p a[href='http://odoo.com']:contains('odoo.com')",
+        trigger: ":iframe .s_text_image p a[href='http://edencloud.us']:contains('eden.com')",
     },
     {
         content: "Click on link to open the link tools",
-        trigger: ":iframe .s_text_image p a[href='http://odoo.com']",
+        trigger: ":iframe .s_text_image p a[href='http://edencloud.us']",
         run: "click",
     },
     // 8. Check that http links are not coerced to https and vice-versa.
@@ -308,17 +308,17 @@ registerWebsitePreviewTour('link_tools', {
         content: "Change URL to https",
         trigger: "#o_link_dialog_url_input",
         run() {
-            // TODO: update the tour to use helpers.edit("https://odoo.com")
+            // TODO: update the tour to use helpers.edit("https://edencloud.us")
             // To see what happens with edit, add `pause:true` to the previous step
-            // and type yourself https://odoo.com in #o_link_dialog_url_input
+            // and type yourself https://edencloud.us in #o_link_dialog_url_input
             // The label will be ohttps://
-            this.anchor.value = "https://odoo.com";
+            this.anchor.value = "https://edencloud.us";
             this.anchor.dispatchEvent(new InputEvent("input", { bubbles: true }));
         }
     },
     {
         content: "Check that link was updated",
-        trigger: ":iframe .s_text_image p a[href='https://odoo.com']:contains('odoo.com')",
+        trigger: ":iframe .s_text_image p a[href='https://edencloud.us']:contains('eden.com')",
     },
     {
         trigger: "div#oe_snippets:not(div.o_we_ui_loading)",
@@ -327,14 +327,14 @@ registerWebsitePreviewTour('link_tools', {
         content: "Change it back http",
         trigger: "#o_link_dialog_url_input",
         run() {
-            // TODO: update the tour to use helpers.edit("http://odoo.com")
-            this.anchor.value = "http://odoo.com";
+            // TODO: update the tour to use helpers.edit("http://edencloud.us")
+            this.anchor.value = "http://edencloud.us";
             this.anchor.dispatchEvent(new InputEvent("input", { bubbles: true }));
         }
     },
     {
         content: "Check that link was updated",
-        trigger: ":iframe .s_text_image p a[href='http://odoo.com']:contains('odoo.com')",
+        trigger: ":iframe .s_text_image p a[href='http://edencloud.us']:contains('eden.com')",
     },
     // 9. Test conversion between http and mailto links.
     {
@@ -363,7 +363,7 @@ registerWebsitePreviewTour('link_tools', {
         trigger: ":iframe .s_text_image p a[href='http://callmemaybe.com']:contains('callmemaybe.com')",
     },
     // 10. Test that UI stays up-to-date.
-    // TODO this step which was added by https://github.com/odoo/odoo/commit/9fc283b514d420fdfd66123845d9ec3563572692
+    // TODO this step which was added by https://github.com/eden/eden/commit/9fc283b514d420fdfd66123845d9ec3563572692
     // for no apparent reason (the X-original-commit of that one does not add
     // this step) is not required for the test to work (it passes more often
     // without this step than with it). It is a cause of race condition (last

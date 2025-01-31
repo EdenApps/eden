@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { Deferred } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@eden/hoot";
+import { Deferred } from "@eden/hoot-mock";
 
 import { Cache } from "@web/core/utils/cache";
 

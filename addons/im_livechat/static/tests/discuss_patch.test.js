@@ -7,8 +7,8 @@ import {
     startServer,
 } from "@mail/../tests/mail_test_helpers";
 import { withGuest } from "@mail/../tests/mock_server/mail_mock_server";
-import { describe, test } from "@odoo/hoot";
-import { mockDate } from "@odoo/hoot-mock";
+import { describe, test } from "@eden/hoot";
+import { mockDate } from "@eden/hoot-mock";
 import { Command, serverState } from "@web/../tests/web_test_helpers";
 
 import { rpc } from "@web/core/network/rpc";

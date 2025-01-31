@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data noupdate="1">
+<eden><data noupdate="1">
     <template id="forum_post_template_new_answer">
         <p>A new answer on <t t-esc="object.name"/> has been posted. Click here to access the post :</p>
         <p style="margin-left: 30px; margin-top: 10 px; margin-bottom: 10px;">
@@ -29,4 +29,4 @@
             </a>
         </p>
     </template>
-</data></odoo>
+</data></eden>

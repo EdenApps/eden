@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from werkzeug.urls import url_join
 
-from odoo import _, api, fields, models
-from odoo.exceptions import ValidationError
+from eden import _, api, fields, models
+from eden.exceptions import ValidationError
 
 
 class Product(models.Model):

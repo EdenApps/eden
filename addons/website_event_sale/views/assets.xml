@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="assets_tests" inherit_id="web.assets_tests" name="Website Event Sale Assets Tests">
     <xpath expr="." position="inside">
@@ -8,4 +8,4 @@
     </xpath>
 </template>
 
-</odoo>
+</eden>

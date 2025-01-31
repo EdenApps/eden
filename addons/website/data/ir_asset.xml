@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
 
         <record id="website.user_custom_bootstrap_overridden_scss" model="ir.asset">
@@ -26,4 +26,4 @@
         </record>
 
     </data>
-</odoo>
+</eden>

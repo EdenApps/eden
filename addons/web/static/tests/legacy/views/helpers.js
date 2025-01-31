@@ -1,4 +1,4 @@
-/** @odoo-module alias=@web/../tests/views/helpers default=false */
+/** @eden-module alias=@web/../tests/views/helpers default=false */
 
 import { makeTestEnv } from "@web/../tests/helpers/mock_env";
 import { getFixture, mount, nextTick } from "@web/../tests/helpers/utils";
@@ -17,7 +17,7 @@ import {
     setupControlPanelServiceRegistry,
 } from "../search/helpers";
 
-import { Component, useSubEnv, xml } from "@odoo/owl";
+import { Component, useSubEnv, xml } from "@eden/owl";
 
 const serviceRegistry = registry.category("services");
 

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import models
+from eden import models
 
 import logging
 _logger = logging.getLogger(__name__)

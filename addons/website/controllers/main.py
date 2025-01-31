@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import base64
 import datetime
 import os
@@ -18,21 +18,21 @@ from textwrap import shorten
 from werkzeug.exceptions import NotFound
 from xml.etree import ElementTree as ET
 
-import odoo
+import eden
 
-from odoo import http, models, fields, _
-from odoo.exceptions import AccessError, UserError
-from odoo.http import request, SessionExpiredException
-from odoo.osv import expression
-from odoo.tools import OrderedSet, escape_psql, html_escape as escape, py_to_js_locale
-from odoo.addons.base.models.ir_http import EXTENSION_TO_WEB_MIMETYPES
-from odoo.addons.base.models.ir_qweb import QWebException
-from odoo.addons.portal.controllers.portal import pager as portal_pager
-from odoo.addons.portal.controllers.web import Home
-from odoo.addons.web.controllers.binary import Binary
-from odoo.addons.web.controllers.session import Session
-from odoo.addons.website.tools import get_base_domain
-from odoo.tools.json import scriptsafe as json
+from eden import http, models, fields, _
+from eden.exceptions import AccessError, UserError
+from eden.http import request, SessionExpiredException
+from eden.osv import expression
+from eden.tools import OrderedSet, escape_psql, html_escape as escape, py_to_js_locale
+from eden.addons.base.models.ir_http import EXTENSION_TO_WEB_MIMETYPES
+from eden.addons.base.models.ir_qweb import QWebException
+from eden.addons.portal.controllers.portal import pager as portal_pager
+from eden.addons.portal.controllers.web import Home
+from eden.addons.web.controllers.binary import Binary
+from eden.addons.web.controllers.session import Session
+from eden.addons.website.tools import get_base_domain
+from eden.tools.json import scriptsafe as json
 
 logger = logging.getLogger(__name__)
 
@@ -186,7 +186,7 @@ class Website(Home):
         """
         if not redirect and request.params.get('login_success'):
             if request.env['res.users'].browse(uid)._is_internal():
-                redirect = '/odoo?' + request.httprequest.query_string.decode()
+                redirect = '/eden?' + request.httprequest.query_string.decode()
             else:
                 redirect = '/my'
         return super()._login_redirect(uid, redirect=redirect)
@@ -333,7 +333,7 @@ class Website(Home):
         values = {
             'apps': apps,
             'l10n': l10n,
-            'version': odoo.service.common.exp_version()
+            'version': eden.service.common.exp_version()
         }
         return request.render('website.website_info', values)
 
@@ -345,7 +345,7 @@ class Website(Home):
             return request.redirect('/')
         if request.env.lang != request.website.default_lang_id.code:
             return request.redirect('/%s%s' % (request.website.default_lang_id.url_code, request.httprequest.path))
-        action_url = f"/odoo/action-website.website_configurator?menu_id={request.env.ref('website.menu_website_configuration').id}"
+        action_url = f"/eden/action-website.website_configurator?menu_id={request.env.ref('website.menu_website_configuration').id}"
         if step > 1:
             action_url += '&step=' + str(step)
         return request.redirect(action_url)
@@ -669,7 +669,7 @@ class Website(Home):
 
         if redirect:
             if ext_special_case:  # redirect non html pages to backend to edit
-                return request.redirect(f"/odoo/ir.ui.view/{page.get('view_id')}")
+                return request.redirect(f"/eden/ir.ui.view/{page.get('view_id')}")
             return request.redirect(request.env['website'].get_client_action_url(url, True))
 
         if ext_special_case:

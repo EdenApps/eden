@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<odoo><data>
+<eden><data>
 
     <record id="event_type_booth_demo_exhibition_0" model="event.type.booth">
         <field name="name">Showbooth 1</field>
@@ -22,4 +22,4 @@
         <field name="booth_category_id" ref="event_booth_category_premium"/>
     </record>
 
-</data></odoo>
+</data></eden>

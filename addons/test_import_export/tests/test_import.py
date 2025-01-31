@@ -7,10 +7,10 @@ import unittest
 
 from PIL import Image
 
-from odoo.tests.common import TransactionCase, can_import, RecordCapturer
-from odoo.tools import mute_logger
-from odoo.tools.misc import file_open
-from odoo.addons.base_import.models.base_import import ImportValidationError
+from eden.tests.common import TransactionCase, can_import, RecordCapturer
+from eden.tools import mute_logger
+from eden.tools.misc import file_open
+from eden.addons.base_import.models.base_import import ImportValidationError
 
 
 def get_id_field(model_name):
@@ -306,7 +306,7 @@ class TestPreview(TransactionCase):
         })
         return import_wizard
 
-    @mute_logger('odoo.addons.base_import.models.base_import')
+    @mute_logger('eden.addons.base_import.models.base_import')
     def test_encoding(self):
         import_wizard = self.make_import()
         result = import_wizard.parse_preview({
@@ -315,7 +315,7 @@ class TestPreview(TransactionCase):
         })
         self.assertFalse('error' in result)
 
-    @mute_logger('odoo.addons.base_import.models.base_import')
+    @mute_logger('eden.addons.base_import.models.base_import')
     def test_csv_errors(self):
         import_wizard = self.make_import()
 

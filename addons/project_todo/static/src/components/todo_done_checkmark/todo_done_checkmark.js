@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { useState, onRendered, onMounted } from "@odoo/owl";
+import { useState, onRendered, onMounted } from "@eden/owl";
 import { registry } from "@web/core/registry";
 import { StateSelectionField, stateSelectionField } from "@web/views/fields/state_selection/state_selection_field";
 

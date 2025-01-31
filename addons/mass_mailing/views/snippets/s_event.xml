@@ -1,4 +1,4 @@
-<odoo>
+<eden>
 
     <template id="s_event" name="Event">
         <div class="s_mail_block_event o_mail_snippet_general bg-100">
@@ -40,4 +40,4 @@
         </div>
     </template>
 
-</odoo>
+</eden>

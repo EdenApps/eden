@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 import re
@@ -10,8 +10,8 @@ try:
 except ImportError:
     service_account = Request = None
 
-from odoo import models
-from odoo.exceptions import ValidationError
+from eden import models
+from eden.exceptions import ValidationError
 
 from ..utils.cloud_storage_google_utils import generate_signed_url_v4
 

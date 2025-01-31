@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 from datetime import datetime, timedelta
 
-from odoo import Command
-from odoo.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import ValuationReconciliationTestCommon
-from odoo.addons.sale_stock.tests.common import TestSaleStockCommon
-from odoo.exceptions import RedirectWarning, UserError
-from odoo.tests import Form, tagged
+from eden import Command
+from eden.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import ValuationReconciliationTestCommon
+from eden.addons.sale_stock.tests.common import TestSaleStockCommon
+from eden.exceptions import RedirectWarning, UserError
+from eden.tests import Form, tagged
 
 
 @tagged('post_install', '-at_install')

@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, fields
-from odoo.http import request, route
+from eden import _, fields
+from eden.http import request, route
 
-from odoo.addons.portal.controllers.portal import CustomerPortal
-from odoo.addons.portal.controllers.portal import pager as portal_pager
+from eden.addons.portal.controllers.portal import CustomerPortal
+from eden.addons.portal.controllers.portal import pager as portal_pager
 
 
 class CustomerPortalLoyalty(CustomerPortal):

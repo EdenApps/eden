@@ -1,4 +1,4 @@
-import { markRaw } from "@odoo/owl";
+import { markRaw } from "@eden/owl";
 import { evalDomain } from "@web/core/domain";
 import { Reactive } from "@web/core/utils/reactive";
 import { getId } from "./utils";

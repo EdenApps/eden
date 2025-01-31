@@ -1,7 +1,7 @@
 import { busModels } from "@bus/../tests/bus_test_helpers";
-import { after, before, expect, getFixture, registerDebugInfo } from "@odoo/hoot";
-import { hover as hootHover, queryFirst, resize } from "@odoo/hoot-dom";
-import { Deferred } from "@odoo/hoot-mock";
+import { after, before, expect, getFixture, registerDebugInfo } from "@eden/hoot";
+import { hover as hootHover, queryFirst, resize } from "@eden/hoot-dom";
+import { Deferred } from "@eden/hoot-mock";
 import {
     MockServer,
     authenticate,
@@ -22,7 +22,7 @@ import { contains } from "./mail_test_helpers_contains";
 
 import { busService } from "@bus/services/bus_service";
 import { mailGlobal } from "@mail/utils/common/misc";
-import { Component, onMounted, onPatched, onWillDestroy, status } from "@odoo/owl";
+import { Component, onMounted, onPatched, onWillDestroy, status } from "@eden/owl";
 import { browser } from "@web/core/browser/browser";
 import { registry } from "@web/core/registry";
 import { MEDIAS_BREAKPOINTS, utils as uiUtils } from "@web/core/ui/ui_service";
@@ -297,7 +297,7 @@ async function addSwitchTabDropdownItem(rootTarget, tabTarget) {
  * @param {{
  *  asTab?: boolean;
  *  authenticateAs?: any | { login: string; password: string; };
- *  env?: Partial<OdooEnv>;
+ *  env?: Partial<EdenEnv>;
  * }} [options]
  */
 export async function start(options) {

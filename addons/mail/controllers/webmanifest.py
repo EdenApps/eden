@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.http import request
-from odoo.tools import file_open
-from odoo.addons.web.controllers import webmanifest
+from eden.http import request
+from eden.tools import file_open
+from eden.addons.web.controllers import webmanifest
 
 
 class WebManifest(webmanifest.WebManifest):

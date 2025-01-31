@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.hr_timesheet.tests.test_timesheet import TestCommonTimesheet
-from odoo.tests import Form
+from eden.addons.hr_timesheet.tests.test_timesheet import TestCommonTimesheet
+from eden.tests import Form
 
 
 class TestProjectTaskQuickCreate(TestCommonTimesheet):

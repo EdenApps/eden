@@ -1,9 +1,9 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { AlertDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { registry } from "@web/core/registry";
 import { kanbanView } from "@web/views/kanban/kanban_view";
-import { onWillStart, useState, onWillRender } from "@odoo/owl";
+import { onWillStart, useState, onWillRender } from "@eden/owl";
 import { KanbanRenderer } from "@web/views/kanban/kanban_renderer";
 import { user } from "@web/core/user";
 import { useService } from "@web/core/utils/hooks";
@@ -133,7 +133,7 @@ export class PosKanbanRenderer extends KanbanRenderer {
     }
 
     createNewProducts() {
-        window.open("/odoo/action-point_of_sale.action_client_product_menu", "_self");
+        window.open("/eden/action-point_of_sale.action_client_product_menu", "_self");
     }
 
     showTopBorder() {

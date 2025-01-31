@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 {
     'name': 'SMS Marketing',
@@ -7,7 +7,7 @@
     'version': '1.1',
     'category': 'Marketing/Email Marketing',
     'sequence': 245,
-    'website': 'https://www.odoo.com/app/sms-marketing',
+    'website': 'https://www.edencloud.us/app/sms-marketing',
     'depends': [
         'portal',
         'mass_mailing',

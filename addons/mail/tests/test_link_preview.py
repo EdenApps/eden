@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from markupsafe import Markup
 from unittest.mock import patch
@@ -6,9 +6,9 @@ from unittest.mock import patch
 import io
 import requests
 
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.addons.mail.tools import link_preview
-from odoo.tests.common import tagged
+from eden.addons.mail.tests.common import MailCommon
+from eden.addons.mail.tools import link_preview
+from eden.tests.common import tagged
 
 
 @tagged("mail_link_preview", "mail_message", "post_install", "-at_install")
@@ -177,26 +177,26 @@ class TestLinkPreview(MailCommon):
             requests.Session, "head", self._patch_head_html
         ):
             urls = [
-                ("http://localhost:8069/", "http://localhost:8069/odoo", 0),
-                ("http://localhost:8069/", "http://localhost:8069/odoo/test", 0),
+                ("http://localhost:8069/", "http://localhost:8069/eden", 0),
+                ("http://localhost:8069/", "http://localhost:8069/eden/test", 0),
                 ("http://localhost:8069/", "http://localhost:8069/web/test", 0),
                 ("http://localhost:8069/", "http://localhost:8069/", 1),
-                ("http://localhost:8069/", "http://localhost:8069/odoo-experience", 1),
+                ("http://localhost:8069/", "http://localhost:8069/eden-experience", 1),
                 ("http://localhost:8069/", "http://localhost:8069/chat/5/bFtIfYHRco", 0),
-                ("https://www.odoo.com/", "https://www.odoo.com/web", 0),
-                ("https://www.odoo.com/", "https://www.odoo.com/odoo", 0),
-                ("https://www.odoo.com/", "https://www.odoo.com/odoo/", 0),
-                ("https://www.odoo.com/", "https://www.odoo.com/odoo?debug=assets", 0),
-                ("https://www.odoo.com/", "https://www.odoo.com/odoo#anchor", 0),
-                ("https://www.odoo.com/", "https://www.odoo.com/odoo-experience", 1),
-                ("https://www.odoo.com/", "https://www.odoo.com/odoo/1519/tasks/4102866", 0),
-                ("http://www.odoo.com/", "https://www.odoo.com/odoo/1519/tasks/4102866", 1),
-                ("https://www.odoo.com/", "https://wwwaodoo.com/odoo/", 1),
-                ("https://www.odoo.com/", "https://www.odoo.com/chat/", 0),
-                ("https://www.odoo.com/", "https://www.odoo.com/chat/5/bFtIfYHRco", 0),
-                ("http://www.odoo.com/", "https://www.odoo.com/chat/5/bFtIfYHRco", 1),
-                ("https://clients.odoo.com/", "https://www.odoo.com/odoo/1519/tasks/4102866", 1),
-                ("https://clients.odoo.com/", "https://www.odoo.com/chat/5/bFtIfYHRco", 1),
+                ("https://www.edencloud.us/", "https://www.edencloud.us/web", 0),
+                ("https://www.edencloud.us/", "https://www.edencloud.us/eden", 0),
+                ("https://www.edencloud.us/", "https://www.edencloud.us/eden/", 0),
+                ("https://www.edencloud.us/", "https://www.edencloud.us/eden?debug=assets", 0),
+                ("https://www.edencloud.us/", "https://www.edencloud.us/eden#anchor", 0),
+                ("https://www.edencloud.us/", "https://www.edencloud.us/eden-experience", 1),
+                ("https://www.edencloud.us/", "https://www.edencloud.us/eden/1519/tasks/4102866", 0),
+                ("http://www.edencloud.us/", "https://www.edencloud.us/eden/1519/tasks/4102866", 1),
+                ("https://www.edencloud.us/", "https://wwwaedencloud.us/eden/", 1),
+                ("https://www.edencloud.us/", "https://www.edencloud.us/chat/", 0),
+                ("https://www.edencloud.us/", "https://www.edencloud.us/chat/5/bFtIfYHRco", 0),
+                ("http://www.edencloud.us/", "https://www.edencloud.us/chat/5/bFtIfYHRco", 1),
+                ("https://clients.edencloud.us/", "https://www.edencloud.us/eden/1519/tasks/4102866", 1),
+                ("https://clients.edencloud.us/", "https://www.edencloud.us/chat/5/bFtIfYHRco", 1),
             ]
             for request_url, url, counter in urls:
                 with self.subTest(request_url=request_url, url=url, counter=counter):

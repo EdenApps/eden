@@ -1,10 +1,10 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { KanbanRenderer } from '@web/views/kanban/kanban_renderer';
 import { ProjectTaskKanbanRecord } from './project_task_kanban_record';
 import { ProjectTaskKanbanHeader } from './project_task_kanban_header';
 import { useService } from '@web/core/utils/hooks';
-import { onWillStart } from "@odoo/owl";
+import { onWillStart } from "@eden/owl";
 import { user } from "@web/core/user";
 
 export class ProjectTaskKanbanRenderer extends KanbanRenderer {

@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { rpc } from "@web/core/network/rpc";
 import { KeepLast } from "@web/core/utils/concurrency";
@@ -8,7 +8,7 @@ import { isBrowserSafari } from "@web/core/browser/feature_detection";
 import { renderToElement, renderToString } from "@web/core/utils/render";
 import { debounce } from '@web/core/utils/timing';
 
-import { markup } from "@odoo/owl";
+import { markup } from "@eden/owl";
 
 publicWidget.registry.searchBar = publicWidget.Widget.extend({
     selector: '.o_searchbar_form',

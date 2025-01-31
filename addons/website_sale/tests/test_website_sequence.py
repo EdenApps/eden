@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
+import eden.tests
 
 
-@odoo.tests.common.tagged('post_install', '-at_install')
-class TestWebsiteSequence(odoo.tests.TransactionCase):
+@eden.tests.common.tagged('post_install', '-at_install')
+class TestWebsiteSequence(eden.tests.TransactionCase):
 
     def setUp(self):
         super(TestWebsiteSequence, self).setUp()

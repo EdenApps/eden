@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data>
+<eden><data>
 
     <record id="event_7_track_1_quiz" model="event.quiz">
         <field name="name">What This Event Is All About</field>
@@ -152,4 +152,4 @@
         <field name="quiz_points">1</field>
     </record>
 
-</data></odoo>
+</data></eden>

@@ -6,7 +6,7 @@ import { CalendarYearPopover } from "./calendar_year_popover";
 import { makeWeekColumn } from "@web/views/calendar/calendar_common/calendar_common_week_column";
 import { getLocalWeekNumber } from "@web/core/l10n/dates";
 
-import { Component, useEffect, useRef } from "@odoo/owl";
+import { Component, useEffect, useRef } from "@eden/owl";
 
 export class CalendarYearRenderer extends Component {
     static components = {

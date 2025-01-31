@@ -1,8 +1,8 @@
-/** @odoo-module */
+/** @eden-module */
 // @ts-check
 /**
  *
- * @typedef {import("@spreadsheet").OdooPivotDefinition} OdooPivotDefinition
+ * @typedef {import("@spreadsheet").EdenPivotDefinition} EdenPivotDefinition
  * @typedef {import("@spreadsheet").AllCoreCommand} AllCoreCommand
  * @typedef {import("@spreadsheet").GFLocalPivot} GFLocalPivot
  *
@@ -15,9 +15,9 @@ import { globalFiltersFieldMatchers } from "@spreadsheet/global_filters/plugins/
 import { sprintf } from "@web/core/utils/strings";
 import { checkFilterFieldMatching } from "@spreadsheet/global_filters/helpers";
 import { deepCopy } from "@web/core/utils/objects";
-import { OdooCorePlugin } from "@spreadsheet/plugins";
+import { EdenCorePlugin } from "@spreadsheet/plugins";
 
-export class PivotCoreGlobalFilterPlugin extends OdooCorePlugin {
+export class PivotCoreGlobalFilterPlugin extends EdenCorePlugin {
     static getters = /** @type {const} */ (["getPivotFieldMatch", "getPivotFieldMatching"]);
     constructor(config) {
         super(config);
@@ -30,7 +30,7 @@ export class PivotCoreGlobalFilterPlugin extends OdooCorePlugin {
                     .getPivotIds()
                     .filter(
                         (id) =>
-                            this.getters.getPivotCoreDefinition(id).type === "ODOO" &&
+                            this.getters.getPivotCoreDefinition(id).type === "EDEN" &&
                             id in this.pivots
                     ),
             getDisplayName: (pivotId) => this.getters.getPivotName(pivotId),
@@ -38,7 +38,7 @@ export class PivotCoreGlobalFilterPlugin extends OdooCorePlugin {
             getFieldMatching: (pivotId, filterId) => this.getPivotFieldMatching(pivotId, filterId),
             getModel: (pivotId) => {
                 const pivot = this.getters.getPivotCoreDefinition(pivotId);
-                return pivot.type === "ODOO" && pivot.model;
+                return pivot.type === "EDEN" && pivot.model;
             },
         };
     }
@@ -66,7 +66,7 @@ export class PivotCoreGlobalFilterPlugin extends OdooCorePlugin {
     handle(cmd) {
         switch (cmd.type) {
             case "ADD_PIVOT": {
-                if (cmd.pivot.type === "ODOO") {
+                if (cmd.pivot.type === "EDEN") {
                     this._addPivot(cmd.pivotId, undefined);
                 }
                 break;
@@ -78,7 +78,7 @@ export class PivotCoreGlobalFilterPlugin extends OdooCorePlugin {
             case "DUPLICATE_PIVOT": {
                 const { pivotId, newPivotId } = cmd;
                 const pivotDefinition = this.getters.getPivotCoreDefinition(pivotId);
-                if(pivotDefinition.type !== "ODOO") {
+                if(pivotDefinition.type !== "EDEN") {
                     break;
                 }
                 const pivot = deepCopy(this.pivots[pivotId]);
@@ -107,7 +107,7 @@ export class PivotCoreGlobalFilterPlugin extends OdooCorePlugin {
      */
     getPivotFieldMatch(id) {
         const pivot = this.getters.getPivotCoreDefinition(id);
-        if (pivot.type !== "ODOO") {
+        if (pivot.type !== "EDEN") {
             return {};
         }
         return this.pivots[id].fieldMatching;
@@ -137,7 +137,7 @@ export class PivotCoreGlobalFilterPlugin extends OdooCorePlugin {
         const pivots = { ...this.pivots };
         for (const [pivotId, fieldMatch] of Object.entries(pivotFieldMatches)) {
             const pivot = this.getters.getPivotCoreDefinition(pivotId);
-            if (pivot.type !== "ODOO") {
+            if (pivot.type !== "EDEN") {
                 continue;
             }
             this.pivots[pivotId].fieldMatching[filterId] = fieldMatch;
@@ -158,7 +158,7 @@ export class PivotCoreGlobalFilterPlugin extends OdooCorePlugin {
      */
     _addPivot(id, fieldMatching = undefined) {
         const pivot = this.getters.getPivotCoreDefinition(id);
-        if (pivot.type === "ODOO") {
+        if (pivot.type === "EDEN") {
             const pivots = { ...this.pivots };
             const model = pivot.model;
             pivots[id] = {
@@ -194,7 +194,7 @@ export class PivotCoreGlobalFilterPlugin extends OdooCorePlugin {
         for (const id in this.pivots) {
             const pivot = this.getters.getPivotCoreDefinition(id);
             data.pivots[id].fieldMatching =
-                pivot.type === "ODOO" ? this.pivots[id].fieldMatching : {};
+                pivot.type === "EDEN" ? this.pivots[id].fieldMatching : {};
         }
     }
 }

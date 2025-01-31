@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data>
+<eden><data>
 
     <template name="Split regular forums/courses" id="website_slides_forum_index" inherit_id="website_forum.forum_all" active="True">
         <xpath expr="//div[@id='o_wforum_forums_index_list']//*[@t-if='forums']" position="replace">
@@ -54,4 +54,4 @@
         </xpath>
     </template>
 </data>
-</odoo>
+</eden>

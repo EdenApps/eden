@@ -1,6 +1,6 @@
 import { Dialog } from "@web/core/dialog/dialog";
 import { _t } from "@web/core/l10n/translation";
-import { Component, onMounted, useRef, useState } from "@odoo/owl";
+import { Component, onMounted, useRef, useState } from "@eden/owl";
 
 export class DatePickerPopup extends Component {
     static template = "point_of_sale.DatePickerPopup";

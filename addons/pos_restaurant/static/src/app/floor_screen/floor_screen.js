@@ -8,7 +8,7 @@ import { NumberPopup } from "@point_of_sale/app/utils/input_popups/number_popup"
 import { AlertDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { usePos } from "@point_of_sale/app/store/pos_hook";
 import { useService } from "@web/core/utils/hooks";
-import { Component, onMounted, useRef, useState, useEffect, useExternalListener } from "@odoo/owl";
+import { Component, onMounted, useRef, useState, useEffect, useExternalListener } from "@eden/owl";
 import { ask } from "@point_of_sale/app/store/make_awaitable_dialog";
 import { loadImage } from "@point_of_sale/utils";
 import { getDataURLFromFile } from "@web/core/utils/urls";

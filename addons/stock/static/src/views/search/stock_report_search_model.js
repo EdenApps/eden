@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { SearchModel } from "@web/search/search_model";
 

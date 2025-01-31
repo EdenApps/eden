@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from collections import Counter
 
-from odoo import _, api, fields, models
-from odoo.osv import expression
+from eden import _, api, fields, models
+from eden.osv import expression
 
 
 class WebsiteSnippetFilter(models.Model):

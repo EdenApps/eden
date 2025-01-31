@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
         <template id="auth_signup.login" inherit_id="web.login" name="Sign up - Reset Password">
             <xpath expr="//div[hasclass('oe_login_buttons')]" position="after">
                 <p class="mt-2 text-center">
@@ -105,4 +105,4 @@
 
             </t>
         </template>
-</odoo>
+</eden>

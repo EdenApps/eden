@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import options from '@web_editor/js/editor/snippets.options';
 import { _t } from "@web/core/l10n/translation";

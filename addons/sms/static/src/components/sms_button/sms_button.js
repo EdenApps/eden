@@ -1,9 +1,9 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { _t } from "@web/core/l10n/translation";
 import { user } from "@web/core/user";
 import { useService } from "@web/core/utils/hooks";
-import { Component, status } from "@odoo/owl";
+import { Component, status } from "@eden/owl";
 
 export class SendSMSButton extends Component {
     static template = "sms.SendSMSButton";

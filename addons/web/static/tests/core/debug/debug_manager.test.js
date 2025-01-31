@@ -2,8 +2,8 @@ import { browser } from "@web/core/browser/browser";
 import { user } from "@web/core/user";
 import { regenerateAssets, becomeSuperuser } from "@web/core/debug/debug_menu_items";
 import { openViewItem } from "@web/webclient/debug/debug_items";
-import { describe, test, expect, beforeEach } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
+import { describe, test, expect, beforeEach } from "@eden/hoot";
+import { animationFrame } from "@eden/hoot-mock";
 import { DebugMenu } from "@web/core/debug/debug_menu";
 import { ActionDialog } from "@web/webclient/actions/action_dialog";
 import { WebClient } from "@web/webclient/webclient";
@@ -24,8 +24,8 @@ import {
     serverState,
     makeDialogMockEnv,
 } from "@web/../tests/web_test_helpers";
-import { Component, xml } from "@odoo/owl";
-import { queryOne, queryAll, queryAllTexts, click } from "@odoo/hoot-dom";
+import { Component, xml } from "@eden/owl";
+import { queryOne, queryAll, queryAllTexts, click } from "@eden/hoot-dom";
 
 class DebugMenuParent extends Component {
     static template = xml`<DebugMenu/>`;

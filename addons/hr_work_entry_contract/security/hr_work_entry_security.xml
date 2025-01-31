@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<eden noupdate="1">
 
     <record id="ir_rule_hr_work_entry_multi_company" model="ir.rule">
         <field name="name">HR Work Entry Contract: Multi Company</field>
@@ -7,4 +7,4 @@
         <field name="domain_force">[('company_id', 'in', company_ids)]</field>
     </record>
 
-</odoo>
+</eden>

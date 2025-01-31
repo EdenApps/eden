@@ -1,12 +1,12 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from unittest.mock import patch
 
-from odoo.exceptions import AccessError
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from eden.exceptions import AccessError
+from eden.tests import tagged
+from eden.tools import mute_logger
 
-from odoo.addons.payment.tests.common import PaymentCommon
+from eden.addons.payment.tests.common import PaymentCommon
 
 
 @tagged('-at_install', 'post_install')
@@ -169,7 +169,7 @@ class TestPaymentTransaction(PaymentCommon):
         source_tx = self._create_transaction(flow='direct', state='authorized')
         child_tx_1 = source_tx._create_child_transaction(100)
         with patch(
-            'odoo.addons.payment.models.payment_transaction.PaymentTransaction'
+            'eden.addons.payment.models.payment_transaction.PaymentTransaction'
             '._update_source_transaction_state'
         ) as patched:
             child_tx_1._set_done()
@@ -183,7 +183,7 @@ class TestPaymentTransaction(PaymentCommon):
         child_tx_1._set_done()
         child_tx_2 = source_tx._create_child_transaction(source_tx.amount-100)
         with patch(
-            'odoo.addons.payment.models.payment_transaction.PaymentTransaction'
+            'eden.addons.payment.models.payment_transaction.PaymentTransaction'
             '._update_source_transaction_state'
         ) as patched:
             child_tx_2._set_canceled()
@@ -217,7 +217,7 @@ class TestPaymentTransaction(PaymentCommon):
                 "'done'."
         )
 
-    @mute_logger('odoo.addons.payment.models.payment_transaction')
+    @mute_logger('eden.addons.payment.models.payment_transaction')
     def test_update_state_to_illegal_target_state(self):
         tx = self._create_transaction('redirect', state='done')
         tx._update_state(['draft', 'pending', 'authorized'], 'cancel', None)

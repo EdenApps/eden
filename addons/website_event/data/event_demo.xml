@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <!-- Event Event -->
     <record id="event.event_0" model="event.event">
         <field name="website_published" eval="True"/>
@@ -23,8 +23,8 @@
                 <h5 class="mb-2">Program</h5>
                 <p>Conferences, workshops and trainings will be organized in 6 rooms:</p>
                 <ul class="mb-5">
-                    <li><b>Technical Rooms</b> - One dedicated to advanced Odoo developers, one for new developers.</li>
-                    <li><b>Technical Rooms</b> - One dedicated to advanced Odoo developers, one for new developers.</li>
+                    <li><b>Technical Rooms</b> - One dedicated to advanced Eden developers, one for new developers.</li>
+                    <li><b>Technical Rooms</b> - One dedicated to advanced Eden developers, one for new developers.</li>
                     <li><b>Business Room</b> - To discuss implementation methodologies, best sales practices, etc.</li>
                     <li><b>Workshop Room</b> - Mainly for developers.</li>
                 </ul>
@@ -82,15 +82,15 @@
         <li>Point of Sale (POS), Introduction to report customization.</li>
     </ul>
 
-    <p>For any additional information, please contact us at <a href="mailto:events@odoo.com">events@odoo.com</a></p>
+    <p>For any additional information, please contact us at <a href="mailto:events@edencloud.us">events@edencloud.us</a></p>
 
     <section class="s_we_speaker p-3 mb-4" itemscope="itemscope" itemtype="http://schema.org/Person" itemprop="performer">
         <span class="badge text-bg-secondary o_wevent_badge float-end">SPEAKER</span>
-        <img src="/mail/static/src/img/odoobot.png" width="70" class="img-fluid rounded-circle float-start me-3" alt=""/>
+        <img src="/mail/static/src/img/edenbot.png" width="70" class="img-fluid rounded-circle float-start me-3" alt=""/>
         <div class="overflow-hidden">
             <h4 class="mt-3 mb-1" itemprop="name">John DOE</h4>
             <h6 class="mb-4">Company</h6>
-            <p>At just 13 years old, John DOE was already starting to develop his first business applications for customers. After mastering civil engineering, he founded TinyERP. This was the first phase of OpenERP which would later became Odoo, the most installed open-source business software worldwide.</p>
+            <p>At just 13 years old, John DOE was already starting to develop his first business applications for customers. After mastering civil engineering, he founded TinyERP. This was the first phase of OpenERP which would later became Eden, the most installed open-source business software worldwide.</p>
         </div>
     </section>
 
@@ -170,4 +170,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

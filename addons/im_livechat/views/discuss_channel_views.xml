@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <data>
 
         <record id="discuss_channel_view_search" model="ir.ui.view">
@@ -157,4 +157,4 @@
         </record>
 
     </data>
-</odoo>
+</eden>

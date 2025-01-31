@@ -1,5 +1,5 @@
 
-from odoo import api, fields, models
+from eden import api, fields, models
 
 
 class Message(models.Model):

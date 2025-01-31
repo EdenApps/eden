@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import http
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
-from odoo.tests.common import get_db_name, HOST, HttpCase, new_test_user, Opener, tagged
+from eden import http
+from eden.addons.base.tests.common import HttpCaseWithUserDemo
+from eden.tests.common import get_db_name, HOST, HttpCase, new_test_user, Opener, tagged
 
 
 class TestWebLoginCommon(HttpCase):
@@ -41,7 +41,7 @@ class TestWebLogin(TestWebLoginCommon):
             data='{}'
         ).raise_for_status()
         # ensure we end up on the right page for internal users.
-        self.assertEqual(res_post.request.path_url, '/odoo')
+        self.assertEqual(res_post.request.path_url, '/eden')
 
     def test_web_login_external(self):
         res_post = self.login('portal_user', 'portal_user')
@@ -64,4 +64,4 @@ class TestWebLogin(TestWebLoginCommon):
 @tagged('post_install', '-at_install')
 class TestUserSwitch(HttpCaseWithUserDemo):
     def test_user_switch(self):
-        self.start_tour('/odoo', 'test_user_switch', login='demo')
+        self.start_tour('/eden', 'test_user_switch', login='demo')

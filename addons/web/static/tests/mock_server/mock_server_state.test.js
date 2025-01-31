@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 import { serverState } from "@web/../tests/web_test_helpers";
 
 import { user } from "@web/core/user";
@@ -7,7 +7,7 @@ import { session } from "@web/session";
 describe.current.tags("headless");
 
 test("default state", () => {
-    expect(odoo.debug).toBe("");
+    expect(eden.debug).toBe("");
     const s = { ...serverState };
     expect("view_info" in s).toBe(true);
     delete s.view_info;
@@ -22,7 +22,7 @@ test("default state", () => {
         groupId: 11,
         lang: "en",
         multiLang: false,
-        odoobotId: 418,
+        edenbotId: 418,
         partnerId: 17,
         partnerName: "Mitchell Admin",
         publicPartnerId: 18,

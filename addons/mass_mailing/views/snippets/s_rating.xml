@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_rating" name="Rating">
     <div class="s_rating o_mail_snippet_general pt16 pb16" style="padding-left: 15px; padding-right: 15px;" data-vcss="001" data-icon="fa-star">
@@ -73,4 +73,4 @@
     <field name="path">mass_mailing/static/src/snippets/s_rating/001.scss</field>
 </record>
 
-</odoo>
+</eden>

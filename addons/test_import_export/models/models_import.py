@@ -1,4 +1,4 @@
-from odoo import fields, models
+from eden import fields, models
 
 
 class Char(models.Model):

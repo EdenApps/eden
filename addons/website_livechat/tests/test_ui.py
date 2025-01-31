@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import tests, _
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
-from odoo.addons.website_livechat.tests.common import TestLivechatCommon
+from eden import tests, _
+from eden.addons.base.tests.common import HttpCaseWithUserDemo
+from eden.addons.website_livechat.tests.common import TestLivechatCommon
 
 
 @tests.tagged('post_install', '-at_install')

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
         <record id="project.model_project_task" model="ir.model">
             <field name="website_form_key">create_task</field>
             <field name="website_form_default_field_id" ref="project.field_project_task__description" />
@@ -20,4 +20,4 @@
             ]"/>
         </function>
 
-</odoo>
+</eden>

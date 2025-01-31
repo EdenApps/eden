@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="snailmail_letter_format_error" model="ir.ui.view">
         <field name="name">snailmail.letter.format.error.form</field>
         <field name="model">snailmail.letter.format.error</field>
@@ -26,4 +26,4 @@
         <field name="view_mode">form</field>
         <field name="target">new</field>
     </record>
-</odoo>
+</eden>

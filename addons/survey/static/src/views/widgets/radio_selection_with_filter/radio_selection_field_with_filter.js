@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { RadioField, radioField } from "@web/views/fields/radio/radio_field";
 import { _t } from "@web/core/l10n/translation";

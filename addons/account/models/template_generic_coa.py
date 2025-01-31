@@ -1,5 +1,5 @@
-from odoo import models, _
-from odoo.addons.account.models.chart_template import template
+from eden import models, _
+from eden.addons.account.models.chart_template import template
 
 
 

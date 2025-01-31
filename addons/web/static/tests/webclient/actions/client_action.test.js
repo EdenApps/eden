@@ -1,6 +1,6 @@
-import { beforeEach, expect, test } from "@odoo/hoot";
-import { animationFrame, runAllTimers } from "@odoo/hoot-mock";
-import { Component, onMounted, xml } from "@odoo/owl";
+import { beforeEach, expect, test } from "@eden/hoot";
+import { animationFrame, runAllTimers } from "@eden/hoot-mock";
+import { Component, onMounted, xml } from "@eden/owl";
 import {
     contains,
     defineActions,
@@ -352,7 +352,7 @@ test("test next action on display_notification client action", async () => {
 });
 
 test("test reload client action", async () => {
-    redirect("/odoo?test=42");
+    redirect("/eden?test=42");
     browser.location.search = "?test=42";
 
     patchWithCleanup(browser.history, {
@@ -403,19 +403,19 @@ test("test reload client action", async () => {
     });
     await runAllTimers();
     expect.verifySteps([
-        "replaceState /odoo?test=42",
+        "replaceState /eden?test=42",
         "window_reload",
-        "pushState /odoo/action-2",
+        "pushState /eden/action-2",
         "window_reload",
-        "pushState /odoo?menu_id=1",
+        "pushState /eden?menu_id=1",
         "window_reload",
-        "pushState /odoo/action-1?menu_id=2",
+        "pushState /eden/action-1?menu_id=2",
         "window_reload",
     ]);
 });
 
 test("test home client action", async () => {
-    redirect("/odoo");
+    redirect("/eden");
     browser.location.search = "";
 
     patchWithCleanup(browser.location, {

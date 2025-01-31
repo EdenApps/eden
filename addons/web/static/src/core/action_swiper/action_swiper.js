@@ -2,7 +2,7 @@ import { browser } from "@web/core/browser/browser";
 import { localization } from "@web/core/l10n/localization";
 import { clamp } from "@web/core/utils/numbers";
 
-import { Component, onMounted, onWillUnmount, useRef, useState } from "@odoo/owl";
+import { Component, onMounted, onWillUnmount, useRef, useState } from "@eden/owl";
 import { Deferred } from "@web/core/utils/concurrency";
 
 const isScrollSwipable = (scrollables) => {

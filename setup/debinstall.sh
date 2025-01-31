@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Install Debian packages needed to run Odoo.
+# Install Debian packages needed to run Eden.
 
 
 if [ "$1" = "-l" -o "$1" = "--list" ]; then

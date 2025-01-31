@@ -1,6 +1,6 @@
 import { Plugin } from "@html_editor/plugin";
 import { isEmptyBlock } from "@html_editor/utils/dom_info";
-import { reactive } from "@odoo/owl";
+import { reactive } from "@eden/owl";
 import { _t } from "@web/core/l10n/translation";
 import { rotate } from "@web/core/utils/arrays";
 import { Powerbox } from "./powerbox";

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="view_attendance_overtime_tree" model="ir.ui.view">
         <field name="name">hr.attendance.overtime.list</field>
         <field name="model">hr.attendance.overtime</field>
@@ -77,4 +77,4 @@
 
     </record>
 
-</odoo>
+</eden>

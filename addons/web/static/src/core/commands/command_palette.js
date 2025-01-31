@@ -18,7 +18,7 @@ import {
     useState,
     markRaw,
     useExternalListener,
-} from "@odoo/owl";
+} from "@eden/owl";
 
 const DEFAULT_PLACEHOLDER = _t("Search...");
 const DEFAULT_EMPTY_MESSAGE = _t("No result found");

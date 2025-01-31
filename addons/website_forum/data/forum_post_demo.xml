@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <record id="question_0" model="forum.post">
             <field name="name">How to configure alerts for employee contract expiration</field>
@@ -17,9 +17,9 @@
             <field name="forum_id" ref="website_forum.forum_help"/>
             <field name="content"><![CDATA[<p>I use Wordpress as a CMS and eCommerce platform. The developing in Wordpress is quite easy and solid but it missing ERP feature (there is single plugin to integrate with Frontaccounting) so I wonder:
 
-Can I use Odoo as a replacement CMS of Wordpress + eCommerce plugin?
+Can I use Eden as a replacement CMS of Wordpress + eCommerce plugin?
 
-In simple words does Odoo became CMS+ERP platform?</p>]]></field>
+In simple words does Eden became CMS+ERP platform?</p>]]></field>
             <field name="tag_ids" eval="[(4,ref('website_forum.tags_2'))]"/>
         </record>
 
@@ -42,8 +42,8 @@ In simple words does Odoo became CMS+ERP platform?</p>]]></field>
             <field name="forum_id" ref="website_forum.forum_help"/>
             <field name="name">Re: CMS replacement for ERP and eCommerce</field>
             <field name="content"><![CDATA[
-<p>Odoo provides a web module and an e-commerce module: www.odoo.com/app/website
-The CMS editor in Odoo web is nice but I prefer Drupal for customization and there is a Drupal module for Odoo. I think WP is better than Odoo web too.
+<p>Eden provides a web module and an e-commerce module: www.edencloud.us/app/website
+The CMS editor in Eden web is nice but I prefer Drupal for customization and there is a Drupal module for Eden. I think WP is better than Eden web too.
 </p>]]></field>
             <field name="parent_id" ref="question_1"/>
         </record>
@@ -69,4 +69,4 @@ The CMS editor in Odoo web is nice but I prefer Drupal for customization and the
         </function>
 
     </data>
-</odoo>
+</eden>

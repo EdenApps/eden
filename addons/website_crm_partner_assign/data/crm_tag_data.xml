@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <record model="crm.tag" id="tag_portal_lead_partner_unavailable">
             <field name="name">No more partner available</field>
@@ -14,4 +14,4 @@
             <field name="color">4</field>
         </record>
     </data>
-</odoo>
+</eden>

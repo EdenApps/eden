@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
 
     <record id="discuss_channel_rtc_session_view_search" model="ir.ui.view">
         <field name="name">discuss.channel.rtc.session.search</field>
@@ -62,4 +62,4 @@
         <field name="view_mode">list,form</field>
     </record>
 
-</odoo>
+</eden>

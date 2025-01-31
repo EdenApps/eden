@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 
 <template id="event_details" name="Event Header">
@@ -391,7 +391,7 @@
 
 <!-- Button to configure Tickets -->
 <template id="registration_configure_tickets_button" name="Registration Configure Ticket Button">
-    <a t-attf-class="o_not_editable text-nowrap {{linkClasses or '' }}" t-attf-href="/odoo/event.event/{{event.id}}?menu_id={{backend_menu_id}}" role="link"  title="Configure event tickets">
+    <a t-attf-class="o_not_editable text-nowrap {{linkClasses or '' }}" t-attf-href="/eden/event.event/{{event.id}}?menu_id={{backend_menu_id}}" role="link"  title="Configure event tickets">
         <i class="fa fa-gear me-1" role="img" aria-label="Configure" title="Configure event tickets"/><em>Configure Tickets</em>
     </a>
 </template>
@@ -540,4 +540,4 @@
 <template id="opt_event_description_cover_hidden" name="Event Description Cover Hidden Option" inherit_id="website_event.event_description_full" active="False"/>
 <template id="opt_event_description_cover_top" name="Event Description Cover Top Option" inherit_id="website_event.event_description_full" active="False"/>
 
-</odoo>
+</eden>

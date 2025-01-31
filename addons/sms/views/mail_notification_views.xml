@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo><data>
+<eden><data>
     <record id="mail_notification_view_tree" model="ir.ui.view">
         <field name="name">mail.notification.view.list</field>
         <field name="model">mail.notification</field>
@@ -24,4 +24,4 @@
             </xpath>
         </field>
     </record>
-</data></odoo>
+</data></eden>

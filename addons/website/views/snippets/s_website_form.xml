@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_website_form" name="Form">
     <section class="s_website_form pt16 pb16" data-vcss="001" data-snippet="s_website_form">
@@ -352,4 +352,4 @@
     <field name="path">website/static/src/xml/website_form.xml</field>
 </record>
 
-</odoo>
+</eden>

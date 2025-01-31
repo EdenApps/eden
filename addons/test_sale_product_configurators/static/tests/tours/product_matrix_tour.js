@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { registry } from "@web/core/registry";
 import { stepUtils } from "@web_tour/tour_service/tour_utils";
@@ -20,7 +20,7 @@ for (let no of ['PAV41', 'PAV42']) {
 }
 
 registry.category("web_tour.tours").add('sale_matrix_tour', {
-    url: '/odoo',
+    url: '/eden',
     steps: () => [
         ...stepUtils.goToAppSteps("sale.sale_menu_root", "Go to the Sales App"),
         ...tourUtils.createNewSalesOrder(),

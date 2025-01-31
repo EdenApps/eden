@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 {
     'name': 'Point of Sale',
@@ -57,7 +57,7 @@
     ],
     'installable': True,
     'application': True,
-    'website': 'https://www.odoo.com/app/point-of-sale-shop',
+    'website': 'https://www.edencloud.us/app/point-of-sale-shop',
     'assets': {
 
         # In general, you DON'T NEED to declare new assets here, just put the
@@ -110,7 +110,7 @@
             ("remove", "web/static/src/core/debug/**/*"),
             "web/static/src/libs/fontawesome/css/font-awesome.css",
             "web/static/src/views/fields/formatters.js",
-            "web/static/lib/odoo_ui_icons/*",
+            "web/static/lib/eden_ui_icons/*",
             'web/static/src/legacy/scss/ui.scss',
             "point_of_sale/static/src/utils.js",
             'bus/static/src/services/bus_service.js',
@@ -129,7 +129,7 @@
             'point_of_sale/static/lib/**/*',
             'web/static/lib/luxon/luxon.js',
             'web/static/lib/owl/owl.js',
-            'web/static/lib/owl/odoo_module.js',
+            'web/static/lib/owl/eden_module.js',
             'web/static/lib/zxing-library/zxing-library.js',
 
 
@@ -194,7 +194,7 @@
         ],
         'point_of_sale.customer_display_assets': [
             ('include', 'point_of_sale.base_app'),
-            "point_of_sale/static/src/app/generic_components/odoo_logo/*",
+            "point_of_sale/static/src/app/generic_components/eden_logo/*",
             "point_of_sale/static/src/app/generic_components/order_widget/*",
             "point_of_sale/static/src/app/generic_components/orderline/*",
             "point_of_sale/static/src/app/generic_components/centered_icon/*",

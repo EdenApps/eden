@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import PaymentForm from "@payment/js/payment_form";
 

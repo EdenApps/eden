@@ -8,7 +8,7 @@ import {
     useChildSubEnv,
     useRef,
     useState,
-} from "@odoo/owl";
+} from "@eden/owl";
 
 import { _t } from "@web/core/l10n/translation";
 import { useService } from "@web/core/utils/hooks";

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-from odoo import api, fields, models, _, Command
-from odoo.osv import expression
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools import frozendict, groupby, html2plaintext, is_html_empty, split_every
-from odoo.tools.float_utils import float_repr, float_round, float_compare
-from odoo.tools.misc import clean_context, formatLang
-from odoo.tools.translate import html_translate
+from eden import api, fields, models, _, Command
+from eden.osv import expression
+from eden.exceptions import UserError, ValidationError
+from eden.tools import frozendict, groupby, html2plaintext, is_html_empty, split_every
+from eden.tools.float_utils import float_repr, float_round, float_compare
+from eden.tools.misc import clean_context, formatLang
+from eden.tools.translate import html_translate
 
 from collections import defaultdict
 from markupsafe import Markup

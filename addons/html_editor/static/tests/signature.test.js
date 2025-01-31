@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { press } from "@odoo/hoot-dom";
-import { animationFrame, tick } from "@odoo/hoot-mock";
+import { expect, test } from "@eden/hoot";
+import { press } from "@eden/hoot-dom";
+import { animationFrame, tick } from "@eden/hoot-mock";
 import { defineModels, fields, models, serverState } from "@web/../tests/web_test_helpers";
 import { setupEditor } from "./_helpers/editor";
 import { getContent } from "./_helpers/selection";

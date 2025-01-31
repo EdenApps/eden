@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="rating_rating_view_search_livechat" model="ir.ui.view">
         <field name="name">rating.rating.search.livechat</field>
         <field name="model">rating.rating</field>
@@ -111,4 +111,4 @@
         <field name="view_id" ref="rating.rating_rating_view_form_text"/>
     </record>
 
-</odoo>
+</eden>

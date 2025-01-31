@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <!-- 10 percent with code -->
     <record id="10_percent_with_code" model="loyalty.program">
         <field name="name">Code for 10% on orders</field>
@@ -72,4 +72,4 @@
         <field name="mail_template_id" ref="loyalty.mail_template_loyalty_card"/>
         <field name="program_id" ref="loyalty.10_percent_coupon"/>
     </record>
-</odoo>
+</eden>

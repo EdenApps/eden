@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <!-- Top menu item -->
     <menuitem id='menu_lunch' name='Lunch' sequence="235" groups="group_lunch_user" web_icon="lunch,static/description/icon.png">
         <menuitem name="My Lunch" id="menu_lunch_title" sequence="50">
@@ -22,4 +22,4 @@
             <menuitem name="Alerts" id="lunch_alert_menu" action="lunch_alert_action" sequence="6"/>
         </menuitem>
     </menuitem>
-</odoo>
+</eden>

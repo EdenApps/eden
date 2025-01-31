@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { sprintf } from '@web/core/utils/strings';
 import { _t } from "@web/core/l10n/translation";

@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
-from odoo.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from eden.addons.hr_holidays.tests.common import TestHrHolidaysCommon
 
 
 class TestTimeoffEvent(TestHrHolidaysCommon):

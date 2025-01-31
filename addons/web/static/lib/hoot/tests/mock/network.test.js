@@ -1,7 +1,7 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { describe, expect, test } from "@odoo/hoot";
-import { mockFetch } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@eden/hoot";
+import { mockFetch } from "@eden/hoot-mock";
 import { parseUrl } from "../local_helpers";
 
 describe(parseUrl(import.meta.url), () => {
@@ -24,9 +24,9 @@ describe(parseUrl(import.meta.url), () => {
         mockFetch(expect.step);
 
         await fetch("http://some.url");
-        await fetch("/odoo");
+        await fetch("/eden");
         await fetch(URL.createObjectURL(new Blob([""])));
 
-        expect.verifySteps(["http://some.url", "/odoo"]);
+        expect.verifySteps(["http://some.url", "/eden"]);
     });
 });

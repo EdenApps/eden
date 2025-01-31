@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import re
 
-from odoo import api, fields, models, _
-from odoo.exceptions import ValidationError
-from odoo.tools.safe_eval import safe_eval
+from eden import api, fields, models, _
+from eden.exceptions import ValidationError
+from eden.tools.safe_eval import safe_eval
 
 
 REGEX_FORMULA_OBJECT = re.compile(r'((?:product\[\')(?P<field>\w+)(?:\'\]))+')

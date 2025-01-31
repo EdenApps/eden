@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 const PRODUCTION_DECORATORS = {
     draft: "secondary",

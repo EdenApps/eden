@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="report_layout" inherit_id="web.report_layout">
         <xpath expr="//head" position="inside">
             <t t-if="env and env.context.get('snailmail_layout')" t-call-assets="snailmail.report_assets_snailmail"/>
@@ -10,4 +10,4 @@
             <t t-if="env and env.context.get('snailmail_layout')" t-call-assets="snailmail.report_assets_snailmail"/>
         </xpath>
     </template>
-</odoo>
+</eden>

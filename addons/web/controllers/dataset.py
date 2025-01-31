@@ -1,13 +1,13 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 import warnings
 from werkzeug.exceptions import NotFound
 
-from odoo import http
-from odoo.api import call_kw
-from odoo.http import request
-from odoo.models import check_method_name
+from eden import http
+from eden.api import call_kw
+from eden.http import request
+from eden.models import check_method_name
 from .utils import clean_action
 
 

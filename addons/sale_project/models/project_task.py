@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, _
-from odoo.exceptions import ValidationError, AccessError
-from odoo.osv import expression
-from odoo.tools import SQL
-from odoo.tools.misc import unquote
+from eden import api, fields, models, _
+from eden.exceptions import ValidationError, AccessError
+from eden.osv import expression
+from eden.tools import SQL
+from eden.tools.misc import unquote
 
 
 class ProjectTask(models.Model):

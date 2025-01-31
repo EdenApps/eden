@@ -1,4 +1,4 @@
-from odoo import fields, models
+from eden import fields, models
 
 # Good ratio to have a large image still small enough to stay under 5MB (common limit)
 # Close to the 2:1 ratio recommended by twitter and these dimensions are recommended by meta

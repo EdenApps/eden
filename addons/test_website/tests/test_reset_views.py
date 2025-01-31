@@ -1,18 +1,18 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 import re
 
-import odoo.tests
-from odoo.tools import mute_logger
+import eden.tests
+from eden.tools import mute_logger
 
 
 def break_view(view, fr='<p>placeholder</p>', to='<p t-field="no_record.exist"/>'):
     view.arch = view.arch.replace(fr, to)
 
 
-@odoo.tests.common.tagged('post_install', '-at_install')
-class TestWebsiteResetViews(odoo.tests.HttpCase):
+@eden.tests.common.tagged('post_install', '-at_install')
+class TestWebsiteResetViews(eden.tests.HttpCase):
 
     def fix_it(self, page, mode='soft'):
         self.authenticate("admin", "admin")
@@ -35,7 +35,7 @@ class TestWebsiteResetViews(odoo.tests.HttpCase):
         self.View = self.env['ir.ui.view']
         self.test_view = self.Website.viewref('test_website.test_view')
 
-    @mute_logger('odoo.http')
+    @mute_logger('eden.http')
     def test_01_reset_specific_page_view(self):
         self.test_page_view = self.Website.viewref('test_website.test_page_view')
         total_views = self.View.search_count([('type', '=', 'qweb')])
@@ -44,7 +44,7 @@ class TestWebsiteResetViews(odoo.tests.HttpCase):
         self.assertEqual(total_views + 1, self.View.search_count([('type', '=', 'qweb')]), "Missing COW view")
         self.fix_it('/test_page_view')
 
-    @mute_logger('odoo.http')
+    @mute_logger('eden.http')
     def test_02_reset_specific_view_controller(self):
         total_views = self.View.search_count([('type', '=', 'qweb')])
         # Trigger COW then break the QWEB XML on it
@@ -53,7 +53,7 @@ class TestWebsiteResetViews(odoo.tests.HttpCase):
         self.assertEqual(total_views + 1, self.View.search_count([('type', '=', 'qweb')]), "Missing COW view")
         self.fix_it('/test_view')
 
-    @mute_logger('odoo.http')
+    @mute_logger('eden.http')
     def test_03_reset_specific_view_controller_t_called(self):
         self.test_view_to_be_t_called = self.Website.viewref('test_website.test_view_to_be_t_called')
 
@@ -64,7 +64,7 @@ class TestWebsiteResetViews(odoo.tests.HttpCase):
         self.assertEqual(total_views + 1, self.View.search_count([('type', '=', 'qweb')]), "Missing COW view")
         self.fix_it('/test_view')
 
-    @mute_logger('odoo.http')
+    @mute_logger('eden.http')
     def test_04_reset_specific_view_controller_inherit(self):
         self.test_view_child_broken = self.Website.viewref('test_website.test_view_child_broken')
 
@@ -75,7 +75,7 @@ class TestWebsiteResetViews(odoo.tests.HttpCase):
         self.fix_it('/test_view')
 
     # This test work in real life, but not in test mode since we cannot rollback savepoint.
-    # @mute_logger('odoo.http', 'odoo.addons.website.models.ir_ui_view')
+    # @mute_logger('eden.http', 'eden.addons.website.models.ir_ui_view')
     # def test_05_reset_specific_view_controller_broken_request(self):
     #     total_views = self.View.search_count([('type', '=', 'qweb')])
     #     # Trigger COW then break the QWEB XML on it
@@ -84,7 +84,7 @@ class TestWebsiteResetViews(odoo.tests.HttpCase):
     #     self.fix_it('/test_view')
 
     # also mute ir.ui.view as `_get_view_id()` will raise "Could not find view object with xml_id 'no_record.exist'""
-    @mute_logger('odoo.http', 'odoo.addons.website.models.ir_ui_view')
+    @mute_logger('eden.http', 'eden.addons.website.models.ir_ui_view')
     def test_06_reset_specific_view_controller_inexisting_template(self):
         total_views = self.View.search_count([('type', '=', 'qweb')])
         # Trigger COW then break the QWEB XML on it
@@ -92,14 +92,14 @@ class TestWebsiteResetViews(odoo.tests.HttpCase):
         self.assertEqual(total_views + 1, self.View.search_count([('type', '=', 'qweb')]), "Missing COW view (2)")
         self.fix_it('/test_view')
 
-    @mute_logger('odoo.http')
+    @mute_logger('eden.http')
     def test_07_reset_page_view_complete_flow(self):
         self.start_tour(self.env['website'].get_client_action_url('/test_page_view'), 'test_reset_page_view_complete_flow_part1', login="admin")
         self.fix_it('/test_page_view')
         self.start_tour(self.env['website'].get_client_action_url('/test_page_view'), 'test_reset_page_view_complete_flow_part2', login="admin")
         self.fix_it('/test_page_view')
 
-    @mute_logger('odoo.http')
+    @mute_logger('eden.http')
     def test_08_reset_specific_page_view_hard_mode(self):
         self.test_page_view = self.Website.viewref('test_website.test_page_view')
         total_views = self.View.search_count([('type', '=', 'qweb')])

@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import timedelta
 from freezegun import freeze_time
 
-from odoo.addons.test_event_full.tests.common import TestEventFullCommon
-from odoo.addons.website.tests.test_performance import UtilPerf
-from odoo.tests import Form, users, warmup, tagged
+from eden.addons.test_event_full.tests.common import TestEventFullCommon
+from eden.addons.website.tests.test_performance import UtilPerf
+from eden.tests import Form, users, warmup, tagged
 
 
 @tagged('event_performance', 'post_install', '-at_install', '-standard')
@@ -470,8 +470,8 @@ class TestOnlineEventPerformance(EventPerformanceCase, UtilPerf):
     #         with self.assertQueryCount(default=99999):  # tef only: 1110
     #             self.browser_js(
     #                 '/event/%i/register' % self.test_event.id,
-    #                 'odoo.__DEBUG__.services["web_tour.tour"].run("wevent_performance_register")',
-    #                 'odoo.__DEBUG__.services["web_tour.tour"].tours.wevent_performance_register.ready',
+    #                 'eden.__DEBUG__.services["web_tour.tour"].run("wevent_performance_register")',
+    #                 'eden.__DEBUG__.services["web_tour.tour"].tours.wevent_performance_register.ready',
     #                 login=None,
     #                 timeout=200,
     #             )

@@ -45,7 +45,7 @@ import {
     useEffect,
     useRef,
     useState,
-} from "@odoo/owl";
+} from "@eden/owl";
 import { FetchRecordError } from "@web/model/relational_model/errors";
 import { effect } from "@web/core/utils/reactive";
 
@@ -223,7 +223,7 @@ export class FormController extends Component {
 
         onError((error) => {
             const suggestedCompany = error.cause?.data?.context?.suggested_company;
-            if (error.cause?.data?.name === "odoo.exceptions.AccessError" && suggestedCompany) {
+            if (error.cause?.data?.name === "eden.exceptions.AccessError" && suggestedCompany) {
                 this.env.pushStateBeforeReload();
                 const activeCompanyIds = this.companyService.activeCompanyIds;
                 activeCompanyIds.push(suggestedCompany.id);

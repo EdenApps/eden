@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, Command, fields, models
-from odoo.exceptions import UserError
-from odoo.tools.float_utils import float_round, float_is_zero
+from eden import _, api, Command, fields, models
+from eden.exceptions import UserError
+from eden.tools.float_utils import float_round, float_is_zero
 
 
 class ReturnPickingLine(models.TransientModel):

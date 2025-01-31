@@ -1,16 +1,16 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from werkzeug import urls
 from werkzeug.exceptions import Forbidden, NotFound
 
-from odoo import http
-from odoo.http import request
-from odoo.osv import expression
-from odoo.tools import consteq
-from odoo.addons.mail.controllers import mail
-from odoo.addons.mail.tools.discuss import Store
-from odoo.addons.portal.utils import get_portal_partner
-from odoo.exceptions import AccessError
+from eden import http
+from eden.http import request
+from eden.osv import expression
+from eden.tools import consteq
+from eden.addons.mail.controllers import mail
+from eden.addons.mail.tools.discuss import Store
+from eden.addons.portal.utils import get_portal_partner
+from eden.exceptions import AccessError
 
 
 class PortalChatter(http.Controller):

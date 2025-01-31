@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 
-from odoo import Command
-from odoo.tests import tagged
-from odoo.tools.float_utils import float_compare
+from eden import Command
+from eden.tests import tagged
+from eden.tools.float_utils import float_compare
 
-from odoo.addons.sale.tests.common import TestSaleCommon
-from odoo.addons.project.tests.test_project_profitability import TestProjectProfitabilityCommon as Common
+from eden.addons.sale.tests.common import TestSaleCommon
+from eden.addons.project.tests.test_project_profitability import TestProjectProfitabilityCommon as Common
 
 
 class TestProjectProfitabilityCommon(Common):

@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @eden-module **/
 
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@eden/o-spreadsheet";
 import { _t } from "@web/core/l10n/translation";
 
 const { arg, toString } = spreadsheet.helpers;

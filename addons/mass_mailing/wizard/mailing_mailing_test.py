@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from markupsafe import Markup
 
-from odoo import _, fields, models, tools
-from odoo.tools.misc import file_open
+from eden import _, fields, models, tools
+from eden.tools.misc import file_open
 
 
 class TestMassMailing(models.TransientModel):

@@ -3,7 +3,7 @@ import { registry } from "@web/core/registry";
 import { getColor, hexToRGBA, getCustomColor } from "@web/core/colors/colors";
 import { standardFieldProps } from "../standard_field_props";
 
-import { Component, onWillStart, useEffect, useRef } from "@odoo/owl";
+import { Component, onWillStart, useEffect, useRef } from "@eden/owl";
 import { cookie } from "@web/core/browser/cookie";
 
 const colorScheme = cookie.get("color_scheme");
@@ -53,7 +53,7 @@ export class JournalDashboardGraphField extends Component {
         const labels = this.data[0].values.map(function (pt) {
             return pt.x;
         });
-        const color10 = getColor(3, cookie.get("color_scheme"), "odoo");
+        const color10 = getColor(3, cookie.get("color_scheme"), "eden");
         const borderColor = this.data[0].is_sample_data ? hexToRGBA(color10, 0.1) : color10;
         const backgroundColor = this.data[0].is_sample_data
             ? hexToRGBA(color10, 0.05)
@@ -106,8 +106,8 @@ export class JournalDashboardGraphField extends Component {
         const labels = [];
         const backgroundColor = [];
 
-        const color13 = getColor(2, cookie.get("color_scheme"), "odoo");
-        const color19 = getColor(1, cookie.get("color_scheme"), "odoo");
+        const color13 = getColor(2, cookie.get("color_scheme"), "eden");
+        const color19 = getColor(1, cookie.get("color_scheme"), "eden");
         this.data[0].values.forEach((pt) => {
             data.push(pt.value);
             labels.push(pt.label);

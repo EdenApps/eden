@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="account_analytic_account_view_form_mrp" model="ir.ui.view">
         <field name="name">account.analytic.account.form.mrp</field>
         <field name="model">account.analytic.account</field>
@@ -21,4 +21,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

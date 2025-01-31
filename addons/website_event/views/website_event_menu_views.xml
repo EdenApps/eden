@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo><data>
+<eden><data>
 
     <record id="website_event_menu_view_search" model="ir.ui.view">
         <field name="name">website.event.menu.view.search</field>
@@ -59,4 +59,4 @@
     </record>
 
 </data>
-</odoo>
+</eden>

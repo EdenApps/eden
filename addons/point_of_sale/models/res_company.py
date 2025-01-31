@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from odoo import api, models, fields, _
-from odoo.exceptions import ValidationError
-from odoo.osv import expression
+from eden import api, models, fields, _
+from eden.exceptions import ValidationError
+from eden.osv import expression
 
 class ResCompany(models.Model):
     _name = 'res.company'
@@ -15,7 +15,7 @@ class ResCompany(models.Model):
             help="At the session closing: A picking is created for the entire session when it's closed\n In real time: Each order sent to the server create its own picking")
     point_of_sale_use_ticket_qr_code = fields.Boolean(
         string='Self-service invoicing',
-        help="Print information on the receipt to allow the costumer to easily request the invoice anytime, from Odoo's portal")
+        help="Print information on the receipt to allow the costumer to easily request the invoice anytime, from Eden's portal")
     point_of_sale_ticket_unique_code = fields.Boolean(
         string='Generate a code on ticket',
         help="Add a 5-digit code on the receipt to allow the user to request the invoice for an order on the portal.")

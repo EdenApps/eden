@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import collections
 import contextlib
@@ -8,8 +8,8 @@ import json
 import operator
 from textwrap import shorten
 
-from odoo import api, fields, models, tools, _
-from odoo.exceptions import UserError, ValidationError
+from eden import api, fields, models, tools, _
+from eden.exceptions import UserError, ValidationError
 
 
 class SurveyQuestion(models.Model):

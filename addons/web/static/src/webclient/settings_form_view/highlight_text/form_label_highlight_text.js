@@ -7,7 +7,7 @@ export class FormLabelHighlightText extends FormLabel {
     static components = { HighlightText };
     setup() {
         super.setup();
-        const isEnterprise = odoo.info && odoo.info.isEnterprise;
+        const isEnterprise = eden.info && eden.info.isEnterprise;
         if (this.props.fieldInfo?.field === upgradeBooleanField && !isEnterprise) {
             this.upgradeEnterprise = true;
         }

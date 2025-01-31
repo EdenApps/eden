@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from freezegun import freeze_time
-from odoo.addons.sale.tests.common import TestSaleCommon
-from odoo.tests import Form, tagged
-from odoo.fields import Command
+from eden.addons.sale.tests.common import TestSaleCommon
+from eden.tests import Form, tagged
+from eden.fields import Command
 
 
 @tagged('post_install', '-at_install')

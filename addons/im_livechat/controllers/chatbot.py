@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import http
-from odoo.http import request
-from odoo.addons.mail.models.discuss.mail_guest import add_guest_to_context
-from odoo.addons.mail.tools.discuss import Store
+from eden import http
+from eden.http import request
+from eden.addons.mail.models.discuss.mail_guest import add_guest_to_context
+from eden.addons.mail.tools.discuss import Store
 
 
 class LivechatChatbotScriptController(http.Controller):

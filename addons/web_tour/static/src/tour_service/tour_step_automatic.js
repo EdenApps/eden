@@ -1,5 +1,5 @@
 import { tourState } from "./tour_state";
-import * as hoot from "@odoo/hoot-dom";
+import * as hoot from "@eden/hoot-dom";
 import { callWithUnloadCheck } from "./tour_utils";
 import { TourHelpers } from "./tour_helpers";
 import { TourStep } from "./tour_step";

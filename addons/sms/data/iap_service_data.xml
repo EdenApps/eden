@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <record id="iap_service_sms" model="iap.service">
             <field name="name">SMS</field>
@@ -9,4 +9,4 @@
             <field name="integer_balance">False</field>
         </record>
     </data>
-</odoo>
+</eden>

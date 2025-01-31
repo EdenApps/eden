@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 
 from markupsafe import Markup
 
-from odoo import _, api, fields, models
-from odoo.exceptions import AccessError, UserError
-from odoo.osv import expression
-from odoo.tools.mail import email_normalize, append_content_to_html
+from eden import _, api, fields, models
+from eden.exceptions import AccessError, UserError
+from eden.osv import expression
+from eden.tools.mail import email_normalize, append_content_to_html
 
 _logger = logging.getLogger(__name__)
 

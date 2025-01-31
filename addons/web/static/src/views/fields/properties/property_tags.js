@@ -7,7 +7,7 @@ import { useService } from "@web/core/utils/hooks";
 import { TagsList } from "@web/core/tags_list/tags_list";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";
 
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 class PropertyTagsColorListPopover extends Component {
     static template = "web.PropertyTagsColorListPopover";

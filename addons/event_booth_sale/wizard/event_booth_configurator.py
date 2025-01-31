@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, models, fields, _
-from odoo.exceptions import ValidationError
+from eden import api, models, fields, _
+from eden.exceptions import ValidationError
 
 
 class EventBoothConfigurator(models.TransientModel):

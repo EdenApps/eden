@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import models, tools, _
-from odoo.addons.base.models.res_lang import LangDataDict, LangData
-from odoo.exceptions import UserError
-from odoo.http import request
+from eden import models, tools, _
+from eden.addons.base.models.res_lang import LangDataDict, LangData
+from eden.exceptions import UserError
+from eden.http import request
 
 
 class Lang(models.Model):

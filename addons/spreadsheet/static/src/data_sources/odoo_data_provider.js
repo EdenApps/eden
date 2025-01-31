@@ -1,7 +1,7 @@
-import { EventBus } from "@odoo/owl";
+import { EventBus } from "@eden/owl";
 import { ServerData } from "./server_data";
 
-export class OdooDataProvider extends EventBus {
+export class EdenDataProvider extends EventBus {
     constructor(env) {
         super();
         this.orm = env.services.orm.silent;

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.addons.sale_loyalty.tests.common import TestSaleCouponCommon
-from odoo.exceptions import ValidationError
+from eden import Command
+from eden.addons.sale_loyalty.tests.common import TestSaleCouponCommon
+from eden.exceptions import ValidationError
 
 
 class TestProgramWithCodeOperations(TestSaleCouponCommon):

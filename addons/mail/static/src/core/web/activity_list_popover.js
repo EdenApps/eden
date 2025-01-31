@@ -1,7 +1,7 @@
 import { ActivityListPopoverItem } from "@mail/core/web/activity_list_popover_item";
 import { compareDatetime } from "@mail/utils/common/misc";
 
-import { Component, onWillUpdateProps, useState } from "@odoo/owl";
+import { Component, onWillUpdateProps, useState } from "@eden/owl";
 
 import { useService } from "@web/core/utils/hooks";
 

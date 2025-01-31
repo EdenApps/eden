@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <!-- Update the event type if exists -->
         <function model="event.type" name="write">
@@ -7,4 +7,4 @@
             <value eval="{'name': 'Sell Online', 'website_menu': True}"/>
         </function>
     </data>
-</odoo>
+</eden>

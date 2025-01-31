@@ -1,14 +1,14 @@
-import { animationFrame } from "@odoo/hoot-mock";
+import { animationFrame } from "@eden/hoot-mock";
 import { PivotArchParser } from "@web/views/pivot/pivot_arch_parser";
-import { OdooPivot } from "@spreadsheet/pivot/odoo_pivot";
+import { EdenPivot } from "@spreadsheet/pivot/eden_pivot";
 import { getBasicPivotArch, getPyEnv } from "@spreadsheet/../tests/helpers/data";
 import { createModelWithDataSource } from "@spreadsheet/../tests/helpers/model";
 import { waitForDataLoaded } from "@spreadsheet/helpers/model";
-import { helpers } from "@odoo/o-spreadsheet";
+import { helpers } from "@eden/o-spreadsheet";
 const { parseDimension, isDateOrDatetimeField } = helpers;
 
 /**
- * @typedef {import("@spreadsheet").OdooSpreadsheetModel} OdooSpreadsheetModel
+ * @typedef {import("@spreadsheet").EdenSpreadsheetModel} EdenSpreadsheetModel
  * @typedef {import("@spreadsheet").Zone} Zone
  */
 
@@ -25,7 +25,7 @@ function addEmptyGranularity(dimensions, fields) {
 }
 
 /**
- * @param {OdooSpreadsheetModel} model
+ * @param {EdenSpreadsheetModel} model
  * @param {string} pivotId
  * @param {object} params
  * @param {string} [params.arch]
@@ -40,7 +40,7 @@ export async function insertPivotInSpreadsheet(model, pivotId, params) {
 
     const pyEnv = getPyEnv();
     const pivot = {
-        type: "ODOO",
+        type: "EDEN",
         sortedColumn: null,
         domain: [],
         context: {},
@@ -67,8 +67,8 @@ export async function insertPivotInSpreadsheet(model, pivotId, params) {
         pivot,
     });
     const ds = model.getters.getPivot(pivotId);
-    if (!(ds instanceof OdooPivot)) {
-        throw new Error("The pivot data source is not an OdooPivot");
+    if (!(ds instanceof EdenPivot)) {
+        throw new Error("The pivot data source is not an EdenPivot");
     }
     await ds.load();
     const { cols, rows, measures, fieldsType } = ds.getTableStructure().export();
@@ -94,7 +94,7 @@ export async function insertPivotInSpreadsheet(model, pivotId, params) {
  * @param {string} [params.arch]
  * @param {object} [params.serverData]
  * @param {function} [params.mockRPC]
- * @returns {Promise<{ model: OdooSpreadsheetModel, env: object, pivotId: string}>}
+ * @returns {Promise<{ model: EdenSpreadsheetModel, env: object, pivotId: string}>}
  */
 export async function createSpreadsheetWithPivot(params = {}) {
     const model = await createModelWithDataSource({

@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { useEffect } from "@odoo/owl";
+import { useEffect } from "@eden/owl";
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 
 export class InputConfirmationDialog extends ConfirmationDialog {

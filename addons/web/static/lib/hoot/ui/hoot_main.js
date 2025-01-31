@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { Component, useState, xml } from "@odoo/owl";
+import { Component, useState, xml } from "@eden/owl";
 import { createUrl } from "../core/url";
 import { useWindowListener } from "../hoot_utils";
 import { HootButtons } from "./hoot_buttons";
@@ -63,7 +63,7 @@ export class HootMain extends Component {
                     <nav class="hoot-controls py-1 px-2">
                         <h1
                             class="hoot-logo m-0 select-none"
-                            title="Hierarchically Organized Odoo Tests"
+                            title="Hierarchically Organized Eden Tests"
                         >
                             <strong class="flex">HOOT</strong>
                         </h1>

@@ -1,6 +1,6 @@
 import { roundPrecision as round_pr } from "@web/core/utils/numbers";
 import { usePos } from "@point_of_sale/app/store/pos_hook";
-import { Component, onMounted, onWillUnmount, useState } from "@odoo/owl";
+import { Component, onMounted, onWillUnmount, useState } from "@eden/owl";
 import { Dialog } from "@web/core/dialog/dialog";
 import { useService } from "@web/core/utils/hooks";
 

@@ -1,19 +1,19 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from . import controllers
 from . import models
 from . import wizard
 
-import odoo
-from odoo import api, SUPERUSER_ID
-from odoo.http import request
+import eden
+from eden import api, SUPERUSER_ID
+from eden.http import request
 from functools import partial
 
 
 def uninstall_hook(env):
     # Force remove ondelete='cascade' elements,
     # This might be prevented by another ondelete='restrict' field
-    # TODO: This should be an Odoo generic fix, not a website specific one
+    # TODO: This should be an Eden generic fix, not a website specific one
     website_domain = [('website_id', '!=', False)]
     env['ir.asset'].search(website_domain).unlink()
     env['ir.ui.view'].search(website_domain).with_context(active_test=False, _force_unlink=True).unlink()
@@ -27,7 +27,7 @@ def uninstall_hook(env):
 
     # Properly unlink website_id from ir.model.fields
     def rem_website_id_null(dbname):
-        db_registry = odoo.modules.registry.Registry.new(dbname)
+        db_registry = eden.modules.registry.Registry.new(dbname)
         with db_registry.cursor() as cr:
             env = api.Environment(cr, SUPERUSER_ID, {})
             env['ir.model.fields'].search([

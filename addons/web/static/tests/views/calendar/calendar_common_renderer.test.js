@@ -1,6 +1,6 @@
-import { beforeEach, expect, test } from "@odoo/hoot";
-import { queryAllTexts, queryFirst, queryRect } from "@odoo/hoot-dom";
-import { runAllTimers } from "@odoo/hoot-mock";
+import { beforeEach, expect, test } from "@eden/hoot";
+import { queryAllTexts, queryFirst, queryRect } from "@eden/hoot-dom";
+import { runAllTimers } from "@eden/hoot-mock";
 import { mockService, mountWithCleanup, preloadBundle } from "@web/../tests/web_test_helpers";
 import {
     DEFAULT_DATE,

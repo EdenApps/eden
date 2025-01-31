@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, fields, models, SUPERUSER_ID
-from odoo.exceptions import UserError
-from odoo.fields import Command
-from odoo.tools import format_date, frozendict
+from eden import _, api, fields, models, SUPERUSER_ID
+from eden.exceptions import UserError
+from eden.fields import Command
+from eden.tools import format_date, frozendict
 
 
 class SaleAdvancePaymentInv(models.TransientModel):

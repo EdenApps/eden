@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <record model="ir.rule" id="analytic_accout_subcontractor_rule">
         <field name="name">Analytic Account Subcontractor</field>
@@ -15,4 +15,4 @@
         <field name="groups" eval="[(4, ref('base.group_portal'))]"/>
     </record>
 
-</odoo>
+</eden>

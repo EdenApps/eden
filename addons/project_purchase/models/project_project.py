@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 
-from odoo import fields, models, _
-from odoo.osv import expression
+from eden import fields, models, _
+from eden.osv import expression
 
 
 class Project(models.Model):

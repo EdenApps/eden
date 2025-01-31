@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta, time
 from unittest.mock import patch
 
-from odoo import fields
+from eden import fields
 from .common import PurchaseTestCommon
-from odoo.tests import Form
+from eden.tests import Form
 
 
 class TestPurchaseLeadTime(PurchaseTestCommon):
@@ -208,7 +208,7 @@ class TestPurchaseLeadTime(PurchaseTestCommon):
             'name': 'Second Company',
         })
         company.write({'po_lead': 0.00})
-        self.patcher = patch('odoo.addons.stock.models.stock_orderpoint.fields.Date', wraps=fields.Date)
+        self.patcher = patch('eden.addons.stock.models.stock_orderpoint.fields.Date', wraps=fields.Date)
         self.mock_date = self.startPatcher(self.patcher)
 
         vendor = self.env['res.partner'].create({

@@ -1,4 +1,4 @@
-<odoo>
+<eden>
     <template id="portal_my_home_menu_invoice" name="Portal layout : invoice menu entries" inherit_id="portal.portal_breadcrumbs" priority="30">
         <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
             <li t-if="page_name == 'invoice'" t-attf-class="breadcrumb-item #{'active ' if not invoice else ''}">
@@ -113,7 +113,7 @@
         <xpath expr="//div[hasclass('o_portal_sidebar')]" position="inside">
             <t t-set="o_portal_fullwidth_alert" groups="sales_team.group_sale_salesman,account.group_account_invoice,account.group_account_readonly">
                 <t t-call="portal.portal_back_in_edit_mode">
-                    <t t-set="backend_url" t-value="'/odoo/action-account.action_move_out_invoice_type/%s' % invoice.id"/>
+                    <t t-set="backend_url" t-value="'/eden/action-account.action_move_out_invoice_type/%s' % invoice.id"/>
                 </t>
             </t>
 
@@ -284,4 +284,4 @@
             </div>
         </xpath>
     </template>
-</odoo>
+</eden>

@@ -1,7 +1,7 @@
-import { expect, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
-import { click, queryFirst } from "@odoo/hoot-dom";
-import { Component, xml } from "@odoo/owl";
+import { expect, test } from "@eden/hoot";
+import { animationFrame } from "@eden/hoot-mock";
+import { click, queryFirst } from "@eden/hoot-dom";
+import { Component, xml } from "@eden/owl";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
 
 import { Notebook } from "@web/core/notebook/notebook";

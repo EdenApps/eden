@@ -3,12 +3,12 @@ import json
 import logging
 from werkzeug.urls import url_parse
 
-from odoo import api, Command, fields, models, _
-from odoo.exceptions import AccessDenied
-from odoo.http import request
-from odoo.tools import sql, SQL
+from eden import api, Command, fields, models, _
+from eden.exceptions import AccessDenied
+from eden.http import request
+from eden.tools import sql, SQL
 
-from odoo.addons.base.models.res_users import check_identity
+from eden.addons.base.models.res_users import check_identity
 
 from .._vendor.webauthn import base64url_to_bytes, generate_authentication_options, generate_registration_options, options_to_json, verify_authentication_response, verify_registration_response
 from .._vendor.webauthn.helpers import bytes_to_base64url
@@ -92,7 +92,7 @@ class PassKey(models.Model):
         assert request
         registration_options = json.loads(options_to_json(generate_registration_options(
             rp_id=url_parse(self.get_base_url()).host,
-            rp_name='Odoo',
+            rp_name='Eden',
             user_id=str(self.env.user.id).encode(),
             user_name=self.env.user.login,
             authenticator_selection=AuthenticatorSelectionCriteria(

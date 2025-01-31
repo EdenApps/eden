@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from itertools import groupby
 
-from odoo import api, fields, models
-from odoo.osv import expression
-from odoo.tools import format_amount
-from odoo.tools.sql import column_exists, create_column, create_index
+from eden import api, fields, models
+from eden.osv import expression
+from eden.tools import format_amount
+from eden.tools.sql import column_exists, create_column, create_index
 
 
 class SaleOrderLine(models.Model):

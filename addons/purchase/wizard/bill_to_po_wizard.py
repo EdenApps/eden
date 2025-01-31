@@ -1,6 +1,6 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-from odoo import fields, models, Command, _
-from odoo.exceptions import UserError
+# Part of Eden. See LICENSE file for full copyright and licensing details.
+from eden import fields, models, Command, _
+from eden.exceptions import UserError
 
 
 class BillToPO(models.TransientModel):

@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
-import odoo
-from odoo.addons.point_of_sale.tests.common import TestPoSCommon
+import eden
+from eden.addons.point_of_sale.tests.common import TestPoSCommon
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@eden.tests.tagged('post_install', '-at_install')
 class TestPosMargin(TestPoSCommon):
     """
     Test the margin computation on orders with basic configuration

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_discovery" name="Discovery">
     <section class="s_discovery pt136 pb136">
@@ -17,4 +17,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

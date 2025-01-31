@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 <template id="snippets" groups="base.group_user">
     <snippets id="snippet_custom" string="Custom"/>
     <t id="default_snippets">
@@ -784,4 +784,4 @@
     </div>
 </template>
 
-</odoo>
+</eden>

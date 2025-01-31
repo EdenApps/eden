@@ -1,4 +1,4 @@
-/** @odoo-module alias=@mail/../tests/web/fields/many2many_tags_email_tests default=false */
+/** @eden-module alias=@mail/../tests/web/fields/many2many_tags_email_tests default=false */
 const test = QUnit.test; // QUnit.test()
 
 import { startServer } from "@bus/../tests/helpers/mock_python_environment";

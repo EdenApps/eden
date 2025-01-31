@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_mega_menu_thumbnails" name="Menu - Thumbnails" groups="base.group_user">
     <section class="s_mega_menu_thumbnails pt24 o_colored_level o_cc o_cc1">
@@ -111,4 +111,4 @@
     <field name="path">website/static/src/snippets/s_mega_menu_thumbnails/000.scss</field>
 </record>
 
-</odoo>
+</eden>

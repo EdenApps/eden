@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-from odoo import http, _
-from odoo.addons.website_sale.controllers.main import WebsiteSale
-from odoo.addons.website_sale.controllers.delivery import Delivery
+from eden import http, _
+from eden.addons.website_sale.controllers.main import WebsiteSale
+from eden.addons.website_sale.controllers.delivery import Delivery
 
-from odoo.exceptions import AccessDenied, UserError
-from odoo.http import request
+from eden.exceptions import AccessDenied, UserError
+from eden.http import request
 
 
 class MondialRelay(http.Controller):

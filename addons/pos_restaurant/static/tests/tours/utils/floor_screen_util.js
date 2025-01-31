@@ -1,4 +1,4 @@
-import { queryOne } from "@odoo/hoot-dom";
+import { queryOne } from "@eden/hoot-dom";
 import * as NumberPopup from "@point_of_sale/../tests/tours/utils/number_popup_util";
 import * as Dialog from "@point_of_sale/../tests/tours/utils/dialog_util";
 
@@ -122,7 +122,7 @@ export function isChildTable(child) {
 
 import { TourHelpers } from "@web_tour/tour_service/tour_helpers";
 import { patch } from "@web/core/utils/patch";
-import * as hoot from "@odoo/hoot-dom";
+import * as hoot from "@eden/hoot-dom";
 
 patch(TourHelpers.prototype, {
     async drag_multiple_and_then_drop(...drags) {

@@ -3,69 +3,69 @@
 import { Domain } from "@web/core/domain";
 import { _t } from "@web/core/l10n/translation";
 import { user } from "@web/core/user";
-import { NO_RECORD_AT_THIS_POSITION, OdooPivotModel } from "./pivot_model";
-import { EvaluationError, PivotRuntimeDefinition, registries, helpers } from "@odoo/o-spreadsheet";
+import { NO_RECORD_AT_THIS_POSITION, EdenPivotModel } from "./pivot_model";
+import { EvaluationError, PivotRuntimeDefinition, registries, helpers } from "@eden/o-spreadsheet";
 import { LOADING_ERROR } from "@spreadsheet/data_sources/data_source";
 import { omit } from "@web/core/utils/objects";
-import { OdooPivotLoader } from "./odoo_pivot_loader";
+import { EdenPivotLoader } from "./eden_pivot_loader";
 
 const { pivotRegistry, supportedPivotPositionalFormulaRegistry } = registries;
 const { pivotTimeAdapter, toString, areDomainArgsFieldsValid, toNormalizedPivotValue, deepEquals } =
     helpers;
 
 /**
- * @typedef {import("@odoo/o-spreadsheet").FunctionResultObject} FunctionResultObject
- * @typedef {import("@odoo/o-spreadsheet").PivotMeasure} PivotMeasure
- * @typedef {import("@odoo/o-spreadsheet").PivotDomain} PivotDomain
- * @typedef {import("@odoo/o-spreadsheet").PivotDimension} PivotDimension
- * @typedef {import("@odoo/o-spreadsheet").PivotCoreMeasure} PivotCoreMeasure
+ * @typedef {import("@eden/o-spreadsheet").FunctionResultObject} FunctionResultObject
+ * @typedef {import("@eden/o-spreadsheet").PivotMeasure} PivotMeasure
+ * @typedef {import("@eden/o-spreadsheet").PivotDomain} PivotDomain
+ * @typedef {import("@eden/o-spreadsheet").PivotDimension} PivotDimension
+ * @typedef {import("@eden/o-spreadsheet").PivotCoreMeasure} PivotCoreMeasure
  * @typedef {import("@spreadsheet").WebPivotModelParams} WebPivotModelParams
- * @typedef {import("@spreadsheet").OdooPivot<OdooPivotRuntimeDefinition>} IPivot
- * @typedef {import("@spreadsheet").OdooFields} OdooFields
- * @typedef {import("@spreadsheet").OdooPivotCoreDefinition} OdooPivotCoreDefinition
+ * @typedef {import("@spreadsheet").EdenPivot<EdenPivotRuntimeDefinition>} IPivot
+ * @typedef {import("@spreadsheet").EdenFields} EdenFields
+ * @typedef {import("@spreadsheet").EdenPivotCoreDefinition} EdenPivotCoreDefinition
  * @typedef {import("@spreadsheet").SortedColumn} SortedColumn
- * @typedef {import("@spreadsheet").OdooGetters} OdooGetters
- * @typedef {import("@spreadsheet/data_sources/odoo_data_provider").OdooDataProvider} OdooDataProvider
+ * @typedef {import("@spreadsheet").EdenGetters} EdenGetters
+ * @typedef {import("@spreadsheet/data_sources/eden_data_provider").EdenDataProvider} EdenDataProvider
  */
 
 /**
  * @implements {IPivot}
  */
-export class OdooPivot {
+export class EdenPivot {
     /**
      *
      * @override
      * @param {Object} services Services (see DataSource)
      * @param {Object} params
-     * @param {OdooPivotCoreDefinition} params.definition
-     * @param {OdooGetters} params.getters
+     * @param {EdenPivotCoreDefinition} params.definition
+     * @param {EdenGetters} params.getters
      */
     constructor(services, { definition, getters }) {
-        /** @type {"ODOO"} */
-        this.type = "ODOO";
+        /** @type {"EDEN"} */
+        this.type = "EDEN";
 
-        /** @type {OdooPivotCoreDefinition} @protected */
+        /** @type {EdenPivotCoreDefinition} @protected */
         this.coreDefinition = definition;
 
         this.needsReevaluation = false;
 
-        /** @type {OdooPivotRuntimeDefinition | undefined} @protected */
+        /** @type {EdenPivotRuntimeDefinition | undefined} @protected */
         this.runtimeDefinition = undefined;
 
-        /** @type {OdooPivotModel | undefined} @protected */
+        /** @type {EdenPivotModel | undefined} @protected */
         this.model = undefined;
 
-        /** @type {OdooGetters} @protected */
+        /** @type {EdenGetters} @protected */
         this.getters = getters;
 
         /** @protected */
-        this.loader = new OdooPivotLoader(services.odooDataProvider, this._load.bind(this));
+        this.loader = new EdenPivotLoader(services.edenDataProvider, this._load.bind(this));
 
-        /** @type {OdooFields | undefined} @protected */
+        /** @type {EdenFields | undefined} @protected */
         this._fields = undefined;
 
-        /** @protected @type {OdooDataProvider}*/
-        this.odooDataProvider = services.odooDataProvider;
+        /** @protected @type {EdenDataProvider}*/
+        this.edenDataProvider = services.edenDataProvider;
 
         /** @protected @type {Object} */
         this.context = omit(
@@ -81,7 +81,7 @@ export class OdooPivot {
     }
 
     /**
-     * @param {OdooPivotCoreDefinition} nextDefinition
+     * @param {EdenPivotCoreDefinition} nextDefinition
      */
     onDefinitionChange(nextDefinition) {
         this.context = omit(nextDefinition.context, ...Object.keys(user.context));
@@ -108,7 +108,7 @@ export class OdooPivot {
                 )
             ) {
                 this.coreDefinition = nextDefinition;
-                const runtimeDefinition = new OdooPivotRuntimeDefinition(
+                const runtimeDefinition = new EdenPivotRuntimeDefinition(
                     this.coreDefinition,
                     this.getFields()
                 );
@@ -181,8 +181,8 @@ export class OdooPivot {
 
     async createModelAndDefinition() {
         await this.loadMetadata();
-        const definition = new OdooPivotRuntimeDefinition(this.coreDefinition, this.getFields());
-        const model = new OdooPivotModel(
+        const definition = new EdenPivotRuntimeDefinition(this.coreDefinition, this.getFields());
+        const model = new EdenPivotModel(
             { _t },
             {
                 fields: this.getFields(),
@@ -193,8 +193,8 @@ export class OdooPivot {
                 },
             },
             {
-                orm: this.odooDataProvider.orm,
-                serverData: this.odooDataProvider.serverData,
+                orm: this.edenDataProvider.orm,
+                serverData: this.edenDataProvider.serverData,
             }
         );
         return { model, definition };
@@ -215,7 +215,7 @@ export class OdooPivot {
     }
 
     /**
-     * @param {import("@odoo/o-spreadsheet").Maybe<FunctionResultObject>[]} args
+     * @param {import("@eden/o-spreadsheet").Maybe<FunctionResultObject>[]} args
      *
      * @returns {PivotDomain}
      */
@@ -258,7 +258,7 @@ export class OdooPivot {
     }
 
     /**
-     * @param {import("@odoo/o-spreadsheet").Maybe<FunctionResultObject>[]} args
+     * @param {import("@eden/o-spreadsheet").Maybe<FunctionResultObject>[]} args
      * @returns {boolean}
      */
     areDomainArgsFieldsValid(args) {
@@ -394,7 +394,7 @@ export class OdooPivot {
     }
 
     //--------------------------------------------------------------------------
-    // Odoo specific
+    // Eden specific
     //--------------------------------------------------------------------------
 
     /**
@@ -489,10 +489,10 @@ export class OdooPivot {
     }
 }
 
-export class OdooPivotRuntimeDefinition extends PivotRuntimeDefinition {
+export class EdenPivotRuntimeDefinition extends PivotRuntimeDefinition {
     /**
-     * @param {OdooPivotCoreDefinition} definition
-     * @param {OdooFields} fields
+     * @param {EdenPivotCoreDefinition} definition
+     * @param {EdenFields} fields
      */
     constructor(definition, fields) {
         super(definition, fields);
@@ -533,7 +533,7 @@ export class OdooPivotRuntimeDefinition extends PivotRuntimeDefinition {
 
     /**
      * Only for Web pivot model compatibility
-     * @param {OdooFields} [fields]
+     * @param {EdenFields} [fields]
      *
      * @returns {WebPivotModelParams}
      */
@@ -574,9 +574,9 @@ const granularities = [
     "day_of_week",
 ];
 
-pivotRegistry.add("ODOO", {
-    ui: OdooPivot,
-    definition: OdooPivotRuntimeDefinition,
+pivotRegistry.add("EDEN", {
+    ui: EdenPivot,
+    definition: EdenPivotRuntimeDefinition,
     externalData: true,
     onIterationEndEvaluation: () => {},
     dateGranularities: [...granularities],
@@ -588,4 +588,4 @@ pivotRegistry.add("ODOO", {
     isGroupable: (field) => field.groupable,
 });
 
-supportedPivotPositionalFormulaRegistry.add("ODOO", true);
+supportedPivotPositionalFormulaRegistry.add("EDEN", true);

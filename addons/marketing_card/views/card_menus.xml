@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <menuitem name="Marketing Card"
         id="card_menu"
         web_icon="marketing_card,static/description/icon.png"
@@ -25,4 +25,4 @@
         parent="marketing_card.marketing_card_menu_technical"
         groups="marketing_card.marketing_card_group_manager,base.group_no_one"
         action="card_template_action"/>
-</odoo>
+</eden>

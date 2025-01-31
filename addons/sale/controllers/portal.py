@@ -1,15 +1,15 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import binascii
 
-from odoo import fields, http, _
-from odoo.exceptions import AccessError, MissingError, ValidationError
-from odoo.fields import Command
-from odoo.http import request
+from eden import fields, http, _
+from eden.exceptions import AccessError, MissingError, ValidationError
+from eden.fields import Command
+from eden.http import request
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.controllers import portal as payment_portal
-from odoo.addons.portal.controllers.portal import pager as portal_pager
+from eden.addons.payment import utils as payment_utils
+from eden.addons.payment.controllers import portal as payment_portal
+from eden.addons.portal.controllers.portal import pager as portal_pager
 
 
 class CustomerPortal(payment_portal.PaymentPortal):
@@ -158,7 +158,7 @@ class CustomerPortal(payment_portal.PaymentPortal):
                     subtype_xmlid="sale.mt_order_viewed",
                 )
 
-        backend_url = f'/odoo/action-{order_sudo._get_portal_return_action().id}/{order_sudo.id}'
+        backend_url = f'/eden/action-{order_sudo._get_portal_return_action().id}/{order_sudo.id}'
         values = {
             'sale_order': order_sudo,
             'product_documents': order_sudo._get_product_documents(),

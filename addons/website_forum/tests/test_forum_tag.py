@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.addons.website_forum.tests.common import TestForumCommon
+from eden import Command
+from eden.addons.website_forum.tests.common import TestForumCommon
 
 
 class TestForumTag(TestForumCommon):

@@ -1,7 +1,7 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { _t } from "@web/core/l10n/translation";
-import { Component, onWillStart, useState } from "@odoo/owl";
+import { Component, onWillStart, useState } from "@eden/owl";
 import publicWidget from "@web/legacy/js/public/public_widget";
 import { addLoadingEffect } from '@web/core/utils/ui';
 import { browser } from "@web/core/browser/browser";

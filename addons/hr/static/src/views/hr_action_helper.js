@@ -1,4 +1,4 @@
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 export class HrActionHelper extends Component {
     static template = "hr.EmployeeActionHelper";

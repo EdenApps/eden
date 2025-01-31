@@ -11,7 +11,7 @@ import {
     startServer,
     step,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, test } from "@odoo/hoot";
+import { describe, test } from "@eden/hoot";
 import { Command, serverState, withUser } from "@web/../tests/web_test_helpers";
 
 import { rpc } from "@web/core/network/rpc";
@@ -108,7 +108,7 @@ test("Posting a message in discuss app should not open a chat window after leavi
     });
     await start();
     await openDiscuss(channelId);
-    await insertText(".o-mail-Composer-input", "test https://www.odoo.com/");
+    await insertText(".o-mail-Composer-input", "test https://www.edencloud.us/");
     await click(".o-mail-Composer-send:enabled");
     // leaving discuss.
     await openFormView("res.partner", partnerId);

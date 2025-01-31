@@ -1,4 +1,4 @@
-from odoo.tests.common import TransactionCase, new_test_user
+from eden.tests.common import TransactionCase, new_test_user
 
 
 class TestDisplayNames(TransactionCase):

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
    <record id="view_pos_daily_sales_reports_wizard" model="ir.ui.view">
         <field name="name">pos.daily.sales.reports.wizard.form.inherit</field>
         <field name="model">pos.daily.sales.reports.wizard</field>
@@ -22,4 +22,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</eden>

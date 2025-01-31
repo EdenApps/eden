@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <record id="team_sales_department" model="crm.team">
             <field name="name">Sales</field>
@@ -30,4 +30,4 @@
             ref('sales_team.pos_sales_team')],
             [ref('base.partner_root')]"/>
     </data>
-</odoo>
+</eden>

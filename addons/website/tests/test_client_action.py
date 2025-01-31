@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
+import eden.tests
 
 
-@odoo.tests.common.tagged('post_install', '-at_install')
-class TestClientAction(odoo.tests.HttpCase):
+@eden.tests.common.tagged('post_install', '-at_install')
+class TestClientAction(eden.tests.HttpCase):
 
     def test_01_client_action_redirect(self):
         page = self.env['website.page'].create({

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <!-- Department -->
         <record id="dep_rd" model="hr.department" forcecreate="1">
@@ -37,7 +37,7 @@
             <field name="name">Chief Executive Officer</field>
             <field name="department_id" ref="dep_management"/>
             <field name="description">
-                Demonstration of different Odoo services for each client and convincing the client about functionality of
+                Demonstration of different Eden services for each client and convincing the client about functionality of
                 the application.
                 The candidate should have excellent communication skills.
                 Relationship building and influencing skills
@@ -189,4 +189,4 @@
             <field name="parent_id" ref="employee_mw"/>
         </record>
     </data>
-</odoo>
+</eden>

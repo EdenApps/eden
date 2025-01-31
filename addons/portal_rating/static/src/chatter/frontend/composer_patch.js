@@ -2,7 +2,7 @@ import { Composer } from "@mail/core/common/composer";
 
 import { patch } from "@web/core/utils/patch";
 import { rpc } from "@web/core/network/rpc";
-import { useState } from "@odoo/owl";
+import { useState } from "@eden/owl";
 
 patch(Composer.prototype, {
     setup() {

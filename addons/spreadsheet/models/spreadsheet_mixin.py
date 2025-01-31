@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import io
 import zipfile
 import base64
@@ -8,10 +8,10 @@ import re
 
 from collections import defaultdict
 
-from odoo import api, fields, models, _, tools
-from odoo.exceptions import ValidationError, MissingError
+from eden import api, fields, models, _, tools
+from eden.exceptions import ValidationError, MissingError
 
-from odoo.addons.spreadsheet.utils.validate_data import fields_in_spreadsheet, menus_xml_ids_in_spreadsheet
+from eden.addons.spreadsheet.utils.validate_data import fields_in_spreadsheet, menus_xml_ids_in_spreadsheet
 
 class SpreadsheetMixin(models.AbstractModel):
     _name = "spreadsheet.mixin"
@@ -131,7 +131,7 @@ class SpreadsheetMixin(models.AbstractModel):
         in formulas. It is translated for the user creating the spreadsheet.
         """
         lang = self.env["res.lang"]._lang_get(self.env.user.lang)
-        locale = lang._odoo_lang_to_spreadsheet_locale()
+        locale = lang._eden_lang_to_spreadsheet_locale()
         return {
             "version": 1,
             "sheets": [

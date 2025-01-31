@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <!-- Goal views -->
     <record id="goal_list_action" model="ir.actions.act_window">
@@ -188,4 +188,4 @@
             </kanban>
         </field>
     </record>
-</odoo>
+</eden>

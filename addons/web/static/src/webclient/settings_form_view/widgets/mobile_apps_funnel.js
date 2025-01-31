@@ -1,6 +1,6 @@
 import { registry } from "@web/core/registry";
 
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 import { isMobileOS } from "@web/core/browser/feature_detection";
 import { Setting } from "@web/views/form/setting/setting";
 import { standardWidgetProps } from "@web/views/widgets/standard_widget_props";

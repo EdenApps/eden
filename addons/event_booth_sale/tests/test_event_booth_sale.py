@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
 
-from odoo import Command, fields
-from odoo.addons.event_booth_sale.tests.common import TestEventBoothSaleCommon
-from odoo.addons.sales_team.tests.common import TestSalesCommon
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.tests.common import tagged, users
-from odoo.tools import float_compare
+from eden import Command, fields
+from eden.addons.event_booth_sale.tests.common import TestEventBoothSaleCommon
+from eden.addons.sales_team.tests.common import TestSalesCommon
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
+from eden.tests.common import tagged, users
+from eden.tools import float_compare
 
 
 class TestEventBoothSaleWData(TestEventBoothSaleCommon, TestSalesCommon):

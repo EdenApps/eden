@@ -1,4 +1,4 @@
-/** @odoo-module alias=@bus/../tests/helpers/mock_server default=false */
+/** @eden-module alias=@bus/../tests/helpers/mock_server default=false */
 
 import { TEST_USER_IDS } from "@bus/../tests/helpers/test_constants";
 import { patchWebsocketWorkerWithCleanup } from "@bus/../tests/helpers/mock_websocket";

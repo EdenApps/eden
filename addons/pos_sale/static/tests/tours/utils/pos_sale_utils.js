@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import * as ProductScreen from "@point_of_sale/../tests/tours/utils/product_screen_util";
 import * as Dialog from "@point_of_sale/../tests/tours/utils/dialog_util";

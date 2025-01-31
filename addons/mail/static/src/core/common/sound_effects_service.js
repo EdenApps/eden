@@ -4,7 +4,7 @@ import { url } from "@web/core/utils/urls";
 
 export class SoundEffects {
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").EdenEnv} env
      */
     constructor(env) {
         this.soundEffects = {
@@ -79,7 +79,7 @@ export class SoundEffects {
 
 export const soundEffects = {
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").EdenEnv} env
      */
     start(env) {
         return new SoundEffects(env);

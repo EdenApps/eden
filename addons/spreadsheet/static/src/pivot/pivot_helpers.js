@@ -1,14 +1,14 @@
 // @ts-check
 
 import { _t } from "@web/core/l10n/translation";
-import { EvaluationError, helpers } from "@odoo/o-spreadsheet";
+import { EvaluationError, helpers } from "@eden/o-spreadsheet";
 import { sprintf } from "@web/core/utils/strings";
 
 const { isDateOrDatetimeField } = helpers;
 
 /**
- * @typedef {import("@odoo/o-spreadsheet").Token} Token
- * @typedef {import("@odoo/o-spreadsheet").Granularity} Granularity
+ * @typedef {import("@eden/o-spreadsheet").Token} Token
+ * @typedef {import("@eden/o-spreadsheet").Granularity} Granularity
  * */
 
 export const pivotFormulaRegex = /^=.*PIVOT/;
@@ -39,12 +39,12 @@ const AGGREGATORS_BY_FIELD_TYPE = {
     reference: ["count_distinct", "count"],
 };
 
-export const ODOO_AGGREGATORS = {};
+export const EDEN_AGGREGATORS = {};
 
 for (const type in AGGREGATORS_BY_FIELD_TYPE) {
-    ODOO_AGGREGATORS[type] = {};
+    EDEN_AGGREGATORS[type] = {};
     for (const aggregator of AGGREGATORS_BY_FIELD_TYPE[type]) {
-        ODOO_AGGREGATORS[type][aggregator] = AGGREGATOR_NAMES[aggregator];
+        EDEN_AGGREGATORS[type][aggregator] = AGGREGATOR_NAMES[aggregator];
     }
 }
 
@@ -53,15 +53,15 @@ for (const type in AGGREGATORS_BY_FIELD_TYPE) {
 //--------------------------------------------------------------------------
 
 /**
- * @typedef {import("@spreadsheet").OdooField} OdooField
+ * @typedef {import("@spreadsheet").EdenField} EdenField
  */
 
 /**
  * Parses the positional char (#), the field and operator string of pivot group.
  * e.g. "create_date:month"
- * @param {Record<string, OdooField | undefined>} allFields
+ * @param {Record<string, EdenField | undefined>} allFields
  * @param {string} groupFieldString
- * @returns {{field: OdooField, granularity: Granularity, isPositional: boolean, dimensionWithGranularity: string}}
+ * @returns {{field: EdenField, granularity: Granularity, isPositional: boolean, dimensionWithGranularity: string}}
  */
 export function parseGroupField(allFields, groupFieldString) {
     let fieldName = groupFieldString;

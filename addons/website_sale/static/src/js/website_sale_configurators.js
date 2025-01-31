@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { rpc } from '@web/core/network/rpc';
 import { serializeDateTime } from '@web/core/l10n/dates';

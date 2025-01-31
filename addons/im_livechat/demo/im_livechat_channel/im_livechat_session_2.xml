@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <data>
         <record id="livechat_channel_session_2" model="discuss.channel">
             <field name="channel_type">livechat</field>
@@ -37,7 +37,7 @@
             <field name="author_guest_id" ref="im_livechat.livechat_channel_session_2_guest"/>
             <field name="author_id"/>
             <field name="email_from">Visitor</field>
-            <field name="body">I was wondering if Odoo has an application to easily manage social media for my business..</field>
+            <field name="body">I was wondering if Eden has an application to easily manage social media for my business..</field>
             <field name="message_type">comment</field>
             <field name="subtype_id" ref="mail.mt_comment"/>
             <field eval="DateTime.today() + relativedelta(months=-1, days=-1, minutes=7)" name="date"/>
@@ -66,7 +66,7 @@
             <field name="model">discuss.channel</field>
             <field name="res_id" ref="im_livechat.livechat_channel_session_2"/>
             <field name="author_id" ref="base.partner_demo"/>
-            <field name="body">You're welcome, enjoy Odoo!</field>
+            <field name="body">You're welcome, enjoy Eden!</field>
             <field name="message_type">comment</field>
             <field name="subtype_id" ref="mail.mt_comment"/>
             <field eval="DateTime.today() + relativedelta(months=-1, days=-1, minutes=10)" name="date"/>
@@ -92,4 +92,4 @@
         <function model="discuss.channel" name="rating_apply"
             eval="([ref('im_livechat.livechat_channel_session_2')], 5, 'LIVECHAT_2', None, 'Super Job')"/>
     </data>
-</odoo>
+</eden>

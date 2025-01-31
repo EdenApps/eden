@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
 
         <record id="product_product_delivery_mondialrelay" model="product.product">
@@ -85,4 +85,4 @@
             <field name="list_base_price" eval="28"/>
         </record>
     </data>
-</odoo>
+</eden>

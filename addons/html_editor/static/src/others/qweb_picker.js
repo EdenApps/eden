@@ -1,4 +1,4 @@
-import { Component, useState } from "@odoo/owl";
+import { Component, useState } from "@eden/owl";
 
 export class QWebPicker extends Component {
     static template = "html_editor.QWebPicker";

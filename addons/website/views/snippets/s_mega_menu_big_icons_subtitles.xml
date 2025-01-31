@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_mega_menu_big_icons_subtitles" name="Menu - Big icons &amp; subtitles" groups="base.group_user">
     <section class="s_mega_menu_big_icons_subtitles pt24 pb24 o_colored_level o_cc o_cc1" data-oe-shape-data="{'shape':'web_editor/Zigs/03','flip':[]}">
@@ -86,4 +86,4 @@
     <field name="path">website/static/src/snippets/s_mega_menu_big_icons_subtitles/000.scss</field>
 </record>
 
-</odoo>
+</eden>

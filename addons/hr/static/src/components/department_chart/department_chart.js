@@ -1,10 +1,10 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
 
 import { standardWidgetProps } from "@web/views/widgets/standard_widget_props";
-import { onWillStart, useState, onWillUpdateProps, Component } from "@odoo/owl";
+import { onWillStart, useState, onWillUpdateProps, Component } from "@eden/owl";
 
 export class DepartmentChart extends Component {
     static template = "hr.DepartmentChart";

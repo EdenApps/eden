@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="survey_survey_view_tree_slides" model="ir.ui.view">
         <field name="name">survey.survey.view.list.slides</field>
         <field name="model">survey.survey</field>
@@ -104,4 +104,4 @@
          <field name="view_id" ref="survey.survey_survey_view_form"/>
          <field name="act_window_id" ref="survey_survey_action_slides"/>
      </record>
-</odoo>
+</eden>

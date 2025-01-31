@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <template id="report_pricelist_page">
         <div class="container bg-white p-4 my-4">
@@ -91,4 +91,4 @@
         </t>
     </template>
 
-</odoo>
+</eden>

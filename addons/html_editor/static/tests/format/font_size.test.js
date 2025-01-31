@@ -1,11 +1,11 @@
-import { test, expect } from "@odoo/hoot";
+import { test, expect } from "@eden/hoot";
 import { setupEditor, testEditor } from "../_helpers/editor";
 import { unformat } from "../_helpers/format";
 import { strong } from "../_helpers/tags";
 import { setFontSize } from "../_helpers/user_actions";
 import { Plugin } from "@html_editor/plugin";
 import { MAIN_PLUGINS } from "@html_editor/plugin_sets";
-import { animationFrame } from "@odoo/hoot-mock";
+import { animationFrame } from "@eden/hoot-mock";
 import { execCommand } from "../_helpers/userCommands";
 
 test("should change the font size of a few characters", async () => {

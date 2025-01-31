@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
 from datetime import datetime
 from unittest.mock import patch
 
-from odoo.addons.google_calendar.utils.google_calendar import GoogleCalendarService
-from odoo.addons.google_account.models.google_service import GoogleService
-from odoo.addons.google_calendar.models.res_users import User
-from odoo.addons.google_calendar.models.google_sync import google_calendar_token, GoogleSync
-from odoo.tests.common import HttpCase, new_test_user
+from eden.addons.google_calendar.utils.google_calendar import GoogleCalendarService
+from eden.addons.google_account.models.google_service import GoogleService
+from eden.addons.google_calendar.models.res_users import User
+from eden.addons.google_calendar.models.google_sync import google_calendar_token, GoogleSync
+from eden.tests.common import HttpCase, new_test_user
 from freezegun import freeze_time
 from contextlib import contextmanager
 

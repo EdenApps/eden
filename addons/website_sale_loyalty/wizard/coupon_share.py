@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from werkzeug.urls import url_encode
 
-from odoo import fields, models, api, _
-from odoo.exceptions import UserError, ValidationError
+from eden import fields, models, api, _
+from eden.exceptions import UserError, ValidationError
 
 
 class CouponShare(models.TransientModel):

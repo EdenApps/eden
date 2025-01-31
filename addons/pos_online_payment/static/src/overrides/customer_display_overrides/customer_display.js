@@ -1,7 +1,7 @@
 import { patch } from "@web/core/utils/patch";
 import { useService } from "@web/core/utils/hooks";
 import { OnlinePaymentPopup } from "@pos_online_payment/app/online_payment_popup/online_payment_popup";
-import { useEffect } from "@odoo/owl";
+import { useEffect } from "@eden/owl";
 import { CustomerDisplay } from "@point_of_sale/customer_display/customer_display";
 
 patch(CustomerDisplay.prototype, {

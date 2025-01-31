@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @eden-module **/
 
-import { queryAll } from "@odoo/hoot-dom";
+import { queryAll } from "@eden/hoot-dom";
 import { rpc } from "@web/core/network/rpc";
 import { registry } from "@web/core/registry";
 import { stepUtils } from "@web_tour/tour_service/tour_utils";
@@ -11,7 +11,7 @@ function openRoot() {
         trigger: 'body',
         run() {
             document.querySelector("body").classList.add("wait");
-            window.location = '/odoo';
+            window.location = '/eden';
         }
     }, {
         content: "wait for client reload",
@@ -73,7 +73,7 @@ function closeProfileDialog({content, totp_state}) {
 }
 
 registry.category("web_tour.tours").add('totp_tour_setup', {
-    url: '/odoo',
+    url: '/eden',
     steps: () => [...openUserProfileAtSecurityTab(), {
     content: "Open totp wizard",
     trigger: 'button[name=action_totp_enable_wizard]',
@@ -297,7 +297,7 @@ registry.category("web_tour.tours").add('totp_login_disabled', {
 
 const columns = {};
 registry.category("web_tour.tours").add('totp_admin_disables', {
-    url: '/odoo',
+    url: '/eden',
     steps: () => [stepUtils.showAppsMenuItem(), {
     content: 'Go to settings',
     trigger: '[data-menu-xmlid="base.menu_administration"]',

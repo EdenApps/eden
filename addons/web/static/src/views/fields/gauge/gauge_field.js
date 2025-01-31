@@ -4,7 +4,7 @@ import { registry } from "@web/core/registry";
 import { formatFloat } from "@web/views/fields/formatters";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";
 
-import { Component, onWillStart, useEffect, useRef } from "@odoo/owl";
+import { Component, onWillStart, useEffect, useRef } from "@eden/owl";
 
 export class GaugeField extends Component {
     static template = "web.GaugeField";

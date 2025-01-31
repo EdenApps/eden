@@ -10,8 +10,8 @@ import {
     startServer,
     step,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, test } from "@odoo/hoot";
-import { advanceTime } from "@odoo/hoot-mock";
+import { describe, test } from "@eden/hoot";
+import { advanceTime } from "@eden/hoot-mock";
 import { Command, serverState, withUser } from "@web/../tests/web_test_helpers";
 
 import { Store } from "@mail/core/common/store_service";

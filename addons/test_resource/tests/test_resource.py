@@ -1,14 +1,14 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import date, datetime
 from freezegun import freeze_time
 from pytz import timezone, utc
 
-from odoo import fields
-from odoo.exceptions import ValidationError
-from odoo.addons.resource.models.utils import Intervals, sum_intervals
-from odoo.addons.test_resource.tests.common import TestResourceCommon
-from odoo.tests.common import TransactionCase
+from eden import fields
+from eden.exceptions import ValidationError
+from eden.addons.resource.models.utils import Intervals, sum_intervals
+from eden.addons.test_resource.tests.common import TestResourceCommon
+from eden.tests.common import TransactionCase
 
 
 def datetime_tz(year, month, day, hour=0, minute=0, second=0, microsecond=0, tzinfo=None):

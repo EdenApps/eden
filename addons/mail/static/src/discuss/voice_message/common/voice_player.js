@@ -6,7 +6,7 @@ import {
     useEffect,
     useRef,
     status,
-} from "@odoo/owl";
+} from "@eden/owl";
 import { browser } from "@web/core/browser/browser";
 import { useService } from "@web/core/utils/hooks";
 import { url } from "@web/core/utils/urls";

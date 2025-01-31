@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 from werkzeug.exceptions import NotFound
 
-from odoo import http, _
-from odoo.http import Controller, request, route, content_disposition
-from odoo.tools import consteq
+from eden import http, _
+from eden.http import Controller, request, route, content_disposition
+from eden.tools import consteq
 
 
 class EventController(Controller):

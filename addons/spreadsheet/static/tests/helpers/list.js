@@ -21,7 +21,7 @@ export function insertListInSpreadsheet(model, params) {
     const { definition, columns } = generateListDefinition(params.model, params.columns);
     const [col, row] = params.position || [0, 0];
 
-    model.dispatch("INSERT_ODOO_LIST", {
+    model.dispatch("INSERT_EDEN_LIST", {
         sheetId: params.sheetId || model.getters.getActiveSheetId(),
         definition,
         linesNumber: params.linesNumber || 10,
@@ -43,7 +43,7 @@ export function insertListInSpreadsheet(model, params) {
  * @param {[number, number]} [params.position]
  * @param {string} [params.sheetId]
  *
- * @returns { Promise<{ model: OdooSpreadsheetModel, env: Object }>}
+ * @returns { Promise<{ model: EdenSpreadsheetModel, env: Object }>}
  */
 export async function createSpreadsheetWithList(params = {}) {
     const model = await createModelWithDataSource({

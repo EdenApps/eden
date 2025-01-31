@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 
@@ -6,13 +6,13 @@ from collections import OrderedDict
 from operator import itemgetter
 from markupsafe import Markup
 
-from odoo import conf, http, _
-from odoo.exceptions import AccessError, MissingError, UserError
-from odoo.http import request
-from odoo.osv.expression import AND, FALSE_DOMAIN
-from odoo.tools import groupby as groupbyelem
+from eden import conf, http, _
+from eden.exceptions import AccessError, MissingError, UserError
+from eden.http import request
+from eden.osv.expression import AND, FALSE_DOMAIN
+from eden.tools import groupby as groupbyelem
 
-from odoo.addons.portal.controllers.portal import CustomerPortal, pager as portal_pager
+from eden.addons.portal.controllers.portal import CustomerPortal, pager as portal_pager
 
 
 class ProjectCustomerPortal(CustomerPortal):

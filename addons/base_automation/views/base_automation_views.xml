@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
         <!-- Automation Form View -->
         <record id="view_base_automation_form" model="ir.ui.view">
@@ -127,7 +127,7 @@
                                 <div invisible="trigger != 'on_webhook'">
                                     <field name="record_getter" string="Target Record"/>
                                     <div>
-                                        <div  class="text-muted"><i class="fa fa-info-circle"/> The default target record getter will work out-of-the-box for any webhook coming from another Odoo instance.</div>
+                                        <div  class="text-muted"><i class="fa fa-info-circle"/> The default target record getter will work out-of-the-box for any webhook coming from another Eden instance.</div>
                                         <span class="text-muted"> Available variables: </span>
                                         <ul class="text-muted">
                                             <li><code>env</code>: environment on which the action is triggered</li>
@@ -325,4 +325,4 @@
         <menuitem id="menu_base_automation_form"
             parent="base.menu_automation" action="base_automation_act" sequence="1"/>
 
-        </odoo>
+        </eden>

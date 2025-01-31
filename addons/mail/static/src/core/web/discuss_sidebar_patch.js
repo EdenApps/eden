@@ -1,7 +1,7 @@
 import { patch } from "@web/core/utils/patch";
 import { DiscussSidebar } from "../public_web/discuss_sidebar";
 import { _t } from "@web/core/l10n/translation";
-import { useState } from "@odoo/owl";
+import { useState } from "@eden/owl";
 import { useService } from "@web/core/utils/hooks";
 import { useHover } from "@mail/utils/common/hooks";
 import { useDropdownState } from "@web/core/dropdown/dropdown_hooks";

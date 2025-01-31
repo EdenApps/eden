@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="event_meet" name="Meeting Rooms">
     <t t-call="website_event.layout">
@@ -52,7 +52,7 @@
             <div t-if="not meeting_rooms" class="m-auto text-center text-muted">
                 <h3 class="mt8">No Room Open</h3>
                 <div groups="event.group_event_user">
-                    <a target="_blank" t-att-href="'/odoo/%s/action-website_event_meet.action_meeting_room_from_event' % event.id">
+                    <a target="_blank" t-att-href="'/eden/%s/action-website_event_meet.action_meeting_room_from_event' % event.id">
                         <p>Create one to get conversations going</p>
                     </a>
                 </div>
@@ -192,4 +192,4 @@
     </div>
 </template>
 
-</odoo>
+</eden>

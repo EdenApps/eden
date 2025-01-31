@@ -1,17 +1,17 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import timedelta
 from unittest.mock import patch
 
 from freezegun import freeze_time
 
-from odoo import fields
-from odoo.exceptions import AccessError, UserError, ValidationError
-from odoo.fields import Command
-from odoo.tests import Form, tagged
+from eden import fields
+from eden.exceptions import AccessError, UserError, ValidationError
+from eden.fields import Command
+from eden.tests import Form, tagged
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.addons.sale.tests.common import SaleCommon
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
+from eden.addons.sale.tests.common import SaleCommon
 
 
 @tagged('post_install', '-at_install')
@@ -477,7 +477,7 @@ class TestSaleOrder(SaleCommon):
     def test_so_discount_is_not_reset(self):
         """ Discounts should not be recomputed on order confirmation """
         with patch(
-            'odoo.addons.sale.models.sale_order_line.SaleOrderLine'
+            'eden.addons.sale.models.sale_order_line.SaleOrderLine'
             '._compute_discount'
         ) as patched:
             self.sale_order.action_confirm()

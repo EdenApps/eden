@@ -1,13 +1,13 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 from datetime import date, timedelta
 
-from odoo import Command
-from odoo.fields import Date
-from odoo.tools import float_is_zero
-from odoo.exceptions import AccessError, UserError, ValidationError
-from odoo.addons.hr_timesheet.tests.test_timesheet import TestCommonTimesheet
-from odoo.addons.sale_timesheet.tests.common import TestCommonSaleTimesheet
-from odoo.tests import Form, tagged
+from eden import Command
+from eden.fields import Date
+from eden.tools import float_is_zero
+from eden.exceptions import AccessError, UserError, ValidationError
+from eden.addons.hr_timesheet.tests.test_timesheet import TestCommonTimesheet
+from eden.addons.sale_timesheet.tests.common import TestCommonSaleTimesheet
+from eden.tests import Form, tagged
 
 @tagged('-at_install', 'post_install')
 class TestSaleTimesheet(TestCommonSaleTimesheet):

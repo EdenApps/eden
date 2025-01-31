@@ -1,4 +1,4 @@
-/** @odoo-module alias=@mail/../tests/helpers/mock_server/models/mail_activity default=false */
+/** @eden-module alias=@mail/../tests/helpers/mock_server/models/mail_activity default=false */
 
 import { Domain } from "@web/core/domain";
 import { groupBy, sortBy, unique } from "@web/core/utils/arrays";

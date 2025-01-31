@@ -1,6 +1,6 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.stock.tests.common import TestStockCommon
+from eden.addons.stock.tests.common import TestStockCommon
 
 
 class TestReInvoice(TestStockCommon):

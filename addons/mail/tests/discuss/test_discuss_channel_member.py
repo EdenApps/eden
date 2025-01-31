@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.exceptions import AccessError, UserError, ValidationError
-from odoo.tests.common import new_test_user, tagged
+from eden.addons.mail.tests.common import MailCommon
+from eden.exceptions import AccessError, UserError, ValidationError
+from eden.tests.common import new_test_user, tagged
 
 
 @tagged("post_install", "-at_install")

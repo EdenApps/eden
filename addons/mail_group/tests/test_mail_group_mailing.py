@@ -1,7 +1,7 @@
 from ast import literal_eval
 
-from odoo.addons.mail_group.tests.common import TestMailListCommon
-from odoo.tests.common import HttpCase, tagged, users
+from eden.addons.mail_group.tests.common import TestMailListCommon
+from eden.tests.common import HttpCase, tagged, users
 
 
 @tagged("mail_group", "mail_mail", "post_install", "-at_install")

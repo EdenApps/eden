@@ -1,10 +1,10 @@
-import { reactive } from "@odoo/owl";
+import { reactive } from "@eden/owl";
 
 import { registry } from "@web/core/registry";
 
 export class MailCoreCommon {
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").EdenEnv} env
      * @param {Partial<import("services").Services>} services
      */
     constructor(env, services) {
@@ -54,7 +54,7 @@ export class MailCoreCommon {
 export const mailCoreCommon = {
     dependencies: ["bus_service", "mail.store"],
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").EdenEnv} env
      * @param {Partial<import("services").Services>} services
      */
     start(env, services) {

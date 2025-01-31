@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import _
-from odoo.exceptions import ValidationError
-from odoo.tools import float_compare
+from eden import _
+from eden.exceptions import ValidationError
+from eden.tools import float_compare
 
-from odoo.addons.website_sale.controllers import payment
+from eden.addons.website_sale.controllers import payment
 
 
 class PaymentPortal(payment.PaymentPortal):

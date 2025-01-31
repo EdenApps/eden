@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import babel.dates
 import werkzeug
 
-from odoo import http, fields, tools, models
-from odoo.addons.portal.controllers.portal import pager as portal_pager
-from odoo.exceptions import AccessError
-from odoo.http import request, Response
-from odoo.osv import expression
-from odoo.tools import consteq
-from odoo.tools.misc import get_lang
+from eden import http, fields, tools, models
+from eden.addons.portal.controllers.portal import pager as portal_pager
+from eden.exceptions import AccessError
+from eden.http import request, Response
+from eden.osv import expression
+from eden.tools import consteq
+from eden.tools.misc import get_lang
 
 
 class PortalMailGroup(http.Controller):

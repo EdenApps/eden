@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.website_slides.controllers.main import WebsiteSlides
-from odoo.http import request, route
-from odoo.tools import format_amount
+from eden.addons.website_slides.controllers.main import WebsiteSlides
+from eden.http import request, route
+from eden.tools import format_amount
 
 
 class WebsiteSaleSlides(WebsiteSlides):

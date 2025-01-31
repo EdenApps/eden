@@ -1,9 +1,9 @@
-import { test, expect, beforeEach, describe } from "@odoo/hoot";
-import { click, press, queryAll, queryAllTexts, queryOne } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { test, expect, beforeEach, describe } from "@eden/hoot";
+import { click, press, queryAll, queryAllTexts, queryOne } from "@eden/hoot-dom";
+import { animationFrame } from "@eden/hoot-mock";
 import { getService, mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { Dialog } from "@web/core/dialog/dialog";
-import { Component, xml } from "@odoo/owl";
+import { Component, xml } from "@eden/owl";
 import { usePopover } from "@web/core/popover/popover_hook";
 import { useAutofocus } from "@web/core/utils/hooks";
 import { MainComponentsContainer } from "@web/core/main_components_container";

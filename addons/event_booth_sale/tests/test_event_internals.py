@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
 
-from odoo import Command
-from odoo.addons.event_booth_sale.tests.common import TestEventBoothSaleCommon
-from odoo.fields import Datetime as FieldsDatetime
-from odoo.tests import Form, users
+from eden import Command
+from eden.addons.event_booth_sale.tests.common import TestEventBoothSaleCommon
+from eden.fields import Datetime as FieldsDatetime
+from eden.tests import Form, users
 
 
 class TestEventData(TestEventBoothSaleCommon):

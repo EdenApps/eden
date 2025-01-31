@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <menuitem name="Mailing Lists"
         id="mail_group_menu_website_root"
         sequence="200"
@@ -15,4 +15,4 @@
         parent="website_mail_group.mail_group_menu_website_root"
         groups="mail_group.group_mail_group_manager"
         sequence="51"/>
-</odoo>
+</eden>

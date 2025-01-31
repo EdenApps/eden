@@ -1,4 +1,4 @@
-/** @odoo-module alias=@odoo/hoot-mock default=false */
+/** @eden-module alias=@eden/hoot-mock default=false */
 
 /**
  * @typedef {import("./mock/network").ServerWebSocket} ServerWebSocket
@@ -16,7 +16,7 @@ export {
     runAllTimers,
     setFrameRate,
     tick,
-} from "@odoo/hoot-dom";
+} from "@eden/hoot-dom";
 export { mockDate, mockTimeZone } from "./mock/date";
 export { makeSeededRandom } from "./mock/math";
 export { mockPermission, mockSendBeacon, mockUserAgent, mockVibrate } from "./mock/navigator";

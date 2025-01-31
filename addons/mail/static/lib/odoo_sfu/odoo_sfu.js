@@ -1,4 +1,4 @@
-/* @odoo-module */
+/* @eden-module */
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
 var lib$2 = {};
@@ -16358,5 +16358,5 @@ export { SFU_CLIENT_STATE, SfuClient };
 export const __info__ = {
     date: '2024-08-26T05:07:14.489Z',
     hash: 'fcd3031',
-    url: 'https://github.com/odoo/sfu',
+    url: 'https://github.com/eden/sfu',
 };

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo><data>
+<eden><data>
 
     <!-- Event Type -->
     <record id="event_type_0" model="event.type">
@@ -90,4 +90,4 @@
         <field name="color">9</field>
     </record>
 
-</data></odoo>
+</data></eden>

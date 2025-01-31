@@ -1,10 +1,10 @@
-import { expect, test } from "@odoo/hoot";
-import { click, queryAllTexts } from "@odoo/hoot-dom";
+import { expect, test } from "@eden/hoot";
+import { click, queryAllTexts } from "@eden/hoot-dom";
 import { contains, mountWithCleanup, preloadBundle } from "@web/../tests/web_test_helpers";
 import { FAKE_MODEL } from "./calendar_test_helpers";
 
 import { CalendarFilterPanel } from "@web/views/calendar/filter_panel/calendar_filter_panel";
-import { runAllTimers } from "@odoo/hoot-mock";
+import { runAllTimers } from "@eden/hoot-mock";
 
 const FAKE_PROPS = {
     model: FAKE_MODEL,

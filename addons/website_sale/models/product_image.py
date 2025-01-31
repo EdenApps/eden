@@ -1,12 +1,12 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import base64
 
-from odoo import _, api, fields, models, tools
-from odoo.exceptions import ValidationError
-from odoo.tools.image import is_image_size_above
+from eden import _, api, fields, models, tools
+from eden.exceptions import ValidationError
+from eden.tools.image import is_image_size_above
 
-from odoo.addons.web_editor.tools import get_video_embed_code, get_video_thumbnail
+from eden.addons.web_editor.tools import get_video_embed_code, get_video_thumbnail
 
 
 class ProductImage(models.Model):

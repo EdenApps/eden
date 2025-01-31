@@ -11,13 +11,13 @@ import { registry } from "@web/core/registry";
 import { stepUtils } from "@web_tour/tour_service/tour_utils";
 
 const baseDescriptionContent = "Test project task history version";
-const descriptionField = "div.note-editable.odoo-editor-editable p";
+const descriptionField = "div.note-editable.eden-editor-editable p";
 function changeDescriptionContentAndSave(newContent) {
     const newText = `${baseDescriptionContent} ${newContent}`;
     return [
         {
             // force focus on editable so editor will create initial p (if not yet done)
-            trigger: "div.note-editable.odoo-editor-editable",
+            trigger: "div.note-editable.eden-editor-editable",
             run: "click",
         },
         {
@@ -36,7 +36,7 @@ function changeDescriptionContentAndSave(newContent) {
 }
 
 registry.category("web_tour.tours").add("project_task_history_tour", {
-    url: "/odoo",
+    url: "/eden",
     steps: () => [stepUtils.showAppsMenuItem(), {
         content: "Open the project app",
         trigger: ".o_app[data-menu-xmlid='project.menu_main_pm']",

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, exceptions, fields, models, _
-from odoo.addons.mail.models.mail_alias import dot_atom_text
+from eden import api, exceptions, fields, models, _
+from eden.addons.mail.models.mail_alias import dot_atom_text
 
 
 class AliasDomain(models.Model):
@@ -18,7 +18,7 @@ class AliasDomain(models.Model):
 
     name = fields.Char(
         'Name', required=True,
-        help="Email domain e.g. 'example.com' in 'odoo@example.com'")
+        help="Email domain e.g. 'example.com' in 'eden@example.com'")
     company_ids = fields.One2many(
         'res.company', 'alias_domain_id', string='Companies',
         help="Companies using this domain as default for sending mails")
@@ -186,7 +186,7 @@ class AliasDomain(models.Model):
         """ Compatibility layer helping going from pre-v17 ICP to alias
         domains. Mainly used when base mail configuration is done with 'base'
         module only and 'mail' is installed afterwards: configuration should
-        not be lost (odoo.sh use case). """
+        not be lost (eden.sh use case). """
         Icp = self.env['ir.config_parameter'].sudo()
         alias_domain = Icp.get_param('mail.catchall.domain')
         if alias_domain:

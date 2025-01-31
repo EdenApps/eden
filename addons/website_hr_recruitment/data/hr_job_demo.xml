@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <record id="hr.job_marketing" model="hr.job">
         <field name="is_published">True</field>
@@ -1677,4 +1677,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

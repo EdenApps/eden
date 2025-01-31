@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from freezegun import freeze_time
 
-from odoo import Command
-from odoo.exceptions import AccessError, UserError
-from odoo.tests import Form
-from odoo.tests.common import TransactionCase
-from odoo.addons.mrp_subcontracting.tests.common import TestMrpSubcontractingCommon
+from eden import Command
+from eden.exceptions import AccessError, UserError
+from eden.tests import Form
+from eden.tests.common import TransactionCase
+from eden.addons.mrp_subcontracting.tests.common import TestMrpSubcontractingCommon
 
-from odoo.tests import tagged
+from eden.tests import tagged
 from dateutil.relativedelta import relativedelta
 
 

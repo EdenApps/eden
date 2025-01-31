@@ -1,4 +1,4 @@
-import { test } from "@odoo/hoot";
+import { test } from "@eden/hoot";
 import { testEditor } from "./_helpers/editor";
 import { unformat } from "./_helpers/format";
 import { setColor } from "./_helpers/user_actions";

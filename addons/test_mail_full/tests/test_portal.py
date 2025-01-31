@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from werkzeug.urls import url_parse, url_decode, url_encode, url_unparse
 
 import json
 
-from odoo import http
-from odoo.addons.auth_signup.models.res_partner import ResPartner
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.addons.test_mail_full.tests.common import TestMailFullCommon
-from odoo.addons.test_mail_sms.tests.common import TestSMSRecipients
-from odoo.tests import tagged, users
-from odoo.tests.common import HttpCase
-from odoo.tools import html_escape
+from eden import http
+from eden.addons.auth_signup.models.res_partner import ResPartner
+from eden.addons.mail.tests.common import MailCommon
+from eden.addons.test_mail_full.tests.common import TestMailFullCommon
+from eden.addons.test_mail_sms.tests.common import TestSMSRecipients
+from eden.tests import tagged, users
+from eden.tests.common import HttpCase
+from eden.tools import html_escape
 
 
 @tagged('portal')
@@ -52,7 +52,7 @@ class TestPortalControllers(TestPortal):
 
         self.assertEqual(response.request._cookies.get('cids'), '%s' % self.user_admin.company_id.id)
         path = url_parse(response.url).path
-        self.assertEqual(path, f'/odoo/mail.test.portal/{self.record_portal.id}')
+        self.assertEqual(path, f'/eden/mail.test.portal/{self.record_portal.id}')
 
     def test_redirect_to_records_norecord(self):
         """ Check specific use case of missing model, should directly redirect
@@ -166,7 +166,7 @@ class TestPortalControllers(TestPortal):
                 },
             },
         )
-        # Only messages from the current user not OdooBot
+        # Only messages from the current user not EdenBot
         messages = self.record_portal.message_ids.filtered(lambda msg: msg.author_id == self.partner_2)
 
         self.assertIn('Test', messages[0].body)
@@ -323,7 +323,7 @@ class TestPortalFlow(MailCommon, HttpCase):
         self.authenticate(self.env.user.login, self.env.user.login)
         res = self.url_open(self.record_access_url)
         self.assertEqual(res.status_code, 200)
-        self.assert_URL(res.url, f'/odoo/mail.test.portal/{self.record_portal.id}')
+        self.assert_URL(res.url, f'/eden/mail.test.portal/{self.record_portal.id}')
 
     @users('employee')
     def test_employee_access_wrong_token(self):
@@ -331,7 +331,7 @@ class TestPortalFlow(MailCommon, HttpCase):
         self.authenticate(self.env.user.login, self.env.user.login)
         res = self.url_open(self.record_access_url_wrong_token)
         self.assertEqual(res.status_code, 200)
-        self.assert_URL(res.url, f'/odoo/mail.test.portal/{self.record_portal.id}')
+        self.assert_URL(res.url, f'/eden/mail.test.portal/{self.record_portal.id}')
 
     @users('employee')
     def test_send_message_to_customer(self):

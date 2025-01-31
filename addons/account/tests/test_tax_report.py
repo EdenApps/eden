@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from odoo import Command
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.tests import tagged
+from eden import Command
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
+from eden.tests import tagged
 
 
 @tagged('post_install', '-at_install')

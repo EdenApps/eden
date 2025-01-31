@@ -1,11 +1,11 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { registry } from "@web/core/registry";
 import { _t } from "@web/core/l10n/translation";
 import "@crm/js/tours/crm";
 import { patch } from "@web/core/utils/patch";
 
-import { markup } from "@odoo/owl";
+import { markup } from "@eden/owl";
 
 patch(registry.category("web_tour.tours").get("crm_tour"), {
     steps() {

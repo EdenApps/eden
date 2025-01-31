@@ -1,4 +1,4 @@
-/** @odoo-module alias=@web/../tests/core/datetime/datetime_test_helpers default=false */
+/** @eden-module alias=@web/../tests/core/datetime/datetime_test_helpers default=false */
 
 import { patchWithCleanup } from "@web/../tests/helpers/utils";
 import { localization } from "@web/core/l10n/localization";

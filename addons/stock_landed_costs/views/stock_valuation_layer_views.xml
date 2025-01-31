@@ -1,4 +1,4 @@
-<odoo>
+<eden>
     <record id="stock_valuation_layer_form_inherited" model="ir.ui.view">
         <field name="name">stock.valuation.layer.form.inherited</field>
         <field name="model">stock.valuation.layer</field>
@@ -9,5 +9,5 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</eden>
 

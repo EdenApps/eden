@@ -47,10 +47,10 @@
       "merges": [],
       "cells": {
         "A7": {
-          "content": "[Time Billed by Week](odoo://view/{\"viewType\":\"graph\",\"action\":{\"domain\":[[\"project_id\",\"!=\",false]],\"context\":{\"group_by\":[\"date:week\"],\"graph_measure\":\"billable_time\",\"graph_mode\":\"line\",\"graph_groupbys\":[\"date:week\"]},\"modelName\":\"timesheets.analysis.report\",\"views\":[[false,\"pivot\"],[false,\"graph\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Timesheets by Billing Type\"})"
+          "content": "[Time Billed by Week](eden://view/{\"viewType\":\"graph\",\"action\":{\"domain\":[[\"project_id\",\"!=\",false]],\"context\":{\"group_by\":[\"date:week\"],\"graph_measure\":\"billable_time\",\"graph_mode\":\"line\",\"graph_groupbys\":[\"date:week\"]},\"modelName\":\"timesheets.analysis.report\",\"views\":[[false,\"pivot\"],[false,\"graph\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Timesheets by Billing Type\"})"
         },
         "A23": {
-          "content": "[Top Projects](odoo://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[\"&\",[\"project_id\",\"!=\",false],[\"project_id\",\"!=\",false]],\"context\":{\"group_by\":[\"project_id\"],\"pivot_measures\":[\"unit_amount\",\"billable_time\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"project_id\"]},\"modelName\":\"timesheets.analysis.report\",\"views\":[[false,\"pivot\"],[false,\"graph\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Top Projects\"})"
+          "content": "[Top Projects](eden://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[\"&\",[\"project_id\",\"!=\",false],[\"project_id\",\"!=\",false]],\"context\":{\"group_by\":[\"project_id\"],\"pivot_measures\":[\"unit_amount\",\"billable_time\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"project_id\"]},\"modelName\":\"timesheets.analysis.report\",\"views\":[[false,\"pivot\"],[false,\"graph\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Top Projects\"})"
         },
         "A24": { "content": "=_t(\"Project\")" },
         "A25": { "content": "=PIVOT.HEADER(1,\"#project_id\",1)" },
@@ -64,7 +64,7 @@
         "A33": { "content": "=PIVOT.HEADER(1,\"#project_id\",9)" },
         "A34": { "content": "=PIVOT.HEADER(1,\"#project_id\",10)" },
         "A36": {
-          "content": "[Top Departments](odoo://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[\"&\",[\"project_id\",\"!=\",false],[\"department_id\",\"!=\",false]],\"context\":{\"group_by\":[\"department_id\"],\"pivot_measures\":[\"unit_amount\",\"billable_time\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"department_id\"]},\"modelName\":\"timesheets.analysis.report\",\"views\":[[false,\"pivot\"],[false,\"graph\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Top Departments\"})"
+          "content": "[Top Departments](eden://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[\"&\",[\"project_id\",\"!=\",false],[\"department_id\",\"!=\",false]],\"context\":{\"group_by\":[\"department_id\"],\"pivot_measures\":[\"unit_amount\",\"billable_time\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"department_id\"]},\"modelName\":\"timesheets.analysis.report\",\"views\":[[false,\"pivot\"],[false,\"graph\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Top Departments\"})"
         },
         "A37": { "content": "=_t(\"Department\")" },
         "A38": { "content": "=PIVOT.HEADER(3,\"#department_id\",1)" },
@@ -224,7 +224,7 @@
         "D46": { "content": "=IFERROR(C46/B46)" },
         "D47": { "content": "=IFERROR(C47/B47)" },
         "F23": {
-          "content": "[Top Tasks](odoo://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[\"&\",[\"project_id\",\"!=\",false],[\"task_id\",\"!=\",false]],\"context\":{\"group_by\":[\"task_id\"],\"pivot_measures\":[\"unit_amount\",\"billable_time\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"task_id\"]},\"modelName\":\"timesheets.analysis.report\",\"views\":[[false,\"pivot\"],[false,\"graph\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Top Tasks\"})"
+          "content": "[Top Tasks](eden://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[\"&\",[\"project_id\",\"!=\",false],[\"task_id\",\"!=\",false]],\"context\":{\"group_by\":[\"task_id\"],\"pivot_measures\":[\"unit_amount\",\"billable_time\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"task_id\"]},\"modelName\":\"timesheets.analysis.report\",\"views\":[[false,\"pivot\"],[false,\"graph\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Top Tasks\"})"
         },
         "F24": { "content": "=_t(\"Task\")" },
         "F25": { "content": "=PIVOT.HEADER(2,\"#task_id\",1)" },
@@ -237,7 +237,7 @@
         "F32": { "content": "=PIVOT.HEADER(2,\"#task_id\",8)" },
         "F33": { "content": "=PIVOT.HEADER(2,\"#task_id\",9)" },
         "F36": {
-          "content": "[Top Employees](odoo://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[\"&\",[\"project_id\",\"!=\",false],[\"employee_id\",\"!=\",false]],\"context\":{\"group_by\":[\"employee_id\"],\"pivot_measures\":[\"unit_amount\",\"billable_time\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"employee_id\"]},\"modelName\":\"timesheets.analysis.report\",\"views\":[[false,\"pivot\"],[false,\"graph\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Top Employees\"})"
+          "content": "[Top Employees](eden://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[\"&\",[\"project_id\",\"!=\",false],[\"employee_id\",\"!=\",false]],\"context\":{\"group_by\":[\"employee_id\"],\"pivot_measures\":[\"unit_amount\",\"billable_time\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"employee_id\"]},\"modelName\":\"timesheets.analysis.report\",\"views\":[[false,\"pivot\"],[false,\"graph\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Top Employees\"})"
         },
         "F37": { "content": "=_t(\"Employee\")" },
         "F38": { "content": "=PIVOT.HEADER(4,\"#employee_id\",1)" },
@@ -579,7 +579,7 @@
               "groupBy": ["date:week"],
               "orderBy": []
             },
-            "type": "odoo_line",
+            "type": "eden_line",
             "verticalAxisPosition": "left",
             "stacked": false,
             "fillArea": true,
@@ -765,7 +765,7 @@
   },
   "pivots": {
     "1": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "fb3700b0-4ee9-4086-86ac-6c62a7d33d37": {
           "chain": "date",
@@ -808,7 +808,7 @@
       "rows": [{ "fieldName": "project_id" }]
     },
     "2": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "fb3700b0-4ee9-4086-86ac-6c62a7d33d37": {
           "chain": "date",
@@ -851,7 +851,7 @@
       "rows": [{ "fieldName": "task_id" }]
     },
     "3": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "fb3700b0-4ee9-4086-86ac-6c62a7d33d37": {
           "chain": "date",
@@ -898,7 +898,7 @@
       "rows": [{ "fieldName": "department_id" }]
     },
     "4": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "fb3700b0-4ee9-4086-86ac-6c62a7d33d37": {
           "chain": "date",
@@ -945,7 +945,7 @@
       "rows": [{ "fieldName": "employee_id" }]
     },
     "5": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "fb3700b0-4ee9-4086-86ac-6c62a7d33d37": {
           "chain": "date",
@@ -981,7 +981,7 @@
       "rows": [{ "fieldName": "timesheet_invoice_type" }]
     },
     "6": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "fb3700b0-4ee9-4086-86ac-6c62a7d33d37": {
           "chain": "date",
@@ -1019,7 +1019,7 @@
   },
   "pivotNextId": 7,
   "customTableStyles": {},
-  "odooVersion": 12,
+  "edenVersion": 12,
   "globalFilters": [
     {
       "id": "fb3700b0-4ee9-4086-86ac-6c62a7d33d37",
@@ -1067,7 +1067,7 @@
   ],
   "lists": {},
   "listNextId": 1,
-  "chartOdooMenusReferences": {
+  "chartEdenMenusReferences": {
     "711b3ea3-d7f4-4fa9-85a4-0fa7d46d3811": "hr_timesheet.timesheet_menu_root",
     "6eba1314-09d2-4821-af97-ad22f43a87fa": "hr_timesheet.timesheet_menu_root",
     "39c6667b-b74a-478e-87e9-75c22de5ea1f": "hr_timesheet.timesheet_menu_root",

@@ -1,8 +1,8 @@
 from contextlib import contextmanager
 
-from odoo import Command
-from odoo.addons.account.tests.common import TestTaxCommon
-from odoo.tests import tagged
+from eden import Command
+from eden.addons.account.tests.common import TestTaxCommon
+from eden.tests import tagged
 
 
 @tagged('post_install', '-at_install')
@@ -1375,7 +1375,7 @@ class TestTaxesTaxTotalsSummary(TestTaxCommon):
                 self.assert_invoice_tax_totals_summary(invoice, expected_values)
 
     def _test_taxes_l10n_pt(self):
-        """ !!!! THOSE TESTS ARE THERE TO CERTIFY THE USE OF ODOO INVOICING IN PORTUGAL.
+        """ !!!! THOSE TESTS ARE THERE TO CERTIFY THE USE OF EDEN INVOICING IN PORTUGAL.
         Therefore, they have to stay like this to stay compliant.
         Note: this is a work in progress. The remaining stuff is coming...
         """

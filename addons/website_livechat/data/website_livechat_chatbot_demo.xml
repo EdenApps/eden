@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<odoo><data noupdate="1">
+<eden><data noupdate="1">
 
     <!-- Add a Channel Rule to demonstrate our bot on the '/contactus' page -->
 
@@ -12,4 +12,4 @@
         <field name="channel_id" ref="im_livechat.im_livechat_channel_data"/>
     </record>
 
-</data></odoo>
+</data></eden>

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from werkzeug.exceptions import Forbidden, NotFound
 
-from odoo import _
-from odoo.http import Controller, request, Response, route
-from odoo.tools import consteq
+from eden import _
+from eden.http import Controller, request, Response, route
+from eden.tools import consteq
 
 
 class DigestController(Controller):
@@ -69,5 +69,5 @@ class DigestController(Controller):
         digest = request.env['digest.digest'].browse(digest_id).exists()
         digest.action_set_periodicity(periodicity)
 
-        url = f"/odoo/{digest._name}/{digest.id}"
+        url = f"/eden/{digest._name}/{digest.id}"
         return request.redirect(url)

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <record forcecreate="True" id="ir_cron_check_challenge" model="ir.cron">
             <field name="name">Gamification: Goal Challenge Check</field>
@@ -21,4 +21,4 @@
             <field name="nextcall" eval="(DateTime.now() + relativedelta(day=1, months=1)).strftime('%Y-%m-%d 04:00:00')" />
         </record>
     </data>
-</odoo>
+</eden>

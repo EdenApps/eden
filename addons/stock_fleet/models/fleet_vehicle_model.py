@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, fields, models
-from odoo.tools import format_list
+from eden import _, fields, models
+from eden.tools import format_list
 
 
 class FleetVehicleModelCategory(models.Model):

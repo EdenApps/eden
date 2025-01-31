@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 def get_normalized_email_account(provider):
     """ Remove unicode characters, such as \u200b coming from pasted emails, from the provider's

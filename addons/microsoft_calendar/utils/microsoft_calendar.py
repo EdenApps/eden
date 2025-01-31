@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import requests
 import json
@@ -7,9 +7,9 @@ import logging
 
 from werkzeug import urls
 
-from odoo import fields
-from odoo.addons.microsoft_calendar.utils.microsoft_event import MicrosoftEvent
-from odoo.addons.microsoft_account.models.microsoft_service import TIMEOUT, RESOURCE_NOT_FOUND_STATUSES
+from eden import fields
+from eden.addons.microsoft_calendar.utils.microsoft_event import MicrosoftEvent
+from eden.addons.microsoft_account.models.microsoft_service import TIMEOUT, RESOURCE_NOT_FOUND_STATUSES
 
 _logger = logging.getLogger(__name__)
 
@@ -206,7 +206,7 @@ class MicrosoftCalendarService():
     def _get_calendar_scope(self):
         return 'offline_access openid Calendars.ReadWrite'
 
-    def _microsoft_authentication_url(self, from_url='http://www.odoo.com'):
+    def _microsoft_authentication_url(self, from_url='http://www.edencloud.us'):
         redirect_uri = self.microsoft_service.get_base_url() + '/microsoft_account/authentication'
         return self.microsoft_service._get_authorize_uri(
             from_url,

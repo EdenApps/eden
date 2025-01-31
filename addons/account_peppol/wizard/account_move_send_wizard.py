@@ -1,5 +1,5 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-from odoo import api, models, _
+# Part of Eden. See LICENSE file for full copyright and licensing details.
+from eden import api, models, _
 
 
 class AccountMoveSendWizard(models.TransientModel):

@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import contextlib
 import re
 import werkzeug.urls
@@ -8,8 +8,8 @@ from unittest.mock import Mock, MagicMock, patch
 from werkzeug.exceptions import NotFound
 from werkzeug.test import EnvironBuilder
 
-import odoo.http
-from odoo.tools.misc import hmac, DotDict, frozendict
+import eden.http
+from eden.tools.misc import hmac, DotDict, frozendict
 
 HOST = '127.0.0.1'
 
@@ -23,19 +23,19 @@ def MockRequest(
         sale_order_id=None, website_sale_current_pl=None,
 ):
     # TODO move MockRequest to a package in addons/web/tests
-    from odoo.tests.common import HttpCase  # noqa: PLC0415
+    from eden.tests.common import HttpCase  # noqa: PLC0415
     lang_code = context.get('lang', env.context.get('lang', 'en_US'))
     env = env(context=dict(context, lang=lang_code))
     if HttpCase.http_port():
         base_url = HttpCase.base_url()
     else:
-        base_url = f"http://{HOST}:{odoo.tools.config['http_port']}"
+        base_url = f"http://{HOST}:{eden.tools.config['http_port']}"
     request = Mock(
         # request
         httprequest=Mock(
             host='localhost',
             path=path,
-            app=odoo.http.root,
+            app=eden.http.root,
             environ=dict(
                 EnvironBuilder(
                     path=path,
@@ -51,16 +51,16 @@ def MockRequest(
             args=[],
         ),
         type='http',
-        future_response=odoo.http.FutureResponse(),
+        future_response=eden.http.FutureResponse(),
         params={},
         redirect=env['ir.http']._redirect,
         session=DotDict(
-            odoo.http.get_default_session(),
+            eden.http.get_default_session(),
             sale_order_id=sale_order_id,
             website_sale_current_pl=website_sale_current_pl,
             context={'lang': ''},
         ),
-        geoip=odoo.http.GeoIP('127.0.0.1'),
+        geoip=eden.http.GeoIP('127.0.0.1'),
         db=env.registry.db_name,
         env=env,
         registry=env.registry,
@@ -77,13 +77,13 @@ def MockRequest(
     if website:
         request.website_routing = website.id
     if country_code:
-        request.geoip._city_record = odoo.http.geoip2.models.City({'country': {'iso_code': country_code}})
+        request.geoip._city_record = eden.http.geoip2.models.City({'country': {'iso_code': country_code}})
 
     # The following code mocks match() to return a fake rule with a fake
     # 'routing' attribute (routing=True) or to raise a NotFound
     # exception (routing=False).
     #
-    #   router = odoo.http.root.get_db_router()
+    #   router = eden.http.root.get_db_router()
     #   rule, args = router.bind(...).match(path)
     #   # arg routing is True => rule.endpoint.routing == {...}
     #   # arg routing is False => NotFound exception
@@ -105,9 +105,9 @@ def MockRequest(
     request.update_context = update_context
 
     with contextlib.ExitStack() as s:
-        odoo.http._request_stack.push(request)
-        s.callback(odoo.http._request_stack.pop)
-        s.enter_context(patch('odoo.http.root.get_db_router', router))
+        eden.http._request_stack.push(request)
+        s.callback(eden.http._request_stack.pop)
+        s.enter_context(patch('eden.http.root.get_db_router', router))
 
         yield request
 

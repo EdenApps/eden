@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, _
+from eden import api, fields, models, _
 
-from odoo.tools import SQL
-from odoo.exceptions import UserError
+from eden.tools import SQL
+from eden.exceptions import UserError
 
 
 class PurchaseBillMatch(models.Model):

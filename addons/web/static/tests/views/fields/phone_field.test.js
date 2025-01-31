@@ -6,10 +6,10 @@ import {
     mountView,
     onRpc,
 } from "@web/../tests/web_test_helpers";
-import { expect, test } from "@odoo/hoot";
-import { click, edit, pointerDown, queryFirst, queryOne } from "@odoo/hoot-dom";
+import { expect, test } from "@eden/hoot";
+import { click, edit, pointerDown, queryFirst, queryOne } from "@eden/hoot-dom";
 import { getNextTabableElement } from "@web/core/utils/ui";
-import { animationFrame } from "@odoo/hoot-mock";
+import { animationFrame } from "@eden/hoot-mock";
 
 class Partner extends models.Model {
     foo = fields.Char({ default: "My little Foo Value", trim: true });

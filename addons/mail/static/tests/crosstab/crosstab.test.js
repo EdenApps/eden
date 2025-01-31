@@ -10,8 +10,8 @@ import {
     step,
     triggerHotkey,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, test } from "@odoo/hoot";
-import { mockDate } from "@odoo/hoot-mock";
+import { describe, test } from "@eden/hoot";
+import { mockDate } from "@eden/hoot-mock";
 import { getService, patchWithCleanup, serverState } from "@web/../tests/web_test_helpers";
 
 import { rpc } from "@web/core/network/rpc";

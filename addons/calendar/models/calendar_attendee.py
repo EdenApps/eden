@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import uuid
 import base64
 import logging
 
 from collections import defaultdict
-from odoo import api, fields, models, _
-from odoo.addons.base.models.res_partner import _tz_get
-from odoo.exceptions import UserError
-from odoo.tools.misc import clean_context
-from odoo.tools import split_every
+from eden import api, fields, models, _
+from eden.addons.base.models.res_partner import _tz_get
+from eden.exceptions import UserError
+from eden.tools.misc import clean_context
+from eden.tools import split_every
 
 _logger = logging.getLogger(__name__)
 

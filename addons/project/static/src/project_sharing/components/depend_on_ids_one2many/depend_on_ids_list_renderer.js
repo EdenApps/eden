@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { ListRenderer } from "@web/views/list/list_renderer";
 

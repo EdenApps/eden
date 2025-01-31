@@ -1,7 +1,7 @@
-from odoo.fields import Command
-from odoo.tests.common import tagged
-from odoo.addons.account.tests.common import AccountTestInvoicingHttpCommon
-from odoo.addons.base.tests.common import BaseUsersCommon
+from eden.fields import Command
+from eden.tests.common import tagged
+from eden.addons.account.tests.common import AccountTestInvoicingHttpCommon
+from eden.addons.base.tests.common import BaseUsersCommon
 
 
 @tagged('post_install', '-at_install')

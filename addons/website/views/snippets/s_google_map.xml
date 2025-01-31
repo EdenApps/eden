@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template name="Google Map" id="s_google_map">
     <section class="s_google_map pt256 pb256" data-map-type="ROADMAP" data-map-color="" data-map-zoom="12" data-map-gps="(50.854975,4.3753899)" data-pin-style="flat">
@@ -56,4 +56,4 @@
     <field name="path">website/static/src/snippets/s_google_map/000.js</field>
 </record>
 
-</odoo>
+</eden>

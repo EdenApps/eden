@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template name="Timeline" id="s_timeline">
     <section class="s_timeline pt48 pb48" data-vcss="002">
@@ -107,4 +107,4 @@
     <field name="path">website/static/src/snippets/s_timeline/002.scss</field>
 </record>
 
-</odoo>
+</eden>

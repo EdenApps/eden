@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import http, _
-from odoo.exceptions import ValidationError
-from odoo.http import request
-from odoo.tools.json import scriptsafe as json_safe
+from eden import http, _
+from eden.exceptions import ValidationError
+from eden.http import request
+from eden.tools.json import scriptsafe as json_safe
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.controllers import portal as payment_portal
+from eden.addons.payment import utils as payment_utils
+from eden.addons.payment.controllers import portal as payment_portal
 
 
 class PaymentPortal(payment_portal.PaymentPortal):

@@ -1,7 +1,7 @@
 import { SESSION_STATE } from "@im_livechat/embed/common/livechat_service";
 import { rpc } from "@web/core/network/rpc";
 
-import { EventBus, reactive } from "@odoo/owl";
+import { EventBus, reactive } from "@eden/owl";
 
 import { browser } from "@web/core/browser/browser";
 import { _t } from "@web/core/l10n/translation";
@@ -19,7 +19,7 @@ export class ChatBotService {
     }
 
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").EdenEnv} env
      * @param {{
      * "im_livechat.livechat": import("@im_livechat/embed/common/livechat_service").LivechatService,
      * "mail.store": import("@mail/core/common/store_service").Store,

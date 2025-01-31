@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo><data>
+<eden><data>
     <!-- Under User Interface -->
     <menuitem name="Onboardings"
         id="menu_onboarding"
@@ -11,4 +11,4 @@
         parent="base.next_id_2"
         action="action_view_onboarding_step"
         sequence="1"/>
-</data></odoo>
+</data></eden>

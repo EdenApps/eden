@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
 
-from odoo.addons.base.tests.test_ir_cron import CronMixinCase
-from odoo.addons.sms.tests.common import SMSCommon
-from odoo.addons.test_mail_sms.tests.common import TestSMSRecipients
-from odoo.tests import tagged
+from eden.addons.base.tests.test_ir_cron import CronMixinCase
+from eden.addons.sms.tests.common import SMSCommon
+from eden.addons.test_mail_sms.tests.common import TestSMSRecipients
+from eden.tests import tagged
 
 
 @tagged('sms_post')

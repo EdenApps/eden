@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_call_to_action" name="Call to Action">
     <section class="s_call_to_action o_cc o_cc5 pt64 pb64">
         <div class="container">
             <div class="row">
                 <div class="col-lg-9">
-                    <h3>50,000+ companies run Odoo to grow their businesses.</h3>
+                    <h3>50,000+ companies run Eden to grow their businesses.</h3>
                     <p class="lead">Join us and make your company a better place.</p>
                 </div>
                 <div class="col-lg-3">
@@ -19,4 +19,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

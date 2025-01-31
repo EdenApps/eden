@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="crm_lead_merge_summary_inherit_event_crm" inherit_id="crm.crm_lead_merge_summary">
     <xpath expr="//div[@name='marketing']" position="after">
@@ -17,4 +17,4 @@
     </xpath>
 </template>
 
-</odoo>
+</eden>

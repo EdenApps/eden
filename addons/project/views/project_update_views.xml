@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="project_update_view_search" model="ir.ui.view">
         <field name="name">project.update.view.search</field>
         <field name="model">project.update</field>
@@ -127,4 +127,4 @@
             </p>
         </field>
     </record>
-</odoo>
+</eden>

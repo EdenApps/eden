@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { AutoComplete } from "@web/core/autocomplete/autocomplete";
 import { useChildRef } from "@web/core/utils/hooks";

@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { Component, useState, xml } from "@odoo/owl";
+import { expect, test } from "@eden/hoot";
+import { Component, useState, xml } from "@eden/owl";
 import {
     defineModels,
     getPagerLimit,
@@ -11,7 +11,7 @@ import {
 
 import { ControlPanel } from "@web/search/control_panel/control_panel";
 import { usePager } from "@web/search/pager_hook";
-import { animationFrame } from "@odoo/hoot-mock";
+import { animationFrame } from "@eden/hoot-mock";
 
 class Foo extends models.Model {
     _views = {

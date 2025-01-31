@@ -1,7 +1,7 @@
-import { expect, test } from "@odoo/hoot";
-import { queryAll, queryAllTexts, queryOne } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
-import { Component, markup, useState, xml } from "@odoo/owl";
+import { expect, test } from "@eden/hoot";
+import { queryAll, queryAllTexts, queryOne } from "@eden/hoot-dom";
+import { animationFrame } from "@eden/hoot-mock";
+import { Component, markup, useState, xml } from "@eden/owl";
 import {
     editAce,
     mountWithCleanup,

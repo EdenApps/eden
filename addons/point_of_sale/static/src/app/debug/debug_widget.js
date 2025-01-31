@@ -3,7 +3,7 @@ import { parseFloat } from "@web/views/fields/parsers";
 import { Transition } from "@web/core/transition";
 import { useBus, useService } from "@web/core/utils/hooks";
 
-import { useRef, useState, Component } from "@odoo/owl";
+import { useRef, useState, Component } from "@eden/owl";
 import { usePos } from "@point_of_sale/app/store/pos_hook";
 import { serializeDateTime } from "@web/core/l10n/dates";
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 <template id="report_purchasequotation_document">
     <t t-call="web.external_layout">
         <t t-set="o" t-value="o.with_context(lang=o.partner_id.lang)"/>
@@ -77,4 +77,4 @@
         </t>
     </t>
 </template>
-</odoo>
+</eden>

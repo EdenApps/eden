@@ -1,7 +1,7 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { _t } from "@web/core/l10n/translation";
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@eden/o-spreadsheet";
 import { AccountingPlugin } from "./plugins/accounting_plugin";
 import { getFirstAccountFunction, getNumberOfAccountFormulas } from "./utils";
 import { parseAccountingDate } from "./accounting_functions";
@@ -11,7 +11,7 @@ const { cellMenuRegistry, featurePluginRegistry } = spreadsheet.registries;
 const { astToFormula } = spreadsheet;
 const { isEvaluationError, toString, toBoolean } = spreadsheet.helpers;
 
-featurePluginRegistry.add("odooAccountingAggregates", AccountingPlugin);
+featurePluginRegistry.add("edenAccountingAggregates", AccountingPlugin);
 
 cellMenuRegistry.add("move_lines_see_records", {
     name: _t("See records"),
@@ -26,7 +26,7 @@ cellMenuRegistry.add("move_lines_see_records", {
         const parsed_args = func.args.map(astToFormula).map(
             (arg) => env.model.getters.evaluateFormulaResult(sheetId, arg)
         );
-        if ( func.functionName === "ODOO.PARTNER.BALANCE" ) {
+        if ( func.functionName === "EDEN.PARTNER.BALANCE" ) {
             [partner_ids, codes, date_range, offset, companyId, includeUnposted] = parsed_args;
         } else {
             [codes, date_range, offset, companyId, includeUnposted] = parsed_args;
@@ -41,7 +41,7 @@ cellMenuRegistry.add("move_lines_see_records", {
         if ( date_range?.value && !isEvaluationError(date_range.value) ) {
             dateRange = parseAccountingDate(date_range, locale);
         } else {
-            if ( ["ODOO.PARTNER.BALANCE", "ODOO.RESIDUAL"].includes(func.functionName) ) {
+            if ( ["EDEN.PARTNER.BALANCE", "EDEN.RESIDUAL"].includes(func.functionName) ) {
                 dateRange = parseAccountingDate({ value: new Date().getFullYear() }, locale);
             }
         }
@@ -56,7 +56,7 @@ cellMenuRegistry.add("move_lines_see_records", {
         const partnerIds = toString(partner_ids).split(",").map((code) => code.trim());
 
         let param;
-        if ( func.functionName === "ODOO.PARTNER.BALANCE" ) {
+        if ( func.functionName === "EDEN.PARTNER.BALANCE" ) {
             param = [camelToSnakeObject({ dateRange, companyId, codes, includeUnposted, partnerIds })]
         } else {
             param = [camelToSnakeObject({ dateRange, companyId, codes, includeUnposted })]

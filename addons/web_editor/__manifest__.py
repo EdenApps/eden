@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 {
     'name': 'Web Editor',
     'category': 'Hidden',
     'description': """
-Odoo Web Editor widget.
+Eden Web Editor widget.
 ==========================
 
 """,
@@ -36,7 +36,7 @@ Odoo Web Editor widget.
             'web/static/lib/bootstrap/scss/_maps.scss',
 
             'web/static/src/libs/fontawesome/css/font-awesome.css',
-            'web/static/lib/odoo_ui_icons/*',
+            'web/static/lib/eden_ui_icons/*',
             'web/static/src/webclient/navbar/navbar.scss',
             'web/static/src/scss/animation.scss',
             'web/static/src/core/colorpicker/colorpicker.scss',
@@ -49,7 +49,7 @@ Odoo Web Editor widget.
             'web/static/src/module_loader.js',
             'web/static/src/session.js',
             'web/static/lib/owl/owl.js',
-            'web/static/lib/owl/odoo_module.js',
+            'web/static/lib/owl/eden_module.js',
             'web/static/lib/jquery/jquery.js',
             'web/static/lib/popper/popper.js',
             'web/static/lib/bootstrap/js/dist/util/index.js',
@@ -85,26 +85,26 @@ Odoo Web Editor widget.
             'web/static/src/core/templates.js',
             'web/static/src/core/template_inheritance.js',
 
-            # odoo-editor
-            'web_editor/static/src/js/editor/odoo-editor/src/utils/utils.js',
-            'web_editor/static/src/js/editor/odoo-editor/src/utils/constants.js',
-            'web_editor/static/src/js/editor/odoo-editor/src/commands/align.js',
-            'web_editor/static/src/js/editor/odoo-editor/src/commands/commands.js',
-            'web_editor/static/src/js/editor/odoo-editor/src/commands/deleteBackward.js',
-            'web_editor/static/src/js/editor/odoo-editor/src/commands/deleteForward.js',
-            'web_editor/static/src/js/editor/odoo-editor/src/commands/enter.js',
-            'web_editor/static/src/js/editor/odoo-editor/src/commands/shiftEnter.js',
-            'web_editor/static/src/js/editor/odoo-editor/src/commands/shiftTab.js',
-            'web_editor/static/src/js/editor/odoo-editor/src/commands/tab.js',
-            'web_editor/static/src/js/editor/odoo-editor/src/commands/toggleList.js',
+            # eden-editor
+            'web_editor/static/src/js/editor/eden-editor/src/utils/utils.js',
+            'web_editor/static/src/js/editor/eden-editor/src/utils/constants.js',
+            'web_editor/static/src/js/editor/eden-editor/src/commands/align.js',
+            'web_editor/static/src/js/editor/eden-editor/src/commands/commands.js',
+            'web_editor/static/src/js/editor/eden-editor/src/commands/deleteBackward.js',
+            'web_editor/static/src/js/editor/eden-editor/src/commands/deleteForward.js',
+            'web_editor/static/src/js/editor/eden-editor/src/commands/enter.js',
+            'web_editor/static/src/js/editor/eden-editor/src/commands/shiftEnter.js',
+            'web_editor/static/src/js/editor/eden-editor/src/commands/shiftTab.js',
+            'web_editor/static/src/js/editor/eden-editor/src/commands/tab.js',
+            'web_editor/static/src/js/editor/eden-editor/src/commands/toggleList.js',
 
-            # odoo utils
+            # eden utils
             'web_editor/static/src/scss/bootstrap_overridden.scss',
             'web/static/src/scss/pre_variables.scss',
             'web/static/lib/bootstrap/scss/_variables.scss',
             'web/static/lib/bootstrap/scss/_variables-dark.scss',
             'web/static/lib/bootstrap/scss/_maps.scss',
-            'web_editor/static/src/js/editor/odoo-editor/src/style.scss',
+            'web_editor/static/src/js/editor/eden-editor/src/style.scss',
 
             # integration
             'web_editor/static/src/scss/wysiwyg.scss',
@@ -122,8 +122,8 @@ Odoo Web Editor widget.
         ],
         'web_editor.assets_tests_styles': [
             ('include', 'web._assets_helpers'),
-            'web_editor/static/src/js/editor/odoo-editor/src/base_style.scss',
-            'web_editor/static/src/js/editor/odoo-editor/src/checklist.scss',
+            'web_editor/static/src/js/editor/eden-editor/src/base_style.scss',
+            'web_editor/static/src/js/editor/eden-editor/src/checklist.scss',
         ],
         'web_editor.assets_wysiwyg': [
             # legacy stuff that are no longer in assets_backend
@@ -139,23 +139,23 @@ Odoo Web Editor widget.
             'web_editor/static/lib/webgl-image-filter/webgl-image-filter.js',
             'web/static/lib/dompurify/DOMpurify.js',
 
-            # odoo-editor
-            'web_editor/static/src/js/editor/odoo-editor/src/OdooEditor.js',
-            'web_editor/static/src/js/editor/odoo-editor/src/utils/constants.js',
-            'web_editor/static/src/js/editor/odoo-editor/src/utils/sanitize.js',
-            'web_editor/static/src/js/editor/odoo-editor/src/utils/serialize.js',
-            'web_editor/static/src/js/editor/odoo-editor/src/tablepicker/TablePicker.js',
-            'web_editor/static/src/js/editor/odoo-editor/src/powerbox/patienceDiff.js',
-            'web_editor/static/src/js/editor/odoo-editor/src/powerbox/Powerbox.js',
-            'web_editor/static/src/js/editor/odoo-editor/src/commands/align.js',
-            'web_editor/static/src/js/editor/odoo-editor/src/commands/commands.js',
-            'web_editor/static/src/js/editor/odoo-editor/src/commands/deleteBackward.js',
-            'web_editor/static/src/js/editor/odoo-editor/src/commands/deleteForward.js',
-            'web_editor/static/src/js/editor/odoo-editor/src/commands/enter.js',
-            'web_editor/static/src/js/editor/odoo-editor/src/commands/shiftEnter.js',
-            'web_editor/static/src/js/editor/odoo-editor/src/commands/shiftTab.js',
-            'web_editor/static/src/js/editor/odoo-editor/src/commands/tab.js',
-            'web_editor/static/src/js/editor/odoo-editor/src/commands/toggleList.js',
+            # eden-editor
+            'web_editor/static/src/js/editor/eden-editor/src/EdenEditor.js',
+            'web_editor/static/src/js/editor/eden-editor/src/utils/constants.js',
+            'web_editor/static/src/js/editor/eden-editor/src/utils/sanitize.js',
+            'web_editor/static/src/js/editor/eden-editor/src/utils/serialize.js',
+            'web_editor/static/src/js/editor/eden-editor/src/tablepicker/TablePicker.js',
+            'web_editor/static/src/js/editor/eden-editor/src/powerbox/patienceDiff.js',
+            'web_editor/static/src/js/editor/eden-editor/src/powerbox/Powerbox.js',
+            'web_editor/static/src/js/editor/eden-editor/src/commands/align.js',
+            'web_editor/static/src/js/editor/eden-editor/src/commands/commands.js',
+            'web_editor/static/src/js/editor/eden-editor/src/commands/deleteBackward.js',
+            'web_editor/static/src/js/editor/eden-editor/src/commands/deleteForward.js',
+            'web_editor/static/src/js/editor/eden-editor/src/commands/enter.js',
+            'web_editor/static/src/js/editor/eden-editor/src/commands/shiftEnter.js',
+            'web_editor/static/src/js/editor/eden-editor/src/commands/shiftTab.js',
+            'web_editor/static/src/js/editor/eden-editor/src/commands/tab.js',
+            'web_editor/static/src/js/editor/eden-editor/src/commands/toggleList.js',
 
             # utils
             'web_editor/static/src/js/editor/drag_and_drop.js',
@@ -166,7 +166,7 @@ Odoo Web Editor widget.
             'web_editor/static/src/js/wysiwyg/conflict_dialog.xml',
             'web_editor/static/src/js/wysiwyg/get_color_picker_template_service.js',
 
-            # odoo utils
+            # eden utils
             ('include', 'web._assets_helpers'),
 
             'web_editor/static/src/scss/bootstrap_overridden.scss',
@@ -174,7 +174,7 @@ Odoo Web Editor widget.
             'web/static/lib/bootstrap/scss/_variables.scss',
             'web/static/lib/bootstrap/scss/_variables-dark.scss',
             'web/static/lib/bootstrap/scss/_maps.scss',
-            'web_editor/static/src/js/editor/odoo-editor/src/style.scss',
+            'web_editor/static/src/js/editor/eden-editor/src/style.scss',
 
             # integration
             'web_editor/static/src/scss/wysiwyg.scss',
@@ -206,10 +206,10 @@ Odoo Web Editor widget.
             ('include', 'web_editor.assets_wysiwyg'),
         ],
         'web.assets_backend': [
-            'web_editor/static/src/js/editor/odoo-editor/src/base_style.scss',
+            'web_editor/static/src/js/editor/eden-editor/src/base_style.scss',
             'web_editor/static/lib/vkbeautify/**/*',
             'web_editor/static/src/js/common/**/*',
-            'web_editor/static/src/js/editor/odoo-editor/src/utils/utils.js',
+            'web_editor/static/src/js/editor/eden-editor/src/utils/utils.js',
             'web_editor/static/src/js/wysiwyg/fonts.js',
 
             ('include', 'web_editor.assets_media_dialog'),
@@ -221,9 +221,9 @@ Odoo Web Editor widget.
             'web_editor/static/src/xml/backend.xml',
         ],
         "web.assets_web_dark": [
-            'web_editor/static/src/scss/odoo-editor/powerbox.dark.scss',
-            'web_editor/static/src/scss/odoo-editor/tablepicker.dark.scss',
-            'web_editor/static/src/scss/odoo-editor/tableui.dark.scss',
+            'web_editor/static/src/scss/eden-editor/powerbox.dark.scss',
+            'web_editor/static/src/scss/eden-editor/tablepicker.dark.scss',
+            'web_editor/static/src/scss/eden-editor/tableui.dark.scss',
             'web_editor/static/src/scss/wysiwyg.dark.scss',
             'web_editor/static/src/scss/web_editor.common.dark.scss',
         ],
@@ -233,10 +233,10 @@ Odoo Web Editor widget.
         'web.assets_frontend': [
             ('include', 'web_editor.assets_media_dialog'),
 
-            'web_editor/static/src/js/editor/odoo-editor/src/base_style.scss',
+            'web_editor/static/src/js/editor/eden-editor/src/base_style.scss',
             'web_editor/static/src/js/common/**/*',
             'web_editor/static/src/js/core/owl_utils.js',
-            'web_editor/static/src/js/editor/odoo-editor/src/utils/utils.js',
+            'web_editor/static/src/js/editor/eden-editor/src/utils/utils.js',
             'web_editor/static/src/js/wysiwyg/fonts.js',
 
             'web_editor/static/src/scss/web_editor.common.scss',
@@ -245,7 +245,7 @@ Odoo Web Editor widget.
             'web_editor/static/src/js/frontend/loadWysiwygFromTextarea.js',
         ],
         'web.report_assets_common': [
-            'web_editor/static/src/js/editor/odoo-editor/src/base_style.scss',
+            'web_editor/static/src/js/editor/eden-editor/src/base_style.scss',
             'web_editor/static/src/scss/bootstrap_overridden.scss',
             'web_editor/static/src/scss/web_editor.common.scss',
         ],
@@ -278,16 +278,16 @@ Odoo Web Editor widget.
             ('include', 'web_editor.backend_assets_wysiwyg'),
 
             'web_editor/static/tests/**/*',
-            'web_editor/static/src/js/editor/odoo-editor/test/utils.js'
+            'web_editor/static/src/js/editor/eden-editor/test/utils.js'
         ],
         'web_editor.mocha_tests': [
             'web/static/src/module_loader.js',
             # insert module dependencies here
             'web/static/src/core/utils/concurrency.js',
 
-            'web_editor/static/src/js/editor/odoo-editor/src/**/*js',
-            'web_editor/static/src/js/editor/odoo-editor/test/spec/*js',
-            'web_editor/static/src/js/editor/odoo-editor/test/*js',
+            'web_editor/static/src/js/editor/eden-editor/src/**/*js',
+            'web_editor/static/src/js/editor/eden-editor/test/spec/*js',
+            'web_editor/static/src/js/editor/eden-editor/test/*js',
 
             'web/static/lib/dompurify/DOMpurify.js',
         ],

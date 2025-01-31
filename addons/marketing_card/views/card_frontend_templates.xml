@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <template id="card_campaign_preview" name="Share campaign">
         <t t-call="web.frontend_layout">
             <t t-set="title" t-value="card.display_name"/>
@@ -39,7 +39,7 @@
                 </div>
             </div>
             <footer class="d-flex flex-column align-items-center fixed-bottom">
-                <span>Powered By <a target="_blank" href="https://www.odoo.com?utm_source=db&amp;utm_medium=auth" style="color: #875A7B;">Odoo</a></span>
+                <span>Powered By <a target="_blank" href="https://www.edencloud.us?utm_source=db&amp;utm_medium=auth" style="color: #875A7B;">Eden</a></span>
             </footer>
             <script>
                 document.querySelectorAll("#url-div a").forEach((anchor) =&gt; {
@@ -76,4 +76,4 @@
             <t t-set="no_footer" t-value="1"/>
         </t>
     </template>
-</odoo>
+</eden>

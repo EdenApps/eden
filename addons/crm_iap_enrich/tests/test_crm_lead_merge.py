@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 
-from odoo.addons.crm.tests.test_crm_lead_merge import TestLeadMergeCommon
-from odoo.tests.common import tagged, users
-from odoo.tools import mute_logger
+from eden.addons.crm.tests.test_crm_lead_merge import TestLeadMergeCommon
+from eden.tests.common import tagged, users
+from eden.tools import mute_logger
 
 
 @tagged('lead_manage')
 class TestLeadMerge(TestLeadMergeCommon):
 
     @users('user_sales_manager')
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('eden.models.unlink')
     def test_merge_method_iap_enrich_done(self):
         """Test that the "iap_enrich_done" is set to True if at least one lead have this value True"""
         self.leads.iap_enrich_done = False

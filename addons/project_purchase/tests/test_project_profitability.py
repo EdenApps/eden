@@ -1,15 +1,15 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
 
-from odoo import Command
-from odoo.tests import tagged
-from odoo.tools import float_round
+from eden import Command
+from eden.tests import tagged
+from eden.tools import float_round
 
-from odoo.addons.project.tests.test_project_profitability import TestProjectProfitabilityCommon
-from odoo.addons.purchase.tests.test_purchase_invoice import TestPurchaseToInvoiceCommon
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.tools.float_utils import float_compare
+from eden.addons.project.tests.test_project_profitability import TestProjectProfitabilityCommon
+from eden.addons.purchase.tests.test_purchase_invoice import TestPurchaseToInvoiceCommon
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
+from eden.tools.float_utils import float_compare
 
 
 @tagged('-at_install', 'post_install')

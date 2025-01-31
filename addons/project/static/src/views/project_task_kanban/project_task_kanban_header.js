@@ -1,10 +1,10 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { _t } from "@web/core/l10n/translation";
 import { user } from "@web/core/user";
 import { useService } from '@web/core/utils/hooks';
 import { KanbanHeader } from "@web/views/kanban/kanban_header";
-import { onWillStart } from "@odoo/owl";
+import { onWillStart } from "@eden/owl";
 
 export class ProjectTaskKanbanHeader extends KanbanHeader {
     setup() {

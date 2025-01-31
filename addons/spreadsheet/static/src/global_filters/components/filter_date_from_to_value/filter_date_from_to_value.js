@@ -1,6 +1,6 @@
 /** @ts-check */
 
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 import { DateTimeInput } from "@web/core/datetime/datetime_input";
 import { serializeDate, deserializeDate } from "@web/core/l10n/dates";
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="stock_account_report_invoice_document" inherit_id="account.report_invoice_document">
         <xpath expr="//div[@id='right-elements']" position="after">
           <t groups="stock_account.group_lot_on_invoice">
@@ -27,4 +27,4 @@
           </t>
         </xpath>
     </template>
-</odoo>
+</eden>

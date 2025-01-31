@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import babel.dates
 import logging
 
 from datetime import datetime, timedelta
 
-from odoo import _, models
-from odoo.exceptions import AccessDenied, UserError
-from odoo.http import request
-from odoo.tools.misc import babel_locale_parse, hmac
+from eden import _, models
+from eden.exceptions import AccessDenied, UserError
+from eden.http import request
+from eden.tools.misc import babel_locale_parse, hmac
 
-from odoo.addons.auth_totp.models.totp import hotp, TOTP
+from eden.addons.auth_totp.models.totp import hotp, TOTP
 
 _logger = logging.getLogger(__name__)
 

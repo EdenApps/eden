@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import heapq
 import logging
 from collections import namedtuple
@@ -7,11 +7,11 @@ from ast import literal_eval
 from collections import defaultdict
 from psycopg2 import Error
 
-from odoo import _, api, fields, models, SUPERUSER_ID
-from odoo.exceptions import UserError, ValidationError
-from odoo.osv import expression
-from odoo.tools import SQL, check_barcode_encoding, format_list, groupby
-from odoo.tools.float_utils import float_compare, float_is_zero
+from eden import _, api, fields, models, SUPERUSER_ID
+from eden.exceptions import UserError, ValidationError
+from eden.osv import expression
+from eden.tools import SQL, check_barcode_encoding, format_list, groupby
+from eden.tools.float_utils import float_compare, float_is_zero
 
 _logger = logging.getLogger(__name__)
 

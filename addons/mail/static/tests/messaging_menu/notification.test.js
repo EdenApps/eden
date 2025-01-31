@@ -9,8 +9,8 @@ import {
     triggerEvents,
 } from "@mail/../tests/mail_test_helpers";
 import { rpcWithEnv } from "@mail/utils/common/misc";
-import { describe, expect, test } from "@odoo/hoot";
-import { mockDate } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@eden/hoot";
+import { mockDate } from "@eden/hoot-mock";
 import { Command, mockService, serverState, withUser } from "@web/../tests/web_test_helpers";
 
 /** @type {ReturnType<import("@mail/utils/common/misc").rpcWithEnv>} */

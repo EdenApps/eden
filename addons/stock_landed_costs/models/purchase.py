@@ -1,4 +1,4 @@
-from odoo import api,models
+from eden import api,models
 
 class PurchaseOrderLine(models.Model):
     _inherit = 'purchase.order.line'

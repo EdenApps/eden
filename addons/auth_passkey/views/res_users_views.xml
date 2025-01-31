@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record model="ir.ui.view" id="auth_passkey_users_form">
         <field name="name">auth.passkey.users.form</field>
         <field name="model">res.users</field>
@@ -60,4 +60,4 @@
             </page>
         </field>
     </record>
-</odoo>
+</eden>

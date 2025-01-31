@@ -4,10 +4,10 @@ from contextlib import contextmanager
 from requests import Session, PreparedRequest, Response
 from unittest.mock import patch
 
-from odoo.addons.account.tests.test_account_move_send import TestAccountMoveSendCommon
-from odoo.exceptions import UserError
-from odoo.tests.common import tagged, freeze_time
-from odoo.tools.misc import file_open
+from eden.addons.account.tests.test_account_move_send import TestAccountMoveSendCommon
+from eden.exceptions import UserError
+from eden.tests.common import tagged, freeze_time
+from eden.tools.misc import file_open
 
 
 ID_CLIENT = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
@@ -145,7 +145,7 @@ class TestPeppolMessage(TestAccountMoveSendCommon):
         response.status_code = 200
         if r.url.endswith('iso6523-actorid-upis%3A%3A0208%3A0477472701'):
             response._content = b"""<?xml version=\'1.0\' encoding=\'UTF-8\'?>\n<smp:ServiceGroup xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:id="http://busdox.org/transport/identifiers/1.0/" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:smp="http://busdox.org/serviceMetadata/publishing/1.0/"><id:ParticipantIdentifier scheme="iso6523-actorid-upis">0208:0477472701</id:ParticipantIdentifier>'
-            '<smp:ServiceMetadataReferenceCollection><smp:ServiceMetadataReference href="https://iap-services.odoo.com/iso6523-actorid-upis%3A%3A0208%3A0477472701/services/busdox-docid-qns%3A%3Aurn%3Aoasis%3Anames%3Aspecification%3Aubl%3Aschema%3Axsd%3AInvoice-2%3A%3AInvoice%23%23urn%3Acen.eu%3Aen16931%3A2017%23compliant%23urn%3Afdc%3Apeppol.eu%3A2017%3Apoacc%3Abilling%3A3.0%3A%3A2.1"/>'
+            '<smp:ServiceMetadataReferenceCollection><smp:ServiceMetadataReference href="https://iap-services.edencloud.us/iso6523-actorid-upis%3A%3A0208%3A0477472701/services/busdox-docid-qns%3A%3Aurn%3Aoasis%3Anames%3Aspecification%3Aubl%3Aschema%3Axsd%3AInvoice-2%3A%3AInvoice%23%23urn%3Acen.eu%3Aen16931%3A2017%23compliant%23urn%3Afdc%3Apeppol.eu%3A2017%3Apoacc%3Abilling%3A3.0%3A%3A2.1"/>'
             '</smp:ServiceMetadataReferenceCollection></smp:ServiceGroup>"""
             return response
         if r.url.endswith('iso6523-actorid-upis%3A%3A0208%3A3141592654'):
@@ -153,7 +153,7 @@ class TestPeppolMessage(TestAccountMoveSendCommon):
             return response
         if r.url.endswith('iso6523-actorid-upis%3A%3A0208%3A2718281828'):
             response._content = b"""<?xml version=\'1.0\' encoding=\'UTF-8\'?>\n<smp:ServiceGroup xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:id="http://busdox.org/transport/identifiers/1.0/" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:smp="http://busdox.org/serviceMetadata/publishing/1.0/"><id:ParticipantIdentifier scheme="iso6523-actorid-upis">0208:2718281828</id:ParticipantIdentifier>
-            '<smp:ServiceMetadataReferenceCollection><smp:ServiceMetadataReference href="https://iap-services.odoo.com/iso6523-actorid-upis%3A%3A0208%3A0477472701/services/busdox-docid-qns%3A%3Aurn%3Aoasis%3Anames%3Aspecification%3Aubl%3Aschema%3Axsd%3AInvoice-2%3A%3AInvoice%23%23urn%3Acen.eu%3Aen16931%3A2017%23compliant%23urn%3Afdc%3Apeppol.eu%3A2017%3Apoacc%3Abilling%3A3.0%3A%3A2.1"/>'
+            '<smp:ServiceMetadataReferenceCollection><smp:ServiceMetadataReference href="https://iap-services.edencloud.us/iso6523-actorid-upis%3A%3A0208%3A0477472701/services/busdox-docid-qns%3A%3Aurn%3Aoasis%3Anames%3Aspecification%3Aubl%3Aschema%3Axsd%3AInvoice-2%3A%3AInvoice%23%23urn%3Acen.eu%3Aen16931%3A2017%23compliant%23urn%3Afdc%3Apeppol.eu%3A2017%3Apoacc%3Abilling%3A3.0%3A%3A2.1"/>'
             '</smp:ServiceMetadataReferenceCollection></smp:ServiceGroup>"""
             return response
         if r.url.endswith('iso6523-actorid-upis%3A%3A0198%3Adk16356706'):
@@ -216,7 +216,7 @@ class TestPeppolMessage(TestAccountMoveSendCommon):
         self.assertTrue(wizard.sending_method_checkboxes['peppol']['readonly'])  # peppol is not possible to select
         self.assertFalse(wizard.alerts)  # there is no alerts
 
-    @patch('odoo.addons.account_peppol.models.res_partner.ResPartner._check_document_type_support', return_value=False)
+    @patch('eden.addons.account_peppol.models.res_partner.ResPartner._check_document_type_support', return_value=False)
     def test_send_peppol_alerts_not_valid_format_partner(self, mocked_check):
         move = self.create_move(self.valid_partner)
         move.action_post()

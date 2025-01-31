@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="lot_label_layout_form_picking" model="ir.ui.view">
         <field name="name">lot.label.layout.form</field>
         <field name="model">lot.label.layout</field>
@@ -18,4 +18,4 @@
             </form>
         </field>
     </record>
-</odoo>
+</eden>

@@ -1,10 +1,10 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { registry } from "@web/core/registry";
 import { stepUtils } from "@web_tour/tour_service/tour_utils";
 
 registry.category("web_tour.tours").add("show_expense_receipt_tour", {
-    url: "/odoo",
+    url: "/eden",
     steps: () => [
         ...stepUtils.goToAppSteps("hr_expense.menu_hr_expense_root", "Go to the Expenses app"),
         {

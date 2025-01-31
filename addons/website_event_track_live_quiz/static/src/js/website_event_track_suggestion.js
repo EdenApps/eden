@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import WebsiteEventTrackSuggestion from "@website_event_track_live/js/website_event_track_suggestion";
 

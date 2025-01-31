@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="action_open_skills_log_department" model="ir.actions.server">
         <field name="name">Skill History Report</field>
         <field name="model_id" ref="hr.model_hr_department"/>
@@ -23,4 +23,4 @@ action['domain'] = [('department_id', '=', record.id)]
 action = env['ir.actions.act_window']._for_xml_id('hr_skills.action_hr_employee_cv_wizard')
         </field>
     </record>
-</odoo>
+</eden>

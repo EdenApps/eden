@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 import logging
@@ -11,12 +11,12 @@ from dateutil import relativedelta
 from markupsafe import Markup
 from werkzeug import urls
 
-from odoo import _, api, fields, models, tools
-from odoo.addons.mail.tools.alias_error import AliasError
-from odoo.exceptions import ValidationError, UserError
-from odoo.osv import expression
-from odoo.tools import hmac
-from odoo.tools.mail import email_normalize, generate_tracking_message_id, append_content_to_html
+from eden import _, api, fields, models, tools
+from eden.addons.mail.tools.alias_error import AliasError
+from eden.exceptions import ValidationError, UserError
+from eden.osv import expression
+from eden.tools import hmac
+from eden.tools.mail import email_normalize, generate_tracking_message_id, append_content_to_html
 
 _logger = logging.getLogger(__name__)
 

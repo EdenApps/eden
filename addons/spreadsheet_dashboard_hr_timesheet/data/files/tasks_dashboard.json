@@ -47,10 +47,10 @@
       "merges": [],
       "cells": {
         "A7": {
-          "content": "[Tasks by Stage](odoo://view/{\"viewType\":\"graph\",\"action\":{\"domain\":[],\"context\":{\"group_by\":[\"stage_id\",\"state\"],\"graph_measure\":\"__count\",\"graph_mode\":\"bar\",\"graph_groupbys\":[\"stage_id\",\"state\"]},\"modelName\":\"report.project.task.user\",\"views\":[[false,\"graph\"],[false,\"pivot\"],[false,\"list\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Tasks Analysis\"})"
+          "content": "[Tasks by Stage](eden://view/{\"viewType\":\"graph\",\"action\":{\"domain\":[],\"context\":{\"group_by\":[\"stage_id\",\"state\"],\"graph_measure\":\"__count\",\"graph_mode\":\"bar\",\"graph_groupbys\":[\"stage_id\",\"state\"]},\"modelName\":\"report.project.task.user\",\"views\":[[false,\"graph\"],[false,\"pivot\"],[false,\"list\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Tasks Analysis\"})"
         },
         "A23": {
-          "content": "[Top Assignees](odoo://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[[\"user_ids\",\"!=\",false]],\"context\":{\"group_by\":[],\"pivot_measures\":[\"effective_hours\",\"nbr\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"user_ids\"]},\"modelName\":\"report.project.task.user\",\"views\":[[false,\"graph\"],[false,\"pivot\"],[false,\"list\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Tasks Analysis\"})"
+          "content": "[Top Assignees](eden://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[[\"user_ids\",\"!=\",false]],\"context\":{\"group_by\":[],\"pivot_measures\":[\"effective_hours\",\"nbr\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"user_ids\"]},\"modelName\":\"report.project.task.user\",\"views\":[[false,\"graph\"],[false,\"pivot\"],[false,\"list\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Tasks Analysis\"})"
         },
         "A24": { "content": "=_t(\"Assignee\")" },
         "A25": { "content": "=PIVOT.HEADER(1,\"#user_ids\",1)" },
@@ -64,7 +64,7 @@
         "A33": { "content": "=PIVOT.HEADER(1,\"#user_ids\",9)" },
         "A34": { "content": "=PIVOT.HEADER(1,\"#user_ids\",10)" },
         "A36": {
-          "content": "[Top Tags](odoo://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[[\"tag_ids\",\"!=\",false]],\"context\":{\"group_by\":[\"tag_ids\"],\"pivot_measures\":[\"effective_hours\",\"nbr\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"tag_ids\"]},\"modelName\":\"report.project.task.user\",\"views\":[[false,\"graph\"],[false,\"pivot\"],[false,\"list\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Tasks Analysis\"})"
+          "content": "[Top Tags](eden://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[[\"tag_ids\",\"!=\",false]],\"context\":{\"group_by\":[\"tag_ids\"],\"pivot_measures\":[\"effective_hours\",\"nbr\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"tag_ids\"]},\"modelName\":\"report.project.task.user\",\"views\":[[false,\"graph\"],[false,\"pivot\"],[false,\"list\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Tasks Analysis\"})"
         },
         "A37": { "content": "=_t(\"Tag\")" },
         "A38": { "content": "=PIVOT.HEADER(3,\"#tag_ids\",1)" },
@@ -162,10 +162,10 @@
         "C46": { "content": "=PIVOT.VALUE(3,\"nbr\",\"#tag_ids\",9)" },
         "C47": { "content": "=PIVOT.VALUE(3,\"nbr\",\"#tag_ids\",10)" },
         "E7": {
-          "content": "[Tasks by State](odoo://view/{\"viewType\":\"graph\",\"action\":{\"domain\":[],\"context\":{\"group_by\":[\"state\"],\"graph_measure\":\"__count\",\"graph_mode\":\"pie\",\"graph_groupbys\":[\"state\"]},\"modelName\":\"report.project.task.user\",\"views\":[[false,\"graph\"],[false,\"pivot\"],[false,\"list\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Tasks Analysis\"})"
+          "content": "[Tasks by State](eden://view/{\"viewType\":\"graph\",\"action\":{\"domain\":[],\"context\":{\"group_by\":[\"state\"],\"graph_measure\":\"__count\",\"graph_mode\":\"pie\",\"graph_groupbys\":[\"state\"]},\"modelName\":\"report.project.task.user\",\"views\":[[false,\"graph\"],[false,\"pivot\"],[false,\"list\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Tasks Analysis\"})"
         },
         "E23": {
-          "content": "[Top Projects](odoo://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[[\"project_id\",\"!=\",false]],\"context\":{\"group_by\":[\"project_id\"],\"pivot_measures\":[\"effective_hours\",\"nbr\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"project_id\"]},\"modelName\":\"report.project.task.user\",\"views\":[[false,\"graph\"],[false,\"pivot\"],[false,\"list\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Tasks Analysis\"})"
+          "content": "[Top Projects](eden://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[[\"project_id\",\"!=\",false]],\"context\":{\"group_by\":[\"project_id\"],\"pivot_measures\":[\"effective_hours\",\"nbr\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"project_id\"]},\"modelName\":\"report.project.task.user\",\"views\":[[false,\"graph\"],[false,\"pivot\"],[false,\"list\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Tasks Analysis\"})"
         },
         "E24": { "content": "=_t(\"Project\")" },
         "E25": { "content": "=PIVOT.HEADER(2,\"#project_id\",1)" },
@@ -179,7 +179,7 @@
         "E33": { "content": "=PIVOT.HEADER(2,\"#project_id\",9)" },
         "E34": { "content": "=PIVOT.HEADER(2,\"#project_id\",10)" },
         "E36": {
-          "content": "[Top Customers](odoo://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[[\"partner_id\",\"!=\",false]],\"context\":{\"group_by\":[\"partner_id\"],\"pivot_measures\":[\"effective_hours\",\"nbr\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"partner_id\"]},\"modelName\":\"report.project.task.user\",\"views\":[[false,\"graph\"],[false,\"pivot\"],[false,\"list\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Tasks Analysis\"})"
+          "content": "[Top Customers](eden://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[[\"partner_id\",\"!=\",false]],\"context\":{\"group_by\":[\"partner_id\"],\"pivot_measures\":[\"effective_hours\",\"nbr\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"partner_id\"]},\"modelName\":\"report.project.task.user\",\"views\":[[false,\"graph\"],[false,\"pivot\"],[false,\"list\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Tasks Analysis\"})"
         },
         "E37": { "content": "=_t(\"Customer\")" },
         "E38": { "content": "=PIVOT.HEADER(4,\"#partner_id\",1)" },
@@ -416,7 +416,7 @@
               "groupBy": ["stage_id", "state"],
               "orderBy": []
             },
-            "type": "odoo_bar",
+            "type": "eden_bar",
             "verticalAxisPosition": "left",
             "stacked": true,
             "fieldMatching": {
@@ -469,7 +469,7 @@
               "groupBy": ["state"],
               "orderBy": []
             },
-            "type": "odoo_pie",
+            "type": "eden_pie",
             "fieldMatching": {
               "83b5c62c-1c67-4477-a057-c0ec29edd595": {
                 "chain": "create_date",
@@ -729,7 +729,7 @@
   },
   "pivots": {
     "1": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "83b5c62c-1c67-4477-a057-c0ec29edd595": {
           "chain": "date_assign",
@@ -772,7 +772,7 @@
       "rows": [{ "fieldName": "user_ids" }]
     },
     "2": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "83b5c62c-1c67-4477-a057-c0ec29edd595": {
           "chain": "create_date",
@@ -815,7 +815,7 @@
       "rows": [{ "fieldName": "project_id" }]
     },
     "3": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "83b5c62c-1c67-4477-a057-c0ec29edd595": {
           "chain": "create_date",
@@ -858,7 +858,7 @@
       "rows": [{ "fieldName": "tag_ids" }]
     },
     "4": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "83b5c62c-1c67-4477-a057-c0ec29edd595": {
           "chain": "create_date",
@@ -901,7 +901,7 @@
       "rows": [{ "fieldName": "partner_id" }]
     },
     "5": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "83b5c62c-1c67-4477-a057-c0ec29edd595": {
           "chain": "create_date",
@@ -946,7 +946,7 @@
       "rows": []
     },
     "6": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "83b5c62c-1c67-4477-a057-c0ec29edd595": {
           "chain": "create_date",
@@ -993,7 +993,7 @@
   },
   "pivotNextId": 7,
   "customTableStyles": {},
-  "odooVersion": 12,
+  "edenVersion": 12,
   "globalFilters": [
     {
       "id": "83b5c62c-1c67-4477-a057-c0ec29edd595",
@@ -1041,7 +1041,7 @@
   ],
   "lists": {},
   "listNextId": 1,
-  "chartOdooMenusReferences": {
+  "chartEdenMenusReferences": {
     "26f09a19-26d7-4d7d-b8d9-9eda7661ef5a": "project.menu_main_pm",
     "70a88eff-8ce0-4392-8905-156ef2771086": "project.menu_main_pm",
     "8eae55ae-5435-49ee-ad58-dae822bbd9dd": "project.menu_project_report_task_analysis",

@@ -1,5 +1,5 @@
-from odoo import api, fields, models
-from odoo.tools.misc import get_lang
+from eden import api, fields, models
+from eden.tools.misc import get_lang
 
 
 class AccountMoveSendWizard(models.TransientModel):

@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { makePublicListeners } from "../hoot_utils";
 import { currentPermissions } from "./navigator";

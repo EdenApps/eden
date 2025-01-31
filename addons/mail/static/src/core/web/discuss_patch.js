@@ -1,4 +1,4 @@
-import { useEffect } from "@odoo/owl";
+import { useEffect } from "@eden/owl";
 
 import { Discuss } from "@mail/core/public_web/discuss";
 import { MessagingMenu } from "@mail/core/public_web/messaging_menu";

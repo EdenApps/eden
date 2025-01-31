@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.digest.tests.common import TestDigestCommon
-from odoo.tools import mute_logger
-from odoo.tests import tagged
+from eden.addons.digest.tests.common import TestDigestCommon
+from eden.tools import mute_logger
+from eden.tests import tagged
 
 
 @tagged('post_install', '-at_install')
 class TestLiveChatDigest(TestDigestCommon):
 
     @classmethod
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('eden.models.unlink')
     def setUpClass(cls):
         super().setUpClass()
 

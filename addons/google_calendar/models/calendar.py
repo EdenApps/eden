@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import pytz
 from dateutil.parser import parse
 from dateutil.relativedelta import relativedelta
 from uuid import uuid4
 
-from odoo import api, fields, models, tools, _
-from odoo.exceptions import ValidationError
+from eden import api, fields, models, tools, _
+from eden.exceptions import ValidationError
 
-from odoo.addons.google_calendar.utils.google_calendar import GoogleCalendarService
+from eden.addons.google_calendar.utils.google_calendar import GoogleCalendarService
 
 class Meeting(models.Model):
     _name = 'calendar.event'
@@ -129,7 +129,7 @@ class Meeting(models.Model):
         ]
 
     @api.model
-    def _odoo_values(self, google_event, default_reminders=()):
+    def _eden_values(self, google_event, default_reminders=()):
         if google_event.is_cancelled():
             return {'active': False}
 
@@ -139,8 +139,8 @@ class Meeting(models.Model):
         reminder_command = google_event.reminders.get('overrides')
         if not reminder_command:
             reminder_command = google_event.reminders.get('useDefault') and default_reminders or ()
-        alarm_commands = self._odoo_reminders_commands(reminder_command)
-        attendee_commands, partner_commands = self._odoo_attendee_commands(google_event)
+        alarm_commands = self._eden_reminders_commands(reminder_command)
+        attendee_commands, partner_commands = self._eden_attendee_commands(google_event)
         related_event = self.search([('google_id', '=', google_event.id)], limit=1)
         name = google_event.summary or related_event and related_event.name or _("(No title)")
         values = {
@@ -188,7 +188,7 @@ class Meeting(models.Model):
         return values
 
     @api.model
-    def _odoo_attendee_commands(self, google_event):
+    def _eden_attendee_commands(self, google_event):
         attendee_commands = []
         partner_commands = []
         google_attendees = google_event.attendees or []
@@ -201,7 +201,7 @@ class Meeting(models.Model):
         emails = [a.get('email') for a in google_attendees]
         existing_attendees = self.env['calendar.attendee']
         if google_event.exists(self.env):
-            event = google_event.get_odoo_event(self.env)
+            event = google_event.get_eden_event(self.env)
             existing_attendees = event.attendee_ids
         attendees_by_emails = {tools.email_normalize(a.email): a for a in existing_attendees}
         partners = self._get_sync_partner(emails)
@@ -222,16 +222,16 @@ class Meeting(models.Model):
                 partner_commands += [(4, partner.id)]
                 if attendee[2].get('displayName') and not partner.name:
                     partner.name = attendee[2].get('displayName')
-        for odoo_attendee in attendees_by_emails.values():
+        for eden_attendee in attendees_by_emails.values():
             # Remove old attendees but only if it does not correspond to the current user.
-            email = tools.email_normalize(odoo_attendee.email)
+            email = tools.email_normalize(eden_attendee.email)
             if email not in emails and email != self.env.user.email:
-                attendee_commands += [(2, odoo_attendee.id)]
-                partner_commands += [(3, odoo_attendee.partner_id.id)]
+                attendee_commands += [(2, eden_attendee.id)]
+                partner_commands += [(3, eden_attendee.partner_id.id)]
         return attendee_commands, partner_commands
 
     @api.model
-    def _odoo_reminders_commands(self, reminders=()):
+    def _eden_reminders_commands(self, reminders=()):
         commands = []
         for reminder in reminders:
             alarm_type = 'email' if reminder.get('method') == 'email' else 'notification'
@@ -273,7 +273,7 @@ class Meeting(models.Model):
         return commands
 
     def action_mass_archive(self, recurrence_update_setting):
-        """ Delete recurrence in Odoo if in 'all_events' or in 'future_events' edge case, triggering one mail. """
+        """ Delete recurrence in Eden if in 'all_events' or in 'future_events' edge case, triggering one mail. """
         self.ensure_one()
         google_service = GoogleCalendarService(self.env['google.service'])
         archive_future_events = recurrence_update_setting == 'future_events' and self == self.recurrence_id.base_event_id
@@ -319,7 +319,7 @@ class Meeting(models.Model):
             'attendees': attendee_values,
             'extendedProperties': {
                 'shared': {
-                    '%s_odoo_id' % self.env.cr.dbname: self.id,
+                    '%s_eden_id' % self.env.cr.dbname: self.id,
                 },
             },
             'reminders': {
@@ -336,20 +336,20 @@ class Meeting(models.Model):
         if not self.active:
             values['status'] = 'cancelled'
         if self.user_id and self.user_id != self.env.user and not bool(self.user_id.sudo().google_calendar_token):
-            # The organizer is an Odoo user that do not sync his calendar
+            # The organizer is an Eden user that do not sync his calendar
             values['extendedProperties']['shared']['%s_owner_id' % self.env.cr.dbname] = self.user_id.id
         elif not self.user_id:
             # We can't store on the shared properties in that case without getting a 403. It can happen when
-            # the owner is not an Odoo user: We don't store the real owner identity (mail)
+            # the owner is not an Eden user: We don't store the real owner identity (mail)
             # If we are not the owner, we should change the post values to avoid errors because we don't have
             # write permissions
             # See https://developers.google.com/calendar/concepts/sharing
             keep_keys = ['id', 'summary', 'attendees', 'start', 'end', 'reminders']
             values = {key: val for key, val in values.items() if key in keep_keys}
-            # values['extendedProperties']['private] should be used if the owner is not an odoo user
+            # values['extendedProperties']['private] should be used if the owner is not an eden user
             values['extendedProperties'] = {
                 'private': {
-                    '%s_odoo_id' % self.env.cr.dbname: self.id,
+                    '%s_eden_id' % self.env.cr.dbname: self.id,
                 },
             }
         return values

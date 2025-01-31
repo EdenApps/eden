@@ -1,6 +1,6 @@
-from odoo.tests import tagged
-from odoo import Command
-from odoo.addons.base.tests.common import BaseCommon
+from eden.tests import tagged
+from eden import Command
+from eden.addons.base.tests.common import BaseCommon
 from markupsafe import Markup
 
 

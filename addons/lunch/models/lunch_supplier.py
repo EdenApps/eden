@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import math
 import pytz
@@ -7,12 +7,12 @@ from collections import defaultdict
 from datetime import datetime, time, timedelta
 from textwrap import dedent
 
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
-from odoo.osv import expression
-from odoo.tools import float_round
+from eden import api, fields, models, _
+from eden.exceptions import UserError
+from eden.osv import expression
+from eden.tools import float_round
 
-from odoo.addons.base.models.res_partner import _tz_get
+from eden.addons.base.models.res_partner import _tz_get
 
 
 WEEKDAY_TO_NAME = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']

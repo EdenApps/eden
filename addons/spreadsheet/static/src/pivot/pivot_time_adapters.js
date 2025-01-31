@@ -1,7 +1,7 @@
-/** @odoo-module */
+/** @eden-module */
 // @ts-check
 
-import { registries, helpers, constants } from "@odoo/o-spreadsheet";
+import { registries, helpers, constants } from "@eden/o-spreadsheet";
 import { deserializeDate } from "@web/core/l10n/dates";
 import { _t } from "@web/core/l10n/translation";
 import { user } from "@web/core/user";
@@ -49,7 +49,7 @@ const { DateTime } = luxon;
  * The reason is PIVOT functions are currently generated without being aware of the spreadsheet locale.
  */
 
-const odooNumberDateAdapter = {
+const edenNumberDateAdapter = {
     normalizeServerValue(groupBy, field, readGroupResult) {
         return Number(readGroupResult[groupBy]);
     },
@@ -58,7 +58,7 @@ const odooNumberDateAdapter = {
     },
 };
 
-const odooDayAdapter = {
+const edenDayAdapter = {
     normalizeServerValue(groupBy, field, readGroupResult) {
         const serverDayValue = getGroupStartingDay(field, groupBy, readGroupResult);
         return toNumber(serverDayValue, DEFAULT_LOCALE);
@@ -71,7 +71,7 @@ const odooDayAdapter = {
 /**
  * Normalized value: "2/2023" for week 2 of 2023
  */
-const odooWeekAdapter = {
+const edenWeekAdapter = {
     normalizeFunctionValue(value) {
         const [week, year] = toString(value).split("/");
         return `${Number(week)}/${Number(year)}`;
@@ -104,7 +104,7 @@ const odooWeekAdapter = {
  * normalized month value is a string formatted as "MM/yyyy" (luxon format)
  * e.g. "01/2020" for January 2020
  */
-const odooMonthAdapter = {
+const edenMonthAdapter = {
     normalizeFunctionValue(value) {
         const date = toNumber(value, DEFAULT_LOCALE);
         return formatValue(date, { locale: DEFAULT_LOCALE, format: "mm/yyyy" });
@@ -136,7 +136,7 @@ const NORMALIZED_QUARTER_REGEXP = /^[1-4]\/\d{4}$/;
  * normalized quarter value is "quarter/year"
  * e.g. "1/2020" for Q1 2020
  */
-const odooQuarterAdapter = {
+const edenQuarterAdapter = {
     normalizeFunctionValue(value) {
         // spreadsheet normally interprets "4/2020" as the 1st April
         // but it should be understood as a quarter here.
@@ -169,7 +169,7 @@ const odooQuarterAdapter = {
     },
 };
 
-const odooDayOfWeekAdapter = {
+const edenDayOfWeekAdapter = {
     normalizeServerValue(groupBy, field, readGroupResult) {
         /**
          * 0: First day of the week in the locale.
@@ -181,7 +181,7 @@ const odooDayOfWeekAdapter = {
     },
 };
 
-const odooHourNumberAdapter = {
+const edenHourNumberAdapter = {
     normalizeServerValue(groupBy, field, readGroupResult) {
         return Number(readGroupResult[groupBy]);
     },
@@ -189,7 +189,7 @@ const odooHourNumberAdapter = {
         return (normalizedValue + step) % 24;
     },
 };
-const odooMinuteNumberAdapter = {
+const edenMinuteNumberAdapter = {
     normalizeServerValue(groupBy, field, readGroupResult) {
         return Number(readGroupResult[groupBy]);
     },
@@ -197,7 +197,7 @@ const odooMinuteNumberAdapter = {
         return (normalizedValue + step) % 60;
     },
 };
-const odooSecondNumberAdapter = {
+const edenSecondNumberAdapter = {
     normalizeServerValue(groupBy, field, readGroupResult) {
         return Number(readGroupResult[groupBy]);
     },
@@ -261,21 +261,21 @@ function extendSpreadsheetAdapter(granularity, adapter) {
     );
 }
 
-pivotTimeAdapterRegistry.add("week", falseHandlerDecorator(odooWeekAdapter));
-pivotTimeAdapterRegistry.add("month", falseHandlerDecorator(odooMonthAdapter));
-pivotTimeAdapterRegistry.add("quarter", falseHandlerDecorator(odooQuarterAdapter));
+pivotTimeAdapterRegistry.add("week", falseHandlerDecorator(edenWeekAdapter));
+pivotTimeAdapterRegistry.add("month", falseHandlerDecorator(edenMonthAdapter));
+pivotTimeAdapterRegistry.add("quarter", falseHandlerDecorator(edenQuarterAdapter));
 
-extendSpreadsheetAdapter("day", odooDayAdapter);
-extendSpreadsheetAdapter("year", odooNumberDateAdapter);
-extendSpreadsheetAdapter("day_of_month", odooNumberDateAdapter);
-extendSpreadsheetAdapter("day", odooDayAdapter);
-extendSpreadsheetAdapter("iso_week_number", odooNumberDateAdapter);
-extendSpreadsheetAdapter("month_number", odooNumberDateAdapter);
-extendSpreadsheetAdapter("quarter_number", odooNumberDateAdapter);
-extendSpreadsheetAdapter("day_of_week", odooDayOfWeekAdapter);
-extendSpreadsheetAdapter("hour_number", odooHourNumberAdapter);
-extendSpreadsheetAdapter("minute_number", odooMinuteNumberAdapter);
-extendSpreadsheetAdapter("second_number", odooSecondNumberAdapter);
+extendSpreadsheetAdapter("day", edenDayAdapter);
+extendSpreadsheetAdapter("year", edenNumberDateAdapter);
+extendSpreadsheetAdapter("day_of_month", edenNumberDateAdapter);
+extendSpreadsheetAdapter("day", edenDayAdapter);
+extendSpreadsheetAdapter("iso_week_number", edenNumberDateAdapter);
+extendSpreadsheetAdapter("month_number", edenNumberDateAdapter);
+extendSpreadsheetAdapter("quarter_number", edenNumberDateAdapter);
+extendSpreadsheetAdapter("day_of_week", edenDayOfWeekAdapter);
+extendSpreadsheetAdapter("hour_number", edenHourNumberAdapter);
+extendSpreadsheetAdapter("minute_number", edenMinuteNumberAdapter);
+extendSpreadsheetAdapter("second_number", edenSecondNumberAdapter);
 
 /**
  * When grouping by a time field, return

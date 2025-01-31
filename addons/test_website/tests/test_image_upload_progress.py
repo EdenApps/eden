@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.web_editor.controllers.main import Web_Editor
-from odoo.addons.web_unsplash.controllers.main import Web_Unsplash
+from eden.addons.web_editor.controllers.main import Web_Editor
+from eden.addons.web_unsplash.controllers.main import Web_Unsplash
 
-import odoo.tests
+import eden.tests
 
-from odoo import http
+from eden import http
 
 
-@odoo.tests.common.tagged('post_install', '-at_install')
-class TestImageUploadProgress(odoo.tests.HttpCase):
+@eden.tests.common.tagged('post_install', '-at_install')
+class TestImageUploadProgress(eden.tests.HttpCase):
 
     def test_01_image_upload_progress(self):
         self.start_tour(self.env['website'].get_client_action_url('/test_image_progress'), 'test_image_upload_progress', login="admin")

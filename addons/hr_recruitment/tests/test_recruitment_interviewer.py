@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import AccessError, UserError
-from odoo.tests.common import new_test_user
+from eden.exceptions import AccessError, UserError
+from eden.tests.common import new_test_user
 
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.tests import tagged
+from eden.addons.mail.tests.common import MailCommon
+from eden.tests import tagged
 
 
 @tagged('recruitment_interviewer')

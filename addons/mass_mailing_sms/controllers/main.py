@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from werkzeug.exceptions import NotFound
 
-from odoo import http, _
-from odoo.addons.phone_validation.tools import phone_validation
-from odoo.http import request
+from eden import http, _
+from eden.addons.phone_validation.tools import phone_validation
+from eden.http import request
 
 
 class MailingSMSController(http.Controller):
@@ -30,7 +30,7 @@ class MailingSMSController(http.Controller):
     def blacklist_page(self, mailing_id, trace_code, **post):
         check_res = self._check_trace(mailing_id, trace_code)
         if not check_res.get('trace'):
-            return request.redirect('/odoo')
+            return request.redirect('/eden')
         return request.render('mass_mailing_sms.blacklist_main', {
             'mailing_id': mailing_id,
             'trace_code': trace_code,
@@ -40,7 +40,7 @@ class MailingSMSController(http.Controller):
     def blacklist_number(self, mailing_id, trace_code, **post):
         check_res = self._check_trace(mailing_id, trace_code)
         if not check_res.get('trace'):
-            return request.redirect('/odoo')
+            return request.redirect('/eden')
         # parse and validate number
         sms_number = post.get('sms_number', '').strip(' ')
         country = request.env['res.country'].search([('code', '=', request.geoip.country_code)], limit=1)

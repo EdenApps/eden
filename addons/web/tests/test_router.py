@@ -1,5 +1,5 @@
-from odoo.tests.common import TransactionCase
-from odoo.addons.web.controllers.utils import get_action_triples, get_action
+from eden.tests.common import TransactionCase
+from eden.addons.web.controllers.utils import get_action_triples, get_action
 
 
 class TestWebRouter(TransactionCase):

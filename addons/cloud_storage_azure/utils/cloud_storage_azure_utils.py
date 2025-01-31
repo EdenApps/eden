@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 """
 This module is used to provide an azure.storage.blob.generate_blob_sas
 compatible function for generating sas URLs for Azure Storage without
@@ -13,7 +13,7 @@ import requests
 from urllib.parse import quote
 from datetime import date
 from lxml import etree
-from odoo.exceptions import ValidationError
+from eden.exceptions import ValidationError
 
 X_MS_VERSION = '2023-11-03'
 

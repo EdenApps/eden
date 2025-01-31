@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from odoo import Command
-from odoo.exceptions import UserError
-from odoo.tests import HttpCase, tagged
+from eden import Command
+from eden.exceptions import UserError
+from eden.tests import HttpCase, tagged
 
 from .test_project_base import TestProjectCommon
 
@@ -383,4 +383,4 @@ class TestPersonalStageTour(HttpCase, TestProjectCommon):
 
     def test_personal_stage_tour(self):
         # Test customizing personal stages as a project user
-        self.start_tour('/odoo', 'personal_stage_tour', login="armandel")
+        self.start_tour('/eden', 'personal_stage_tour', login="armandel")

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_opening_hours" name="Opening Hours">
     <section class="s_opening_hours">
@@ -30,4 +30,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

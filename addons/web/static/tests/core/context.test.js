@@ -1,5 +1,5 @@
 import { evalPartialContext, makeContext } from "@web/core/context";
-import { expect, test, describe } from "@odoo/hoot";
+import { expect, test, describe } from "@eden/hoot";
 
 describe.current.tags("headless");
 

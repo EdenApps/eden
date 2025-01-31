@@ -288,7 +288,7 @@ img.ms-auto, img.mx-auto {
 .base-fs {
     @include font-size($font-size-base);
 }
-// Equivalent "font-size" only for the Odoo own "o_small" class. Note that the
+// Equivalent "font-size" only for the Eden own "o_small" class. Note that the
 // "o_small" class currently also changes the font-size only but this is to stay
 // consistent with the other classes which act that way (as display-x).
 .o_small-fs {
@@ -481,7 +481,7 @@ a.o_underline {
 }
 
 @include media-breakpoint-down(md) {
-    odoo-wysiwyg-container {
+    eden-wysiwyg-container {
         .btn-group {
             position: static;
         }
@@ -843,7 +843,7 @@ section, .oe_img_bg, [data-oe-shape-data] {
 
 /* QWEB */
 
-.odoo-editor-editable.odoo-editor-qweb, .o_readonly {
+.eden-editor-editable.eden-editor-qweb, .o_readonly {
     t,
     [t-if],
     [t-elif],

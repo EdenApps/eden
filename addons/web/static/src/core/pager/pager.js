@@ -1,7 +1,7 @@
 import { useAutofocus } from "../utils/hooks";
 import { clamp } from "../utils/numbers";
 
-import { Component, useExternalListener, useState, EventBus } from "@odoo/owl";
+import { Component, useExternalListener, useState, EventBus } from "@eden/owl";
 
 export const PAGER_UPDATED_EVENT = "PAGER:UPDATED";
 export const pagerBus = new EventBus();

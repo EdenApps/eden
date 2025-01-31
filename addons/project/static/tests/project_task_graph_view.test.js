@@ -1,4 +1,4 @@
-import { test, beforeEach } from "@odoo/hoot";
+import { test, beforeEach } from "@eden/hoot";
 import { mountView } from "@web/../tests/web_test_helpers";
 import { checkLabels, checkLegend, selectMode } from "@web/../tests/views/graph/graph_test_helpers";
 

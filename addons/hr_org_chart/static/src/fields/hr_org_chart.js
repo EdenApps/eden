@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { rpc } from "@web/core/network/rpc";
 import { registry } from "@web/core/registry";
@@ -6,7 +6,7 @@ import { useService } from "@web/core/utils/hooks";
 import { usePopover } from "@web/core/popover/popover_hook";
 import { user } from "@web/core/user";
 import { onEmployeeSubRedirect } from './hooks';
-import { Component, onWillStart, onWillRender, useState } from "@odoo/owl";
+import { Component, onWillStart, onWillRender, useState } from "@eden/owl";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";
 
 class HrOrgChartPopover extends Component {

@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
-from odoo.tests import HttpCase, tagged
+from eden.fields import Command
+from eden.tests import HttpCase, tagged
 
-from odoo.addons.website_sale.tests.common import WebsiteSaleCommon
+from eden.addons.website_sale.tests.common import WebsiteSaleCommon
 
 
 @tagged('post_install', '-at_install')

@@ -1,10 +1,10 @@
-import { expect, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
+import { expect, test } from "@eden/hoot";
+import { animationFrame } from "@eden/hoot-mock";
 import { setupEditor } from "../_helpers/editor";
 import { getContent } from "../_helpers/selection";
 import { insertText } from "../_helpers/user_actions";
 import { unformat } from "../_helpers/format";
-import { press, waitFor, queryOne } from "@odoo/hoot-dom";
+import { press, waitFor, queryOne } from "@eden/hoot-dom";
 
 function expectContentToBe(el, html) {
     expect(getContent(el)).toBe(unformat(html));

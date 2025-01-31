@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data noupdate="1">
+<eden><data noupdate="1">
 
     <!-- Discussion subtype for messaging / Chatter -->
     <record id="mt_comment" model="mail.message.subtype">
@@ -21,4 +21,4 @@
         <field name="sequence" eval="90"/>
     </record>
 
-</data></odoo>
+</data></eden>

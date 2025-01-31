@@ -6,7 +6,7 @@ import { browser } from "@web/core/browser/browser";
 import { getTabableElements } from "@web/core/utils/ui";
 import { getActiveHotkey } from "../hotkeys/hotkey_service";
 
-import { EventBus, reactive, useEffect, useRef } from "@odoo/owl";
+import { EventBus, reactive, useEffect, useRef } from "@eden/owl";
 
 export const SIZES = { XS: 0, VSM: 1, SM: 2, MD: 3, LG: 4, XL: 5, XXL: 6 };
 

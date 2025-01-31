@@ -1,14 +1,14 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from base64 import b64encode
 from functools import partial
 
-from odoo import Command
-from odoo.tests import tagged
-from odoo.tools.misc import file_open
+from eden import Command
+from eden.tests import tagged
+from eden.tools.misc import file_open
 
-from odoo.addons.base.tests.common import BaseUsersCommon
-from odoo.addons.sale.tests.common import SaleCommon
+from eden.addons.base.tests.common import BaseUsersCommon
+from eden.addons.sale.tests.common import SaleCommon
 from .files import forms_pdf, plain_pdf
 
 
@@ -157,7 +157,7 @@ class TestPDFQuoteBuilder(BaseUsersCommon, SaleCommon):
     def _test_custom_content_kanban_like(self):
         # TODO VCR finish tour and uncomment
         self.start_tour(
-            f'/odoo/sales/{self.sale_order.id}',
+            f'/eden/sales/{self.sale_order.id}',
             'custom_content_kanban_like_tour',
             login='admin',
         )

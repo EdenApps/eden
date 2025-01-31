@@ -1,5 +1,5 @@
-/** @odoo-module **/
-import { Component, useState, markup, onWillStart } from "@odoo/owl";
+/** @eden-module **/
+import { Component, useState, markup, onWillStart } from "@eden/owl";
 import { FlagMarkAsOffensiveDialog } from "../components/flag_mark_as_offensive/flag_mark_as_offensive";
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { cookie } from "@web/core/browser/cookie";;
@@ -123,7 +123,7 @@ publicWidget.registry.websiteForum = publicWidget.Widget.extend({
         $('span[data-oe-model="forum.post"][data-oe-field="content"]').find('img.float-start').removeClass('float-start');
 
         // welcome message action button
-        var forumLogin = `${window.location.origin}/odoo?redirect=${encodeURIComponent(window.location.href)}`
+        var forumLogin = `${window.location.origin}/eden?redirect=${encodeURIComponent(window.location.href)}`
         $('.forum_register_url').attr('href', forumLogin);
 
         // Initialize forum's tooltips

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
 
         <record id="dep_administration" model="hr.department">
@@ -164,4 +164,4 @@
             <field name="address_id" ref="base.main_partner"/>
         </record>
     </data>
-</odoo>
+</eden>

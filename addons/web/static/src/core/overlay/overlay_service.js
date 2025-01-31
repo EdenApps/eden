@@ -1,4 +1,4 @@
-import { markRaw, reactive } from "@odoo/owl";
+import { markRaw, reactive } from "@eden/owl";
 import { registry } from "../registry";
 import { OverlayContainer } from "./overlay_container";
 

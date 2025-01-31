@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 {
     'name': 'Project Mail Plugin',
@@ -11,7 +11,7 @@
     'data': [
         'views/project_task_views.xml'
     ],
-    'website': 'https://www.odoo.com/app/project',
+    'website': 'https://www.edencloud.us/app/project',
     'depends': [
         'project',
         'mail_plugin',

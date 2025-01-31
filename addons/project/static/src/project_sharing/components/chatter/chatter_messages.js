@@ -1,9 +1,9 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { rpc } from "@web/core/network/rpc";
 
 import { ChatterAttachmentsViewer } from "./chatter_attachments_viewer";
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 export class ChatterMessages extends Component {
     static template = "project.ChatterMessages";

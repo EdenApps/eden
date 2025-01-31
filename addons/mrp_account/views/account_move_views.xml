@@ -1,4 +1,4 @@
-<odoo>
+<eden>
     <record id="view_move_form_inherit_mrp_account" model="ir.ui.view">
         <field name="name">account.move.inherit.mrp.account</field>
         <field name="model">account.move</field>
@@ -14,4 +14,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</eden>

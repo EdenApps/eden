@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <!-- Paper Format -->
         <record id="paperformat_survey_certification" model="report.paperformat">
@@ -30,4 +30,4 @@
             <field name="paperformat_id" ref="paperformat_survey_certification"/>
         </record>
     </data>
-</odoo>
+</eden>

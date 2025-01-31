@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 
@@ -11,11 +11,11 @@ if hasattr(datastructures.WWWAuthenticate, "from_header"):
 else:
     parse_auth = http.parse_www_authenticate_header
 
-from odoo import api, fields, models
-from odoo.exceptions import AccessDenied, UserError
-from odoo.addons.auth_signup.models.res_users import SignupError
+from eden import api, fields, models
+from eden.exceptions import AccessDenied, UserError
+from eden.addons.auth_signup.models.res_users import SignupError
 
-from odoo.addons import base
+from eden.addons import base
 base.models.res_users.USER_PRIVATE_FIELDS.append('oauth_access_token')
 
 class ResUsers(models.Model):
@@ -62,7 +62,7 @@ class ResUsers(models.Model):
             for key in [
                 'sub', # standard
                 'id', # google v1 userinfo, facebook opengraph
-                'user_id', # google tokeninfo, odoo (tokeninfo)
+                'user_id', # google tokeninfo, eden (tokeninfo)
             ]
         ]), None)
         if not subject:

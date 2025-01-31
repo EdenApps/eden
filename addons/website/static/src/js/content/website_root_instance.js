@@ -1,4 +1,4 @@
-/** @odoo-module alias=root.widget */
+/** @eden-module alias=root.widget */
 
 import { createPublicRoot } from "@web/legacy/js/public/public_root";
 import lazyloader from "@web/legacy/js/public/lazyloader";

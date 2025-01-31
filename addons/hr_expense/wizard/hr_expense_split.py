@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 from copy import deepcopy
 
-from odoo import fields, models, api, Command
-from odoo.tools import float_compare
+from eden import fields, models, api, Command
+from eden.tools import float_compare
 
 
 class HrExpenseSplit(models.TransientModel):

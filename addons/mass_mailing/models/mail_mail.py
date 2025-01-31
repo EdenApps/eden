@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import re
 import werkzeug.urls
 
-from odoo import api, fields, models, tools
+from eden import api, fields, models, tools
 
 
 class MailMail(models.Model):

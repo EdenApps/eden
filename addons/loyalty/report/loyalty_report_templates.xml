@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="loyalty_report">
         <t t-call="web.internal_layout">
             <div class="card">
@@ -13,7 +13,7 @@
                                     <span t-out="o._get_mail_partner().name">John Doe</span>,
                                 </h4>
                                 <t t-set="text">on your next order</t>
-                                <h4>Here is your reward from <span t-out="o.program_id.company_id.name">Odoo</span>.</h4>
+                                <h4>Here is your reward from <span t-out="o.program_id.company_id.name">Eden</span>.</h4>
                                 <div class="oe_structure"></div>
                                 <t t-foreach="range(len(o.program_id.reward_ids))" t-as="reward_idx">
                                     <t t-set="reward" t-value="o.program_id.reward_ids[reward_idx]"/>
@@ -130,4 +130,4 @@
             <div class="oe_structure"></div>
         </t>
     </template>
-</odoo>
+</eden>

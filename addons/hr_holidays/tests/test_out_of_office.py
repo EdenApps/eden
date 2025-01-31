@@ -1,15 +1,15 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import date, datetime, timezone
 from dateutil.relativedelta import relativedelta
 
 from freezegun import freeze_time
 
-from odoo import fields
-from odoo.addons.base.tests.common import TransactionCaseWithUserDemo
-from odoo.tests.common import tagged, users, warmup
-from odoo.addons.hr_holidays.tests.common import TestHrHolidaysCommon
-from odoo.addons.mail.tools.discuss import Store
+from eden import fields
+from eden.addons.base.tests.common import TransactionCaseWithUserDemo
+from eden.tests.common import tagged, users, warmup
+from eden.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from eden.addons.mail.tools.discuss import Store
 
 
 @tagged("post_install", "-at_install", "out_of_office")

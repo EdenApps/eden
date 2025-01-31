@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { addFakeModel, addModelNamesToFetch } from '@bus/../tests/helpers/model_definitions_helpers';
 

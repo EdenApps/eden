@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="hr_contract_history_view_search" model="ir.ui.view">
         <field name="name">hr.contract.history.search</field>
         <field name="model">hr.contract.history</field>
@@ -186,4 +186,4 @@
             </kanban>
         </field>
     </record>
-</odoo>
+</eden>

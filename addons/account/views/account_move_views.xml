@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
 
         <!-- VIEWS -->
@@ -831,11 +831,11 @@
                     <!-- Currency consistency -->
                     <div class="alert alert-warning" role="alert"
                          invisible="not display_inactive_currency_warning or move_type not in ('in_invoice', 'in_refund', 'in_receipt')">
-                        In order to validate this bill, you must <button class="oe_link" type="object" name="action_activate_currency" style="padding: 0; vertical-align: baseline;">activate the currency of the bill</button>. The journal entries need to be computed by Odoo before being posted in your company's currency.
+                        In order to validate this bill, you must <button class="oe_link" type="object" name="action_activate_currency" style="padding: 0; vertical-align: baseline;">activate the currency of the bill</button>. The journal entries need to be computed by Eden before being posted in your company's currency.
                     </div>
                     <div class="alert alert-warning" role="alert"
                          invisible="not display_inactive_currency_warning or move_type not in ('out_invoice', 'out_refund', 'out_receipt')">
-                        In order to validate this invoice, you must <button class="oe_link" type="object" name="action_activate_currency" style="padding: 0; vertical-align: baseline;">activate the currency of the invoice</button>. The journal entries need to be computed by Odoo before being posted in your company's currency.
+                        In order to validate this invoice, you must <button class="oe_link" type="object" name="action_activate_currency" style="padding: 0; vertical-align: baseline;">activate the currency of the invoice</button>. The journal entries need to be computed by Eden before being posted in your company's currency.
                     </div>
                     <div class="alert alert-warning" role="alert"
                          invisible="not abnormal_amount_warning">
@@ -2029,4 +2029,4 @@ if records:
         </record>
 
     </data>
-</odoo>
+</eden>

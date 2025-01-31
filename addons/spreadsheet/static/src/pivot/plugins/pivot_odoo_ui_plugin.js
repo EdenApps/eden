@@ -1,12 +1,12 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { OdooUIPlugin } from "@spreadsheet/plugins";
-import { helpers } from "@odoo/o-spreadsheet";
+import { EdenUIPlugin } from "@spreadsheet/plugins";
+import { helpers } from "@eden/o-spreadsheet";
 
 const { UNDO_REDO_PIVOT_COMMANDS } = helpers;
-UNDO_REDO_PIVOT_COMMANDS.push("UPDATE_ODOO_PIVOT_DOMAIN");
+UNDO_REDO_PIVOT_COMMANDS.push("UPDATE_EDEN_PIVOT_DOMAIN");
 
-export class PivotOdooUIPlugin extends OdooUIPlugin {
+export class PivotEdenUIPlugin extends EdenUIPlugin {
     static getters = /** @type {const} */ ([]);
 
     /**

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <!-- Sample stage-related template -->
         <record id="mail_template_data_project_task" model="mail.template">
@@ -133,4 +133,4 @@
 </div>
         </template>
     </data>
-</odoo>
+</eden>

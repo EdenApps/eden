@@ -1,10 +1,10 @@
-/* @odoo-module */
+/* @eden-module */
 
 import { usePopover } from "@web/core/popover/popover_hook";
 import { user } from "@web/core/user";
 import { formatNumber, useNewAllocationRequest } from "@hr_holidays/views/hooks";
 import { useService } from "@web/core/utils/hooks";
-import { Component, onWillRender } from "@odoo/owl";
+import { Component, onWillRender } from "@eden/owl";
 
 export class TimeOffCardPopover extends Component {
     static template = "hr_holidays.TimeOffCardPopover";

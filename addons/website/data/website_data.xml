@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <!-- Group multi website -->
     <record id="group_multi_website" model="res.groups">
         <field name="name">Multi-website</field>
@@ -212,7 +212,7 @@
                                             <p>The website will not work properly if you reject or discard those cookies.</p>
                                         </td>
                                         <td>
-                                            session_id (Odoo)<br/>
+                                            session_id (Eden)<br/>
                                         </td>
                                     </tr>
                                     <tr>
@@ -224,7 +224,7 @@
                                             <p>Your experience may be degraded if you discard those cookies, but the website will still work.</p>
                                         </td>
                                         <td>
-                                            frontend_lang (Odoo)
+                                            frontend_lang (Eden)
                                         </td>
                                     </tr>
                                     <tr>
@@ -237,10 +237,10 @@
                                             <p>We may not be able to provide the best service to you if you reject those cookies, but the website will work.</p>
                                         </td>
                                         <td>
-                                            im_livechat_previous_operator (Odoo)<br/>
-                                            utm_campaign (Odoo)<br/>
-                                            utm_source (Odoo)<br/>
-                                            utm_medium (Odoo)
+                                            im_livechat_previous_operator (Eden)<br/>
+                                            utm_campaign (Eden)<br/>
+                                            utm_source (Eden)<br/>
+                                            utm_medium (Eden)
                                         </td>
                                     </tr>
                                     <tr>
@@ -529,4 +529,4 @@
             <field name="user_id" ref="base.public_user"/>
         </record>
     </data>
-</odoo>
+</eden>

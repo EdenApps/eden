@@ -1,10 +1,10 @@
-from odoo import _, api, fields, models, Command
-from odoo.osv import expression
-from odoo.tools import create_index
-from odoo.tools.misc import format_datetime
-from odoo.exceptions import UserError, ValidationError
+from eden import _, api, fields, models, Command
+from eden.osv import expression
+from eden.tools import create_index
+from eden.tools.misc import format_datetime
+from eden.exceptions import UserError, ValidationError
 
-from odoo.addons.account.models.company import SOFT_LOCK_DATE_FIELDS
+from eden.addons.account.models.company import SOFT_LOCK_DATE_FIELDS
 
 from datetime import date
 

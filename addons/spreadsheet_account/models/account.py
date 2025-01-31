@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import date
 import calendar
 from dateutil.relativedelta import relativedelta
 
-from odoo import models, api, _
-from odoo.osv import expression
-from odoo.tools import date_utils
+from eden import models, api, _
+from eden.osv import expression
+from eden.tools import date_utils
 
 
 class AccountMove(models.Model):
@@ -107,7 +107,7 @@ class AccountMove(models.Model):
 
     @api.model
     def spreadsheet_fetch_debit_credit(self, args_list):
-        """Fetch data for ODOO.CREDIT, ODOO.DEBIT and ODOO.BALANCE formulas
+        """Fetch data for EDEN.CREDIT, EDEN.DEBIT and EDEN.BALANCE formulas
         The input list looks like this:
         [{
             date_range: {
@@ -131,7 +131,7 @@ class AccountMove(models.Model):
 
     @api.model
     def spreadsheet_fetch_residual_amount(self, args_list):
-        """Fetch data for ODOO.RESUDUAL formulas
+        """Fetch data for EDEN.RESUDUAL formulas
         The input list looks like this:
         [{
             date_range: {
@@ -155,7 +155,7 @@ class AccountMove(models.Model):
 
     @api.model
     def spreadsheet_fetch_partner_balance(self, args_list):
-        """Fetch data for ODOO.PARTNER.BALANCE formulas
+        """Fetch data for EDEN.PARTNER.BALANCE formulas
         The input list looks like this:
         [{
             date_range: {

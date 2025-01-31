@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 """
 Web_editor-context rendering needs to add some metadata to rendered and allow to edit fields,
 as well as render a few fields differently.
 
-Also, adds methods to convert values back to Odoo models.
+Also, adds methods to convert values back to Eden models.
 """
 
 import base64
@@ -24,10 +24,10 @@ from markupsafe import Markup, escape_silent
 from PIL import Image as I
 from werkzeug import urls
 
-from odoo import _, api, models, fields
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools import posix_to_ldml
-from odoo.tools.misc import file_open, get_lang, babel_locale_parse
+from eden import _, api, models, fields
+from eden.exceptions import UserError, ValidationError
+from eden.tools import posix_to_ldml
+from eden.tools.misc import file_open, get_lang, babel_locale_parse
 
 REMOTE_CONNECTION_TIMEOUT = 2.5
 

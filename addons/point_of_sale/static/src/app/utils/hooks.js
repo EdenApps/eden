@@ -10,7 +10,7 @@ import {
     useState,
     onWillUnmount,
     useExternalListener,
-} from "@odoo/owl";
+} from "@eden/owl";
 import { KeepLast } from "@web/core/utils/concurrency";
 import { useService } from "@web/core/utils/hooks";
 import { useDropdownState } from "@web/core/dropdown/dropdown_hooks";
@@ -219,7 +219,7 @@ export function useIsChildLarger(container) {
 /**
  * Manages a component to be used as a popover.
  *
- * @param {typeof import("@odoo/owl").Component} component
+ * @param {typeof import("@eden/owl").Component} component
  * @param {import("@web/core/popover/popover_service").PopoverServiceAddOptions} [options]
  * @returns {import("@web/core/popover/popover_hook").PopoverHookReturnType}
  */

@@ -1,4 +1,4 @@
-/** @odoo-module alias=@web/../tests/mobile/views/form_view_tests default=false */
+/** @eden-module alias=@web/../tests/mobile/views/form_view_tests default=false */
 
 import { registry } from "@web/core/registry";
 import {

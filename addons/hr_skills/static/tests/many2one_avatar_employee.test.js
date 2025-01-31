@@ -1,7 +1,7 @@
 import { click, contains, start, startServer } from "@mail/../tests/mail_test_helpers";
 import { mountView } from "@web/../tests/web_test_helpers";
-import { describe, expect, test } from "@odoo/hoot";
-import { queryAttribute } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@eden/hoot";
+import { queryAttribute } from "@eden/hoot-dom";
 import { defineHrSkillModels } from "@hr_skills/../tests/hr_skills_test_helpers";
 
 describe.current.tags("desktop");

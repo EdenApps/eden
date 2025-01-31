@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <template id="certification_report_view_general">
             <!-- Style classes to be applied to '#o_survey_certification': [no class](purple), gold, blue -->
@@ -40,7 +40,7 @@
                                 </t>
                                 <span t-att-style="certif_style" class="user-name" t-out="certified_name">DEMO_CERTIFIED_NAME</span>
 
-                                <br/> <span>by</span> <span class="certification-company" t-field="user_input.create_uid.sudo().company_id.display_name">Odoo</span> <span>for successfully completing</span>
+                                <br/> <span>by</span> <span class="certification-company" t-field="user_input.create_uid.sudo().company_id.display_name">Eden</span> <span>for successfully completing</span>
                                 <br/><b><span class="certification-name" t-field="user_input.survey_id.display_name">Functional Training</span></b>
                              </p>
                             <div class="oe_structure"/>
@@ -81,4 +81,4 @@
             </t>
         </template>
     </data>
-</odoo>
+</eden>

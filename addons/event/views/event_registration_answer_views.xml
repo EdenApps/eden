@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="event_registration_answer_view_search" model="ir.ui.view">
         <field name="name">event.registration.answer.view.search</field>
         <field name="model">event.registration.answer</field>
@@ -60,4 +60,4 @@
             </p>
         </field>
     </record>
-</odoo>
+</eden>

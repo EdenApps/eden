@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<eden noupdate="1">
     <!-- Create extra MOs that will have stock.valuation.layers + can be used to populate reports -->
     <record id="mrp_production_drawer_2" model="mrp.production">
         <field name="product_id" ref="product.product_product_27"/>
@@ -70,4 +70,4 @@
         <value eval="[ref('mrp_account.mrp_production_drawer_3')]"/>
         <value eval="{'date_finished': (datetime.now() - relativedelta(weeks=1)).strftime('%Y-%m-%d %H:%M:%S')}"/>
     </function>
-</odoo>
+</eden>

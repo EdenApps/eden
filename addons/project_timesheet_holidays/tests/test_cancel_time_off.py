@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from freezegun import freeze_time
 
-from odoo.tests import TransactionCase, tagged, new_test_user
+from eden.tests import TransactionCase, tagged, new_test_user
 
 
 @tagged('post_install', '-at_install')

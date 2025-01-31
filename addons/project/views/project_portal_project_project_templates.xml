@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="portal_layout" name="Portal layout: project menu entry" inherit_id="portal.portal_breadcrumbs" priority="40">
         <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
             <li t-if="page_name == 'project' or project" class="col-lg-2" t-attf-class="breadcrumb-item #{'active ' if not project else ''}">
@@ -93,7 +93,7 @@
             <t t-set="title" t-value="project.name"/>
             <t t-set="o_portal_fullwidth_alert" groups="project.group_project_user">
                 <t t-call="portal.portal_back_in_edit_mode">
-                    <t t-set="backend_url" t-value="'/odoo/project.project/%s' % (project.id)"/>
+                    <t t-set="backend_url" t-value="'/eden/project.project/%s' % (project.id)"/>
                 </t>
             </t>
 
@@ -109,4 +109,4 @@
             <t t-call="project.portal_tasks_list"/>
         </t>
     </template>
-</odoo>
+</eden>

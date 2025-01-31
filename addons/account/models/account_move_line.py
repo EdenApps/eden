@@ -4,14 +4,14 @@ from datetime import date
 import logging
 import re
 
-from odoo import api, fields, models, Command, _
-from odoo.exceptions import ValidationError, UserError
-from odoo.osv import expression
-from odoo.tools import frozendict, format_date, float_compare, format_list, Query
-from odoo.tools.sql import create_index, SQL
-from odoo.addons.web.controllers.utils import clean_action
+from eden import api, fields, models, Command, _
+from eden.exceptions import ValidationError, UserError
+from eden.osv import expression
+from eden.tools import frozendict, format_date, float_compare, format_list, Query
+from eden.tools.sql import create_index, SQL
+from eden.addons.web.controllers.utils import clean_action
 
-from odoo.addons.account.models.account_move import MAX_HASH_VERSION
+from eden.addons.account.models.account_move import MAX_HASH_VERSION
 
 
 _logger = logging.getLogger(__name__)
@@ -1792,7 +1792,7 @@ class AccountMoveLine(models.Model):
         def is_payment(aml):
             return aml.move_id.origin_payment_id or aml.move_id.statement_line_id
 
-        def get_odoo_rate(aml, other_aml, currency):
+        def get_eden_rate(aml, other_aml, currency):
             if forced_rate := self._context.get('forced_rate_from_register_payment'):
                 return forced_rate
             if other_aml and not is_payment(aml) and is_payment(other_aml):
@@ -1839,7 +1839,7 @@ class AccountMoveLine(models.Model):
             and is_rec_pay_account \
             and not has_zero_residual \
             and counterpart_currency != company_currency:
-            rate = get_odoo_rate(aml, other_aml, counterpart_currency)
+            rate = get_eden_rate(aml, other_aml, counterpart_currency)
             residual_in_foreign_curr = counterpart_currency.round(remaining_amount * rate)
             if not counterpart_currency.is_zero(residual_in_foreign_curr):
                 available_residual_per_currency[counterpart_currency] = {

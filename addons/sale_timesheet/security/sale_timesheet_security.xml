@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo noupdate="1">
+<eden noupdate="1">
 
 
         <!-- Override this rule because in hr_timesheet,
@@ -12,4 +12,4 @@
             <field name="domain_force">[('project_id', '=', False)]</field>
         </record>
 
-</odoo>
+</eden>

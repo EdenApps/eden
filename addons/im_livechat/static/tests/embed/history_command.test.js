@@ -13,8 +13,8 @@ import {
     step,
     triggerHotkey,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, test } from "@odoo/hoot";
-import { tick } from "@odoo/hoot-mock";
+import { describe, test } from "@eden/hoot";
+import { tick } from "@eden/hoot-mock";
 import { getService, mountWithCleanup, onRpc } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");

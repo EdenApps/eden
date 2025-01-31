@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
 
     <record id="account_invoice_groupby_inherit" model="ir.ui.view">
         <field name="name">account.move.groupby</field>
@@ -101,4 +101,4 @@
         <field name="act_window_id" ref="sale.action_invoice_salesteams"/>
     </record>
 
-</odoo>
+</eden>

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, fields, models, tools
-from odoo.exceptions import UserError
-from odoo.osv import expression
+from eden import _, api, fields, models, tools
+from eden.exceptions import UserError
+from eden.osv import expression
 
 
 class MassMailingContact(models.Model):

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.tests import tagged, new_test_user
-from odoo.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
+from eden import Command
+from eden.tests import tagged, new_test_user
+from eden.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
 
 
 class TestPosHrHttpCommon(TestPointOfSaleHttpCommon):

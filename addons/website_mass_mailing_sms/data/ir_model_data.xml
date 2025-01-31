@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <function model="ir.model.fields" name="formbuilder_whitelist">
             <value>mailing.contact</value>
@@ -8,4 +8,4 @@
             ]"/>
         </function>
     </data>
-</odoo>
+</eden>

@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 import logging
@@ -8,7 +8,7 @@ from uuid import uuid4
 
 import requests
 
-from odoo.addons.payment import utils as payment_utils
+from eden.addons.payment import utils as payment_utils
 
 _logger = logging.getLogger(__name__)
 
@@ -94,7 +94,7 @@ class AuthorizeAPI:
         """ Create an Auth.net payment/customer profile from an existing transaction.
 
         Creates a customer profile for the partner/credit card combination and links
-        a corresponding payment profile to it. Note that a single partner in the Odoo
+        a corresponding payment profile to it. Note that a single partner in the Eden
         database can have multiple customer profiles in Authorize.net (i.e. a customer
         profile is created for every res.partner/payment.token couple).
 
@@ -113,7 +113,7 @@ class AuthorizeAPI:
         response = self._make_request('createCustomerProfileFromTransactionRequest', {
             'transId': transaction_id,
             'customer': {
-                'merchantCustomerId': ('ODOO-%s-%s' % (partner.id, uuid4().hex[:8]))[:20],
+                'merchantCustomerId': ('EDEN-%s-%s' % (partner.id, uuid4().hex[:8]))[:20],
                 'email': partner.email or ''
             }
         })

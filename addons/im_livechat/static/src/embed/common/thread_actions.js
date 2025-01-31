@@ -2,7 +2,7 @@ import { SESSION_STATE } from "@im_livechat/embed/common/livechat_service";
 
 import { threadActionsRegistry } from "@mail/core/common/thread_actions";
 import "@mail/discuss/call/common/thread_actions";
-import { useComponent } from "@odoo/owl";
+import { useComponent } from "@eden/owl";
 
 import { _t } from "@web/core/l10n/translation";
 import { useService } from "@web/core/utils/hooks";

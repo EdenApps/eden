@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 import random
 
-from odoo import api, models, fields, _
-from odoo.addons.website.tools import text_from_html
-from odoo.tools.json import scriptsafe as json_scriptsafe
-from odoo.tools.translate import html_translate
-from odoo.tools import html_escape
+from eden import api, models, fields, _
+from eden.addons.website.tools import text_from_html
+from eden.tools.json import scriptsafe as json_scriptsafe
+from eden.tools.translate import html_translate
+from eden.tools import html_escape
 
 
 class Blog(models.Model):

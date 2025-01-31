@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_features" name="Features">
     <section class="s_features pt64 pb64">
@@ -50,4 +50,4 @@
     <field name="bundle">web.assets_frontend</field>
     <field name="path">website/static/src/snippets/s_features/000.scss</field>
 </record>
-</odoo>
+</eden>

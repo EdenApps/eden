@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 import logging
@@ -6,13 +6,13 @@ import operator
 
 from werkzeug.urls import url_encode
 
-import odoo
-import odoo.modules.registry
-from odoo import http
-from odoo.modules import module
-from odoo.exceptions import AccessError, UserError, AccessDenied
-from odoo.http import request
-from odoo.tools.translate import _
+import eden
+import eden.modules.registry
+from eden import http
+from eden.modules import module
+from eden.exceptions import AccessError, UserError, AccessDenied
+from eden.http import request
+from eden.tools.translate import _
 
 
 _logger = logging.getLogger(__name__)
@@ -22,7 +22,7 @@ class Session(http.Controller):
 
     @http.route('/web/session/get_session_info', type='json', auth='user', readonly=True)
     def get_session_info(self):
-        # Crapy workaround for unupdatable Odoo Mobile App iOS (Thanks Apple :@)
+        # Crapy workaround for unupdatable Eden Mobile App iOS (Thanks Apple :@)
         request.session.touch()
         return request.env['ir.http'].session_info()
 
@@ -37,14 +37,14 @@ class Session(http.Controller):
         credential = {'login': login, 'password': password, 'type': 'password'}
         auth_info = request.session.authenticate(db, credential)
         if auth_info['uid'] != request.session.uid:
-            # Crapy workaround for unupdatable Odoo Mobile App iOS (Thanks Apple :@) and Android
+            # Crapy workaround for unupdatable Eden Mobile App iOS (Thanks Apple :@) and Android
             # Correct behavior should be to raise AccessError("Renewing an expired session for user that has multi-factor-authentication is not supported. Please use /web/login instead.")
             return {'uid': None}
 
         request.session.db = db
-        registry = odoo.modules.registry.Registry(db)
+        registry = eden.modules.registry.Registry(db)
         with registry.cursor() as cr:
-            env = odoo.api.Environment(cr, request.session.uid, request.session.context)
+            env = eden.api.Environment(cr, request.session.uid, request.session.context)
             if not request.db:
                 # request._save_session would not update the session_token
                 # as it lacks an environment, rotating the session myself
@@ -80,13 +80,13 @@ class Session(http.Controller):
             'state': json.dumps({'d': request.db, 'u': ICP.get_param('web.base.url')}),
             'scope': 'userinfo',
         }
-        return 'https://accounts.odoo.com/oauth2/auth?' + url_encode(params)
+        return 'https://accounts.edencloud.us/oauth2/auth?' + url_encode(params)
 
     @http.route('/web/session/destroy', type='json', auth='user', readonly=True)
     def destroy(self):
         request.session.logout()
 
     @http.route('/web/session/logout', type='http', auth='none', readonly=True)
-    def logout(self, redirect='/odoo'):
+    def logout(self, redirect='/eden'):
         request.session.logout(keep_db=True)
         return request.redirect(redirect, 303)

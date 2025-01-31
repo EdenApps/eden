@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="digest_digest_view_tree" model="ir.ui.view">
         <field name="name">digest.digest.view.list</field>
         <field name="model">digest.digest</field>
@@ -154,4 +154,4 @@
         groups="base.group_erp_manager"
         sequence="81"/>
 
-</odoo>
+</eden>

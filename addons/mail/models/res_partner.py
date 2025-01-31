@@ -1,12 +1,12 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import re
 
-import odoo
-from odoo import _, api, fields, models, tools
-from odoo.osv import expression
-from odoo.tools.misc import limited_field_access_token
-from odoo.addons.mail.tools.discuss import Store
+import eden
+from eden import _, api, fields, models, tools
+from eden.osv import expression
+from eden.tools.misc import limited_field_access_token
+from eden.addons.mail.tools.discuss import Store
 
 class Partner(models.Model):
     """ Update partner to add a field about notification preferences. Add a generic opt-out field that can be used
@@ -36,10 +36,10 @@ class Partner(models.Model):
 
     def _compute_im_status(self):
         super()._compute_im_status()
-        odoobot_id = self.env['ir.model.data']._xmlid_to_res_id('base.partner_root')
-        odoobot = self.env['res.partner'].browse(odoobot_id)
-        if odoobot in self:
-            odoobot.im_status = 'bot'
+        edenbot_id = self.env['ir.model.data']._xmlid_to_res_id('base.partner_root')
+        edenbot = self.env['res.partner'].browse(edenbot_id)
+        if edenbot in self:
+            edenbot.im_status = 'bot'
 
     # pseudo computes
 

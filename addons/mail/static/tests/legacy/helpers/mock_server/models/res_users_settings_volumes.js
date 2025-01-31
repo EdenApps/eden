@@ -1,4 +1,4 @@
-/** @odoo-module alias=@mail/../tests/helpers/mock_server/models/res_users_settings_volumes default=false */
+/** @eden-module alias=@mail/../tests/helpers/mock_server/models/res_users_settings_volumes default=false */
 
 // ensure bus mock server is loaded first.
 import "@bus/../tests/helpers/mock_server";

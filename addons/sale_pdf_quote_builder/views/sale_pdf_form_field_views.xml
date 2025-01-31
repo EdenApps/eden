@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
 
     <record id="sale_pdf_form_field_list" model="ir.ui.view">
         <field name="name">sale.pdf.form.field.list</field>
@@ -35,4 +35,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

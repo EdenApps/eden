@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { rpc } from '@web/core/network/rpc';
 import { registry } from '@web/core/registry';
@@ -8,7 +8,7 @@ import { checkFileSize } from "@web/core/utils/files";
 import { humanNumber } from "@web/core/utils/numbers";
 import { getDataURLFromFile } from "@web/core/utils/urls";
 import { sprintf } from "@web/core/utils/strings";
-import { reactive } from "@odoo/owl";
+import { reactive } from "@eden/owl";
 
 export const AUTOCLOSE_DELAY = 3000;
 export const AUTOCLOSE_DELAY_LONG = 8000;

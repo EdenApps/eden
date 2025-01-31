@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
 
 <record id="event_pages_tree_view" model="ir.ui.view">
     <field name="name">Event Pages List</field>
@@ -84,4 +84,4 @@
     name="Events"
     action="action_event_pages_list"/>
 
-</odoo>
+</eden>

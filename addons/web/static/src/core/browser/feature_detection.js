@@ -48,11 +48,11 @@ export function isMobileOS() {
 }
 
 export function isIosApp() {
-    return /OdooMobile \(iOS\)/i.test(browser.navigator.userAgent);
+    return /EdenMobile \(iOS\)/i.test(browser.navigator.userAgent);
 }
 
 export function isAndroidApp() {
-    return /OdooMobile.+Android/i.test(browser.navigator.userAgent);
+    return /EdenMobile.+Android/i.test(browser.navigator.userAgent);
 }
 
 export function isDisplayStandalone() {

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "@odoo/owl";
+import { useEffect, useRef, useState } from "@eden/owl";
 import { _t } from "@web/core/l10n/translation";
 import { rpc } from "@web/core/network/rpc";
 import { KeepLast } from "@web/core/utils/concurrency";
@@ -81,7 +81,7 @@ export class ImageSelector extends FileSelector {
         this.NUMBER_OF_MEDIA_TO_DISPLAY = 10;
 
         this.uploadText = _t("Upload an image");
-        this.urlPlaceholder = "https://www.odoo.com/logo.png";
+        this.urlPlaceholder = "https://www.edencloud.us/logo.png";
         this.addText = _t("Add URL");
         this.searchPlaceholder = _t("Search an image");
         this.urlWarningTitle = _t(

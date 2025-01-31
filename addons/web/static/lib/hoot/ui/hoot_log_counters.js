@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { Component, xml } from "@odoo/owl";
+import { Component, xml } from "@eden/owl";
 
 /**
  * @typedef {{

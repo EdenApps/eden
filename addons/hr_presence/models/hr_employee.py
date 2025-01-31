@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 
 from ast import literal_eval
-from odoo import fields, models, _, api
-from odoo.exceptions import UserError
-from odoo.fields import Datetime
+from eden import fields, models, _, api
+from eden.exceptions import UserError
+from eden.fields import Datetime
 
 _logger = logging.getLogger(__name__)
 

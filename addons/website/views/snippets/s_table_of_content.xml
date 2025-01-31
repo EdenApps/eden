@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_table_of_content" name="Table of Content">
     <section class="s_table_of_content pt24 pb24 o_cc o_cc1">
@@ -56,7 +56,7 @@
                             <br/>
                             <h4 class="h5">Bootstrap-Based Templates</h4>
                             <p>
-                                Design Odoo templates easily with clean HTML and Bootstrap CSS. These templates offer a responsive, mobile-first design, making them simple to customize and perfect for any web project, from corporate sites to personal blogs.
+                                Design Eden templates easily with clean HTML and Bootstrap CSS. These templates offer a responsive, mobile-first design, making them simple to customize and perfect for any web project, from corporate sites to personal blogs.
                             </p>
                             <br/>
                             <br/>
@@ -104,4 +104,4 @@
     <field name="path">website/static/src/snippets/s_table_of_content/000.js</field>
 </record>
 
-</odoo>
+</eden>

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, _, Command
-from odoo.exceptions import UserError, ValidationError
-from odoo.osv.expression import AND, OR
-from odoo.tools import float_round
-from odoo.tools.misc import clean_context
+from eden import api, fields, models, _, Command
+from eden.exceptions import UserError, ValidationError
+from eden.osv.expression import AND, OR
+from eden.tools import float_round
+from eden.tools.misc import clean_context
 
 from collections import defaultdict
 
@@ -81,7 +81,7 @@ class MrpBom(models.Model):
         'product.template.attribute.value',
         compute='_compute_possible_product_template_attribute_value_ids')
     allow_operation_dependencies = fields.Boolean('Operation Dependencies',
-        help="Create operation level dependencies that will influence both planning and the status of work orders upon MO confirmation. If this feature is ticked, and nothing is specified, Odoo will assume that all operations can be started simultaneously."
+        help="Create operation level dependencies that will influence both planning and the status of work orders upon MO confirmation. If this feature is ticked, and nothing is specified, Eden will assume that all operations can be started simultaneously."
     )
     produce_delay = fields.Integer(
         'Manufacturing Lead Time', default=0,
@@ -590,7 +590,7 @@ class MrpBomLine(models.Model):
         'Highlight Consumption', default=False,
         readonly=False, store=True, copy=True,
         help="When activated, then the registration of consumption for that component is recorded manually exclusively.\n"
-             "If not activated, and any of the components consumption is edited manually on the manufacturing order, Odoo assumes manual consumption also.")
+             "If not activated, and any of the components consumption is edited manually on the manufacturing order, Eden assumes manual consumption also.")
 
     _sql_constraints = [
         ('bom_qty_zero', 'CHECK (product_qty>=0)', 'All product quantities must be greater or equal to 0.\n'

@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { helpers } from "@odoo/o-spreadsheet";
+import { helpers } from "@eden/o-spreadsheet";
 
 const { toUnboundedZone } = helpers;
 

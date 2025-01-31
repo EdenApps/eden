@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import fields, models
-from odoo.osv import expression
-from odoo.tools import html2plaintext
+from eden import fields, models
+from eden.osv import expression
+from eden.tools import html2plaintext
 
 
 class SurveyUserInput(models.Model):

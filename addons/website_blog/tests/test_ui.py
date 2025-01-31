@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
-from odoo.addons.website_blog.tests.common import TestWebsiteBlogCommon
+import eden.tests
+from eden.addons.website_blog.tests.common import TestWebsiteBlogCommon
 
 
-@odoo.tests.tagged('post_install', '-at_install')
-class TestWebsiteBlogUi(odoo.tests.HttpCase, TestWebsiteBlogCommon):
+@eden.tests.tagged('post_install', '-at_install')
+class TestWebsiteBlogUi(eden.tests.HttpCase, TestWebsiteBlogCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()

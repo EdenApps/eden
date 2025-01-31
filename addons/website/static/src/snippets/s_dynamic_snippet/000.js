@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import publicWidget from "@web/legacy/js/public/public_widget";
 import { rpc } from "@web/core/network/rpc";
@@ -6,7 +6,7 @@ import { uniqueId } from "@web/core/utils/functions";
 import { renderToString } from "@web/core/utils/render";
 import { listenSizeChange, utils as uiUtils } from "@web/core/ui/ui_service";
 
-import { markup } from "@odoo/owl";
+import { markup } from "@eden/owl";
 
 const DEFAULT_NUMBER_OF_ELEMENTS = 4;
 const DEFAULT_NUMBER_OF_ELEMENTS_SM = 1;
@@ -56,9 +56,9 @@ const DynamicSnippet = publicWidget.Widget.extend({
         return this._super.apply(this, arguments)
             .then(() => {
                 this._setupSizeChangedManagement(true);
-                this.options.wysiwyg && this.options.wysiwyg.odooEditor.observerUnactive();
+                this.options.wysiwyg && this.options.wysiwyg.edenEditor.observerUnactive();
                 this._render();
-                this.options.wysiwyg && this.options.wysiwyg.odooEditor.observerActive();
+                this.options.wysiwyg && this.options.wysiwyg.edenEditor.observerActive();
             });
     },
     /**
@@ -66,11 +66,11 @@ const DynamicSnippet = publicWidget.Widget.extend({
      * @override
      */
     destroy: function () {
-        this.options.wysiwyg && this.options.wysiwyg.odooEditor.observerUnactive();
+        this.options.wysiwyg && this.options.wysiwyg.edenEditor.observerUnactive();
         this._toggleVisibility(false);
         this._setupSizeChangedManagement(false);
         this._clearContent();
-        this.options.wysiwyg && this.options.wysiwyg.odooEditor.observerActive();
+        this.options.wysiwyg && this.options.wysiwyg.edenEditor.observerActive();
         this._super.apply(this, arguments);
     },
 

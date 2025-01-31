@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_mockup_image" name="Mockup Image">
     <section class="s_mockup_image o_cc o_cc1 pt72 pb72" data-oe-shape-data="{'shape':'web_editor/Wavy/11', 'colors':{'c1': '#2D3142', 'c4': '#FFFFFF'}, 'showOnMobile':true}">
@@ -20,4 +20,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

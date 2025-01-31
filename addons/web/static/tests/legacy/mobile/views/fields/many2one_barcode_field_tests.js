@@ -1,4 +1,4 @@
-/** @odoo-module alias=@web/../tests/mobile/views/fields/many2one_barcode_field_tests default=false */
+/** @eden-module alias=@web/../tests/mobile/views/fields/many2one_barcode_field_tests default=false */
 
 import { AutoComplete } from "@web/core/autocomplete/autocomplete";
 import { browser } from "@web/core/browser/browser";
@@ -90,7 +90,7 @@ QUnit.module("Fields", (hooks) => {
             Object.assign({}, browser, {
                 setTimeout: (fn) => fn(),
                 navigator: {
-                    userAgent: "Chrome/0.0.0 (Linux; Android 13; Odoo TestSuite)",
+                    userAgent: "Chrome/0.0.0 (Linux; Android 13; Eden TestSuite)",
                     mediaDevices: {
                         getUserMedia: () => [],
                     },

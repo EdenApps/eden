@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <!--deprecated as of saas-14.3-->
     <record id="lead_creation_prefilled_action" model="ir.actions.server">
       <field name="name">Redirection to the lead creation form with prefilled info</field>
@@ -7,4 +7,4 @@
       <field name="state">code</field>
       <field name="code">action = model._form_view_auto_fill()</field>
     </record>
-</odoo>
+</eden>

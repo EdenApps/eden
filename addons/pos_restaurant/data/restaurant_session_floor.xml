@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <function model="restaurant.floor" name="unlink">
             <value model="restaurant.floor" eval="obj().search([
@@ -650,4 +650,4 @@
         <function model="pos.session" name="_set_last_order_preparation_change"
             eval="[[ref('pos_open_order_2'), ref('pos_open_order_3'), ref('pos_open_order_4')]]"/>
     </data>
-</odoo>
+</eden>

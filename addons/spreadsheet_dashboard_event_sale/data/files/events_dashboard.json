@@ -43,10 +43,10 @@
       "merges": [],
       "cells": {
         "A7": {
-          "content": "[Events Status](odoo://view/{\"viewType\":\"graph\",\"action\":{\"domain\":[],\"context\":{\"group_by\":[\"stage_id\"],\"graph_measure\":\"__count\",\"graph_mode\":\"bar\",\"graph_groupbys\":[\"stage_id\"]},\"modelName\":\"event.event\",\"views\":[[false,\"kanban\"],[false,\"calendar\"],[false,\"list\"],[false,\"form\"],[false,\"pivot\"],[false,\"graph\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Events\"})"
+          "content": "[Events Status](eden://view/{\"viewType\":\"graph\",\"action\":{\"domain\":[],\"context\":{\"group_by\":[\"stage_id\"],\"graph_measure\":\"__count\",\"graph_mode\":\"bar\",\"graph_groupbys\":[\"stage_id\"]},\"modelName\":\"event.event\",\"views\":[[false,\"kanban\"],[false,\"calendar\"],[false,\"list\"],[false,\"form\"],[false,\"pivot\"],[false,\"graph\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Events\"})"
         },
         "A23": {
-          "content": "[Top Venues](odoo://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[[\"address_id\",\"!=\",false]],\"context\":{\"group_by\":[\"address_id\"],\"pivot_measures\":[\"__count\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"address_id\"]},\"modelName\":\"event.event\",\"views\":[[false,\"kanban\"],[false,\"calendar\"],[false,\"list\"],[false,\"form\"],[false,\"pivot\"],[false,\"graph\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Events\"})"
+          "content": "[Top Venues](eden://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[[\"address_id\",\"!=\",false]],\"context\":{\"group_by\":[\"address_id\"],\"pivot_measures\":[\"__count\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"address_id\"]},\"modelName\":\"event.event\",\"views\":[[false,\"kanban\"],[false,\"calendar\"],[false,\"list\"],[false,\"form\"],[false,\"pivot\"],[false,\"graph\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Events\"})"
         },
         "A24": { "content": "=_t(\"Venue\")" },
         "A25": { "content": "=PIVOT.HEADER(1,\"#address_id\",1)" },
@@ -60,7 +60,7 @@
         "A33": { "content": "=PIVOT.HEADER(1,\"#address_id\",9)" },
         "A34": { "content": "=PIVOT.HEADER(1,\"#address_id\",10)" },
         "A36": {
-          "content": "[Top Tags](odoo://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[[\"tag_ids\",\"!=\",false]],\"context\":{\"group_by\":[\"tag_ids\"],\"pivot_measures\":[\"__count\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"tag_ids\"]},\"modelName\":\"event.event\",\"views\":[[false,\"kanban\"],[false,\"calendar\"],[false,\"list\"],[false,\"form\"],[false,\"pivot\"],[false,\"graph\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Events\"})"
+          "content": "[Top Tags](eden://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[[\"tag_ids\",\"!=\",false]],\"context\":{\"group_by\":[\"tag_ids\"],\"pivot_measures\":[\"__count\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"tag_ids\"]},\"modelName\":\"event.event\",\"views\":[[false,\"kanban\"],[false,\"calendar\"],[false,\"list\"],[false,\"form\"],[false,\"pivot\"],[false,\"graph\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Events\"})"
         },
         "A37": { "content": "=_t(\"Tag\")" },
         "A38": { "content": "=PIVOT.HEADER(3,\"#tag_ids\",1)" },
@@ -96,10 +96,10 @@
         "B46": { "content": "=PIVOT.VALUE(3,\"__count\",\"#tag_ids\",9)" },
         "B47": { "content": "=PIVOT.VALUE(3,\"__count\",\"#tag_ids\",10)" },
         "D7": {
-          "content": "[Registration Status](odoo://view/{\"viewType\":\"graph\",\"action\":{\"domain\":[],\"context\":{\"group_by\":[\"state\"],\"graph_measure\":\"__count\",\"graph_mode\":\"bar\",\"graph_groupbys\":[\"state\"]},\"modelName\":\"event.registration\",\"views\":[[false,\"graph\"],[false,\"pivot\"],[false,\"kanban\"],[false,\"list\"],[false,\"form\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Attendees\"})"
+          "content": "[Registration Status](eden://view/{\"viewType\":\"graph\",\"action\":{\"domain\":[],\"context\":{\"group_by\":[\"state\"],\"graph_measure\":\"__count\",\"graph_mode\":\"bar\",\"graph_groupbys\":[\"state\"]},\"modelName\":\"event.registration\",\"views\":[[false,\"graph\"],[false,\"pivot\"],[false,\"kanban\"],[false,\"list\"],[false,\"form\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Attendees\"})"
         },
         "D23": {
-          "content": "[Top Templates](odoo://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[[\"event_type_id\",\"!=\",false]],\"context\":{\"group_by\":[\"event_type_id\"],\"pivot_measures\":[\"__count\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"event_type_id\"]},\"modelName\":\"event.event\",\"views\":[[false,\"kanban\"],[false,\"calendar\"],[false,\"list\"],[false,\"form\"],[false,\"pivot\"],[false,\"graph\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Events\"})"
+          "content": "[Top Templates](eden://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[[\"event_type_id\",\"!=\",false]],\"context\":{\"group_by\":[\"event_type_id\"],\"pivot_measures\":[\"__count\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"event_type_id\"]},\"modelName\":\"event.event\",\"views\":[[false,\"kanban\"],[false,\"calendar\"],[false,\"list\"],[false,\"form\"],[false,\"pivot\"],[false,\"graph\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Events\"})"
         },
         "D24": { "content": "=_t(\"Template\")" },
         "D25": { "content": "=PIVOT.HEADER(2,\"#event_type_id\",1)" },
@@ -113,7 +113,7 @@
         "D33": { "content": "=PIVOT.HEADER(2,\"#event_type_id\",9)" },
         "D34": { "content": "=PIVOT.HEADER(2,\"#event_type_id\",10)" },
         "D36": {
-          "content": "[Top Organizers](odoo://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[[\"organizer_id\",\"!=\",false]],\"context\":{\"group_by\":[\"organizer_id\"],\"pivot_measures\":[\"__count\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"organizer_id\"]},\"modelName\":\"event.event\",\"views\":[[false,\"kanban\"],[false,\"calendar\"],[false,\"list\"],[false,\"form\"],[false,\"pivot\"],[false,\"graph\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Events\"})"
+          "content": "[Top Organizers](eden://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[[\"organizer_id\",\"!=\",false]],\"context\":{\"group_by\":[\"organizer_id\"],\"pivot_measures\":[\"__count\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"organizer_id\"]},\"modelName\":\"event.event\",\"views\":[[false,\"kanban\"],[false,\"calendar\"],[false,\"list\"],[false,\"form\"],[false,\"pivot\"],[false,\"graph\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Events\"})"
         },
         "D37": { "content": "=_t(\"Organizer\")" },
         "D38": { "content": "=PIVOT.HEADER(4,\"#organizer_id\",1)" },
@@ -290,7 +290,7 @@
               "groupBy": ["state"],
               "orderBy": []
             },
-            "type": "odoo_bar",
+            "type": "eden_bar",
             "verticalAxisPosition": "left",
             "stacked": true,
             "fieldMatching": {
@@ -343,7 +343,7 @@
               "groupBy": ["stage_id"],
               "orderBy": []
             },
-            "type": "odoo_bar",
+            "type": "eden_bar",
             "verticalAxisPosition": "left",
             "stacked": true,
             "fieldMatching": {
@@ -541,7 +541,7 @@
   },
   "pivots": {
     "1": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "f849aaa6-4c1a-43f6-9c0b-7a5ea9c83eae": {
           "chain": "date_begin",
@@ -581,7 +581,7 @@
       "rows": [{ "fieldName": "address_id" }]
     },
     "2": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "f849aaa6-4c1a-43f6-9c0b-7a5ea9c83eae": {
           "chain": "date_begin",
@@ -621,7 +621,7 @@
       "rows": [{ "fieldName": "event_type_id" }]
     },
     "3": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "f849aaa6-4c1a-43f6-9c0b-7a5ea9c83eae": {
           "chain": "date_begin",
@@ -661,7 +661,7 @@
       "rows": [{ "fieldName": "tag_ids" }]
     },
     "4": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "f849aaa6-4c1a-43f6-9c0b-7a5ea9c83eae": {
           "chain": "date_begin",
@@ -701,7 +701,7 @@
       "rows": [{ "fieldName": "organizer_id" }]
     },
     "5": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "f849aaa6-4c1a-43f6-9c0b-7a5ea9c83eae": {
           "chain": "event_begin_date",
@@ -737,7 +737,7 @@
       "rows": []
     },
     "6": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "f849aaa6-4c1a-43f6-9c0b-7a5ea9c83eae": {
           "chain": "event_begin_date",
@@ -773,7 +773,7 @@
       "rows": []
     },
     "7": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "f849aaa6-4c1a-43f6-9c0b-7a5ea9c83eae": {
           "chain": "event_date_begin",
@@ -813,7 +813,7 @@
       "rows": []
     },
     "8": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "f849aaa6-4c1a-43f6-9c0b-7a5ea9c83eae": {
           "chain": "event_date_begin",
@@ -855,7 +855,7 @@
       "rows": []
     },
     "9": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "f849aaa6-4c1a-43f6-9c0b-7a5ea9c83eae": {
           "chain": "date_begin",
@@ -891,7 +891,7 @@
       "rows": []
     },
     "10": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "f849aaa6-4c1a-43f6-9c0b-7a5ea9c83eae": {
           "chain": "date_begin",
@@ -929,7 +929,7 @@
   },
   "pivotNextId": 11,
   "customTableStyles": {},
-  "odooVersion": 12,
+  "edenVersion": 12,
   "globalFilters": [
     {
       "id": "f849aaa6-4c1a-43f6-9c0b-7a5ea9c83eae",
@@ -977,7 +977,7 @@
   ],
   "lists": {},
   "listNextId": 1,
-  "chartOdooMenusReferences": {
+  "chartEdenMenusReferences": {
     "d9898682-9b91-4fe2-9900-a4b2583eb459": "event.event_main_menu",
     "092dd971-dc10-41c5-96c4-d760820e9cf2": "event.event_main_menu",
     "18361546-49c2-4212-88eb-b2ee50127d41": "event.menu_event_event",

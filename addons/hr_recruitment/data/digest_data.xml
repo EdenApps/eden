@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<odoo>
+<eden>
     <data noupdate="1">
         <record id="digest.digest_digest_default" model="digest.digest">
             <field name="kpi_hr_recruitment_new_colleagues">True</field>
@@ -25,4 +25,4 @@
             </field>
         </record>
     </data>
-</odoo>
+</eden>

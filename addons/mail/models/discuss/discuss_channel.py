@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import base64
 from collections import defaultdict
@@ -7,12 +7,12 @@ from secrets import choice
 from markupsafe import Markup
 from datetime import timedelta
 
-from odoo import _, api, fields, models, tools, Command
-from odoo.addons.base.models.avatar_mixin import get_hsl_from_seed
-from odoo.addons.mail.tools.discuss import Store
-from odoo.exceptions import AccessError, UserError, ValidationError
-from odoo.osv import expression
-from odoo.tools import format_list, get_lang, html_escape
+from eden import _, api, fields, models, tools, Command
+from eden.addons.base.models.avatar_mixin import get_hsl_from_seed
+from eden.addons.mail.tools.discuss import Store
+from eden.exceptions import AccessError, UserError, ValidationError
+from eden.osv import expression
+from eden.tools import format_list, get_lang, html_escape
 
 channel_avatar = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 530.06 530.06">
 <circle cx="265.03" cy="265.03" r="265.03" fill="#875a7b"/>

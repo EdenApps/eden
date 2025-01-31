@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 import {
     click,
     fill,
@@ -11,9 +11,9 @@ import {
     select,
     waitFor,
     waitUntil,
-} from "@odoo/hoot-dom";
-import { animationFrame, tick } from "@odoo/hoot-mock";
-import { markup } from "@odoo/owl";
+} from "@eden/hoot-dom";
+import { animationFrame, tick } from "@eden/hoot-mock";
+import { markup } from "@eden/owl";
 import { contains, onRpc, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { setupEditor } from "../_helpers/editor";
 import { cleanLinkArtifacts } from "../_helpers/format";
@@ -213,9 +213,9 @@ describe("Link creation", () => {
         });
         test("typing invalid URL + space should not convert to link", async () => {
             const { editor, el } = await setupEditor("<p>[]</p>");
-            await insertText(editor, "www.odoo");
+            await insertText(editor, "www.eden");
             await insertText(editor, " ");
-            expect(cleanLinkArtifacts(getContent(el))).toBe("<p>www.odoo []</p>");
+            expect(cleanLinkArtifacts(getContent(el))).toBe("<p>www.eden []</p>");
         });
     });
     describe("Creation by powerbox", () => {
@@ -648,13 +648,13 @@ describe("link preview", () => {
                 link_preview_name: "Task name | Project name",
             };
         });
-        onRpc("/odoo/project/1/tasks/8", () => new Response("", { status: 200 }));
+        onRpc("/eden/project/1/tasks/8", () => new Response("", { status: 200 }));
         const { editor, el } = await setupEditor(`<p>[]</p>`);
         await insertText(editor, "/link");
         await animationFrame();
         await click(".o-we-command-name:first");
         await contains(".o-we-linkpopover input.o_we_href_input_link").fill(
-            window.location.origin + "/odoo/project/1/tasks/8"
+            window.location.origin + "/eden/project/1/tasks/8"
         );
         await animationFrame();
         expect(".o_we_replace_title_btn").toHaveCount(1);
@@ -671,25 +671,25 @@ describe("link preview", () => {
         onRpc("/html_editor/link_preview_external", () => {
             return {
                 og_description:
-                    "From ERP to CRM, eCommerce and CMS. Download Odoo or use it in the cloud. Grow Your Business.",
-                og_image: "https://www.odoo.com/web/image/41207129-1abe7a15/homepage-seo.png",
-                og_title: "Open Source ERP and CRM | Odoo",
+                    "From ERP to CRM, eCommerce and CMS. Download Eden or use it in the cloud. Grow Your Business.",
+                og_image: "https://www.edencloud.us/web/image/41207129-1abe7a15/homepage-seo.png",
+                og_title: "Open Source ERP and CRM | Eden",
                 og_type: "website",
-                og_site_name: "Odoo",
-                source_url: "http://odoo.com/",
+                og_site_name: "Eden",
+                source_url: "http://edencloud.us/",
             };
         });
         const { editor } = await setupEditor(`<p>[]</p>`);
         await insertText(editor, "/link");
         await animationFrame();
         await click(".o-we-command-name:first");
-        await contains(".o-we-linkpopover input.o_we_href_input_link").fill("http://odoo.com/");
+        await contains(".o-we-linkpopover input.o_we_href_input_link").fill("http://edencloud.us/");
         await animationFrame();
         expect(".o_we_replace_title_btn").toHaveCount(1);
         expect(".o_extra_info_card").toHaveCount(1);
-        expect(".o_we_url_link").toHaveText("Open Source ERP and CRM | Odoo");
+        expect(".o_we_url_link").toHaveText("Open Source ERP and CRM | Eden");
         expect(".o_we_description_link_preview").toHaveText(
-            "From ERP to CRM, eCommerce and CMS. Download Odoo or use it in the cloud. Grow Your Business."
+            "From ERP to CRM, eCommerce and CMS. Download Eden or use it in the cloud. Grow Your Business."
         );
     });
     test("test internal metadata cached correctly", async () => {
@@ -700,13 +700,13 @@ describe("link preview", () => {
                 link_preview_name: "Task name | Project name",
             };
         });
-        onRpc("/odoo/cachetest/8", () => new Response("", { status: 200 }));
+        onRpc("/eden/cachetest/8", () => new Response("", { status: 200 }));
         const { editor } = await setupEditor(`<p>abc[]</p>`);
         await insertText(editor, "/link");
         await animationFrame();
         await click(".o-we-command-name:first");
         await contains(".o-we-linkpopover input.o_we_href_input_link").fill(
-            window.location.origin + "/odoo/cachetest/8"
+            window.location.origin + "/eden/cachetest/8"
         );
         await animationFrame();
         expect.verifySteps(["/html_editor/link_preview_internal"]);
@@ -736,22 +736,22 @@ describe("link preview", () => {
             expect.step("/html_editor/link_preview_external");
             return {
                 og_description:
-                    "From ERP to CRM, eCommerce and CMS. Download Odoo or use it in the cloud. Grow Your Business.",
-                og_image: "https://www.odoo.com/web/image/41207129-1abe7a15/homepage-seo.png",
-                og_title: "Open Source ERP and CRM | Odoo",
+                    "From ERP to CRM, eCommerce and CMS. Download Eden or use it in the cloud. Grow Your Business.",
+                og_image: "https://www.edencloud.us/web/image/41207129-1abe7a15/homepage-seo.png",
+                og_title: "Open Source ERP and CRM | Eden",
                 og_type: "website",
-                og_site_name: "Odoo",
-                source_url: "http://odoo.com/",
+                og_site_name: "Eden",
+                source_url: "http://edencloud.us/",
             };
         });
         const { editor } = await setupEditor(`<p>[]</p>`);
         await insertText(editor, "/link");
         await animationFrame();
         await click(".o-we-command-name:first");
-        await contains(".o-we-linkpopover input.o_we_href_input_link").fill("http://odoo.com/");
+        await contains(".o-we-linkpopover input.o_we_href_input_link").fill("http://edencloud.us/");
         await animationFrame();
         expect.verifySteps(["/html_editor/link_preview_external"]);
-        expect(".o_we_url_link").toHaveText("Open Source ERP and CRM | Odoo");
+        expect(".o_we_url_link").toHaveText("Open Source ERP and CRM | Eden");
 
         const pNode = queryOne("p");
         setSelection({

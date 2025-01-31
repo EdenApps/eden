@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="event_lead_rule_view_tree" model="ir.ui.view">
         <field name="name">event.lead.rule.view.list.inherit.event.crm.sale</field>
         <field name="model">event.lead.rule</field>
@@ -20,4 +20,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</eden>

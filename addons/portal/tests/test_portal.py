@@ -1,8 +1,8 @@
 from datetime import datetime, timedelta
 
-from odoo import Command
-from odoo.http import Request
-from odoo.tests.common import HttpCase, tagged
+from eden import Command
+from eden.http import Request
+from eden.tests.common import HttpCase, tagged
 
 
 @tagged('-at_install', 'post_install')

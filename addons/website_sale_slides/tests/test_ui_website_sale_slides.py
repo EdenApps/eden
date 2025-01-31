@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, tests
-from odoo.addons.website_slides.tests import test_ui_wslides
+from eden import fields, tests
+from eden.addons.website_slides.tests import test_ui_wslides
 
 
 @tests.common.tagged('post_install', '-at_install')

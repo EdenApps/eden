@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
-<odoo><data>
+<eden><data>
 
 <!-- Channels home template -->
-<template id='courses_home' name="Odoo Courses Homepage">
+<template id='courses_home' name="Eden Courses Homepage">
     <t t-set="body_classname" t-value="'o_wslides_body'"/>
     <t t-call="website.layout">
         <div id="wrap" class="wrap o_wslides_wrap">
@@ -170,7 +170,7 @@
 </template>
 
 <!-- Channel all/main template -->
-<template id='courses_all' name="Odoo All Courses">
+<template id='courses_all' name="Eden All Courses">
     <t t-set="body_classname" t-value="'o_wslides_body'"/>
     <t t-call="website.layout">
         <div id="wrap" class="wrap o_wslides_wrap">
@@ -520,4 +520,4 @@
         t-att-src="'/profile/avatar/%s?field=avatar_128' % user.id"
         t-att-alt="user.name"/>
 </template>
-</data></odoo>
+</data></eden>

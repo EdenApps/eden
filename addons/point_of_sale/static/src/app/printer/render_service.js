@@ -1,7 +1,7 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { registry } from "@web/core/registry";
-import { Component, onRendered, reactive, useRef, xml } from "@odoo/owl";
+import { Component, onRendered, reactive, useRef, xml } from "@eden/owl";
 import { toCanvas } from "@point_of_sale/app/utils/html-to-image";
 
 export class RenderContainer extends Component {

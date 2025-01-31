@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_wavy_grid" name="Wavy Grid">
     <section class="s_wavy_grid pt32 pb32" data-oe-shape-data="{'shape':'web_editor/Bold/06_001','flip':[],'showOnMobile':false,'shapeAnimationSpeed':'0'}" style="position: relative;">
@@ -42,4 +42,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
          <record id="slide_template_published" model="mail.template">
             <field name="name">Elearning: New Course Content Notification</field>
@@ -171,4 +171,4 @@
             <field name="auto_delete" eval="True"/>
         </record>
     </data>
-</odoo>
+</eden>

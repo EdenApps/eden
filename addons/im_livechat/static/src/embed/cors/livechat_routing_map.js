@@ -4,7 +4,7 @@ import { registry } from "@web/core/registry";
  * This routing map is used to redirect the requests made by the livechat to
  * dedicated CORS-allowed routes. Every route expected to be called by the
  * livechat should be added here. Note that this will only be used if the
- * livechat is loaded from a different origin than the Odoo server.
+ * livechat is loaded from a different origin than the Eden server.
  *
  * @see /im_livechat/embed/cors/boot.js
  */

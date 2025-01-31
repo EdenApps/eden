@@ -7,7 +7,7 @@ import {
     startServer,
 } from "@mail/../tests/mail_test_helpers";
 
-import { describe, test } from "@odoo/hoot";
+import { describe, test } from "@eden/hoot";
 
 describe.current.tags("desktop");
 defineMailModels();

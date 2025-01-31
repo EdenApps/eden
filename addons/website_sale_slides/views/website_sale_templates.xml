@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<odoo><data>
+<eden><data>
 
 <template id="website_sale_confirmation_slide" inherit_id="website_sale.confirmation">
     <xpath expr="//div[@id='oe_structure_website_sale_confirmation_2']" position="after">
@@ -53,4 +53,4 @@
     </xpath>
 </template>
 
-</data></odoo>
+</data></eden>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="action_report_purchase_requisitions" model="ir.actions.report">
         <field name="name">Purchase Agreements</field>
         <field name="model">purchase.requisition</field>
@@ -10,4 +10,4 @@
         <field name="binding_model_id" ref="model_purchase_requisition"/>
         <field name="binding_type">report</field>
     </record>
-</odoo>
+</eden>

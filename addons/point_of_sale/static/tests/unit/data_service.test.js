@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@eden/hoot";
 import { defineModels, makeMockEnv, models } from "@web/../tests/web_test_helpers";
 import { RPCError } from "@web/core/network/rpc";
 
@@ -119,7 +119,7 @@ class ResPartner extends models.ServerModel {
     _name = "res.partner";
     create() {
         const error = new RPCError();
-        error.exceptionName = "odoo.exceptions.ValidationError";
+        error.exceptionName = "eden.exceptions.ValidationError";
         error.code = 200;
         error.message = "ValidationError";
         error.data = {

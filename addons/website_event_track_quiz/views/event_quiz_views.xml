@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="event_quiz_view_search" model="ir.ui.view">
         <field name="name">event.quiz.view.search</field>
         <field name="model">event.quiz</field>
@@ -72,4 +72,4 @@
             </p>
         </field>
     </record>
-</odoo>
+</eden>

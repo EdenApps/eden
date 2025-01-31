@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <template id="slide_content_detailed" inherit_id="website_slides.slide_content_detailed">
             <xpath expr="//div[hasclass('o_wslides_lesson_content_type')]" position="inside">
@@ -21,7 +21,7 @@
                     </a>
                 </div>
                 <div t-if="slide.slide_category == 'certification' and slide.channel_id.can_upload" class="col mb8 d-flex justify-content-center">
-                    <a class="my-4" t-att-href="'/odoo/survey.survey/' + str(slide.survey_id.id)">
+                    <a class="my-4" t-att-href="'/eden/survey.survey/' + str(slide.survey_id.id)">
                         <i class="oi oi-arrow-right me-1"/>Add Questions to this Survey
                     </a>
                 </div>
@@ -43,4 +43,4 @@
             </xpath>
         </template>
     </data>
-</odoo>
+</eden>

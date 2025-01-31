@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <!-- We want to activate product variant by default for easier demoing. -->
         <record id="base.group_user" model="res.groups">
@@ -696,4 +696,4 @@
 
         <function model="product.template" name="_demo_configure_variants"/>
     </data>
-</odoo>
+</eden>

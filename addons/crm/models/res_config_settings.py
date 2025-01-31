@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import timedelta
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, exceptions, fields, models, _
-from odoo.tools import format_list
+from eden import api, exceptions, fields, models, _
+from eden.tools import format_list
 
 
 class ResConfigSettings(models.TransientModel):

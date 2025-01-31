@@ -1,4 +1,4 @@
-import { Component, useEffect, useRef, useState } from "@odoo/owl";
+import { Component, useEffect, useRef, useState } from "@eden/owl";
 
 export class Dropzone extends Component {
     static props = {

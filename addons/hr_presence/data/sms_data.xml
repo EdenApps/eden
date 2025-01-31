@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<odoo>
+<eden>
     <data noupdate="1">
         <record id="sms_template_data_hr_presence" model="sms.template">
             <field name="name">Employee: Presence Reminder</field>
@@ -7,4 +7,4 @@
             <field name="body">Hi, we noticed you're not at work and no time-off was submitted. If this is an oversight from us, we apologize. Please contact your manager or HR ASAP. Thanks</field>
         </record>
     </data>
-</odoo>
+</eden>

@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { press } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@eden/hoot";
+import { press } from "@eden/hoot-dom";
 import { setupEditor } from "./_helpers/editor";
 
 describe("range collapsed", () => {
@@ -22,26 +22,26 @@ describe("range collapsed", () => {
 });
 
 describe("range not collapsed", () => {
-    test("should copy a selection as text/plain, text/html and application/vnd.odoo.odoo-editor only text", async () => {
+    test("should copy a selection as text/plain, text/html and application/vnd.eden.eden-editor only text", async () => {
         await setupEditor("<p>a[bcd]e</p>");
         const clipboardData = new DataTransfer();
         await press(["ctrl", "c"], { dataTransfer: clipboardData });
         expect(clipboardData.getData("text/plain")).toBe("bcd");
         expect(clipboardData.getData("text/html")).toBe("<p>bcd</p>");
-        expect(clipboardData.getData("application/vnd.odoo.odoo-editor")).toBe("<p>bcd</p>");
+        expect(clipboardData.getData("application/vnd.eden.eden-editor")).toBe("<p>bcd</p>");
     });
 
-    test("should copy a selection as text/plain, text/html and application/vnd.odoo.odoo-editor with a <br>", async () => {
+    test("should copy a selection as text/plain, text/html and application/vnd.eden.eden-editor with a <br>", async () => {
         await setupEditor("<p>[abc<br>efg]</p>");
         const clipboardData = new DataTransfer();
         await press(["ctrl", "c"], { dataTransfer: clipboardData });
         expect(clipboardData.getData("text/plain")).toBe("abc\nefg");
         expect(clipboardData.getData("text/html")).toBe("<p>abc<br>efg</p>");
-        expect(clipboardData.getData("application/vnd.odoo.odoo-editor")).toBe("<p>abc<br>efg</p>");
+        expect(clipboardData.getData("application/vnd.eden.eden-editor")).toBe("<p>abc<br>efg</p>");
     });
 
     test.tags("focus required");
-    test("should copy a selection as text/plain, text/html and application/vnd.odoo.odoo-editor in table", async () => {
+    test("should copy a selection as text/plain, text/html and application/vnd.eden.eden-editor in table", async () => {
         await setupEditor(
             `]<table><tbody><tr><td><ul><li>a[</li><li>b</li><li>c</li></ul></td><td><br></td></tr></tbody></table>`
         );
@@ -51,12 +51,12 @@ describe("range not collapsed", () => {
         expect(clipboardData.getData("text/html")).toBe(
             "<table><tbody><tr><td><ul><li>a</li><li>b</li><li>c</li></ul></td><td><br></td></tr></tbody></table>"
         );
-        expect(clipboardData.getData("application/vnd.odoo.odoo-editor")).toBe(
+        expect(clipboardData.getData("application/vnd.eden.eden-editor")).toBe(
             "<table><tbody><tr><td><ul><li>a</li><li>b</li><li>c</li></ul></td><td><br></td></tr></tbody></table>"
         );
     });
 
-    test("should copy a selection as text/html and application/vnd.odoo.odoo-editor in table", async () => {
+    test("should copy a selection as text/html and application/vnd.eden.eden-editor in table", async () => {
         await setupEditor(
             "<p>[abcd</p><table><tbody><tr><td><br></td><td><br></td></tr></tbody></table>]"
         );
@@ -65,7 +65,7 @@ describe("range not collapsed", () => {
         expect(clipboardData.getData("text/html")).toBe(
             "<p>abcd</p><table><tbody><tr><td><br></td><td><br></td></tr></tbody></table>"
         );
-        expect(clipboardData.getData("application/vnd.odoo.odoo-editor")).toBe(
+        expect(clipboardData.getData("application/vnd.eden.eden-editor")).toBe(
             "<p>abcd</p><table><tbody><tr><td><br></td><td><br></td></tr></tbody></table>"
         );
     });
@@ -80,7 +80,7 @@ describe("range not collapsed", () => {
         expect(clipboardData.getData("text/html")).toBe(
             '<p><span style="font-size: 16px;">Test</span> <span style="font-size: 48px;"><font style="color: rgb(255, 0, 0);">Test</font></span></p>'
         );
-        expect(clipboardData.getData("application/vnd.odoo.odoo-editor")).toBe(
+        expect(clipboardData.getData("application/vnd.eden.eden-editor")).toBe(
             '<p><span style="font-size: 16px;">Test</span> <span style="font-size: 48px;"><font style="color: rgb(255, 0, 0);">Test</font></span></p>'
         );
     });
@@ -95,7 +95,7 @@ describe("range not collapsed", () => {
         expect(clipboardData.getData("text/html")).toBe(
             '<p><strong><em><u><font class="text-o-color-1">there</font></u></em></strong></p>'
         );
-        expect(clipboardData.getData("application/vnd.odoo.odoo-editor")).toBe(
+        expect(clipboardData.getData("application/vnd.eden.eden-editor")).toBe(
             '<p><strong><em><u><font class="text-o-color-1">there</font></u></em></strong></p>'
         );
     });
@@ -106,7 +106,7 @@ describe("range not collapsed", () => {
         await press(["ctrl", "c"], { dataTransfer: clipboardData });
         expect(clipboardData.getData("text/plain")).toBe("First");
         expect(clipboardData.getData("text/html")).toBe("First");
-        expect(clipboardData.getData("application/vnd.odoo.odoo-editor")).toBe("First");
+        expect(clipboardData.getData("application/vnd.eden.eden-editor")).toBe("First");
     });
 
     test("should copy the selection as a single list item (2)", async () => {
@@ -115,7 +115,7 @@ describe("range not collapsed", () => {
         await press(["ctrl", "c"], { dataTransfer: clipboardData });
         expect(clipboardData.getData("text/plain")).toBe("List");
         expect(clipboardData.getData("text/html")).toBe("List");
-        expect(clipboardData.getData("application/vnd.odoo.odoo-editor")).toBe("List");
+        expect(clipboardData.getData("application/vnd.eden.eden-editor")).toBe("List");
     });
 
     test("should copy the selection as a single list item (3)", async () => {
@@ -128,7 +128,7 @@ describe("range not collapsed", () => {
         expect(clipboardData.getData("text/html")).toBe(
             '<span style="font-size: 48px;"><font style="color: rgb(255, 0, 0);">First</font></span>'
         );
-        expect(clipboardData.getData("application/vnd.odoo.odoo-editor")).toBe(
+        expect(clipboardData.getData("application/vnd.eden.eden-editor")).toBe(
             '<span style="font-size: 48px;"><font style="color: rgb(255, 0, 0);">First</font></span>'
         );
     });
@@ -139,7 +139,7 @@ describe("range not collapsed", () => {
         await press(["ctrl", "c"], { dataTransfer: clipboardData });
         expect(clipboardData.getData("text/plain")).toBe("First\nSecond");
         expect(clipboardData.getData("text/html")).toBe("<ul><li>First</li><li>Second</li></ul>");
-        expect(clipboardData.getData("application/vnd.odoo.odoo-editor")).toBe(
+        expect(clipboardData.getData("application/vnd.eden.eden-editor")).toBe(
             "<ul><li>First</li><li>Second</li></ul>"
         );
     });
@@ -152,7 +152,7 @@ describe("range not collapsed", () => {
         expect(clipboardData.getData("text/html")).toBe(
             '<p><a href="http://test.com/">label</a></p>'
         );
-        expect(clipboardData.getData("application/vnd.odoo.odoo-editor")).toBe(
+        expect(clipboardData.getData("application/vnd.eden.eden-editor")).toBe(
             '<p><a href="http://test.com/">label</a></p>'
         );
     });

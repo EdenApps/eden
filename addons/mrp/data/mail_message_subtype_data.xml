@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<eden noupdate="1">
     <!-- new state-related subtypes-->
     <record id="mrp_mo_in_confirmed" model="mail.message.subtype">
         <field name="name">MO Confirmed</field>
@@ -36,4 +36,4 @@
         <field name="sequence" eval="105"/>
         <field name="description">MO Cancelled</field>
     </record>
-</odoo>
+</eden>

@@ -1,16 +1,16 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 import logging
 import psycopg2
 
-import odoo.exceptions
-import odoo.modules.registry
-from odoo import http
-from odoo.exceptions import AccessError
-from odoo.http import request
-from odoo.service import security
-from odoo.tools.translate import _
+import eden.exceptions
+import eden.modules.registry
+from eden import http
+from eden.exceptions import AccessError
+from eden.http import request
+from eden.service import security
+from eden.tools.translate import _
 from .utils import (
     ensure_db,
     _get_login_redirect_url,
@@ -35,13 +35,13 @@ class Home(http.Controller):
     def index(self, s_action=None, db=None, **kw):
         if request.db and request.session.uid and not is_user_internal(request.session.uid):
             return request.redirect_query('/web/login_successful', query=request.params)
-        return request.redirect_query('/odoo', query=request.params)
+        return request.redirect_query('/eden', query=request.params)
 
     def _web_client_readonly(self):
         return False
 
     # ideally, this route should be `auth="user"` but that don't work in non-monodb mode.
-    @http.route(['/web', '/odoo', '/odoo/<path:subpath>', '/scoped_app/<path:subpath>'], type='http', auth="none", readonly=_web_client_readonly)
+    @http.route(['/web', '/eden', '/eden/<path:subpath>', '/scoped_app/<path:subpath>'], type='http', auth="none", readonly=_web_client_readonly)
     def web_client(self, s_action=None, **kw):
 
         # Ensure we have both a database and a user
@@ -114,7 +114,7 @@ class Home(http.Controller):
         values = {k: v for k, v in request.params.items() if k in SIGN_UP_REQUEST_PARAMS}
         try:
             values['databases'] = http.db_list()
-        except odoo.exceptions.AccessDenied:
+        except eden.exceptions.AccessDenied:
             values['databases'] = None
 
         if request.httprequest.method == 'POST':
@@ -124,8 +124,8 @@ class Home(http.Controller):
                 auth_info = request.session.authenticate(request.db, credential)
                 request.params['login_success'] = True
                 return request.redirect(self._login_redirect(auth_info['uid'], redirect=redirect))
-            except odoo.exceptions.AccessDenied as e:
-                if e.args == odoo.exceptions.AccessDenied().args:
+            except eden.exceptions.AccessDenied as e:
+                if e.args == eden.exceptions.AccessDenied().args:
                     values['error'] = _("Wrong login/password")
                 else:
                     values['error'] = e.args[0]
@@ -136,7 +136,7 @@ class Home(http.Controller):
         if 'login' not in values and request.session.get('auth_login'):
             values['login'] = request.session.get('auth_login')
 
-        if not odoo.tools.config['list_db']:
+        if not eden.tools.config['list_db']:
             values['disable_database_manager'] = True
 
         response = request.render('web.login', values)
@@ -155,7 +155,7 @@ class Home(http.Controller):
     def switch_to_admin(self):
         uid = request.env.user.id
         if request.env.user._is_system():
-            uid = request.session.uid = odoo.SUPERUSER_ID
+            uid = request.session.uid = eden.SUPERUSER_ID
             # invalidate session token cache as we've changed the uid
             request.env.registry.clear_cache()
             request.session.session_token = security.compute_session_token(request.session, request.env)
@@ -168,7 +168,7 @@ class Home(http.Controller):
         status = 200
         if db_server_status:
             try:
-                odoo.sql_db.db_connect('postgres').cursor().close()
+                eden.sql_db.db_connect('postgres').cursor().close()
                 health_info['db_server_status'] = True
             except psycopg2.Error:
                 health_info['db_server_status'] = False

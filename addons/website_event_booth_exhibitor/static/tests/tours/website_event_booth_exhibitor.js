@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
     import { registry } from "@web/core/registry";
     import FinalSteps from "@website_event_booth_exhibitor/../tests/tours/website_event_booth_exhibitor_steps";

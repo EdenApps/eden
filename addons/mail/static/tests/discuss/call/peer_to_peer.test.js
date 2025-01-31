@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { advanceTime } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@eden/hoot";
+import { advanceTime } from "@eden/hoot-mock";
 import { browser } from "@web/core/browser/browser";
 import { onRpc, mountWebClient } from "@web/../tests/web_test_helpers";
 import { defineMailModels, mockGetMedia } from "@mail/../tests/mail_test_helpers";

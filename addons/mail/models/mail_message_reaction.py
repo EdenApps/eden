@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import models, fields
-from odoo.tools import groupby
-from odoo.addons.mail.tools.discuss import Store
+from eden import models, fields
+from eden.tools import groupby
+from eden.addons.mail.tools.discuss import Store
 
 
 class MailMessageReaction(models.Model):

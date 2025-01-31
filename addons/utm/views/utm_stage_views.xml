@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record model="ir.ui.view" id="utm_stage_view_search">
         <field name="name">utm.stage.view.search</field>
         <field name="model">utm.stage</field>
@@ -50,4 +50,4 @@
             </p>
         </field>
     </record>
-</odoo>
+</eden>

@@ -1,9 +1,9 @@
-/** @odoo-module **/
+/** @eden-module **/
 
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { click, hover, leave, queryFirst, waitFor } from "@odoo/hoot-dom";
-import { advanceTime, animationFrame, runAllTimers } from "@odoo/hoot-mock";
-import { Component, useState, xml } from "@odoo/owl";
+import { beforeEach, describe, expect, test } from "@eden/hoot";
+import { click, hover, leave, queryFirst, waitFor } from "@eden/hoot-dom";
+import { advanceTime, animationFrame, runAllTimers } from "@eden/hoot-mock";
+import { Component, useState, xml } from "@eden/owl";
 import {
     contains,
     getService,

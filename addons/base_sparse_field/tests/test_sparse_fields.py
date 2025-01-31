@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo.tests import common
+from eden.tests import common
 
 
 class TestSparseFields(common.TransactionCase):

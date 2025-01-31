@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
 from dateutil.relativedelta import relativedelta
 from pytz import timezone
 
-from odoo import api, fields, models
-from odoo.addons.base.models.res_partner import _tz_get
+from eden import api, fields, models
+from eden.addons.base.models.res_partner import _tz_get
 
 from .utils import timezone_datetime, make_aware, Intervals
 

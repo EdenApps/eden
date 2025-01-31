@@ -11,7 +11,7 @@ import {
     step,
 } from "@mail/../tests/mail_test_helpers";
 import { Composer } from "@mail/core/common/composer";
-import { beforeEach, describe, test } from "@odoo/hoot";
+import { beforeEach, describe, test } from "@eden/hoot";
 import { patchWithCleanup } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");

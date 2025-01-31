@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import itertools
 import random
 
 from markupsafe import Markup
-from odoo import models, _
-from odoo.tools import html_escape
+from eden import models, _
+from eden.tools import html_escape
 
 
 class MailBot(models.AbstractModel):
@@ -14,21 +14,21 @@ class MailBot(models.AbstractModel):
 
     def _apply_logic(self, record, values, command=None):
         """ Apply bot logic to generate an answer (or not) for the user
-        The logic will only be applied if odoobot is in a chat with a user or
-        if someone pinged odoobot.
+        The logic will only be applied if edenbot is in a chat with a user or
+        if someone pinged edenbot.
 
-         :param record: the discuss channel where the user message was posted/odoobot will answer.
+         :param record: the discuss channel where the user message was posted/edenbot will answer.
          :param values: msg_values of the message_post or other values needed by logic
          :param command: the name of the called command if the logic is not triggered by a message_post
         """
         record.ensure_one()
-        odoobot_id = self.env['ir.model.data']._xmlid_to_res_id("base.partner_root")
-        if values.get("author_id") == odoobot_id or values.get("message_type") != "comment" and not command:
+        edenbot_id = self.env['ir.model.data']._xmlid_to_res_id("base.partner_root")
+        if values.get("author_id") == edenbot_id or values.get("message_type") != "comment" and not command:
             return
         body = values.get("body", "").replace("\xa0", " ").strip().lower().strip(".!")
         if answer := self._get_answer(record, body, values, command):
             record.sudo().message_post(
-                author_id=odoobot_id,
+                author_id=edenbot_id,
                 body=answer,
                 message_type="comment",
                 silent=True,
@@ -41,112 +41,112 @@ class MailBot(models.AbstractModel):
             "new_line": Markup("<br>"),
             "bold_start": Markup("<b>"),
             "bold_end": Markup("</b>"),
-            "command_start": Markup("<span class='o_odoobot_command'>"),
+            "command_start": Markup("<span class='o_edenbot_command'>"),
             "command_end": Markup("</span>"),
-            "document_link_start": Markup("<a href='https://www.odoo.com/documentation' target='_blank'>"),
+            "document_link_start": Markup("<a href='https://www.edencloud.us/documentation' target='_blank'>"),
             "document_link_end": Markup("</a>"),
-            "slides_link_start": Markup("<a href='https://www.odoo.com/slides' target='_blank'>"),
+            "slides_link_start": Markup("<a href='https://www.edencloud.us/slides' target='_blank'>"),
             "slides_link_end": Markup("</a>"),
             "paperclip_icon": Markup("<i class='fa fa-paperclip' aria-hidden='true'/>"),
         }
 
     def _get_answer(self, record, body, values, command=False):
-        odoobot = self.env.ref("base.partner_root")
+        edenbot = self.env.ref("base.partner_root")
         # onboarding
-        odoobot_state = self.env.user.odoobot_state
+        edenbot_state = self.env.user.edenbot_state
 
-        if record.channel_type == "chat" and odoobot in record.channel_member_ids.partner_id:
+        if record.channel_type == "chat" and edenbot in record.channel_member_ids.partner_id:
             # main flow
             source = _("Thanks")
             description = _("This is a temporary canned response to see how canned responses work.")
-            if odoobot_state == 'onboarding_emoji' and self._body_contains_emoji(body):
-                self.env.user.odoobot_state = "onboarding_command"
-                self.env.user.odoobot_failed = False
+            if edenbot_state == 'onboarding_emoji' and self._body_contains_emoji(body):
+                self.env.user.edenbot_state = "onboarding_command"
+                self.env.user.edenbot_failed = False
                 return html_escape(
                     _("Great! 👍%(new_line)sTo access special commands, %(bold_start)sstart your sentence "
                       "with%(bold_end)s %(command_start)s/%(command_end)s. Try getting help."
                       )) % self._get_style_dict()
-            elif odoobot_state == 'onboarding_command' and command == 'help':
-                self.env.user.odoobot_state = "onboarding_ping"
-                self.env.user.odoobot_failed = False
+            elif edenbot_state == 'onboarding_command' and command == 'help':
+                self.env.user.edenbot_state = "onboarding_ping"
+                self.env.user.edenbot_failed = False
                 return html_escape(
                     _("Wow you are a natural!%(new_line)sPing someone with @username to grab their attention. "
-                      "%(bold_start)sTry to ping me using%(bold_end)s %(command_start)s@OdooBot%(command_end)s"
+                      "%(bold_start)sTry to ping me using%(bold_end)s %(command_start)s@EdenBot%(command_end)s"
                       " in a sentence.")) % self._get_style_dict()
-            elif odoobot_state == "onboarding_ping" and odoobot.id in values.get("partner_ids", []):
-                self.env.user.odoobot_state = "onboarding_attachement"
-                self.env.user.odoobot_failed = False
+            elif edenbot_state == "onboarding_ping" and edenbot.id in values.get("partner_ids", []):
+                self.env.user.edenbot_state = "onboarding_attachement"
+                self.env.user.edenbot_failed = False
                 return html_escape(
                     _("Yep, I am here! 🎉 %(new_line)sNow, try %(bold_start)ssending an attachment%(bold_end)s,"
                       " like a picture of your cute dog...")) % self._get_style_dict()
-            elif odoobot_state == "onboarding_attachement" and values.get("attachment_ids"):
+            elif edenbot_state == "onboarding_attachement" and values.get("attachment_ids"):
                 self.env["mail.canned.response"].create({
                     "source": source,
                     "substitution": _("Thanks for your feedback. Goodbye!"),
                     "description": description,
                 })
-                self.env.user.odoobot_failed = False
-                self.env.user.odoobot_state = "onboarding_canned"
+                self.env.user.edenbot_failed = False
+                self.env.user.edenbot_state = "onboarding_canned"
                 return html_escape(
                     _("Wonderful! 😇%(new_line)sTry typing %(command_start)s:%(command_end)s to use canned responses."
                       " I've created a temporary one for you.")) % self._get_style_dict()
-            elif odoobot_state == "onboarding_canned" and self.env.context.get("canned_response_ids"):
+            elif edenbot_state == "onboarding_canned" and self.env.context.get("canned_response_ids"):
                 self.env["mail.canned.response"].search([
                     ("create_uid", "=", self.env.user.id),
                     ("source", "=", source),
                     ("description", "=", description),
                 ]).unlink()
-                self.env.user.odoobot_failed = False
-                self.env.user.odoobot_state = "idle"
+                self.env.user.edenbot_failed = False
+                self.env.user.edenbot_state = "idle"
                 return html_escape(
                     _("Good, you can customize canned responses in the Discuss application."
                       "%(new_line)s%(new_line)s%(bold_start)sIt's the end of this overview%(bold_end)s,"
                       " you can now %(bold_start)sclose this conversation%(bold_end)s or start the tour again with"
                       " typing %(command_start)sstart the tour%(command_end)s."
-                      " Enjoy discovering Odoo!")) % self._get_style_dict()
+                      " Enjoy discovering Eden!")) % self._get_style_dict()
             # repeat question if needed
-            elif odoobot_state == 'onboarding_canned' and not self._is_help_requested(body):
-                self.env.user.odoobot_failed = True
+            elif edenbot_state == 'onboarding_canned' and not self._is_help_requested(body):
+                self.env.user.edenbot_failed = True
                 return html_escape(
                     _("Not sure what you are doing. Please, type %(command_start)s:%(command_end)s and wait for the"
                       " propositions. Select one of them and press enter.")) % self._get_style_dict()
-            elif odoobot_state in (False, "idle", "not_initialized") and (_('start the tour') in body.lower()):
-                self.env.user.odoobot_state = "onboarding_emoji"
+            elif edenbot_state in (False, "idle", "not_initialized") and (_('start the tour') in body.lower()):
+                self.env.user.edenbot_state = "onboarding_emoji"
                 return _("To start, try to send me an emoji :)")
             # easter eggs
-            elif odoobot_state == "idle" and body in ['❤️', _('i love you'), _('love')]:
+            elif edenbot_state == "idle" and body in ['❤️', _('i love you'), _('love')]:
                 return _("Aaaaaw that's really cute but, you know, bots don't work that way. You're too human for me! Let's keep it professional ❤️")
             elif _('fuck') in body or "fuck" in body:
                 return _("That's not nice! I'm a bot but I have feelings... 💔")
             # help message
-            elif self._is_help_requested(body) or odoobot_state == 'idle':
+            elif self._is_help_requested(body) or edenbot_state == 'idle':
                 return html_escape(
                     _("Unfortunately, I'm just a bot 😞 I don't understand! If you need help discovering our product, "
                       "please check %(document_link_start)sour documentation%(document_link_end)s or"
                       " %(slides_link_start)sour videos%(slides_link_end)s.")) % self._get_style_dict()
             else:
                 # repeat question
-                if odoobot_state == 'onboarding_emoji':
-                    self.env.user.odoobot_failed = True
+                if edenbot_state == 'onboarding_emoji':
+                    self.env.user.edenbot_failed = True
                     return (html_escape(
                         _("Not exactly. To continue the tour, send an emoji:"
                           " %(bold_start)stype%(bold_end)s%(command_start)s :)%(command_end)s and press enter."))
                             % self._get_style_dict())
-                elif odoobot_state == 'onboarding_attachement':
-                    self.env.user.odoobot_failed = True
+                elif edenbot_state == 'onboarding_attachement':
+                    self.env.user.edenbot_failed = True
                     return html_escape(
                         _("To %(bold_start)ssend an attachment%(bold_end)s, click on the %(paperclip_icon)s icon and"
                           " select a file.")) % self._get_style_dict()
-                elif odoobot_state == 'onboarding_command':
-                    self.env.user.odoobot_failed = True
+                elif edenbot_state == 'onboarding_command':
+                    self.env.user.edenbot_failed = True
                     return html_escape(
                         _("Not sure what you are doing. Please, type %(command_start)s/%(command_end)s and wait for the propositions."
                           " Select %(command_start)shelp%(command_end)s and press enter.")) % self._get_style_dict()
-                elif odoobot_state == 'onboarding_ping':
-                    self.env.user.odoobot_failed = True
+                elif edenbot_state == 'onboarding_ping':
+                    self.env.user.edenbot_failed = True
                     return html_escape(
                         _("Sorry, I am not listening. To get someone's attention, %(bold_start)sping him%(bold_end)s."
-                          " Write %(command_start)s@OdooBot%(command_end)s and select me.")) % self._get_style_dict()
+                          " Write %(command_start)s@EdenBot%(command_end)s and select me.")) % self._get_style_dict()
                 return random.choice([
                     html_escape(
                         _("I'm not smart enough to answer your question.%(new_line)sTo follow my guide,"
@@ -294,17 +294,17 @@ class MailBot(models.AbstractModel):
         return False
 
     def _is_bot_pinged(self, values):
-        odoobot_id = self.env['ir.model.data']._xmlid_to_res_id("base.partner_root")
-        return odoobot_id in values.get('partner_ids', [])
+        edenbot_id = self.env['ir.model.data']._xmlid_to_res_id("base.partner_root")
+        return edenbot_id in values.get('partner_ids', [])
 
     def _is_bot_in_private_channel(self, record):
-        odoobot_id = self.env['ir.model.data']._xmlid_to_res_id("base.partner_root")
+        edenbot_id = self.env['ir.model.data']._xmlid_to_res_id("base.partner_root")
         if record._name == 'discuss.channel' and record.channel_type == 'chat':
-            return odoobot_id in record.with_context(active_test=False).channel_partner_ids.ids
+            return edenbot_id in record.with_context(active_test=False).channel_partner_ids.ids
         return False
 
     def _is_help_requested(self, body):
         """Returns whether a message linking to the documentation and videos
         should be sent back to the user.
         """
-        return any(token in body for token in ['help', _('help'), '?']) or self.env.user.odoobot_failed
+        return any(token in body for token in ['help', _('help'), '?']) or self.env.user.edenbot_failed

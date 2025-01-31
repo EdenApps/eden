@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<odoo>
+<eden>
     <template id="report_stock_rule">
         <t t-set="data_report_landscape" t-value="True"/>
         <t t-set="full_width" t-value="True"/>
@@ -179,5 +179,5 @@
             </svg>
         </div>
     </template>
-</odoo>
+</eden>
 

@@ -1022,7 +1022,7 @@
     "pivots": {},
     "pivotNextId": 25,
     "customTableStyles": {},
-    "odooVersion": 12,
+    "edenVersion": 12,
     "globalFilters": [],
     "lists": {},
     "listNextId": 3

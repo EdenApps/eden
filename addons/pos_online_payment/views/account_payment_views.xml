@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
 
     <record id="view_account_payment_form_inherit_pos_online_payment" model="ir.ui.view">
         <field name="name">view.account.payment.form.inherit.pos_online_payment</field>
@@ -17,4 +17,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

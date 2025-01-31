@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
 
-from odoo import fields
-from odoo.addons.website_event.tests.common import OnlineEventCase
-from odoo.tests.common import users
+from eden import fields
+from eden.addons.website_event.tests.common import OnlineEventCase
+from eden.tests.common import users
 
 
 class TestEventWebsiteTrack(OnlineEventCase):

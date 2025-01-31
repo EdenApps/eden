@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import datetime
-from odoo import api, models
-from odoo.tools.safe_eval import safe_eval
+from eden import api, models
+from eden.tools.safe_eval import safe_eval
 #
 # Use period and Journal for selection or resources
 #

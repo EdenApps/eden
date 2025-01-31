@@ -1,4 +1,4 @@
-import { Range, RangeData } from "@odoo/o-spreadsheet";
+import { Range, RangeData } from "@eden/o-spreadsheet";
 import { DomainListRepr } from "@web/core/domain";
 
 declare module "@spreadsheet" {

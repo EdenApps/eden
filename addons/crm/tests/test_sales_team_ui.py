@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import tests
-from odoo.tests import HttpCase
-from odoo.tests.common import users
-from odoo.addons.sales_team.tests.common import SalesTeamCommon
+from eden import tests
+from eden.tests import HttpCase
+from eden.tests.common import users
+from eden.addons.sales_team.tests.common import SalesTeamCommon
 
 
 @tests.tagged('post_install', '-at_install')

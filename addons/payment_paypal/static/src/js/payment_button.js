@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import paymentButton from '@payment/js/payment_button';
 

@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { CalendarYearRenderer } from "@web/views/calendar/calendar_year/calendar_year_renderer";
 
@@ -6,7 +6,7 @@ import { useService } from "@web/core/utils/hooks";
 import { useMandatoryDays } from "../../hooks";
 import { useCalendarPopover } from "@web/views/calendar/hooks";
 import { TimeOffCalendarYearPopover } from "./calendar_year_popover";
-import { useEffect } from "@odoo/owl";
+import { useEffect } from "@eden/owl";
 
 export class TimeOffCalendarYearRenderer extends CalendarYearRenderer {
     setup() {

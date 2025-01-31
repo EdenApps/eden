@@ -7,7 +7,7 @@ import {
     useExternalListener,
     useRef,
     useState,
-} from "@odoo/owl";
+} from "@eden/owl";
 import { browser } from "@web/core/browser/browser";
 
 /**

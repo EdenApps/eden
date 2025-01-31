@@ -1,4 +1,4 @@
-import { Component, onWillUpdateProps, useState } from "@odoo/owl";
+import { Component, onWillUpdateProps, useState } from "@eden/owl";
 import { Colorpicker } from "@web/core/colorpicker/colorpicker";
 import { isColorGradient, rgbToHex } from "@html_editor/utils/color";
 

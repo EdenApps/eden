@@ -24,44 +24,44 @@ echo "export XAUTHORITY=/run/lightdm/pi/xauthority" >> /home/pi/.bashrc
 echo "export XAUTHORITY=/run/lightdm/root/:0" >> ~/.bashrc
 # Aliases
 echo  "alias ll='ls -al'" | tee -a ~/.bashrc /home/pi/.bashrc
-echo  "alias odoo='sudo systemctl stop odoo; /usr/bin/python3 /home/pi/odoo/odoo-bin --config /home/pi/odoo.conf --load=hw_drivers,hw_escpos,hw_posbox_homepage,point_of_sale,web'" | tee -a ~/.bashrc /home/pi/.bashrc
-echo  "alias odoo_logs='less +F /var/log/odoo/odoo-server.log'" | tee -a ~/.bashrc /home/pi/.bashrc
+echo  "alias eden='sudo systemctl stop eden; /usr/bin/python3 /home/pi/eden/eden-bin --config /home/pi/eden.conf --load=hw_drivers,hw_escpos,hw_posbox_homepage,point_of_sale,web'" | tee -a ~/.bashrc /home/pi/.bashrc
+echo  "alias eden_logs='less +F /var/log/eden/eden-server.log'" | tee -a ~/.bashrc /home/pi/.bashrc
 echo  "alias write_mode='sudo mount -o remount,rw / && sudo mount -o remount,rw /root_bypass_ramdisks'" | tee -a ~/.bashrc /home/pi/.bashrc
-echo  "alias odoo_conf='cat /home/pi/odoo.conf'" | tee -a ~/.bashrc /home/pi/.bashrc
+echo  "alias eden_conf='cat /home/pi/eden.conf'" | tee -a ~/.bashrc /home/pi/.bashrc
 echo  "alias read_mode='sudo mount -o remount,ro / && sudo mount -o remount,ro /root_bypass_ramdisks'" | tee -a ~/.bashrc /home/pi/.bashrc
 echo  "alias install='sudo mount -o remount,rw / && sudo mount -o remount,rw /root_bypass_ramdisks; sudo chroot /root_bypass_ramdisks/; mount -t proc proc /proc'" | tee -a ~/.bashrc /home/pi/.bashrc
 echo  "alias blackbox='ls /dev/serial/by-path/'" | tee -a ~/.bashrc /home/pi/.bashrc
 echo  "alias nano='write_mode; nano -l'" | tee -a /home/pi/.bashrc
 echo  "alias vim='write_mode; sudo vim'" | tee -a /home/pi/.bashrc
-echo  "alias odoo_luxe='printf \" ______\n< Luxe >\n ------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\ \n                ||----w |\n                ||     ||\n\"'" | tee -a ~/.bashrc /home/pi/.bashrc
-echo  "alias odoo_start='sudo systemctl start odoo'" >> /home/pi/.bashrc
-echo  "alias odoo_stop='sudo systemctl stop odoo'" >> /home/pi/.bashrc
-echo  "alias odoo_restart='sudo systemctl restart odoo'" >> /home/pi/.bashrc
+echo  "alias eden_luxe='printf \" ______\n< Luxe >\n ------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\ \n                ||----w |\n                ||     ||\n\"'" | tee -a ~/.bashrc /home/pi/.bashrc
+echo  "alias eden_start='sudo systemctl start eden'" >> /home/pi/.bashrc
+echo  "alias eden_stop='sudo systemctl stop eden'" >> /home/pi/.bashrc
+echo  "alias eden_restart='sudo systemctl restart eden'" >> /home/pi/.bashrc
 echo "
-odoo_help() {
-  echo 'Welcome to Odoo IoTBox tools'
-  echo 'odoo                Starts/Restarts Odoo server manually (not through odoo.service)'
-  echo 'odoo_logs           Displays Odoo server logs in real time'
-  echo 'odoo_conf           Displays Odoo configuration file content'
+eden_help() {
+  echo 'Welcome to Eden IoTBox tools'
+  echo 'eden               Starts/Restarts Eden server manually (not through eden.service)'
+  echo 'eden_logs           Displays Eden server logs in real time'
+  echo 'eden_conf           Displays Eden configuration file content'
   echo 'write_mode          Enables system write mode'
   echo 'read_mode           Switches system to read-only mode'
   echo 'install             Bypasses ramdisks to allow package installation'
   echo 'blackbox            Lists all serial connected devices'
-  echo 'odoo_start          Starts Odoo service'
-  echo 'odoo_stop           Stops Odoo service'
-  echo 'odoo_restart        Restarts Odoo service'
-  echo 'odoo_dev <branch>   Resets Odoo on the specified branch from odoo-dev repository'
+  echo 'eden_start          Starts Eden service'
+  echo 'eden_stop           Stops Eden service'
+  echo 'eden_restart        Restarts Eden service'
+  echo 'eden_dev <branch>   Resets Eden on the specified branch from eden-dev repository'
 }
 
-odoo_dev() {
+eden_dev() {
   if [ -z \"\$1\" ]; then
-    odoo_help
+    eden_help
     return
   fi
   write_mode
   pwd=\$(pwd)
-  cd /home/pi/odoo
-  git remote add dev https://github.com/odoo-dev/odoo.git
+  cd /home/pi/eden
+  git remote add dev https://github.com/eden-dev/eden.git
   git fetch dev \$1 --depth=1 --prune
   git reset --hard dev/\$1
   cd \$pwd
@@ -69,7 +69,7 @@ odoo_dev() {
 
 pip() {
   if [[ -z \"\$1\" || -z \"\$2\" ]]; then
-    odoo_help
+    eden_help
     return 1
   fi
   additional_arg=\"\"
@@ -83,14 +83,14 @@ pip() {
 source ~/.bashrc
 source /home/pi/.bashrc
 
-# copy the odoo.conf file to the overwrite directory
-mv -v "/home/pi/odoo/addons/point_of_sale/tools/posbox/configuration/odoo.conf" "/home/pi/"
-chown pi:pi "/home/pi/odoo.conf"
+# copy the eden.conf file to the overwrite directory
+mv -v "/home/pi/eden/addons/point_of_sale/tools/posbox/configuration/eden.conf" "/home/pi/"
+chown pi:pi "/home/pi/eden.conf"
 
 apt-get update
 
 # At the first start it is necessary to configure a password
-# This will be modified by a unique password on the first start of Odoo
+# This will be modified by a unique password on the first start of Eden
 password="$(openssl rand -base64 12)"
 echo "pi:${password}" | chpasswd
 
@@ -202,17 +202,17 @@ PIP_TO_INSTALL="
 pip3 install ${PIP_TO_INSTALL} --break-system-package
 
 # Dowload MPD server and library for Six terminals
-wget 'https://nightly.odoo.com/master/iotbox/eftdvs' -P /usr/local/bin/
+wget 'https://nightly.edencloud.us/master/iotbox/eftdvs' -P /usr/local/bin/
 chmod +x /usr/local/bin/eftdvs
-wget 'https://nightly.odoo.com/master/iotbox/eftapi.so' -P /usr/lib/
+wget 'https://nightly.edencloud.us/master/iotbox/eftapi.so' -P /usr/lib/
 
 groupadd usbusers
 usermod -a -G usbusers pi
 usermod -a -G lp pi
 usermod -a -G input lightdm
-mkdir -v /var/log/odoo
-chown pi:pi /var/log/odoo
-chown pi:pi -R /home/pi/odoo/
+mkdir -v /var/log/eden
+chown pi:pi /var/log/eden
+chown pi:pi -R /home/pi/eden/
 
 # logrotate is very picky when it comes to file permissions
 chown -R root:root /etc/logrotate.d/
@@ -220,7 +220,7 @@ chmod -R 644 /etc/logrotate.d/
 chown root:root /etc/logrotate.conf
 chmod 644 /etc/logrotate.conf
 
-echo "* * * * * rm /var/run/odoo/sessions/*" | crontab -
+echo "* * * * * rm /var/run/eden/sessions/*" | crontab -
 
 update-rc.d -f hostapd remove
 update-rc.d -f nginx remove
@@ -236,7 +236,7 @@ systemctl enable systemd-timesyncd.service
 systemctl unmask hostapd.service
 systemctl disable hostapd.service
 systemctl disable cups-browsed.service
-systemctl enable odoo.service
+systemctl enable eden.service
 
 # disable overscan in /boot/config.txt, we can't use
 # overwrite_after_init because it's on a different device
@@ -249,7 +249,7 @@ echo "disable_overscan=1" >> /boot/config.txt
 sed -i '/dtoverlay/c\dtoverlay=vc4-fkms-v3d' /boot/config.txt
 
 # exclude /drivers folder from git info to be able to load specific drivers
-echo "addons/hw_drivers/iot_devices/" > /home/pi/odoo/.git/info/exclude
+echo "addons/hw_drivers/iot_devices/" > /home/pi/eden/.git/info/exclude
 
 # create dirs for ramdisks
 create_ramdisk_dir () {

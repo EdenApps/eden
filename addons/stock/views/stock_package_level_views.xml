@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="package_level_form_view" model="ir.ui.view">
         <field name="name">Package Level</field>
         <field name="model">stock.package_level</field>
@@ -79,4 +79,4 @@
             </list>
         </field>
     </record>
-</odoo>
+</eden>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_timeline_list" name="Timeline List">
     <section class="s_timeline_list pt32 pb88">
@@ -97,4 +97,4 @@
     <field name="path">website/static/src/snippets/s_timeline_list/000.scss</field>
 </record>
 
-</odoo>
+</eden>

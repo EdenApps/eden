@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mail.tests import common
-from odoo.tests import new_test_user, tagged
+from eden.addons.mail.tests import common
+from eden.tests import new_test_user, tagged
 
 
 @tagged("-at_install", "post_install")

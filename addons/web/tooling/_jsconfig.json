@@ -110,7 +110,7 @@
         "**/lib/fullcalendar",
         "**/lib/jquery",
         "**/lib/luxon",
-        "**/lib/odoo_ui_icons",
+        "**/lib/eden_ui_icons",
         "**/lib/owl",
         "**/lib/pdfjs",
         "**/lib/popper",

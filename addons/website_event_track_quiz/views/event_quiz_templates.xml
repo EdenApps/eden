@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
     <template id="quiz_content" name="Track: Quiz specific content">
         <t t-set="quiz_completed" t-value="quiz_completed or False"/>
 
@@ -47,4 +47,4 @@
             </div>
         </div>
     </template>
-</odoo>
+</eden>

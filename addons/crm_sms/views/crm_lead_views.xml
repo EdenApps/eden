@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <!-- Add action entry in the Action Menu for Leads -->
     <record id="crm_lead_act_window_sms_composer_single" model="ir.actions.act_window">
         <field name="name">Send SMS</field>
@@ -50,4 +50,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

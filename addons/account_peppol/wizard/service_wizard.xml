@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <record model="ir.ui.view" id="peppol_service_configuration">
             <field name="name">account.peppol.service.configuration.form</field>
@@ -30,4 +30,4 @@
             </field>
         </record>
     </data>
-</odoo>
+</eden>

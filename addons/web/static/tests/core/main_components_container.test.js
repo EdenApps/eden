@@ -1,10 +1,10 @@
-import { beforeEach, expect, onError, test } from "@odoo/hoot";
-import { animationFrame, Deferred } from "@odoo/hoot-mock";
+import { beforeEach, expect, onError, test } from "@eden/hoot";
+import { animationFrame, Deferred } from "@eden/hoot-mock";
 import { clearRegistry, mountWithCleanup, patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { MainComponentsContainer } from "@web/core/main_components_container";
 import { registry } from "@web/core/registry";
 
-import { Component, onWillStart, useState, xml } from "@odoo/owl";
+import { Component, onWillStart, useState, xml } from "@eden/owl";
 
 const mainComponentsRegistry = registry.category("main_components");
 

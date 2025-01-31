@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         </data>
     <template id="event_default_descripton" name="Event default description">
@@ -9,4 +9,4 @@
             This event is also an opportunity to showcase our partners' case studies, methodology or developments. Be there and see directly from the source the features of the new version!</p>
         </section>
     </template>
-</odoo>
+</eden>

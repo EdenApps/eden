@@ -1,14 +1,14 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { Domain } from "@web/core/domain";
 import { globalFiltersFieldMatchers } from "@spreadsheet/global_filters/plugins/global_filters_core_plugin";
 import { ChartDataSource } from "../data_source/chart_data_source";
 import { sprintf } from "@web/core/utils/strings";
 import { _t } from "@web/core/l10n/translation";
-import { OdooUIPlugin } from "@spreadsheet/plugins";
+import { EdenUIPlugin } from "@spreadsheet/plugins";
 import { navigateTo } from "../../actions/helpers";
 
-export class OdooChartUIPlugin extends OdooUIPlugin {
+export class EdenChartUIPlugin extends EdenUIPlugin {
     static getters = /** @type {const} */ ([
         "getChartDataSource",
         "getChartDatasetActionCallbacks",
@@ -30,7 +30,7 @@ export class OdooChartUIPlugin extends OdooUIPlugin {
                 const model = await this.getChartDataSource(chartId).getModelLabel();
                 return sprintf(_t("Chart - %s"), model);
             },
-            waitForReady: () => this._getOdooChartsWaitForReady(),
+            waitForReady: () => this._getEdenChartsWaitForReady(),
             getFields: (chartId) => this.getChartDataSource(chartId).getFields(),
         };
     }
@@ -38,7 +38,7 @@ export class OdooChartUIPlugin extends OdooUIPlugin {
     beforeHandle(cmd) {
         switch (cmd.type) {
             case "START":
-                for (const chartId of this.getters.getOdooChartIds()) {
+                for (const chartId of this.getters.getEdenChartIds()) {
                     this._setupChartDataSource(chartId);
                 }
 
@@ -48,9 +48,9 @@ export class OdooChartUIPlugin extends OdooUIPlugin {
                 break;
             case "UPDATE_CHART": {
                 switch (cmd.definition.type) {
-                    case "odoo_pie":
-                    case "odoo_bar":
-                    case "odoo_line": {
+                    case "eden_pie":
+                    case "eden_bar":
+                    case "eden_line": {
                         const dataSource = this.getChartDataSource(cmd.id);
                         const chart = this.getters.getChart(cmd.id);
                         if (
@@ -77,9 +77,9 @@ export class OdooChartUIPlugin extends OdooUIPlugin {
         switch (cmd.type) {
             case "CREATE_CHART": {
                 switch (cmd.definition.type) {
-                    case "odoo_pie":
-                    case "odoo_bar":
-                    case "odoo_line":
+                    case "eden_pie":
+                    case "eden_bar":
+                    case "eden_line":
                         this._setupChartDataSource(cmd.id);
                         break;
                 }
@@ -87,9 +87,9 @@ export class OdooChartUIPlugin extends OdooUIPlugin {
             }
             case "UPDATE_CHART": {
                 switch (cmd.definition.type) {
-                    case "odoo_pie":
-                    case "odoo_bar":
-                    case "odoo_line": {
+                    case "eden_pie":
+                    case "eden_bar":
+                    case "eden_line": {
                         if (this.shouldChartUpdateReloadDataSource) {
                             this._resetChartDataSource(cmd.id);
                             this.shouldChartUpdateReloadDataSource = false;
@@ -125,7 +125,7 @@ export class OdooChartUIPlugin extends OdooUIPlugin {
                     (cmd) => cmd.type === "UPDATE_CHART" || cmd.type === "CREATE_CHART"
                 );
                 for (const cmd of domainEditionCommands) {
-                    if (!this.getters.getOdooChartIds().includes(cmd.id)) {
+                    if (!this.getters.getEdenChartIds().includes(cmd.id)) {
                         continue;
                     }
                     const dataSource = this.getChartDataSource(cmd.id);
@@ -139,7 +139,7 @@ export class OdooChartUIPlugin extends OdooUIPlugin {
                 break;
             }
             case "REFRESH_ALL_DATA_SOURCES":
-                this._refreshOdooCharts();
+                this._refreshEdenCharts();
                 break;
         }
     }
@@ -149,12 +149,12 @@ export class OdooChartUIPlugin extends OdooUIPlugin {
      * @returns {ChartDataSource|undefined}
      */
     getChartDataSource(chartId) {
-        const dataSourceId = this._getOdooChartDataSourceId(chartId);
+        const dataSourceId = this._getEdenChartDataSourceId(chartId);
         return this.charts[dataSourceId];
     }
 
     /**
-     * Get the callback used for onClick and onHover in an Odoo Chart
+     * Get the callback used for onClick and onHover in an Eden Chart
      */
     getChartDatasetActionCallbacks(chart) {
         const { datasets, labels } = chart.dataSource.getData();
@@ -228,7 +228,7 @@ export class OdooChartUIPlugin extends OdooUIPlugin {
      *
      */
     _addDomains() {
-        for (const chartId of this.getters.getOdooChartIds()) {
+        for (const chartId of this.getters.getEdenChartIds()) {
             this._addDomain(chartId);
         }
     }
@@ -238,7 +238,7 @@ export class OdooChartUIPlugin extends OdooUIPlugin {
      * @param {string} dataSourceId
      */
     _setupChartDataSource(chartId) {
-        const dataSourceId = this._getOdooChartDataSourceId(chartId);
+        const dataSourceId = this._getEdenChartDataSourceId(chartId);
         if (!(dataSourceId in this.charts)) {
             this._resetChartDataSource(chartId);
         }
@@ -251,7 +251,7 @@ export class OdooChartUIPlugin extends OdooUIPlugin {
      */
     _resetChartDataSource(chartId) {
         const definition = this.getters.getChart(chartId).getDefinitionForDataSource();
-        const dataSourceId = this._getOdooChartDataSourceId(chartId);
+        const dataSourceId = this._getEdenChartDataSourceId(chartId);
         this.charts[dataSourceId] = new ChartDataSource(this.custom, definition);
     }
 
@@ -268,13 +268,13 @@ export class OdooChartUIPlugin extends OdooUIPlugin {
      *
      * @return {Promise[]}
      */
-    _getOdooChartsWaitForReady() {
+    _getEdenChartsWaitForReady() {
         return this.getters
-            .getOdooChartIds()
+            .getEdenChartIds()
             .map((chartId) => this.getChartDataSource(chartId).loadMetadata());
     }
 
-    _getOdooChartDataSourceId(chartId) {
+    _getEdenChartDataSourceId(chartId) {
         return `chart-${chartId}`;
     }
 
@@ -282,16 +282,16 @@ export class OdooChartUIPlugin extends OdooUIPlugin {
      * Refresh the cache of a chart
      * @param {string} chartId Id of the chart
      */
-    _refreshOdooChart(chartId) {
+    _refreshEdenChart(chartId) {
         this.getChartDataSource(chartId).load({ reload: true });
     }
 
     /**
      * Refresh the cache of all the charts
      */
-    _refreshOdooCharts() {
-        for (const chartId of this.getters.getOdooChartIds()) {
-            this._refreshOdooChart(chartId);
+    _refreshEdenCharts() {
+        for (const chartId of this.getters.getEdenChartIds()) {
+            this._refreshEdenChart(chartId);
         }
     }
 }

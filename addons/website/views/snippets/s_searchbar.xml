@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_searchbar_input" name="Search">
     <t t-call="website.website_search_box_input">
@@ -75,4 +75,4 @@
     <field name="path">website/static/src/snippets/s_searchbar/000.xml</field>
 </record>
 
-</odoo>
+</eden>

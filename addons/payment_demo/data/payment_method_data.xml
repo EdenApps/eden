@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<eden noupdate="1">
 
     <record id="payment_method_demo" model="payment.method">
         <field name="name">Demo</field>
@@ -11,4 +11,4 @@
         <field name="support_refund">partial</field>
     </record>
 
-</odoo>
+</eden>

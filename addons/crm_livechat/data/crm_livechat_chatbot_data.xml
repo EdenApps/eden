@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<odoo><data noupdate="1">
+<eden><data noupdate="1">
 
     <!--
         This provides a working lead generation chatbot for people to work with.
@@ -9,7 +9,7 @@
 
     <record id="chatbot_script_lead_generation_bot" model="chatbot.script">
         <field name="title">Lead Generation Bot</field>
-        <field name="image_1920" type="base64" file="mail/static/src/img/odoobot.png"/>
+        <field name="image_1920" type="base64" file="mail/static/src/img/edenbot.png"/>
     </record>
 
     <record id="chatbot_script_lead_generation_step_welcome" model="chatbot.script.step">
@@ -46,4 +46,4 @@
         <field name="chatbot_script_id" ref="chatbot_script_lead_generation_bot"/>
     </record>
 
-</data></odoo>
+</data></eden>

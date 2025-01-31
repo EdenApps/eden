@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
+import eden.tests
 
-@odoo.tests.tagged("post_install", "-at_install")
-class TestOdooEditor(odoo.tests.HttpCase):
+@eden.tests.tagged("post_install", "-at_install")
+class TestEdenEditor(eden.tests.HttpCase):
 
-    def test_odoo_editor_suite(self):
+    def test_eden_editor_suite(self):
         self.browser_js('/web_editor/tests', "", "", login='admin', timeout=1800)

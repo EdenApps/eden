@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { makeView, setupViewRegistries } from "@web/../tests/views/helpers";
 import { clickDropdown, getFixture } from "@web/../tests/helpers/utils";

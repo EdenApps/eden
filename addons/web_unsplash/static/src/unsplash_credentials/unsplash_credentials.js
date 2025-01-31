@@ -1,4 +1,4 @@
-import { Component, useState } from "@odoo/owl";
+import { Component, useState } from "@eden/owl";
 
 export class UnsplashCredentials extends Component {
     static template = "web_unsplash.UnsplashCredentials";

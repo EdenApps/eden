@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="mailing_contact_view_search" model="ir.ui.view">
         <field name="name">mailing.contact.view.search.inherit.sms</field>
         <field name="model">mailing.contact</field>
@@ -87,4 +87,4 @@
             </p>
         </field>
     </record>
-</odoo>
+</eden>

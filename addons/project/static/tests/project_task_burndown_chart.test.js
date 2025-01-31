@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { click, queryAll } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@eden/hoot";
+import { click, queryAll } from "@eden/hoot-dom";
 import {
     defineModels,
     fields,

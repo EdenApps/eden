@@ -1,4 +1,4 @@
-import { Component, useState, onWillDestroy } from '@odoo/owl';
+import { Component, useState, onWillDestroy } from '@eden/owl';
 import { rpc } from '@web/core/network/rpc';
 import { registry } from '@web/core/registry';
 import { useService } from '@web/core/utils/hooks';

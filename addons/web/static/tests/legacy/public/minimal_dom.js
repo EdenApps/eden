@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 import { registerCleanup } from "@web/../tests/helpers/cleanup";
 import { getFixture, nextTick } from "@web/../tests/helpers/utils";
 import { DEBOUNCE, makeAsyncHandler, makeButtonHandler } from '@web/legacy/js/public/minimal_dom';

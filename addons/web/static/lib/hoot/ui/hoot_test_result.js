@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { Component, useState, xml } from "@odoo/owl";
+import { Component, useState, xml } from "@eden/owl";
 import { Tag } from "../core/tag";
 import { Test } from "../core/test";
 import { subscribeToURLParams } from "../core/url";

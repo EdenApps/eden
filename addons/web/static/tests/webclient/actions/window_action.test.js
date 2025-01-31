@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { click, queryAllTexts, waitFor } from "@odoo/hoot-dom";
-import { Deferred, animationFrame, runAllTimers } from "@odoo/hoot-mock";
+import { expect, test } from "@eden/hoot";
+import { click, queryAllTexts, waitFor } from "@eden/hoot-dom";
+import { Deferred, animationFrame, runAllTimers } from "@eden/hoot-mock";
 import {
     MockServer,
     contains,
@@ -699,7 +699,7 @@ test("A new form view can be reloaded after a failed one", async () => {
     expect(".o_form_view").toHaveCount(1, { message: "The form view should be displayed" });
     expect(".o_last_breadcrumb_item").toHaveText("First record");
     await runAllTimers(); // wait for the update of the router
-    expect(browser.location.pathname).toBe("/odoo/action-3/1");
+    expect(browser.location.pathname).toBe("/eden/action-3/1");
 
     // Delete the current record
     await contains(".o_cp_action_menus .fa-cog").click();
@@ -709,12 +709,12 @@ test("A new form view can be reloaded after a failed one", async () => {
     // The form view is automatically switched to the next record
     expect(".o_last_breadcrumb_item").toHaveText("Second record");
     await runAllTimers(); // wait for the update of the router
-    expect(browser.location.pathname).toBe("/odoo/action-3/2");
+    expect(browser.location.pathname).toBe("/eden/action-3/2");
 
     // Go back to the previous (now deleted) record
     browser.history.back();
     await runAllTimers();
-    expect(browser.location.pathname).toBe("/odoo/action-3/1");
+    expect(browser.location.pathname).toBe("/eden/action-3/1");
     // As the previous one is deleted, we go back to the list
     await runAllTimers(); // wait for the update of the router
     expect(".o_list_view").toHaveCount(1, { message: "should still display the list view" });
@@ -1635,7 +1635,7 @@ test("execute action with unknown view type", async () => {
 });
 
 test("flags field of ir.actions.act_window is used", async () => {
-    // more info about flags field : https://github.com/odoo/odoo/commit/c9b133813b250e89f1f61816b0eabfb9bee2009d
+    // more info about flags field : https://github.com/eden/eden/commit/c9b133813b250e89f1f61816b0eabfb9bee2009d
     defineActions([
         {
             id: 43,
@@ -1875,7 +1875,7 @@ test("current act_window action is stored in session_storage if possible", async
 
 test.tags("desktop");
 test("destroy action with lazy loaded controller", async () => {
-    redirect("/odoo/action-3/2");
+    redirect("/eden/action-3/2");
 
     await mountWithCleanup(WebClient);
     await animationFrame(); // blank component

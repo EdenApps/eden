@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<odoo><data>
+<eden><data>
 
 <!-- Slide template for the fullscreen mode -->
 <template id="slide_fullscreen" name="Fullscreen">
@@ -203,4 +203,4 @@
 </template>
 
 
-</data></odoo>
+</data></eden>

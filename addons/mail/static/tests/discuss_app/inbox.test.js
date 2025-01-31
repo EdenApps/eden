@@ -13,8 +13,8 @@ import {
     step,
     triggerHotkey,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, expect, test } from "@odoo/hoot";
-import { Deferred } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@eden/hoot";
+import { Deferred } from "@eden/hoot-mock";
 import { mockService, serverState, withUser } from "@web/../tests/web_test_helpers";
 
 import { rpc } from "@web/core/network/rpc";
@@ -50,7 +50,7 @@ test.tags("focus required");
 test("reply: discard on pressing escape", async () => {
     const pyEnv = await startServer();
     const partnerId = pyEnv["res.partner"].create({
-        email: "testpartnert@odoo.com",
+        email: "testpartnert@eden.com",
         name: "TestPartner",
     });
     const messageId = pyEnv["mail.message"].create({
@@ -614,7 +614,7 @@ test("error notifications should not be shown in Inbox", async () => {
     await openDiscuss();
     await contains(".o-mail-Message");
     await contains(".o-mail-Message-header small", { text: "on Demo User" });
-    await contains(`.o-mail-Message-header a[href*='/odoo/res.partner/${partnerId}']`, {
+    await contains(`.o-mail-Message-header a[href*='/eden/res.partner/${partnerId}']`, {
         text: "Demo User",
     });
     await contains(".o-mail-Message-notification", { count: 0 });
@@ -701,7 +701,7 @@ test("Counter should be incremented by 1 when receiving a message with a mention
     withUser(userId, () =>
         rpc("/mail/message/post", {
             post_data: {
-                body: `<a href="https://www.hoot.test/odoo/res.partner/17" class="o_mail_redirect" data-oe-id="${mention[0]}" data-oe-model="res.partner" target="_blank" contenteditable="false">@${mentionName}</a> mention`,
+                body: `<a href="https://www.hoot.test/eden/res.partner/17" class="o_mail_redirect" data-oe-id="${mention[0]}" data-oe-model="res.partner" target="_blank" contenteditable="false">@${mentionName}</a> mention`,
                 message_type: "comment",
                 partner_ids: mention,
                 subtype_xmlid: "mail.mt_comment",

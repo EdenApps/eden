@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data noupdate="1">
+<eden><data noupdate="1">
 
     <template id="candidate_hired_template">
 Employee created: <a href="#" t-att-data-oe-id="candidate.employee_id.id" data-oe-model="hr.employee"><t t-esc="candidate.employee_id.name"/></a>
@@ -11,4 +11,4 @@ Employee created: <a href="#" t-att-data-oe-id="candidate.employee_id.id" data-o
         </xpath>
     </template>
 
-</data></odoo>
+</data></eden>

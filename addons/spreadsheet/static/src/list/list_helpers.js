@@ -1,11 +1,11 @@
-/** @odoo-module */
+/** @eden-module */
 // @ts-check
 
-import { helpers } from "@odoo/o-spreadsheet";
+import { helpers } from "@eden/o-spreadsheet";
 
 const { getFunctionsFromTokens } = helpers;
 
-/** @typedef {import("@odoo/o-spreadsheet").Token} Token */
+/** @typedef {import("@eden/o-spreadsheet").Token} Token */
 
 /**
  * Parse a spreadsheet formula and detect the number of LIST functions that are
@@ -16,7 +16,7 @@ const { getFunctionsFromTokens } = helpers;
  * @returns {number}
  */
 export function getNumberOfListFormulas(tokens) {
-    return getFunctionsFromTokens(tokens, ["ODOO.LIST", "ODOO.LIST.HEADER"]).length;
+    return getFunctionsFromTokens(tokens, ["EDEN.LIST", "EDEN.LIST.HEADER"]).length;
 }
 
 /**
@@ -24,8 +24,8 @@ export function getNumberOfListFormulas(tokens) {
  *
  * @param {Token[]} tokens
  *
- * @returns {import("../helpers/odoo_functions_helpers").OdooFunctionDescription|undefined}
+ * @returns {import("../helpers/eden_functions_helpers").EdenFunctionDescription|undefined}
  */
 export function getFirstListFunction(tokens) {
-    return getFunctionsFromTokens(tokens, ["ODOO.LIST", "ODOO.LIST.HEADER"])[0];
+    return getFunctionsFromTokens(tokens, ["EDEN.LIST", "EDEN.LIST.HEADER"])[0];
 }

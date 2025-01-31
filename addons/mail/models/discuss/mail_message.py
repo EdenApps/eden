@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import models
-from odoo.addons.mail.tools.discuss import Store
+from eden import models
+from eden.addons.mail.tools.discuss import Store
 
 
 class MailMessage(models.Model):

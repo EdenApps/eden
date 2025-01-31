@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="chat_room_view_search" model="ir.ui.view">
         <field name="name">chat.room.search</field>
         <field name="model">chat.room</field>
@@ -67,4 +67,4 @@
         action="chat_room_action"
         parent="website.menu_website_global_configuration"
         groups="base.group_no_one"/>
-</odoo>
+</eden>

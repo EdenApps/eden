@@ -1,8 +1,8 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { registry } from "@web/core/registry";
 import { _t } from "@web/core/l10n/translation";
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 import { standardWidgetProps } from "@web/views/widgets/standard_widget_props";
 
 export class ContractWarningTooltip extends Component {

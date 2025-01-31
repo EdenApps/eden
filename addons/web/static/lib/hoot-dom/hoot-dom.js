@@ -1,4 +1,4 @@
-/** @odoo-module alias=@odoo/hoot-dom default=false */
+/** @eden-module alias=@eden/hoot-dom default=false */
 
 /**
  * @typedef {import("./helpers/dom").Dimensions} Dimensions

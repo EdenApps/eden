@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
         <record model="ir.module.category" id="base.module_category_website_elearning">
             <field name="sequence">21</field>
         </record>
@@ -281,4 +281,4 @@
             <field name="perm_unlink" eval="1"/>
         </record>
     </data>
-</odoo>
+</eden>

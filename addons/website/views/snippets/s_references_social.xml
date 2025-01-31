@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_references_social" name="References Social">
     <section class="s_references_social o_cc o_cc1 pt64 pb64">
@@ -82,4 +82,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

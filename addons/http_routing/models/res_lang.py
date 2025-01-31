@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import models
-from odoo.addons.base.models.res_lang import LangDataDict
+from eden import models
+from eden.addons.base.models.res_lang import LangDataDict
 
 
 class ResLang(models.Model):

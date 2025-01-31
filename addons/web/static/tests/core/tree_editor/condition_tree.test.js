@@ -1,4 +1,4 @@
-import { expect, test, describe } from "@odoo/hoot";
+import { expect, test, describe } from "@eden/hoot";
 
 import { Domain } from "@web/core/domain";
 import { evaluateBooleanExpr } from "@web/core/py_js/py";

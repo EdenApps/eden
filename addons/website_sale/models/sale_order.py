@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import random
 
@@ -6,12 +6,12 @@ from datetime import datetime
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import SUPERUSER_ID, _, api, fields, models
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Command
-from odoo.http import request
-from odoo.osv import expression
-from odoo.tools import float_is_zero
+from eden import SUPERUSER_ID, _, api, fields, models
+from eden.exceptions import UserError, ValidationError
+from eden.fields import Command
+from eden.http import request
+from eden.osv import expression
+from eden.tools import float_is_zero
 
 
 class SaleOrder(models.Model):

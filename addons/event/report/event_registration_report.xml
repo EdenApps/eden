@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <record id="action_report_event_registration_attendee_list" model="ir.actions.report">
             <field name="name">Attendee List</field>
@@ -77,4 +77,4 @@
         </t>
     </template>
 
-</odoo>
+</eden>

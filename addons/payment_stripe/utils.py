@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 def get_publishable_key(provider_sudo):
     """ Return the publishable key for Stripe.

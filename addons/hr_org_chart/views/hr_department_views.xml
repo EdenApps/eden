@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <record id="hr_department_hierarchy_view" model="ir.ui.view">
         <field name="name">hr.departmnent.view.hierarchy</field>
@@ -40,4 +40,4 @@
         <field name="act_window_id" ref="hr.hr_department_tree_action"/>
     </record>
 
-</odoo>
+</eden>

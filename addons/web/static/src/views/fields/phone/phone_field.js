@@ -3,7 +3,7 @@ import { _t } from "@web/core/l10n/translation";
 import { useInputField } from "../input_field_hook";
 import { standardFieldProps } from "../standard_field_props";
 
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 export class PhoneField extends Component {
     static template = "web.PhoneField";

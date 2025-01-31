@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
 
-from odoo import Command, fields
-from odoo.addons.website_event_sale.tests.common import TestWebsiteEventSaleCommon
-from odoo.addons.base.tests.common import HttpCaseWithUserPortal
-from odoo.tests.common import tagged
+from eden import Command, fields
+from eden.addons.website_event_sale.tests.common import TestWebsiteEventSaleCommon
+from eden.addons.base.tests.common import HttpCaseWithUserPortal
+from eden.tests.common import tagged
 
 
 
@@ -85,4 +85,4 @@ class TestWebsiteEventBoothSale(HttpCaseWithUserPortal, TestWebsiteEventSaleComm
             'state_id': self.env.ref('base.state_us_39').id,
             'phone': '+1 555-555-5555',
         })
-        self.start_tour("/odoo", 'event_booth_sale_pricelists_different_currencies', login='admin')
+        self.start_tour("/eden", 'event_booth_sale_pricelists_different_currencies', login='admin')

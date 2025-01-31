@@ -1,14 +1,14 @@
-/** @odoo-module **/
+/** @eden-module **/
 
-import { Component, useState } from "@odoo/owl";
+import { Component, useState } from "@eden/owl";
 import { browser } from "@web/core/browser/browser";
 import { _t } from "@web/core/l10n/translation";
 
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { CopyButton } from "@web/core/copy_button/copy_button";
-import { waitForDataLoaded, freezeOdooData } from "@spreadsheet/helpers/model";
-import { Model } from "@odoo/o-spreadsheet";
+import { waitForDataLoaded, freezeEdenData } from "@spreadsheet/helpers/model";
+import { Model } from "@eden/o-spreadsheet";
 
 /**
  * Share button to share a spreadsheet
@@ -34,7 +34,7 @@ export class SpreadsheetShareButton extends Component {
     async onOpened() {
         const model = this.props.model;
         await waitForDataLoaded(model);
-        const data = await freezeOdooData(model);
+        const data = await freezeEdenData(model);
         if (!this.isChanged(data)) {
             return;
         }

@@ -1,8 +1,8 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { LocationList } from '@delivery/js/location_selector/location_list/location_list';
 import { MapContainer } from '@delivery/js/location_selector/map_container/map_container';
-import { Component, onMounted, onWillUnmount, useEffect, useState } from '@odoo/owl';
+import { Component, onMounted, onWillUnmount, useEffect, useState } from '@eden/owl';
 import { browser } from '@web/core/browser/browser';
 import { Dialog } from '@web/core/dialog/dialog';
 import { _t } from '@web/core/l10n/translation';

@@ -1,4 +1,4 @@
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 export class MessageNotificationPopover extends Component {
     static template = "mail.MessageNotificationPopover";

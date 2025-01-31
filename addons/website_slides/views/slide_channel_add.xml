@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <record id="slide_channel_view_form_add" model="ir.ui.view">
     <field name="name">slide.channel.view.form.add</field>
@@ -29,4 +29,4 @@
     <field name="view_id" ref="slide_channel_view_form_add"/>
 </record>
 
-</odoo>
+</eden>

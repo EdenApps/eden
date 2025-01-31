@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <function model="restaurant.table" name="_update_identifier" />
     </data>
-</odoo>
+</eden>

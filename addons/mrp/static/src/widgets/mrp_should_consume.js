@@ -1,9 +1,9 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { FloatField, floatField } from "@web/views/fields/float/float_field";
 import { formatFloat } from "@web/views/fields/formatters";
 import { registry } from "@web/core/registry";
-import { useRef, onPatched, onMounted, useState } from "@odoo/owl";
+import { useRef, onPatched, onMounted, useState } from "@eden/owl";
 
 /**
  * This widget is used to display alongside the total quantity to consume of a production order,

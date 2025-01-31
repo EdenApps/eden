@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.tests.common import TransactionCase
+from eden import Command
+from eden.tests.common import TransactionCase
 
 
 class TestAutoWaving(TransactionCase):

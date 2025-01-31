@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { browser } from "@web/core/browser/browser";
 import { registry } from "@web/core/registry";
@@ -15,7 +15,7 @@ export const UPDATE_BUS_PRESENCE_DELAY = 60000;
  * another device or browser updates the user's presence, the presence is sent to
  * the server if relevant (e.g., another device is away or offline, but this one
  * is online). To receive updates through the bus, subscribe to presence channels
- * (e.g., subscribe to `odoo-presence-res.partner_3` to receive updates about
+ * (e.g., subscribe to `eden-presence-res.partner_3` to receive updates about
  * this partner).
  */
 export const imStatusService = {

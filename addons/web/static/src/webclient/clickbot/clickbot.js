@@ -3,7 +3,7 @@
  * view. On each view, click on each filter.
  */
 
-import { App, reactive } from "@odoo/owl";
+import { App, reactive } from "@eden/owl";
 import { browser } from "@web/core/browser/browser";
 import { rpcBus } from "@web/core/network/rpc";
 import { getPopoverForTarget } from "@web/core/popover/popover";
@@ -36,7 +36,7 @@ let apps;
  * This should be done only once.
  */
 function setup(light, currentState) {
-    env = odoo.__WOWL_DEBUG__.root.env;
+    env = eden.__WOWL_DEBUG__.root.env;
     const stopButton = document.createElement("button");
     stopButton.setAttribute("id", "stop-clickbot");
     stopButton.classList.add("btn", "btn-danger");
@@ -50,7 +50,7 @@ function setup(light, currentState) {
     env.bus.addEventListener("ACTION_MANAGER:UI-UPDATED", uiUpdate);
     rpcBus.addEventListener("RPC:REQUEST", onRPCRequest);
     rpcBus.addEventListener("RPC:RESPONSE", onRPCResponse);
-    isEnterprise = odoo.info && odoo.info.isEnterprise;
+    isEnterprise = eden.info && eden.info.isEnterprise;
 
     state = reactive(
         currentState || {
@@ -490,7 +490,7 @@ async function testApp() {
 async function _clickEverywhere(xmlId, light, currentState) {
     setup(light, currentState);
     console.log("Starting ClickEverywhere test");
-    console.log(`Odoo flavor: ${isEnterprise ? "Enterprise" : "Community"}`);
+    console.log(`Eden flavor: ${isEnterprise ? "Enterprise" : "Community"}`);
     const startTime = performance.now();
     try {
         if (xmlId) {

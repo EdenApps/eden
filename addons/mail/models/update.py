@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import datetime
 import logging
 from ast import literal_eval
 
 import requests
 
-from odoo import api, fields, release, SUPERUSER_ID
-from odoo.exceptions import UserError
-from odoo.models import AbstractModel
-from odoo.tools.translate import _
-from odoo.tools import config
+from eden import api, fields, release, SUPERUSER_ID
+from eden.exceptions import UserError
+from eden.models import AbstractModel
+from eden.tools.translate import _
+from eden.tools import config
 
 _logger = logging.getLogger(__name__)
 
@@ -76,7 +76,7 @@ class PublisherWarrantyContract(AbstractModel):
 
     def update_notification(self, cron_mode=True):
         """
-        Send a message to Odoo's publisher warranty server to check the
+        Send a message to Eden's publisher warranty server to check the
         validity of the contracts, get notifications, etc...
 
         @param cron_mode: If true, catch all exceptions (appropriate for usage in a cron).

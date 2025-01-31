@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from markupsafe import Markup
 from unittest.mock import patch
 
-from odoo.addons.mail.tests import common
-from odoo.exceptions import AccessError
-from odoo.tests import tagged, users
+from eden.addons.mail.tests import common
+from eden.exceptions import AccessError
+from eden.tests import tagged, users
 
 
 class TestMailRenderCommon(common.MailCommon):
@@ -274,7 +274,7 @@ class TestMailRender(TestMailRenderCommon):
         partner_ids = self.env['res.partner'].sudo().create([{
             'name': f'test partner {n}'
         } for n in range(20)]).ids
-        with patch('odoo.models.Model.get_base_url', new=_mock_get_base_url), self.assertQueryCount(12):
+        with patch('eden.models.Model.get_base_url', new=_mock_get_base_url), self.assertQueryCount(12):
             # make sure name isn't already in cache
             self.env['res.partner'].browse(partner_ids).invalidate_recordset(['name', 'display_name'])
             render_results = self.env['mail.render.mixin']._render_template(
@@ -450,8 +450,8 @@ class TestRegexRendering(common.MailCommon):
         )
         o_qweb_render = self.env['ir.qweb']._render
         for template, expected in static_templates:
-            with (patch('odoo.addons.base.models.ir_qweb.IrQWeb._render', side_effect=o_qweb_render) as qweb_render,
-                patch('odoo.addons.base.models.ir_qweb.unsafe_eval', side_effect=eval) as unsafe_eval):
+            with (patch('eden.addons.base.models.ir_qweb.IrQWeb._render', side_effect=o_qweb_render) as qweb_render,
+                patch('eden.addons.base.models.ir_qweb.unsafe_eval', side_effect=eval) as unsafe_eval):
                 self.assertEqual(render(template), expected)
                 self.assertFalse(qweb_render.called)
                 self.assertFalse(unsafe_eval.called)
@@ -468,8 +468,8 @@ class TestRegexRendering(common.MailCommon):
             ('''<p t-out="'<h1>test</h1>'"/>''', '<p>&lt;h1&gt;test&lt;/h1&gt;</p>'),
         )
         for template, expected in non_static_templates:
-            with (patch('odoo.addons.base.models.ir_qweb.IrQWeb._render', side_effect=o_qweb_render) as qweb_render,
-                patch('odoo.addons.base.models.ir_qweb.unsafe_eval', side_effect=eval) as unsafe_eval):
+            with (patch('eden.addons.base.models.ir_qweb.IrQWeb._render', side_effect=o_qweb_render) as qweb_render,
+                patch('eden.addons.base.models.ir_qweb.unsafe_eval', side_effect=eval) as unsafe_eval):
                 rendered = render(template)
                 self.assertTrue(isinstance(rendered, Markup))
                 self.assertEqual(rendered, expected)
@@ -489,7 +489,7 @@ class TestRegexRendering(common.MailCommon):
             ('''{{object.contact_name ||| Default}}''', 'Default'),
         )
         for template, expected in static_templates:
-            with patch('odoo.tools.safe_eval.unsafe_eval', side_effect=eval) as unsafe_eval:
+            with patch('eden.tools.safe_eval.unsafe_eval', side_effect=eval) as unsafe_eval:
                 self.assertEqual(render(template), expected)
                 self.assertFalse(unsafe_eval.called)
                 self.assertFalse(self.env['mail.render.mixin']._has_unsafe_expression_template_inline_template(template, 'res.partner'))
@@ -500,7 +500,7 @@ class TestRegexRendering(common.MailCommon):
             ('''{{object.env.context.get('test')}}''', ''),
         )
         for template, expected in non_static_templates:
-            with patch('odoo.tools.safe_eval.unsafe_eval', side_effect=eval) as unsafe_eval:
+            with patch('eden.tools.safe_eval.unsafe_eval', side_effect=eval) as unsafe_eval:
                 self.assertEqual(render(template), expected)
                 self.assertTrue(unsafe_eval.called)
                 self.assertTrue(self.env['mail.render.mixin']._has_unsafe_expression_template_inline_template(template, 'res.partner'))

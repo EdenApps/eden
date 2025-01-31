@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <record id="action_report_production_order" model="ir.actions.report">
             <field name="name">Production Order</field>
@@ -62,4 +62,4 @@
             <field name="multi">True</field>
         </record>
     </data>
-</odoo>
+</eden>

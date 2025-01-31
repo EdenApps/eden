@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <!-- Filters for Dynamic Filter -->
         <record id="dynamic_snippet_latest_blog_post_filter" model="ir.filters">
@@ -32,4 +32,4 @@
             <field name="limit" eval="16"/>
         </record>
     </data>
-</odoo>
+</eden>

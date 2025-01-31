@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <record id="mailing_list_data" model="mailing.list">
             <field name="name">Newsletter</field>
@@ -11,4 +11,4 @@
             <field name="list_ids" eval="[(5, 0, 0)]"/>
         </record>
     </data>
-</odoo>
+</eden>

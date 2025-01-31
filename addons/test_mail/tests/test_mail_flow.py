@@ -1,8 +1,8 @@
-from odoo.addons.mail.tests.common import mail_new_test_user, MailCommon
-from odoo.addons.test_mail.data.test_mail_data import MAIL_TEMPLATE
-from odoo.addons.test_mail.tests.common import TestRecipients
-from odoo.tools.mail import email_normalize, formataddr
-from odoo.tests import tagged
+from eden.addons.mail.tests.common import mail_new_test_user, MailCommon
+from eden.addons.test_mail.data.test_mail_data import MAIL_TEMPLATE
+from eden.addons.test_mail.tests.common import TestRecipients
+from eden.tools.mail import email_normalize, formataddr
+from eden.tests import tagged
 
 
 @tagged('mail_gateway', 'mail_flow', 'post_install', '-at_install')
@@ -292,7 +292,7 @@ class TestMailFlow(MailCommon, TestRecipients):
                         'subject': f'Re: Re: {lead.name}',
                         'subtype_id': self.env.ref('mail.mt_comment'),
                     },
-                    # portal was already in email_to, hence not notified twice through odoo
+                    # portal was already in email_to, hence not notified twice through eden
                     'notif': [
                         {'partner': self.partner_employee, 'type': 'inbox'},
                         {'partner': self.partner_employee_2, 'type': 'email'},

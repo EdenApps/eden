@@ -1,13 +1,13 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import psycopg2.errors
 from werkzeug.exceptions import NotFound
 
-from odoo import _, http
-from odoo.exceptions import UserError
-from odoo.http import request
-from odoo.tools import consteq, replace_exceptions
-from odoo.addons.mail.models.discuss.mail_guest import add_guest_to_context
-from odoo.addons.mail.tools.discuss import Store
+from eden import _, http
+from eden.exceptions import UserError
+from eden.http import request
+from eden.tools import consteq, replace_exceptions
+from eden.addons.mail.models.discuss.mail_guest import add_guest_to_context
+from eden.addons.mail.tools.discuss import Store
 
 
 class PublicPageController(http.Controller):

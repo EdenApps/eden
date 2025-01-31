@@ -1,7 +1,7 @@
 import copy
 
-from odoo.exceptions import UserError
-from odoo.tests import common, tagged, Form
+from eden.exceptions import UserError
+from eden.tests import common, tagged, Form
 
 
 class TestConsumeComponentCommon(common.TransactionCase):

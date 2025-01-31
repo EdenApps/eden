@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
     <t t-name="point_of_sale.PosKanbanController" t-inherit="web.KanbanView" t-inherit-mode="primary">
         <xpath expr="//t[@t-component='props.Renderer']" position="attributes">
             <attribute name="initialPosState">initialPosState</attribute>
@@ -73,4 +73,4 @@
             </div>
         </div>
     </t>
-</odoo>
+</eden>

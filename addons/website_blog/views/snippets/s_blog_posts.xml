@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 <!-- Snippet -->
 <template id="s_blog_posts" name="Blog Posts">
     <t t-call="website.s_dynamic_snippet_template">
@@ -217,4 +217,4 @@
     <field name="path">website_blog/static/src/snippets/s_blog_posts/000.js</field>
 </record>
 
-</odoo>
+</eden>

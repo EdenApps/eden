@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 
 from dateutil.relativedelta import relativedelta
 
 from freezegun import freeze_time
 
-from odoo import Command, fields
-from odoo.tests.common import tagged, TransactionCase
-from odoo.addons.mail.tools.discuss import Store
+from eden import Command, fields
+from eden.tests.common import tagged, TransactionCase
+from eden.addons.mail.tools.discuss import Store
 
 
 @tagged('post_install', '-at_install')

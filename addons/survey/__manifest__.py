@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 {
     'name': 'Surveys',
     'version': '3.7',
@@ -15,7 +15,7 @@ answers of question and according to that survey is done. Partners are also
 sent mails with personal token for the invitation of the survey.
     """,
     'summary': 'Send your surveys or share them live.',
-    'website': 'https://www.odoo.com/app/surveys',
+    'website': 'https://www.edencloud.us/app/surveys',
     'depends': [
         'auth_signup',
         'http_routing',

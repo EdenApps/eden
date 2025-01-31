@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from freezegun import freeze_time
 from datetime import timedelta
 
-from odoo import fields
-from odoo.fields import Command
-from odoo.tests import Form, tagged
-from odoo.tools import float_compare, mute_logger, float_round
+from eden import fields
+from eden.fields import Command
+from eden.tests import Form, tagged
+from eden.tools import float_compare, mute_logger, float_round
 
-from odoo.addons.sale.tests.common import SaleCommon
+from eden.addons.sale.tests.common import SaleCommon
 
 
 @tagged('post_install', '-at_install')
@@ -307,7 +307,7 @@ class TestSalePrices(SaleCommon):
             'currency_id': currency_eur.id,
             'company_id': self.env.company.id,
         })
-        with mute_logger('odoo.models.unlink'):
+        with mute_logger('eden.models.unlink'):
             self.env['res.currency.rate'].search(
                 [('currency_id', '=', self.env.company.currency_id.id)]
             ).unlink()
@@ -368,7 +368,7 @@ class TestSalePrices(SaleCommon):
             'name': 'E.T',
             'login': 'hohoho',
         })
-        with mute_logger('odoo.models.unlink'):
+        with mute_logger('eden.models.unlink'):
             self.env['res.currency.rate'].search([]).unlink()
         self.env['res.currency.rate'].create({
             'name': '2010-01-01',

@@ -1,12 +1,12 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, fields, http
-from odoo.exceptions import AccessError, MissingError, ValidationError
-from odoo.http import request
+from eden import _, fields, http
+from eden.exceptions import AccessError, MissingError, ValidationError
+from eden.http import request
 
-from odoo.addons.account.controllers import portal
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.controllers.portal import PaymentPortal
+from eden.addons.account.controllers import portal
+from eden.addons.payment import utils as payment_utils
+from eden.addons.payment.controllers.portal import PaymentPortal
 
 
 class PortalAccount(portal.PortalAccount, PaymentPortal):

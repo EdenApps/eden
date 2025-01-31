@@ -1,6 +1,6 @@
 import { expirableStorage } from "@im_livechat/embed/common/expirable_storage";
 
-import { reactive } from "@odoo/owl";
+import { reactive } from "@eden/owl";
 import { rpc } from "@web/core/network/rpc";
 
 import { cookie } from "@web/core/browser/cookie";
@@ -28,10 +28,10 @@ export const SESSION_STATE = Object.freeze({
     PERSISTED: "PERSISTED",
 });
 
-export const ODOO_VERSION_KEY = `${location.origin.replace(
+export const EDEN_VERSION_KEY = `${location.origin.replace(
     /:\/{0,2}/g,
     "_"
-)}_im_livechat.odoo_version`;
+)}_im_livechat.eden_version`;
 
 const OPERATOR_STORAGE_KEY = "im_livechat_previous_operator";
 const GUEST_TOKEN_STORAGE_KEY = "im_livechat_guest_token";
@@ -62,7 +62,7 @@ export class LivechatService {
     }
 
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").EdenEnv} env
      * @param {{
      * bus_service: ReturnType<typeof import("@bus/services/bus_service").busService.start>,
      * "mail.store": import("@mail/core/common/store_service").Store

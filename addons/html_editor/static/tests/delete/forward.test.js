@@ -1,10 +1,10 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 import { testEditor, setupEditor } from "../_helpers/editor";
 import { unformat } from "../_helpers/format";
-import { tick } from "@odoo/hoot-mock";
+import { tick } from "@eden/hoot-mock";
 import { deleteForward, insertText, tripleClick } from "../_helpers/user_actions";
 import { getContent } from "../_helpers/selection";
-import { microTick } from "@odoo/hoot-dom";
+import { microTick } from "@eden/hoot-dom";
 
 /**
  * content of the "deleteForward" sub suite in editor.test.js

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
         <!--  MAILING !-->
         <record model="ir.ui.view" id="view_mail_mass_mailing_search">
             <field name="name">mailing.mailing.search</field>
@@ -515,7 +515,7 @@
                 Create a new mailing
               </p><p>
                 You don't need to import your mailing lists, you can easily
-                send emails<br/> to any contact saved in other Odoo apps.
+                send emails<br/> to any contact saved in other Eden apps.
               </p>
             </field>
         </record>
@@ -536,7 +536,7 @@
                 Create a new mailing
               </p><p>
                 You don't need to import your mailing lists, you can easily
-                send emails<br/> to any contact saved in other Odoo apps.
+                send emails<br/> to any contact saved in other Eden apps.
               </p>
             </field>
         </record>
@@ -546,4 +546,4 @@
             <field name="res_model">mailing.mailing</field>
             <field name="view_mode">form</field>
         </record>
-</odoo>
+</eden>

@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 {
     'name': 'Customer Portal',
@@ -11,7 +11,7 @@ It contains the base controller class and base templates. Business addons
 will add their specific templates and controllers to extend the customer
 portal.
 
-This module contains most code coming from odoo v10 website_portal. Purpose
+This module contains most code coming from eden v10 website_portal. Purpose
 of this module is to allow the display of a customer portal without having
 a dependency towards website editing and customization capabilities.""",
     'depends': ['web', 'web_editor', 'http_routing', 'mail', 'auth_signup'],
@@ -96,7 +96,7 @@ a dependency towards website editing and customization capabilities.""",
             ("include", "web._assets_bootstrap_backend"),
             "web/static/src/scss/mimetypes.scss",
             "web/static/src/libs/fontawesome/css/font-awesome.css",
-            "web/static/lib/odoo_ui_icons/style.css",
+            "web/static/lib/eden_ui_icons/style.css",
             "web/static/src/webclient/webclient.scss",
             "web/static/src/core/avatar/avatar.scss",
             "web/static/src/core/dropdown/dropdown.scss",

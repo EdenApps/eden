@@ -1,4 +1,4 @@
-import { expect, getFixture, test } from "@odoo/hoot";
+import { expect, getFixture, test } from "@eden/hoot";
 import {
     click,
     hover,
@@ -10,9 +10,9 @@ import {
     queryAllTexts,
     queryOne,
     resize,
-} from "@odoo/hoot-dom";
-import { Deferred, animationFrame, runAllTimers, tick } from "@odoo/hoot-mock";
-import { Component, onMounted, onPatched, useState, xml } from "@odoo/owl";
+} from "@eden/hoot-dom";
+import { Deferred, animationFrame, runAllTimers, tick } from "@eden/hoot-mock";
+import { Component, onMounted, onPatched, useState, xml } from "@eden/owl";
 
 import { makeMockEnv } from "@web/../tests/_framework/env_test_helpers";
 import { getPickerCell } from "@web/../tests/core/datetime/datetime_test_helpers";

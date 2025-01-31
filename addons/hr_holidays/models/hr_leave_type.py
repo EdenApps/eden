@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 # Copyright (c) 2005-2006 Axelor SARL. (http://www.axelor.com)
 
@@ -9,11 +9,11 @@ from collections import defaultdict
 from datetime import date, datetime, time
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools import format_date, frozendict
-from odoo.tools.translate import _
-from odoo.tools.float_utils import float_round
+from eden import api, fields, models
+from eden.exceptions import UserError, ValidationError
+from eden.tools import format_date, frozendict
+from eden.tools.translate import _
+from eden.tools.float_utils import float_round
 
 _logger = logging.getLogger(__name__)
 

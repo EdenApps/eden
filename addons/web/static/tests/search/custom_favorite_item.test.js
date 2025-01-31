@@ -1,6 +1,6 @@
-import { after, expect, test } from "@odoo/hoot";
-import { press, queryAllTexts } from "@odoo/hoot-dom";
-import { Component, xml } from "@odoo/owl";
+import { after, expect, test } from "@eden/hoot";
+import { press, queryAllTexts } from "@eden/hoot-dom";
+import { Component, xml } from "@eden/owl";
 import {
     contains,
     defineModels,

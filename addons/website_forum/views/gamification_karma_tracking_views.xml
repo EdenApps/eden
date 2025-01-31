@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="gamification_karma_tracking_view_search" model="ir.ui.view">
         <field name="name">gamification.karma.tracking.view.search.inherit.website.forum</field>
         <field name="model">gamification.karma.tracking</field>
@@ -11,4 +11,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</eden>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
      <record id="view_attachment_form_inherit_website" model="ir.ui.view">
         <field name="name">ir.attachment.form.inherit.website</field>
         <field name="model">ir.attachment</field>
@@ -20,4 +20,4 @@
            </field>
        </field>
    </record>
-</odoo>
+</eden>

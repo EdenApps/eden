@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_mega_menu_menus_logos" name="Menus &amp; logos" groups="base.group_user">
     <section class="s_mega_menu_menus_logos overflow-hidden o_colored_level o_cc o_cc1">
@@ -87,4 +87,4 @@
     <field name="path">website/static/src/snippets/s_mega_menu_menus_logos/000.scss</field>
 </record>
 
-</odoo>
+</eden>

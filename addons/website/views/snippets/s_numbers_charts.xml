@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_numbers_charts" name="Numbers Charts">
     <section class="s_numbers_charts pt48 pb48">
@@ -51,4 +51,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

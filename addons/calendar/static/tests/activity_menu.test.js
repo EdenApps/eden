@@ -7,8 +7,8 @@ import {
     startServer,
     step,
 } from "@mail/../tests/mail_test_helpers";
-import { expect, test } from "@odoo/hoot";
-import { mockDate } from "@odoo/hoot-mock";
+import { expect, test } from "@eden/hoot";
+import { mockDate } from "@eden/hoot-mock";
 import { getMockEnv } from "@web/../tests/_framework/env_test_helpers";
 import { mockService, preloadBundle, serverState } from "@web/../tests/web_test_helpers";
 import { actionService } from "@web/webclient/actions/action_service";

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <record id="calendar_template_meeting_invitation" model="mail.template">
             <field name="name">Calendar: Meeting Invitation</field>
@@ -99,7 +99,7 @@
                 <t t-if="object.event_id.videocall_location">
                     <li>
                         How to Join:
-                        <t t-if="object.get_base_url() in object.event_id.videocall_location"> Join with Odoo Discuss</t>
+                        <t t-if="object.get_base_url() in object.event_id.videocall_location"> Join with Eden Discuss</t>
                         <t t-else=""> Join at</t><br/>
                         <a t-att-href="object.event_id.videocall_location" target="_blank" t-out="object.event_id.videocall_location or ''">www.mycompany.com/calendar/join_videocall/xyz</a>
                     </li>
@@ -230,7 +230,7 @@
                 <t t-if="object.event_id.videocall_location">
                     <li>
                         How to Join:
-                        <t t-if="object.get_base_url() in object.event_id.videocall_location"> Join with Odoo Discuss</t>
+                        <t t-if="object.get_base_url() in object.event_id.videocall_location"> Join with Eden Discuss</t>
                         <t t-else=""> Join at</t><br/>
                         <a t-att-href="object.event_id.videocall_location" target="_blank" t-out="object.event_id.videocall_location or ''">www.mycompany.com/calendar/join_videocall/xyz</a>
                     </li>
@@ -337,7 +337,7 @@
                 <t t-if="object.event_id.videocall_location">
                     <li>
                         How to Join:
-                        <t t-if="object.get_base_url() in object.event_id.videocall_location"> Join with Odoo Discuss</t>
+                        <t t-if="object.get_base_url() in object.event_id.videocall_location"> Join with Eden Discuss</t>
                         <t t-else=""> Join at</t><br/>
                         <a t-att-href="object.event_id.videocall_location" target="_blank" t-out="object.event_id.videocall_location or ''">www.mycompany.com/calendar/join_videocall/xyz</a>
                     </li>
@@ -416,7 +416,7 @@
                         <t t-if="object.videocall_location">
                             <li>
                                 How to Join:
-                                <t t-if="object.get_base_url() in object.videocall_location"> Join with Odoo Discuss</t>
+                                <t t-if="object.get_base_url() in object.videocall_location"> Join with Eden Discuss</t>
                                 <t t-else=""> Join at</t><br/>
                                 <a t-att-href="object.videocall_location" target="_blank" t-out="object.videocall_location or ''">www.mycompany.com/calendar/join_videocall/xyz</a>
                             </li>
@@ -454,4 +454,4 @@
             </field>
         </record>
     </data>
-</odoo>
+</eden>

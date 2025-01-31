@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, _
-from odoo.exceptions import ValidationError
+from eden import api, fields, models, _
+from eden.exceptions import ValidationError
 
-from odoo.addons.hr_holidays.models.hr_leave_accrual_plan_level import _get_selection_days
+from eden.addons.hr_holidays.models.hr_leave_accrual_plan_level import _get_selection_days
 
 DAY_SELECT_VALUES = [str(i) for i in range(1, 29)] + ['last']
 DAY_SELECT_SELECTION_NO_LAST = tuple(zip(DAY_SELECT_VALUES, (str(i) for i in range(1, 29))))

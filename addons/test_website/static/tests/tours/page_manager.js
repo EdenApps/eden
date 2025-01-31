@@ -1,9 +1,9 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { registry } from "@web/core/registry";
 
 registry.category("web_tour.tours").add('test_website_page_manager', {
-    url: '/odoo/action-test_website.action_test_model_multi_website',
+    url: '/eden/action-test_website.action_test_model_multi_website',
     steps: () => [
 // Part 1: check that the website filter is working
 {
@@ -59,7 +59,7 @@ registry.category("web_tour.tours").add('test_website_page_manager', {
 });
 
 registry.category("web_tour.tours").add('test_website_page_manager_js_class_bug', {
-    url: '/odoo/action-test_website.action_test_model_multi_website_js_class_bug',
+    url: '/eden/action-test_website.action_test_model_multi_website_js_class_bug',
     steps: () => [
 {
     content: "Click on Kanban View",
@@ -72,7 +72,7 @@ registry.category("web_tour.tours").add('test_website_page_manager_js_class_bug'
 });
 
 registry.category("web_tour.tours").add('test_website_page_manager_no_website_id', {
-    url: '/odoo/action-test_website.action_test_model',
+    url: '/eden/action-test_website.action_test_model',
     steps: () => [
 {
     content: "Click on Kanban View",

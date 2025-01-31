@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { click, edit, press, queryAllTexts, queryAttribute, queryFirst } from "@odoo/hoot-dom";
-import { animationFrame, runAllTimers } from "@odoo/hoot-mock";
+import { expect, test } from "@eden/hoot";
+import { click, edit, press, queryAllTexts, queryAttribute, queryFirst } from "@eden/hoot-dom";
+import { animationFrame, runAllTimers } from "@eden/hoot-mock";
 import {
     clickSave,
     defineActions,
@@ -15,7 +15,7 @@ import {
     onRpc,
     serverState,
 } from "@web/../tests/web_test_helpers";
-import { EventBus } from "@odoo/owl";
+import { EventBus } from "@eden/owl";
 import { WebClient } from "@web/webclient/webclient";
 
 class Partner extends models.Model {

@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.sms.tests.common import SMSCommon
-from odoo.addons.test_mail_sms.tests.common import TestSMSRecipients
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from eden.addons.sms.tests.common import SMSCommon
+from eden.addons.test_mail_sms.tests.common import TestSMSRecipients
+from eden.tests import tagged
+from eden.tools import mute_logger
 
 
 @tagged('ir_actions')
@@ -71,7 +71,7 @@ class TestServerAction(SMSCommon, TestSMSRecipients):
         self.assertSMSOutgoing(self.env['res.partner'], self.test_numbers_san[0], content='Dear %s this is an SMS.' % self.test_record_2.display_name)
         self.assertSMSLogged(self.test_record_2, 'Dear %s this is an SMS.' % self.test_record_2.display_name)
 
-    @mute_logger('odoo.addons.sms.models.sms_sms')
+    @mute_logger('eden.addons.sms.models.sms_sms')
     def test_action_sms_w_post(self):
         self.action.sms_method = 'comment'
         context = {

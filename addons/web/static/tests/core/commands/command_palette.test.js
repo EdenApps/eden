@@ -1,6 +1,6 @@
-import { expect, getFixture, test } from "@odoo/hoot";
-import { press, queryAll, queryAllTexts, queryOne } from "@odoo/hoot-dom";
-import { Deferred, advanceTime, animationFrame, runAllTimers } from "@odoo/hoot-mock";
+import { expect, getFixture, test } from "@eden/hoot";
+import { press, queryAll, queryAllTexts, queryOne } from "@eden/hoot-dom";
+import { Deferred, advanceTime, animationFrame, runAllTimers } from "@eden/hoot-mock";
 import {
     contains,
     getService,
@@ -8,7 +8,7 @@ import {
     patchWithCleanup,
 } from "@web/../tests/web_test_helpers";
 
-import { Component, xml } from "@odoo/owl";
+import { Component, xml } from "@eden/owl";
 
 import { CommandPalette } from "@web/core/commands/command_palette";
 import { MainComponentsContainer } from "@web/core/main_components_container";
@@ -1391,7 +1391,7 @@ test("checks that href is correctly used", async () => {
                     action: () => {
                         expect.step("command_with_link_clicked");
                     },
-                    href: "https://www.odoo.com",
+                    href: "https://www.edencloud.us",
                 },
                 {
                     name: "Command without link",
@@ -1413,11 +1413,11 @@ test("checks that href is correctly used", async () => {
     await contains(".o_command_palette_search input").edit("@", { confirm: false });
     await runAllTimers();
     // Check that command has link inside it
-    expect(".o_command_palette .o_command:eq(0) a").toHaveAttribute("href", "https://www.odoo.com");
+    expect(".o_command_palette .o_command:eq(0) a").toHaveAttribute("href", "https://www.edencloud.us");
     // Check that we get url when doing ctrl+enter on a command having a link inside it
     await press("control+enter");
     await animationFrame();
-    expect.verifySteps(["https://www.odoo.com"]);
+    expect.verifySteps(["https://www.edencloud.us"]);
     // Check that command has no link inside it
     expect(".o_command_palette .o_command:eq(1) a").not.toHaveAttribute("href");
     // Check that clicking on a command having a link inside it triggers the command action

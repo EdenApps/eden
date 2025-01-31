@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { waitFor } from "@odoo/hoot-dom";
+import { expect, test } from "@eden/hoot";
+import { waitFor } from "@eden/hoot-dom";
 import {
     contains,
     getService,

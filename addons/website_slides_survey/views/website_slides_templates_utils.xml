@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="slide_sidebar_done_button" inherit_id="website_slides.slide_sidebar_done_button">
     <xpath expr="//button[hasclass('o_wslides_button_uncompleted')]/i[1]" position="after">
@@ -10,4 +10,4 @@
     </xpath>
 </template>
 
-</odoo>
+</eden>

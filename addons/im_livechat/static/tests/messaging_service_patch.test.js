@@ -7,7 +7,7 @@ import {
     step,
 } from "@mail/../tests/mail_test_helpers";
 import { withGuest } from "@mail/../tests/mock_server/mail_mock_server";
-import { describe, test } from "@odoo/hoot";
+import { describe, test } from "@eden/hoot";
 import { Command, mockService, serverState } from "@web/../tests/web_test_helpers";
 
 import { rpc } from "@web/core/network/rpc";
@@ -32,7 +32,7 @@ test("Notify message received out of focus", async () => {
             step(`/mail/data - ${JSON.stringify(args)}`);
         }
     });
-    mockService("presence", { isOdooFocused: () => false });
+    mockService("presence", { isEdenFocused: () => false });
     await start();
     await assertSteps([
         `/mail/data - ${JSON.stringify({

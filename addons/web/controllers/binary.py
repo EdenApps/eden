@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import base64
 import functools
@@ -12,25 +12,25 @@ from contextlib import nullcontext
 try:
     from werkzeug.utils import send_file
 except ImportError:
-    from odoo.tools._vendor.send_file import send_file
+    from eden.tools._vendor.send_file import send_file
 
-import odoo
-import odoo.modules.registry
-from odoo import SUPERUSER_ID, _, http, api
-from odoo.addons.base.models.assetsbundle import ANY_UNIQUE
-from odoo.exceptions import AccessError, UserError
-from odoo.http import request, Response
-from odoo.tools import file_open, file_path, replace_exceptions, str2bool
-from odoo.tools.image import image_guess_size_from_field_name
-from odoo.tools.mimetypes import guess_mimetype
+import eden
+import eden.modules.registry
+from eden import SUPERUSER_ID, _, http, api
+from eden.addons.base.models.assetsbundle import ANY_UNIQUE
+from eden.exceptions import AccessError, UserError
+from eden.http import request, Response
+from eden.tools import file_open, file_path, replace_exceptions, str2bool
+from eden.tools.image import image_guess_size_from_field_name
+from eden.tools.mimetypes import guess_mimetype
 
 _logger = logging.getLogger(__name__)
 
 BAD_X_SENDFILE_ERROR = """\
-Odoo is running with --x-sendfile but is receiving /web/filestore requests.
+Eden is running with --x-sendfile but is receiving /web/filestore requests.
 
 With --x-sendfile enabled, NGINX should be serving the
-/web/filestore route, however Odoo is receiving the
+/web/filestore route, however Eden is receiving the
 request.
 
 This usually indicates that NGINX is badly configured,
@@ -52,10 +52,10 @@ class Binary(http.Controller):
 
     @http.route('/web/filestore/<path:_path>', type='http', auth='none')
     def content_filestore(self, _path):
-        if odoo.tools.config['x_sendfile']:
+        if eden.tools.config['x_sendfile']:
             # pylint: disable=logging-format-interpolation
             _logger.error(BAD_X_SENDFILE_ERROR.format(
-                data_dir=odoo.tools.config['data_dir']
+                data_dir=eden.tools.config['data_dir']
             ))
         raise http.request.not_found()
 
@@ -257,7 +257,7 @@ class Binary(http.Controller):
         imgname = 'logo'
         imgext = '.png'
         dbname = request.db
-        uid = (request.session.uid if dbname else None) or odoo.SUPERUSER_ID
+        uid = (request.session.uid if dbname else None) or eden.SUPERUSER_ID
 
         if not dbname:
             response = http.Stream.from_path(file_path('web/static/img/logo.png')).get_response()
@@ -297,7 +297,7 @@ class Binary(http.Controller):
                 else:
                     response = http.Stream.from_path(file_path('web/static/img/nologo.png')).get_response()
             except Exception:
-                _logger.warning("While retrieving the company logo, using the Odoo logo instead", exc_info=True)
+                _logger.warning("While retrieving the company logo, using the Eden logo instead", exc_info=True)
                 response = http.Stream.from_path(file_path(f'web/static/img/{imgname}{imgext}')).get_response()
 
         return response

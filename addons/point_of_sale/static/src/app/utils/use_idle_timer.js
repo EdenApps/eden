@@ -1,4 +1,4 @@
-import { useExternalListener, useState } from "@odoo/owl";
+import { useExternalListener, useState } from "@eden/owl";
 
 const UserPresenceEvents = [
     "mousemove",

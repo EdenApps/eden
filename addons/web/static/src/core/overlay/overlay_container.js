@@ -1,4 +1,4 @@
-import { Component, onWillDestroy, useChildSubEnv, useEffect, useRef, useState } from "@odoo/owl";
+import { Component, onWillDestroy, useChildSubEnv, useEffect, useRef, useState } from "@eden/owl";
 import { sortBy } from "@web/core/utils/arrays";
 import { ErrorHandler } from "@web/core/utils/components";
 

@@ -1,4 +1,4 @@
-import { Component, xml } from "@odoo/owl";
+import { Component, xml } from "@eden/owl";
 import { registry } from "@web/core/registry";
 import { ActionContainer } from "@web/webclient/actions/action_container";
 

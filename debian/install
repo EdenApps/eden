@@ -1,2 +1,2 @@
-debian/odoo.conf /etc/odoo
-README.md /usr/share/doc/odoo
+debian/eden.conf /etc/eden
+README.md /usr/share/doc/eden

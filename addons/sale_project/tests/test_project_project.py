@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import tagged
-from odoo.tests.common import TransactionCase
+from eden.tests import tagged
+from eden.tests.common import TransactionCase
 
 
 @tagged('-at_install', 'post_install')

@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import re
 
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.exceptions import AccessError
-from odoo.tests import Form, HttpCase, tagged, users
-from odoo.tools import mute_logger
+from eden.addons.mail.tests.common import MailCommon
+from eden.exceptions import AccessError
+from eden.tests import Form, HttpCase, tagged, users
+from eden.tools import mute_logger
 
 
 @tagged('mail_composer')
@@ -73,7 +73,7 @@ class TestMailComposerForm(TestMailComposer):
             }
         ])
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('eden.addons.mail.models.mail_mail')
     @users('employee')
     def test_composer_default_recipients(self):
         """ Test usage of a private partner in composer, as default value """
@@ -104,7 +104,7 @@ class TestMailComposerForm(TestMailComposer):
         self.assertEqual(message.partner_ids, partner_classic)
         self.assertEqual(message.subject, f'{test_record.name}')
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('eden.addons.mail.models.mail_mail')
     @users('employee')
     def test_composer_default_recipients_private(self):
         """ Test usage of a private partner in composer, as default value """
@@ -137,7 +137,7 @@ class TestMailComposerForm(TestMailComposer):
         self.assertEqual(message.partner_ids, partner_private + partner_classic)
         self.assertEqual(message.subject, f'{test_record.name}')
 
-    @mute_logger('odoo.addons.base.models.ir_rule', 'odoo.addons.mail.models.mail_mail')
+    @mute_logger('eden.addons.base.models.ir_rule', 'eden.addons.mail.models.mail_mail')
     @users('employee')
     def test_composer_default_recipients_private_norights(self):
         """ Test usage of a private partner in composer when not having the
@@ -158,7 +158,7 @@ class TestMailComposerForm(TestMailComposer):
                 'default_res_ids': test_record.ids,
             }))
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('eden.addons.mail.models.mail_mail')
     @users('employee')
     def test_composer_template_recipients_private(self):
         """ Test usage of a private partner in composer, coming from template
@@ -235,7 +235,7 @@ class TestMailComposerRendering(TestMailComposer):
             'We must preserve (mso) comments in email html'
         )
 
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('eden.addons.mail.models.mail_mail')
     @users('employee')
     def test_mail_mass_mode_compose_with_mso(self):
         composer = self.env['mail.compose.message'].with_context({
@@ -279,7 +279,7 @@ class TestMailComposerUI(MailCommon, HttpCase):
         user = self.env["res.users"].create({"name": "Not A Demo User", "login": "nadu"})
         with self.mock_mail_app():
             self.start_tour(
-                f"/odoo/res.partner/{partner.id}",
+                f"/eden/res.partner/{partner.id}",
                 "mail/static/tests/tours/mail_composer_test_tour.js",
                 login=self.user_employee.login
             )

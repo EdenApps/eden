@@ -1,4 +1,4 @@
-/** @odoo-module alias=@web/../tests/mobile/views/kanban_view_tests default=false */
+/** @eden-module alias=@web/../tests/mobile/views/kanban_view_tests default=false */
 
 import { makeView, setupViewRegistries } from "@web/../tests/views/helpers";
 import { click, getFixture, patchWithCleanup } from "@web/../tests/helpers/utils";

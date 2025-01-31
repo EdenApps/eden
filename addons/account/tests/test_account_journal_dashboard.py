@@ -1,10 +1,10 @@
 from dateutil.relativedelta import relativedelta
 from freezegun import freeze_time
 
-from odoo import Command
-from odoo.addons.account.tests.test_account_journal_dashboard_common import TestAccountJournalDashboardCommon
-from odoo.tests import tagged
-from odoo.tools.misc import format_amount
+from eden import Command
+from eden.addons.account.tests.test_account_journal_dashboard_common import TestAccountJournalDashboardCommon
+from eden.tests import tagged
+from eden.tools.misc import format_amount
 
 @tagged('post_install', '-at_install')
 class TestAccountJournalDashboard(TestAccountJournalDashboardCommon):

@@ -1,4 +1,4 @@
-/** @odoo-module alias=@web/../tests/views/kanban/helpers default=false */
+/** @eden-module alias=@web/../tests/views/kanban/helpers default=false */
 
 import { makeFakeDialogService } from "@web/../tests/helpers/mock_services";
 import { click, editInput, getDropdownMenu, nextTick } from "@web/../tests/helpers/utils";

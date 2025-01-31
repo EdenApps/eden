@@ -1,20 +1,20 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from dateutil.relativedelta import relativedelta
 from unittest.mock import patch, PropertyMock
 
-from odoo import Command, fields
-from odoo.tools.misc import limited_field_access_token
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.addons.mail.tools.discuss import Store
-from odoo.tests.common import users, tagged, HttpCase, warmup
+from eden import Command, fields
+from eden.tools.misc import limited_field_access_token
+from eden.addons.mail.tests.common import MailCommon
+from eden.addons.mail.tools.discuss import Store
+from eden.tests.common import users, tagged, HttpCase, warmup
 
 
 @tagged('post_install', '-at_install')
 class TestDiscussFullPerformance(HttpCase, MailCommon):
     # Queries for _query_count_init_store (in order):
     #   1: internalUserGroupId: ref exists
-    #   5: odoobot format:
+    #   5: edenbot format:
     #       - ref exists
     #       - fetch res_partner (_read_format/_to_store)
     #       - _compute_im_status (_read_format/_to_store)
@@ -154,7 +154,7 @@ class TestDiscussFullPerformance(HttpCase, MailCommon):
                 'login': 'emp',
                 'name': 'Ernest Employee',
                 'notification_type': 'inbox',
-                'odoobot_state': 'disabled',
+                'edenbot_state': 'disabled',
                 'password': self.password,
                 'signature': '--\nErnest',
             },
@@ -238,7 +238,7 @@ class TestDiscussFullPerformance(HttpCase, MailCommon):
         self.channel_livechat_1.with_user(self.users[1]).message_post(body="test")
         self.authenticate(None, None)
         with patch(
-            "odoo.http.GeoIP.country_code",
+            "eden.http.GeoIP.country_code",
             new_callable=PropertyMock(return_value=self.env.ref("base.be").code),
         ):
             self.channel_livechat_2 = Channel.browse(
@@ -372,12 +372,12 @@ class TestDiscussFullPerformance(HttpCase, MailCommon):
                     "avatar_128_access_token": limited_field_access_token(
                         self.user_root.partner_id, "avatar_128"
                     ),
-                    "email": "odoobot@example.com",
+                    "email": "edenbot@example.com",
                     "id": self.user_root.partner_id.id,
                     "im_status": "bot",
                     "isInternalUser": True,
                     "is_company": False,
-                    "name": "OdooBot",
+                    "name": "EdenBot",
                     "out_of_office_date_end": False,
                     "userId": self.user_root.id,
                     "write_date": fields.Datetime.to_string(self.user_root.partner_id.write_date),
@@ -406,7 +406,7 @@ class TestDiscussFullPerformance(HttpCase, MailCommon):
                 "hasMessageTranslationFeature": False,
                 "internalUserGroupId": self.env.ref("base.group_user").id,
                 "mt_comment_id": xmlid_to_res_id("mail.mt_comment"),
-                "odoobot": {"id": self.user_root.partner_id.id, "type": "partner"},
+                "edenbot": {"id": self.user_root.partner_id.id, "type": "partner"},
                 "self": {"id": self.users[0].partner_id.id, "type": "partner"},
                 "settings": {
                     "channel_notifications": False,

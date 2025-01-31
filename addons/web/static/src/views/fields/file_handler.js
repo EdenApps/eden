@@ -3,7 +3,7 @@ import { useService } from "@web/core/utils/hooks";
 import { getDataURLFromFile } from "@web/core/utils/urls";
 import { checkFileSize } from "@web/core/utils/files";
 
-import { Component, useRef, useState } from "@odoo/owl";
+import { Component, useRef, useState } from "@eden/owl";
 
 export class FileUploader extends Component {
     static template = "web.FileUploader";

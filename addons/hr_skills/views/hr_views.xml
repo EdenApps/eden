@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <record id="hr_employee_view_search" model="ir.ui.view">
         <field name="name">hr.employee.skill.search</field>
@@ -38,7 +38,7 @@
                     <div class="oe_title">
                         <label for="name" string="Title"/>
                         <h1>
-                            <field name="name" placeholder="e.g. Odoo Inc." required="True"/>
+                            <field name="name" placeholder="e.g. Eden Inc." required="True"/>
                         </h1>
                     </div>
                     <group>
@@ -393,4 +393,4 @@
         parent="hr.menu_config_employee"
         sequence="7"
         groups="hr.group_hr_user"/>
-</odoo>
+</eden>

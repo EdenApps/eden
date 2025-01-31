@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
 from datetime import datetime
 from lxml.builder import E
 from markupsafe import Markup
 
-from odoo import api, exceptions, models, tools, _
-from odoo.addons.mail.tools.alias_error import AliasError
+from eden import api, exceptions, models, tools, _
+from eden.addons.mail.tools.alias_error import AliasError
 
 import logging
 
@@ -410,7 +410,7 @@ class BaseModel(models.AbstractModel):
         if not self:
             return headers
         self.ensure_one()
-        headers['X-Odoo-Objects'] = f"{self._name}-{self.id}"
+        headers['X-Eden-Objects'] = f"{self._name}-{self.id}"
         if 'Return-Path' not in headers:
             company = self._mail_get_companies(default=self.env.company)[self.id]
             if company.bounce_email:

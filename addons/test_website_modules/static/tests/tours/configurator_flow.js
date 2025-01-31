@@ -1,10 +1,10 @@
-/** @odoo-module **/
+/** @eden-module **/
 
-import { delay } from "@odoo/hoot-dom";
+import { delay } from "@eden/hoot-dom";
 import { registry } from "@web/core/registry";
 
 registry.category("web_tour.tours").add('configurator_flow', {
-    url: '/odoo/action-website.action_website_configuration',
+    url: '/eden/action-website.action_website_configuration',
     steps: () => [
     {
         content: "click on create new website",

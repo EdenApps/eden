@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { patch } from "@web/core/utils/patch";
 import { ProductDocumentKanbanController } from "@product/js/product_document_kanban/product_document_kanban_controller";

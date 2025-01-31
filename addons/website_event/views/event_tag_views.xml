@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="event_tag_view_form_inherit" model="ir.ui.view">
         <field name="name">event.tag.view.form.inherit</field>
         <field name="model">event.tag</field>
@@ -16,4 +16,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

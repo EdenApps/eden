@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { generateSeed } from "../mock/math";
 
@@ -64,7 +64,7 @@ export const CONFIG_SCHEMA = {
         parse: parseNumber(1),
     },
     /**
-     * Debug parameter used in Odoo.
+     * Debug parameter used in Eden.
      * It has no direct effect on the test runner, but is taken into account since
      * all URL parameters not explicitly defined in the schema are ignored.
      * @default ""

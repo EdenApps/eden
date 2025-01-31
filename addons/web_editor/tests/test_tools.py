@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import re
 
-from odoo.tests import common, tagged
-from odoo.addons.web_editor import tools
+from eden.tests import common, tagged
+from eden.addons.web_editor import tools
 
 
 @tagged('post_install', '-at_install')

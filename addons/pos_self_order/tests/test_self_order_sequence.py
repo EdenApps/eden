@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
-from odoo.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
+import eden.tests
+from eden.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
 
 
-@odoo.tests.tagged("post_install", "-at_install")
+@eden.tests.tagged("post_install", "-at_install")
 class TestSelfOrderSequence(SelfOrderCommonTest):
     browser_size = "1920,1080"
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <!-- menus in settings - technical feature required -->
     <menuitem id="gamification_menu"
               name="Gamification Tools"
@@ -30,4 +30,4 @@
               parent="gamification_menu"
               action="gamification_karma_tracking_action"
               sequence="50"/>
-</odoo>
+</eden>

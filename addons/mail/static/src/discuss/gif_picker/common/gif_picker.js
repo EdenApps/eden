@@ -1,4 +1,4 @@
-import { Component, onWillStart, useState, useEffect } from "@odoo/owl";
+import { Component, onWillStart, useState, useEffect } from "@eden/owl";
 import { useOnBottomScrolled, useSequential } from "@mail/utils/common/hooks";
 import { user } from "@web/core/user";
 import { useService, useAutofocus } from "@web/core/utils/hooks";

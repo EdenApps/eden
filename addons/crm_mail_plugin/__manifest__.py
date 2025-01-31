@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 {
     'name': 'CRM Mail Plugin',
@@ -8,7 +8,7 @@
     'sequence': 5,
     'summary': 'Turn emails received in your mailbox into leads and log their content as internal notes.',
     'description': "Turn emails received in your mailbox into leads and log their content as internal notes.",
-    'website': 'https://www.odoo.com/app/crm',
+    'website': 'https://www.edencloud.us/app/crm',
     'depends': [
         'crm',
         'mail_plugin',

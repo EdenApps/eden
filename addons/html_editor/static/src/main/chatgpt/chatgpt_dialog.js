@@ -2,7 +2,7 @@ import { _t } from "@web/core/l10n/translation";
 import { Dialog } from "@web/core/dialog/dialog";
 import { rpc } from "@web/core/network/rpc";
 import { useService } from "@web/core/utils/hooks";
-import { Component, useState, onWillDestroy, status, markup } from "@odoo/owl";
+import { Component, useState, onWillDestroy, status, markup } from "@eden/owl";
 
 const POSTPROCESS_GENERATED_CONTENT = (content) => {
     const lines = content.split("\n").filter((line) => line.trim().length);

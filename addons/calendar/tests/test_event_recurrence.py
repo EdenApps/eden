@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import pytz
 from datetime import datetime, date
 from dateutil.relativedelta import relativedelta
-from odoo.exceptions import UserError
+from eden.exceptions import UserError
 
-from odoo.tests import Form, TransactionCase
+from eden.tests import Form, TransactionCase
 from freezegun import freeze_time
 
 

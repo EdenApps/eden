@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from lxml import html
 
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.test_mass_mailing.tests.common import TestMassSMSCommon
-from odoo.tests.common import users
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from eden.addons.mail.tests.common import mail_new_test_user
+from eden.addons.test_mass_mailing.tests.common import TestMassSMSCommon
+from eden.tests.common import users
+from eden.tests import tagged
+from eden.tools import mute_logger
 
 @tagged('digest', 'mass_mailing', 'mass_mailing_sms')
 class TestMailingStatistics(TestMassSMSCommon):
@@ -28,7 +28,7 @@ class TestMailingStatistics(TestMassSMSCommon):
         cls.records = cls._reset_mail_context(cls.records)
 
     @users('user_marketing')
-    @mute_logger('odoo.addons.mass_mailing_sms.models.mailing_mailing', 'odoo.addons.mail.models.mail_mail', 'odoo.addons.mail.models.mail_thread')
+    @mute_logger('eden.addons.mass_mailing_sms.models.mailing_mailing', 'eden.addons.mail.models.mail_mail', 'eden.addons.mail.models.mail_thread')
     def test_mailing_statistics_sms(self):
         mailing = self.env['mailing.mailing'].browse(self.mailing_sms.ids)
         target_records = self.env['mail.test.sms'].browse(self.records.ids)
@@ -87,7 +87,7 @@ class TestMailingStatistics(TestMassSMSCommon):
         self.assertEqual(first_link_value, mailing.clicked)
 
     @users('user_marketing')
-    @mute_logger('odoo.addons.mass_mailing_sms.models.mailing_mailing', 'odoo.addons.mail.models.mail_mail', 'odoo.addons.mail.models.mail_thread')
+    @mute_logger('eden.addons.mass_mailing_sms.models.mailing_mailing', 'eden.addons.mail.models.mail_mail', 'eden.addons.mail.models.mail_thread')
     def test_sent_delivered_sms(self):
         """ Test that if we get delivered trace status first instead of sent from
             providers for some reasons, the statistics for sent SMS will be correct. """

@@ -1,10 +1,10 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { HierarchyNavbar } from "./hierarchy_navbar";
 import { Layout } from "@web/search/layout";
 import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
-import { Component, onWillStart, useEffect, useState } from "@odoo/owl";
+import { Component, onWillStart, useEffect, useState } from "@eden/owl";
 import { router } from "@web/core/browser/router";
 import { standardActionServiceProps } from "@web/webclient/actions/action_service";
 

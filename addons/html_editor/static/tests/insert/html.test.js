@@ -1,6 +1,6 @@
 import { parseHTML } from "@html_editor/utils/html";
-import { describe, expect, test } from "@odoo/hoot";
-import { tick } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@eden/hoot";
+import { tick } from "@eden/hoot-mock";
 import { setupEditor, testEditor } from "../_helpers/editor";
 import { unformat } from "../_helpers/format";
 import { getContent } from "../_helpers/selection";

@@ -1,4 +1,4 @@
-<odoo>
+<eden>
     <record id="res_config_settings_view_form" model="ir.ui.view">
         <field name="name">res.config.settings.form.auth_password_policy</field>
         <field name="model">res.config.settings</field>
@@ -13,4 +13,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</eden>

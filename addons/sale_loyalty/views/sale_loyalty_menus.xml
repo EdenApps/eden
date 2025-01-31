@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
 
     <menuitem id="menu_discount_loyalty_type_config"
         action="loyalty.loyalty_program_discount_loyalty_action"
@@ -13,4 +13,4 @@
         groups="sales_team.group_sale_manager"
         sequence="50"/>
 
-</odoo>
+</eden>

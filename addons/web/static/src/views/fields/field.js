@@ -7,7 +7,7 @@ import { getFieldContext } from "@web/model/relational_model/utils";
 import { X2M_TYPES, getClassNameFromDecoration } from "@web/views/utils";
 import { getTooltipInfo } from "./field_tooltip";
 
-import { Component, xml } from "@odoo/owl";
+import { Component, xml } from "@eden/owl";
 
 const isSmall = utils.isSmall;
 
@@ -432,7 +432,7 @@ export class Field extends Component {
                 field: this.props.record.fields[this.props.name],
                 fieldInfo: this.props.fieldInfo || {},
             });
-            if (Boolean(odoo.debug) || (tooltip && JSON.parse(tooltip).field.help)) {
+            if (Boolean(eden.debug) || (tooltip && JSON.parse(tooltip).field.help)) {
                 return tooltip;
             }
         }

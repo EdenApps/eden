@@ -7,7 +7,7 @@ import {
     nextLeaf,
     previousLeaf,
 } from "@html_editor/utils/dom_info";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 import { insertTestHtml } from "../_helpers/editor";
 
 const base64Img =

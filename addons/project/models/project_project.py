@@ -1,17 +1,17 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import ast
 import json
 from datetime import timedelta
 
-from odoo import api, Command, fields, models
-from odoo.addons.mail.tools.discuss import Store
-from odoo.addons.rating.models import rating_data
-from odoo.exceptions import UserError
-from odoo.osv.expression import AND
-from odoo.tools import get_lang, SQL
-from odoo.tools.misc import unquote
-from odoo.tools.translate import _
+from eden import api, Command, fields, models
+from eden.addons.mail.tools.discuss import Store
+from eden.addons.rating.models import rating_data
+from eden.exceptions import UserError
+from eden.osv.expression import AND
+from eden.tools import get_lang, SQL
+from eden.tools.misc import unquote
+from eden.tools.translate import _
 from .project_update import STATUS_COLOR
 from .project_task import CLOSED_STATES
 

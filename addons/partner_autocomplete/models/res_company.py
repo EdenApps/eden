@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 import logging
@@ -7,9 +7,9 @@ import threading
 
 from lxml.builder import E
 
-from odoo.addons.iap.tools import iap_tools
-from odoo import api, fields, models, _
-from odoo.tools.mail import email_domain_extract, url_domain_extract
+from eden.addons.iap.tools import iap_tools
+from eden import api, fields, models, _
+from eden.tools.mail import email_domain_extract, url_domain_extract
 
 _logger = logging.getLogger(__name__)
 
@@ -96,7 +96,7 @@ class ResCompany(models.Model):
 
         if additional_data:
             template_values = json.loads(additional_data)
-            template_values['flavor_text'] = _("Company auto-completed by Odoo Partner Autocomplete Service")
+            template_values['flavor_text'] = _("Company auto-completed by Eden Partner Autocomplete Service")
             self.partner_id.message_post_with_source(
                 'iap_mail.enrich_company',
                 render_values=template_values,

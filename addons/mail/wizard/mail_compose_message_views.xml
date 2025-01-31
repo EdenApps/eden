@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <record model="ir.ui.view" id="email_compose_message_wizard_form">
             <field name="name">mail.compose.message.form</field>
@@ -64,7 +64,7 @@
                             <field name="reply_to_force_new" invisible="1"/>
                             <field name="reply_to_mode" invisible="composition_mode != 'mass_mail'" widget="radio"/>
                             <group>
-                                <field name="reply_to" string="Reply-to Address" placeholder='e.g: "info@mycompany.odoo.com"'
+                                <field name="reply_to" string="Reply-to Address" placeholder='e.g: "info@mycompany.edencloud.us"'
                                     invisible="reply_to_mode == 'update' or composition_mode != 'mass_mail'"
                                     required="reply_to_mode != 'update' and composition_mode == 'mass_mail'"/>
                             </group>
@@ -112,4 +112,4 @@
             <field name="target">new</field>
         </record>
     </data>
-</odoo>
+</eden>

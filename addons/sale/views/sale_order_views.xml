@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <!-- VIEWS -->
 
@@ -960,7 +960,7 @@
             <a
                 role="button"
                 class="btn btn-secondary"
-                href="https://www.odoo.com/documentation/master/_downloads/56a93429515b36105d952e1d2b802f9e/sample_quotation.pdf"
+                href="https://www.edencloud.us/documentation/master/_downloads/56a93429515b36105d952e1d2b802f9e/sample_quotation.pdf"
                 target="_blank"
             >
                 Check a sample. It's clean!
@@ -997,7 +997,7 @@
             <a
                 role="button"
                 class="btn btn-secondary"
-                href="https://www.odoo.com/documentation/master/_downloads/56a93429515b36105d952e1d2b802f9e/sample_quotation.pdf"
+                href="https://www.edencloud.us/documentation/master/_downloads/56a93429515b36105d952e1d2b802f9e/sample_quotation.pdf"
                 target="_blank"
             >
                 Check a sample. It's clean!
@@ -1078,7 +1078,7 @@
             An order is to upsell when delivered quantities are above initially
             ordered quantities, and the invoicing policy is based on ordered quantities.
             </p><p>
-            As an example, if you sell pre-paid hours of services, Odoo recommends you
+            As an example, if you sell pre-paid hours of services, Eden recommends you
             to sell extra hours when all ordered hours have been consumed.
             </p>
         </field>
@@ -1116,4 +1116,4 @@
                 action = records.with_context(hide_default_template=True).action_quotation_send()
         </field>
     </record>
-</odoo>
+</eden>

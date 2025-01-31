@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
     <t t-name="hr_org_chart.HierarchyView" t-inherit="web_hierarchy.HierarchyView" t-inherit-mode="primary">
         <t t-call="web.ActionHelper" position="replace">
             <t t-if="props.info.noContentHelp">
@@ -10,4 +10,4 @@
             </t>
         </t>
     </t>
-</odoo>
+</eden>

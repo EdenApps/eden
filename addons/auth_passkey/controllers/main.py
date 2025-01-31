@@ -1,6 +1,6 @@
-from odoo import http
-from odoo.http import request
-from odoo.addons.web.controllers.home import CREDENTIAL_PARAMS
+from eden import http
+from eden.http import request
+from eden.addons.web.controllers.home import CREDENTIAL_PARAMS
 
 
 CREDENTIAL_PARAMS.append('webauthn_response')

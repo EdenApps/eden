@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import timedelta
 
-from odoo import fields, Command
-from odoo.tests import Form
-from odoo.addons.purchase_stock.tests.common import PurchaseTestCommon
+from eden import fields, Command
+from eden.tests import Form
+from eden.addons.purchase_stock.tests.common import PurchaseTestCommon
 
 
 class TestPurchaseOldRules(PurchaseTestCommon):

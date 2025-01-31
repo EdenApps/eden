@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { RelationalModel } from "@web/model/relational_model/relational_model";
 import { Record } from "@web/model/relational_model/record";

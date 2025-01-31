@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
-from odoo.tests import TransactionCase
+from eden.fields import Command
+from eden.tests import TransactionCase
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon, TestTaxCommon
-from odoo.addons.product.tests.common import ProductCommon
-from odoo.addons.sales_team.tests.common import SalesTeamCommon
+from eden.addons.account.tests.common import AccountTestInvoicingCommon, TestTaxCommon
+from eden.addons.product.tests.common import ProductCommon
+from eden.addons.sales_team.tests.common import SalesTeamCommon
 
 
 class SaleCommon(

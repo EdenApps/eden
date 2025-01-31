@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="s_color_blocks_2" name="Big Boxes">
         <div class="s_mail_color_blocks_2 o_mail_snippet_general">
             <div class="container">
@@ -20,4 +20,4 @@
             </div>
         </div>
     </template>
-</odoo>
+</eden>

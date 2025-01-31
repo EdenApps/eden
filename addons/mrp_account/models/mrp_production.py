@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 from ast import literal_eval
 from collections import defaultdict
 
-from odoo import fields, models, _
-from odoo.tools import float_round
+from eden import fields, models, _
+from eden.tools import float_round
 
 
 class MrpProduction(models.Model):

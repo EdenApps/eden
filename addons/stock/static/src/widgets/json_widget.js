@@ -1,9 +1,9 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { registry } from "@web/core/registry";
 import { _t } from "@web/core/l10n/translation";
 import { user } from "@web/core/user";
-import { Component, onWillStart } from "@odoo/owl";
+import { Component, onWillStart } from "@eden/owl";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";
 
 export class JsonPopOver extends Component {

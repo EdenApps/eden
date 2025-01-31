@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from http import HTTPStatus
 from urllib.parse import parse_qs
 
-from odoo import fields
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.base.tests.common import HttpCaseWithUserPortal
-from odoo.addons.website_slides.tests import common
-from odoo.tests import tagged, users
+from eden import fields
+from eden.addons.mail.tests.common import mail_new_test_user
+from eden.addons.base.tests.common import HttpCaseWithUserPortal
+from eden.addons.website_slides.tests import common
+from eden.tests import tagged, users
 
 @tagged('post_install', '-at_install')
 class TestAttendee(common.SlidesCase):

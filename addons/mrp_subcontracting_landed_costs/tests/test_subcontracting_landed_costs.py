@@ -1,7 +1,7 @@
-from odoo.exceptions import ValidationError
-from odoo.tests import Form, tagged
+from eden.exceptions import ValidationError
+from eden.tests import Form, tagged
 
-from odoo.addons.mrp_subcontracting.tests.common import TestMrpSubcontractingCommon
+from eden.addons.mrp_subcontracting.tests.common import TestMrpSubcontractingCommon
 
 
 @tagged('post_install', '-at_install')

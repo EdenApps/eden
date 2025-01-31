@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <template id="portal_timesheet_table_inherit" inherit_id="hr_timesheet.portal_timesheet_table">
         <th name="t_label" position="before">
@@ -28,4 +28,4 @@
         </xpath>
     </template>
 
-</odoo>
+</eden>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <!-- Add a shortcut to favorites / tracks after registration -->
 <template id="registration_complete" inherit_id="website_event.registration_complete">
@@ -85,4 +85,4 @@
     </xpath>
 </template>
 
-</odoo>
+</eden>

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 import logging
@@ -8,9 +8,9 @@ import requests
 
 from werkzeug.urls import url_encode, url_join
 
-from odoo import _, api, fields, models
-from odoo.exceptions import AccessError, UserError
-from odoo.tools.misc import hmac
+from eden import _, api, fields, models
+from eden.exceptions import AccessError, UserError
+from eden.tools.misc import hmac
 
 _logger = logging.getLogger(__name__)
 

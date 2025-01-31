@@ -1,5 +1,5 @@
 import { useVisible } from "@mail/utils/common/hooks";
-import { Component, useState } from "@odoo/owl";
+import { Component, useState } from "@eden/owl";
 import { useService } from "@web/core/utils/hooks";
 import { _t } from "@web/core/l10n/translation";
 import { sprintf } from "@web/core/utils/strings";

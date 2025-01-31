@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <record id="project_task_burndown_chart_report_view_search" model="ir.ui.view">
         <field name="name">project.task.burndown.chart.report.view.search</field>
@@ -61,4 +61,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

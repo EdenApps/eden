@@ -1,9 +1,9 @@
 
 from itertools import accumulate
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError
-from odoo.tools import Query
+from eden import api, fields, models
+from eden.exceptions import UserError
+from eden.tools import Query
 
 
 class AccountRoot(models.Model):

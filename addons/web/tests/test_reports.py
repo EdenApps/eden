@@ -1,11 +1,11 @@
-import odoo.tests
+import eden.tests
 
-from odoo.addons.website.tools import MockRequest
+from eden.addons.website.tools import MockRequest
 
 
-class TestReports(odoo.tests.HttpCase):
+class TestReports(eden.tests.HttpCase):
     def test_report_session_cookie(self):
-        """ Asserts wkhtmltopdf forwards the user session when requesting resources to Odoo, such as images,
+        """ Asserts wkhtmltopdf forwards the user session when requesting resources to Eden, such as images,
         and that the resource is correctly returned as expected.
         """
         partner_id = self.env.user.partner_id.id

@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import base64
 
-from odoo import Command, _, api, fields, models
-from odoo.exceptions import ValidationError
+from eden import Command, _, api, fields, models
+from eden.exceptions import ValidationError
 
-from odoo.addons.sale_pdf_quote_builder import utils
+from eden.addons.sale_pdf_quote_builder import utils
 
 
 class ProductDocument(models.Model):

@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, fields, models, _
-from odoo.exceptions import ValidationError
-from odoo.tools.float_utils import float_round
+from eden import api, fields, models, _
+from eden.exceptions import ValidationError
+from eden.tools.float_utils import float_round
 
 
 class UtmCampaign(models.Model):

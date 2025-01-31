@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
+from eden.fields import Command
 
-from odoo.addons.payment_custom.tests.common import PaymentCustomCommon
-from odoo.addons.website_sale.tests.common import WebsiteSaleCommon
+from eden.addons.payment_custom.tests.common import PaymentCustomCommon
+from eden.addons.website_sale.tests.common import WebsiteSaleCommon
 
 
 class OnSiteCommon(PaymentCustomCommon, WebsiteSaleCommon):

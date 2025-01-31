@@ -3,7 +3,7 @@ import { _t } from "@web/core/l10n/translation";
 import { Field } from "@web/views/fields/field";
 import { useAutofocus } from "@web/core/utils/hooks";
 
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 export class ListConfirmationDialog extends Component {
     static template = "web.ListView.ConfirmationModal";

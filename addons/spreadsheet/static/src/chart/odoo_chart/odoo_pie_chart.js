@@ -1,26 +1,26 @@
-/** @odoo-module */
+/** @eden-module */
 
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@eden/o-spreadsheet";
 import { _t } from "@web/core/l10n/translation";
-import { OdooChart } from "./odoo_chart";
+import { EdenChart } from "./eden_chart";
 
 const { chartRegistry } = spreadsheet.registries;
 
 const { getDefaultChartJsRuntime, chartFontColor, ColorGenerator, formatTickValue } =
     spreadsheet.helpers;
 
-chartRegistry.add("odoo_pie", {
-    match: (type) => type === "odoo_pie",
-    createChart: (definition, sheetId, getters) => new OdooChart(definition, sheetId, getters),
-    getChartRuntime: createOdooChartRuntime,
+chartRegistry.add("eden_pie", {
+    match: (type) => type === "eden_pie",
+    createChart: (definition, sheetId, getters) => new EdenChart(definition, sheetId, getters),
+    getChartRuntime: createEdenChartRuntime,
     validateChartDefinition: (validator, definition) =>
-        OdooChart.validateChartDefinition(validator, definition),
-    transformDefinition: (definition) => OdooChart.transformDefinition(definition),
-    getChartDefinitionFromContextCreation: () => OdooChart.getDefinitionFromContextCreation(),
+        EdenChart.validateChartDefinition(validator, definition),
+    transformDefinition: (definition) => EdenChart.transformDefinition(definition),
+    getChartDefinitionFromContextCreation: () => EdenChart.getDefinitionFromContextCreation(),
     name: _t("Pie"),
 });
 
-function createOdooChartRuntime(chart, getters) {
+function createEdenChartRuntime(chart, getters) {
     const background = chart.background || "#FFFFFF";
     const { datasets, labels } = chart.dataSource.getData();
     const locale = getters.getLocale();
@@ -48,7 +48,7 @@ function createOdooChartRuntime(chart, getters) {
 function getPieConfiguration(chart, labels, locale) {
     const color = chartFontColor(chart.background);
     const config = getDefaultChartJsRuntime(chart, labels, color, { locale });
-    config.type = chart.type.replace("odoo_", "");
+    config.type = chart.type.replace("eden_", "");
     const legend = {
         ...config.options.legend,
         display: chart.legendPosition !== "none",

@@ -1,6 +1,6 @@
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { click, queryAllAttributes, queryAllProperties, queryAllTexts } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { beforeEach, describe, expect, test } from "@eden/hoot";
+import { click, queryAllAttributes, queryAllProperties, queryAllTexts } from "@eden/hoot-dom";
+import { animationFrame } from "@eden/hoot-mock";
 import {
     clearRegistry,
     contains,
@@ -18,7 +18,7 @@ import { user } from "@web/core/user";
 import { getOrigin } from "@web/core/utils/urls";
 
 import { UserMenu } from "@web/webclient/user_menu/user_menu";
-import { odooAccountItem, preferencesItem } from "@web/webclient/user_menu/user_menu_items";
+import { edenAccountItem, preferencesItem } from "@web/webclient/user_menu/user_menu_items";
 
 const userMenuRegistry = registry.category("user_menuitems");
 
@@ -149,17 +149,17 @@ test("can execute the callback of settings", async () => {
     expect.verifySteps(["7", "Change My Preferences"]);
 });
 
-test("click on odoo account item", async () => {
+test("click on eden account item", async () => {
     patchWithCleanup(browser, {
         open: (url) => expect.step(`open ${url}`),
     });
-    userMenuRegistry.add("odoo_account", odooAccountItem);
+    userMenuRegistry.add("eden_account", edenAccountItem);
     await mountWithCleanup(UserMenu);
     onRpc("/web/session/account", () => "https://account-url.com");
     stepAllNetworkCalls();
     await contains("button.dropdown-toggle").click();
     expect(".o-dropdown--menu .dropdown-item").toHaveCount(1);
-    expect(".o-dropdown--menu .dropdown-item").toHaveText("My Odoo.com account");
+    expect(".o-dropdown--menu .dropdown-item").toHaveText("My Eden.com account");
     await contains(".o-dropdown--menu .dropdown-item").click();
     expect.verifySteps(["/web/session/account", "open https://account-url.com"]);
 });

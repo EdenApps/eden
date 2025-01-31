@@ -1,10 +1,10 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 /**
  * Speed up fade-in fade-out to avoid useless delay in tests.
  */
 function patchSurveyWidget() {
-    const SurveyFormWidget = odoo.loader.modules.get('@survey/js/survey_form')[Symbol.for('default')]
+    const SurveyFormWidget = eden.loader.modules.get('@survey/js/survey_form')[Symbol.for('default')]
     SurveyFormWidget.include({
         _submitForm: function () {
             this.fadeInOutDelay = 0;

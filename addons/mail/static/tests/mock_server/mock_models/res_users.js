@@ -8,7 +8,7 @@ export class ResUsers extends webModels.ResUsers {
     notification_type = fields.Selection({
         selection: [
             ["email", "Handle by Emails"],
-            ["inbox", "Handle in Odoo"],
+            ["inbox", "Handle in Eden"],
         ],
         default: "email",
     });
@@ -30,7 +30,7 @@ export class ResUsers extends webModels.ResUsers {
             hasGifPickerFeature: true,
             hasLinkPreviewFeature: true,
             hasMessageTranslationFeature: true,
-            odoobot: mailDataHelpers.Store.one(ResPartner.browse(serverState.odoobotId)),
+            edenbot: mailDataHelpers.Store.one(ResPartner.browse(serverState.edenbotId)),
         });
         if (!this._is_public(this.env.uid)) {
             const userSettings = ResUsersSettings._find_or_create_for_user(this.env.uid);

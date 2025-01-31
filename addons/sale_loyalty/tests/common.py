@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
 
-from odoo.exceptions import ValidationError
-from odoo.fields import Command
+from eden.exceptions import ValidationError
+from eden.fields import Command
 
-from odoo.addons.sale.tests.common import SaleCommon
+from eden.addons.sale.tests.common import SaleCommon
 
 
 class TestSaleCouponCommon(SaleCommon):

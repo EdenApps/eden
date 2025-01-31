@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data>
+<eden><data>
     <!-- Tag -->
     <record id="tags_0" model="forum.tag">
         <field name="name">Contract</field>
@@ -21,4 +21,4 @@
         <field name="color">4</field>
         <field name="forum_id" ref="website_forum.forum_help"/>
     </record>
-</data></odoo>
+</data></eden>

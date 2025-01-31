@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 import mimetypes
@@ -7,11 +7,11 @@ import requests
 import werkzeug.utils
 from werkzeug.urls import url_encode
 
-from odoo import http, tools, _
-from odoo.http import request
-from odoo.tools.mimetypes import guess_mimetype
+from eden import http, tools, _
+from eden.http import request
+from eden.tools.mimetypes import guess_mimetype
 
-from odoo.addons.html_editor.controllers.main import HTML_Editor
+from eden.addons.html_editor.controllers.main import HTML_Editor
 
 logger = logging.getLogger(__name__)
 

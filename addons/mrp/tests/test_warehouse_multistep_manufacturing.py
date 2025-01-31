@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import Form, tagged
-from odoo.addons.mrp.tests.common import TestMrpCommon
-from odoo import Command
+from eden.tests import Form, tagged
+from eden.addons.mrp.tests.common import TestMrpCommon
+from eden import Command
 
 
 @tagged('post_install', '-at_install')

@@ -1,5 +1,5 @@
-from odoo import models, api, _
-from odoo.exceptions import UserError
+from eden import models, api, _
+from eden.exceptions import UserError
 
 
 class StockQuant(models.Model):

@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from collections import Counter, defaultdict
 
-from odoo import _, api, fields, tools, models, Command
-from odoo.exceptions import UserError, ValidationError
-from odoo.osv import expression
-from odoo.tools import OrderedSet, format_list, groupby
-from odoo.tools.float_utils import float_compare, float_is_zero, float_round
+from eden import _, api, fields, tools, models, Command
+from eden.exceptions import UserError, ValidationError
+from eden.osv import expression
+from eden.tools import OrderedSet, format_list, groupby
+from eden.tools.float_utils import float_compare, float_is_zero, float_round
 
 
 class StockMoveLine(models.Model):

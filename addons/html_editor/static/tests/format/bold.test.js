@@ -1,6 +1,6 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { manuallyDispatchProgrammaticEvent, press, queryOne } from "@odoo/hoot-dom";
-import { animationFrame, tick } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@eden/hoot";
+import { manuallyDispatchProgrammaticEvent, press, queryOne } from "@eden/hoot-dom";
+import { animationFrame, tick } from "@eden/hoot-mock";
 import { patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { setupEditor, testEditor } from "../_helpers/editor";
 import { unformat } from "../_helpers/format";

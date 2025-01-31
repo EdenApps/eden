@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @eden-module **/
 
-import { waitFor } from "@odoo/hoot-dom";
+import { waitFor } from "@eden/hoot-dom";
 import { registry } from "@web/core/registry";
 import { stepUtils } from "@web_tour/tour_service/tour_utils";
 
@@ -14,7 +14,7 @@ const todayDate = function () {
 };
 
 registry.category("web_tour.tours").add("calendar_appointments_hour_tour", {
-    url: "/odoo",
+    url: "/eden",
     steps: () => [
         stepUtils.showAppsMenuItem(),
         {

@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import re
 from stdnum import get_cc_module, ean
 
-from odoo import _, api, fields, models
-from odoo.exceptions import ValidationError
-from odoo.addons.account.models.company import PEPPOL_LIST
+from eden import _, api, fields, models
+from eden.exceptions import ValidationError
+from eden.addons.account.models.company import PEPPOL_LIST
 
 try:
     import phonenumbers

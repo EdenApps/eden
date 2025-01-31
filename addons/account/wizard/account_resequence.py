@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
-from odoo.tools.date_utils import get_fiscal_year
-from odoo.tools.misc import format_date
+from eden import api, fields, models, _
+from eden.exceptions import UserError
+from eden.tools.date_utils import get_fiscal_year
+from eden.tools.misc import format_date
 
 from collections import defaultdict
 import json

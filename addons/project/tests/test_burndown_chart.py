@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from freezegun import freeze_time
 from datetime import datetime
 
-from odoo import Command
-from odoo.osv.expression import AND, OR
-from odoo.tests.common import tagged, HttpCase
+from eden import Command
+from eden.osv.expression import AND, OR
+from eden.tests.common import tagged, HttpCase
 from .test_project_base import TestProjectCommon
 
 
@@ -434,4 +434,4 @@ class TestBurndownChartTour(HttpCase, TestBurndownChartCommon):
 
     def test_burndown_chart_tour(self):
         # Test customizing personal stages as a project user
-        self.start_tour('/odoo', 'burndown_chart_tour', login="admin")
+        self.start_tour('/eden', 'burndown_chart_tour', login="admin")

@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-import odoo
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
-from odoo.addons.mail.tests.common import MailCommon
+import eden
+from eden.addons.base.tests.common import HttpCaseWithUserDemo
+from eden.addons.mail.tests.common import MailCommon
 
 
-@odoo.tests.tagged("-at_install", "post_install")
+@eden.tests.tagged("-at_install", "post_install")
 class TestControllerCommon(HttpCaseWithUserDemo, MailCommon):
     @classmethod
     def setUpClass(cls):

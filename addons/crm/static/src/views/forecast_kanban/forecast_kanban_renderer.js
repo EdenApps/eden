@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { CrmKanbanRenderer } from "@crm/views/crm_kanban/crm_kanban_renderer";
 import { useService } from "@web/core/utils/hooks";

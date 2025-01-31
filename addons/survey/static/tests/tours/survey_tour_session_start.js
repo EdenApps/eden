@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { registry } from "@web/core/registry";
 import { accessSurveysteps } from "./survey_tour_session_tools";
@@ -9,7 +9,7 @@ import { accessSurveysteps } from "./survey_tour_session_tools";
  * by going to the first question.
  */
 registry.category("web_tour.tours").add('test_survey_session_start_tour', {
-    url: "/odoo",
+    url: "/eden",
     steps: () => [].concat(accessSurveysteps, [{
     trigger: 'button[name="action_open_session_manager"]',
     run: "click",

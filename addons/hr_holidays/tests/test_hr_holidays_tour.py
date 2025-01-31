@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from freezegun import freeze_time
 
-from odoo.tests import HttpCase
-from odoo.tests.common import tagged
+from eden.tests import HttpCase
+from eden.tests.common import tagged
 
 from datetime import date
 
@@ -42,4 +42,4 @@ class TestHrHolidaysTour(HttpCase):
             'date_to': '2022-12-31',
         })
 
-        self.start_tour('/odoo', 'hr_holidays_tour', login="admin")
+        self.start_tour('/eden', 'hr_holidays_tour', login="admin")

@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@eden/hoot";
 import { setupEditor } from "./_helpers/editor";
 
 test("sanitize should remove nasty elements", async () => {

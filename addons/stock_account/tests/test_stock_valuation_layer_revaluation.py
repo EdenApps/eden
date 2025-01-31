@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import UserError
-from odoo.tests import Form
-from odoo.addons.stock_account.tests.test_stockvaluation import _create_accounting_data
-from odoo.addons.stock_account.tests.test_stockvaluationlayer import TestStockValuationCommon
+from eden.exceptions import UserError
+from eden.tests import Form
+from eden.addons.stock_account.tests.test_stockvaluation import _create_accounting_data
+from eden.addons.stock_account.tests.test_stockvaluationlayer import TestStockValuationCommon
 
 
 class TestStockValuationLayerRevaluation(TestStockValuationCommon):

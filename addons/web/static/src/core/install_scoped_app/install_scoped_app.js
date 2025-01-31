@@ -1,6 +1,6 @@
 import { browser } from "@web/core/browser/browser";
 import { registry } from "@web/core/registry";
-import { Component, onMounted, useState } from "@odoo/owl";
+import { Component, onMounted, useState } from "@eden/owl";
 import { isDisplayStandalone } from "@web/core/browser/feature_detection";
 import { useService } from "@web/core/utils/hooks";
 import { Dropdown } from "@web/core/dropdown/dropdown";

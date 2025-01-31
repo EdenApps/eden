@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { registry } from "@web/core/registry";
 
@@ -69,7 +69,7 @@ registry.category("web_tour.tours").add('forum_question', {
     },
     {
         content: "Check that the content is the same",
-        trigger: 'div.odoo-editor-editable p:contains("First Question <p>code here</p>")',
+        trigger: 'div.eden-editor-editable p:contains("First Question <p>code here</p>")',
     },
     {
         content: "Save changes",

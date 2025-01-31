@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="view_stock_quantity_history_inherit_stock_account" model="ir.ui.view">
         <field name="name">Valuation Report at Date</field>
         <field name="model">stock.quantity.history</field>
@@ -18,4 +18,4 @@
             </field>
         </field>
     </record>
-</odoo>
+</eden>

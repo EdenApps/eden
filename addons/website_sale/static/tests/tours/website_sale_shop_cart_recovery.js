@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @eden-module **/
 
-import { queryOne } from "@odoo/hoot-dom";
+import { queryOne } from "@eden/hoot-dom";
 import { browser } from "@web/core/browser/browser";
 import { registry } from "@web/core/registry";
 import * as tourUtils from "@website_sale/js/tours/tour_utils";
@@ -27,7 +27,7 @@ registry.category("web_tour.tours").add('shop_cart_recovery', {
         trigger: '.oe_login_form',
         run: function () {
             var orderId = browser.localStorage.getItem(orderIdKey);
-            var url = "/odoo/action-sale.action_orders/" + orderId;
+            var url = "/eden/action-sale.action_orders/" + orderId;
             var loginForm = document.querySelector('.oe_login_form');
             loginForm.querySelector('input[name="login"]').value = "admin";
             loginForm.querySelector('input[name="password"]').value = "admin";

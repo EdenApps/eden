@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <record id="stock_move_per_sale_order_line_action" model="ir.actions.act_window">
         <field name="name">Transfers</field>
@@ -19,4 +19,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

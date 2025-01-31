@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="base_install_request.base_module_install_review_description">
         <p t-if="any(app.application for app in apps)">The following apps will be installed:</p>
         <div class="container-fluid">
@@ -15,4 +15,4 @@
             </ul>
         </div>
     </template>
-</odoo>
+</eden>

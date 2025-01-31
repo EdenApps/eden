@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <template id="add_to_wishlist" inherit_id="website_sale.products_item" name="Wishlist Button" priority="20">
         <xpath expr="//div[hasclass('o_wsale_product_btn')]" position="inside">
@@ -288,4 +288,4 @@
         </t>
     </template>
 
-</odoo>
+</eden>

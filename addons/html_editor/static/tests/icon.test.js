@@ -1,7 +1,7 @@
-import { expect, test } from "@odoo/hoot";
-import { click, waitFor } from "@odoo/hoot-dom";
+import { expect, test } from "@eden/hoot";
+import { click, waitFor } from "@eden/hoot-dom";
 import { setupEditor } from "./_helpers/editor";
-import { animationFrame } from "@odoo/hoot-mock";
+import { animationFrame } from "@eden/hoot-mock";
 import { setContent } from "./_helpers/selection";
 import { undo } from "./_helpers/user_actions";
 

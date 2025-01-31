@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.test_mass_mailing.tests.common import TestMassMailCommon
-from odoo.tests import tagged
+from eden.addons.test_mass_mailing.tests.common import TestMassMailCommon
+from eden.tests import tagged
 
 
 @tagged('link_tracker')
@@ -34,7 +34,7 @@ class TestSMSPost(TestMassMailCommon):
 
     def setUp(self):
         super(TestSMSPost, self).setUp()
-        self._web_base_url = 'https://test.odoo.com'
+        self._web_base_url = 'https://test.edencloud.us'
         self.env['ir.config_parameter'].sudo().set_param('web.base.url', self._web_base_url)
 
     def test_body_link_shorten(self):

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="0">
 
         <record id="hr_holidays.holiday_status_comp" model="hr.leave.type">
@@ -18,4 +18,4 @@
             <field name="work_entry_type_id" ref="hr_work_entry_contract.work_entry_type_legal_leave"></field>
         </record>
     </data>
-</odoo>
+</eden>

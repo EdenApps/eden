@@ -1,5 +1,5 @@
-import { afterEach, expect, test } from "@odoo/hoot";
-import { runAllTimers } from "@odoo/hoot-mock";
+import { afterEach, expect, test } from "@eden/hoot";
+import { runAllTimers } from "@eden/hoot-mock";
 import {
     contains,
     defineActions,

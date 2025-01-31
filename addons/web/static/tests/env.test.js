@@ -1,6 +1,6 @@
-import { after, beforeEach, describe, expect, getFixture, test } from "@odoo/hoot";
-import { Deferred, tick } from "@odoo/hoot-mock";
-import { Component, xml } from "@odoo/owl";
+import { after, beforeEach, describe, expect, getFixture, test } from "@eden/hoot";
+import { Deferred, tick } from "@eden/hoot-mock";
+import { Component, xml } from "@eden/owl";
 import { clearRegistry, makeMockEnv, patchTranslations } from "@web/../tests/web_test_helpers";
 
 import { registry } from "@web/core/registry";
@@ -17,7 +17,7 @@ beforeEach(() => {
 /**
  * @param {string} name
  * @param {string[]} dependencies
- * @param {(env: import("@web/env").OdooEnv, dependencies: Record<string, any>) => any} factory
+ * @param {(env: import("@web/env").EdenEnv, dependencies: Record<string, any>) => any} factory
  */
 function registerService(name, dependencies, factory) {
     servicesRegistry.add(name, {
@@ -189,11 +189,11 @@ test(`mountComponent creates an env and sets the application as root when no env
     }
     const app = await mountComponent(Root, getFixture());
     after(() => {
-        delete odoo.__WOWL_DEBUG__;
+        delete eden.__WOWL_DEBUG__;
     });
     const { env } = app;
     expect(env.services).toEqual({ my_service: "a" });
-    expect(odoo.__WOWL_DEBUG__).toEqual({ root: app.root.component });
+    expect(eden.__WOWL_DEBUG__).toEqual({ root: app.root.component });
     expect(getFixture()).toHaveText("Root");
 });
 
@@ -217,7 +217,7 @@ test(`mountComponent uses the env when provided and doesn't start the services`,
     const app = await mountComponent(Root, getFixture(), { env });
     expect.verifySteps([]);
     expect(app.env.services).toBe(env.services);
-    expect(odoo.__WOWL_DEBUG__).toBe(undefined);
+    expect(eden.__WOWL_DEBUG__).toBe(undefined);
     expect(getFixture()).toHaveText("Root");
 });
 
@@ -229,7 +229,7 @@ test(`mountComponent: can pass props to the root component`, async () => {
 
     await mountComponent(Root, getFixture(), { props: { text: "text from props" } });
     after(() => {
-        delete odoo.__WOWL_DEBUG__;
+        delete eden.__WOWL_DEBUG__;
     });
     expect(getFixture()).toHaveText("text from props");
 });

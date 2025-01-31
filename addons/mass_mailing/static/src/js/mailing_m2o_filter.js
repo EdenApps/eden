@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { _t } from "@web/core/l10n/translation";
 import { Domain } from '@web/core/domain';
@@ -6,7 +6,7 @@ import { registry } from '@web/core/registry';
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { useService } from "@web/core/utils/hooks";
 import { Many2OneField, many2OneField } from '@web/views/fields/many2one/many2one_field';
-import { useState, useEffect } from "@odoo/owl";
+import { useState, useEffect } from "@eden/owl";
 
 export class MailingFilterDropdown extends Dropdown {
     setup() {

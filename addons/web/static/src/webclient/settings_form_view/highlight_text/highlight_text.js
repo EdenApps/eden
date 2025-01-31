@@ -1,6 +1,6 @@
 import { escapeRegExp } from "@web/core/utils/strings";
 
-import { Component, useState, onWillRender } from "@odoo/owl";
+import { Component, useState, onWillRender } from "@eden/owl";
 
 export class HighlightText extends Component {
     static template = "web.HighlightText";

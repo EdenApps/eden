@@ -1,7 +1,7 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { patch } from "@web/core/utils/patch";
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@eden/o-spreadsheet";
 import { useService } from "@web/core/utils/hooks";
 import { _t } from "@web/core/l10n/translation";
 
@@ -12,8 +12,8 @@ patch(spreadsheet.components.FigureComponent.prototype, {
         this.actionService = useService("action");
         this.notificationService = useService("notification");
     },
-    async navigateToOdooMenu() {
-        const menu = this.env.model.getters.getChartOdooMenu(this.props.figure.id);
+    async navigateToEdenMenu() {
+        const menu = this.env.model.getters.getChartEdenMenu(this.props.figure.id);
         if (!menu) {
             throw new Error(`Cannot find any menu associated with the chart`);
         }
@@ -28,12 +28,12 @@ patch(spreadsheet.components.FigureComponent.prototype, {
         }
         await this.actionService.doAction(menu.actionID);
     },
-    get hasOdooMenu() {
-        return this.env.model.getters.getChartOdooMenu(this.props.figure.id) !== undefined;
+    get hasEdenMenu() {
+        return this.env.model.getters.getChartEdenMenu(this.props.figure.id) !== undefined;
     },
     async onClick() {
-        if (this.env.isDashboard() && this.hasOdooMenu) {
-            this.navigateToOdooMenu();
+        if (this.env.isDashboard() && this.hasEdenMenu) {
+            this.navigateToEdenMenu();
         }
     },
 });

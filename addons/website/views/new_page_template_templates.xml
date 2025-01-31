@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <!-- This template is used to obtain the order and the translations of all
 group names.
 It is not done in python (eg: a method returning a list of translated terms,
 overridden by modules), because:
 - it needs to be simple for designers and community: only write XML in themes
-- python is ignored when importing modules in Odoo, which is a common flow for
+- python is ignored when importing modules in Eden, which is a common flow for
   themes
 -->
 <template id="new_page_template_groups">
@@ -1057,4 +1057,4 @@ overridden by modules), because:
     <value eval="[ref('base.module_website')]"/>
 </function>
 
-</odoo>
+</eden>

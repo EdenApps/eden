@@ -1,8 +1,8 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
-import { Component, useRef, useState } from "@odoo/owl";
+import { Component, useRef, useState } from "@eden/owl";
 
 export class HierarchyNavbar extends Component {
     static template = "website.hierarchy_navbar";

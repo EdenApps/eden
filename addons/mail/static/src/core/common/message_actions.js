@@ -1,4 +1,4 @@
-import { Component, toRaw, useComponent, useState, xml } from "@odoo/owl";
+import { Component, toRaw, useComponent, useState, xml } from "@eden/owl";
 
 import { _t } from "@web/core/l10n/translation";
 import { download } from "@web/core/network/download";

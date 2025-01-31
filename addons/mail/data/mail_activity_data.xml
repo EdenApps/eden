@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <record id="mail_activity_data_email" model="mail.activity.type">
             <field name="name">Email</field>
@@ -40,4 +40,4 @@
             <field name="active">False</field>
         </record>
     </data>
-</odoo>
+</eden>

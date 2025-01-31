@@ -34,9 +34,9 @@ import {
     queryFirst,
     select,
     waitFor,
-} from "@odoo/hoot-dom";
-import { getFixture, expect, test } from "@odoo/hoot";
-import { animationFrame, mockDate, runAllTimers } from "@odoo/hoot-mock";
+} from "@eden/hoot-dom";
+import { getFixture, expect, test } from "@eden/hoot";
+import { animationFrame, mockDate, runAllTimers } from "@eden/hoot-mock";
 
 async function closePopover() {
     // Close the popover by clicking outside

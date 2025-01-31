@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
     <t t-name="hr_recruitment.RecruitmentActionHelper">
         <div class="o_view_nocontent">
             <div class="o_nocontent_help">
@@ -22,4 +22,4 @@
             </div>
         </div>
     </t>
-</odoo>
+</eden>

@@ -4,12 +4,12 @@
         <Setting addLabel="false">
             <div class="d-flex">
                 <div>
-                    <a class="d-block mx-auto" href="https://play.google.com/store/apps/details?id=com.odoo.mobile" target="blank">
+                    <a class="d-block mx-auto" href="https://play.google.com/store/apps/details?id=com.eden.mobile" target="blank">
                         <img alt="On Google Play" class="d-block mx-auto img img-fluid" t-att-src="androidAppstoreImagePath"/>
                     </a>
                 </div>
                 <div>
-                    <a class='d-block mx-auto' href="https://itunes.apple.com/us/app/odoo/id1272543640" target="blank">
+                    <a class='d-block mx-auto' href="https://itunes.apple.com/us/app/eden/id1272543640" target="blank">
                         <img alt="On Apple Store" class="d-block mx-auto img img-fluid" t-att-src="iosAppstoreImagePath"/>
                     </a>
                 </div>

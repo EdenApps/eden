@@ -1,8 +1,8 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@eden/hoot";
 import { defineModels, fields, models, mountView, onRpc } from "@web/../tests/web_test_helpers";
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
-import { click } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { click } from "@eden/hoot-dom";
+import { animationFrame } from "@eden/hoot-mock";
 
 class TestSpreadsheet extends models.Model {
     _name = "test.spreadsheet";

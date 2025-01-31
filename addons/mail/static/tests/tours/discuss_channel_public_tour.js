@@ -13,7 +13,7 @@ registry.category("web_tour.tours").add("discuss_channel_public_tour.js", {
                 if (!window.location.pathname.startsWith("/discuss/channel")) {
                     console.error("Channel secret token is still present in URL.");
                 }
-                const errors = odoo.loader.findErrors();
+                const errors = eden.loader.findErrors();
                 if (Object.keys(errors).length) {
                     console.error("Couldn't load all JS modules.", errors);
                 }
@@ -75,7 +75,7 @@ registry.category("web_tour.tours").add("discuss_channel_public_tour.js", {
             content: "Check the image attachment is listed",
             trigger: '.o-mail-AttachmentImage[title="image.png"]',
             async run() {
-                const store = odoo.__WOWL_DEBUG__.root.env.services["mail.store"];
+                const store = eden.__WOWL_DEBUG__.root.env.services["mail.store"];
                 if (store.self.type === "guest") {
                     const src = this.anchor.querySelector("img").src;
                     const token = store.Attachment.get(

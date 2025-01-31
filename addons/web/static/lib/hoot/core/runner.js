@@ -1,7 +1,7 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { Deferred, on, setFrameRate } from "@odoo/hoot-dom";
-import { markRaw, reactive, toRaw } from "@odoo/owl";
+import { Deferred, on, setFrameRate } from "@eden/hoot-dom";
+import { markRaw, reactive, toRaw } from "@eden/owl";
 import { cleanupDOM } from "@web/../lib/hoot-dom/helpers/dom";
 import { enableEventLogs } from "@web/../lib/hoot-dom/helpers/events";
 import { cleanupTime, setupTime } from "@web/../lib/hoot-dom/helpers/time";

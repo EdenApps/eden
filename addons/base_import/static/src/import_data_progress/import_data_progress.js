@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @eden-module **/
 
-import { Component, useEffect, useState } from "@odoo/owl";
+import { Component, useEffect, useState } from "@eden/owl";
 
 export class ImportDataProgress extends Component {
     static template = "ImportDataProgress";

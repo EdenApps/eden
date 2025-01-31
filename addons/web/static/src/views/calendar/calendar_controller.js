@@ -20,7 +20,7 @@ import { browser } from "@web/core/browser/browser";
 import { standardViewProps } from "@web/views/standard_view_props";
 import { getLocalWeekNumber } from "@web/core/l10n/dates";
 
-import { Component, useState } from "@odoo/owl";
+import { Component, useState } from "@eden/owl";
 
 const { DateTime } = luxon;
 

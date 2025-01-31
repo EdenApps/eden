@@ -1,14 +1,14 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-import odoo
+import eden
 from uuid import uuid4
 
-from odoo.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
-from odoo.tests import Form
-from odoo import fields, Command
-from odoo.tools import format_date
+from eden.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
+from eden.tests import Form
+from eden import fields, Command
+from eden.tools import format_date
 
-@odoo.tests.tagged('post_install', '-at_install')
+@eden.tests.tagged('post_install', '-at_install')
 class TestPoSSale(TestPointOfSaleHttpCommon):
     def test_settle_order_with_kit(self):
         if not self.env["ir.module.module"].search([("name", "=", "mrp"), ("state", "=", "installed")]):
@@ -92,14 +92,14 @@ class TestPoSSale(TestPointOfSaleHttpCommon):
             'available_in_pos': True,
             'is_storable': True,
             'lst_price': 10,
-            'taxes_id': [odoo.Command.clear()],
+            'taxes_id': [eden.Command.clear()],
         })
         product2 = self.env['product.product'].create({
             'name': 'product2',
             'available_in_pos': True,
             'is_storable': True,
             'lst_price': 11,
-            'taxes_id': [odoo.Command.clear()],
+            'taxes_id': [eden.Command.clear()],
         })
         partner_1 = self.env['res.partner'].create({'name': 'Test Partner 1'})
         partner_2 = self.env['res.partner'].create({'name': 'Test Partner 2'})

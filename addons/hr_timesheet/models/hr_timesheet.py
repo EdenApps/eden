@@ -1,14 +1,14 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
 from statistics import mode
 import re
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError, AccessError, ValidationError
-from odoo.osv import expression
-from odoo.tools import format_list
-from odoo.tools.translate import _
+from eden import api, fields, models
+from eden.exceptions import UserError, AccessError, ValidationError
+from eden.osv import expression
+from eden.tools import format_list
+from eden.tools.translate import _
 
 
 class AccountAnalyticLine(models.Model):

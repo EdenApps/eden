@@ -1,4 +1,4 @@
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 import { useDropdownCloser } from "@web/core/dropdown/dropdown_hooks";
 
 export class KanbanDropdownMenuWrapper extends Component {

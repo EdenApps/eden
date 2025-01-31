@@ -2,15 +2,15 @@ import { useService } from "@web/core/utils/hooks";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { browser } from "@web/core/browser/browser";
-import { queryAll, queryFirst, queryOne } from "@odoo/hoot-dom";
-import { Component, useState, useExternalListener } from "@odoo/owl";
+import { queryAll, queryFirst, queryOne } from "@eden/hoot-dom";
+import { Component, useState, useExternalListener } from "@eden/owl";
 import { _t } from "@web/core/l10n/translation";
 import { x2ManyCommands } from "@web/core/orm_service";
 import { tourRecorderState } from "./tour_recorder_state";
 
 export const TOUR_RECORDER_ACTIVE_LOCAL_STORAGE_KEY = "tour_recorder_active";
 const PRECISE_IDENTIFIERS = ["data-menu-xmlid", "name", "contenteditable"];
-const ODOO_CLASS_REGEX = /^oe?(-|_)[\w-]+$/;
+const EDEN_CLASS_REGEX = /^oe?(-|_)[\w-]+$/;
 const VALIDATING_KEYS = ["Enter", "Tab"];
 
 /**
@@ -20,10 +20,10 @@ const VALIDATING_KEYS = ["Enter", "Tab"];
 const getShortestSelector = (paths) => {
     paths.reverse();
     let filteredPath = [];
-    let hasOdooClass = false;
+    let hasEdenClass = false;
     for (
         let currentElem = paths.pop();
-        (currentElem && queryAll(filteredPath.join(" > ")).length !== 1) || !hasOdooClass;
+        (currentElem && queryAll(filteredPath.join(" > ")).length !== 1) || !hasEdenClass;
         currentElem = paths.pop()
     ) {
         if (currentElem.parentElement.contentEditable === "true") {
@@ -31,10 +31,10 @@ const getShortestSelector = (paths) => {
         }
 
         let currentPredicate = currentElem.tagName.toLowerCase();
-        const odooClass = [...currentElem.classList].find((c) => c.match(ODOO_CLASS_REGEX));
-        if (odooClass) {
-            currentPredicate = `.${odooClass}`;
-            hasOdooClass = true;
+        const edenClass = [...currentElem.classList].find((c) => c.match(EDEN_CLASS_REGEX));
+        if (edenClass) {
+            currentPredicate = `.${edenClass}`;
+            hasEdenClass = true;
         }
 
         // If we are inside a link or button the previous elements, like <i></i>, <span></span>, etc., can be removed

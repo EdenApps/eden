@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { _t } from "@web/core/l10n/translation";
 import { pick } from "@web/core/utils/objects";
@@ -85,14 +85,14 @@ const FacebookPageWidget = publicWidget.Widget.extend(ObservingCookieWidgetMixin
      * Activates the editor observer if it exists.
      */
     _activateEditorObserver() {
-        this.options.wysiwyg && this.options.wysiwyg.odooEditor.observerActive();
+        this.options.wysiwyg && this.options.wysiwyg.edenEditor.observerActive();
     },
 
     /**
      * Deactivates the editor observer if it exists.
      */
     _deactivateEditorObserver() {
-        this.options.wysiwyg && this.options.wysiwyg.odooEditor.observerUnactive();
+        this.options.wysiwyg && this.options.wysiwyg.edenEditor.observerUnactive();
     },
 });
 

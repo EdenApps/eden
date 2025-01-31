@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 # mail
 from . import mail_message
@@ -11,7 +11,7 @@ from . import discuss_gif_favorite
 from . import discuss_voice_metadata
 from . import mail_guest
 
-# odoo models
+# eden models
 from . import bus_listener_mixin
 from . import ir_attachment
 from . import ir_websocket

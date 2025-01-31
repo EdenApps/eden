@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<odoo>
+<eden>
     <!-- Holiday on resource leave -->
     <record id="resource_calendar_leaves_view_search_inherit" model="ir.ui.view">
         <field name="name">resource.calendar.leaves.search.inherit</field>
@@ -88,4 +88,4 @@
         <field name="context">{
             'search_default_filter_date': True}</field>
     </record>
-</odoo>
+</eden>

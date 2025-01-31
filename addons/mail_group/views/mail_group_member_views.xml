@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="mail_group_member_view_tree" model="ir.ui.view">
         <field name="name">mail.group.member.view.list</field>
         <field name="model">mail.group.member</field>
@@ -35,4 +35,4 @@
             <p>Let people subscribe to your list online or manually add them here.</p>
         </field>
     </record>
-</odoo>
+</eden>

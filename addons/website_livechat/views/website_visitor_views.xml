@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data>
+<eden><data>
     <record id="website_visitor_livechat_session_action" model="ir.actions.act_window">
         <field name="name">Visitor's Sessions</field>
         <field name="res_model">discuss.channel</field>
@@ -149,4 +149,4 @@
         action="website.website_visitors_action"
         groups="im_livechat.im_livechat_group_user"
         sequence="15"/>
-</data></odoo>
+</data></eden>

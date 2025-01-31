@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { cookie as cookieManager } from "@web/core/browser/cookie";
 import { session } from "@web/session";
@@ -33,7 +33,7 @@ export function setUtmsHtmlDataset() {
         'utm_campaign': 'utmCampaign',
     };
     for (const [name, dsName] of Object.entries(cookieNamesToDataNames)) {
-        const cookie = cookieManager.get(`odoo_${name}`);
+        const cookie = cookieManager.get(`eden_${name}`);
         if (cookie) {
             // Remove leading and trailing " and '
             htmlEl.dataset[dsName] = cookie.replace(/(^["']|["']$)/g, '');

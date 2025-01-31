@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, _
-from odoo.addons.web_editor.tools import handle_history_divergence
+from eden import api, fields, models, _
+from eden.addons.web_editor.tools import handle_history_divergence
 
 
 class Job(models.Model):

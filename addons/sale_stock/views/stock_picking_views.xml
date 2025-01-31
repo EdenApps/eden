@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <template id="sale_stock_help_message_template" inherit_id="stock.help_message_template">
         <xpath expr="//p[@name='top_help_message']/t[@name='delivery_message']" position="replace">
@@ -28,4 +28,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

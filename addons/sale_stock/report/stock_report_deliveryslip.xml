@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="report_delivery_document_inherit_sale_stock" inherit_id="stock.report_delivery_document">
         <xpath expr="//div[@name='div_sched_date']" position="after">
             <div class="col col-3 mw-100 mb-2" t-if="o.sudo().sale_id.client_order_ref">
@@ -13,4 +13,4 @@
             </div>
         </xpath>
     </template>
-</odoo>
+</eden>

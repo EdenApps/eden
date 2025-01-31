@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_images_mosaic" name="Images Mosaic">
     <section class="s_images_mosaic pt72 pb72 o_cc o_cc5">
@@ -29,4 +29,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
 
         <!-- Ranks views -->
@@ -82,4 +82,4 @@
             </field>
         </record>
     </data>
-</odoo>
+</eden>

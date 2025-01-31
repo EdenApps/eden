@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <record model="ir.module.category" id="base.module_category_human_resources_contracts">
             <field name="description">Enable the user to see and manage the contracts from Employee application.</field>
@@ -57,4 +57,4 @@
         </record>
 
     </data>
-</odoo>
+</eden>

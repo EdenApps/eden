@@ -1,7 +1,7 @@
-import { before, expect, test } from "@odoo/hoot";
-import { click, queryOne } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
-import { Component, onWillStart, onWillUpdateProps, useState, xml } from "@odoo/owl";
+import { before, expect, test } from "@eden/hoot";
+import { click, queryOne } from "@eden/hoot-dom";
+import { animationFrame } from "@eden/hoot-mock";
+import { Component, onWillStart, onWillUpdateProps, useState, xml } from "@eden/owl";
 import {
     defineModels,
     expectMarkup,

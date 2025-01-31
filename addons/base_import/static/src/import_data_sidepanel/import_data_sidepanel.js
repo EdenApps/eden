@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @eden-module **/
 
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 import { CheckBox } from "@web/core/checkbox/checkbox";
 import { _t } from "@web/core/l10n/translation";
 import { DocumentationLink } from "@web/views/widgets/documentation_link/documentation_link";

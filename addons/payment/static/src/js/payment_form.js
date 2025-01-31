@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @eden-module **/
 
-import { Component } from '@odoo/owl';
+import { Component } from '@eden/owl';
 import publicWidget from '@web/legacy/js/public/public_widget';
 import { browser } from '@web/core/browser/browser';
 import { ConfirmationDialog } from '@web/core/confirmation_dialog/confirmation_dialog';
@@ -417,7 +417,7 @@ publicWidget.registry.PaymentForm = publicWidget.Widget.extend({
             'landing_route': this.paymentContext['landingRoute'],
             'is_validation': this.paymentContext['mode'] === 'validation',
             'access_token': this.paymentContext['accessToken'],
-            'csrf_token': odoo.csrf_token,
+            'csrf_token': eden.csrf_token,
         };
         // Generic payment flows (i.e., that are not attached to a document) require extra params.
         if (this.paymentContext['transactionRoute'] === '/payment/transaction') {

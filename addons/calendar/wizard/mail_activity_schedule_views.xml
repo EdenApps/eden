@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
     <record id="mail_activity_schedule_view_form" model="ir.ui.view">
         <field name="name">mail.activity.schedule.inherit.calendar</field>
@@ -28,4 +28,4 @@
         </field>
     </record>
     </data>
-</odoo>
+</eden>

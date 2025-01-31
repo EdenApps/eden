@@ -1,12 +1,12 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from unittest.mock import patch
 
-from odoo import Command
-from odoo.tests import tagged
+from eden import Command
+from eden.tests import tagged
 
-from odoo.addons.payment.const import REPORT_REASONS_MAPPING
-from odoo.addons.payment.tests.common import PaymentCommon
+from eden.addons.payment.const import REPORT_REASONS_MAPPING
+from eden.addons.payment.tests.common import PaymentCommon
 
 
 @tagged('-at_install', 'post_install')
@@ -29,7 +29,7 @@ class TestPaymentProvider(PaymentCommon):
         for new_state in ('enabled', 'test'):
             self.provider.state = 'disabled'
             with patch(
-                'odoo.addons.payment.models.payment_provider.PaymentProvider'
+                'eden.addons.payment.models.payment_provider.PaymentProvider'
                 '._get_default_payment_method_codes', return_value=self.payment_method_code,
             ):
                 self.provider.state = new_state
@@ -42,7 +42,7 @@ class TestPaymentProvider(PaymentCommon):
         for old_state in ('enabled', 'test'):
             self.provider.state = old_state
             with patch(
-                'odoo.addons.payment.models.payment_provider.PaymentProvider'
+                'eden.addons.payment.models.payment_provider.PaymentProvider'
                 '._get_default_payment_method_codes', return_value=self.payment_method_code,
             ):
                 self.provider.state = 'disabled'
@@ -189,7 +189,7 @@ class TestPaymentProvider(PaymentCommon):
         the payment context (e.g., when paying for a subscription). """
         self.provider.allow_tokenization = True
         with patch(
-            'odoo.addons.payment.models.payment_provider.PaymentProvider._is_tokenization_required',
+            'eden.addons.payment.models.payment_provider.PaymentProvider._is_tokenization_required',
             return_value=True,
         ):
             compatible_providers = self.provider._get_compatible_providers(
@@ -202,7 +202,7 @@ class TestPaymentProvider(PaymentCommon):
         is required by the payment context (e.g., when paying for a subscription). """
         self.provider.allow_tokenization = False
         with patch(
-            'odoo.addons.payment.models.payment_provider.PaymentProvider._is_tokenization_required',
+            'eden.addons.payment.models.payment_provider.PaymentProvider._is_tokenization_required',
             return_value=True,
         ):
             compatible_providers = self.provider._get_compatible_providers(

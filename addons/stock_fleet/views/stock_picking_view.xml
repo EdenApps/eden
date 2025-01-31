@@ -1,4 +1,4 @@
-<odoo>
+<eden>
     <record id="vpicktree" model="ir.ui.view">
         <field name="name">stock.picking.list.inherit.stock.fleet</field>
         <field name="model">stock.picking</field>
@@ -21,4 +21,4 @@
             </field>
         </field>
     </record>
-</odoo>
+</eden>

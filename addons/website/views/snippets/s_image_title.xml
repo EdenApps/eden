@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_image_title" name="Image Title">
     <section class="s_image_title o_cc o_cc5 oe_img_bg pt32 pb32" style="background-image: url('/web/image/website.s_image_title_default_image'); background-position: 50% 70%;">
@@ -17,4 +17,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

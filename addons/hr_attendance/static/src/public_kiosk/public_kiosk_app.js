@@ -1,4 +1,4 @@
-import { App, whenReady, Component, useState, onWillStart } from "@odoo/owl";
+import { App, whenReady, Component, useState, onWillStart } from "@eden/owl";
 import { CardLayout } from "@hr_attendance/components/card_layout/card_layout";
 import { KioskManualSelection } from "@hr_attendance/components/manual_selection/manual_selection";
 import { makeEnv, startServices } from "@web/env";

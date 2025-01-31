@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.http import request, route
-from odoo.addons.mail.controllers.webclient import WebclientController
-from odoo.addons.mail.models.discuss.mail_guest import add_guest_to_context
+from eden.http import request, route
+from eden.addons.mail.controllers.webclient import WebclientController
+from eden.addons.mail.models.discuss.mail_guest import add_guest_to_context
 
 
 class WebClient(WebclientController):

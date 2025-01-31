@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { browser } from "@web/core/browser/browser";
 import { registry } from "@web/core/registry";
@@ -44,8 +44,8 @@ QUnit.module('partner_autocomplete', {
                     get: (route) => {
                         return Promise.resolve([
                             {
-                                "name": "Odoo",
-                                "domain": "odoo.com",
+                                "name": "Eden",
+                                "domain": "eden.com",
                             },
                             {
                                 "name": "MyCompany",
@@ -219,7 +219,7 @@ QUnit.module('partner_autocomplete', {
             autocompleteContainer,
             ".o-autocomplete--dropdown-item.partner_autocomplete_dropdown_many2one",
             6,
-            "Clearbit and Odoo autocomplete options should be shown"
+            "Clearbit and Eden autocomplete options should be shown"
         );
 
         // Click on the first option - "First company"
@@ -272,7 +272,7 @@ QUnit.module('partner_autocomplete', {
             autocompleteContainer,
             ".o-autocomplete--dropdown-item",
             6,
-            "Clearbit and Odoo autocomplete options should be shown"
+            "Clearbit and Eden autocomplete options should be shown"
         );
 
         // Click on the first option - "First company"
@@ -325,7 +325,7 @@ QUnit.module('partner_autocomplete', {
             autocompleteContainer,
             ".o-autocomplete--dropdown-item",
             3,
-            "Odoo read_by_vat options should be shown"
+            "Eden read_by_vat options should be shown"
         );
 
         // Click on the first option - "First company"
@@ -399,7 +399,7 @@ QUnit.module('partner_autocomplete', {
             autocompleteContainer,
             ".o-autocomplete--dropdown-item",
             8,
-            "Clearbit and Odoo autocomplete options should be shown"
+            "Clearbit and Eden autocomplete options should be shown"
         );
     });
 
@@ -418,7 +418,7 @@ QUnit.module('partner_autocomplete', {
             autocompleteContainer,
             ".o-autocomplete--dropdown-item",
             6,
-            "Clearbit and Odoo autocomplete options should be shown"
+            "Clearbit and Eden autocomplete options should be shown"
         );
         // Click on the second option (include realistic events) - "Second company"
         await triggerEvent(

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <record id="mail_template_user_input_invite" model="mail.template">
             <field name="name">Survey: Invite</field>
@@ -87,4 +87,4 @@
             <field name="auto_delete" eval="True"/>
         </record>
     </data>
-</odoo>
+</eden>

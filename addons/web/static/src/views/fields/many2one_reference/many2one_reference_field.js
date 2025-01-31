@@ -2,7 +2,7 @@ import { registry } from "@web/core/registry";
 import { _t } from "@web/core/l10n/translation";
 import { many2OneField, Many2OneField } from "@web/views/fields/many2one/many2one_field";
 
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 export class Many2OneReferenceField extends Component {
     static template = "web.Many2OneReferenceField";

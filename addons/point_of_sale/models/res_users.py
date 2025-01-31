@@ -1,4 +1,4 @@
-from odoo import models, api
+from eden import models, api
 
 
 class ResUsers(models.Model):

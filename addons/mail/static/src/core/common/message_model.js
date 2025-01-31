@@ -12,7 +12,7 @@ import { _t } from "@web/core/l10n/translation";
 import { user } from "@web/core/user";
 import { url } from "@web/core/utils/urls";
 import { stateToUrl } from "@web/core/browser/router";
-import { toRaw } from "@odoo/owl";
+import { toRaw } from "@eden/owl";
 
 const { DateTime } = luxon;
 export class Message extends Record {

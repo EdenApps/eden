@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from ast import literal_eval
 
-from odoo import api, models, fields, _
-from odoo.exceptions import UserError
+from eden import api, models, fields, _
+from eden.exceptions import UserError
 
 
 class HrEmployee(models.Model):

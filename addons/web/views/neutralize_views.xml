@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="web.neutralize_banner"  name="Neutralize Banner" inherit_id="web.layout" active="False">
         <xpath expr="//body" position="inside">
             <div>
@@ -19,4 +19,4 @@
             <meta name="robots" content="noindex, nofollow" />
         </xpath>
     </template>
-</odoo>
+</eden>

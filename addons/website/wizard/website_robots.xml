@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <record id="view_edit_robots" model="ir.ui.view">
         <field name="name">Edit Robots.txt</field>
@@ -24,4 +24,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

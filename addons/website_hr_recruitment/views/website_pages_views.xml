@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
 
 <record id="job_pages_tree_view" model="ir.ui.view">
     <field name="name">Job Pages List</field>
@@ -71,4 +71,4 @@
     action="action_job_pages_list"
     groups="hr_recruitment.group_hr_recruitment_interviewer"/>
 
-</odoo>
+</eden>

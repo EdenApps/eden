@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.exceptions import UserError
-from odoo.tests import tagged, common, Form
-from odoo.tools import float_compare, float_is_zero
+from eden import Command
+from eden.exceptions import UserError
+from eden.tests import tagged, common, Form
+from eden.tools import float_compare, float_is_zero
 
 
 @tagged('post_install', '-at_install')

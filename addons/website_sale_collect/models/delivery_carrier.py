@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, fields, models
-from odoo.exceptions import ValidationError
-from odoo.http import request
-from odoo.tools.misc import format_duration
+from eden import _, api, fields, models
+from eden.exceptions import ValidationError
+from eden.http import request
+from eden.tools.misc import format_duration
 
-from odoo.addons.website_sale_collect import utils
+from eden.addons.website_sale_collect import utils
 
 
 class DeliveryCarrier(models.Model):

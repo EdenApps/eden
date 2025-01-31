@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
     <t t-name="loyalty.LoyaltyListRenderer" t-inherit="web.ListRenderer" t-inherit-mode="primary">
         <t t-call="web.ActionHelper" position="replace">
             <t t-if="showNoContentHelper">
@@ -65,4 +65,4 @@
             </button>
         </xpath>
     </t>
-</odoo>
+</eden>

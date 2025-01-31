@@ -1,5 +1,5 @@
-from odoo import http
-from odoo.http import request
+from eden import http
+from eden.http import request
 
 class DashboardShareRoute(http.Controller):
     @http.route(['/dashboard/share/<int:share_id>/<token>'], type='http', auth='public')

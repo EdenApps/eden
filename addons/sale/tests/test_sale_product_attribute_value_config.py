@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields
+from eden import fields
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.addons.product.tests.test_product_attribute_value_config import TestProductAttributeValueCommon
-from odoo.tests import tagged
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
+from eden.addons.product.tests.test_product_attribute_value_config import TestProductAttributeValueCommon
+from eden.tests import tagged
 
 
 @tagged("post_install", "-at_install")

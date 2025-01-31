@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
     <record id="res_partner_activation_data_fully_operational" model="res.partner.activation">
         <field name="name">Fully Operational</field>
         <field name="sequence">1</field>
@@ -12,4 +12,4 @@
         <field name="name">First Contact</field>
         <field name="sequence">3</field>
     </record>
-</odoo>
+</eden>

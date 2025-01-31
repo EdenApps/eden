@@ -1,4 +1,4 @@
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 /**
  *   tModel is an array that represents the state variable that this component

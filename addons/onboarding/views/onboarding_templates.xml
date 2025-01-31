@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<odoo>
+<eden>
     <template id="onboarding_panel">
         <t t-call="onboarding.onboarding_container">
             <t t-foreach="steps" t-as="step">
@@ -96,4 +96,4 @@
             </div>
         </div>
     </template>
-</odoo>
+</eden>

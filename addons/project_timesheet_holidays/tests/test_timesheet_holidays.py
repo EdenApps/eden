@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from freezegun import freeze_time
 
-from odoo import fields, SUPERUSER_ID
+from eden import fields, SUPERUSER_ID
 
-from odoo.exceptions import UserError
-from odoo.tests import common, new_test_user
-from odoo.addons.hr_timesheet.tests.test_timesheet import TestCommonTimesheet
+from eden.exceptions import UserError
+from eden.tests import common, new_test_user
+from eden.addons.hr_timesheet.tests.test_timesheet import TestCommonTimesheet
 import time
 
 

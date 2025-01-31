@@ -4,8 +4,8 @@ from cryptography.hazmat.primitives import hashes, serialization
 from cryptography.hazmat.primitives.asymmetric import ec, padding, rsa
 from cryptography.hazmat.primitives.serialization import Encoding
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError
+from eden import _, api, fields, models
+from eden.exceptions import UserError
 
 
 STR_TO_HASH = {

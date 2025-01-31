@@ -1,7 +1,7 @@
 import { browser } from "@web/core/browser/browser";
 import { formatInteger } from "@web/views/fields/formatters";
 
-import { Component, onWillUpdateProps, onWillUnmount, useState } from "@odoo/owl";
+import { Component, onWillUpdateProps, onWillUnmount, useState } from "@eden/owl";
 
 export class AnimatedNumber extends Component {
     static template = "web.AnimatedNumber";

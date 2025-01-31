@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from random import randint
-from odoo import fields, models
+from eden import fields, models
 
 
 class SkillType(models.Model):

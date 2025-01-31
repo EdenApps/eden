@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import models
-from odoo.http import request
-from odoo.tools import format_datetime, groupby
-from odoo.addons.portal.utils import get_portal_partner
+from eden import models
+from eden.http import request
+from eden.tools import format_datetime, groupby
+from eden.addons.portal.utils import get_portal_partner
 
 
 class MailMessage(models.Model):

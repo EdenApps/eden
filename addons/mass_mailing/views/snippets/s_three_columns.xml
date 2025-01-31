@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_three_columns" name="Columns">
     <div class="s_three_columns o_mail_snippet_general o_cc o_cc2 pt32 pb32">
@@ -37,4 +37,4 @@
     </div>
 </template>
 
-</odoo>
+</eden>

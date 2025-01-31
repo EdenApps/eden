@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 from pytz import timezone, UTC
@@ -8,13 +8,13 @@ from datetime import datetime, time
 from dateutil import relativedelta
 from psycopg2 import OperationalError
 
-from odoo import SUPERUSER_ID, _, api, fields, models
-from odoo.addons.stock.models.stock_rule import ProcurementException
-from odoo.exceptions import RedirectWarning, UserError, ValidationError
-from odoo.modules.registry import Registry
-from odoo.osv import expression
-from odoo.sql_db import BaseCursor
-from odoo.tools import float_compare, float_is_zero, frozendict, split_every, format_date
+from eden import SUPERUSER_ID, _, api, fields, models
+from eden.addons.stock.models.stock_rule import ProcurementException
+from eden.exceptions import RedirectWarning, UserError, ValidationError
+from eden.modules.registry import Registry
+from eden.osv import expression
+from eden.sql_db import BaseCursor
+from eden.tools import float_compare, float_is_zero, frozendict, split_every, format_date
 
 _logger = logging.getLogger(__name__)
 
@@ -57,12 +57,12 @@ class StockWarehouseOrderpoint(models.Model):
     product_min_qty = fields.Float(
         'Min Quantity', digits='Product Unit of Measure', required=True, default=0.0,
         compute='_compute_product_min_qty', readonly=False, store=True,
-        help="When the virtual stock goes below the Min Quantity specified for this field, Odoo generates "
+        help="When the virtual stock goes below the Min Quantity specified for this field, Eden generates "
              "a procurement to bring the forecasted quantity above of this Min Quantity.")
     product_max_qty = fields.Float(
         'Max Quantity', digits='Product Unit of Measure', required=True, default=0.0,
         compute='_compute_product_max_qty', readonly=False, store=True,
-        help="When the virtual stock goes below the Min Quantity, Odoo generates "
+        help="When the virtual stock goes below the Min Quantity, Eden generates "
              "a procurement to bring the forecasted quantity up to (or near to) the Max Quantity specified for this field (or to Min Quantity, whichever is bigger).")
     qty_multiple = fields.Float(
         'Multiple Quantity', digits='Product Unit of Measure',
@@ -579,7 +579,7 @@ class StockWarehouseOrderpoint(models.Model):
                     'message': '%s',
                     'links': [{
                         'label': move.picking_id.name,
-                        'url': f'/odoo/action-stock.stock_picking_action_picking_type/{move.picking_id.id}'
+                        'url': f'/eden/action-stock.stock_picking_action_picking_type/{move.picking_id.id}'
                     }],
                     'sticky': False,
                     'next': {'type': 'ir.actions.act_window_close'},

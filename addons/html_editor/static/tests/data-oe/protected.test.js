@@ -1,9 +1,9 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@eden/hoot";
 import { setupEditor, testEditor } from "../_helpers/editor";
 import { unformat } from "../_helpers/format";
 import { setSelection, setContent, getContent } from "../_helpers/selection";
 import { deleteBackward, insertText, undo } from "../_helpers/user_actions";
-import { waitFor, waitForNone } from "@odoo/hoot-dom";
+import { waitFor, waitForNone } from "@eden/hoot-dom";
 import { parseHTML } from "@html_editor/utils/html";
 import { Plugin } from "@html_editor/plugin";
 import { MAIN_PLUGINS } from "@html_editor/plugin_sets";

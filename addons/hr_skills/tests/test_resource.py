@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests.common import TransactionCase
+from eden.tests.common import TransactionCase
 
 class TestResourceSkills(TransactionCase):
     def test_availability_skills_infos_resource(self):
@@ -11,7 +11,7 @@ class TestResourceSkills(TransactionCase):
         user = self.env['res.users'].create([{
             'name': 'Test user',
             'login': 'test',
-            'email': 'test@odoo.perso',
+            'email': 'test@eden.perso',
             'phone': '+32488990011',
         }])
         resource = self.env['resource.resource'].create([{

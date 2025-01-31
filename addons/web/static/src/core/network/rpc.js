@@ -1,4 +1,4 @@
-import { EventBus } from "@odoo/owl";
+import { EventBus } from "@eden/owl";
 import { browser } from "../browser/browser";
 
 export const rpcBus = new EventBus();
@@ -28,7 +28,7 @@ export class ConnectionLostError extends Error {
 export class ConnectionAbortedError extends Error {}
 
 export function makeErrorFromResponse(reponse) {
-    // Odoo returns error like this, in a error field instead of properly
+    // Eden returns error like this, in a error field instead of properly
     // using http error codes...
     const { code, data: errorData, message, type: subType } = reponse;
     const error = new RPCError();
@@ -64,7 +64,7 @@ rpc._rpc = function (url, params, settings) {
         // handle success
         request.addEventListener("load", () => {
             if (request.status === 502) {
-                // If Odoo is behind another server (eg.: nginx)
+                // If Eden is behind another server (eg.: nginx)
                 const error = new ConnectionLostError(url);
                 rpcBus.trigger("RPC:RESPONSE", { data, settings, error });
                 reject(error);

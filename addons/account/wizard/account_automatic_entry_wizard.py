@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools.misc import format_date, formatLang
-from odoo.tools.float_utils import float_repr
-from odoo.tools import groupby
+from eden import api, fields, models, _
+from eden.exceptions import UserError, ValidationError
+from eden.tools.misc import format_date, formatLang
+from eden.tools.float_utils import float_repr
+from eden.tools import groupby
 
 from collections import defaultdict
 from markupsafe import Markup, escape
-from odoo.tools import frozendict
+from eden.tools import frozendict
 import json
 
 class AutomaticEntryWizard(models.TransientModel):

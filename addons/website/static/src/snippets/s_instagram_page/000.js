@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { _t } from "@web/core/l10n/translation";
 import publicWidget from "@web/legacy/js/public/public_widget";
@@ -103,9 +103,9 @@ const InstagramPage = publicWidget.Widget.extend(ObservingCookieWidgetMixin, {
         // Instagram can return a height of 0 before the real height.
         if (height) {
             // Prevent history step in edit mode.
-            this.options.wysiwyg?.odooEditor.observerUnactive();
+            this.options.wysiwyg?.edenEditor.observerUnactive();
             iframeEl.height = height;
-            this.options.wysiwyg?.odooEditor.observerActive();
+            this.options.wysiwyg?.edenEditor.observerActive();
         }
     },
 });

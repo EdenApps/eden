@@ -12,7 +12,7 @@ const PREVIEW_MSG_MAX_SIZE = 350; // optimal for native English speakers
  */
 export class OutOfFocusService {
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").EdenEnv} env
      * @param {Partial<import("services").Services>} services
      */
     constructor(env, services) {
@@ -87,7 +87,7 @@ export class OutOfFocusService {
      */
     sendNotification({ message, sound = true, title, type }) {
         if (!this.canSendNativeNotification) {
-            this.sendOdooNotification(message, { sound, title, type });
+            this.sendEdenNotification(message, { sound, title, type });
             return;
         }
         if (!this.multiTab.isOnMainTab()) {
@@ -100,7 +100,7 @@ export class OutOfFocusService {
             // So we fallback to the notification service in this case
             // https://bugs.chromium.org/p/chromium/issues/detail?id=481856
             if (error.message.includes("ServiceWorkerRegistration")) {
-                this.sendOdooNotification(message, { sound, title, type });
+                this.sendEdenNotification(message, { sound, title, type });
             } else {
                 throw error;
             }
@@ -111,7 +111,7 @@ export class OutOfFocusService {
      * @param {string} message
      * @param {Object} options
      */
-    async sendOdooNotification(message, options) {
+    async sendEdenNotification(message, options) {
         const { sound } = options;
         delete options.sound;
         this.closeFuncs.push(this.notificationService.add(message, options));
@@ -130,7 +130,7 @@ export class OutOfFocusService {
     sendNativeNotification(title, message, { sound = true } = {}) {
         const notification = new Notification(title, {
             body: message,
-            icon: "/mail/static/src/img/odoobot_transparent.png",
+            icon: "/mail/static/src/img/edenbot_transparent.png",
         });
         notification.addEventListener("click", ({ target: notification }) => {
             window.focus();
@@ -170,7 +170,7 @@ export class OutOfFocusService {
 export const outOfFocusService = {
     dependencies: ["multi_tab", "notification"],
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").EdenEnv} env
      * @param {Partial<import("services").Services>} services
      */
     start(env, services) {

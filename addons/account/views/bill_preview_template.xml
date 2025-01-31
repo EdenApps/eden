@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <template id="bill_preview">
             <div id="wrapwrap" class="p-4">
@@ -141,4 +141,4 @@
             </div>
         </template>
     </data>
-</odoo>
+</eden>

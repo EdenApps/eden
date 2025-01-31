@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_pricelist_cafe" name="Pricelist Cafe">
     <section class="s_pricelist_cafe" data-oe-shape-data="{'shape':'web_editor/Origins/19','flip':[]}">
@@ -123,4 +123,4 @@
     <field name="path">website/static/src/snippets/s_pricelist_cafe/000.scss</field>
 </record>
 
-</odoo>
+</eden>

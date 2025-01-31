@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { visitXML } from "@web/core/utils/xml";
 import { stringToOrderBy } from "@web/search/utils/order_by";

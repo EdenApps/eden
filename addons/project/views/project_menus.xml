@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <menuitem
         name="Project"
         id="menu_main_pm"
@@ -115,4 +115,4 @@
             />
         </menuitem>
     </menuitem>
-</odoo>
+</eden>

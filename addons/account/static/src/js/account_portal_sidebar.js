@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { scrollTo } from "@web/core/utils/scrolling";
 import publicWidget from "@web/legacy/js/public/public_widget";

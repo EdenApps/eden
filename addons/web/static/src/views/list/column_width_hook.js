@@ -1,6 +1,6 @@
 import { useDebounced } from "@web/core/utils/timing";
 
-import { useComponent, useEffect, useExternalListener } from "@odoo/owl";
+import { useComponent, useEffect, useExternalListener } from "@eden/owl";
 
 // This file defines a hook that encapsulates the column width logic of the list view. This logic
 // aims at optimizing the available space between columns and, once computed, at freezing the table

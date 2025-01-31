@@ -1,6 +1,6 @@
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
-from odoo.osv.expression import OR
+from eden import api, fields, models, _
+from eden.exceptions import UserError
+from eden.osv.expression import OR
 
 
 class Bill(models.Model):

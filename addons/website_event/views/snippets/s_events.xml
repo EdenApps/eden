@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<odoo>
+<eden>
 
 <template id="s_events" name="Events">
     <t t-call="website.s_dynamic_snippet_template">
@@ -124,4 +124,4 @@
     <field name="path">website_event/static/src/snippets/s_events/000.js</field>
 </record>
 
-</odoo>
+</eden>

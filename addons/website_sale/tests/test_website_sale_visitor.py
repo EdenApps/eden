@@ -1,7 +1,7 @@
 # coding: utf-8
-from odoo.addons.website_sale.controllers.main import WebsiteSale
-from odoo.addons.website.tools import MockRequest
-from odoo.tests import TransactionCase, tagged
+from eden.addons.website_sale.controllers.main import WebsiteSale
+from eden.addons.website.tools import MockRequest
+from eden.tests import TransactionCase, tagged
 
 @tagged('post_install', '-at_install')
 class WebsiteSaleVisitorTests(TransactionCase):

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data noupdate="0">
+<eden><data noupdate="0">
     <!-- Simulate traces -->
     <record id="mailing_sms_0_trace_0" model="mailing.trace">
         <field name="mass_mailing_id" ref="mailing_sms_0"/>
@@ -155,4 +155,4 @@
         <field name="failure_type">sms_number_format</field>
     </record>
 
-</data></odoo>
+</data></eden>

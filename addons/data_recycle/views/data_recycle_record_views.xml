@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <data>
         <record model="ir.ui.view" id="view_data_recycle_record_list">
             <field name="name">Field Recycle Record List</field>
@@ -63,4 +63,4 @@
             </field>
         </record>
     </data>
-</odoo>
+</eden>

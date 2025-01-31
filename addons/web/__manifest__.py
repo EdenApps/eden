@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 {
     'name': 'Web',
     'category': 'Hidden',
     'version': '1.0',
     'description': """
-Odoo Web core module.
+Eden Web core module.
 ========================
 
-This module provides the core of the Odoo Web Client.
+This module provides the core of the Eden Web Client.
 """,
     'depends': ['base'],
     'auto_install': True,
@@ -54,7 +54,7 @@ This module provides the core of the Odoo Web Client.
             ('include', 'web._assets_core'),
 
             'web/static/src/libs/fontawesome/css/font-awesome.css',
-            'web/static/lib/odoo_ui_icons/*',
+            'web/static/lib/eden_ui_icons/*',
             'web/static/src/webclient/navbar/navbar.scss',
             'web/static/src/scss/animation.scss',
             'web/static/src/scss/fontawesome_overridden.scss',
@@ -178,7 +178,7 @@ This module provides the core of the Odoo Web Client.
             ('include', 'web._assets_bootstrap_frontend'),
 
             'web/static/src/libs/fontawesome/css/font-awesome.css',
-            'web/static/lib/odoo_ui_icons/*',
+            'web/static/lib/eden_ui_icons/*',
             'web/static/src/webclient/navbar/navbar.scss',
             'web/static/src/scss/animation.scss',
             'web/static/src/scss/base_frontend.scss',
@@ -193,7 +193,7 @@ This module provides the core of the Odoo Web Client.
             ('include', 'web.assets_frontend_minimal'),
 
             'web/static/lib/owl/owl.js',
-            'web/static/lib/owl/odoo_module.js',
+            'web/static/lib/owl/eden_module.js',
             'web/static/lib/jquery/jquery.js',
             'web/static/lib/popper/popper.js',
             'web/static/lib/bootstrap/js/dist/util/index.js',
@@ -308,7 +308,7 @@ This module provides the core of the Odoo Web Client.
             'base/static/src/css/description.css',
             'web/static/src/libs/fontawesome/css/font-awesome.css',
             'web/static/src/scss/fontawesome_overridden.scss',
-            'web/static/lib/odoo_ui_icons/*',
+            'web/static/lib/eden_ui_icons/*',
             'web/static/fonts/fonts.scss',
 
             'web/static/src/webclient/actions/reports/bootstrap_review_report.scss',
@@ -367,7 +367,7 @@ This module provides the core of the Odoo Web Client.
             # libs
             'web/static/lib/luxon/luxon.js',
             'web/static/lib/owl/owl.js',
-            'web/static/lib/owl/odoo_module.js',
+            'web/static/lib/owl/eden_module.js',
             # core
             'web/static/src/env.js',
             'web/static/src/session.js',
@@ -441,14 +441,14 @@ This module provides the core of the Odoo Web Client.
             'web/static/src/module_loader.js',
 
             'web/static/lib/owl/owl.js',
-            'web/static/lib/owl/odoo_module.js',
+            'web/static/lib/owl/eden_module.js',
 
             'web/static/lib/hoot/**/*',
             'web/static/lib/hoot-dom/**/*',
             ('remove', 'web/static/lib/hoot/ui/hoot_style.css'),
             ('remove', 'web/static/lib/hoot/tests/**/*'),
 
-            # Odoo mocks
+            # Eden mocks
             # ! must be loaded before other @web assets
             'web/static/tests/_framework/mock_module_loader.js',
 

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 {
     'name': "Purchase Matrix",
     'summary': "Add variants to your purchase orders through an Order Grid Entry.",

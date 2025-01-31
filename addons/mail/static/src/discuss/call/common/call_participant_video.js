@@ -1,4 +1,4 @@
-import { Component, onMounted, onPatched, useExternalListener, useRef, useState } from "@odoo/owl";
+import { Component, onMounted, onPatched, useExternalListener, useRef, useState } from "@eden/owl";
 import { useService } from "@web/core/utils/hooks";
 
 /**

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 
-from odoo import api, fields, models, _
-from odoo.exceptions import ValidationError, UserError
-from odoo.tools.misc import formatLang
+from eden import api, fields, models, _
+from eden.exceptions import ValidationError, UserError
+from eden.tools.misc import formatLang
 
 
 class EventTemplateTicket(models.Model):
@@ -46,7 +46,7 @@ class EventTemplateTicket(models.Model):
 class EventTicket(models.Model):
     """ Ticket model allowing to have different kind of registrations for a given
     event. Ticket are based on ticket type as they share some common fields
-    and behavior. Those models come from <= v13 Odoo event.event.ticket that
+    and behavior. Those models come from <= v13 Eden event.event.ticket that
     modeled both concept: tickets for event templates, and tickets for events. """
     _name = 'event.event.ticket'
     _inherit = 'event.type.ticket'

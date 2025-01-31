@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import psycopg2
 from unittest.mock import patch
 
-from odoo.tests import HttpCase
+from eden.tests import HttpCase
 
 
 class TestWebController(HttpCase):
@@ -24,7 +24,7 @@ class TestWebController(HttpCase):
         def _raise_psycopg2_error(*args):
             raise psycopg2.Error('boom')
 
-        with patch('odoo.sql_db.db_connect', new=_raise_psycopg2_error):
+        with patch('eden.sql_db.db_connect', new=_raise_psycopg2_error):
             response = self.url_open('/web/health?db_server_status=1')
             self.assertEqual(response.status_code, 500)
             payload = response.json()

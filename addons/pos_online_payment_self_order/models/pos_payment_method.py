@@ -1,5 +1,5 @@
-from odoo import models, api
-from odoo.osv import expression
+from eden import models, api
+from eden.osv import expression
 
 
 class PosPaymentMethod(models.Model):

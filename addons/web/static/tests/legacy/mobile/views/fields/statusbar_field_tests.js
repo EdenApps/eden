@@ -1,4 +1,4 @@
-/** @odoo-module alias=@web/../tests/mobile/views/fields/statusbar_field_tests default=false */
+/** @eden-module alias=@web/../tests/mobile/views/fields/statusbar_field_tests default=false */
 
 import { click, getFixture } from "@web/../tests/helpers/utils";
 import { makeView, setupViewRegistries } from "@web/../tests/views/helpers";

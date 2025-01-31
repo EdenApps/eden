@@ -1,4 +1,4 @@
-from odoo import models, Command
+from eden import models, Command
 
 
 class SaleEdiXmlUBLBIS3(models.AbstractModel):

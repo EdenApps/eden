@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from werkzeug.exceptions import Forbidden
 
-from odoo.http import request
+from eden.http import request
 
-from odoo.addons.portal.controllers.mail import PortalChatter
+from eden.addons.portal.controllers.mail import PortalChatter
 from .portal import ProjectCustomerPortal
 
 

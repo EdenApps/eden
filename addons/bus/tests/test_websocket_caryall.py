@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import gc
 import json
@@ -10,10 +10,10 @@ from threading import Event
 from unittest.mock import patch
 from weakref import WeakSet
 
-from odoo import http
-from odoo.api import Environment
-from odoo.tests import common, new_test_user
-from odoo.tools import mute_logger
+from eden import http
+from eden.api import Environment
+from eden.tests import common, new_test_user
+from eden.tools import mute_logger
 from .common import WebsocketCase
 from .. import websocket as websocket_module
 from ..models.bus import dispatch
@@ -242,11 +242,11 @@ class TestWebsocketCaryall(WebsocketCase):
 
     def test_no_cursor_when_no_callback_for_lifecycle_event(self):
         with patch.object(Websocket, '_Websocket__event_callbacks', defaultdict(set)):
-            with patch('odoo.addons.bus.websocket.acquire_cursor') as mock:
+            with patch('eden.addons.bus.websocket.acquire_cursor') as mock:
                 self.websocket_connect()
                 self.assertFalse(mock.called)
 
-    @patch.dict(os.environ, {"ODOO_BUS_PUBLIC_SAMESITE_WS": "True"})
+    @patch.dict(os.environ, {"EDEN_BUS_PUBLIC_SAMESITE_WS": "True"})
     def test_public_configuration(self):
         new_test_user(self.env, login='test_user', password='Password!1')
         user_session = self.authenticate('test_user', 'Password!1')
@@ -261,7 +261,7 @@ class TestWebsocketCaryall(WebsocketCase):
 
         with patch.object(
             WebsocketConnectionHandler, '_serve_forever', side_effect=serve_forever
-        ) as mock, mute_logger('odoo.addons.bus.websocket'):
+        ) as mock, mute_logger('eden.addons.bus.websocket'):
             ws = self.websocket_connect(
                 cookie=f'session_id={user_session.sid};',
                 origin="http://example.com"
@@ -274,7 +274,7 @@ class TestWebsocketCaryall(WebsocketCase):
             self.assertTrue(mock.called)
 
     def test_trigger_on_websocket_closed(self):
-        with patch('odoo.addons.bus.models.ir_websocket.IrWebsocket._on_websocket_closed') as mock:
+        with patch('eden.addons.bus.models.ir_websocket.IrWebsocket._on_websocket_closed') as mock:
             ws = self.websocket_connect()
             ws.close(CloseCode.CLEAN)
             self.wait_remaining_websocket_connections()

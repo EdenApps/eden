@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.http import request, route
-from odoo.tools import float_is_zero
+from eden.http import request, route
+from eden.tools import float_is_zero
 
-from odoo.addons.sale.controllers.product_configurator import SaleProductConfiguratorController
-from odoo.addons.website_sale.controllers.main import WebsiteSale
+from eden.addons.sale.controllers.product_configurator import SaleProductConfiguratorController
+from eden.addons.website_sale.controllers.main import WebsiteSale
 
 
 class WebsiteSaleProductConfiguratorController(SaleProductConfiguratorController, WebsiteSale):

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo.tests.common import TransactionCase
+from eden.tests.common import TransactionCase
 
 
 class TestUpdateNotification(TransactionCase):

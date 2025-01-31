@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <!-- View Taxes -->
 
@@ -9,4 +9,4 @@
          groups="base.group_no_one"
          sequence="40"/>
 
-</odoo>
+</eden>

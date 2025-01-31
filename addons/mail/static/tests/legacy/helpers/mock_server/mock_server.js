@@ -1,4 +1,4 @@
-/** @odoo-module alias=@mail/../tests/helpers/mock_server/mock_server default=false */
+/** @eden-module alias=@mail/../tests/helpers/mock_server/mock_server default=false */
 
 import { registry } from "@web/core/registry";
 import { patch } from "@web/core/utils/patch";

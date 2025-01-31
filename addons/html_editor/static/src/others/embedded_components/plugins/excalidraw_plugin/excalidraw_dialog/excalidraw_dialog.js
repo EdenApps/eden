@@ -1,7 +1,7 @@
 import { Dialog } from "@web/core/dialog/dialog";
 import { useAutofocus } from "@web/core/utils/hooks";
 
-import { Component, useExternalListener, useState } from "@odoo/owl";
+import { Component, useExternalListener, useState } from "@eden/owl";
 import { checkURL, excalidrawWebsiteDomainList } from "@html_editor/utils/url";
 
 /**

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.addons.account_check_printing.models.account_payment import INV_LINES_PER_STUB
-from odoo.tests import tagged
-from odoo.tools.misc import NON_BREAKING_SPACE
-from odoo import Command
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
+from eden.addons.account_check_printing.models.account_payment import INV_LINES_PER_STUB
+from eden.tests import tagged
+from eden.tools.misc import NON_BREAKING_SPACE
+from eden import Command
 
 import math
 

@@ -1,7 +1,7 @@
-import { expect, test, getFixture } from "@odoo/hoot";
-import { click, press, queryAll } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
-import { reactive } from "@odoo/owl";
+import { expect, test, getFixture } from "@eden/hoot";
+import { click, press, queryAll } from "@eden/hoot-dom";
+import { animationFrame } from "@eden/hoot-mock";
+import { reactive } from "@eden/owl";
 import {
     contains,
     defineModels,

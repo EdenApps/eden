@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
     <record id="res_config_settings_view_form" model="ir.ui.view">
         <field name="name">res.config.settings.view.form.inherit.hr.timesheet</field>
         <field name="model">res.config.settings</field>
@@ -36,4 +36,4 @@
         <field name="target">inline</field>
         <field name="context">{'module' : 'hr_timesheet', 'bin_size': False}</field>
     </record>
-</odoo>
+</eden>

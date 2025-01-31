@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
 
 <t t-inherit="quiz.validation" t-inherit-mode="extension">
     <xpath expr="//button[hasclass('o_quiz_js_quiz_reset')]" position="after">
@@ -11,4 +11,4 @@
     </xpath>
 </t>
 
-</odoo>
+</eden>

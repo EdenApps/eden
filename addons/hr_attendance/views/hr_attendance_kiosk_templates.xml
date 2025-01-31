@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="hr_attendance.public_kiosk_mode" name="Attendance Kiosk">
         <t t-call="web.layout">
             <t t-set="html_data" t-value="{'lang': kiosk_backend_info['lang']}"/>
@@ -16,7 +16,7 @@
                 </t>
 
                 <script type="text/javascript">
-                    odoo.define("hr_attendance.public_kiosk_app", ["@hr_attendance/public_kiosk/public_kiosk_app"], function (require) {
+                    eden.define("hr_attendance.public_kiosk_app", ["@hr_attendance/public_kiosk/public_kiosk_app"], function (require) {
                     var { createPublicKioskAttendance } = require("@hr_attendance/public_kiosk/public_kiosk_app");
                     createPublicKioskAttendance(document, <t t-out="json.dumps(kiosk_backend_info)"/>);
                     });
@@ -28,4 +28,4 @@
             </body>
         </t>
     </template>
-</odoo>
+</eden>

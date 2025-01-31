@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import exceptions
-from odoo.addons.crm.tests.common import TestCrmCommon
-from odoo.addons.crm_iap_mine.tests.common import MockIAPReveal
-from odoo.tests.common import users
+from eden import exceptions
+from eden.addons.crm.tests.common import TestCrmCommon
+from eden.addons.crm_iap_mine.tests.common import MockIAPReveal
+from eden.tests.common import users
 
 
 class TestLeadMine(TestCrmCommon, MockIAPReveal):

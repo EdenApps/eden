@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_banner" name="Banner">
     <section class="s_banner pt96 pb96">
@@ -41,4 +41,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <record id="crm_lost_reason_view_search" model="ir.ui.view">
         <field name="name">crm.lost.reason.view.search</field>
         <field name="model">crm.lost.reason</field>
@@ -65,4 +65,4 @@
           </p>
         </field>
     </record>
-</odoo>
+</eden>

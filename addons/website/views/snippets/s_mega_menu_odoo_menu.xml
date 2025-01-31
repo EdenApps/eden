@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
-<template id="s_mega_menu_odoo_menu" name="Odoo Menu" groups="base.group_user">
-    <section class="s_mega_menu_odoo_menu pt16 o_colored_level o_cc o_cc1">
+<template id="s_mega_menu_eden_menu" name="Eden Menu" groups="base.group_user">
+    <section class="s_mega_menu_eden_menu pt16 o_colored_level o_cc o_cc1">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-3 pt16 pb24">
@@ -57,7 +57,7 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid border-top s_mega_menu_odoo_menu_footer">
+        <div class="container-fluid border-top s_mega_menu_eden_menu_footer">
             <div class="row">
                 <div class="col-12 pt8 pb8">
                     <div class="s_social_media text-center o_not_editable" data-snippet="s_social_media" data-name="Social Media" contenteditable="false">
@@ -90,10 +90,10 @@
     </section>
 </template>
 
-<record id="website.s_mega_menu_odoo_menu_000_scss" model="ir.asset">
-    <field name="name">Odoo Menu 000 SCSS</field>
+<record id="website.s_mega_menu_eden_menu_000_scss" model="ir.asset">
+    <field name="name">Eden Menu 000 SCSS</field>
     <field name="bundle">web.assets_frontend</field>
-    <field name="path">website/static/src/snippets/s_mega_menu_odoo_menu/000.scss</field>
+    <field name="path">website/static/src/snippets/s_mega_menu_eden_menu/000.scss</field>
 </record>
 
-</odoo>
+</eden>

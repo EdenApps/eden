@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 import { FAKE_FIELDS } from "./calendar_test_helpers";
 
 import { CalendarArchParser } from "@web/views/calendar/calendar_arch_parser";

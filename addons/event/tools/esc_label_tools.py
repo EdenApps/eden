@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import io
 
 from base64 import b64decode
 from typing import Literal, Optional
 from PIL import Image
-from odoo.tools import float_compare
+from eden.tools import float_compare
 
 
 class EscLabelCommand:

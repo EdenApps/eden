@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<odoo><data>
+<eden><data>
 
 <!-- Slide: main template: detailed view -->
 <template id="slide_main" name="Slide Detailed View" track="1">
@@ -552,4 +552,4 @@
     </div>
 </template>
 
-</data></odoo>
+</data></eden>

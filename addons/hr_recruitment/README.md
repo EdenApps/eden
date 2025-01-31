@@ -1,8 +1,8 @@
 Manage Recruitment and Job applications
 ---------------------------------------
 
-Publish, promote and organize your job offers with the Odoo
-<a href="https://www.odoo.com/app/recruitment">Open Source Recruitment Application</a>.
+Publish, promote and organize your job offers with the Eden
+<a href="https://www.edencloud.us/app/recruitment">Open Source Recruitment Application</a>.
 
 Organize your job board, promote your job announces and keep track of
 application submissions easily. Follow every applicant and build up a database

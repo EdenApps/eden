@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_features_wall" name="Features Wall">
     <section class="s_features_wall pt56 pb56" data-oe-shape-data="{'shape':'web_editor/Airy/04_001','colors':{'c1':'o-color-3'},'flip':['x'],'showOnMobile':false,'shapeAnimationSpeed':'0','animated':'true'}">
@@ -36,4 +36,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

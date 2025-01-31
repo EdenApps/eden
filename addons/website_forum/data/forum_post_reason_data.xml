@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <!-- Reasons for closing Post -->
         <record id="reason_1" model="forum.post.reason">
@@ -56,4 +56,4 @@
         </record>
 
     </data>
-</odoo>
+</eden>

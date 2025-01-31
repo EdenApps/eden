@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.test_mail.tests.test_performance import BaseMailPerformance
-from odoo.tests.common import users, warmup
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from eden.addons.mail.tests.common import mail_new_test_user
+from eden.addons.test_mail.tests.test_performance import BaseMailPerformance
+from eden.tests.common import users, warmup
+from eden.tests import tagged
+from eden.tools import mute_logger
 
 
 class TestMassMailPerformanceBase(BaseMailPerformance):
@@ -35,7 +35,7 @@ class TestMassMailPerformance(TestMassMailPerformanceBase):
 
     @users('__system__', 'marketing')
     @warmup
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.models.unlink', 'odoo.tests')
+    @mute_logger('eden.addons.mail.models.mail_mail', 'eden.models.unlink', 'eden.tests')
     def test_send_mailing(self):
         mailing = self.env['mailing.mailing'].create({
             'name': 'Test',
@@ -78,7 +78,7 @@ class TestMassMailBlPerformance(TestMassMailPerformanceBase):
 
     @users('__system__', 'marketing')
     @warmup
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.models.unlink', 'odoo.tests')
+    @mute_logger('eden.addons.mail.models.mail_mail', 'eden.models.unlink', 'eden.tests')
     def test_send_mailing_w_bl(self):
         mailing = self.env['mailing.mailing'].create({
             'name': 'Test',

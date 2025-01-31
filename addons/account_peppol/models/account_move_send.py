@@ -1,8 +1,8 @@
 from base64 import b64encode
 
-from odoo import models, _
-from odoo.addons.account.models.company import PEPPOL_LIST
-from odoo.addons.account_edi_proxy_client.models.account_edi_proxy_user import AccountEdiProxyError
+from eden import models, _
+from eden.addons.account.models.company import PEPPOL_LIST
+from eden.addons.account_edi_proxy_client.models.account_edi_proxy_user import AccountEdiProxyError
 
 class AccountMoveSend(models.AbstractModel):
     _inherit = 'account.move.send'

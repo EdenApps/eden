@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<eden noupdate="1">
 
     <record id="sale_pdf_header_demo_page" model="quotation.document">
         <field name="name">Header</field>
@@ -70,4 +70,4 @@
         />
     </record>
 
-</odoo>
+</eden>

@@ -1,4 +1,4 @@
-import { Component, onMounted, useRef, useState } from "@odoo/owl";
+import { Component, onMounted, useRef, useState } from "@eden/owl";
 import { useFileUploader } from "@web/core/utils/files";
 
 /**
@@ -60,7 +60,7 @@ export class FileInput extends Component {
     get httpParams() {
         const { resId, resModel } = this.props;
         const params = {
-            csrf_token: odoo.csrf_token,
+            csrf_token: eden.csrf_token,
             ufile: [...this.fileInputRef.el.files],
         };
         if (resModel) {
@@ -79,7 +79,7 @@ export class FileInput extends Component {
     /**
      * Upload an attachment to the given route with the given parameters:
      * - ufile: list of files contained in the file input
-     * - csrf_token: CSRF token provided by the odoo global object
+     * - csrf_token: CSRF token provided by the eden global object
      * - resModel: a specific model which will be given when creating the attachment
      * - resId: the id of the resModel target instance
      */

@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from ast import literal_eval
 from collections import OrderedDict
 from random import randint, sample
 from werkzeug.exceptions import Forbidden
 
-from odoo import http
-from odoo.addons.website_event.controllers.main import WebsiteEventController
-from odoo.http import request
-from odoo.osv import expression
-from odoo.tools import format_duration
+from eden import http
+from eden.addons.website_event.controllers.main import WebsiteEventController
+from eden.http import request
+from eden.osv import expression
+from eden.tools import format_duration
 
 
 class ExhibitorController(WebsiteEventController):

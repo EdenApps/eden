@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <template id="report_stock_inventory_print">
         <t t-call="web.html_container">
@@ -67,4 +67,4 @@
             </div>
         </div>
     </template>
-</odoo>
+</eden>

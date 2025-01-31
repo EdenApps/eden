@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { Component, onWillStart, markup } from "@odoo/owl";
+import { Component, onWillStart, markup } from "@eden/owl";
 import { Dialog } from "@web/core/dialog/dialog";
 import { rpc } from "@web/core/network/rpc";
 import { formatDuration } from "@web/core/l10n/dates";

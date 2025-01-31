@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
 
     <record id="sale_advance_payment_inv_timesheet_view_form" model="ir.ui.view">
         <field name="name">sale_timesheet.sale.advance.payment.inv.view.form</field>
@@ -29,4 +29,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

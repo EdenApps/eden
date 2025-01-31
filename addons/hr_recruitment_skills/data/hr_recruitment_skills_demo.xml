@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo noupdate="1">
+<eden noupdate="1">
     <record id="hr_candidate_mkt0_skill_lang_en" model="hr.candidate.skill">
         <field name="candidate_id" ref="hr_recruitment.hr_candidate_mkt0"/>
         <field name="skill_id" ref="hr_skills.hr_skill_english"/>
@@ -47,4 +47,4 @@
                 ],
             }"/>
         </function>
-</odoo>
+</eden>

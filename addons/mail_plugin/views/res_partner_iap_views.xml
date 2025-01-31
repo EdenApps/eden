@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="res_partner_iap_action" model="ir.actions.act_window">
         <field name="name">IAP Partner</field>
         <field name="res_model">res.partner.iap</field>
@@ -39,4 +39,4 @@
         parent="iap.iap_root_menu"
         action="res_partner_iap_action"
         sequence="50"/>
-</odoo>
+</eden>

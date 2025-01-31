@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data>
+<eden><data>
     <!-- Sub nav -->
     <template id="user_profile_sub_nav" name="User profile subnav">
         <div class="o_wprofile_all_users_nav">
@@ -704,4 +704,4 @@
         </div>
     </template>
 
-</data></odoo>
+</data></eden>

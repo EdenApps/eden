@@ -1,4 +1,4 @@
-import { markRaw, markup, toRaw } from "@odoo/owl";
+import { markRaw, markup, toRaw } from "@eden/owl";
 import { AlertDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { serializeDate, serializeDateTime } from "@web/core/l10n/dates";
 import { _t } from "@web/core/l10n/translation";

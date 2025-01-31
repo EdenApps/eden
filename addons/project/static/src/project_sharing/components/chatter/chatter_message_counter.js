@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 export class ChatterMessageCounter extends Component {
     static template = "project.ChatterMessageCounter";

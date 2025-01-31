@@ -1,5 +1,5 @@
-from odoo import _, api, models
-from odoo.exceptions import UserError
+from eden import _, api, models
+from eden.exceptions import UserError
 
 
 class MailTemplate(models.Model):

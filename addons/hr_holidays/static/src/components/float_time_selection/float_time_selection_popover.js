@@ -1,4 +1,4 @@
-import { Component, useState } from "@odoo/owl";
+import { Component, useState } from "@eden/owl";
 
 const numberRange = (min, max) => [...Array(max - min)].map((_, i) => i + min);
 

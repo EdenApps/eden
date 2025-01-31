@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
 
         <!-- Closed Session 2 -->
@@ -205,4 +205,4 @@
         <function model="pos.session" name="action_pos_session_closing_control"
             eval="[[ref('pos_closed_session_2')]]" />
     </data>
-</odoo>
+</eden>

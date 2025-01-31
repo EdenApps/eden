@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="follow">
         <div t-attf-class="input-group js_follow #{div_class}" t-att-data-id="object.id"
                   t-att-data-object="object._name"
@@ -28,4 +28,4 @@
             </t>
         </div>
     </template>
-</odoo>
+</eden>

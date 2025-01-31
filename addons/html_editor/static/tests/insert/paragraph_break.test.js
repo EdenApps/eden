@@ -1,6 +1,6 @@
-import { describe, test } from "@odoo/hoot";
-import { press } from "@odoo/hoot-dom";
-import { tick } from "@odoo/hoot-mock";
+import { describe, test } from "@eden/hoot";
+import { press } from "@eden/hoot-dom";
+import { tick } from "@eden/hoot-mock";
 import { testEditor } from "../_helpers/editor";
 import { insertText, splitBlock } from "../_helpers/user_actions";
 import { unformat } from "../_helpers/format";

@@ -1,3 +1,3 @@
-// @odoo-module ignore
+// @eden-module ignore
 
-window.__odooIgnoreMissingDependencies = false;
+window.__edenIgnoreMissingDependencies = false;

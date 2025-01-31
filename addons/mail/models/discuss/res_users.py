@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, models
-from odoo.addons.base.models.res_users import is_selection_groups
+from eden import api, models
+from eden.addons.base.models.res_users import is_selection_groups
 
 
 class ResUsers(models.Model):

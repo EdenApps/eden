@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record model="ir.ui.view" id="view_totp_wizard">
         <field name="name">auth_totp wizard</field>
         <field name="model">auth_totp.wizard</field>
@@ -73,4 +73,4 @@
             </form>
         </field>
     </record>
-</odoo>
+</eden>

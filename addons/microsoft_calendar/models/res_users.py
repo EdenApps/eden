@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 import requests
-from odoo.addons.microsoft_calendar.models.microsoft_sync import microsoft_calendar_token
+from eden.addons.microsoft_calendar.models.microsoft_sync import microsoft_calendar_token
 from datetime import timedelta
 
-from odoo import api, fields, models, _, Command
-from odoo.exceptions import UserError
-from odoo.loglevels import exception_to_unicode
-from odoo.addons.microsoft_account.models import microsoft_service
-from odoo.addons.microsoft_calendar.utils.microsoft_calendar import InvalidSyncToken
-from odoo.tools import str2bool
+from eden import api, fields, models, _, Command
+from eden.exceptions import UserError
+from eden.loglevels import exception_to_unicode
+from eden.addons.microsoft_account.models import microsoft_service
+from eden.addons.microsoft_calendar.utils.microsoft_calendar import InvalidSyncToken
+from eden.tools import str2bool
 
 _logger = logging.getLogger(__name__)
 
@@ -110,17 +110,17 @@ class User(models.Model):
                 full_sync = True
         self.res_users_settings_id.sudo().microsoft_calendar_sync_token = next_sync_token
 
-        # Microsoft -> Odoo
-        synced_events, synced_recurrences = self.env['calendar.event']._sync_microsoft2odoo(events) if events else (self.env['calendar.event'], self.env['calendar.recurrence'])
+        # Microsoft -> Eden
+        synced_events, synced_recurrences = self.env['calendar.event']._sync_microsoft2eden(events) if events else (self.env['calendar.event'], self.env['calendar.recurrence'])
 
-        # Odoo -> Microsoft
+        # Eden -> Microsoft
         recurrences = self.env['calendar.recurrence']._get_microsoft_records_to_sync(full_sync=full_sync)
         recurrences -= synced_recurrences
-        recurrences._sync_odoo2microsoft()
+        recurrences._sync_eden2microsoft()
         synced_events |= recurrences.calendar_event_ids
 
         events = self.env['calendar.event']._get_microsoft_records_to_sync(full_sync=full_sync)
-        (events - synced_events)._sync_odoo2microsoft()
+        (events - synced_events)._sync_eden2microsoft()
         self.sudo().microsoft_last_sync_date = fields.datetime.now()
 
         return bool(events | synced_events) or bool(recurrences | synced_recurrences)

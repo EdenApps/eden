@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <record id="product_product_view_form_inherit_sale_expense" model="ir.ui.view">
         <field name="name">product.template.expense</field>
@@ -45,4 +45,4 @@
         }</field>
     </record>
 
-</odoo>
+</eden>

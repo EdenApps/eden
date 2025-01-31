@@ -1,8 +1,8 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { registry } from "@web/core/registry";
 import { Many2OneField, many2OneField } from "@web/views/fields/many2one/many2one_field";
-import { onWillStart } from "@odoo/owl";
+import { onWillStart } from "@eden/owl";
 
 export class TaskWithHours extends Many2OneField {
     setup() {

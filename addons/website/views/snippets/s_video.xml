@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_video" name="Video">
     <div class="media_iframe_video o_snippet_drop_in_only" data-oe-expression="//www.youtube.com/embed/G8b4UZIcTfg?rel=0&amp;autoplay=0">
@@ -10,4 +10,4 @@
     </div>
 </template>
 
-</odoo>
+</eden>

@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { EventBus, whenReady } from "@odoo/owl";
+import { EventBus, whenReady } from "@eden/owl";
 import { getCurrentDimensions, mockedMatchMedia } from "@web/../lib/hoot-dom/helpers/dom";
 import {
     mockedCancelAnimationFrame,
@@ -343,7 +343,7 @@ export function watchListeners() {
  * @param {T} target
  * @param {string[]} [whiteList]
  * @example
- *  afterEach(watchKeys(window, ["odoo"]));
+ *  afterEach(watchKeys(window, ["eden"]));
  */
 export function watchKeys(target, whiteList) {
     const acceptedKeys = new Set([...$ownKeys(target), ...(whiteList || [])]);

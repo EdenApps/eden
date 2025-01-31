@@ -1,9 +1,9 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { _t } from "@web/core/l10n/translation";
 import snippetsEditor from "@web_editor/js/editor/snippets.editor";
 import { MassMailingMobilePreviewDialog } from "./mass_mailing_mobile_preview";
-import { markup, useEffect, useState } from "@odoo/owl";
+import { markup, useEffect, useState } from "@eden/owl";
 
 export class MassMailingSnippetsMenu extends snippetsEditor.SnippetsMenu {
     static tabs = Object.assign({}, snippetsEditor.SnippetsMenu.tabs, {
@@ -101,7 +101,7 @@ export class MassMailingSnippetsMenu extends snippetsEditor.SnippetsMenu {
         // entire editable area as the target, which causes the tab to shift from OPTIONS to BLOCK.
         // To prevent unnecessary tab shifting, we provide a selection for this specific case.
         if (srcElement.classList.contains('o_mail_wrapper') || srcElement.querySelector('.o_mail_wrapper')) {
-            const selection = this.options.wysiwyg.odooEditor.document.getSelection();
+            const selection = this.options.wysiwyg.edenEditor.document.getSelection();
             if (selection.anchorNode) {
                 const parent = selection.anchorNode.parentElement;
                 if (parent) {
@@ -197,15 +197,15 @@ export class MassMailingSnippetsMenu extends snippetsEditor.SnippetsMenu {
      */
     _onCodeViewBtnClick(ev) {
         const $codeview = this.options.wysiwyg.$iframe.contents().find("textarea.o_codeview");
-        this.options.wysiwyg.odooEditor.observerUnactive();
+        this.options.wysiwyg.edenEditor.observerUnactive();
         $codeview.toggleClass("d-none");
         this.options.wysiwyg.getEditable().toggleClass("d-none");
-        this.options.wysiwyg.odooEditor.observerActive();
+        this.options.wysiwyg.edenEditor.observerActive();
 
         if ($codeview.hasClass("d-none")) {
             this.options.wysiwyg.setValue(this.options.getCodeViewValue($codeview[0]));
-            this.options.wysiwyg.odooEditor.sanitize();
-            this.options.wysiwyg.odooEditor.historyStep(true);
+            this.options.wysiwyg.edenEditor.sanitize();
+            this.options.wysiwyg.edenEditor.historyStep(true);
         } else {
             $codeview.val(this.options.wysiwyg.getValue());
         }

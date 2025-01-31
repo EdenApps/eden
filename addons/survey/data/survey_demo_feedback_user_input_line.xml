@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data noupdate="0">
+<eden><data noupdate="0">
 
     <!-- User input 1 -->
     <record id="survey_answer_1_p1_q1" model="survey.user_input.line">
@@ -243,4 +243,4 @@
         <field name="value_text_box">The customizable desk received is not the one I ordered on your website and the quality is very poor! Really disappointed.</field>
     </record>
 
-</data></odoo>
+</data></eden>

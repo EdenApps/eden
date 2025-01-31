@@ -11,7 +11,7 @@ import {
     startServer,
     triggerHotkey,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 import { serverState } from "@web/../tests/web_test_helpers";
 
 import { HIGHLIGHT_CLASS, searchHighlight } from "@mail/core/common/message_search_hook";
@@ -22,55 +22,55 @@ defineMailModels();
 test("Search highlight", async () => {
     const testCases = [
         {
-            input: "test odoo",
-            output: `test <span class="${HIGHLIGHT_CLASS}">odoo</span>`,
-            searchTerm: "odoo",
+            input: "test eden",
+            output: `test <span class="${HIGHLIGHT_CLASS}">eden</span>`,
+            searchTerm: "eden",
         },
         {
-            input: '<a href="https://www.odoo.com">https://www.odoo.com</a>',
-            output: `<a href="https://www.odoo.com">https://www.<span class="${HIGHLIGHT_CLASS}">odoo</span>.com</a>`,
-            searchTerm: "odoo",
+            input: '<a href="https://www.eden.com">https://www.eden.com</a>',
+            output: `<a href="https://www.edencloud.us">https://www.<span class="${HIGHLIGHT_CLASS}">eden</span>.com</a>`,
+            searchTerm: "eden",
         },
         {
-            input: '<a href="https://www.odoo.com">Odoo</a>',
-            output: `<a href="https://www.odoo.com"><span class="${HIGHLIGHT_CLASS}">Odoo</span></a>`,
-            searchTerm: "odoo",
+            input: '<a href="https://www.eden.com">Eden</a>',
+            output: `<a href="https://www.edencloud.us"><span class="${HIGHLIGHT_CLASS}">Eden</span></a>`,
+            searchTerm: "eden",
         },
         {
-            input: '<a href="https://www.odoo.com">Odoo</a> Odoo is a free software',
-            output: `<a href="https://www.odoo.com"><span class="${HIGHLIGHT_CLASS}">Odoo</span></a> <span class="${HIGHLIGHT_CLASS}">Odoo</span> is a free software`,
-            searchTerm: "odoo",
+            input: '<a href="https://www.eden.com">Eden</a> Eden is a free software',
+            output: `<a href="https://www.edencloud.us"><span class="${HIGHLIGHT_CLASS}">Eden</span></a> <span class="${HIGHLIGHT_CLASS}">Eden</span> is a free software`,
+            searchTerm: "eden",
         },
         {
-            input: "odoo is a free software",
-            output: `<span class="${HIGHLIGHT_CLASS}">odoo</span> is a free software`,
-            searchTerm: "odoo",
+            input: "eden is a free software",
+            output: `<span class="${HIGHLIGHT_CLASS}">eden</span> is a free software`,
+            searchTerm: "eden",
         },
         {
-            input: "software ODOO is a free",
-            output: `software <span class="${HIGHLIGHT_CLASS}">ODOO</span> is a free`,
-            searchTerm: "odoo",
+            input: "software EDEN is a free",
+            output: `software <span class="${HIGHLIGHT_CLASS}">EDEN</span> is a free`,
+            searchTerm: "eden",
         },
         {
             input: `<ul>
-                <li>Odoo</li>
-                <li><a href="https://odoo.com">Odoo ERP</a> Best ERP</li>
+                <li>Eden</li>
+                <li><a href="https://edencloud.us">Eden ERP</a> Best ERP</li>
             </ul>`,
             output: `<ul>
-                <li><span class="${HIGHLIGHT_CLASS}">Odoo</span></li>
-                <li><a href="https://odoo.com"><span class="${HIGHLIGHT_CLASS}">Odoo</span> ERP</a> Best ERP</li>
+                <li><span class="${HIGHLIGHT_CLASS}">Eden</span></li>
+                <li><a href="https://edencloud.us"><span class="${HIGHLIGHT_CLASS}">Eden</span> ERP</a> Best ERP</li>
             </ul>`,
-            searchTerm: "odoo",
+            searchTerm: "eden",
         },
         {
-            input: "test <strong>Odoo</strong> test",
-            output: `<span class="${HIGHLIGHT_CLASS}">test</span> <strong><span class="${HIGHLIGHT_CLASS}">Odoo</span></strong> <span class="${HIGHLIGHT_CLASS}">test</span>`,
-            searchTerm: "odoo test",
+            input: "test <strong>Eden</strong> test",
+            output: `<span class="${HIGHLIGHT_CLASS}">test</span> <strong><span class="${HIGHLIGHT_CLASS}">Eden</span></strong> <span class="${HIGHLIGHT_CLASS}">test</span>`,
+            searchTerm: "eden test",
         },
         {
             input: "test <br> test",
             output: `<span class="${HIGHLIGHT_CLASS}">test</span> <br> <span class="${HIGHLIGHT_CLASS}">test</span>`,
-            searchTerm: "odoo test",
+            searchTerm: "eden test",
         },
         {
             input: "<strong>test</strong> test",

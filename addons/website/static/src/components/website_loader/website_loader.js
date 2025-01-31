@@ -1,10 +1,10 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { rpc } from "@web/core/network/rpc";
 import { useBus, useService } from "@web/core/utils/hooks";
 import { sprintf } from "@web/core/utils/strings";
 import { _t } from "@web/core/l10n/translation";
-import { EventBus, Component, markup, useEffect, useState } from "@odoo/owl";
+import { EventBus, Component, markup, useEffect, useState } from "@eden/owl";
 
 export class WebsiteLoader extends Component {
     static props = {

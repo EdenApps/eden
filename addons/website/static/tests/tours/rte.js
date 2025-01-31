@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import {
     clickOnEditAndWaitEditMode,
@@ -7,7 +7,7 @@ import {
     goToTheme,
     registerWebsitePreviewTour,
 } from "@website/js/tours/tour_utils";
-import { whenReady } from "@odoo/owl";
+import { whenReady } from "@eden/owl";
 
 registerWebsitePreviewTour('rte_translator', {
     url: '/',
@@ -177,7 +177,7 @@ registerWebsitePreviewTour('rte_translator', {
     trigger: ':iframe #wrap p font:first',
     async run(actionHelper) {
         await actionHelper.editor('translated Parseltongue text');
-        const {Wysiwyg} = odoo.loader.modules.get('@web_editor/js/wysiwyg/wysiwyg');
+        const {Wysiwyg} = eden.loader.modules.get('@web_editor/js/wysiwyg/wysiwyg');
         Wysiwyg.setRange(this.anchor.childNodes[0], 22);
         this.anchor.dispatchEvent(new KeyboardEvent("keyup", {bubbles: true, key: "_"}));
         this.anchor.dispatchEvent(new InputEvent("input", {bubbles: true}));
@@ -188,7 +188,7 @@ registerWebsitePreviewTour('rte_translator', {
     async run(actionHelper) {
         await actionHelper.click();
         this.anchor.textContent = '<{translated}>' + this.anchor.textContent;
-        const {Wysiwyg} = odoo.loader.modules.get('@web_editor/js/wysiwyg/wysiwyg');
+        const {Wysiwyg} = eden.loader.modules.get('@web_editor/js/wysiwyg/wysiwyg');
         Wysiwyg.setRange(this.anchor.childNodes[0], 0);
         this.anchor.dispatchEvent(new KeyboardEvent("keyup", {bubbles: true, key: "_"}));
         this.anchor.dispatchEvent(new InputEvent("input", {bubbles: true}));
@@ -261,7 +261,7 @@ registerWebsitePreviewTour('rte_translator', {
         mousedown.initMouseEvent('mousedown', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, el);
         el.dispatchEvent(mousedown);
         var mouseup = document.createEvent('MouseEvents');
-        const { Wysiwyg } = odoo.loader.modules.get('@web_editor/js/wysiwyg/wysiwyg');
+        const { Wysiwyg } = eden.loader.modules.get('@web_editor/js/wysiwyg/wysiwyg');
         Wysiwyg.setRange(el.childNodes[2], 6, el.childNodes[2], 13);
         mouseup.initMouseEvent('mouseup', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, el);
         el.dispatchEvent(mouseup);

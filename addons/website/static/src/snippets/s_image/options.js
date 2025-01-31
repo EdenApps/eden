@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import options from "@web_editor/js/editor/snippets.options";
 import { MediaDialog } from "@web_editor/components/media_dialog/media_dialog";
@@ -25,7 +25,7 @@ options.registry.ImageSnippet = options.Class.extend({
                     if (!isImageSaved) {
                         // Revert the current step to exclude the step where the
                         // placeholder is added and then removed from the DOM
-                        this.options.wysiwyg.odooEditor.historyRevertCurrentStep();
+                        this.options.wysiwyg.edenEditor.historyRevertCurrentStep();
                         // If no image has been chosen, the placeholder is
                         // removed.
                         this.$target[0].remove();

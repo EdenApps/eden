@@ -1,6 +1,6 @@
 import { defineAccountModels } from "./account_test_helpers";
-import { expect, test } from "@odoo/hoot";
-import { queryFirst } from "@odoo/hoot-dom";
+import { expect, test } from "@eden/hoot";
+import { queryFirst } from "@eden/hoot-dom";
 import {
     contains,
     defineModels,

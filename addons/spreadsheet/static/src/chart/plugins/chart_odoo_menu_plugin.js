@@ -1,16 +1,16 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { OdooCorePlugin } from "@spreadsheet/plugins";
-import { coreTypes, helpers } from "@odoo/o-spreadsheet";
+import { EdenCorePlugin } from "@spreadsheet/plugins";
+import { coreTypes, helpers } from "@eden/o-spreadsheet";
 import { omit } from "@web/core/utils/objects";
 const { deepEquals } = helpers;
 
-/** Plugin that link charts with Odoo menus. It can contain either the Id of the odoo menu, or its xml id. */
-export class ChartOdooMenuPlugin extends OdooCorePlugin {
-    static getters = /** @type {const} */ (["getChartOdooMenu"]);
+/** Plugin that link charts with Eden menus. It can contain either the Id of the eden menu, or its xml id. */
+export class ChartEdenMenuPlugin extends EdenCorePlugin {
+    static getters = /** @type {const} */ (["getChartEdenMenu"]);
     constructor(config) {
         super(config);
-        this.odooMenuReference = {};
+        this.edenMenuReference = {};
     }
 
     /**
@@ -19,11 +19,11 @@ export class ChartOdooMenuPlugin extends OdooCorePlugin {
      */
     handle(cmd) {
         switch (cmd.type) {
-            case "LINK_ODOO_MENU_TO_CHART":
-                this.history.update("odooMenuReference", cmd.chartId, cmd.odooMenuId);
+            case "LINK_EDEN_MENU_TO_CHART":
+                this.history.update("edenMenuReference", cmd.chartId, cmd.edenMenuId);
                 break;
             case "DELETE_FIGURE":
-                this.history.update("odooMenuReference", cmd.id, undefined);
+                this.history.update("edenMenuReference", cmd.id, undefined);
                 break;
             case "DUPLICATE_SHEET":
                 this.updateOnDuplicateSheet(cmd.sheetId, cmd.sheetIdTo);
@@ -33,7 +33,7 @@ export class ChartOdooMenuPlugin extends OdooCorePlugin {
 
     updateOnDuplicateSheet(sheetIdFrom, sheetIdTo) {
         for (const oldChartId of this.getters.getChartIds(sheetIdFrom)) {
-            if (!this.odooMenuReference[oldChartId]) {
+            if (!this.edenMenuReference[oldChartId]) {
                 continue;
             }
             const oldChartDefinition = this.getters.getChartDefinition(oldChartId);
@@ -49,34 +49,34 @@ export class ChartOdooMenuPlugin extends OdooCorePlugin {
 
             if (newChartId) {
                 this.history.update(
-                    "odooMenuReference",
+                    "edenMenuReference",
                     newChartId,
-                    this.odooMenuReference[oldChartId]
+                    this.edenMenuReference[oldChartId]
                 );
             }
         }
     }
 
     /**
-     * Get odoo menu linked to the chart
+     * Get eden menu linked to the chart
      *
      * @param {string} chartId
      * @returns {object | undefined}
      */
-    getChartOdooMenu(chartId) {
-        const menuId = this.odooMenuReference[chartId];
+    getChartEdenMenu(chartId) {
+        const menuId = this.edenMenuReference[chartId];
         return menuId ? this.getters.getIrMenu(menuId) : undefined;
     }
 
     import(data) {
-        if (data.chartOdooMenusReferences) {
-            this.odooMenuReference = data.chartOdooMenusReferences;
+        if (data.chartEdenMenusReferences) {
+            this.edenMenuReference = data.chartEdenMenusReferences;
         }
     }
 
     export(data) {
-        data.chartOdooMenusReferences = this.odooMenuReference;
+        data.chartEdenMenusReferences = this.edenMenuReference;
     }
 }
 
-coreTypes.add("LINK_ODOO_MENU_TO_CHART");
+coreTypes.add("LINK_EDEN_MENU_TO_CHART");

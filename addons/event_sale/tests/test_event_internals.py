@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import date, datetime, timedelta
 from freezegun import freeze_time
 
-from odoo.addons.event_sale.tests.common import TestEventSaleCommon
-from odoo.fields import Datetime as FieldsDatetime, Date as FieldsDate
-from odoo.tests.common import users
+from eden.addons.event_sale.tests.common import TestEventSaleCommon
+from eden.fields import Datetime as FieldsDatetime, Date as FieldsDate
+from eden.tests.common import users
 
 
 class TestEventData(TestEventSaleCommon):

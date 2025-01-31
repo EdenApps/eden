@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import date, datetime
 
-from odoo import tests
-from odoo.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from eden import tests
+from eden.addons.hr_holidays.tests.common import TestHrHolidaysCommon
 
 
 @tests.tagged('post_install', '-at_install')

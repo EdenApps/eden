@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 from urllib.parse import urlparse
-import odoo.tests
+import eden.tests
 import lxml
 
 
-@odoo.tests.common.tagged('post_install', '-at_install')
-class TestIsMultiLang(odoo.tests.HttpCase):
+@eden.tests.common.tagged('post_install', '-at_install')
+class TestIsMultiLang(eden.tests.HttpCase):
 
     def test_01_is_multilang_url(self):
         website = self.env['website'].search([], limit=1)

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<eden noupdate="1">
     <!-- Interviewer Access Rules -->
     <record id="hr_applicant_skill_interviewer_rule" model="ir.rule">
         <field name="name">Applicant Skill: Interviewer</field>
@@ -19,4 +19,4 @@
         <field name="groups" eval="[(4, ref('hr_recruitment.group_hr_recruitment_user'))]"/>
     </record>
 
-</odoo>
+</eden>

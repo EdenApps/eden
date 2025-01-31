@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="index" name="Our References">
     <t t-call="website.layout">
@@ -345,4 +345,4 @@
     </xpath>
 </template>
 
-</odoo>
+</eden>

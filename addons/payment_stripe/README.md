@@ -40,29 +40,29 @@ The module also offers a quick onboarding thanks to the Stripe Connect platform 
 
 - `16.4`
   - The previous Checkout API that allowed for redirect payments is replaced by the Payment Intents
-    API that supports direct payments. odoo/odoo#123573
-  - The support for eMandates for recurring payments is added. odoo/odoo#123573
-  - The responses of webhook notifications are sent with the proper HTTP code. odoo/odoo#117940
+    API that supports direct payments. eden/eden#123573
+  - The support for eMandates for recurring payments is added. eden/eden#123573
+  - The responses of webhook notifications are sent with the proper HTTP code. eden/eden#117940
 - `16.0`
   - Stripe uses the payment methods set up on the account when none are assigned to the payment
-    provider in Odoo, instead of only offering the "Card" payment method. odoo/odoo#107647
-  - The support for express checkout is added. odoo/odoo#88374
+    provider in Eden, instead of only offering the "Card" payment method. eden/eden#107647
+  - The support for express checkout is added. eden/eden#88374
 - `15.4`
-  - The support for full and partial refunds is added. odoo/odoo#92235
+  - The support for full and partial refunds is added. eden/eden#92235
 - `15.3`
   - Webhook notifications accept three new events based on the PaymentIntent and SetupIntent objects
     in place of the `checkout.session.completed` event to handle async payment status updates.
-    odoo/odoo#84150
-  - The support for manual capture is added. odoo/odoo#69598
+    eden/eden#84150
+  - The support for manual capture is added. eden/eden#69598
 - `15.2`
   - An HTTP 404 "Forbidden" error is raised instead of a Validation error when the authenticity of
-    the webhook notification cannot be verified. odoo/odoo#81607
+    the webhook notification cannot be verified. eden/eden#81607
 - `15.0`
-  - A new button is added to create a webhook automatically. odoo/odoo#79621
-  - The support for the Stripe Connect onboarding flow is added. odoo/odoo#79621
+  - A new button is added to create a webhook automatically. eden/eden#79621
+  - The support for the Stripe Connect onboarding flow is added. eden/eden#79621
 - `14.3`
   - The previous direct payment flow that was supported by the SetupIntent API is replaced by a
-    payment with redirection flow using the Checkout API. odoo/odoo#141661
+    payment with redirection flow using the Checkout API. eden/eden#141661
 
 ## Testing instructions
 

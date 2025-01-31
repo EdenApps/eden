@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="mail_test_ticket_tracking_tpl" model="mail.template">
         <field name="name">Mail Test Full: Tracking Template</field>
         <field name="subject">Test Template</field>
@@ -61,4 +61,4 @@
         <p>Hello <t t-out="partner.name"/>, this comes from <t t-out="object.name"/>.</p>
     </template>
 
-</odoo>
+</eden>

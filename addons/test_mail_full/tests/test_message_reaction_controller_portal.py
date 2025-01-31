@@ -1,12 +1,12 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-import odoo
-from odoo.addons.mail.tests.test_message_reaction_controller import (
+import eden
+from eden.addons.mail.tests.test_message_reaction_controller import (
     TestMessageReactionControllerCommon,
 )
 
 
-@odoo.tests.tagged("-at_install", "post_install")
+@eden.tests.tagged("-at_install", "post_install")
 class TestPortalMessageReactionController(TestMessageReactionControllerCommon):
     def test_message_reaction_portal_no_partner(self):
         """Test access of message reaction for portal without partner."""

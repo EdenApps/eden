@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 from datetime import timedelta
 
 import pytz
 
-from odoo import api, fields, models, _
-from odoo.osv.expression import AND
-from odoo.tools import SQL
+from eden import api, fields, models, _
+from eden.osv.expression import AND
+from eden.tools import SQL
 
 
 class ReportSaleDetails(models.AbstractModel):

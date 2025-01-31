@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import timedelta
 
-from odoo import fields
-from odoo.tests import tagged
-from odoo.addons.sale_purchase.tests.common import TestCommonSalePurchaseNoChart
+from eden import fields
+from eden.tests import tagged
+from eden.addons.sale_purchase.tests.common import TestCommonSalePurchaseNoChart
 
 
 @tagged('post_install', '-at_install')

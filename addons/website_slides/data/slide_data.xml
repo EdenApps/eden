@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <record id="slide_channel_tag_group_data_other" model="slide.channel.tag.group">
             <field name="name">Tags</field>
@@ -26,4 +26,4 @@
             <field name="group_id" ref="website_slides.slide_channel_tag_group_level"/>
         </record>
     </data>
-</odoo>
+</eden>

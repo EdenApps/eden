@@ -3,7 +3,7 @@ import { useService } from "@web/core/utils/hooks";
 import { useBarcodeReader } from "@point_of_sale/app/barcode/barcode_reader_hook";
 import { _t } from "@web/core/l10n/translation";
 import { usePos } from "@point_of_sale/app/store/pos_hook";
-import { Component, onMounted, useEffect, useState, reactive, onWillRender } from "@odoo/owl";
+import { Component, onMounted, useEffect, useState, reactive, onWillRender } from "@eden/owl";
 import { CategorySelector } from "@point_of_sale/app/generic_components/category_selector/category_selector";
 import { Input } from "@point_of_sale/app/generic_components/inputs/input/input";
 import {
@@ -216,7 +216,7 @@ export class ProductScreen extends Component {
             const records = await this.pos.data.callRelated(
                 "pos.session",
                 "find_product_by_barcode",
-                [odoo.pos_session_id, code.base_code, this.pos.config.id]
+                [eden.pos_session_id, code.base_code, this.pos.config.id]
             );
             await this.pos.processProductAttributes();
 

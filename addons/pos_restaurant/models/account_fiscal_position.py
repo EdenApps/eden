@@ -1,5 +1,5 @@
-from odoo import models, api
-from odoo.osv.expression import OR
+from eden import models, api
+from eden.osv.expression import OR
 
 
 class AccountFiscalPosition(models.Model):

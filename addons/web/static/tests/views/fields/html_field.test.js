@@ -8,9 +8,9 @@ import {
     onRpc,
     serverState,
 } from "@web/../tests/web_test_helpers";
-import { expect, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
-import { click, edit, queryAll, queryFirst } from "@odoo/hoot-dom";
+import { expect, test } from "@eden/hoot";
+import { animationFrame } from "@eden/hoot-mock";
+import { click, edit, queryAll, queryFirst } from "@eden/hoot-dom";
 import { pointerDown } from "../../../lib/hoot-dom/hoot-dom";
 
 const RED_TEXT = /* html */ `<div class="kek" style="color:red">some text</div>`;

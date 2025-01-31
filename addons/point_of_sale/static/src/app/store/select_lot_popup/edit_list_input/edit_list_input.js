@@ -1,4 +1,4 @@
-import { Component, useState, useRef, useEffect } from "@odoo/owl";
+import { Component, useState, useRef, useEffect } from "@eden/owl";
 
 export class EditListInput extends Component {
     static template = "point_of_sale.EditListInput";

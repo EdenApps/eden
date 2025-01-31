@@ -1,21 +1,21 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 import time
 
-import odoo
-import odoo.tests
+import eden
+import eden.tests
 
-from odoo.tests.common import HttpCase
-from odoo.modules.module import get_manifest
-from odoo.tools import mute_logger
+from eden.tests.common import HttpCase
+from eden.modules.module import get_manifest
+from eden.tools import mute_logger
 
 from unittest.mock import patch
 
 _logger = logging.getLogger(__name__)
 
 
-class TestAssetsGenerateTimeCommon(odoo.tests.TransactionCase):
+class TestAssetsGenerateTimeCommon(eden.tests.TransactionCase):
 
     def generate_bundles(self, unlink=True):
         if unlink:
@@ -28,7 +28,7 @@ class TestAssetsGenerateTimeCommon(odoo.tests.TransactionCase):
         }
 
         for bundle_name in bundles:
-            with mute_logger('odoo.addons.base.models.assetsbundle'):
+            with mute_logger('eden.addons.base.models.assetsbundle'):
                 for assets_type in 'css', 'js':
                     try:
                         start_t = time.time()
@@ -44,7 +44,7 @@ class TestAssetsGenerateTimeCommon(odoo.tests.TransactionCase):
                         _logger.info('Error detected while generating bundle %r %s', bundle_name, assets_type)
 
 
-@odoo.tests.tagged('post_install', '-at_install', 'assets_bundle')
+@eden.tests.tagged('post_install', '-at_install', 'assets_bundle')
 class TestLogsAssetsGenerateTime(TestAssetsGenerateTimeCommon):
 
     def test_logs_assets_generate_time(self):
@@ -67,7 +67,7 @@ class TestLogsAssetsGenerateTime(TestAssetsGenerateTimeCommon):
         _logger.info('All bundle checked in %.2fs', duration)
 
 
-@odoo.tests.tagged('post_install', '-at_install', '-standard', 'test_assets')
+@eden.tests.tagged('post_install', '-at_install', '-standard', 'test_assets')
 class TestPregenerateTime(HttpCase):
 
     def test_logs_pregenerate_time(self):
@@ -75,12 +75,12 @@ class TestPregenerateTime(HttpCase):
         start = time.time()
         self.env.registry.clear_cache()
         self.env.cache.invalidate()
-        with self.profile(collectors=['sql', odoo.tools.profiler.PeriodicCollector(interval=0.01)], disable_gc=True):
+        with self.profile(collectors=['sql', eden.tools.profiler.PeriodicCollector(interval=0.01)], disable_gc=True):
             self.env['ir.qweb']._pregenerate_assets_bundles()
         duration = time.time() - start
         _logger.info('All bundle checked in %.2fs', duration)
 
-@odoo.tests.tagged('post_install', '-at_install', '-standard', 'assets_bundle')
+@eden.tests.tagged('post_install', '-at_install', '-standard', 'assets_bundle')
 class TestAssetsGenerateTime(TestAssetsGenerateTimeCommon):
     """
     This test is meant to be run nightly to ensure bundle generation does not exceed
@@ -98,12 +98,12 @@ class TestAssetsGenerateTime(TestAssetsGenerateTimeCommon):
             threshold = thresholds.get(bundle, 2)
             self.assertLess(duration, threshold, "Bundle %r took more than %s sec" % (bundle, threshold))
 
-@odoo.tests.tagged('post_install', '-at_install')
+@eden.tests.tagged('post_install', '-at_install')
 class TestLoad(HttpCase):
     def test_assets_already_exists(self):
         self.authenticate('admin', 'admin')
         # TODO xdo adapt this test. url open won't generate attachment anymore even if not pregenerated
-        _save_attachment = odoo.addons.base.models.assetsbundle.AssetsBundle.save_attachment
+        _save_attachment = eden.addons.base.models.assetsbundle.AssetsBundle.save_attachment
 
         def save_attachment(bundle, extension, content):
             attachment = _save_attachment(bundle, extension, content)
@@ -111,12 +111,12 @@ class TestLoad(HttpCase):
             _logger.error(message)
             return attachment
 
-        with patch('odoo.addons.base.models.assetsbundle.AssetsBundle.save_attachment', save_attachment):
-            self.url_open('/odoo').raise_for_status()
+        with patch('eden.addons.base.models.assetsbundle.AssetsBundle.save_attachment', save_attachment):
+            self.url_open('/eden').raise_for_status()
             self.url_open('/').raise_for_status()
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@eden.tests.tagged('post_install', '-at_install')
 class TestWebAssetsCursors(HttpCase):
     """
     This tests class tests the specificities of the route /web/assets regarding used connections.

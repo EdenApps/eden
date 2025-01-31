@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_card_offset" name="Card Offset">
     <section class="s_card_offset o_cc o_cc1 pt64 pb64">
@@ -18,4 +18,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

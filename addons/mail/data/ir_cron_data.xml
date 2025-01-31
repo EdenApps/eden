@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <record forcecreate="True" id="ir_cron_mail_scheduler_action" model="ir.cron">
             <field name="name">Mail: Email Queue Manager</field>
@@ -94,4 +94,4 @@
             <field name="state">code</field>
         </record>
     </data>
-</odoo>
+</eden>

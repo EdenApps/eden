@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import re
 from contextlib import suppress
 
-import odoo.tests
-from odoo.tools.misc import file_open
+import eden.tests
+from eden.tools.misc import file_open
 
 RE_FORBIDDEN_STATEMENTS = re.compile(r'test.*\.(only|debug)\(')
 RE_ONLY = re.compile(r'QUnit\.(only|debug)\(')
@@ -30,20 +30,20 @@ def qunit_error_checker(message):
     return True  # in other cases, always stop (missing dependency, ...)
 
 
-@odoo.tests.tagged('post_install', '-at_install')
-class WebSuite(odoo.tests.HttpCase):
+@eden.tests.tagged('post_install', '-at_install')
+class WebSuite(eden.tests.HttpCase):
 
-    @odoo.tests.no_retry
+    @eden.tests.no_retry
     def test_unit_desktop(self):
         # Unit tests suite (desktop)
         self.browser_js('/web/tests?headless&loglevel=2&preset=desktop&timeout=15000', "", "", login='admin', timeout=1800, success_signal="[HOOT] test suite succeeded", error_checker=unit_test_error_checker)
 
-    @odoo.tests.no_retry
+    @eden.tests.no_retry
     def test_hoot(self):
         # HOOT tests suite
         self.browser_js('/web/static/lib/hoot/tests/index.html?headless&loglevel=2', "", "", login='admin', timeout=1800, success_signal="[HOOT] test suite succeeded", error_checker=unit_test_error_checker)
 
-    @odoo.tests.no_retry
+    @eden.tests.no_retry
     def test_qunit_desktop(self):
         # ! DEPRECATED
         self.browser_js('/web/tests/legacy?mod=web', "", "", login='admin', timeout=1800, success_signal="QUnit test suite done.", error_checker=qunit_error_checker)
@@ -92,12 +92,12 @@ class WebSuite(odoo.tests.HttpCase):
                         self.fail("`QUnit.only()` or `QUnit.debug()` used in file %r" % asset['url'])
 
 
-@odoo.tests.tagged('post_install', '-at_install')
-class MobileWebSuite(odoo.tests.HttpCase):
+@eden.tests.tagged('post_install', '-at_install')
+class MobileWebSuite(eden.tests.HttpCase):
     browser_size = '375x667'
     touch_enabled = True
 
-    @odoo.tests.no_retry
+    @eden.tests.no_retry
     def test_unit_mobile(self):
         # Unit tests suite (mobile)
         self.browser_js('/web/tests?headless&loglevel=2&preset=mobile&tag=-headless&timeout=15000', "", "", login='admin', timeout=1800, success_signal="[HOOT] test suite succeeded", error_checker=unit_test_error_checker)

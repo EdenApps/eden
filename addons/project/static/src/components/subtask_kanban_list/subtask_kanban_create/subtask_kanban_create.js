@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @eden-module **/
 
-import { Component, useState, useRef } from "@odoo/owl";
+import { Component, useState, useRef } from "@eden/owl";
 
 import { _t } from "@web/core/l10n/translation";
 import { useAutofocus } from "@web/core/utils/hooks";

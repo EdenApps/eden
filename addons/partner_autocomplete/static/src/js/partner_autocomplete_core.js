@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 /* global checkVATNumber */
 
 import { loadJS } from "@web/core/assets";
@@ -16,7 +16,7 @@ import { getDataURLFromFile } from "@web/core/utils/urls";
  * @private
  */
 export function usePartnerAutocomplete() {
-    const keepLastOdoo = new KeepLast();
+    const keepLastEden = new KeepLast();
     const keepLastClearbit = new KeepLast();
 
     const http = useService("http");
@@ -64,11 +64,11 @@ export function usePartnerAutocomplete() {
         value = value.trim();
 
         const isVAT = await isTAXNumber(value);
-        let odooSuggestions = [];
+        let edenSuggestions = [];
         let clearbitSuggestions = [];
         return new Promise((resolve, reject) => {
-            const odooPromise = getOdooSuggestions(value, isVAT).then((suggestions) => {
-                odooSuggestions = suggestions;
+            const edenPromise = getEdenSuggestions(value, isVAT).then((suggestions) => {
+                edenSuggestions = suggestions;
             });
 
             // Only get Clearbit suggestions if not a VAT number
@@ -82,29 +82,29 @@ export function usePartnerAutocomplete() {
             });
 
             const concatResults = () => {
-                // Add Clearbit result with Odoo result (with unique domain)
+                // Add Clearbit result with Eden result (with unique domain)
                 if (clearbitSuggestions && clearbitSuggestions.length) {
-                    const websites = odooSuggestions.map((suggestion) => {
+                    const websites = edenSuggestions.map((suggestion) => {
                         return suggestion.website;
                     });
                     clearbitSuggestions.forEach((suggestion) => {
                         if (websites.indexOf(suggestion.domain) < 0) {
                             websites.push(suggestion.domain);
-                            odooSuggestions.push(suggestion);
+                            edenSuggestions.push(suggestion);
                         }
                     });
                 }
 
-                odooSuggestions = odooSuggestions.filter((suggestion) => {
+                edenSuggestions = edenSuggestions.filter((suggestion) => {
                     return !suggestion.ignored;
                 });
-                odooSuggestions.forEach((suggestion) => {
+                edenSuggestions.forEach((suggestion) => {
                     delete suggestion.ignored;
                 });
-                return resolve(odooSuggestions);
+                return resolve(edenSuggestions);
             };
 
-            whenAll([odooPromise, clearbitPromise]).then(concatResults, concatResults);
+            whenAll([edenPromise, clearbitPromise]).then(concatResults, concatResults);
         });
     }
 
@@ -256,14 +256,14 @@ export function usePartnerAutocomplete() {
     }
 
     /**
-     * Use Odoo Autocomplete API to return suggestions
+     * Use Eden Autocomplete API to return suggestions
      *
      * @param {string} value
      * @param {boolean} isVAT
      * @returns {Promise}
      * @private
      */
-    async function getOdooSuggestions(value, isVAT) {
+    async function getEdenSuggestions(value, isVAT) {
         const method = isVAT ? 'read_by_vat' : 'autocomplete';
 
         const prom = orm.silent.call(
@@ -272,7 +272,7 @@ export function usePartnerAutocomplete() {
             [value],
         );
 
-        const suggestions = await keepLastOdoo.add(prom);
+        const suggestions = await keepLastEden.add(prom);
         suggestions.map((suggestion) => {
             suggestion.logo = suggestion.logo || '';
             suggestion.label = suggestion.legal_name || suggestion.name;

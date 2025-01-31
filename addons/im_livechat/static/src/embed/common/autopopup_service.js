@@ -7,7 +7,7 @@ export class AutopopupService {
     static STORAGE_KEY = "im_livechat_auto_popup";
 
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").EdenEnv} env
      * @param {{
      * "im_livechat.chatbot": import("@im_livechat/embed/common/chatbot/chatbot_service").ChatBotService,
      * "im_livechat.initialized": import("@im_livechat/embed/common/livechat_initialized_service").livechatInitializedService,

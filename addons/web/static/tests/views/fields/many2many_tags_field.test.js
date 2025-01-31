@@ -1,6 +1,6 @@
-import { describe, expect, getFixture, test } from "@odoo/hoot";
-import { hover, press, queryAllTexts, queryOne } from "@odoo/hoot-dom";
-import { Deferred, animationFrame, runAllTimers } from "@odoo/hoot-mock";
+import { describe, expect, getFixture, test } from "@eden/hoot";
+import { hover, press, queryAllTexts, queryOne } from "@eden/hoot-dom";
+import { Deferred, animationFrame, runAllTimers } from "@eden/hoot-mock";
 
 import {
     clickFieldDropdown,

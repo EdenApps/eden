@@ -1,11 +1,11 @@
 import base64
 from datetime import datetime
 
-from odoo import fields
-from odoo.tests import tagged
-from odoo.tools import file_open
+from eden import fields
+from eden.tests import tagged
+from eden.tools import file_open
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
 
 
 @tagged('post_install', '-at_install')

@@ -1,11 +1,11 @@
-/** @odoo-module alias=@mail/../tests/web/fields/m2x_avatar_user_tests default=false */
+/** @eden-module alias=@mail/../tests/web/fields/m2x_avatar_user_tests default=false */
 const test = QUnit.test; // QUnit.test()
 
 import { startServer } from "@bus/../tests/helpers/mock_python_environment";
 
 import { openFormView, start } from "@mail/../tests/helpers/test_utils";
 
-import { EventBus } from "@odoo/owl";
+import { EventBus } from "@eden/owl";
 
 import { popoverService } from "@web/core/popover/popover_service";
 import { registry } from "@web/core/registry";
@@ -101,7 +101,7 @@ test('many2one_avatar_user widget edited by the smart action "Assign to..."', as
     triggerHotkey("control+k");
     await click(".o_command", { text: "Assign to ...ALT + I" });
     await contains(".o_command", { count: 6 });
-    await contains(":nth-child(1 of .o_command)", { text: "OdooBot" });
+    await contains(":nth-child(1 of .o_command)", { text: "EdenBot" });
     await contains(":nth-child(2 of .o_command)", { text: "Your Company, Mitchell Admin" });
     await contains(":nth-child(3 of .o_command)", { text: "Public user" });
     await contains(":nth-child(4 of .o_command)", { text: "Mario" });
@@ -158,7 +158,7 @@ test('many2many_avatar_user widget edited by the smart action "Assign to..."', a
     await contains(".o_command", { text: "Assign to ...ALT + I" });
     triggerHotkey("alt+i");
     await contains(".o_command", { count: 4 });
-    await contains(":nth-child(1 of .o_command)", { text: "OdooBot" });
+    await contains(":nth-child(1 of .o_command)", { text: "EdenBot" });
     await contains(":nth-child(2 of .o_command)", { text: "Your Company, Mitchell Admin" });
     await contains(":nth-child(3 of.o_command)", { text: "Public user" });
     await contains(":nth-child(4 of.o_command)", { text: "Luigi" });
@@ -352,7 +352,7 @@ test("avatar card preview", async (assert) => {
     const pyEnv = await startServer();
     const userId = pyEnv["res.users"].create({
         name: "Mario",
-        email: "Mario@odoo.test",
+        email: "Mario@eden.test",
         phone: "+78786987",
         im_status: "online",
     });
@@ -391,7 +391,7 @@ test("avatar card preview", async (assert) => {
     await click(".o_m2o_avatar > img");
     await contains(".o_avatar_card");
     await contains(".o_card_user_infos > span", { text: "Mario" });
-    await contains(".o_card_user_infos > a", { text: "Mario@odoo.test" });
+    await contains(".o_card_user_infos > a", { text: "Mario@eden.test" });
     await contains(".o_card_user_infos > a", { text: "+78786987" });
     await assertSteps(["user read"]);
     // Close card

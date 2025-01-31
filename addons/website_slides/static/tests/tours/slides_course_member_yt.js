@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { registry } from "@web/core/registry";
 
@@ -8,7 +8,7 @@ function patchFullScreen() {
      * This will make the video start at 10 minutes.
      * As it lasts 10min24s, it will mark it as completed immediately.
     */
-    const FullScreen = odoo.loader.modules.get('@website_slides/js/slides_course_fullscreen_player')[Symbol.for("default")];
+    const FullScreen = eden.loader.modules.get('@website_slides/js/slides_course_fullscreen_player')[Symbol.for("default")];
     FullScreen.include({
         _renderSlide: function () {
 

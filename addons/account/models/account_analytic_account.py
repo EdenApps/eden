@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import api, fields, models, _
+from eden import api, fields, models, _
 
 
 class AccountAnalyticAccount(models.Model):

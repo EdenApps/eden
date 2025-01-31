@@ -1,4 +1,4 @@
-/** @odoo-module alias=@web/../tests/mobile/views/view_dialog/select_create_dialog_tests default=false */
+/** @eden-module alias=@web/../tests/mobile/views/view_dialog/select_create_dialog_tests default=false */
 
 import { click, getFixture, editInput } from "@web/../tests/helpers/utils";
 import { makeView, setupViewRegistries } from "@web/../tests/views/helpers";

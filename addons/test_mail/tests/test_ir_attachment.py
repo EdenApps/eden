@@ -1,7 +1,7 @@
 import base64
 
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.tests import tagged, users
+from eden.addons.mail.tests.common import MailCommon
+from eden.tests import tagged, users
 
 
 @tagged("ir_attachment")

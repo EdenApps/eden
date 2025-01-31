@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo><data>
+<eden><data>
     <!-- Design fair -->
     <record id="event_registration_0_0" model="event.registration">
         <field name="create_date" eval="DateTime.now() - relativedelta(days=2)"/>
@@ -163,4 +163,4 @@
         eval="[[ref('event_registration_4_0'), ref('event_registration_4_1')]]"
     />
 
-</data></odoo>
+</data></eden>

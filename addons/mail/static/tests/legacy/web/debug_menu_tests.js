@@ -1,4 +1,4 @@
-/** @odoo-module alias=@mail/../tests/web/debug_menu_tests default=false */
+/** @eden-module alias=@mail/../tests/web/debug_menu_tests default=false */
 const test = QUnit.test; // QUnit.test()
 
 import { manageMessages } from "@mail/js/tools/debug_manager";
@@ -15,7 +15,7 @@ import {
 QUnit.module("debug menu");
 
 test("Manage Messages", async (assert) => {
-    patchWithCleanup(odoo, { debug: "1" });
+    patchWithCleanup(eden, { debug: "1" });
     const serverData = getActionManagerServerData();
     // Add fake "mail.message" model and arch
     serverData.models["mail.message"] = {

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
 
     <record id="mail_activity_type_action_config_sale" model="ir.actions.act_window">
         <field name="name">Activity Types</field>
@@ -9,4 +9,4 @@
         <field name="context">{'default_res_model': 'sale.order'}</field>
     </record>
 
-</odoo>
+</eden>

@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import http
-from odoo.http import request
+from eden import http
+from eden.http import request
 
 
 class PaymentDemoController(http.Controller):

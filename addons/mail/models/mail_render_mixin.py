@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import babel
 import copy
@@ -12,11 +12,11 @@ from functools import reduce
 from markupsafe import Markup, escape
 from werkzeug import urls
 
-from odoo import _, api, fields, models, tools
-from odoo.addons.base.models.ir_qweb import QWebException
-from odoo.exceptions import UserError, AccessError
-from odoo.tools.mail import is_html_empty, prepend_html_content, html_normalize
-from odoo.tools.rendering_tools import convert_inline_template_to_qweb, parse_inline_template, render_inline_template, template_env_globals
+from eden import _, api, fields, models, tools
+from eden.addons.base.models.ir_qweb import QWebException
+from eden.exceptions import UserError, AccessError
+from eden.tools.mail import is_html_empty, prepend_html_content, html_normalize
+from eden.tools.rendering_tools import convert_inline_template_to_qweb, parse_inline_template, render_inline_template, template_env_globals
 
 _logger = logging.getLogger(__name__)
 
@@ -548,7 +548,7 @@ class MailRenderMixin(models.AbstractModel):
         :param str model: model name of records on which we want to perform
           rendering (aka 'crm.lead');
         :param list res_ids: list of ids of records. All should belong to the
-          Odoo model given by model;
+          Eden model given by model;
         :param string engine: inline_template, qweb or qweb_view;
 
         :param dict add_context: additional context to give to renderer. It
@@ -607,7 +607,7 @@ class MailRenderMixin(models.AbstractModel):
         computed by performing a rendering on res_ids, based on self.render_model.
 
         :param list res_ids: list of ids of records. All should belong to the
-          Odoo model given by model;
+          Eden model given by model;
         :param string engine: inline_template or qweb_view;
 
         :return dict: {res_id: lang code (i.e. en_US)}

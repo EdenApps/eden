@@ -62,14 +62,14 @@ export class Persona extends Record {
                 return;
             }
             const model = this.type === "partner" ? "res.partner" : "mail.guest";
-            this.store.env.services.bus_service.addChannel(`odoo-presence-${model}_${this.id}`);
+            this.store.env.services.bus_service.addChannel(`eden-presence-${model}_${this.id}`);
         },
         onDelete() {
             if (!this.store.env.services.bus_service.isActive) {
                 return;
             }
             const model = this.type === "partner" ? "res.partner" : "mail.guest";
-            this.store.env.services.bus_service.deleteChannel(`odoo-presence-${model}_${this.id}`);
+            this.store.env.services.bus_service.deleteChannel(`eden-presence-${model}_${this.id}`);
         },
         eager: true,
         inverse: "imStatusTrackedPersonas",

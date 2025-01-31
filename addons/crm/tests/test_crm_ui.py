@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.crm.tests.common import TestCrmCommon
-from odoo.tests import HttpCase
-from odoo.tests.common import tagged
+from eden.addons.crm.tests.common import TestCrmCommon
+from eden.tests import HttpCase
+from eden.tests.common import tagged
 
 
 @tagged('post_install', '-at_install')
@@ -36,7 +36,7 @@ class TestUi(HttpCase, TestCrmCommon):
             'stage_id': self.stage_gen_1.id,
             'user_id': self.env.ref('base.user_admin').id,
         }])
-        self.start_tour("/odoo", 'crm_tour', login="admin")
+        self.start_tour("/eden", 'crm_tour', login="admin")
 
     def test_02_crm_tour_rainbowman(self):
         # we create a new user to make sure they get the 'Congrats on your first deal!'
@@ -50,10 +50,10 @@ class TestUi(HttpCase, TestCrmCommon):
                     self.ref('sales_team.group_sale_salesman')
                 ])]
         })
-        self.start_tour("/odoo", 'crm_rainbowman', login="temp_crm_user")
+        self.start_tour("/eden", 'crm_rainbowman', login="temp_crm_user")
 
     def test_03_crm_tour_forecast(self):
-        self.start_tour("/odoo", 'crm_forecast', login="admin")
+        self.start_tour("/eden", 'crm_forecast', login="admin")
 
     def test_email_and_phone_propagation_edit_save(self):
         """Test the propagation of the email / phone on the partner.
@@ -85,7 +85,7 @@ class TestUi(HttpCase, TestCrmCommon):
         self.assertTrue(lead.partner_email_update)
         self.assertTrue(lead.partner_phone_update)
 
-        self.start_tour('/odoo', 'crm_email_and_phone_propagation_edit_save', login='admin')
+        self.start_tour('/eden', 'crm_email_and_phone_propagation_edit_save', login='admin')
 
         self.assertEqual(lead.email_from, 'test@example.com', 'Should not have changed the lead email')
         self.assertEqual(lead.phone, '+32 494 44 44 44', 'Should not have changed the lead phone')

@@ -2,7 +2,7 @@ import { Composer } from "@mail/core/common/composer";
 import { Typing } from "@mail/discuss/typing/common/typing";
 import { rpc } from "@web/core/network/rpc";
 
-import { onWillDestroy } from "@odoo/owl";
+import { onWillDestroy } from "@eden/owl";
 import { browser } from "@web/core/browser/browser";
 import { registry } from "@web/core/registry";
 import { patch } from "@web/core/utils/patch";

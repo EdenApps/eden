@@ -1,4 +1,4 @@
-/** @odoo-module alias=@bus/../tests/helpers/model_definitions_setup default=false */
+/** @eden-module alias=@bus/../tests/helpers/model_definitions_setup default=false */
 
 import { TEST_GROUP_IDS, TEST_USER_IDS } from "@bus/../tests/helpers/test_constants";
 import {
@@ -40,11 +40,11 @@ insertRecords("res.groups", [{ id: TEST_GROUP_IDS.groupUserId, name: "Internal U
 insertRecords("res.users", [
     {
         active: false,
-        display_name: "OdooBot",
+        display_name: "EdenBot",
         login: "__system__",
-        id: TEST_USER_IDS.odoobotUserId,
+        id: TEST_USER_IDS.edenbotUserId,
         name: "Public user",
-        partner_id: TEST_USER_IDS.odoobotId,
+        partner_id: TEST_USER_IDS.edenbotId,
     },
     {
         display_name: "Your Company, Mitchell Admin",
@@ -79,9 +79,9 @@ insertRecords("res.partner", [
     },
     {
         active: false,
-        display_name: "OdooBot",
-        id: TEST_USER_IDS.odoobotId,
+        display_name: "EdenBot",
+        id: TEST_USER_IDS.edenbotId,
         im_status: "bot",
-        name: "OdooBot",
+        name: "EdenBot",
     },
 ]);

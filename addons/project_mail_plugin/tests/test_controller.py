@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 from unittest.mock import patch
 
-from odoo.addons.mail_plugin.tests.common import TestMailPluginControllerCommon
+from eden.addons.mail_plugin.tests.common import TestMailPluginControllerCommon
 
 
 class TestMailPluginProjectController(TestMailPluginControllerCommon):

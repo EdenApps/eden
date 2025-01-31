@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <record id="web_editor.13_0_color_system_support_primary_variables_scss" model="ir.asset">
             <field name="name">13 0 color system support primary variables SCSS</field>
@@ -8,4 +8,4 @@
             <field name="active" eval="False"/>
         </record>
     </data>
-</odoo>
+</eden>

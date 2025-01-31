@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template name="Badge" id="s_badge">
     <span class="s_badge badge text-bg-secondary o_animable" data-name="Badge" data-vxml="001">
@@ -36,4 +36,4 @@
     <field name="path">website/static/src/snippets/s_badge/000.scss</field>
 </record>
 
-</odoo>
+</eden>

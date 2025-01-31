@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 from datetime import datetime
 
-from odoo.tests.common import TransactionCase
-from odoo import Command
-from odoo.fields import Datetime
+from eden.tests.common import TransactionCase
+from eden import Command
+from eden.fields import Datetime
 
 class TestHolidayContract(TransactionCase):
 

@@ -1,4 +1,4 @@
-// Part of Odoo. See LICENSE file for full copyright and licensing details.
+// Part of Eden. See LICENSE file for full copyright and licensing details.
 import { PosOrderline } from "@point_of_sale/app/models/pos_order_line";
 import { _t } from "@web/core/l10n/translation";
 import { patch } from "@web/core/utils/patch";

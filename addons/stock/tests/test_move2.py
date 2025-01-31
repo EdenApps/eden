@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import timedelta
 
-from odoo.addons.stock.tests.common import TestStockCommon
-from odoo.exceptions import UserError
+from eden.addons.stock.tests.common import TestStockCommon
+from eden.exceptions import UserError
 
-from odoo import Command
-from odoo.tests import Form
-from odoo.tools import float_is_zero, float_compare
+from eden import Command
+from eden.tests import Form
+from eden.tools import float_is_zero, float_compare
 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta

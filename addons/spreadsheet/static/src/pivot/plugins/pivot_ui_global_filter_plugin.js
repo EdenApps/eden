@@ -1,17 +1,17 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { FILTER_DATE_OPTION, monthsOptions } from "@spreadsheet/assets_backend/constants";
 import { Domain } from "@web/core/domain";
 import { NO_RECORD_AT_THIS_POSITION } from "../pivot_model";
 import { globalFiltersFieldMatchers } from "@spreadsheet/global_filters/plugins/global_filters_core_plugin";
-import { OdooUIPlugin } from "@spreadsheet/plugins";
+import { EdenUIPlugin } from "@spreadsheet/plugins";
 
 const { DateTime } = luxon;
 
 /**
  * @typedef {import("@spreadsheet").FieldMatching} FieldMatching
- * @typedef {import("@odoo/o-spreadsheet").Token} Token
- * @typedef {import("@odoo/o-spreadsheet").PivotDomain} PivotDomain
+ * @typedef {import("@eden/o-spreadsheet").Token} Token
+ * @typedef {import("@eden/o-spreadsheet").PivotDomain} PivotDomain
  */
 
 /**
@@ -67,7 +67,7 @@ function pivotPeriodToFilterValue(timeRange, value) {
     }
 }
 
-export class PivotUIGlobalFilterPlugin extends OdooUIPlugin {
+export class PivotUIGlobalFilterPlugin extends EdenUIPlugin {
     static getters = /** @type {const} */ ([
         "getPivotComputedDomain",
         "getFiltersMatchingPivotArgs",
@@ -131,7 +131,7 @@ export class PivotUIGlobalFilterPlugin extends OdooUIPlugin {
                 this._addDomains();
                 break;
             case "UPDATE_PIVOT":
-            case "UPDATE_ODOO_PIVOT_DOMAIN":
+            case "UPDATE_EDEN_PIVOT_DOMAIN":
                 this._addDomain(cmd.pivotId);
                 break;
             case "UNDO":
@@ -142,7 +142,7 @@ export class PivotUIGlobalFilterPlugin extends OdooUIPlugin {
                             "ADD_GLOBAL_FILTER",
                             "EDIT_GLOBAL_FILTER",
                             "REMOVE_GLOBAL_FILTER",
-                            "UPDATE_ODOO_PIVOT_DOMAIN",
+                            "UPDATE_EDEN_PIVOT_DOMAIN",
                             "UPDATE_PIVOT",
                         ].includes(command.type)
                     )
@@ -208,7 +208,7 @@ export class PivotUIGlobalFilterPlugin extends OdooUIPlugin {
         for (const filter of filters) {
             const dataSource = this.getters.getPivot(pivotId);
             const { type } = this.getters.getPivotCoreDefinition(pivotId);
-            if (type !== "ODOO") {
+            if (type !== "EDEN") {
                 continue;
             }
             const { field, granularity: time } = dataSource.parseGroupField(lastNode.field);
@@ -273,7 +273,7 @@ export class PivotUIGlobalFilterPlugin extends OdooUIPlugin {
      * @param {string} pivotId pivot id
      */
     _addDomain(pivotId) {
-        if (this.getters.getPivotCoreDefinition(pivotId).type !== "ODOO") {
+        if (this.getters.getPivotCoreDefinition(pivotId).type !== "EDEN") {
             return;
         }
         const domainList = [];
@@ -295,7 +295,7 @@ export class PivotUIGlobalFilterPlugin extends OdooUIPlugin {
     _addDomains() {
         for (const pivotId of this.getters
             .getPivotIds()
-            .filter((pivotId) => this.getters.getPivot(pivotId).type === "ODOO")) {
+            .filter((pivotId) => this.getters.getPivot(pivotId).type === "EDEN")) {
             this._addDomain(pivotId);
         }
     }
@@ -308,7 +308,7 @@ export class PivotUIGlobalFilterPlugin extends OdooUIPlugin {
         return this.getters
             .getPivotIds()
             .map((pivotId) => this.getters.getPivot(pivotId))
-            .filter((pivot) => pivot.type === "ODOO")
+            .filter((pivot) => pivot.type === "EDEN")
             .map((pivot) => pivot.loadMetadata());
     }
 }

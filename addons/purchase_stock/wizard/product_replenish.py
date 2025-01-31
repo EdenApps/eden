@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, fields, models
-from odoo.osv.expression import AND
+from eden import _, api, fields, models
+from eden.osv.expression import AND
 
 
 class ProductReplenish(models.TransientModel):
@@ -65,7 +65,7 @@ class ProductReplenish(models.TransientModel):
         if order_line._name == 'purchase.order.line':
             return [{
                 'label': order_line.order_id.display_name,
-                'url': f'/odoo/action-purchase.action_rfq_form/{order_line.order_id.id}',
+                'url': f'/eden/action-purchase.action_rfq_form/{order_line.order_id.id}',
             }]
         return super()._get_replenishment_order_notification_link(order_line)
 

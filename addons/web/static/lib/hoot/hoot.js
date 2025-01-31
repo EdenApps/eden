@@ -1,4 +1,4 @@
-/** @odoo-module alias=@odoo/hoot default=false */
+/** @eden-module alias=@eden/hoot default=false */
 
 import { logger } from "./core/logger";
 import { Runner } from "./core/runner";

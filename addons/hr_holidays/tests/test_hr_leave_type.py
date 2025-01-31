@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import date
 from dateutil.relativedelta import relativedelta
 
-from odoo.exceptions import AccessError
-from odoo.tools import date_utils
+from eden.exceptions import AccessError
+from eden.tools import date_utils
 
-from odoo.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from eden.addons.hr_holidays.tests.common import TestHrHolidaysCommon
 
 
 class TestHrLeaveType(TestHrHolidaysCommon):

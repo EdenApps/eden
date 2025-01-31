@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_image" name="Image">
     <div class="s_image rounded border d-inline-flex justify-content-center align-items-center bg-100 opacity-50 w-100 ratio ratio-16x9" style="max-width: 50vw">
@@ -16,4 +16,4 @@
     </xpath>
 </template>
 
-</odoo>
+</eden>

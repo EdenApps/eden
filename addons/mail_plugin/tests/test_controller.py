@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 from unittest.mock import Mock, patch
 
-from odoo.addons.iap.tools import iap_tools
-from odoo.addons.mail_plugin.tests.common import TestMailPluginControllerCommon, mock_auth_method_outlook
-from odoo.exceptions import AccessError
+from eden.addons.iap.tools import iap_tools
+from eden.addons.mail_plugin.tests.common import TestMailPluginControllerCommon, mock_auth_method_outlook
+from eden.exceptions import AccessError
 
 
 class TestMailPluginController(TestMailPluginControllerCommon):
@@ -46,7 +46,7 @@ class TestMailPluginController(TestMailPluginControllerCommon):
         mocked_request_enrich = Mock()
 
         with patch(
-            "odoo.addons.iap.models.iap_enrich_api.IapEnrichAPI"
+            "eden.addons.iap.models.iap_enrich_api.IapEnrichAPI"
             "._request_enrich",
             new=mocked_request_enrich,
         ):
@@ -200,7 +200,7 @@ class TestMailPluginController(TestMailPluginControllerCommon):
                     'name': 'Notification',
                     'email': 'notification@example.com',
                     'enrichment_info': {
-                        'type': 'odoo_custom_error',
+                        'type': 'eden_custom_error',
                         'info': 'This is your notification address. Search the Contact manually to link this email to a record.',
                     },
                 },

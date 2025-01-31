@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <record id="view_form_account_edi_proxy_client_user" model="ir.ui.view">
             <field name="name">EDI Proxy User</field>
@@ -52,4 +52,4 @@
                   groups="base.group_no_one"/>
 
     </data>
-</odoo>
+</eden>

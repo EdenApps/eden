@@ -1,9 +1,9 @@
-import { Component, xml } from "@odoo/owl";
+import { Component, xml } from "@eden/owl";
 import { useNavigation } from "@web/core/navigation/navigation";
 import { useAutofocus } from "@web/core/utils/hooks";
-import { describe, expect, test } from "@odoo/hoot";
-import { hover, press } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@eden/hoot";
+import { hover, press } from "@eden/hoot-dom";
+import { animationFrame } from "@eden/hoot-mock";
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
 
 class BasicHookParent extends Component {

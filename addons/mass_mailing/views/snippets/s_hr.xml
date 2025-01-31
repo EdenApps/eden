@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_hr" name="Separator" inherit_id="web_editor.s_hr" primary="True">
     <xpath expr="//div[hasclass('s_hr')]" position="attributes">
@@ -38,4 +38,4 @@
     <field name="path">mass_mailing/static/src/snippets/s_hr/000.scss</field>
 </record>
 
-</odoo>
+</eden>

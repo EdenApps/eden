@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_image_text" name="Image - Text">
     <div class="s_text_image o_mail_snippet_general pt32 pb32">
@@ -20,4 +20,4 @@
     </div>
 </template>
 
-</odoo>
+</eden>

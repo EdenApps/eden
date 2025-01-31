@@ -7,8 +7,8 @@ import {
     start,
     startServer,
 } from "@mail/../tests/mail_test_helpers";
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { mockDate, mockTimeZone } from "@odoo/hoot-mock";
+import { beforeEach, describe, expect, test } from "@eden/hoot";
+import { mockDate, mockTimeZone } from "@eden/hoot-mock";
 import { defineTestMailModels, editSelect } from "@test_mail/../tests/test_mail_test_helpers";
 
 const archs = {

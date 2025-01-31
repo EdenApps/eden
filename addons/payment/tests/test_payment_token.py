@@ -1,20 +1,20 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import date
 
 from freezegun import freeze_time
 
-from odoo.exceptions import AccessError, UserError, ValidationError
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from eden.exceptions import AccessError, UserError, ValidationError
+from eden.tests import tagged
+from eden.tools import mute_logger
 
-from odoo.addons.payment.tests.common import PaymentCommon
+from eden.addons.payment.tests.common import PaymentCommon
 
 
 @tagged('-at_install', 'post_install')
 class TestPaymentToken(PaymentCommon):
 
-    @mute_logger('odoo.addons.base.models.ir_rule')
+    @mute_logger('eden.addons.base.models.ir_rule')
     def test_users_have_no_access_to_other_users_tokens(self):
         users = [self.public_user, self.portal_user, self.internal_user]
         token = self._create_token(partner_id=self.admin_partner.id)

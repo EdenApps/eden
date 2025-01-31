@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models, api
-from odoo.tools import float_compare, float_is_zero
-from odoo.tools.misc import groupby
+from eden import fields, models, api
+from eden.tools import float_compare, float_is_zero
+from eden.tools.misc import groupby
 
 
 class AccountMove(models.Model):

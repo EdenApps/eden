@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 from __future__ import annotations
 from typing import List, Dict
-from odoo import api, models, fields
-from odoo.osv.expression import AND
+from eden import api, models, fields
+from eden.osv.expression import AND
 
 
 class ProductTemplate(models.Model):

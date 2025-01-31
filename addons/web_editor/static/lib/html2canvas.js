@@ -5604,7 +5604,7 @@
           }
           var documentClone = cloneWindow.document;
           /*
-            ODOO Patch for safari v 15.4+ in ios: onload is never called.
+            EDEN Patch for safari v 15.4+ in ios: onload is never called.
             Issue link: https://github.com/niklasvh/html2canvas/issues/2864
             Suggested change: https://github.com/niklasvh/html2canvas/issues/2864#issuecomment-1111044861
             Version that solves the issue: not available yet

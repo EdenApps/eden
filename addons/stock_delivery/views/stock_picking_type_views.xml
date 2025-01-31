@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <record model="ir.ui.view" id="view_picking_type_form_delivery">
         <field name="name">stock.picking.type.list.delivery</field>
@@ -12,4 +12,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

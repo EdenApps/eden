@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models
+from eden import fields, models
 
 
 class EventBooth(models.Model):
@@ -45,7 +45,7 @@ class EventBooth(models.Model):
                 values['name'] = self.partner_id.name
             if self.booth_category_id.exhibitor_type == 'online':
                 values.update({
-                    'room_name': 'odoo-exhibitor-%s' % self.partner_id.name,
+                    'room_name': 'eden-exhibitor-%s' % self.partner_id.name,
                 })
             sponsor_id = self.env['event.sponsor'].sudo().create(values)
         return sponsor_id.id

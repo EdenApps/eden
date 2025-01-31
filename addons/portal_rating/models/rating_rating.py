@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import api, fields, models, exceptions, _
+from eden import api, fields, models, exceptions, _
 
 
 class Rating(models.Model):

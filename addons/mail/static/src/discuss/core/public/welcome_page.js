@@ -1,4 +1,4 @@
-import { Component, useRef, useState, onMounted } from "@odoo/owl";
+import { Component, useRef, useState, onMounted } from "@eden/owl";
 
 import { browser } from "@web/core/browser/browser";
 import { useService } from "@web/core/utils/hooks";

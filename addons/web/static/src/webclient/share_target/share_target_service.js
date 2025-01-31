@@ -12,13 +12,13 @@ import { browser } from "@web/core/browser/browser";
 const getShareTargetDataFromServiceWorker = () => {
     return new Promise((resolve) => {
         const onmessage = (event) => {
-            if (event.data.action === "odoo_share_target_ack") {
+            if (event.data.action === "eden_share_target_ack") {
                 resolve(event.data.shared_files);
                 browser.navigator.serviceWorker.removeEventListener("message", onmessage);
             }
         };
         browser.navigator.serviceWorker.addEventListener("message", onmessage);
-        browser.navigator.serviceWorker.controller.postMessage("odoo_share_target");
+        browser.navigator.serviceWorker.controller.postMessage("eden_share_target");
     });
 };
 

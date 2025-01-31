@@ -17,7 +17,7 @@ import { ListRenderer } from "@web/views/list/list_renderer";
 import { computeViewClassName } from "@web/views/utils";
 import { ViewButton } from "@web/views/view_button/view_button";
 
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 export class X2ManyField extends Component {
     static template = "web.X2ManyField";

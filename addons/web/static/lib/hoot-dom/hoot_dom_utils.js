@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 /**
  * @typedef {ArgumentPrimitive | `${ArgumentPrimitive}[]` | null} ArgumentType

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="view_product_timesheet_form" model="ir.ui.view">
         <field name="name">product.template.timesheet.form</field>
         <field name="model">product.template</field>
@@ -49,4 +49,4 @@
         <field name="context">{'search_default_services': 1, 'default_type': 'service'}</field>
     </record>
 
-</odoo>
+</eden>

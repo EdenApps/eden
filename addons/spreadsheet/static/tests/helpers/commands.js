@@ -1,16 +1,16 @@
 /** @ts-check */
 
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@eden/o-spreadsheet";
 import { waitForDataLoaded } from "@spreadsheet/helpers/model";
-import { animationFrame } from "@odoo/hoot-mock";
+import { animationFrame } from "@eden/hoot-mock";
 
 const { toCartesian, toZone, lettersToNumber, deepCopy } = spreadsheet.helpers;
 
 /**
  * @typedef {import("@spreadsheet").GlobalFilter} GlobalFilter
  * @typedef {import("@spreadsheet").CmdGlobalFilter} CmdGlobalFilter
- * @typedef {import("@spreadsheet").OdooSpreadsheetModel} OdooSpreadsheetModel
- * @typedef {import("@odoo/o-spreadsheet").UID} UID
+ * @typedef {import("@spreadsheet").EdenSpreadsheetModel} EdenSpreadsheetModel
+ * @typedef {import("@eden/o-spreadsheet").UID} UID
  */
 
 /**
@@ -26,7 +26,7 @@ export function selectCell(model, xc, sheetId = model.getters.getActiveSheetId()
 
 /**
  * Add a global filter and ensure the data sources are completely reloaded
- * @param {import("@spreadsheet").OdooSpreadsheetModel} model
+ * @param {import("@spreadsheet").EdenSpreadsheetModel} model
  * @param {CmdGlobalFilter} filter
  */
 export async function addGlobalFilter(model, filter, fieldMatchings = {}) {
@@ -117,7 +117,7 @@ export function setCellStyle(model, xc, style, sheetId = model.getters.getActive
 
 /**
  * Add columns
- * @param {OdooSpreadsheetModel} model
+ * @param {EdenSpreadsheetModel} model
  * @param {"before"|"after"} position
  * @param {string} column
  * @param {number} quantity
@@ -141,7 +141,7 @@ export function addColumns(
 
 /**
  * Delete columns
- * @param {OdooSpreadsheetModel} model
+ * @param {EdenSpreadsheetModel} model
  * @param {string[]} columns
  * @param {UID} sheetId
  */

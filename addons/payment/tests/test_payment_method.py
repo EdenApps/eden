@@ -1,12 +1,12 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import UserError
-from odoo.models import Command
-from odoo.tests import tagged
+from eden.exceptions import UserError
+from eden.models import Command
+from eden.tests import tagged
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.const import REPORT_REASONS_MAPPING
-from odoo.addons.payment.tests.common import PaymentCommon
+from eden.addons.payment import utils as payment_utils
+from eden.addons.payment.const import REPORT_REASONS_MAPPING
+from eden.addons.payment.tests.common import PaymentCommon
 
 
 @tagged('-at_install', 'post_install')

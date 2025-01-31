@@ -1,6 +1,6 @@
 import { _t } from "@web/core/l10n/translation";
 import { Dialog } from "@web/core/dialog/dialog";
-import { Component, useState } from "@odoo/owl";
+import { Component, useState } from "@eden/owl";
 import { BarcodeVideoScanner, isBarcodeScannerSupported } from "./barcode_video_scanner";
 
 export class BarcodeDialog extends Component {

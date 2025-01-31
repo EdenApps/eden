@@ -1,7 +1,7 @@
 # Please note that this Dockerfile is used for testing nightly builds and should
-# not be used to deploy Odoo
+# not be used to deploy Eden
 FROM fedora:38
-MAINTAINER Odoo S.A. <info@odoo.com>
+MAINTAINER Eden Cloud <info@edencloud.us>
 
 # Dependencies and postgres
 RUN dnf update -d 0 -e 0 -y && \
@@ -70,4 +70,4 @@ RUN cp /usr/share/pgsql/postgresql.conf.sample /var/lib/postgres/data/postgresql
 
 RUN echo "PS1=\"[\u@nightly-tests] # \"" > ~/.bashrc
 
-USER odoo
+USER eden

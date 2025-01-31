@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <record id="view_account_payment_method_line_tree" model="ir.ui.view">
         <field name="name">account.payment.method.line.list</field>
@@ -24,4 +24,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

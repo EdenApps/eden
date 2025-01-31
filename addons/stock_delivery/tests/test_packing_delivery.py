@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.addons.stock.tests.test_packing import TestPackingCommon
-from odoo.exceptions import UserError
-from odoo.tests import Form
+from eden import Command
+from eden.addons.stock.tests.test_packing import TestPackingCommon
+from eden.exceptions import UserError
+from eden.tests import Form
 from unittest.mock import patch
 
 
@@ -150,7 +150,7 @@ class TestPacking(TestPackingCommon):
 
         # Mock carrier shipping method
         with patch(
-            'odoo.addons.stock_delivery.models.delivery_carrier.DeliveryCarrier.fixed_send_shipping',
+            'eden.addons.stock_delivery.models.delivery_carrier.DeliveryCarrier.fixed_send_shipping',
             return_value=[{'exact_price': 0, 'tracking_number': "666"}]
         ):
             picking_ship.send_to_shipper()

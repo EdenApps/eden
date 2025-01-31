@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <template id="sale_order_portal_content_inherit_sale_mrp"
         name="Orders MOs"
@@ -49,4 +49,4 @@
         </xpath>
     </template>
 
-</odoo>
+</eden>

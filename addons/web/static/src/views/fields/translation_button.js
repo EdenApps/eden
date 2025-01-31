@@ -3,7 +3,7 @@ import { useOwnedDialogs } from "@web/core/utils/hooks";
 import { user } from "@web/core/user";
 import { TranslationDialog } from "./translation_dialog";
 
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 /**
  * Prepares a function that will open the dialog that allows to edit translation

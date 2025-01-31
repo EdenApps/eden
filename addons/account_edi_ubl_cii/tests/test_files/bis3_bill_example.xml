@@ -50,7 +50,7 @@
     <cac:Party>
       <cbc:EndpointID schemeID="9938">LU25587702</cbc:EndpointID>
       <cac:PartyName>
-        <cbc:Name>Odoo Lu</cbc:Name>
+        <cbc:Name>Eden Lu</cbc:Name>
       </cac:PartyName>
       <cac:PostalAddress>
         <cbc:StreetName>Rue de l'industrie 13</cbc:StreetName>
@@ -66,12 +66,12 @@
         </cac:TaxScheme>
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
-        <cbc:RegistrationName>Odoo Lu</cbc:RegistrationName>
+        <cbc:RegistrationName>Eden Lu</cbc:RegistrationName>
         <cbc:CompanyID>LU25587702</cbc:CompanyID>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Odoo Lu</cbc:Name>
-        <cbc:ElectronicMail>odoo@test.com</cbc:ElectronicMail>
+        <cbc:Name>Eden Lu</cbc:Name>
+        <cbc:ElectronicMail>eden@test.com</cbc:ElectronicMail>
       </cac:Contact>
     </cac:Party>
   </cac:AccountingCustomerParty>

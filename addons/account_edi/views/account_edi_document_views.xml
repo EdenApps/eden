@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <record id="view_tree_account_edi_document" model="ir.ui.view">
             <field name="name">Account.edi.document.list</field>
@@ -16,4 +16,4 @@
             </field>
         </record>
     </data>
-</odoo>
+</eden>

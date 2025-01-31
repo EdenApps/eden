@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from collections import namedtuple
 
-from odoo import api, fields, models
-from odoo.exceptions import UserError, RedirectWarning
-from odoo.tools import format_list
-from odoo.tools.translate import _, LazyTranslate
+from eden import api, fields, models
+from eden.exceptions import UserError, RedirectWarning
+from eden.tools import format_list
+from eden.tools.translate import _, LazyTranslate
 
 _lt = LazyTranslate(__name__)
 

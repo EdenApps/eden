@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
 
 <!-- TOOLS / UTILS -->
@@ -47,7 +47,7 @@
             </div>
             <div role="tabpanel">
                 <div class="card-body">
-                <p>The goal of this site is create a relevant knowledge base that would answer questions related to Odoo.</p>
+                <p>The goal of this site is create a relevant knowledge base that would answer questions related to Eden.</p>
                 <p>Therefore questions and answers can be edited like wiki pages by experienced users of this site in order to improve the overall quality of the knowledge base content. Such privileges are granted based on user karma level: you will be able to do the same once your karma gets high enough.</p>
                 <p>If this approach is not for you, please respect the community.</p>
                     <table class="table table-striped mt-4 bg-white">
@@ -166,4 +166,4 @@
     </div>
 </template>
     </data>
-</odoo>
+</eden>

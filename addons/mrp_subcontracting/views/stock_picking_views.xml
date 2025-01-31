@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="stock_picking_form_view" model="ir.ui.view">
         <field name="name">stock.picking.form.view</field>
         <field name="model">stock.picking</field>
@@ -21,4 +21,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</eden>

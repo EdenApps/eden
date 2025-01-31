@@ -1,10 +1,10 @@
 # -*- encoding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
 
-from odoo import api, fields, models, _, Command
-from odoo.tools import DEFAULT_SERVER_DATETIME_FORMAT, get_lang
+from eden import api, fields, models, _, Command
+from eden.tools import DEFAULT_SERVER_DATETIME_FORMAT, get_lang
 
 
 class PurchaseOrderGroup(models.Model):

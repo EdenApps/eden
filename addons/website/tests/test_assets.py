@@ -1,13 +1,13 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import re
 
-import odoo.tests
+import eden.tests
 
-from odoo.tools import config
+from eden.tools import config
 
 
-@odoo.tests.common.tagged('post_install', '-at_install')
-class TestWebsiteAssets(odoo.tests.HttpCase):
+@eden.tests.common.tagged('post_install', '-at_install')
+class TestWebsiteAssets(eden.tests.HttpCase):
 
     def test_01_multi_domain_assets_generation(self):
         Website = self.env['website']
@@ -55,15 +55,15 @@ class TestWebsiteAssets(odoo.tests.HttpCase):
         #      "GET /web HTTP/1.1" 200 - 11 0.004 0.007   <--  11 Queries, ~10ms
         #      "GET /web HTTP/1.1" 200 - 11 0.003 0.005   <--  11 Queries, ~10ms
         #      "GET /web HTTP/1.1" 200 - 11 0.003 0.008   <--  11 Queries, ~10ms
-        self.url_open(domain_1 + '/odoo')
+        self.url_open(domain_1 + '/eden')
         check_asset()
-        self.url_open(domain_2 + '/odoo')
+        self.url_open(domain_2 + '/eden')
         check_asset()
-        self.url_open(domain_1 + '/odoo')
+        self.url_open(domain_1 + '/eden')
         check_asset()
-        self.url_open(domain_2 + '/odoo')
+        self.url_open(domain_2 + '/eden')
         check_asset()
-        self.url_open(domain_1 + '/odoo')
+        self.url_open(domain_1 + '/eden')
         check_asset()
 
     def test_02_t_cache_invalidation(self):
@@ -137,12 +137,12 @@ class TestWebsiteAssets(odoo.tests.HttpCase):
         self.assertTrue(website_attach.exists(), 'attachment for website should still exist after generating attachment for no website')
 
 
-@odoo.tests.tagged('-at_install', 'post_install')
-class TestWebAssets(odoo.tests.HttpCase):
+@eden.tests.tagged('-at_install', 'post_install')
+class TestWebAssets(eden.tests.HttpCase):
     def test_assets_url_validation(self):
         website_id = self.env['website'].search([], limit=1, order='id desc').id
 
-        with odoo.tools.mute_logger('odoo.addons.web.controllers.binary'):
+        with eden.tools.mute_logger('eden.addons.web.controllers.binary'):
             self.assertEqual(
                 self.url_open(f'/web/assets/{website_id}/debug/hello/web.assets_frontend.css', allow_redirects=False).status_code,
                 404,

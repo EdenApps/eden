@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 <template id="community_aside" name="Community: Aside (Leaderboard)"
     inherit_id="website_event_meet.community_aside">
     <xpath expr="//div[hasclass('o_wevent_community_aside')]" position="inside">
@@ -40,4 +40,4 @@
     </table>
 </template>
 
-</odoo>
+</eden>

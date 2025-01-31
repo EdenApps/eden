@@ -1,17 +1,17 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import publicWidget from "@web/legacy/js/public/public_widget";
 import VariantMixin from "@website_sale/js/sale_variant_mixin";
 import wSaleUtils from "@website_sale/js/website_sale_utils";
 const cartHandlerMixin = wSaleUtils.cartHandlerMixin;
-import "@website/libs/zoomodoo/zoomodoo";
+import "@website/libs/zoomeden/zoomeden";
 import {extraMenuUpdateCallbacks} from "@website/js/content/menu";
 import { ProductImageViewer } from "@website_sale/js/components/website_sale_image_viewer";
 import { rpc } from "@web/core/network/rpc";
 import { debounce, throttleForAnimation } from "@web/core/utils/timing";
 import { listenSizeChange, SIZES, utils as uiUtils } from "@web/core/ui/ui_service";
 import { isBrowserFirefox, hasTouch } from "@web/core/browser/feature_detection";
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 export const WebsiteSale = publicWidget.Widget.extend(VariantMixin, cartHandlerMixin, {
     selector: '.oe_website_sale',
@@ -289,7 +289,7 @@ export const WebsiteSale = publicWidget.Widget.extend(VariantMixin, cartHandlerM
             for (const image of images) {
                 const $image = $(image);
                 const callback = () => {
-                    $image.zoomOdoo({
+                    $image.zoomEden({
                         event: "mouseenter",
                         attach: this._getProductImageContainerSelector(),
                         preventClicks: salePage.dataset.ecomZoomClick,
@@ -300,9 +300,9 @@ export const WebsiteSale = publicWidget.Widget.extend(VariantMixin, cartHandlerM
                 image.addEventListener('load', callback);
                 this.zoomCleanup.push(() => {
                     image.removeEventListener('load', callback);
-                    const zoomOdoo = $image.data("zoomOdoo");
-                    if (zoomOdoo) {
-                        zoomOdoo.hide();
+                    const zoomEden = $image.data("zoomEden");
+                    if (zoomEden) {
+                        zoomEden.hide();
                         $image.unbind();
                     }
                 });
@@ -319,7 +319,7 @@ export const WebsiteSale = publicWidget.Widget.extend(VariantMixin, cartHandlerM
                 const handler = () => {
                     if (salePage.dataset.ecomZoomAuto) {
                         // Remove any flyout
-                        const flyouts = document.querySelectorAll(".zoomodoo-flyout");
+                        const flyouts = document.querySelectorAll(".zoomeden-flyout");
                         for (const flyout of flyouts) {
                             flyout.remove();
                         }
@@ -675,7 +675,7 @@ publicWidget.registry.WebsiteSaleLayout = publicWidget.Widget.extend({
     _onApplyShopLayoutChange: function (ev) {
         const wysiwyg = this.options.wysiwyg;
         if (wysiwyg) {
-            wysiwyg.odooEditor.observerUnactive('_onApplyShopLayoutChange');
+            wysiwyg.edenEditor.observerUnactive('_onApplyShopLayoutChange');
         }
         var clickedValue = $(ev.target).val();
         var isList = clickedValue === 'list';
@@ -700,7 +700,7 @@ publicWidget.registry.WebsiteSaleLayout = publicWidget.Widget.extend({
         void $grid[0].offsetWidth;
         $grid.find('*').css('transition', '');
         if (wysiwyg) {
-            wysiwyg.odooEditor.observerActive('_onApplyShopLayoutChange');
+            wysiwyg.edenEditor.observerActive('_onApplyShopLayoutChange');
         }
     },
 });

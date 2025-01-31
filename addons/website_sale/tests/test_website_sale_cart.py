@@ -1,22 +1,22 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 from unittest.mock import patch
 
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Command
-from odoo.tests import tagged
+from eden.exceptions import UserError, ValidationError
+from eden.fields import Command
+from eden.tests import tagged
 
-from odoo.addons.base.tests.common import BaseUsersCommon
-from odoo.addons.product.tests.common import ProductAttributesCommon
-from odoo.addons.website.tools import MockRequest
-from odoo.addons.website_sale.controllers.combo_configurator import (
+from eden.addons.base.tests.common import BaseUsersCommon
+from eden.addons.product.tests.common import ProductAttributesCommon
+from eden.addons.website.tools import MockRequest
+from eden.addons.website_sale.controllers.combo_configurator import (
     WebsiteSaleComboConfiguratorController,
 )
-from odoo.addons.website_sale.controllers.main import WebsiteSale
-from odoo.addons.website_sale.controllers.payment import PaymentPortal
-from odoo.addons.website_sale.models.product_template import ProductTemplate
-from odoo.addons.website_sale.tests.common import WebsiteSaleCommon
+from eden.addons.website_sale.controllers.main import WebsiteSale
+from eden.addons.website_sale.controllers.payment import PaymentPortal
+from eden.addons.website_sale.models.product_template import ProductTemplate
+from eden.addons.website_sale.tests.common import WebsiteSaleCommon
 
 
 @tagged('post_install', '-at_install')
@@ -390,7 +390,7 @@ class TestWebsiteSaleCart(BaseUsersCommon, ProductAttributesCommon, WebsiteSaleC
         self.carrier.country_ids = [Command.set((2,))]
         self.product.type = 'consu'
         with (MockRequest(self.product.with_user(portal_user).env, website=website), patch(
-            'odoo.addons.website_sale.models.sale_order.SaleOrder._get_preferred_delivery_method',
+            'eden.addons.website_sale.models.sale_order.SaleOrder._get_preferred_delivery_method',
             return_value=self.env['delivery.carrier'],
         )):
             order = website.sale_get_order(force_create=True)

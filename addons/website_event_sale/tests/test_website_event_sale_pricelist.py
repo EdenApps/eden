@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
-from odoo.tests import tagged
+from eden.fields import Command
+from eden.tests import tagged
 
-from odoo.addons.website_event_sale.tests.common import TestWebsiteEventSaleCommon
-from odoo.addons.website_sale.controllers.main import WebsiteSale
+from eden.addons.website_event_sale.tests.common import TestWebsiteEventSaleCommon
+from eden.addons.website_sale.controllers.main import WebsiteSale
 
 
 @tagged('post_install', '-at_install')

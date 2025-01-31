@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { serializeDate } from "@web/core/l10n/dates";
 import { useService } from "@web/core/utils/hooks";

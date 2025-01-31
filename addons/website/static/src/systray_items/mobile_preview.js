@@ -1,8 +1,8 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
-import { Component, useState } from "@odoo/owl";
+import { Component, useState } from "@eden/owl";
 
 class MobilePreviewSystray extends Component {
     static template = "website.MobilePreviewSystray";

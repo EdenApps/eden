@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <!--
         'Mark as Lost' in action dropdown
@@ -21,4 +21,4 @@
         <field name="code">action = model.action_opportunity_forecast()</field>
     </record>
 
-</odoo>
+</eden>

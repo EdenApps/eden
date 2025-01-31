@@ -1,6 +1,6 @@
 import { Dialog } from "@web/core/dialog/dialog";
 import { useAutoFocusToLast } from "@point_of_sale/app/utils/hooks";
-import { Component, useState, useRef } from "@odoo/owl";
+import { Component, useState, useRef } from "@eden/owl";
 import { EditListInput } from "@point_of_sale/app/store/select_lot_popup/edit_list_input/edit_list_input";
 
 /**

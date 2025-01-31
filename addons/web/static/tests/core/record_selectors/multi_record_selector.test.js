@@ -1,6 +1,6 @@
-import { test, expect } from "@odoo/hoot";
+import { test, expect } from "@eden/hoot";
 import { MultiRecordSelector } from "@web/core/record_selectors/multi_record_selector";
-import { Component, useState, xml } from "@odoo/owl";
+import { Component, useState, xml } from "@eden/owl";
 import {
     contains,
     defineModels,
@@ -9,8 +9,8 @@ import {
     mountWithCleanup,
     onRpc,
 } from "@web/../tests/web_test_helpers";
-import { click, fill, press, queryAllTexts } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { click, fill, press, queryAllTexts } from "@eden/hoot-dom";
+import { animationFrame } from "@eden/hoot-mock";
 
 class Partner extends models.Model {
     _name = "partner";

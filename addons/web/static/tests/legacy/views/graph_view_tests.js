@@ -1,4 +1,4 @@
-/** @odoo-module alias=@web/../tests/views/graph_view_tests default=false */
+/** @eden-module alias=@web/../tests/views/graph_view_tests default=false */
 
 import { click, findChildren, triggerEvent } from "@web/../tests/helpers/utils";
 import { ensureArray } from "@web/core/utils/arrays";

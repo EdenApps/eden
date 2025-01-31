@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { renderToElement } from "@web/core/utils/render";
 import Fullscreen from "@website_slides/js/slides_course_fullscreen_player";

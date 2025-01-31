@@ -1,15 +1,15 @@
 
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import binascii
 import json
 
-import odoo.tests
-from odoo.tests.common import HttpCase, new_test_user
-from odoo.tools.json import scriptsafe as json_safe
+import eden.tests
+from eden.tests.common import HttpCase, new_test_user
+from eden.tools.json import scriptsafe as json_safe
 
 
-@odoo.tests.tagged('-at_install', 'post_install')
+@eden.tests.tagged('-at_install', 'post_install')
 class TestController(HttpCase):
 
     @classmethod
@@ -159,7 +159,7 @@ class TestController(HttpCase):
             '/html_editor/link_preview_internal',
             data=json_safe.dumps({
                 "params": {
-                    "preview_url": f"/odoo/users/{self.portal_user.id}",
+                    "preview_url": f"/eden/users/{self.portal_user.id}",
                 }
             }),
             headers=self.headers
@@ -172,7 +172,7 @@ class TestController(HttpCase):
             '/html_editor/link_preview_internal',
             data=json_safe.dumps({
                 "params": {
-                    "preview_url": "/odoo/actionInvalid/1",
+                    "preview_url": "/eden/actionInvalid/1",
                 }
             }),
             headers=self.headers
@@ -185,7 +185,7 @@ class TestController(HttpCase):
             '/html_editor/link_preview_internal',
             data=json_safe.dumps({
                 "params": {
-                    "preview_url": "/odoo/users/9999",
+                    "preview_url": "/eden/users/9999",
                 }
             }),
             headers=self.headers
@@ -198,7 +198,7 @@ class TestController(HttpCase):
             '/html_editor/link_preview_internal',
             data=json_safe.dumps({
                 "params": {
-                    "preview_url": "/odoo/users",
+                    "preview_url": "/eden/users",
                 }
             }),
             headers=self.headers
@@ -206,12 +206,12 @@ class TestController(HttpCase):
         self.assertEqual(200, response_not_record.status_code)
         self.assertTrue('other_error_msg' in response_not_record.text)
 
-        # Attempt to retrieve metadata for path format `odoo/<model>/<record_id>`
+        # Attempt to retrieve metadata for path format `eden/<model>/<record_id>`
         response_model_record = self.url_open(
             '/html_editor/link_preview_internal',
             data=json_safe.dumps({
                 "params": {
-                    "preview_url": f"/odoo/res.users/{self.portal_user.id}",
+                    "preview_url": f"/eden/res.users/{self.portal_user.id}",
                 }
             }),
             headers=self.headers
@@ -225,7 +225,7 @@ class TestController(HttpCase):
             '/html_editor/link_preview_internal',
             data=json_safe.dumps({
                 "params": {
-                    "preview_url": "/odoo/mail.thread/1",
+                    "preview_url": "/eden/mail.thread/1",
                 }
             }),
             headers=self.headers

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <record id="view_order_form_with_carrier" model="ir.ui.view">
         <field name="name">delivery.sale.order.form.view.with_carrier</field>
@@ -48,4 +48,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

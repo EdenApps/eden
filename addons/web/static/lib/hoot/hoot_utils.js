@@ -1,7 +1,7 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { queryAll } from "@odoo/hoot-dom";
-import { reactive, useEffect, useExternalListener } from "@odoo/owl";
+import { queryAll } from "@eden/hoot-dom";
+import { reactive, useEffect, useExternalListener } from "@eden/owl";
 import { isNode } from "@web/../lib/hoot-dom/helpers/dom";
 import { isIterable, toSelector } from "@web/../lib/hoot-dom/hoot_dom_utils";
 import { DiffMatchPatch } from "./lib/diff_match_patch";

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import io
 import base64
@@ -9,8 +9,8 @@ from freezegun import freeze_time
 from PIL import Image
 from werkzeug.urls import url_unquote_plus
 
-from odoo.tools.misc import limited_field_access_token
-from odoo.tests.common import HttpCase, tagged
+from eden.tools.misc import limited_field_access_token
+from eden.tests.common import HttpCase, tagged
 
 
 @tagged('-at_install', 'post_install')

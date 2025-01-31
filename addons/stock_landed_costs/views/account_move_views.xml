@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="account_view_move_form_inherited" model="ir.ui.view">
         <field name="name">account.view.move.form.inherited</field>
         <field name="model">account.move</field>
@@ -34,4 +34,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

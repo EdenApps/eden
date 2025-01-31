@@ -1,4 +1,4 @@
-import { describe, test } from "@odoo/hoot";
+import { describe, test } from "@eden/hoot";
 import { testEditor } from "./_helpers/editor";
 import { alignCenter, justify, alignLeft, alignRight } from "./_helpers/user_actions";
 

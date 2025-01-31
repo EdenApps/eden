@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { registry } from "@web/core/registry";
 import { ListRenderer } from "@web/views/list/list_renderer";
@@ -6,7 +6,7 @@ import { X2ManyField, x2ManyField } from "@web/views/fields/x2many/x2many_field"
 import { TextField, ListTextField } from "@web/views/fields/text/text_field";
 import { CharField } from "@web/views/fields/char/char_field";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";
-import { Component, useEffect } from "@odoo/owl";
+import { Component, useEffect } from "@eden/owl";
 
 export class SectionAndNoteListRenderer extends ListRenderer {
     static template = "account.sectionAndNoteListRenderer";

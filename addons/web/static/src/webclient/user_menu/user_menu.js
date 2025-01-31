@@ -6,7 +6,7 @@ import { registry } from "@web/core/registry";
 import { user } from "@web/core/user";
 import { session } from "@web/session";
 
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 import { imageUrl } from "@web/core/utils/urls";
 
 const userMenuRegistry = registry.category("user_menuitems");

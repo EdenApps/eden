@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<odoo>
+<eden>
 
    <record id="hr_employee_action_from_department" model="ir.actions.act_window">
        <field name="name">Absent Employees</field>
@@ -276,4 +276,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

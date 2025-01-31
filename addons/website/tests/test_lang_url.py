@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 import lxml.html
 from urllib.parse import urlparse
 
-from odoo.addons.website.tools import MockRequest
-from odoo.tests import HttpCase, tagged
+from eden.addons.website.tools import MockRequest
+from eden.tests import HttpCase, tagged
 
 
 @tagged('-at_install', 'post_install')
@@ -53,11 +53,11 @@ class TestLangUrl(HttpCase):
         """
         # 1. Load backend
         self.authenticate('admin', 'admin')
-        r = self.url_open('/odoo')
+        r = self.url_open('/eden')
         self.assertEqual(r.status_code, 200)
 
         for line in r.text.splitlines():
-            _, match, session_info_str = line.partition('odoo.__session_info__ = ')
+            _, match, session_info_str = line.partition('eden.__session_info__ = ')
             if match:
                 session_info = json.loads(session_info_str[:-1])
                 self.assertEqual(session_info['user_context']['lang'], 'en_US', "ensure english was loaded")

@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 import logging
@@ -7,17 +7,17 @@ from collections import defaultdict
 from datetime import timedelta
 from itertools import groupby
 
-from odoo import SUPERUSER_ID, _, api, fields, models
-from odoo.exceptions import (
+from eden import SUPERUSER_ID, _, api, fields, models
+from eden.exceptions import (
     AccessError,
     RedirectWarning,
     UserError,
     ValidationError,
 )
-from odoo.fields import Command
-from odoo.http import request
-from odoo.osv import expression
-from odoo.tools import (
+from eden.fields import Command
+from eden.http import request
+from eden.osv import expression
+from eden.tools import (
     create_index,
     float_is_zero,
     format_amount,
@@ -25,9 +25,9 @@ from odoo.tools import (
     is_html_empty,
     SQL,
 )
-from odoo.tools.mail import html_keep_url
+from eden.tools.mail import html_keep_url
 
-from odoo.addons.payment import utils as payment_utils
+from eden.addons.payment import utils as payment_utils
 
 _logger = logging.getLogger(__name__)
 

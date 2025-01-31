@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models
-from odoo.addons.mail.tools.discuss import Store
+from eden import fields, models
+from eden.addons.mail.tools.discuss import Store
 
 
 class MailMainAttachmentMixin(models.AbstractModel):

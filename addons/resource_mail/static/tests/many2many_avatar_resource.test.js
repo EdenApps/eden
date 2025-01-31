@@ -6,8 +6,8 @@ import {
     start,
     startServer,
 } from "@mail/../tests/mail_test_helpers";
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { queryAll } from "@odoo/hoot-dom";
+import { beforeEach, describe, expect, test } from "@eden/hoot";
+import { queryAll } from "@eden/hoot-dom";
 import { defineResourceModels } from "@resource/../tests/resource_test_helpers";
 
 describe.current.tags("desktop");
@@ -34,7 +34,7 @@ beforeEach(async () => {
     // User
     data.partnerPierreId = pyEnv["res.partner"].create({
         name: "Pierre",
-        email: "Pierre@odoo.test",
+        email: "Pierre@eden.test",
         phone: "+32487898933",
     });
     data.userPierreId = pyEnv["res.users"].create({
@@ -113,7 +113,7 @@ test("many2many_avatar_resource widget in form view", async () => {
         { count: 1 },
         "Only one popover resource card should be opened at a time"
     );
-    await contains(".o_card_user_infos > a", { text: "Pierre@odoo.test" });
+    await contains(".o_card_user_infos > a", { text: "Pierre@eden.test" });
     await contains(".o_card_user_infos > a", { text: "+32487898933" });
     expect(".o_avatar_card_buttons button:first").toHaveText("Send message");
     await click(".o_avatar_card_buttons button");
@@ -171,7 +171,7 @@ test("many2many_avatar_resource widget in list view", async () => {
         { count: 1 },
         "Only one popover resource card should be opened at a time"
     );
-    await contains(".o_card_user_infos > a", { text: "Pierre@odoo.test" });
+    await contains(".o_card_user_infos > a", { text: "Pierre@eden.test" });
     await contains(".o_card_user_infos > a", { text: "+32487898933" });
     expect(".o_avatar_card_buttons button:first").toHaveText("Send message");
     await click(".o_avatar_card_buttons button");

@@ -8,7 +8,7 @@ import {
     rightPos,
     startPos,
 } from "@html_editor/utils/position";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 import { insertTestHtml } from "../_helpers/editor";
 
 describe("leftPos", () => {

@@ -2,7 +2,7 @@
 
 from functools import partial
 
-from odoo import models, fields
+from eden import models, fields
 
 
 class PosOrderReport(models.Model):

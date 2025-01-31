@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 from uuid import uuid4
 
-import odoo.tests
-from odoo.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
-from odoo import Command
+import eden.tests
+from eden.addons.pos_self_order.tests.self_order_common_test import SelfOrderCommonTest
+from eden import Command
 
 
-@odoo.tests.tagged("post_install", "-at_install")
+@eden.tests.tagged("post_install", "-at_install")
 class TestFrontendMobile(SelfOrderCommonTest):
     def test_order_fiscal_position(self):
         """ Orders made in take away should have the alternative fiscal position. """

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="s_event_upcoming_snippet_preview_data" name="Events Preview Data">
         <div class="s_dialog_preview row my-4">
             <div class="col-12 col-sm-6 col-lg-4">
@@ -64,4 +64,4 @@
             </div>
         </div>
     </template>
-</odoo>
+</eden>

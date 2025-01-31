@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
 
-from odoo import _, api, Command, fields, models, modules, tools
-from odoo.tools import email_normalize
-from odoo.addons.mail.tools.discuss import Store
+from eden import _, api, Command, fields, models, modules, tools
+from eden.tools import email_normalize
+from eden.addons.mail.tools.discuss import Store
 
 
 class Users(models.Model):
@@ -19,17 +19,17 @@ class Users(models.Model):
 
     notification_type = fields.Selection([
         ('email', 'Handle by Emails'),
-        ('inbox', 'Handle in Odoo')],
+        ('inbox', 'Handle in Eden')],
         'Notification', required=True, default='email',
         compute='_compute_notification_type', inverse='_inverse_notification_type', store=True,
         help="Policy on how to handle Chatter notifications:\n"
              "- Handle by Emails: notifications are sent to your email address\n"
-             "- Handle in Odoo: notifications appear in your Odoo Inbox")
+             "- Handle in Eden: notifications appear in your Eden Inbox")
 
     _sql_constraints = [(
         "notification_type",
         "CHECK (notification_type = 'email' OR NOT share)",
-        "Only internal user can receive notifications in Odoo",
+        "Only internal user can receive notifications in Eden",
     )]
 
     @api.depends('share', 'groups_id')
@@ -269,8 +269,8 @@ class Users(models.Model):
                 "hasLinkPreviewFeature": self.env["mail.link.preview"]._is_link_preview_enabled(),
                 "internalUserGroupId": self.env.ref("base.group_user").id,
                 "mt_comment_id": xmlid_to_res_id("mail.mt_comment"),
-                # sudo: res.partner - exposing OdooBot data is considered acceptable
-                "odoobot": Store.one(self.env.ref("base.partner_root").sudo()),
+                # sudo: res.partner - exposing EdenBot data is considered acceptable
+                "edenbot": Store.one(self.env.ref("base.partner_root").sudo()),
             }
         )
         if not self.env.user._is_public():

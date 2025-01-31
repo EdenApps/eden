@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="exception_purchase_on_sale_quantity_decreased" name="Message: Alert on purchase orders when ordered quantity decreased on Sales Orders">
     <div>
@@ -65,4 +65,4 @@
     </div>
 </template>
 
-</odoo>
+</eden>

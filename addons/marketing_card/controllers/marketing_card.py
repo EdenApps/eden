@@ -2,7 +2,7 @@ import base64
 from urllib.parse import quote
 from werkzeug.exceptions import BadRequest
 
-from odoo.http import Controller, content_disposition, request, route
+from eden.http import Controller, content_disposition, request, route
 
 # from https://github.com/monperrus/crawler-user-agents
 SOCIAL_NETWORK_USER_AGENTS = (

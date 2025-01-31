@@ -1,4 +1,4 @@
-from odoo import models
+from eden import models
 
 TAX_EXEMPTION_MAPPING = {
     'VATEX-EU-79-C': 'Exempt based on article 79, point c of Council Directive 2006/112/EC',

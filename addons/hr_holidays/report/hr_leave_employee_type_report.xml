@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <record id="view_search_hr_holidays_employee_type_report" model="ir.ui.view">
         <field name="name">hr.holidays.filter</field>
         <field name="model">hr.leave.employee.type.report</field>
@@ -38,4 +38,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

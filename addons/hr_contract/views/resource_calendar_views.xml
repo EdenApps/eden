@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="resource_calendar_view_tree" model="ir.ui.view">
         <field name="name">resource.calendar.view.list.inherit.hr.contract</field>
         <field name="model">resource.calendar</field>
@@ -25,4 +25,4 @@
             </div>
         </field>
     </record>
-</odoo>
+</eden>

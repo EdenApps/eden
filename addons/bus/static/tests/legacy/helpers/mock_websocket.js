@@ -1,4 +1,4 @@
-/** @odoo-module alias=@bus/../tests/helpers/mock_websocket default=false */
+/** @eden-module alias=@bus/../tests/helpers/mock_websocket default=false */
 
 import { WebsocketWorker } from "@bus/workers/websocket_worker";
 import { browser } from "@web/core/browser/browser";

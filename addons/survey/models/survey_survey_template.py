@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import ast
 
-from odoo import api, models, _
+from eden import api, models, _
 
 
 class SurveyTemplate(models.Model):
@@ -96,7 +96,7 @@ class SurveyTemplate(models.Model):
             'scoring_type': 'scoring_without_answers',
             'users_can_go_back': True,
             'description': ''.join([
-                _('Welcome to this Odoo certification. You will receive 2 random questions out of a pool of 3.'),
+                _('Welcome to this Eden certification. You will receive 2 random questions out of a pool of 3.'),
                 '(<span style="font-style: italic">',
                 _('Cheating on your neighbors will not help!'),
                 '</span> 😁).<br>',
@@ -107,13 +107,13 @@ class SurveyTemplate(models.Model):
             'questions_selection': 'random',
             'question_and_page_ids': [
                 (0, 0, { # survey.question
-                    'title': _('Odoo Certification'),
+                    'title': _('Eden Certification'),
                     'is_page': True,
                     'question_type': False,
                     'random_questions_count': 2
                 }),
                 (0, 0, { # survey.question
-                    'title': _('What does "ODOO" stand for?'),
+                    'title': _('What does "EDEN" stand for?'),
                     'question_type': 'simple_choice',
                     'suggested_answer_ids': [
                         (0, 0, { # survey.question.answer
@@ -150,7 +150,7 @@ class SurveyTemplate(models.Model):
                     ]
                 }),
                 (0, 0, { # survey.question
-                    'title': _('What does one need to get to pass an Odoo Survey?'),
+                    'title': _('What does one need to get to pass an Eden Survey?'),
                     'question_type': 'simple_choice',
                     'suggested_answer_ids': [
                         (0, 0, { # survey.question.answer

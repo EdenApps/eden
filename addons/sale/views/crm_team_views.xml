@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <!-- Dedicated actions used in views below -->
     <record id="action_quotations_salesteams" model="ir.actions.act_window">
@@ -151,4 +151,4 @@
         <field name="domain">['|', ('res_model', '=', False), ('res_model', 'in', ['sale.order', 'res.partner', 'product.template', 'product.product'])]</field>
     </record>
 
-</odoo>
+</eden>

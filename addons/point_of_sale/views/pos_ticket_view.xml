@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <!-- This is the "validation" screen. Recap the ticket info, warn the user to check/set his address and eventually set localization fields if needed. -->
     <template id="ticket_validation_screen">
@@ -179,4 +179,4 @@
             </div>
         </t>
     </template>
-</odoo>
+</eden>

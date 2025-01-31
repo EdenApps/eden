@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import publicWidget from '@web/legacy/js/public/public_widget';
 import { SlideUnsubscribeDialog } from "./public/components/slide_unsubscribe_dialog/slide_unsubscribe_dialog";

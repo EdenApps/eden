@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, _
+from eden import api, fields, models, _
 import json
 from collections import defaultdict
-from odoo.tools import convert
+from eden.tools import convert
 
 
 class PosConfig(models.Model):

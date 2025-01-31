@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { GraphModel } from "@web/views/graph/graph_model";
 import { _t } from "@web/core/l10n/translation";

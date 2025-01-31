@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="mailing_mailing_view_form" model="ir.ui.view">
         <field name="name">mailing.mailing.view.form.inherit.crm</field>
         <field name="model">mailing.mailing</field>
@@ -21,4 +21,4 @@
     		</xpath>
         </field>
     </record>
-</odoo>
+</eden>

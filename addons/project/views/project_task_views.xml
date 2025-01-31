@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
         <!-- Base search view, contains the fields and filters common to project, project sharing and fsm -->
         <record id="view_task_search_form_base" model="ir.ui.view">
             <field name="name">project.task.search.form</field>
@@ -1197,4 +1197,4 @@
             </field>
         </record>
 
-</odoo>
+</eden>

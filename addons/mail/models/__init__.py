@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 # core models (required for mixins)
 from . import mail_alias
@@ -48,7 +48,7 @@ from . import mail_canned_response
 from . import res_users_settings
 from . import res_users_settings_volumes
 
-# odoo models
+# eden models
 from . import bus_presence
 from . import ir_action_act_window
 from . import ir_actions_server

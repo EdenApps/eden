@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo noupdate="1">
+<eden noupdate="1">
 
     <record id="goal_gamification_hr_user_visibility" model="ir.rule">
         <field name="name">HR Officer can see any goal</field>
@@ -11,4 +11,4 @@
         <field name="perm_unlink" eval="False"/>
     </record>
 
-</odoo>
+</eden>

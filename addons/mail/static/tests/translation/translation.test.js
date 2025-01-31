@@ -1,4 +1,4 @@
-import { describe, test } from "@odoo/hoot";
+import { describe, test } from "@eden/hoot";
 import {
     assertSteps,
     click,
@@ -21,7 +21,7 @@ test("Toggle display of original/translated version of chatter message", async (
     pyEnv["mail.message"].create({
         model: "res.partner",
         body: "Al mal tiempo, buena cara.",
-        author_id: serverState.odoobotId,
+        author_id: serverState.edenbotId,
         res_id: partnerId,
     });
     onRpcBefore("/mail/message/translate", () => {

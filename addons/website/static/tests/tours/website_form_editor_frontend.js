@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 import { rpc } from "@web/core/network/rpc";
 import { registry } from "@web/core/registry";
 
@@ -149,14 +149,14 @@ registry.category("web_tour.tours").add("website_form_editor_tour_submit", {
         run: function () {
             const style = window.getComputedStyle(this.anchor.getElementsByClassName('s_website_form_field_hidden_if')[0]);
             if (style.display !== 'none') {
-                console.error('error This field should be invisible when the name is not odoo');
+                console.error('error This field should be invisible when the name is not eden');
             }
         }
     },
     {
         content: "Change name input",
         trigger: "input[name='name']",
-        run: "edit odoo",
+        run: "edit eden",
     },
     {
         content: "Check if conditional field is visible, it should.",

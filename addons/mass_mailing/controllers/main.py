@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import base64
 import werkzeug
@@ -8,9 +8,9 @@ from datetime import timedelta
 from markupsafe import Markup, escape
 from werkzeug.exceptions import BadRequest, NotFound, Unauthorized
 
-from odoo import _, fields, http, tools
-from odoo.http import request, Response
-from odoo.tools import consteq
+from eden import _, fields, http, tools
+from eden.http import request, Response
+from eden.tools import consteq
 
 
 class MassMailController(http.Controller):

@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import hashlib
 from collections import OrderedDict
 from werkzeug.urls import url_quote
 from markupsafe import Markup
 
-from odoo import api, models, fields
-from odoo.tools import html_escape as escape
+from eden import api, models, fields
+from eden.tools import html_escape as escape
 
 
 class Image(models.AbstractModel):

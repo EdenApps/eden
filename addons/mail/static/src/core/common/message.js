@@ -24,7 +24,7 @@ import {
     useEffect,
     useRef,
     useState,
-} from "@odoo/owl";
+} from "@eden/owl";
 
 import { ActionSwiper } from "@web/core/action_swiper/action_swiper";
 import { hasTouch, isMobileOS } from "@web/core/browser/feature_detection";

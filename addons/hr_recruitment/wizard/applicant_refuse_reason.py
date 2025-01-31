@@ -3,9 +3,9 @@
 from datetime import datetime
 from markupsafe import Markup
 
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
-from odoo.osv import expression
+from eden import api, fields, models, _
+from eden.exceptions import UserError
+from eden.osv import expression
 
 
 class ApplicantGetRefuseReason(models.TransientModel):

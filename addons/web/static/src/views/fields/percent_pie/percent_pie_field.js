@@ -3,7 +3,7 @@ import { _t } from "@web/core/l10n/translation";
 import { formatFloat } from "../formatters";
 import { standardFieldProps } from "../standard_field_props";
 
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 export class PercentPieField extends Component {
     static template = "web.PercentPieField";

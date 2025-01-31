@@ -19,8 +19,8 @@ import {
     triggerHotkey,
 } from "@mail/../tests/mail_test_helpers";
 import { mailDataHelpers } from "@mail/../tests/mock_server/mail_mock_server";
-import { describe, expect, test } from "@odoo/hoot";
-import { Deferred, mockDate, tick } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@eden/hoot";
+import { Deferred, mockDate, tick } from "@eden/hoot-mock";
 import {
     Command,
     getService,
@@ -156,9 +156,9 @@ test("Posting message should transform links.", async () => {
     });
     await start();
     await openDiscuss(channelId);
-    await insertText(".o-mail-Composer-input", "test https://www.odoo.com/");
+    await insertText(".o-mail-Composer-input", "test https://www.edencloud.us/");
     await click(".o-mail-Composer-send:enabled");
-    await contains("a[href='https://www.odoo.com/']");
+    await contains("a[href='https://www.edencloud.us/']");
 });
 
 test("Posting message should transform relevant data to emoji.", async () => {
@@ -1050,7 +1050,7 @@ test("auto-focus composer on opening thread", async () => {
 test("no out-of-focus notification on receiving self messages in chat", async () => {
     const pyEnv = await startServer();
     const channelId = pyEnv["discuss.channel"].create({ channel_type: "chat" });
-    mockService("presence", { isOdooFocused: () => false });
+    mockService("presence", { isEdenFocused: () => false });
     mockService("title", {
         setCounters(counters) {
             if (counters.discuss) {
@@ -1061,7 +1061,7 @@ test("no out-of-focus notification on receiving self messages in chat", async ()
     await start();
     await contains(".o_menu_systray i[aria-label='Messages']");
     await contains(".o-mail-ChatWindow", { count: 0 });
-    // simulate receiving a new message of self with odoo out-of-focused
+    // simulate receiving a new message of self with eden out-of-focused
     withUser(serverState.userId, () =>
         rpc("/mail/message/post", {
             post_data: {
@@ -1089,7 +1089,7 @@ test("out-of-focus notif on needaction message in channel", async () => {
         ],
         channel_type: "channel",
     });
-    mockService("presence", { isOdooFocused: () => false });
+    mockService("presence", { isEdenFocused: () => false });
     mockService("title", {
         setCounters(counters) {
             if (counters.discuss) {
@@ -1106,7 +1106,7 @@ test("out-of-focus notif on needaction message in channel", async () => {
     await contains(".o_menu_systray i[aria-label='Messages']");
     await contains(".o-mail-ChatWindow", { count: 0 });
     await assertSteps(["init_messaging"]);
-    // simulate receiving a new needaction message with odoo out-of-focused
+    // simulate receiving a new needaction message with eden out-of-focused
     const adminId = serverState.partnerId;
     await withUser(userId, () =>
         rpc("/mail/message/post", {
@@ -1123,7 +1123,7 @@ test("out-of-focus notif on needaction message in channel", async () => {
     await assertSteps(["set_counters:discuss:1"]);
 });
 
-test("receive new chat message: out of odoo focus (notification, chat)", async () => {
+test("receive new chat message: out of eden focus (notification, chat)", async () => {
     const pyEnv = await startServer();
     const partnerId = pyEnv["res.partner"].create({ name: "Dumbledore" });
     const userId = pyEnv["res.users"].create({ partner_id: partnerId });
@@ -1134,7 +1134,7 @@ test("receive new chat message: out of odoo focus (notification, chat)", async (
         ],
         channel_type: "chat",
     });
-    mockService("presence", { isOdooFocused: () => false });
+    mockService("presence", { isEdenFocused: () => false });
     mockService("title", {
         setCounters(counters) {
             if (counters.discuss) {
@@ -1151,7 +1151,7 @@ test("receive new chat message: out of odoo focus (notification, chat)", async (
     await contains(".o_menu_systray i[aria-label='Messages']");
     await contains(".o-mail-ChatWindow", { count: 0 });
     await assertSteps(["init_messaging"]);
-    // simulate receiving a new message with odoo out-of-focused
+    // simulate receiving a new message with eden out-of-focused
     withUser(userId, () =>
         rpc("/mail/message/post", {
             post_data: {
@@ -1177,7 +1177,7 @@ test("no out-of-focus notif on non-needaction message in channel", async () => {
         ],
         channel_type: "channel",
     });
-    mockService("presence", { isOdooFocused: () => false });
+    mockService("presence", { isEdenFocused: () => false });
     mockService("title", {
         setCounters(counters) {
             if (counters.discuss) {
@@ -1208,7 +1208,7 @@ test("no out-of-focus notif on non-needaction message in channel", async () => {
     await assertSteps([]);
 });
 
-test("receive new chat messages: out of odoo focus (tab title)", async () => {
+test("receive new chat messages: out of eden focus (tab title)", async () => {
     let stepCount = 0;
     const pyEnv = await startServer();
     const bobUserId = pyEnv["res.users"].create({ name: "bob" });
@@ -1229,7 +1229,7 @@ test("receive new chat messages: out of odoo focus (tab title)", async () => {
             ],
         },
     ]);
-    mockService("presence", { isOdooFocused: () => false });
+    mockService("presence", { isEdenFocused: () => false });
     mockService("title", {
         setCounters(counters) {
             if (!counters.discuss) {
@@ -1251,7 +1251,7 @@ test("receive new chat messages: out of odoo focus (tab title)", async () => {
     await start();
     await openDiscuss();
     await contains(".o-mail-DiscussSidebarChannel", { count: 2 });
-    // simulate receiving a new message in chat 1 with odoo out-of-focused
+    // simulate receiving a new message in chat 1 with eden out-of-focused
     await withUser(bobUserId, () =>
         rpc("/mail/message/post", {
             post_data: { body: "Hello world!", message_type: "comment" },
@@ -1260,7 +1260,7 @@ test("receive new chat messages: out of odoo focus (tab title)", async () => {
         })
     );
     await assertSteps(["set_counters:discuss"]);
-    // simulate receiving a new message in chat 2 with odoo out-of-focused
+    // simulate receiving a new message in chat 2 with eden out-of-focused
     await withUser(bobUserId, () =>
         rpc("/mail/message/post", {
             post_data: { body: "Hello world!", message_type: "comment" },
@@ -1269,7 +1269,7 @@ test("receive new chat messages: out of odoo focus (tab title)", async () => {
         })
     );
     await assertSteps(["set_counters:discuss"]);
-    // simulate receiving another new message in chat 2 with odoo focused
+    // simulate receiving another new message in chat 2 with eden focused
     await withUser(bobUserId, () =>
         rpc("/mail/message/post", {
             post_data: { body: "Hello world!", message_type: "comment" },
@@ -1291,13 +1291,13 @@ test("new message in tab title has precedence over action name", async () => {
             Command.create({ partner_id: bobPartnerId }),
         ],
     });
-    mockService("presence", { isOdooFocused: () => false });
+    mockService("presence", { isEdenFocused: () => false });
     await start();
     await openDiscuss();
     await contains(".o_breadcrumb:contains(Inbox)"); // wait for action name being Inbox
     const titleService = getService("title");
     expect(titleService.current).toBe("Inbox");
-    // simulate receiving a new message in chat 1 with odoo out-of-focused
+    // simulate receiving a new message in chat 1 with eden out-of-focused
     await withUser(bobUserId, () =>
         rpc("/mail/message/post", {
             post_data: { body: "Hello world!", message_type: "comment" },
@@ -1314,7 +1314,7 @@ test("out-of-focus notif takes new inbox messages into account", async () => {
     pyEnv["res.users"].write(serverState.userId, { notification_type: "inbox" });
     const partnerId = pyEnv["res.partner"].create({ name: "Dumbledore" });
     const userId = pyEnv["res.users"].create({ partner_id: partnerId });
-    mockService("presence", { isOdooFocused: () => false });
+    mockService("presence", { isEdenFocused: () => false });
     onRpcBefore("/mail/data", async (args) => {
         if (args.init_messaging) {
             step("init_messaging");
@@ -1324,7 +1324,7 @@ test("out-of-focus notif takes new inbox messages into account", async () => {
     await openDiscuss();
     const titleService = getService("title");
     await assertSteps(["init_messaging"]);
-    // simulate receiving a new needaction message with odoo out-of-focused
+    // simulate receiving a new needaction message with eden out-of-focused
     const adminId = serverState.partnerId;
     await withUser(userId, () =>
         rpc("/mail/message/post", {
@@ -1353,7 +1353,7 @@ test("out-of-focus notif on needaction message in group chat contributes only on
         ],
         channel_type: "group",
     });
-    mockService("presence", { isOdooFocused: () => false });
+    mockService("presence", { isEdenFocused: () => false });
     onRpcBefore("/mail/data", async (args) => {
         if (args.init_messaging) {
             step("init_messaging");
@@ -1363,7 +1363,7 @@ test("out-of-focus notif on needaction message in group chat contributes only on
     await openDiscuss();
     const titleService = getService("title");
     await assertSteps(["init_messaging"]);
-    // simulate receiving a new needaction message with odoo out-of-focused
+    // simulate receiving a new needaction message with eden out-of-focused
     const adminId = serverState.partnerId;
     await withUser(userId, () =>
         rpc("/mail/message/post", {
@@ -1394,7 +1394,7 @@ test("inbox notifs shouldn't play sound nor open chat bubble", async () => {
         channel_member_ids: [Command.create({ partner_id: serverState.partnerId })],
         channel_type: "channel",
     });
-    mockService("presence", { isOdooFocused: () => false });
+    mockService("presence", { isEdenFocused: () => false });
     onRpcBefore("/mail/data", async (args) => {
         if (args.init_messaging) {
             step("init_messaging");
@@ -1407,7 +1407,7 @@ test("inbox notifs shouldn't play sound nor open chat bubble", async () => {
     });
     await start();
     await assertSteps(["init_messaging"]);
-    // simulate receiving a new needaction message with odoo out-of-focused
+    // simulate receiving a new needaction message with eden out-of-focused
     const adminId = serverState.partnerId;
     await withUser(userId, () =>
         rpc("/mail/message/post", {
@@ -1581,7 +1581,7 @@ test("Partner IM status is displayed as thread icon in top bar of channels of ty
         {
             channel_member_ids: [
                 Command.create({ partner_id: serverState.partnerId }),
-                Command.create({ partner_id: serverState.odoobotId }),
+                Command.create({ partner_id: serverState.edenbotId }),
             ],
             channel_type: "chat",
         },
@@ -1596,7 +1596,7 @@ test("Partner IM status is displayed as thread icon in top bar of channels of ty
     await contains(".o-mail-Discuss-header .o-mail-ImStatus [title='Idle']");
     await click(".o-mail-DiscussSidebarChannel", { text: "Robert Fired" });
     await contains(".o-mail-Discuss-header .o-mail-ImStatus [title='No IM status available']");
-    await click(".o-mail-DiscussSidebarChannel", { text: "OdooBot" });
+    await click(".o-mail-DiscussSidebarChannel", { text: "EdenBot" });
     await contains(".o-mail-Discuss-header .o-mail-ImStatus [title='Bot']");
 });
 
@@ -2058,7 +2058,7 @@ test("Chatter notification in messaging menu should open the form view even when
     const messageId = pyEnv["mail.message"].create({
         model: "res.partner",
         body: "A needaction message to have it in messaging menu",
-        author_id: serverState.odoobotId,
+        author_id: serverState.edenbotId,
         needaction: true,
         res_id: partnerId,
     });

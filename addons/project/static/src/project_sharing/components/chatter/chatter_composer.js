@@ -1,10 +1,10 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { rpc } from "@web/core/network/rpc";
 import { TextField } from '@web/views/fields/text/text_field';
 import { PortalAttachDocument } from '../portal_attach_document/portal_attach_document';
 import { ChatterAttachmentsViewer } from './chatter_attachments_viewer';
-import { Component, useState, onWillUpdateProps, useRef } from "@odoo/owl";
+import { Component, useState, onWillUpdateProps, useRef } from "@eden/owl";
 
 export class ChatterComposer extends Component {
     static template = "project.ChatterComposer";

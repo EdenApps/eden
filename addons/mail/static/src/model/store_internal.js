@@ -1,7 +1,7 @@
 /** @typedef {import("./record").Record} Record */
 /** @typedef {import("./record_list").RecordList} RecordList */
 
-import { markup, toRaw } from "@odoo/owl";
+import { markup, toRaw } from "@eden/owl";
 import { RecordInternal } from "./record_internal";
 import { deserializeDate, deserializeDateTime } from "@web/core/l10n/dates";
 import { IS_DELETING_SYM, Markup, isCommand, isMany } from "./misc";

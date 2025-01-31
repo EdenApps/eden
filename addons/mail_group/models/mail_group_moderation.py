@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models, api, _
-from odoo.exceptions import UserError
-from odoo.tools import email_normalize
+from eden import fields, models, api, _
+from eden.exceptions import UserError
+from eden.tools import email_normalize
 
 
 class MailGroupModeration(models.Model):

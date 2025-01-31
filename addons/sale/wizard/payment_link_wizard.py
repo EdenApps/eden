@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from werkzeug import urls
 
-from odoo import _, api, fields, models
-from odoo.tools import format_amount
+from eden import _, api, fields, models
+from eden.tools import format_amount
 
 
 class PaymentLinkWizard(models.TransientModel):

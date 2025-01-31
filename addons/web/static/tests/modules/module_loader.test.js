@@ -1,10 +1,10 @@
-import { expect, getFixture, test } from "@odoo/hoot";
-import { microTick, tick } from "@odoo/hoot-dom";
+import { expect, getFixture, test } from "@eden/hoot";
+import { microTick, tick } from "@eden/hoot-dom";
 import { patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { browser } from "@web/core/browser/browser";
 
-/** @type {typeof OdooModuleLoader} */
-const ModuleLoader = Object.getPrototypeOf(odoo.loader.constructor);
+/** @type {typeof EdenModuleLoader} */
+const ModuleLoader = Object.getPrototypeOf(eden.loader.constructor);
 
 test.tags("headless");
 test("define: simple case", async () => {

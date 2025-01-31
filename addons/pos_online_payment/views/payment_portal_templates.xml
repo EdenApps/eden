@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <!-- Display of /pos/pay (the order of the if conditions matters)-->
     <template id="pay">
@@ -114,4 +114,4 @@
         </t>
     </template>
 
-</odoo>
+</eden>

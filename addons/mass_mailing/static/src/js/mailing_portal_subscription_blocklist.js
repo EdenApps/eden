@@ -1,4 +1,4 @@
-/** @odoo-module alias=mailing.PortalSubscriptionBlocklist **/
+/** @eden-module alias=mailing.PortalSubscriptionBlocklist **/
 
 import { rpc } from "@web/core/network/rpc";
 import { renderToElement } from "@web/core/utils/render";

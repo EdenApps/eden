@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import hashlib
 
-from odoo import api, models, _
-from odoo.exceptions import UserError
-from odoo.tools import format_list
+from eden import api, models, _
+from eden.exceptions import UserError
+from eden.tools import format_list
 
 class HrEmployee(models.Model):
     _inherit = 'hr.employee'

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_carousel_intro" name="Carousel Intro">
     <section class="s_carousel_intro_wrapper p-0">
@@ -146,4 +146,4 @@
     <field name="path">website/static/src/snippets/s_carousel_intro/000.scss</field>
 </record>
 
-</odoo>
+</eden>

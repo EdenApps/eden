@@ -1,12 +1,12 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from werkzeug.urls import url_encode, url_parse
 
-from odoo import _
-from odoo.exceptions import UserError
-from odoo.http import request, route
+from eden import _
+from eden.exceptions import UserError
+from eden.http import request, route
 
-from odoo.addons.website_sale.controllers import main
+from eden.addons.website_sale.controllers import main
 
 
 class WebsiteSale(main.WebsiteSale):
@@ -55,7 +55,7 @@ class WebsiteSale(main.WebsiteSale):
     def activate_coupon(self, code, r='/shop', **kw):
         url_parts = url_parse(r)
         url_query = url_parts.decode_query()
-        url_query.pop('coupon_error', False)  # trust only Odoo error message
+        url_query.pop('coupon_error', False)  # trust only Eden error message
         url_query.pop('coupon_error_type', False)
         code = code.strip()
 

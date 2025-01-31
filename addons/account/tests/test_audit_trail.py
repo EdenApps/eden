@@ -1,7 +1,7 @@
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.exceptions import UserError
-from odoo.fields import Command
-from odoo.tests import tagged, new_test_user
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
+from eden.exceptions import UserError
+from eden.fields import Command
+from eden.tests import tagged, new_test_user
 
 
 @tagged('post_install', '-at_install')

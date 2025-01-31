@@ -1,7 +1,7 @@
 import { start, startServer } from "@mail/../tests/mail_test_helpers";
 import { assertSteps, click, contains, step } from "@mail/../tests/mail_test_helpers_contains";
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { mockDate } from "@odoo/hoot-mock";
+import { beforeEach, describe, expect, test } from "@eden/hoot";
+import { mockDate } from "@eden/hoot-mock";
 import { defineTestMailModels } from "@test_mail/../tests/test_mail_test_helpers";
 import { serializeDate, today } from "@web/core/l10n/dates";
 import { user } from "@web/core/user";

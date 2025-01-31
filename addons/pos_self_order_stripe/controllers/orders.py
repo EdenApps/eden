@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from odoo import http, fields
-from odoo.http import request
-from odoo.tools import float_is_zero
-from odoo.addons.pos_self_order.controllers.orders import PosSelfOrderController
+from eden import http, fields
+from eden.http import request
+from eden.tools import float_is_zero
+from eden.addons.pos_self_order.controllers.orders import PosSelfOrderController
 from werkzeug.exceptions import Unauthorized
 
 class PosSelfOrderControllerStripe(PosSelfOrderController):

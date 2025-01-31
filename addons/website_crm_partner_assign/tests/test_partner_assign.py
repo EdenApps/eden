@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import date, timedelta
 from unittest.mock import patch
 
-from odoo.exceptions import AccessError
-from odoo.tests.common import TransactionCase
-from odoo.addons.crm.tests.common import TestCrmCommon
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.website.tools import MockRequest
-from odoo.addons.website_crm_partner_assign.controllers.main import (
+from eden.exceptions import AccessError
+from eden.tests.common import TransactionCase
+from eden.addons.crm.tests.common import TestCrmCommon
+from eden.addons.mail.tests.common import mail_new_test_user
+from eden.addons.website.tools import MockRequest
+from eden.addons.website_crm_partner_assign.controllers.main import (
     WebsiteAccount,
     WebsiteCrmPartnerAssign,
 )
@@ -39,7 +39,7 @@ class TestPartnerAssign(TransactionCase):
                 'Cannon Hill Park, B46 3AG Birmingham, United Kingdom': (52.45216, -1.898578),
             }.get(addr)
 
-        patcher = patch('odoo.addons.base_geolocalize.models.base_geocoder.GeoCoder.geo_find', wraps=geo_find)
+        patcher = patch('eden.addons.base_geolocalize.models.base_geocoder.GeoCoder.geo_find', wraps=geo_find)
         self.startPatcher(patcher)
 
     def test_opportunity_count(self):
@@ -258,10 +258,10 @@ class TestPartnerLeadPortal(TestCrmCommon):
             mock_request.render = render_function
             WebsiteAccount().portal_my_opportunities(filterby="today")
 
-    @patch('odoo.http.GeoIP')
+    @patch('eden.http.GeoIP')
     def test_03_crm_partner_assign_geolocalization(self, GeoIpMock):
         """
-            This test checks situation when "{OdooURL}/partners" is visited from foreign country without resellers.
+            This test checks situation when "{EdenURL}/partners" is visited from foreign country without resellers.
             It uses Mexico as an example.
 
             Why patching of GeoIP is used?
@@ -269,7 +269,7 @@ class TestPartnerLeadPortal(TestCrmCommon):
             of the property decorator https://docs.python.org/3/library/functions.html#property
             Patching is allowing to modify normally read_only value.
         """
-        # Patch GeoIp so it acts, as if Odoo client is located in Mexico
+        # Patch GeoIp so it acts, as if Eden client is located in Mexico
         GeoIpMock.return_value.country_code = 'MX'
 
         # Create a partner outside of Mexico

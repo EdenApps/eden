@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 // @ts-check
 
 import { LOADING_ERROR, LoadableDataSource, getFields } from "./data_source";
@@ -7,31 +7,31 @@ import { user } from "@web/core/user";
 import { omit } from "@web/core/utils/objects";
 
 /**
- * @typedef {import("@spreadsheet").OdooField} OdooField
- * @typedef {import("@spreadsheet").OdooFields} OdooFields
+ * @typedef {import("@spreadsheet").EdenField} EdenField
+ * @typedef {import("@spreadsheet").EdenFields} EdenFields
  */
 
 /**
- * @typedef {Object} OdooModelMetaData
+ * @typedef {Object} EdenModelMetaData
  * @property {string} resModel
- * @property {OdooFields} [fields]
+ * @property {EdenFields} [fields]
  *
- * @typedef {Object} OdooModelSearchParams
+ * @typedef {Object} EdenModelSearchParams
  * @property {Object} context
  * @property {Array<string>} domain
  */
 
-export class OdooViewsDataSource extends LoadableDataSource {
+export class EdenViewsDataSource extends LoadableDataSource {
     /**
      * @override
      * @param {Object} services
      * @param {Object} params
-     * @param {OdooModelMetaData} params.metaData
+     * @param {EdenModelMetaData} params.metaData
      * @param {Object} params.searchParams
      */
     constructor(services, params) {
         super(services);
-        /** @type {OdooModelMetaData} */
+        /** @type {EdenModelMetaData} */
         this._metaData = JSON.parse(JSON.stringify(params.metaData));
         /** @protected */
         this._initialSearchParams = JSON.parse(JSON.stringify(params.searchParams));
@@ -76,7 +76,7 @@ export class OdooViewsDataSource extends LoadableDataSource {
     }
 
     /**
-     * @returns {OdooFields} List of fields
+     * @returns {EdenFields} List of fields
      */
     getFields() {
         this._assertMetaDataLoaded();
@@ -85,7 +85,7 @@ export class OdooViewsDataSource extends LoadableDataSource {
 
     /**
      * @param {string} field Field name
-     * @returns {OdooField | undefined} Field
+     * @returns {EdenField | undefined} Field
      */
     getField(field) {
         this._assertMetaDataLoaded();

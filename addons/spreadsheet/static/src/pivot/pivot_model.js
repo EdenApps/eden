@@ -5,17 +5,17 @@ import { Domain } from "@web/core/domain";
 import { sprintf } from "@web/core/utils/strings";
 import { PivotModel } from "@web/views/pivot/pivot_model";
 
-import { helpers, constants, EvaluationError, SpreadsheetPivotTable } from "@odoo/o-spreadsheet";
+import { helpers, constants, EvaluationError, SpreadsheetPivotTable } from "@eden/o-spreadsheet";
 import { parseGroupField } from "./pivot_helpers";
 
 const { toNormalizedPivotValue, toNumber, isDateOrDatetimeField, pivotTimeAdapter } = helpers;
 const { DEFAULT_LOCALE } = constants;
 
 /**
- * @typedef {import("@odoo/o-spreadsheet").PivotTableColumn} PivotTableColumn
- * @typedef {import("@odoo/o-spreadsheet").PivotTableRow} PivotTableRow
- * @typedef {import("@odoo/o-spreadsheet").PivotDomain} PivotDomain
- * @typedef {import("@odoo/o-spreadsheet").PivotMeasure} PivotMeasure
+ * @typedef {import("@eden/o-spreadsheet").PivotTableColumn} PivotTableColumn
+ * @typedef {import("@eden/o-spreadsheet").PivotTableRow} PivotTableRow
+ * @typedef {import("@eden/o-spreadsheet").PivotDomain} PivotDomain
+ * @typedef {import("@eden/o-spreadsheet").PivotMeasure} PivotMeasure
  */
 
 export const NO_RECORD_AT_THIS_POSITION = "__NO_RECORD_AT_THIS_POSITION__";
@@ -24,10 +24,10 @@ export const NO_RECORD_AT_THIS_POSITION = "__NO_RECORD_AT_THIS_POSITION__";
  * This class is an extension of PivotModel with some additional information
  * that we need in spreadsheet (display_name, isUsedInSheet, ...)
  */
-export class OdooPivotModel extends PivotModel {
+export class EdenPivotModel extends PivotModel {
     /**
-     * @param {import("@web/env").OdooEnv} env
-     * @param {import("@spreadsheet").OdooPivotModelParams} params
+     * @param {import("@web/env").EdenEnv} env
+     * @param {import("@spreadsheet").EdenPivotModelParams} params
      * @param {import("@spreadsheet").PivotModelServices} services
      */
     constructor(env, params, services) {
@@ -48,7 +48,7 @@ export class OdooPivotModel extends PivotModel {
     }
 
     /**
-     * @param {import("@spreadsheet").OdooPivotModelParams} params
+     * @param {import("@spreadsheet").EdenPivotModelParams} params
      * @param {import("@spreadsheet").PivotModelServices} services
      */
     setup(params, services) {
@@ -201,7 +201,7 @@ export class OdooPivotModel extends PivotModel {
     //--------------------------------------------------------------------------
 
     /**
-     * Get the Odoo domain corresponding to the given domain
+     * Get the Eden domain corresponding to the given domain
      * @param {PivotDomain} domain
      */
     getPivotCellDomain(domain) {
@@ -227,7 +227,7 @@ export class OdooPivotModel extends PivotModel {
     }
 
     /**
-     * @param {import("@odoo/o-spreadsheet").PivotDimension} dimension
+     * @param {import("@eden/o-spreadsheet").PivotDimension} dimension
      * @returns {{ value: string | number | boolean, label: string }[]}
      */
     getPossibleFieldValues(dimension) {

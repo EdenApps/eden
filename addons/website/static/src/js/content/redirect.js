@@ -1,10 +1,10 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { session } from '@web/session';
 
 /**
  * This script, served with frontend pages, displays buttons in the top left
- * corner to provide the authenticated user an access to his odoo backend.
+ * corner to provide the authenticated user an access to his eden backend.
  * In the case of the page being viewed in the website_preview client action,
  * it will forward some events to its parent.
  */
@@ -46,9 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Multiple reasons to do this:
         // - It seems like DOMContentLoaded doesn't always trigger when
         //   listened from the parent window
-        // - Having an event that's fire only when the page is from Odoo avoids
+        // - Having an event that's fire only when the page is from Eden avoids
         //   weird behaviours. (e.g. if we want to clear out the iframe, it might
-        //   fire an DOMContentLoaded on a non odoo page)
-        window.frameElement.dispatchEvent(new CustomEvent('OdooFrameContentLoaded'));
+        //   fire an DOMContentLoaded on a non eden page)
+        window.frameElement.dispatchEvent(new CustomEvent('EdenFrameContentLoaded'));
     }
 });

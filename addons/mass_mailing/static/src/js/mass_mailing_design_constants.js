@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 export const CSS_PREFIX = '.o_mail_wrapper';
 

@@ -1,6 +1,6 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.web.controllers import webmanifest
+from eden.addons.web.controllers import webmanifest
 
 
 class WebManifest(webmanifest.WebManifest):
@@ -9,7 +9,7 @@ class WebManifest(webmanifest.WebManifest):
         manifest = super()._get_webmanifest()
         if not manifest.get('share_target'):
             manifest['share_target'] = {
-                'action': '/odoo?share_target=trigger',
+                'action': '/eden?share_target=trigger',
                 'method': 'POST',
                 'enctype': 'multipart/form-data',
                 'params': {

@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
     import {ReCaptcha} from "@google_recaptcha/js/recaptcha";
     import { session } from "@web/session";
@@ -358,8 +358,8 @@ import wUtils from '@website/js/utils';
                 }
             }
 
-            if (odoo.csrf_token) {
-                form_values.csrf_token = odoo.csrf_token;
+            if (eden.csrf_token) {
+                form_values.csrf_token = eden.csrf_token;
             }
 
             const formData = new FormData();
@@ -520,7 +520,7 @@ import wUtils from '@website/js/utils';
                     // Special cases for dates and datetimes
                     // FIXME this seems like dead code, the inputs do not use
                     // those classes, their parent does (but it seemed to work
-                    // at some point given that https://github.com/odoo/odoo/commit/75e03c0f7692a112e1b0fa33267f4939363f3871
+                    // at some point given that https://github.com/eden/eden/commit/75e03c0f7692a112e1b0fa33267f4939363f3871
                     // was made)... need more investigation (if restored,
                     // consider checking the date inputs are not disabled before
                     // saying they are invalid (see checkValidity used here))

@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 
-from odoo.tests import tagged
+from eden.tests import tagged
 
-from odoo.addons.website.tools import MockRequest
-from odoo.addons.website_sale_stock.tests.common import WebsiteSaleStockCommon
+from eden.addons.website.tools import MockRequest
+from eden.addons.website_sale_stock.tests.common import WebsiteSaleStockCommon
 
 
 @tagged('post_install', '-at_install')

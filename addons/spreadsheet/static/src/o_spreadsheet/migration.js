@@ -1,38 +1,38 @@
-/** @odoo-module */
+/** @eden-module */
 
-import * as spreadsheet from "@odoo/o-spreadsheet";
-import { OdooCorePlugin } from "@spreadsheet/plugins";
+import * as spreadsheet from "@eden/o-spreadsheet";
+import { EdenCorePlugin } from "@spreadsheet/plugins";
 const { tokenize, parse, convertAstNodes, astToFormula } = spreadsheet;
 const { corePluginRegistry, migrationStepRegistry } = spreadsheet.registries;
 
-export const ODOO_VERSION = 12;
+export const EDEN_VERSION = 12;
 
 const MAP_V1 = {
-    PIVOT: "ODOO.PIVOT",
-    "PIVOT.HEADER": "ODOO.PIVOT.HEADER",
-    "PIVOT.POSITION": "ODOO.PIVOT.POSITION",
-    "FILTER.VALUE": "ODOO.FILTER.VALUE",
-    LIST: "ODOO.LIST",
-    "LIST.HEADER": "ODOO.LIST.HEADER",
+    PIVOT: "EDEN.PIVOT",
+    "PIVOT.HEADER": "EDEN.PIVOT.HEADER",
+    "PIVOT.POSITION": "EDEN.PIVOT.POSITION",
+    "FILTER.VALUE": "EDEN.FILTER.VALUE",
+    LIST: "EDEN.LIST",
+    "LIST.HEADER": "EDEN.LIST.HEADER",
 };
 
 const MAP_FN_NAMES_V10 = {
-    "ODOO.PIVOT": "PIVOT.VALUE",
-    "ODOO.PIVOT.HEADER": "PIVOT.HEADER",
-    "ODOO.PIVOT.TABLE": "PIVOT",
+    "EDEN.PIVOT": "PIVOT.VALUE",
+    "EDEN.PIVOT.HEADER": "PIVOT.HEADER",
+    "EDEN.PIVOT.TABLE": "PIVOT",
 };
 
 const dmyRegex = /^([0|1|2|3][1-9])\/(0[1-9]|1[0-2])\/(\d{4})$/i;
 
-migrationStepRegistry.add("odoo_migration", {
+migrationStepRegistry.add("eden_migration", {
     versionFrom: "16.1",
     migrate(data) {
-        return migrateOdooData(data);
+        return migrateEdenData(data);
     },
 });
 
-function migrateOdooData(data) {
-    const version = data.odooVersion || 0;
+function migrateEdenData(data) {
+    const version = data.edenVersion || 0;
     if (version < 1) {
         data = migrate0to1(data);
     }
@@ -249,7 +249,7 @@ function migrate4to5(data) {
 function migratePivotDaysParameters(formulaString) {
     const ast = parse(formulaString);
     const convertedAst = convertAstNodes(ast, "FUNCALL", (ast) => {
-        if (["ODOO.PIVOT", "ODOO.PIVOT.HEADER"].includes(ast.value.toUpperCase())) {
+        if (["EDEN.PIVOT", "EDEN.PIVOT.HEADER"].includes(ast.value.toUpperCase())) {
             for (const subAst of ast.args) {
                 if (subAst.type === "STRING") {
                     const date = subAst.value.match(dmyRegex);
@@ -281,7 +281,7 @@ function migrate5to6(data) {
 }
 
 /**
- * Migrate the pivot data to add the type, by default "ODOO". And replace the
+ * Migrate the pivot data to add the type, by default "EDEN". And replace the
  * pivot with a new object that contains type and definition (the old pivot).
  */
 function migrate6to7(data) {
@@ -291,7 +291,7 @@ function migrate6to7(data) {
             const fieldMatching = definition.fieldMatching;
             delete definition.fieldMatching;
             data.pivots[id] = {
-                type: "ODOO",
+                type: "EDEN",
                 definition,
                 fieldMatching,
             };
@@ -342,7 +342,7 @@ function migrate10to11(data) {
 }
 
 function migrate11to12(data) {
-    // remove the calls to ODOO.PIVOT.POSITION and replace
+    // remove the calls to EDEN.PIVOT.POSITION and replace
     // the previous argument to a relative position
     for (const sheet of data.sheets || []) {
         for (const xc in sheet.cells || []) {
@@ -350,24 +350,24 @@ function migrate11to12(data) {
             if (
                 cell.content &&
                 cell.content.startsWith("=") &&
-                cell.content.includes("ODOO.PIVOT.POSITION")
+                cell.content.includes("EDEN.PIVOT.POSITION")
             ) {
                 const tokens = tokenize(cell.content);
-                /* given that odoo.pivot.position is automatically set, we know that:
-                1) it is always on the form of ODOO.PIVOT.POSITION(1, ...)
+                /* given that eden.pivot.position is automatically set, we know that:
+                1) it is always on the form of EDEN.PIVOT.POSITION(1, ...)
                 2) it is always preceded by a dimension of a pivot or header, inside another pivot formula
-                3) there is only one odoo.pivot.position per cell
-                4) odoo.pivot.position can only exist after the 3rd token and needs at least 7 tokens to be valid*/
+                3) there is only one eden.pivot.position per cell
+                4) eden.pivot.position can only exist after the 3rd token and needs at least 7 tokens to be valid*/
                 for (let i = 2; i < tokens.length - 7; i++) {
                     const token = tokens[i];
                     if (
                         token.type === "SYMBOL" &&
-                        token.value.toUpperCase() === "ODOO.PIVOT.POSITION"
+                        token.value.toUpperCase() === "EDEN.PIVOT.POSITION"
                     ) {
                         const order = tokens[i + 6];
                         tokens[i - 2].value = '"#' + tokens[i - 2].value.slice(1); // "dimension" becomes "#dimension"
-                        tokens.splice(i, 7); // remove "ODOO.PIVOT.POSITION", "(", "1", ",", "dimension", ", ", order
-                        // tokens[i-1] is the comma before odoo.pivot.position
+                        tokens.splice(i, 7); // remove "EDEN.PIVOT.POSITION", "(", "1", ",", "dimension", ", ", order
+                        // tokens[i-1] is the comma before eden.pivot.position
                         tokens[i] = order;
                         cell.content = tokensToString(tokens);
                     }
@@ -378,12 +378,12 @@ function migrate11to12(data) {
     return data;
 }
 
-export class OdooVersion extends OdooCorePlugin {
+export class EdenVersion extends EdenCorePlugin {
     static getters = /** @type {const} */ ([]);
 
     export(data) {
-        data.odooVersion = ODOO_VERSION;
+        data.edenVersion = EDEN_VERSION;
     }
 }
 
-corePluginRegistry.add("odooMigration", OdooVersion);
+corePluginRegistry.add("edenMigration", EdenVersion);

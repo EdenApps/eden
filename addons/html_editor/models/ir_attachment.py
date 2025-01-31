@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from urllib.parse import quote
 
-from odoo import api, models, fields
-from odoo.tools.image import base64_to_image
-from odoo.exceptions import UserError
+from eden import api, models, fields
+from eden.tools.image import base64_to_image
+from eden.exceptions import UserError
 
 SUPPORTED_IMAGE_MIMETYPES = {
     'image/gif': '.gif',

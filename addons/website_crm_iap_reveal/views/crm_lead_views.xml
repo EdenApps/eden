@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<odoo>
+<eden>
     <record id="crm_reveal_lead_opportunity_form" model="ir.ui.view">
         <field name="name">crm.lead.inherited.crm</field>
         <field name="model">crm.lead</field>
@@ -100,4 +100,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

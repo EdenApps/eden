@@ -1,6 +1,6 @@
 import { defineMailModels } from "@mail/../tests/mail_test_helpers";
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { queryAllTexts, queryOne } from "@odoo/hoot-dom";
+import { beforeEach, describe, expect, test } from "@eden/hoot";
+import { queryAllTexts, queryOne } from "@eden/hoot-dom";
 import {
     contains,
     defineModels,

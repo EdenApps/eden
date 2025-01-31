@@ -1,7 +1,7 @@
-import { beforeEach, expect, test } from "@odoo/hoot";
-import { click, queryAllTexts, resize, select } from "@odoo/hoot-dom";
-import { animationFrame, mockDate } from "@odoo/hoot-mock";
-import { Component, useState, xml } from "@odoo/owl";
+import { beforeEach, expect, test } from "@eden/hoot";
+import { click, queryAllTexts, resize, select } from "@eden/hoot-dom";
+import { animationFrame, mockDate } from "@eden/hoot-mock";
+import { Component, useState, xml } from "@eden/owl";
 import { defineParams, mountWithCleanup } from "@web/../tests/web_test_helpers";
 import { DateTimePicker } from "@web/core/datetime/datetime_picker";
 import { ensureArray } from "@web/core/utils/arrays";

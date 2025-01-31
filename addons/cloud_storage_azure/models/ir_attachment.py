@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import re
 from datetime import datetime, timedelta, timezone
 from urllib.parse import unquote, quote
 
-from odoo import models
-from odoo.exceptions import ValidationError
+from eden import models
+from eden.exceptions import ValidationError
 
 from ..utils.cloud_storage_azure_utils import generate_blob_sas, get_user_delegation_key, ClientAuthenticationError
 

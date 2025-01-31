@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, tools, _
-from odoo.exceptions import AccessError, UserError
-from odoo.tools import SQL
+from eden import api, fields, models, tools, _
+from eden.exceptions import AccessError, UserError
+from eden.tools import SQL
 
 
 class MailBlackListMixin(models.AbstractModel):

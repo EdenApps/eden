@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="view_account_journal_pos_user_form" model="ir.ui.view">
         <field name="name">account.move.pos.form.inherit</field>
         <field name="model">account.move</field>
@@ -10,4 +10,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</eden>

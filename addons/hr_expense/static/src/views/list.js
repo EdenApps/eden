@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { ExpenseDashboard } from '../components/expense_dashboard';
 import { ExpenseMobileQRCode } from '../mixins/qrcode';
@@ -11,7 +11,7 @@ import { listView } from "@web/views/list/list_view";
 
 import { ListController } from "@web/views/list/list_controller";
 import { ListRenderer } from "@web/views/list/list_renderer";
-import { onWillStart } from "@odoo/owl";
+import { onWillStart } from "@eden/owl";
 
 export class ExpenseListController extends ExpenseDocumentUpload(ListController) {
     static template = `hr_expense.ListView`;

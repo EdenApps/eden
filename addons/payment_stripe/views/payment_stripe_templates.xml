@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <template id="inline_form">
         <t t-set="inline_form_values"
@@ -28,4 +28,4 @@
         />
     </template>
 
-</odoo>
+</eden>

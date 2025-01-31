@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import common, Form
-from odoo.exceptions import UserError
+from eden.tests import common, Form
+from eden.exceptions import UserError
 
 
 class TestMrpMulticompany(common.TransactionCase):

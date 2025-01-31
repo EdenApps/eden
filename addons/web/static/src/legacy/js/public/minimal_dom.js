@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { addLoadingEffect } from '@web/core/utils/ui';
 

@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 from ast import literal_eval
 from collections import defaultdict
-from odoo.osv import expression
+from eden.osv import expression
 
-from odoo import models
+from eden import models
 
 
 class Project(models.Model):

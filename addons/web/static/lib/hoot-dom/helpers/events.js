@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { HootDomError, getTag, isFirefox, isIterable } from "../hoot_dom_utils";
 import {

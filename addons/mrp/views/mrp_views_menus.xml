@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <menuitem id="menu_mrp_root"
         name="Manufacturing"
         groups="group_mrp_user,group_mrp_manager"
@@ -28,4 +28,4 @@
             sequence="100"/>
 
     </menuitem>
-</odoo>
+</eden>

@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { registry } from "@web/core/registry";
 
@@ -14,7 +14,7 @@ registry.category("web_tour.tours").add('website_profile_description', {
         run: "click",
     }, {
         content: "Add some content",
-        trigger: ".odoo-editor-editable p",
+        trigger: ".eden-editor-editable p",
         run: "editor content <p>code here</p>",
     }, {
         content: "Save changes",

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.addons.survey.tests.common import TestSurveyCommon
+from eden import Command
+from eden.addons.survey.tests.common import TestSurveyCommon
 
 
 class TestCourseCertificationStats(TestSurveyCommon):

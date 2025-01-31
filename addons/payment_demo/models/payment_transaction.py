@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 
-from odoo import _, fields, models
-from odoo.exceptions import UserError, ValidationError
+from eden import _, fields, models
+from eden.exceptions import UserError, ValidationError
 
 _logger = logging.getLogger(__name__)
 

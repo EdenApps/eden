@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from markupsafe import Markup
 
-from odoo import api, models, fields, _
-from odoo.addons.mail.tools.discuss import Store
+from eden import api, models, fields, _
+from eden.addons.mail.tools.discuss import Store
 
 
 class Partners(models.Model):

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<odoo>
+<eden>
     <data noupdate="1">
         <record id="digest.digest_digest_default" model="digest.digest">
             <field name="kpi_crm_lead_created">True</field>
@@ -27,14 +27,14 @@
             </field>
         </record>
         <record id="digest_tip_crm_1" model="digest.tip">
-            <field name="name">Tip: Did you know Odoo has built-in lead mining?</field>
+            <field name="name">Tip: Did you know Eden has built-in lead mining?</field>
             <field name="sequence">1500</field>
             <field name="group_id" ref="sales_team.group_sale_salesman_all_leads"/>
             <field name="tip_description" type="html">
 <div>
-    <p class="tip_title">Tip: Did you know Odoo has built-in lead mining?</p>
+    <p class="tip_title">Tip: Did you know Eden has built-in lead mining?</p>
     <p class="tip_content">For a sales team, there is nothing worse than being dry on leads. Fortunately, in just a few clicks, you can generate leads specifically targeted to your needs: company size, industry, etc. To help you test the feature, we offer you 200 credits for free.</p>
-    <img src="https://download.odoocdn.com/digests/crm/static/src/img/milk-generate-leads.gif" width="540" class="illustration_border" />
+    <img src="https://cdn.edencloud.us/digests/crm/static/src/img/milk-generate-leads.gif" width="540" class="illustration_border" />
 </div>
             </field>
         </record>
@@ -45,8 +45,8 @@
             <field name="tip_description" type="html">
 <div>
     <p class="tip_title">Tip: Opportunity win rate is predicted with AI</p>
-    <p class="tip_content">Odoo's artificial intelligence engine predicts the success rate of each opportunity based on your history. You can always update the success rate manually, but if you let Odoo do the job the score is updated while the opportunity moves forward in your sales cycle.</p>
-    <img src="https://download.odoocdn.com/digests/crm/static/src/img/milk-probability-rate.gif" width="540" class="illustration_border" />
+    <p class="tip_content">Eden's artificial intelligence engine predicts the success rate of each opportunity based on your history. You can always update the success rate manually, but if you let Eden do the job the score is updated while the opportunity moves forward in your sales cycle.</p>
+    <img src="https://cdn.edencloud.us/digests/crm/static/src/img/milk-probability-rate.gif" width="540" class="illustration_border" />
 </div>
             </field>
         </record>
@@ -58,7 +58,7 @@
 <div>
     <p class="tip_title">Tip: Manage your pipeline</p>
     <p class="tip_content">A great tip to boost sales efficiency is to always define a next step on each opportunity. To manage ongoing activities, click on any status of the progress bar to filter opportunities based on their next activities' status. Click on the grey area of the progress bar to see all opportunities that have no next activity.</p>
-    <img src="https://download.odoocdn.com/digests/crm/static/src/img/milk-pipeline-progress.gif" width="540" class="illustration_border" />
+    <img src="https://cdn.edencloud.us/digests/crm/static/src/img/milk-pipeline-progress.gif" width="540" class="illustration_border" />
 </div>
             </field>
         </record>
@@ -69,8 +69,8 @@
             <field name="tip_description" type="html">
 <div>
     <p class="tip_title">Tip: Do not waste time recording customers' data</p>
-    <p class="tip_content">Did you know you can search a company by name or VAT number to instantly fill in all its data? Odoo autocompletes everything for you: logo, address, company size, business information, social media accounts, etc.</p>
-    <img src="https://download.odoocdn.com/digests/crm/static/src/img/milk-autofill.gif" width="540" class="illustration_border" />
+    <p class="tip_content">Did you know you can search a company by name or VAT number to instantly fill in all its data? Eden autocompletes everything for you: logo, address, company size, business information, social media accounts, etc.</p>
+    <img src="https://cdn.edencloud.us/digests/crm/static/src/img/milk-autofill.gif" width="540" class="illustration_border" />
 </div>
             </field>
         </record>
@@ -81,8 +81,8 @@
             <field name="tip_description" type="html">
 <div>
     <p class="tip_title">Tip: Turn a selection of opportunities into a map</p>
-    <p class="tip_content">Did you know you can turn a list of opportunities into a map view, using the top-right map icon? A lot of screens in Odoo can be turned into a map: tasks, contacts, delivery orders, etc.</p>
-    <img src="https://download.odoocdn.com/digests/crm/static/src/img/milk-mapview-toggle.gif" width="540" class="illustration_border" />
+    <p class="tip_content">Did you know you can turn a list of opportunities into a map view, using the top-right map icon? A lot of screens in Eden can be turned into a map: tasks, contacts, delivery orders, etc.</p>
+    <img src="https://cdn.edencloud.us/digests/crm/static/src/img/milk-mapview-toggle.gif" width="540" class="illustration_border" />
 </div>
             </field>
         </record>
@@ -94,7 +94,7 @@
 <div>
     <p class="tip_title">Tip: Identify Bottlenecks at a glance</p>
     <p class="tip_content">Check the Stage Tracker of Leads to identify bottlenecks in your Sales process.</p>
-    <img src="https://download.odoocdn.com/digests/crm/static/src/img/18-lead-stage-bottleneck.png" width="540" class="illustration_border"/>
+    <img src="https://cdn.edencloud.us/digests/crm/static/src/img/18-lead-stage-bottleneck.png" width="540" class="illustration_border"/>
 </div>
             </field>
         </record>
@@ -106,9 +106,9 @@
 <div>
     <p class="tip_title">Tip: Turn Sales Forecasting into Child's Play</p>
     <p class="tip_content">Use the CRM Forecast Kanban to easily define when Opportunities are expected to be won.</p>
-    <img src="https://download.odoocdn.com/digests/crm/static/src/img/18-opportunity-forecast.gif" width="540" class="illustration_border"/>
+    <img src="https://cdn.edencloud.us/digests/crm/static/src/img/18-opportunity-forecast.gif" width="540" class="illustration_border"/>
 </div>
             </field>
         </record>
     </data>
-</odoo>
+</eden>

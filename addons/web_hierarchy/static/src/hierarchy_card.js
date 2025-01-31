@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 import { evaluateBooleanExpr } from "@web/core/py_js/py";
 import { Field } from "@web/views/fields/field";

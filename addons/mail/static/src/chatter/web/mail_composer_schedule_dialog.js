@@ -2,7 +2,7 @@ import { DateTimeInput } from "@web/core/datetime/datetime_input";
 import { Dialog } from "@web/core/dialog/dialog";
 import { serializeDateTime, today } from "@web/core/l10n/dates";
 
-import { Component, useState } from "@odoo/owl";
+import { Component, useState } from "@eden/owl";
 
 export class MailComposerScheduleDialog extends Component {
     static template = "mail.MailComposerScheduleDialog";

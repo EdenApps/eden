@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, fields, models
+from eden import _, fields, models
 
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools.float_utils import float_round
-from odoo.tools.misc import groupby
+from eden.exceptions import UserError, ValidationError
+from eden.tools.float_utils import float_round
+from eden.tools.misc import groupby
 
 from .delivery_request_objects import DeliveryCommodity, DeliveryPackage
 

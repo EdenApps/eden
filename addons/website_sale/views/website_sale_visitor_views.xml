@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <!--product history-->
     <record id="website_sale_visitor_page_view_tree" model="ir.ui.view">
@@ -124,4 +124,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

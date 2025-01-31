@@ -1,8 +1,8 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@eden/hoot";
 import { setSelection } from "./_helpers/selection";
-import { click, hover, queryAll, queryOne, waitFor, waitForNone } from "@odoo/hoot-dom";
+import { click, hover, queryAll, queryOne, waitFor, waitForNone } from "@eden/hoot-dom";
 import { defineModels, fields, models, mountView } from "@web/../tests/web_test_helpers";
-import { animationFrame } from "@odoo/hoot-mock";
+import { animationFrame } from "@eden/hoot-mock";
 import { unformat } from "./_helpers/format";
 
 class Test extends models.Model {
@@ -44,7 +44,7 @@ test("Toolbar should not overflow scroll container", async () => {
     });
 
     const scrollableElement = queryOne(".o_content");
-    const editable = queryOne(".odoo-editor-editable");
+    const editable = queryOne(".eden-editor-editable");
 
     // Select a paragraph in the middle of the text
     const fifthParagraph = editable.children[5];
@@ -104,8 +104,8 @@ test("Table column control should always be displayed on top of the table", asyn
     });
 
     const scrollableElement = queryOne(".o_content");
-    const table = queryOne(".odoo-editor-editable table");
-    await hover(".odoo-editor-editable td");
+    const table = queryOne(".eden-editor-editable table");
+    await hover(".eden-editor-editable td");
     const columnControl = await waitFor(".o-we-table-menu[data-type='column']");
 
     // Table column control displayed on hover should be above the table
@@ -116,7 +116,7 @@ test("Table column control should always be displayed on top of the table", asyn
     scrollableElement.scrollTop += distanceToTop;
     await animationFrame();
 
-    await hover(".odoo-editor-editable td");
+    await hover(".eden-editor-editable td");
     await animationFrame();
 
     // Table control should not be displayed (it should not overflow the scroll
@@ -139,7 +139,7 @@ test("Table menu should close on scroll", async () => {
 
     const scrollableElement = queryOne(".o_content");
 
-    await hover(".odoo-editor-editable td");
+    await hover(".eden-editor-editable td");
     const columnControl = await waitFor(".o-we-table-menu[data-type='column']");
     await click(columnControl);
     await animationFrame();
@@ -170,7 +170,7 @@ test("Toolbar should keep stable while extending down the selection", async () =
             </form>`,
     });
 
-    const editable = queryOne(".odoo-editor-editable");
+    const editable = queryOne(".eden-editor-editable");
 
     // Select inner content of a paragraph in the middle of the text
     const fifthParagraph = editable.children[5];

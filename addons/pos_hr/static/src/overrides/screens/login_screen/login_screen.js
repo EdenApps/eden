@@ -3,7 +3,7 @@ import { _t } from "@web/core/l10n/translation";
 import { LoginScreen } from "@point_of_sale/app/screens/login_screen/login_screen";
 import { patch } from "@web/core/utils/patch";
 import { useAutofocus } from "@web/core/utils/hooks";
-import { onWillUnmount, useExternalListener, useState } from "@odoo/owl";
+import { onWillUnmount, useExternalListener, useState } from "@eden/owl";
 
 patch(LoginScreen.prototype, {
     setup() {

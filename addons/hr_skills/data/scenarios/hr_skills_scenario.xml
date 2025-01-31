@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <!-- Skill Type -->
         <record id="hr_skill_type_it" model="hr.skill.type" forcecreate="1">
@@ -364,4 +364,4 @@
             <value eval="{'date_start': (datetime.now()+relativedelta(years=-2)).strftime('%Y-01-01')}"/>
         </function>
     </data>
-</odoo>
+</eden>

@@ -1,9 +1,9 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { _t } from "@web/core/l10n/translation";
 import EventAdditionalTourSteps from "@event/js/tours/event_steps";
 
-import { markup } from "@odoo/owl";
+import { markup } from "@eden/owl";
 import { patch } from "@web/core/utils/patch";
 import { insertSnippet } from '@website/js/tours/tour_utils';
 

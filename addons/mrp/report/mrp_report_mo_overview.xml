@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
     <template id="report_mo_overview">
         <t t-set="data_report_landscape" t-value="True"/>
         <t t-call="web.basic_layout">
@@ -276,4 +276,4 @@
             </t>
         </t>
     </template>
-</odoo>
+</eden>

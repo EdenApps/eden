@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import "@website/snippets/s_website_form/000";  // force deps
 import { uniqueId } from "@web/core/utils/functions";

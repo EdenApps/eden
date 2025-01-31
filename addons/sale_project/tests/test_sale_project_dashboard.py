@@ -1,6 +1,6 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.sale_project.tests.test_project_profitability import TestProjectProfitabilityCommon as Common
+from eden.addons.sale_project.tests.test_project_profitability import TestProjectProfitabilityCommon as Common
 
 
 class TestProjectDashboardCommon(Common):

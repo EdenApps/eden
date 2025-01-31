@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data noupdate="0">
+<eden><data noupdate="0">
 
     <record id="survey_answer_1" model="survey.user_input">
         <field name="survey_id" ref="survey.survey_feedback" />
@@ -26,4 +26,4 @@
         <field name="state">in_progress</field>
     </record>
 
-</data></odoo>
+</data></eden>

@@ -3,7 +3,7 @@ import { registry } from "@web/core/registry";
 import { AlertDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { usePos } from "@point_of_sale/app/store/pos_hook";
 import { useService } from "@web/core/utils/hooks";
-import { Component, useRef, onMounted } from "@odoo/owl";
+import { Component, useRef, onMounted } from "@eden/owl";
 import { TipReceipt } from "@pos_restaurant/app/tip_receipt/tip_receipt";
 import { ask } from "@point_of_sale/app/store/make_awaitable_dialog";
 

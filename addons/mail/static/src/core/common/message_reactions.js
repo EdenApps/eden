@@ -1,4 +1,4 @@
-import { Component, useRef, useState } from "@odoo/owl";
+import { Component, useRef, useState } from "@eden/owl";
 
 import { MessageReactionList } from "@mail/core/common/message_reaction_list";
 import { useService } from "@web/core/utils/hooks";

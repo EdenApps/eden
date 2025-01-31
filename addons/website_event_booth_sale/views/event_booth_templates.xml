@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<odoo>
+<eden>
 
     <template id="event_booth_registration" inherit_id="website_event_booth.event_booth_registration">
         <xpath expr="//label//span[hasclass('booth_category_price')]" position="replace">
@@ -51,4 +51,4 @@
         </xpath>
     </template>
 
-</odoo>
+</eden>

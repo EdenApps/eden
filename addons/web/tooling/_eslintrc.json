@@ -37,7 +37,7 @@
     }]
   },
   "globals": {
-    "odoo": "readonly",
+    "eden": "readonly",
     "$": "readonly",
     "jQuery": "readonly",
     "Chart": "readonly",

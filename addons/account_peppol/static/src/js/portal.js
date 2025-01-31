@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import portalDetails from "@portal/js/portal";
 

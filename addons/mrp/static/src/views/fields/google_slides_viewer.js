@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { registry } from "@web/core/registry";
 import { getGoogleSlideUrl, googleSlideViewer, GoogleSlideViewer } from "@web/views/fields/google_slide_viewer/google_slide_viewer";

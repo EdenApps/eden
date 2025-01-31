@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_media_list" name="Media List">
     <div class="s_media_list o_mail_snippet_general pt8 pb8 o_cc o_cc2" data-vcss="001">
@@ -51,4 +51,4 @@
     <field name="path">mass_mailing/static/src/snippets/s_media_list/001.scss</field>
 </record>
 
-</odoo>
+</eden>

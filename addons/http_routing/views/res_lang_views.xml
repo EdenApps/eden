@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <record id="res_lang_form_inherit_model" model="ir.ui.view">
         <field name="name">res.lang.form.http_routing.inherit</field>
         <field name="model">res.lang</field>
@@ -21,4 +21,4 @@
             </field>
         </field>
     </record>
-</odoo>
+</eden>

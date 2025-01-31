@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <function model="res.company" name="create_missing_dropship_sequence"/>
         <function model="res.company" name="create_missing_dropship_picking_type"/>
@@ -17,4 +17,4 @@
         <function model="res.company" name="create_missing_dropship_picking_type"/>
         <function model="res.company" name="create_missing_dropship_rule"/>
     </data>
-</odoo>
+</eden>

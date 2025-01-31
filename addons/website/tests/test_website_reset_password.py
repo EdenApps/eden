@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from unittest.mock import patch
 
-import odoo
-from odoo import Command
-from odoo.tests import tagged
-from odoo.tests.common import HttpCase
+import eden
+from eden import Command
+from eden.tests import tagged
+from eden.tests.common import HttpCase
 
 
 @tagged('post_install', '-at_install')
@@ -15,11 +15,11 @@ class TestWebsiteResetPassword(HttpCase):
         """The goal of this test is to make sure the reset password works."""
         # We override unlink because we don't want the email to be auto deleted
         # if the send works.
-        MailMail = odoo.addons.mail.models.mail_mail.MailMail
+        MailMail = eden.addons.mail.models.mail_mail.MailMail
 
         # We override send_mail because in HttpCase on runbot we don't have an
         # SMTP server, so if force_send is set, the test is going to fail.
-        MailTemplate = odoo.addons.mail.models.mail_template.MailTemplate
+        MailTemplate = eden.addons.mail.models.mail_template.MailTemplate
         original_send_mail = MailTemplate.send_mail
 
         def my_send_mail(*args, **kwargs):

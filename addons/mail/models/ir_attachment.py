@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import contextlib
 
-from odoo import _, models, SUPERUSER_ID
-from odoo.exceptions import AccessError, MissingError, UserError
-from odoo.tools import consteq
-from odoo.addons.mail.tools.discuss import Store
+from eden import _, models, SUPERUSER_ID
+from eden.exceptions import AccessError, MissingError, UserError
+from eden.tools import consteq
+from eden.addons.mail.tools.discuss import Store
 
 
 class IrAttachment(models.Model):

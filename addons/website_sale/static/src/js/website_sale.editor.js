@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import options from "@web_editor/js/editor/snippets.options";
 import { MediaDialog } from "@web_editor/components/media_dialog/media_dialog";
@@ -7,7 +7,7 @@ import { _t } from "@web/core/l10n/translation";
 import "@website/js/editor/snippets.options";
 import { rpc } from "@web/core/network/rpc";
 import { renderToElement } from "@web/core/utils/render";
-import { useChildSubEnv } from "@odoo/owl";
+import { useChildSubEnv } from "@eden/owl";
 import weUtils from '@web_editor/js/common/utils';
 
 options.registry.WebsiteSaleGridLayout = options.Class.extend({

@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import _
-from odoo.exceptions import ValidationError
+from eden import _
+from eden.exceptions import ValidationError
 
-from odoo.addons.website_sale.controllers.payment import PaymentPortal
+from eden.addons.website_sale.controllers.payment import PaymentPortal
 
 
 class OnSitePaymentPortal(PaymentPortal):

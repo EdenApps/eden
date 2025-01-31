@@ -2,7 +2,7 @@ import { fieldVisualFeedback } from "@web/views/fields/field";
 import { session } from "@web/session";
 import { getTooltipInfo } from "@web/views/fields/field_tooltip";
 import { _t } from "@web/core/l10n/translation";
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 export class FormLabel extends Component {
     static template = "web.FormLabel";
@@ -37,7 +37,7 @@ export class FormLabel extends Component {
     }
 
     get hasTooltip() {
-        return Boolean(odoo.debug) || this.tooltipHelp;
+        return Boolean(eden.debug) || this.tooltipHelp;
     }
 
     get tooltipHelp() {
@@ -49,7 +49,7 @@ export class FormLabel extends Component {
         return help;
     }
     get tooltipInfo() {
-        if (!odoo.debug) {
+        if (!eden.debug) {
             return JSON.stringify({
                 field: {
                     help: this.tooltipHelp,

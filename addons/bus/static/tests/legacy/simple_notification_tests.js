@@ -1,4 +1,4 @@
-/** @odoo-module alias=@bus/../tests/simple_notification_tests default=false */
+/** @eden-module alias=@bus/../tests/simple_notification_tests default=false */
 
 import { simpleNotificationService } from "@bus/simple_notification_service";
 import { addBusServicesToRegistry } from "@bus/../tests/helpers/test_utils";

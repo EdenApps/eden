@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 	<!-- LINK.TRACKER VIEWS -->
     <record id="link_tracker_view_search" model="ir.ui.view">
         <field name="name">link.tracker.view.search.inherit.mass.mail</field>
@@ -78,4 +78,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</eden>

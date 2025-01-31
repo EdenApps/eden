@@ -1,5 +1,5 @@
-import { expect, getFixture, test } from "@odoo/hoot";
-import { queryAllTexts } from "@odoo/hoot-dom";
+import { expect, getFixture, test } from "@eden/hoot";
+import { queryAllTexts } from "@eden/hoot-dom";
 import {
     clickSave,
     contains,

@@ -8,7 +8,7 @@ import {
     useEffect,
     Component,
     onMounted,
-} from "@odoo/owl";
+} from "@eden/owl";
 import { localization } from "@web/core/l10n/localization";
 
 export class RenameCustomSnippetDialog extends Component {

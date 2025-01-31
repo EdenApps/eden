@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { queryAllTexts } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@eden/hoot";
+import { queryAllTexts } from "@eden/hoot-dom";
 import { contains, mountWithCleanup, preloadBundle } from "@web/../tests/web_test_helpers";
 import { DEFAULT_DATE, FAKE_MODEL } from "./calendar_test_helpers";
 

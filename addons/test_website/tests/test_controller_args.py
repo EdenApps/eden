@@ -1,13 +1,13 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-import odoo.tests
-from odoo.tools import mute_logger
+# Part of Eden. See LICENSE file for full copyright and licensing details.
+import eden.tests
+from eden.tools import mute_logger
 from unittest.mock import patch
 
 
-@odoo.tests.common.tagged('post_install', '-at_install')
-class TestWebsiteControllerArgs(odoo.tests.HttpCase):
+@eden.tests.common.tagged('post_install', '-at_install')
+class TestWebsiteControllerArgs(eden.tests.HttpCase):
 
-    @mute_logger('odoo.http')
+    @mute_logger('eden.http')
     def test_crawl_args(self):
         req = self.url_open('/ignore_args/converter/valueA/?b=valueB&c=valueC')
         self.assertEqual(req.status_code, 200)
@@ -39,8 +39,8 @@ class TestWebsiteControllerArgs(odoo.tests.HttpCase):
                              "Model converter record does not exist, return a 404.")
 
 
-@odoo.tests.common.tagged('post_install', '-at_install')
-class TestWebsiteControllers(odoo.tests.TransactionCase):
+@eden.tests.common.tagged('post_install', '-at_install')
+class TestWebsiteControllers(eden.tests.TransactionCase):
 
     def test_01_sitemap(self):
         website = self.env['website'].browse(1)

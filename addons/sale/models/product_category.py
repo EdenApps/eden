@@ -1,4 +1,4 @@
-from odoo import models, fields
+from eden import models, fields
 
 
 class ProductCategory(models.Model):

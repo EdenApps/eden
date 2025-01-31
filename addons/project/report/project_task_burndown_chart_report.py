@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError
-from odoo.tools import SQL
-from odoo.addons.resource.models.utils import filter_domain_leaf
+from eden import _, api, fields, models
+from eden.exceptions import UserError
+from eden.tools import SQL
+from eden.addons.resource.models.utils import filter_domain_leaf
 
 
 class ReportProjectTaskBurndownChart(models.AbstractModel):

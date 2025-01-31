@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import re
 
-from odoo import _, api, fields, models
-from odoo.tools.misc import remove_accents
-from odoo.addons.account_qr_code_emv.const import CURRENCY_MAPPING
+from eden import _, api, fields, models
+from eden.tools.misc import remove_accents
+from eden.addons.account_qr_code_emv.const import CURRENCY_MAPPING
 
 
 class ResPartnerBank(models.Model):

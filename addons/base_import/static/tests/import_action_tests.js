@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { browser } from "@web/core/browser/browser";
 import {
@@ -17,7 +17,7 @@ import { makeFakeNotificationService } from "@web/../tests/helpers/mock_services
 import { ImportDataProgress } from "../src/import_data_progress/import_data_progress";
 import { ImportAction } from "../src/import_action/import_action";
 import { ImportBlockUI } from "../src/import_block_ui";
-import { useEffect } from "@odoo/owl";
+import { useEffect } from "@eden/owl";
 import { redirect } from "@web/core/utils/urls";
 
 const serviceRegistry = registry.category("services");
@@ -320,7 +320,7 @@ QUnit.module("Base Import Tests", (hooks) => {
         patchWithCleanup(browser.location, {
             origin: "http://example.com",
         });
-        redirect("/odoo");
+        redirect("/eden");
 
         await createImportAction({
             "partner/get_import_templates": (route, args) => {
@@ -341,7 +341,7 @@ QUnit.module("Base Import Tests", (hooks) => {
         await nextTick(); // pushState is debounced
         assert.strictEqual(
             browser.location.href,
-            "http://example.com/odoo/import?active_model=partner",
+            "http://example.com/eden/import?active_model=partner",
             "the url contains the active_model"
         );
 
@@ -585,7 +585,7 @@ QUnit.module("Base Import Tests", (hooks) => {
     });
 
     QUnit.test("Import view: additional options in debug", async function (assert) {
-        patchWithCleanup(odoo, { debug: true });
+        patchWithCleanup(eden, { debug: true });
         registerFakeHTTPService();
 
         await createImportAction({

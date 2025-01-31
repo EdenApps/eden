@@ -349,7 +349,7 @@
                             "groupBy": ["create_date:quarter", "product_id"],
                             "orderBy": []
                         },
-                        "type": "odoo_bar",
+                        "type": "eden_bar",
                         "verticalAxisPosition": "left",
                         "stacked": true,
                         "fieldMatching": {
@@ -406,7 +406,7 @@
                             "groupBy": ["create_date:quarter", "product_id"],
                             "orderBy": []
                         },
-                        "type": "odoo_bar",
+                        "type": "eden_bar",
                         "verticalAxisPosition": "left",
                         "stacked": true,
                         "fieldMatching": {
@@ -1163,7 +1163,7 @@
     },
     "pivots": {
         "c14d538a-a794-4ea2-ab95-70089c764c85": {
-            "type": "ODOO",
+            "type": "EDEN",
             "domain": [["location_id.usage", "=", "internal"]],
             "context": {
                 "mail_notify_force_send": false,
@@ -1246,7 +1246,7 @@
             }
         },
         "4f0d7a37-943e-4289-ac4b-3cf1b56ca17a": {
-            "type": "ODOO",
+            "type": "EDEN",
             "domain": [["location_id.usage", "=", "internal"]],
             "context": {
                 "mail_notify_force_send": false,
@@ -1329,7 +1329,7 @@
             }
         },
         "22f3a887-f193-4be2-a4af-e991b7ccc65e": {
-            "type": "ODOO",
+            "type": "EDEN",
             "domain": [
                 "&",
                 ["location_id.usage", "=", "internal"],
@@ -1416,7 +1416,7 @@
             }
         },
         "858023a6-cd63-47d6-9bce-759b488c2b75": {
-            "type": "ODOO",
+            "type": "EDEN",
             "domain": [["location_id.usage", "=", "internal"]],
             "context": {
                 "mail_notify_force_send": false,
@@ -1473,7 +1473,7 @@
             }
         },
         "37e97fb2-1885-4dbd-9632-ec5c54a776f4": {
-            "type": "ODOO",
+            "type": "EDEN",
             "domain": [["location_id.usage", "=", "internal"]],
             "context": {
                 "mail_notify_force_send": false,
@@ -1530,7 +1530,7 @@
             }
         },
         "8f099f8d-362a-41e5-b676-75ab717cfc1e": {
-            "type": "ODOO",
+            "type": "EDEN",
             "domain": [
                 "&",
                 ["location_id.usage", "=", "internal"],
@@ -1586,7 +1586,7 @@
             }
         },
         "0885aadb-2384-4300-a531-893035a13173": {
-            "type": "ODOO",
+            "type": "EDEN",
             "domain": [
                 "&",
                 ["location_id.usage", "=", "internal"],
@@ -1649,7 +1649,7 @@
     },
     "pivotNextId": 25,
     "customTableStyles": {},
-    "odooVersion": 12,
+    "edenVersion": 12,
     "globalFilters": [
         {
             "id": "feeb0d08-4596-4e7c-b478-a3c659189cdd",
@@ -1697,7 +1697,7 @@
     ],
     "lists": {},
     "listNextId": 3,
-    "chartOdooMenusReferences": {
+    "chartEdenMenusReferences": {
         "fad86b76-037f-4b7f-8afc-bc028c2536de": "stock.menu_valuation",
         "73f61914-d895-4484-b3ba-585107daeb44": "stock.menu_valuation",
         "de7010e1-2cdc-4e19-a1de-1c7fd4795bf4": "stock.menu_valuation",

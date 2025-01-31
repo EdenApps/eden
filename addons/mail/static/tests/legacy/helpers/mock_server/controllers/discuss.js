@@ -1,4 +1,4 @@
-/** @odoo-module alias=@mail/../tests/helpers/mock_server/controllers/discuss default=false */
+/** @eden-module alias=@mail/../tests/helpers/mock_server/controllers/discuss default=false */
 
 import { serializeDateTime } from "@web/core/l10n/dates";
 import { patch } from "@web/core/utils/patch";

@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import random
 
@@ -6,9 +6,9 @@ from contextlib import contextmanager
 from datetime import datetime, timedelta
 from unittest.mock import patch
 
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
-from odoo.addons.website.models.website_visitor import WebsiteVisitor
-from odoo.tests import common, tagged, HttpCase
+from eden.addons.base.tests.common import HttpCaseWithUserDemo
+from eden.addons.website.models.website_visitor import WebsiteVisitor
+from eden.tests import common, tagged, HttpCase
 
 
 class MockVisitor(common.BaseCase):
@@ -449,7 +449,7 @@ class WebsiteVisitorTests(WebsiteVisitorTestsCommon):
                          ['/admin', '/admin/about-duplicate'])
 
     def test_merge_partner_with_visitor_single(self):
-        """ The partner merge feature of Odoo is auto discovering relations to
+        """ The partner merge feature of Eden is auto discovering relations to
         ``res_partner`` to change the field value, in raw SQL.
         It will change the ``partner_id`` field of visitor without changing the
         ``access_token``, which is supposed to be the same value (``partner_id``

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_instagram_page" name="Instagram Page">
-    <section class="s_instagram_page" data-instagram-page="odoo.official">
+    <section class="s_instagram_page" data-instagram-page="eden.official">
         <div class="o_container_small o_instagram_container o_not_editable">
             <!-- The iframe will be added here by the public widget. -->
         </div>
@@ -14,11 +14,11 @@
     <xpath expr="." position="inside">
         <div data-js="InstagramPage" data-selector=".s_instagram_page">
             <we-alert class="mt-2">
-                Your instagram page must be public to be integrated into an Odoo website.
+                Your instagram page must be public to be integrated into an Eden website.
             </we-alert>
             <we-input string="Instagram Page"
                       class="o_we_large"
-                      placeholder="odoo.official"
+                      placeholder="eden.official"
                       data-set-instagram-page=""
                       data-no-preview="true"/>
         </div>
@@ -37,4 +37,4 @@
     <field name="path">website/static/src/snippets/s_instagram_page/000.scss</field>
 </record>
 
-</odoo>
+</eden>

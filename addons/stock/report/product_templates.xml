@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
     <data>
         <template id="label_product_product_view">
 		<t t-foreach="quantity.items()" t-as="barcode_and_qty_by_product">
@@ -67,4 +67,4 @@
             </t>
         </template>
     </data>
-</odoo>
+</eden>

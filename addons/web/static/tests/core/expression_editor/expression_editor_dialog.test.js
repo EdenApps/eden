@@ -1,6 +1,6 @@
-import { expect, test, describe } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
-import { Component, xml } from "@odoo/owl";
+import { expect, test, describe } from "@eden/hoot";
+import { animationFrame } from "@eden/hoot-mock";
+import { Component, xml } from "@eden/owl";
 import {
     contains,
     defineModels,

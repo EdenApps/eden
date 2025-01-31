@@ -1,9 +1,9 @@
 import time
 
-from odoo import Command
-from odoo.exceptions import UserError
-from odoo.tests import tagged, freeze_time
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+from eden import Command
+from eden.exceptions import UserError
+from eden.tests import tagged, freeze_time
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
 
 
 @freeze_time('2023-12-31')

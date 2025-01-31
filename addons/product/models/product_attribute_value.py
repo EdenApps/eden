@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from random import randint
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError
+from eden import _, api, fields, models
+from eden.exceptions import UserError
 
 
 class ProductAttributeValue(models.Model):

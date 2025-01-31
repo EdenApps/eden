@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { browser } from "@web/core/browser/browser";
 const sessionStorage = browser.sessionStorage;
@@ -24,7 +24,7 @@ import {
     useSubEnv,
     onWillStart,
     useExternalListener,
-} from "@odoo/owl";
+} from "@eden/owl";
 import { standardActionServiceProps } from "@web/webclient/actions/action_service";
 import { addLoadingEffect as addButtonLoadingEffect } from "@web/core/utils/ui";
 
@@ -442,7 +442,7 @@ export class ApplyConfiguratorScreen extends Component {
             // Here the website service goToWebsite method is not used because
             // the web client needs to be reloaded after the new modules have
             // been installed.
-            redirect(`/odoo/action-website.website_preview?website_id=${encodeURIComponent(resp.website_id)}`);
+            redirect(`/eden/action-website.website_preview?website_id=${encodeURIComponent(resp.website_id)}`);
         }
     }
 }

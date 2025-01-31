@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import UserError
-from odoo.fields import Command
-from odoo.tests import tagged
+from eden.exceptions import UserError
+from eden.fields import Command
+from eden.tests import tagged
 
-from odoo.addons.account_edi_ubl_cii.tests.test_ubl_cii import TestAccountEdiUblCii
+from eden.addons.account_edi_ubl_cii.tests.test_ubl_cii import TestAccountEdiUblCii
 
 
 @tagged('post_install', '-at_install')

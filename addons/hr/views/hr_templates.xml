@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="hr_employee_plan_activity_summary">
         <div class="d-flex flex-column flex-grow">
             <t t-foreach="activity_ids" t-as="activity">
@@ -8,4 +8,4 @@
             </t>
         </div>
     </template>
-</odoo>
+</eden>

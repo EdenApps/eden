@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import imaplib
 import logging
@@ -11,8 +11,8 @@ from poplib import POP3, POP3_SSL
 from socket import gaierror, timeout
 from ssl import SSLError
 
-from odoo import api, fields, models, tools, _
-from odoo.exceptions import UserError, ValidationError
+from eden import api, fields, models, tools, _
+from eden.exceptions import UserError, ValidationError
 
 
 _logger = logging.getLogger(__name__)
@@ -96,7 +96,7 @@ class FetchmailServer(models.Model):
     priority = fields.Integer(string='Server Priority', readonly=False, help="Defines the order of processing, lower values mean higher priority", default=5)
     message_ids = fields.One2many('mail.mail', 'fetchmail_server_id', string='Messages', readonly=True)
     configuration = fields.Text('Configuration', readonly=True)
-    script = fields.Char(readonly=True, default='/mail/static/scripts/odoo-mailgate.py')
+    script = fields.Char(readonly=True, default='/mail/static/scripts/eden-mailgate.py')
 
     @api.depends('server_type')
     def _compute_server_type_info(self):
@@ -120,11 +120,11 @@ class FetchmailServer(models.Model):
             'model': self.object_id.model if self.object_id else 'MODELNAME'
         }
         self.configuration = """Use the below script with the following command line options with your Mail Transport Agent (MTA)
-odoo-mailgate.py --host=HOSTNAME --port=PORT -u %(uid)d -p PASSWORD -d %(dbname)s
+eden-mailgate.py --host=HOSTNAME --port=PORT -u %(uid)d -p PASSWORD -d %(dbname)s
 Example configuration for the postfix mta running locally:
-/etc/postfix/virtual_aliases: @youdomain odoo_mailgate@localhost
+/etc/postfix/virtual_aliases: @youdomain eden_mailgate@localhost
 /etc/aliases:
-odoo_mailgate: "|/path/to/odoo-mailgate.py --host=localhost -u %(uid)d -p PASSWORD -d %(dbname)s"
+eden_mailgate: "|/path/to/eden-mailgate.py --host=localhost -u %(uid)d -p PASSWORD -d %(dbname)s"
         """ % conf
 
     @api.model_create_multi

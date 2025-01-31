@@ -1,4 +1,4 @@
-/** @odoo-module alias=@web/../tests/legacy_tests/core/class_tests default=false */
+/** @eden-module alias=@web/../tests/legacy_tests/core/class_tests default=false */
 
 import Class from "@web/legacy/js/core/class";
 

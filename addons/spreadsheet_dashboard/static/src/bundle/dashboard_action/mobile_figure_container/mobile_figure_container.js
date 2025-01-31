@@ -1,8 +1,8 @@
-/** @odoo-module */
+/** @eden-module */
 
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@eden/o-spreadsheet";
 
-import { Component, useSubEnv } from "@odoo/owl";
+import { Component, useSubEnv } from "@eden/owl";
 const { registries } = spreadsheet;
 const { figureRegistry } = registries;
 

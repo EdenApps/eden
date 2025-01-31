@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields
+from eden import fields
 
-from odoo.tests import Form, tagged
-from odoo.addons.stock_account.tests.test_stockvaluationlayer import TestStockValuationCommon
+from eden.tests import Form, tagged
+from eden.addons.stock_account.tests.test_stockvaluationlayer import TestStockValuationCommon
 
 
 @tagged('post_install', '-at_install')

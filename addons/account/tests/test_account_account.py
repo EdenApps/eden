@@ -1,8 +1,8 @@
-from odoo import Command
-from odoo.addons.account.tests.common import TestAccountMergeCommon
-from odoo.tests import Form, tagged
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools import mute_logger
+from eden import Command
+from eden.addons.account.tests.common import TestAccountMergeCommon
+from eden.tests import Form, tagged
+from eden.exceptions import UserError, ValidationError
+from eden.tools import mute_logger
 import psycopg2
 from freezegun import freeze_time
 
@@ -367,7 +367,7 @@ class TestAccountAccount(TestAccountMergeCommon):
         with self.assertRaises(UserError):
             self.env['account.account'].name_create('550003 Existing Account')
         # account code is mandatory and providing a name without a code should raise an error
-        with self.assertRaises(psycopg2.DatabaseError), mute_logger('odoo.sql_db'):
+        with self.assertRaises(psycopg2.DatabaseError), mute_logger('eden.sql_db'):
             self.env['account.account'].with_context(import_file=True).name_create('Existing Account')
         account_id = self.env['account.account'].with_context(import_file=True).name_create('550003 Existing Account')[0]
         account = self.env['account.account'].browse(account_id)

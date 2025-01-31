@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <!-- Sequences for lead mining requests -->
         <record id="ir_sequence_crm_iap_mine" model="ir.sequence">
@@ -11,4 +11,4 @@
         </record>
 
     </data>
-</odoo>
+</eden>

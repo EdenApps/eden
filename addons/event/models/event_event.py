@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 import pytz
@@ -8,14 +8,14 @@ import textwrap
 from datetime import timedelta
 from dateutil.relativedelta import relativedelta
 
-from odoo import _, api, Command, fields, models, tools
-from odoo.addons.base.models.res_partner import _tz_get
-from odoo.exceptions import UserError, ValidationError
-from odoo.osv import expression
-from odoo.tools import format_date, format_datetime, format_time, frozendict
-from odoo.tools.mail import is_html_empty, html_to_inner_content
-from odoo.tools.misc import formatLang
-from odoo.tools.translate import html_translate
+from eden import _, api, Command, fields, models, tools
+from eden.addons.base.models.res_partner import _tz_get
+from eden.exceptions import UserError, ValidationError
+from eden.osv import expression
+from eden.tools import format_date, format_datetime, format_time, frozendict
+from eden.tools.mail import is_html_empty, html_to_inner_content
+from eden.tools.misc import formatLang
+from eden.tools.translate import html_translate
 
 _logger = logging.getLogger(__name__)
 
@@ -109,7 +109,7 @@ class EventEvent(models.Model):
         return result
 
     def get_kiosk_url(self):
-        return self.get_base_url() + "/odoo/registration-desk"
+        return self.get_base_url() + "/eden/registration-desk"
 
     def _get_default_stage_id(self):
         return self.env['event.stage'].search([], limit=1)
@@ -801,4 +801,4 @@ class EventEvent(models.Model):
 
     def _get_printing_sponsor_text(self):
         sponsor_text = self.env['ir.config_parameter'].sudo().get_param('event.badge_printing_sponsor_text')
-        return sponsor_text or "Powered by Odoo"
+        return sponsor_text or "Powered by Eden"

@@ -1,4 +1,4 @@
-import { Component, onMounted, onWillDestroy, useRef, useState, useSubEnv } from "@odoo/owl";
+import { Component, onMounted, onWillDestroy, useRef, useState, useSubEnv } from "@eden/owl";
 import { Editor } from "./editor";
 import { Toolbar } from "./main/toolbar/toolbar";
 import { useChildRef, useSpellCheck } from "@web/core/utils/hooks";

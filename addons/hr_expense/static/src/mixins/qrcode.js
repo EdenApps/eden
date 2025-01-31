@@ -1,8 +1,8 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { _t } from "@web/core/l10n/translation";
 import { useService } from "@web/core/utils/hooks";
-import { onMounted, onPatched, useRef } from "@odoo/owl";
+import { onMounted, onPatched, useRef } from "@eden/owl";
 
 export const ExpenseMobileQRCode = (T) => class ExpenseMobileQRCode extends T {
     setup() {

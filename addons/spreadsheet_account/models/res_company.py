@@ -1,6 +1,6 @@
-from odoo import models, api, fields
+from eden import models, api, fields
 
-from odoo.tools import date_utils
+from eden.tools import date_utils
 
 
 class ResCompany(models.Model):

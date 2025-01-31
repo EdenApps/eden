@@ -1,12 +1,12 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.account.tests.common import AccountTestInvoicingHttpCommon
-from odoo.tests.common import tagged
+from eden.addons.account.tests.common import AccountTestInvoicingHttpCommon
+from eden.tests.common import tagged
 
 import json
 
-from odoo import http
-from odoo.tools import file_open, mute_logger
+from eden import http
+from eden.tools import file_open, mute_logger
 
 
 @tagged('post_install', '-at_install')
@@ -28,7 +28,7 @@ class TestPortalAttachment(AccountTestInvoicingHttpCommon):
 
         cls.invoice_base_url = cls.out_invoice.get_base_url()
 
-    @mute_logger('odoo.addons.http_routing.models.ir_http', 'odoo.http')
+    @mute_logger('eden.addons.http_routing.models.ir_http', 'eden.http')
     def test_01_portal_attachment(self):
         """Test the portal chatter attachment route."""
         self.partner_a.write({  # ensure an email for message_post

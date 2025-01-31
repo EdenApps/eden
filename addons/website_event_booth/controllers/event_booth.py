@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 import werkzeug
 from werkzeug.exceptions import Forbidden, NotFound
 
-from odoo import http, tools
-from odoo.http import request
-from odoo.addons.website_event.controllers.main import WebsiteEventController
+from eden import http, tools
+from eden.http import request
+from eden.addons.website_event.controllers.main import WebsiteEventController
 
 
 class WebsiteEventBoothController(WebsiteEventController):

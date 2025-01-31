@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { clickOnEditAndWaitEditMode, registerWebsitePreviewTour } from "@website/js/tours/tour_utils";
 

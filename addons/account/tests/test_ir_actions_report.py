@@ -3,12 +3,12 @@ import base64
 import io
 import re
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.exceptions import RedirectWarning
-from odoo.tools import pdf
-from odoo.tests import tagged
-from odoo.tools import file_open
-from odoo.tools.pdf import PdfFileReader, PdfFileWriter
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
+from eden.exceptions import RedirectWarning
+from eden.tools import pdf
+from eden.tests import tagged
+from eden.tools import file_open
+from eden.tools.pdf import PdfFileReader, PdfFileWriter
 
 
 @tagged('post_install', '-at_install')
@@ -18,7 +18,7 @@ class TestIrActionsReport(AccountTestInvoicingCommon):
         super().setUp()
         self.file = file_open('base/tests/minimal.pdf', 'rb').read()
         self.minimal_reader_buffer = io.BytesIO(self.file)
-        self.minimal_pdf_reader = pdf.OdooPdfFileReader(self.minimal_reader_buffer)
+        self.minimal_pdf_reader = pdf.EdenPdfFileReader(self.minimal_reader_buffer)
 
     def test_download_one_corrupted_pdf(self):
         """

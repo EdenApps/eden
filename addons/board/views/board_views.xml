@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <!--My Dashboard-->
         <record model="ir.ui.view" id="board_my_dash_view">
@@ -35,4 +35,4 @@
             action="open_board_my_dash_action"
             sequence="100"/>
     </data>
-</odoo>
+</eden>

@@ -1,4 +1,4 @@
-from odoo import _, fields, models
+from eden import _, fields, models
 
 
 class AccountMoveSendBatchWizard(models.TransientModel):

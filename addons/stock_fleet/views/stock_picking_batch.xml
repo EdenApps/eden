@@ -1,4 +1,4 @@
-<odoo>
+<eden>
     <record id="stock_picking_batch_pivot" model="ir.ui.view">
         <field name="name">stock.picking.batch.pivot</field>
         <field name="model">stock.picking.batch</field>
@@ -123,4 +123,4 @@
             </data>
         </field>
     </record>
-</odoo>
+</eden>

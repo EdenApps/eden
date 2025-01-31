@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 import pytz
@@ -9,11 +9,11 @@ from dateutil.relativedelta import relativedelta
 from markupsafe import Markup
 from werkzeug.urls import url_encode, url_join
 
-from odoo import api, fields, models, tools, _
-from odoo.addons.base.models.ir_mail_server import MailDeliveryException
-from odoo.exceptions import AccessError
-from odoo.osv import expression
-from odoo.tools.float_utils import float_round
+from eden import api, fields, models, tools, _
+from eden.addons.base.models.ir_mail_server import MailDeliveryException
+from eden.exceptions import AccessError
+from eden.osv import expression
+from eden.tools.float_utils import float_round
 
 _logger = logging.getLogger(__name__)
 
@@ -331,7 +331,7 @@ class Digest(models.Model):
         """ Give an optional action to display in digest email linked to some KPIs.
 
         :return dict: key: kpi name (field name), value: an action that will be
-          concatenated with /odoo/action-{action}
+          concatenated with /eden/action-{action}
         """
         return {}
 
@@ -356,7 +356,7 @@ class Digest(models.Model):
         if user.has_group('base.group_erp_manager'):
             preferences.append(Markup('<p>%s<br /><a href="%s" target="_blank" style="color:#017e84; font-weight: bold;">%s</a></p>') % (
                 _('Want to customize this email?'),
-                f'/odoo/{self._name}/{self.id:d}',
+                f'/eden/{self._name}/{self.id:d}',
                 _('Choose the metrics you care about')
             ))
 

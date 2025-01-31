@@ -1,8 +1,8 @@
-import { animationFrame } from "@odoo/hoot-mock";
+import { animationFrame } from "@eden/hoot-mock";
 import { LoadableDataSource } from "@spreadsheet/data_sources/data_source";
 import { Deferred } from "@web/core/utils/concurrency";
 import { makeServerError } from "@web/../tests/web_test_helpers";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 import { defineSpreadsheetActions, defineSpreadsheetModels } from "../helpers/data";
 
 describe.current.tags("headless");
@@ -33,7 +33,7 @@ test("data source is ready after all concurrent requests are resolved", async ()
         }
     }
     const dataSource = new TestDataSource({
-        odooDataProvider: {
+        edenDataProvider: {
             notify: () => expect.step("notify"),
             notifyWhenPromiseResolves: () => expect.step("notify-from-promise"),
             cancelPromise: () => expect.step("cancel-promise"),
@@ -65,7 +65,7 @@ test("Datasources handle errors thrown at _load", async () => {
     }
 
     const dataSource = new TestDataSource({
-        odooDataProvider: {
+        edenDataProvider: {
             notify: () => expect.step("notify"),
             notifyWhenPromiseResolves: () => expect.step("notify-from-promise"),
             cancelPromise: () => expect.step("cancel-promise"),

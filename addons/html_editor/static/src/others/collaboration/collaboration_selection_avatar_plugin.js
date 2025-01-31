@@ -20,7 +20,7 @@ export const AVATAR_SIZE = 25;
 
 export class CollaborationSelectionAvatarPlugin extends Plugin {
     static id = "collaborationSelectionAvatar";
-    static dependencies = ["history", "position", "localOverlay", "collaborationOdoo"];
+    static dependencies = ["history", "position", "localOverlay", "collaborationEden"];
     resources = {
         /** Handlers */
         collaboration_notification_handlers: this.handleCollaborationNotification.bind(this),
@@ -54,7 +54,7 @@ export class CollaborationSelectionAvatarPlugin extends Plugin {
     }
 
     /**
-     * @param {import("./collaboration_odoo_plugin").CollaborationSelection} selection
+     * @param {import("./collaboration_eden_plugin").CollaborationSelection} selection
      */
     updateSelection(selection) {
         /** @type {SelectionInfo} */
@@ -69,7 +69,7 @@ export class CollaborationSelectionAvatarPlugin extends Plugin {
      */
     drawPeerAvatar(selectionInfo) {
         const { selection, peerId } = selectionInfo;
-        const peerMetadata = this.dependencies.collaborationOdoo.getPeerMetadata(peerId);
+        const peerMetadata = this.dependencies.collaborationEden.getPeerMetadata(peerId);
         if (!peerMetadata) {
             return;
         }

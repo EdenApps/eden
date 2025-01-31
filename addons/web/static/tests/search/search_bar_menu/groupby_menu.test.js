@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { queryAllTexts, queryFirst } from "@odoo/hoot-dom";
+import { expect, test } from "@eden/hoot";
+import { queryAllTexts, queryFirst } from "@eden/hoot-dom";
 import {
     contains,
     getFacetTexts,
@@ -15,7 +15,7 @@ import { defineSearchBarModels, Foo } from "./models";
 
 import { SearchBarMenu } from "@web/search/search_bar_menu/search_bar_menu";
 import { SearchBar } from "@web/search/search_bar/search_bar";
-import { animationFrame } from "@odoo/hoot-mock";
+import { animationFrame } from "@eden/hoot-mock";
 
 defineSearchBarModels();
 

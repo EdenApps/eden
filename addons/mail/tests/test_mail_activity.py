@@ -1,13 +1,13 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from contextlib import contextmanager
 from freezegun import freeze_time
 from unittest.mock import patch
 
-from odoo.addons.mail.models.mail_activity import MailActivity
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.tests import Form, tagged, HttpCase
-from odoo.tools.misc import format_date
+from eden.addons.mail.models.mail_activity import MailActivity
+from eden.addons.mail.tests.common import MailCommon
+from eden.tests import Form, tagged, HttpCase
+from eden.tools.misc import format_date
 
 
 class ActivityScheduleCase(MailCommon):
@@ -150,7 +150,7 @@ class TestMailActivityChatter(HttpCase):
             'password': 'testuser',
         })
         self.start_tour(
-            f"/odoo/res.partner/{testuser.partner_id.id}",
+            f"/eden/res.partner/{testuser.partner_id.id}",
             "mail_activity_schedule_from_chatter",
             login="admin",
         )

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <record id="module_category_test_website" model="ir.module.category">
         <field name="name">Test website</field>
@@ -11,4 +11,4 @@
         <field name="category_id" ref="base.module_category_hidden"/>
     </record>
 
-</odoo>
+</eden>

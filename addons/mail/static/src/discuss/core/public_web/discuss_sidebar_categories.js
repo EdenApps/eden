@@ -5,7 +5,7 @@ import { discussSidebarItemsRegistry } from "@mail/core/public_web/discuss_sideb
 import { cleanTerm } from "@mail/utils/common/format";
 import { useHover } from "@mail/utils/common/hooks";
 
-import { Component, useState, useSubEnv } from "@odoo/owl";
+import { Component, useState, useSubEnv } from "@eden/owl";
 
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { Dropdown } from "@web/core/dropdown/dropdown";

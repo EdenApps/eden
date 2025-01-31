@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { Component, useRef, useState, xml } from "@odoo/owl";
+import { Component, useRef, useState, xml } from "@eden/owl";
 import { refresh } from "../core/url";
 import { useWindowListener } from "../hoot_utils";
 

@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta, time
 
-from odoo.addons.event.tests.common import EventCase
-from odoo.addons.mail.tests.common import mail_new_test_user
+from eden.addons.event.tests.common import EventCase
+from eden.addons.mail.tests.common import mail_new_test_user
 
 
 class OnlineEventCase(EventCase):

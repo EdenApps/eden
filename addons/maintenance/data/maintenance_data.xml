@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 <data noupdate="1">
 
     <!-- Standard stages for Maintenance Request -->
@@ -27,4 +27,4 @@
     </record>
 
 </data>
-</odoo>
+</eden>

@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
-from odoo.fields import Command, Datetime
-from odoo.exceptions import ValidationError
-from odoo.tests import tagged
+from eden.fields import Command, Datetime
+from eden.exceptions import ValidationError
+from eden.tests import tagged
 
-from odoo.addons.project.tests.test_project_base import TestProjectCommon
+from eden.addons.project.tests.test_project_base import TestProjectCommon
 
 from datetime import date
 

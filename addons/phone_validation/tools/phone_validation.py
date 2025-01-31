@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import UserError
-from odoo.tools import LazyTranslate
+from eden.exceptions import UserError
+from eden.tools import LazyTranslate
 
 import logging
 

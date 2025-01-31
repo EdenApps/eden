@@ -1,4 +1,4 @@
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 import { MainComponentsContainer } from "@web/core/main_components_container";
 import { useForwardRefToParent } from "@web/core/utils/hooks";
 import { registry } from "@web/core/registry";

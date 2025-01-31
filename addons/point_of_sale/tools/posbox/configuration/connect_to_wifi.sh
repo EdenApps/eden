@@ -37,7 +37,7 @@ function get_conf () {
 # to reconnect to a previously chosen network
 function connect () {
 	WPA_PASS_FILE="/tmp/wpa_pass.txt"
-	CONF_FILE="/home/pi/odoo.conf"
+	CONF_FILE="/home/pi/eden.conf"
 	CURRENT_WIFI_NETWORK_FILE="/tmp/current_wifi_network.txt" # used to repair connection when we lose it
 	LOST_WIFI_FILE="/tmp/lost_wifi.txt"
 	ESSID="${1}"
@@ -76,7 +76,7 @@ function connect () {
 
 	sudo killall nginx
 
-	current_iotbox_version=$(cat "/var/odoo/iotbox_version")
+	current_iotbox_version=$(cat "/var/eden/iotbox_version")
 	# Above this version we need the NetworkManager
 	required_version="23.09"
 	if [[ "$current_iotbox_version" > "$required_version" ]]; then
@@ -121,15 +121,15 @@ function connect () {
 
 	if [ ${TIMEOUT_RETURN} -eq 124 ] && [ -z "${NO_AP}" ] ; then
 		logger -t posbox_connect_to_wifi "Failed to connect, forcing Posbox AP"
-		sudo /home/pi/odoo/addons/point_of_sale/tools/posbox/configuration/wireless_ap.sh "force" &
+		sudo /home/pi/eden/addons/point_of_sale/tools/posbox/configuration/wireless_ap.sh "force" &
 	else
 		if [ ${TIMEOUT_RETURN} -ne 124 ] ; then
 			rm -f "${LOST_WIFI_FILE}"
 		fi
 
 		if [ ! -f "${LOST_WIFI_FILE}" ] ; then
-			logger -t posbox_connect_to_wifi "Restarting odoo"
-			sudo service odoo restart
+			logger -t posbox_connect_to_wifi "Restarting eden"
+			sudo service eden restart
 		fi
 
 		if [ ${WIFI_WAS_LOST} -eq 0 ] ; then
@@ -137,7 +137,7 @@ function connect () {
 		fi
 
 		logger -t posbox_connect_to_wifi "Starting wifi keep alive script"
-		/home/pi/odoo/addons/point_of_sale/tools/posbox/configuration/keep_wifi_alive.sh &
+		/home/pi/eden/addons/point_of_sale/tools/posbox/configuration/keep_wifi_alive.sh &
 	fi
 }
 

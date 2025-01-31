@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @eden-module **/
 
-import { Component, useState, onWillUnmount } from "@odoo/owl";
+import { Component, useState, onWillUnmount } from "@eden/owl";
 
 const { DateTime } = luxon;
 export class CardLayout extends Component {

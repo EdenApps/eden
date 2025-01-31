@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <template id="payment_form" inherit_id="payment.form">
         <xpath expr="." position="inside">
@@ -25,4 +25,4 @@
              placed in __manifest__.py. The following declaration fix this problem -->
         <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
     </template>
-</odoo>
+</eden>

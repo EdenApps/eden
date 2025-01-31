@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
 
     <!-- EVENTS/CONFIGURATION/EVENT locations -->
     <record model="ir.ui.view" id="view_event_location_form">
@@ -40,4 +40,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

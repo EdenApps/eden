@@ -1,4 +1,4 @@
-import { Component, useEffect, useState } from "@odoo/owl";
+import { Component, useEffect, useState } from "@eden/owl";
 import { browser } from "@web/core/browser/browser";
 import { useService } from "@web/core/utils/hooks";
 import { useDebounced } from "@web/core/utils/timing";

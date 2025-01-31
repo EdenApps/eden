@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
-from odoo.tools import float_is_zero, float_repr, float_round, float_compare
-from odoo.exceptions import ValidationError
+from eden import api, fields, models, _
+from eden.exceptions import UserError
+from eden.tools import float_is_zero, float_repr, float_round, float_compare
+from eden.exceptions import ValidationError
 from collections import defaultdict
 from datetime import datetime
 
@@ -590,7 +590,7 @@ will update the cost of every lot/serial number in stock."),
 
             You bought 8 units @ 10$ -> You have a stock valuation of 8 units, unit cost 10.
             Then you deliver 10 units of the product.
-            You assumed the missing 2 should go out at a value of 10$ but you are not sure yet as it hasn't been bought in Odoo yet.
+            You assumed the missing 2 should go out at a value of 10$ but you are not sure yet as it hasn't been bought in Eden yet.
             Afterwards, you buy missing 2 units of the same product at 12$ instead of expected 10$.
             In case the product has been undervalued when delivered without stock, the vacuum entry is the following one (this entry already takes place):
 

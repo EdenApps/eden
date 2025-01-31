@@ -1,4 +1,4 @@
-/** @odoo-module alias=@mail/../tests/web/fields/emojis_fields_tests default=false */
+/** @eden-module alias=@mail/../tests/web/fields/emojis_fields_tests default=false */
 const test = QUnit.test; // QUnit.test()
 
 import { addFakeModel } from "@bus/../tests/helpers/model_definitions_helpers";

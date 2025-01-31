@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from odoo.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from eden.addons.hr_holidays.tests.common import TestHrHolidaysCommon
 
 
 class TestDashboard(TestHrHolidaysCommon):

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <record id="update_product_attribute_value_form" model="ir.ui.view">
         <field name="name">update.product.attribute.value.form</field>
@@ -22,4 +22,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

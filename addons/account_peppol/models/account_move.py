@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
-from odoo.addons.account.models.company import PEPPOL_DEFAULT_COUNTRIES
+from eden import api, fields, models, _
+from eden.exceptions import UserError
+from eden.addons.account.models.company import PEPPOL_DEFAULT_COUNTRIES
 
 
 class AccountMove(models.Model):

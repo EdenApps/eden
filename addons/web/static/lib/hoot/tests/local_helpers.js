@@ -1,8 +1,8 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { after, destroy, getFixture } from "@odoo/hoot";
-import { queryAll } from "@odoo/hoot-dom";
-import { App, Component, xml } from "@odoo/owl";
+import { after, destroy, getFixture } from "@eden/hoot";
+import { queryAll } from "@eden/hoot-dom";
+import { App, Component, xml } from "@eden/owl";
 
 //-----------------------------------------------------------------------------
 // Exports

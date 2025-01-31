@@ -1,7 +1,7 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { PortalFileInput } from '../portal_file_input/portal_file_input';
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 export class PortalAttachDocument extends Component {
     static template = "project.PortalAttachDocument";

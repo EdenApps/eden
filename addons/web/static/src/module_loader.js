@@ -1,30 +1,30 @@
-// @odoo-module ignore
+// @eden-module ignore
 
 //-----------------------------------------------------------------------------
-// Odoo Web Boostrap Code
+// Eden Web Boostrap Code
 //-----------------------------------------------------------------------------
 
-(function (odoo) {
+(function (eden) {
     "use strict";
 
-    if (odoo.loader) {
+    if (eden.loader) {
         // Allows for duplicate calls to `module_loader`: only the first one is
         // executed.
         return;
     }
 
     class ModuleLoader {
-        /** @type {OdooModuleLoader["bus"]} */
+        /** @type {EdenModuleLoader["bus"]} */
         bus = new EventTarget();
-        /** @type {OdooModuleLoader["checkErrorProm"]} */
+        /** @type {EdenModuleLoader["checkErrorProm"]} */
         checkErrorProm = null;
-        /** @type {OdooModuleLoader["factories"]} */
+        /** @type {EdenModuleLoader["factories"]} */
         factories = new Map();
-        /** @type {OdooModuleLoader["failed"]} */
+        /** @type {EdenModuleLoader["failed"]} */
         failed = new Set();
-        /** @type {OdooModuleLoader["jobs"]} */
+        /** @type {EdenModuleLoader["jobs"]} */
         jobs = new Set();
-        /** @type {OdooModuleLoader["modules"]} */
+        /** @type {EdenModuleLoader["modules"]} */
         modules = new Map();
 
         /**
@@ -34,13 +34,13 @@
             this.root = root;
         }
 
-        /** @type {OdooModuleLoader["addJob"]} */
+        /** @type {EdenModuleLoader["addJob"]} */
         addJob(name) {
             this.jobs.add(name);
             this.startModules();
         }
 
-        /** @type {OdooModuleLoader["define"]} */
+        /** @type {EdenModuleLoader["define"]} */
         define(name, deps, factory, lazy = false) {
             if (typeof name !== "string") {
                 throw new Error(`Module name should be a string, got: ${String(name)}`);
@@ -59,7 +59,7 @@
             this.factories.set(name, {
                 deps,
                 fn: factory,
-                ignoreMissingDeps: globalThis.__odooIgnoreMissingDependencies,
+                ignoreMissingDeps: globalThis.__edenIgnoreMissingDependencies,
             });
             if (!lazy) {
                 this.addJob(name);
@@ -70,7 +70,7 @@
             }
         }
 
-        /** @type {OdooModuleLoader["findErrors"]} */
+        /** @type {EdenModuleLoader["findErrors"]} */
         findErrors(moduleNames) {
             /**
              * @param {Iterable<string>} currentModuleNames
@@ -137,7 +137,7 @@
             return errors;
         }
 
-        /** @type {OdooModuleLoader["findJob"]} */
+        /** @type {EdenModuleLoader["findJob"]} */
         findJob() {
             for (const job of this.jobs) {
                 if (this.factories.get(job).deps.every((dep) => this.modules.has(dep))) {
@@ -147,7 +147,7 @@
             return null;
         }
 
-        /** @type {OdooModuleLoader["reportErrors"]} */
+        /** @type {EdenModuleLoader["reportErrors"]} */
         async reportErrors(errors) {
             if (!Object.keys(errors).length) {
                 return;
@@ -182,7 +182,7 @@
             }
         }
 
-        /** @type {OdooModuleLoader["startModules"]} */
+        /** @type {EdenModuleLoader["startModules"]} */
         startModules() {
             let job;
             while ((job = this.findJob())) {
@@ -190,13 +190,13 @@
             }
         }
 
-        /** @type {OdooModuleLoader["startModule"]} */
+        /** @type {EdenModuleLoader["startModule"]} */
         startModule(name) {
-            /** @type {(dependency: string) => OdooModule} */
+            /** @type {(dependency: string) => EdenModule} */
             const require = (dependency) => this.modules.get(dependency);
             this.jobs.delete(name);
             const factory = this.factories.get(name);
-            /** @type {OdooModule | null} */
+            /** @type {EdenModule | null} */
             let module = null;
             try {
                 module = factory.fn(require);
@@ -214,12 +214,12 @@
         }
     }
 
-    if (odoo.debug && !new URLSearchParams(location.search).has("debug")) {
+    if (eden.debug && !new URLSearchParams(location.search).has("debug")) {
         // remove debug mode if not explicitely set in url
-        odoo.debug = "";
+        eden.debug = "";
     }
 
     const loader = new ModuleLoader();
-    odoo.define = loader.define.bind(loader);
-    odoo.loader = loader;
-})((globalThis.odoo ||= {}));
+    eden.define = loader.define.bind(loader);
+    eden.loader = loader;
+})((globalThis.eden||= {}));

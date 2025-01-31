@@ -3,9 +3,9 @@ import logging
 import pprint
 import json
 from urllib.parse import parse_qs
-from odoo import http
-from odoo.http import request
-from odoo.tools import consteq
+from eden import http
+from eden.http import request
+from eden.tools import consteq
 
 _logger = logging.getLogger(__name__)
 
@@ -35,7 +35,7 @@ class PosAdyenController(http.Controller):
         terminal_identifier = msg_header['POIID']
         adyen_pm_sudo = request.env['pos.payment.method'].sudo().search([('adyen_terminal_identifier', '=', terminal_identifier)], limit=1)
         if not adyen_pm_sudo:
-            _logger.warning('Received an Adyen event notification for a terminal not registered in Odoo: %s', terminal_identifier)
+            _logger.warning('Received an Adyen event notification for a terminal not registered in Eden: %s', terminal_identifier)
             return
 
         try:

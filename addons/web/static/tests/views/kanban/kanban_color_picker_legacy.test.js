@@ -1,4 +1,4 @@
-import { beforeEach, expect, test } from "@odoo/hoot";
+import { beforeEach, expect, test } from "@eden/hoot";
 import { KanbanArchParser } from "@web/views/kanban/kanban_arch_parser";
 import { parseXML } from "@web/core/utils/xml";
 import {
@@ -13,7 +13,7 @@ import {
     patchWithCleanup,
     toggleKanbanRecordDropdown,
 } from "../../web_test_helpers";
-import { queryAll } from "@odoo/hoot-dom";
+import { queryAll } from "@eden/hoot-dom";
 
 function parseArch(arch) {
     const parser = new KanbanArchParser();

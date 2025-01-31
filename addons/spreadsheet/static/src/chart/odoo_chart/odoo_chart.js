@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { AbstractChart, CommandResult } from "@odoo/o-spreadsheet";
+import { AbstractChart, CommandResult } from "@eden/o-spreadsheet";
 import { ChartDataSource } from "../data_source/chart_data_source";
 
 /**
@@ -15,7 +15,7 @@ import { ChartDataSource } from "../data_source/chart_data_source";
  * @property {string} resModel
  * @property {boolean} stacked
  *
- * @typedef OdooChartDefinition
+ * @typedef EdenChartDefinition
  * @property {string} type
  * @property {MetaData} metaData
  * @property {SearchParams} searchParams
@@ -24,15 +24,15 @@ import { ChartDataSource } from "../data_source/chart_data_source";
  * @property {string} legendPosition
  * @property {boolean} cumulative
  *
- * @typedef OdooChartDefinitionDataSource
+ * @typedef EdenChartDefinitionDataSource
  * @property {MetaData} metaData
  * @property {SearchParams} searchParams
  *
  */
 
-export class OdooChart extends AbstractChart {
+export class EdenChart extends AbstractChart {
     /**
-     * @param {OdooChartDefinition} definition
+     * @param {EdenChartDefinition} definition
      * @param {string} sheetId
      * @param {Object} getters
      */
@@ -41,7 +41,7 @@ export class OdooChart extends AbstractChart {
         this.type = definition.type;
         this.metaData = {
             ...definition.metaData,
-            mode: this.type.replace("odoo_", ""),
+            mode: this.type.replace("eden_", ""),
             cumulated: definition.cumulative,
             // if a chart is cumulated, the first data point should take into
             // account past data, even if a domain on a specific period is applied
@@ -64,11 +64,11 @@ export class OdooChart extends AbstractChart {
     }
 
     static getDefinitionFromContextCreation() {
-        throw new Error("It's not possible to convert an Odoo chart to a native chart");
+        throw new Error("It's not possible to convert an Eden chart to a native chart");
     }
 
     /**
-     * @returns {OdooChartDefinitionDataSource}
+     * @returns {EdenChartDefinitionDataSource}
      */
     getDefinitionForDataSource() {
         return {
@@ -78,7 +78,7 @@ export class OdooChart extends AbstractChart {
     }
 
     /**
-     * @returns {OdooChartDefinition}
+     * @returns {EdenChartDefinition}
      */
     getDefinition() {
         return {
@@ -100,7 +100,7 @@ export class OdooChart extends AbstractChart {
     }
 
     /**
-     * @returns {OdooChart}
+     * @returns {EdenChart}
      */
     updateRanges() {
         // No range on this graph
@@ -108,14 +108,14 @@ export class OdooChart extends AbstractChart {
     }
 
     /**
-     * @returns {OdooChart}
+     * @returns {EdenChart}
      */
     copyForSheetId() {
         return this;
     }
 
     /**
-     * @returns {OdooChart}
+     * @returns {EdenChart}
      */
     copyInSheetId() {
         return this;

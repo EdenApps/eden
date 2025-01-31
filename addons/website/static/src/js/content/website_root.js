@@ -1,14 +1,14 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { loadJS } from "@web/core/assets";
 import { _t } from "@web/core/l10n/translation";
 import { user } from "@web/core/user";
 import { rpc } from "@web/core/network/rpc";
 import publicRootData from '@web/legacy/js/public/public_root';
-import "@website/libs/zoomodoo/zoomodoo";
+import "@website/libs/zoomeden/zoomeden";
 import { pick } from "@web/core/utils/objects";
 
-import { markup } from "@odoo/owl";
+import { markup } from "@eden/owl";
 
 export const WebsiteRoot = publicRootData.PublicRoot.extend({
     events: Object.assign({}, publicRootData.PublicRoot.prototype.events || {}, {
@@ -38,7 +38,7 @@ export const WebsiteRoot = publicRootData.PublicRoot.extend({
      */
     start: function () {
         // Enable magnify on zommable img
-        this.$('.zoomable img[data-zoom]').zoomOdoo();
+        this.$('.zoomable img[data-zoom]').zoomEden();
 
         return this._super.apply(this, arguments);
     },
@@ -108,7 +108,7 @@ export const WebsiteRoot = publicRootData.PublicRoot.extend({
             this._gmapAPILoading = new Promise(async resolve => {
                 const key = await this._getGMapAPIKey(refetch);
 
-                window.odoo_gmap_api_post_load = (async function odoo_gmap_api_post_load() {
+                window.eden_gmap_api_post_load = (async function eden_gmap_api_post_load() {
                     await this._startWidgets($("section.s_google_map"), {editableMode: editableMode});
                     resolve(key);
                 }).bind(this);
@@ -120,7 +120,7 @@ export const WebsiteRoot = publicRootData.PublicRoot.extend({
                         this.notification.add(
                             markup(`<div>
                                 <span>${message}</span><br/>
-                                <a href="/odoo/action-website.action_website_configuration">${urlTitle}</a>
+                                <a href="/eden/action-website.action_website_configuration">${urlTitle}</a>
                             </div>`),
                             { type: 'warning', sticky: true }
                         );
@@ -129,7 +129,7 @@ export const WebsiteRoot = publicRootData.PublicRoot.extend({
                     this._gmapAPILoading = false;
                     return;
                 }
-                await loadJS(`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&callback=odoo_gmap_api_post_load&key=${encodeURIComponent(key)}`);
+                await loadJS(`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&callback=eden_gmap_api_post_load&key=${encodeURIComponent(key)}`);
             });
         }
         return this._gmapAPILoading;
@@ -169,7 +169,7 @@ export const WebsiteRoot = publicRootData.PublicRoot.extend({
     },
     /**
      * @private
-     * @param {OdooEvent} ev
+     * @param {EdenEvent} ev
      */
     async _onGMapAPIRequest(ev) {
         ev.stopPropagation();
@@ -178,7 +178,7 @@ export const WebsiteRoot = publicRootData.PublicRoot.extend({
     },
     /**
      * @private
-     * @param {OdooEvent} ev
+     * @param {EdenEvent} ev
      */
     async _onGMapAPIKeyRequest(ev) {
         ev.stopPropagation();
@@ -190,7 +190,7 @@ export const WebsiteRoot = publicRootData.PublicRoot.extend({
      * Checks information about the page SEO object.
      *
      * @private
-     * @param {OdooEvent} ev
+     * @param {EdenEvent} ev
      */
     _onSeoObjectRequest: function (ev) {
         var res = this._unslugHtmlDataObject('seo-object');

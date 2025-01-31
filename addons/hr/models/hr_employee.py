@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import base64
 import re
@@ -10,10 +10,10 @@ from string import digits
 from dateutil.relativedelta import relativedelta
 from markupsafe import Markup
 
-from odoo import api, fields, models, _
-from odoo.exceptions import ValidationError, AccessError
-from odoo.osv import expression
-from odoo.tools import convert, format_date
+from eden import api, fields, models, _
+from eden.exceptions import ValidationError, AccessError
+from eden.osv import expression
+from eden.tools import convert, format_date
 
 
 class HrEmployeePrivate(models.Model):
@@ -511,7 +511,7 @@ class HrEmployeePrivate(models.Model):
         hr_root_menu = self.env.ref('hr.menu_hr_root')
         for employee in employees:
             # Launch onboarding plans
-            url = '/odoo/%s/action-hr.plan_wizard_action?active_model=hr.employee&menu_id=%s' % (employee.id, hr_root_menu.id)
+            url = '/eden/%s/action-hr.plan_wizard_action?active_model=hr.employee&menu_id=%s' % (employee.id, hr_root_menu.id)
             onboarding_notes_bodies[employee.id] = Markup(_(
                 '<b>Congratulations!</b> May I recommend you to setup an <a href="%s">onboarding plan?</a>',
             )) % url

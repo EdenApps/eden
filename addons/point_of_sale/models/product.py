@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
+# Part of Eden. See LICENSE file for full copyright and licensing details.
+from eden import api, fields, models, _
+from eden.exceptions import UserError
 from collections import defaultdict
 from itertools import groupby
 from operator import itemgetter
 from datetime import date
-from odoo.osv.expression import AND
+from eden.osv.expression import AND
 
 
 class ProductTemplate(models.Model):

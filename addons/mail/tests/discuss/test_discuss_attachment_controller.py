@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-import odoo
-from odoo.addons.mail.tests.test_attachment_controller import TestAttachmentControllerCommon
+import eden
+from eden.addons.mail.tests.test_attachment_controller import TestAttachmentControllerCommon
 
 
-@odoo.tests.tagged("-at_install", "post_install")
+@eden.tests.tagged("-at_install", "post_install")
 class TestDiscussAttachmentController(TestAttachmentControllerCommon):
     def test_attachment_not_allowed_upload_public_channel(self):
         """Test access to upload an attachment on a not allowed upload public channel"""

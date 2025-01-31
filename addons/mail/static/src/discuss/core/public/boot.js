@@ -1,6 +1,6 @@
 import { DiscussClientAction } from "@mail/core/public_web/discuss_client_action";
 
-import { mount, whenReady } from "@odoo/owl";
+import { mount, whenReady } from "@eden/owl";
 
 import { getTemplate } from "@web/core/templates";
 import { MainComponentsContainer } from "@web/core/main_components_container";
@@ -15,12 +15,12 @@ import { makeEnv, startServices } from "@web/env";
 
     const env = makeEnv();
     await startServices(env);
-    env.services["mail.store"].insert(odoo.discuss_data);
-    odoo.isReady = true;
+    env.services["mail.store"].insert(eden.discuss_data);
+    eden.isReady = true;
     const root = await mount(MainComponentsContainer, document.body, {
         env,
         getTemplate,
         dev: env.debug,
     });
-    odoo.__WOWL_DEBUG__ = { root };
+    eden.__WOWL_DEBUG__ = { root };
 })();

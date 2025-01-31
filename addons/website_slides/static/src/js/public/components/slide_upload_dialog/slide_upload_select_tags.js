@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { SelectMenu } from "@web/core/select_menu/select_menu";
 

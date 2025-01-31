@@ -1,8 +1,8 @@
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.models import Model
-from odoo.tests import Form, tagged
-from odoo import fields, Command
-from odoo.exceptions import UserError
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
+from eden.models import Model
+from eden.tests import Form, tagged
+from eden import fields, Command
+from eden.exceptions import UserError
 from unittest.mock import patch
 
 
@@ -27,7 +27,7 @@ class TestAccountMoveInalterableHash(AccountTestInvoicingCommon):
     def _skip_hash_moves(self):
         def _do_not_hash_moves(self, **kwargs):
             pass
-        return patch('odoo.addons.account.models.account_move.AccountMove._hash_moves', new=_do_not_hash_moves)
+        return patch('eden.addons.account.models.account_move.AccountMove._hash_moves', new=_do_not_hash_moves)
 
     def _reverse_move(self, move):
         reversal = move._reverse_moves()
@@ -509,7 +509,7 @@ class TestAccountMoveInalterableHash(AccountTestInvoicingCommon):
                     def _validate_locks(*args, **kwargs):
                         pass
 
-                    with patch('odoo.addons.account.models.company.ResCompany._validate_locks', new=_validate_locks):
+                    with patch('eden.addons.account.models.company.ResCompany._validate_locks', new=_validate_locks):
                         self.company_data['company'][lock_date_field] = False
                 else:
                     self.company_data['company'][lock_date_field] = False
@@ -650,16 +650,16 @@ class TestAccountMoveInalterableHash(AccountTestInvoicingCommon):
         for move in moves:
             self.assertNotEqual(move.inalterable_hash, False)
 
-        with patch('odoo.addons.account.models.company.INTEGRITY_HASH_BATCH_SIZE', 3):
+        with patch('eden.addons.account.models.company.INTEGRITY_HASH_BATCH_SIZE', 3):
             self._verify_integrity(moves, "Entries are correctly hashed", moves[0], moves[-1], moves[0].journal_id.name)
 
-        with patch('odoo.addons.account.models.company.INTEGRITY_HASH_BATCH_SIZE', 5):
+        with patch('eden.addons.account.models.company.INTEGRITY_HASH_BATCH_SIZE', 5):
             self._verify_integrity(moves, "Entries are correctly hashed", moves[0], moves[-1], moves[0].journal_id.name)
 
-        with patch('odoo.addons.account.models.company.INTEGRITY_HASH_BATCH_SIZE', 10):
+        with patch('eden.addons.account.models.company.INTEGRITY_HASH_BATCH_SIZE', 10):
             self._verify_integrity(moves, "Entries are correctly hashed", moves[0], moves[-1], moves[0].journal_id.name)
 
-        with patch('odoo.addons.account.models.company.INTEGRITY_HASH_BATCH_SIZE', 12):
+        with patch('eden.addons.account.models.company.INTEGRITY_HASH_BATCH_SIZE', 12):
             self._verify_integrity(moves, "Entries are correctly hashed", moves[0], moves[-1], moves[0].journal_id.name)
 
     def test_error_on_unreconciled_bank_statement_lines(self):
@@ -743,7 +743,7 @@ class TestAccountMoveInalterableHash(AccountTestInvoicingCommon):
 
     def test_wizard_backwards_compatibility(self):
         """
-        The wizard was introduced in odoo 17.5 when the hash version was 4.
+        The wizard was introduced in eden 17.5 when the hash version was 4.
         We check that:
           * We do not hash unhashed moves before the start of the hash sequence
           * The wizard displays information about the date of the first unhashed move:

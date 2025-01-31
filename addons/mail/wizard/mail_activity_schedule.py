@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from markupsafe import Markup
 
-from odoo import api, fields, models, _
-from odoo.addons.mail.tools.parser import parse_res_ids
-from odoo.exceptions import ValidationError
-from odoo.tools import html2plaintext
-from odoo.tools.misc import clean_context, format_date
-from odoo.osv import expression
+from eden import api, fields, models, _
+from eden.addons.mail.tools.parser import parse_res_ids
+from eden.exceptions import ValidationError
+from eden.tools import html2plaintext
+from eden.tools.misc import clean_context, format_date
+from eden.osv import expression
 
 
 class MailActivitySchedule(models.TransientModel):

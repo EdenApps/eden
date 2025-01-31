@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import threading
 from concurrent.futures import ThreadPoolExecutor
 
 import psycopg2.errors
 
-import odoo
-from odoo.modules.registry import Registry
-from odoo.tests.common import get_db_name, tagged, BaseCase
-from odoo.tools import mute_logger
+import eden
+from eden.modules.registry import Registry
+from eden.tests.common import get_db_name, tagged, BaseCase
+from eden.tools import mute_logger
 
 
 @tagged('-standard', '-at_install', 'post_install', 'database_breaking')
@@ -22,7 +22,7 @@ class TestOnboardingConcurrency(BaseCase):
         cls.addClassCleanup(cls.cleanUpClass)
 
         with cls.registry.cursor() as cr:
-            env = odoo.api.Environment(cr, odoo.SUPERUSER_ID, {})
+            env = eden.api.Environment(cr, eden.SUPERUSER_ID, {})
             cls.onboarding_id = env['onboarding.onboarding'].create([
                 {
                     'name': 'Test Onboarding Concurrent',
@@ -34,19 +34,19 @@ class TestOnboardingConcurrency(BaseCase):
     @classmethod
     def cleanUpClass(cls):
         with cls.registry.cursor() as cr:
-            env = odoo.api.Environment(cr, odoo.SUPERUSER_ID, {})
+            env = eden.api.Environment(cr, eden.SUPERUSER_ID, {})
             env['onboarding.onboarding'].browse(cls.onboarding_id).unlink()
             env['onboarding.progress'].search([
                 ('onboarding_id', '=', cls.onboarding_id)
             ]).unlink()
 
-    @mute_logger('odoo.sql_db')
+    @mute_logger('eden.sql_db')
     def test_concurrent_create_progress(self):
         barrier = threading.Barrier(2)
 
         def run():
             with self.registry.cursor() as cr:
-                env = odoo.api.Environment(cr, odoo.SUPERUSER_ID, {})
+                env = eden.api.Environment(cr, eden.SUPERUSER_ID, {})
                 onboarding = env['onboarding.onboarding'].search([
                     ('id', '=', self.onboarding_id)
                 ])
@@ -69,7 +69,7 @@ class TestOnboardingConcurrency(BaseCase):
             raised_2 = future_2.result(timeout=3)
 
         with self.registry.cursor() as cr:
-            env = odoo.api.Environment(cr, odoo.SUPERUSER_ID, {})
+            env = eden.api.Environment(cr, eden.SUPERUSER_ID, {})
             self.assertEqual(
                 len(env['onboarding.progress'].search([('onboarding_id', '=', self.onboarding_id)])),
                 1,

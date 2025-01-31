@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <template id="unavailable_products_warning">
         <div name="unavailable_products_warning" class="alert alert-warning mt-2">
@@ -47,4 +47,4 @@
         </div>
     </template>
 
-</odoo>
+</eden>

@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { Callbacks, HootError, createReporting, stringify } from "../hoot_utils";
 import { Job } from "./job";

@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.osv import expression
-from odoo.tools import SQL
-from odoo.addons.mail.tools.discuss import Store
+from eden import api, fields, models
+from eden.osv import expression
+from eden.tools import SQL
+from eden.addons.mail.tools.discuss import Store
 
 
 class ResPartner(models.Model):

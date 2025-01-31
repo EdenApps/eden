@@ -1,6 +1,6 @@
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { queryAllTexts } from "@odoo/hoot-dom";
-import { mockDate } from "@odoo/hoot-mock";
+import { beforeEach, describe, expect, test } from "@eden/hoot";
+import { queryAllTexts } from "@eden/hoot-dom";
+import { mockDate } from "@eden/hoot-mock";
 import {
     contains,
     defineModels,

@@ -1,13 +1,13 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, date, timezone, timedelta
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools.float_utils import float_round
+from eden import api, fields, models, _
+from eden.exceptions import UserError, ValidationError
+from eden.tools.float_utils import float_round
 
-from odoo.addons.resource.models.utils import HOURS_PER_DAY
+from eden.addons.resource.models.utils import HOURS_PER_DAY
 
 
 class HrEmployeeBase(models.AbstractModel):

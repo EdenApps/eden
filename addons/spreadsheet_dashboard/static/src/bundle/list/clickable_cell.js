@@ -1,7 +1,7 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { SEE_RECORD_LIST, SEE_RECORD_LIST_VISIBLE } from "@spreadsheet/list/list_actions";
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@eden/o-spreadsheet";
 
 const { clickableCellRegistry } = spreadsheet.registries;
 

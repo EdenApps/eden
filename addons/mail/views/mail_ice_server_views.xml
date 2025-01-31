@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <record id="action_ice_servers" model="ir.actions.act_window">
          <field name="name">ICE servers</field>
          <field name="res_model">mail.ice.server</field>
@@ -39,4 +39,4 @@
             </form>
         </field>
     </record>
-</odoo>
+</eden>

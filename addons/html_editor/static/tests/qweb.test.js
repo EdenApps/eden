@@ -1,6 +1,6 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { click, queryAll, queryAllTexts, queryOne, select } from "@odoo/hoot-dom";
-import { animationFrame, tick } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@eden/hoot";
+import { click, queryAll, queryAllTexts, queryOne, select } from "@eden/hoot-dom";
+import { animationFrame, tick } from "@eden/hoot-mock";
 import { setupEditor } from "./_helpers/editor";
 import { getContent, setSelection } from "./_helpers/selection";
 import { QWebPlugin } from "@html_editor/others/qweb_plugin";

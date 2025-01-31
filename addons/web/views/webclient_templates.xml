@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <!-- Call this template instead of "web.assets_tests" to have the proper conditional check -->
     <template id="conditional_assets_tests" name="Tests Assets Bundle">
@@ -19,10 +19,10 @@
     <head>
         <meta charset="utf-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <title t-esc="title or 'Odoo'"/>
+        <title t-esc="title or 'Eden'"/>
         <link type="image/x-icon" rel="shortcut icon" t-att-href="x_icon or '/web/static/img/favicon.ico'"/>
-        <script id="web.layout.odooscript" type="text/javascript">
-            var odoo = {
+        <script id="web.layout.edenscript" type="text/javascript">
+            var eden = {
                 csrf_token: "<t t-nocache="The csrf token must always be up to date." t-esc="request.csrf_token(None)"/>",
                 debug: "<t t-esc="debug"/>",
             };
@@ -43,9 +43,9 @@
         <link rel="preload" href="/web/static/src/libs/fontawesome/fonts/fontawesome-webfont.woff2?v=4.7.0" as="font" crossorigin=""/>
         <t t-call-assets="web.assets_frontend" t-js="false"/>
       </xpath>
-      <xpath expr="//head/script[@id='web.layout.odooscript']" position="after">
+      <xpath expr="//head/script[@id='web.layout.edenscript']" position="after">
         <script t-nocache="Session information should always be up to date." type="text/javascript">
-            odoo.__session_info__ = <t t-out="json.dumps(request.env['ir.http'].get_frontend_session_info())"/>;
+            eden.__session_info__ = <t t-out="json.dumps(request.env['ir.http'].get_frontend_session_info())"/>;
             if (!/(^|;\s)tz=/.test(document.cookie)) {
                 const userTZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
                 document.cookie = `tz=${userTZ}; path=/`;
@@ -87,18 +87,18 @@
     </template>
 
     <template id="brand_promotion_message" name="Brand Promotion Message">
-        <t t-set="odoo_logo">
+        <t t-set="eden_logo">
             <a target="_blank"
-                t-attf-href="http://www.odoo.com?utm_source=db&amp;utm_medium=#{_utm_medium}"
+                t-attf-href="http://www.edencloud.us?utm_source=db&amp;utm_medium=#{_utm_medium}"
                 class="badge text-bg-light">
-                <img alt="Odoo"
-                    src="/web/static/img/odoo_logo_tiny.png"
+                <img alt="Eden"
+                    src="/web/static/img/eden_logo_tiny.png"
                     width="62" height="20"
                     style="width: auto; height: 1em; vertical-align: baseline;"/>
             </a>
         </t>
         <t t-set="final_message">Powered by %s%s</t>
-        <t t-out="final_message % (odoo_logo, _message and ('- ' + _message) or '')"/>
+        <t t-out="final_message % (eden_logo, _message and ('- ' + _message) or '')"/>
     </template>
     <template id="brand_promotion" name="Brand Promotion">
         <div class="o_brand_promotion">
@@ -127,7 +127,7 @@
                             <t t-if="not disable_database_manager">
                                 <a class="border-end pe-2 me-1" href="/web/database/manager">Manage Databases</a>
                             </t>
-                            <a href="https://www.odoo.com?utm_source=db&amp;utm_medium=auth" target="_blank">Powered by <span>Odoo</span></a>
+                            <a href="https://www.edencloud.us?utm_source=db&amp;utm_medium=auth" target="_blank">Powered by <span>Eden</span></a>
                         </div>
                     </div>
                 </div>
@@ -222,7 +222,7 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
 
                 <script type="text/javascript">
-                    odoo.__session_info__ = <t t-out="json.dumps(session_info)"/>;
+                    eden.__session_info__ = <t t-out="json.dumps(session_info)"/>;
                 </script>
 
                 <t t-call-assets="web.assets_unit_tests_setup" />
@@ -237,7 +237,7 @@
             <t t-set="title">Web Tests</t>
             <t t-set="head">
                 <script type="text/javascript">
-                    odoo.__session_info__ = <t t-out="json.dumps(session_info)"/>;
+                    eden.__session_info__ = <t t-out="json.dumps(session_info)"/>;
                 </script>
 
                 <t t-call="web.test_helpers"/>
@@ -257,7 +257,7 @@
             <t t-set="head">
                 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
                 <script type="text/javascript">
-                    odoo.__session_info__ = <t t-out="json.dumps(session_info)"/>;
+                    eden.__session_info__ = <t t-out="json.dumps(session_info)"/>;
                 </script>
 
                 <t t-call="web.test_helpers"/>
@@ -276,20 +276,20 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
                 <meta name="theme-color" content="#71639e"/>
                 <link rel="manifest" href="/web/manifest.webmanifest" crossorigin="use-credentials"/>
-                <link rel="apple-touch-icon" href="/web/static/img/odoo-icon-ios.png"/>
+                <link rel="apple-touch-icon" href="/web/static/img/eden-icon-ios.png"/>
                 <script type="text/javascript">
                     // Block to avoid leaking variables in the script scope
                     {
-                        odoo.__session_info__ = <t t-out="json.dumps(session_info)"/>;
-                        const { user_context,  cache_hashes } = odoo.__session_info__;
+                        eden.__session_info__ = <t t-out="json.dumps(session_info)"/>;
+                        const { user_context,  cache_hashes } = eden.__session_info__;
                         const lang = new URLSearchParams(document.location.search).get("lang");
                         let menuURL = `/web/webclient/load_menus/${cache_hashes.load_menus}`;
                         if (lang) {
                             user_context.lang = lang;
                             menuURL += `?lang=${lang}`
                         }
-                        odoo.reloadMenus = () => fetch(menuURL).then(res => res.json());
-                        odoo.loadMenusPromise = odoo.reloadMenus();
+                        eden.reloadMenus = () => fetch(menuURL).then(res => res.json());
+                        eden.loadMenusPromise = eden.reloadMenus();
                         // Prefetch translations to speedup webclient. This is done in JS because link rel="prefetch"
                         // is not yet supported on safari.
                         fetch(`/web/webclient/translations/${cache_hashes.translations}?lang=${user_context.lang}`);
@@ -362,9 +362,9 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
             </t>
             <div class="card">
-                <img t-attf-src="data:image/png;base64,{{odoo_icon}}" alt="Odoo logo"/>
+                <img t-attf-src="data:image/png;base64,{{eden_icon}}" alt="Eden logo"/>
                 <h1>You are offline</h1>
-                <p>Check your network connection and come back here. Odoo will load as soon as you're back online.</p>
+                <p>Check your network connection and come back here. Eden will load as soon as you're back online.</p>
                 <button onclick="location.reload()">Check again</button>
             </div>
         </t>
@@ -385,4 +385,4 @@
             <owl-component name="web.install_scoped_app" />
         </t>
     </template>
-</odoo>
+</eden>

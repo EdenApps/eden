@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data noupdate="0">
+<eden><data noupdate="0">
     <record id="mailing_sms_0" model="mailing.mailing">
         <field name="name">Christmas Promo</field>
         <field name="subject">Christmas Promo</field>
@@ -28,4 +28,4 @@
         <field name="body_plaintext">Extra promotion for you!</field>
     </record>
 
-</data></odoo>
+</data></eden>

@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from dateutil.relativedelta import relativedelta
 from operator import itemgetter
 
-from odoo import fields, http, _
-from odoo.http import request
-from odoo.tools import date_utils, groupby as groupbyelem
-from odoo.osv.expression import AND, FALSE_DOMAIN
+from eden import fields, http, _
+from eden.http import request
+from eden.tools import date_utils, groupby as groupbyelem
+from eden.osv.expression import AND, FALSE_DOMAIN
 
-from odoo.addons.portal.controllers.portal import CustomerPortal, pager as portal_pager
-from odoo.addons.project.controllers.portal import ProjectCustomerPortal
+from eden.addons.portal.controllers.portal import CustomerPortal, pager as portal_pager
+from eden.addons.project.controllers.portal import ProjectCustomerPortal
 
 
 class TimesheetCustomerPortal(CustomerPortal):

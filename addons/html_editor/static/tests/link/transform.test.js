@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { manuallyDispatchProgrammaticEvent } from "@odoo/hoot-dom";
+import { expect, test } from "@eden/hoot";
+import { manuallyDispatchProgrammaticEvent } from "@eden/hoot-dom";
 import { patchWithCleanup } from "@web/../tests/web_test_helpers";
 import { setupEditor, testEditor } from "../_helpers/editor";
 import { cleanLinkArtifacts } from "../_helpers/format";

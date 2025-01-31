@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { X2ManyField, x2ManyField } from "@web/views/fields/x2many/x2many_field";
 import {
@@ -10,7 +10,7 @@ import { _t } from "@web/core/l10n/translation";
 import { user } from "@web/core/user";
 import { CommonSkillsListRenderer } from "../../views/skills_list_renderer";
 import { useService } from '@web/core/utils/hooks';
-import { onWillStart } from "@odoo/owl";
+import { onWillStart } from "@eden/owl";
 
 
 export class SkillsListRenderer extends CommonSkillsListRenderer {

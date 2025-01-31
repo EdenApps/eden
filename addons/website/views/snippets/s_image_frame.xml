@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_image_frame" name="Image Frame">
     <section class="s_image_frame o_colored_level o_cc o_cc1 pt64 pb64">
@@ -17,4 +17,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

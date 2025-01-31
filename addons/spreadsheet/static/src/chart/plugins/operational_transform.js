@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @eden-module */
 
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@eden/o-spreadsheet";
 const { inverseCommandRegistry, otRegistry } = spreadsheet.registries;
 
 function identity(cmd) {
@@ -9,7 +9,7 @@ function identity(cmd) {
 
 otRegistry.addTransformation(
     "DELETE_FIGURE",
-    ["LINK_ODOO_MENU_TO_CHART"],
+    ["LINK_EDEN_MENU_TO_CHART"],
     (toTransform, executed) => {
         if (executed.id === toTransform.chartId) {
             return undefined;
@@ -18,4 +18,4 @@ otRegistry.addTransformation(
     }
 );
 
-inverseCommandRegistry.add("LINK_ODOO_MENU_TO_CHART", identity);
+inverseCommandRegistry.add("LINK_EDEN_MENU_TO_CHART", identity);

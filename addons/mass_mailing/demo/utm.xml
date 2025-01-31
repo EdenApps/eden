@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <!-- Create campaign and mailings -->
         <record id="utm_source_0" model="utm.source">
@@ -12,4 +12,4 @@
             <field name="tag_ids" eval="[(6,0,[ref('utm.utm_tag_1')])]"/>
         </record>
     </data>
-</odoo>
+</eden>

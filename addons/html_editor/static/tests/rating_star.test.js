@@ -1,9 +1,9 @@
-import { expect, test } from "@odoo/hoot";
-import { click, press } from "@odoo/hoot-dom";
+import { expect, test } from "@eden/hoot";
+import { click, press } from "@eden/hoot-dom";
 import { setupEditor, testEditor } from "./_helpers/editor";
 import { deleteBackward, insertText } from "./_helpers/user_actions";
 import { getContent } from "./_helpers/selection";
-import { animationFrame } from "@odoo/hoot-mock";
+import { animationFrame } from "@eden/hoot-mock";
 
 /**
  * Rating Star Element Tests

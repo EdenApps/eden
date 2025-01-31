@@ -1,6 +1,6 @@
 import { MessagingMenu } from "@mail/core/public_web/messaging_menu";
 import { onExternalClick } from "@mail/utils/common/hooks";
-import { useEffect, useState } from "@odoo/owl";
+import { useEffect, useState } from "@eden/owl";
 
 import { _t } from "@web/core/l10n/translation";
 import { useService } from "@web/core/utils/hooks";
@@ -78,12 +78,12 @@ patch(MessagingMenu.prototype, {
     get installationRequest() {
         return {
             body: _t("Come here often? Install the app for quick and easy access!"),
-            displayName: _t("Install Odoo"),
+            displayName: _t("Install Eden"),
             onClick: () => {
                 this.pwa.show();
             },
-            iconSrc: this.store.odoobot.avatarUrl,
-            partner: this.store.odoobot,
+            iconSrc: this.store.edenbot.avatarUrl,
+            partner: this.store.edenbot,
             isShown: this.store.discuss.activeTab === "main" && this.canPromptToInstall,
         };
     },
@@ -91,8 +91,8 @@ patch(MessagingMenu.prototype, {
         return {
             body: _t("Stay tuned! Enable push notifications to never miss a message."),
             displayName: _t("Turn on notifications"),
-            iconSrc: this.store.odoobot.avatarUrl,
-            partner: this.store.odoobot,
+            iconSrc: this.store.edenbot.avatarUrl,
+            partner: this.store.edenbot,
             isShown: this.store.discuss.activeTab === "main" && this.shouldAskPushPermission,
         };
     },

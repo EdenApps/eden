@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from odoo.tests import Form, tagged
-from odoo import Command
+from eden.tests import Form, tagged
+from eden import Command
 
-from odoo.addons.analytic.tests.common import AnalyticCommon
+from eden.addons.analytic.tests.common import AnalyticCommon
 
 
 @tagged('post_install', '-at_install')

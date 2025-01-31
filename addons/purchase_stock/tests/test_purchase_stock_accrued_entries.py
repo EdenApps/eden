@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from odoo import fields, Command
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.tests import tagged, Form
-from odoo.exceptions import UserError
+from eden import fields, Command
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
+from eden.tests import tagged, Form
+from eden.exceptions import UserError
 
 
 @tagged('post_install', '-at_install')

@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import options from '@web_editor/js/editor/snippets.options';
 import dynamicSnippetOptions from '@website/snippets/s_dynamic_snippet/options';

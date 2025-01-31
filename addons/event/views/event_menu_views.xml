@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo><data>
+<eden><data>
 
     <!-- MAIN MENU -->
     <menuitem name="Events"
@@ -46,4 +46,4 @@
         sequence="3"
         parent="menu_event_configuration"/>
 
-</data></odoo>
+</data></eden>

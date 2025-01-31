@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import io
 import logging
@@ -6,13 +6,13 @@ import zipfile
 
 from werkzeug.exceptions import NotFound
 
-from odoo import _, http
-from odoo.exceptions import AccessError
-from odoo.http import request, content_disposition
+from eden import _, http
+from eden.exceptions import AccessError
+from eden.http import request, content_disposition
 
-from odoo.tools import consteq
+from eden.tools import consteq
 from ..models.discuss.mail_guest import add_guest_to_context
-from odoo.addons.mail.tools.discuss import Store
+from eden.addons.mail.tools.discuss import Store
 
 logger = logging.getLogger(__name__)
 

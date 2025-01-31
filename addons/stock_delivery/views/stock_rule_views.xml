@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <record id="view_stock_rule_form_delivery" model="ir.ui.view">
         <field name="name">stock.rule.list.delivery</field>
@@ -12,4 +12,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

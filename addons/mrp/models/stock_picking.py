@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from ast import literal_eval
 
-from odoo import _, api, fields, models
-from odoo.osv import expression
+from eden import _, api, fields, models
+from eden.osv import expression
 
 
 class StockPickingType(models.Model):
@@ -31,25 +31,25 @@ class StockPickingType(models.Model):
 
     auto_print_done_production_order = fields.Boolean(
         "Auto Print Done Production Order",
-        help="If this checkbox is ticked, Odoo will automatically print the production order of a MO when it is done.")
+        help="If this checkbox is ticked, Eden will automatically print the production order of a MO when it is done.")
     auto_print_done_mrp_product_labels = fields.Boolean(
         "Auto Print Produced Product Labels",
-        help="If this checkbox is ticked, Odoo will automatically print the product labels of a MO when it is done.")
+        help="If this checkbox is ticked, Eden will automatically print the product labels of a MO when it is done.")
     mrp_product_label_to_print = fields.Selection(
         [('pdf', 'PDF'), ('zpl', 'ZPL')],
         "Product Label to Print", default='pdf')
     auto_print_done_mrp_lot = fields.Boolean(
         "Auto Print Produced Lot Label",
-        help="If this checkbox is ticked, Odoo will automatically print the lot/SN label of a MO when it is done.")
+        help="If this checkbox is ticked, Eden will automatically print the lot/SN label of a MO when it is done.")
     done_mrp_lot_label_to_print = fields.Selection(
         [('pdf', 'PDF'), ('zpl', 'ZPL')],
         "Lot/SN Label to Print", default='pdf')
     auto_print_mrp_reception_report = fields.Boolean(
         "Auto Print Allocation Report",
-        help="If this checkbox is ticked, Odoo will automatically print the allocation report of a MO when it is done and has assigned moves.")
+        help="If this checkbox is ticked, Eden will automatically print the allocation report of a MO when it is done and has assigned moves.")
     auto_print_mrp_reception_report_labels = fields.Boolean(
         "Auto Print Allocation Report Labels",
-        help="If this checkbox is ticked, Odoo will automatically print the allocation report labels of a MO when it is done.")
+        help="If this checkbox is ticked, Eden will automatically print the allocation report labels of a MO when it is done.")
     auto_print_generated_mrp_lot = fields.Boolean(
         "Auto Print Generated Lot/SN Label",
         help='Automatically print the lot/SN label when the "Create a new serial/lot number" button is used.')

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data noupdate="0">
+<eden><data noupdate="0">
 
     <record id="survey_demo_burger_quiz" model="survey.survey">
         <field name="title">Burger Quiz</field>
@@ -552,4 +552,4 @@
             <field name="value">Fish</field>
         </record>
 
-</data></odoo>
+</data></eden>

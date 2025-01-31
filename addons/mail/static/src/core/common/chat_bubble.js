@@ -1,6 +1,6 @@
 import { ImStatus } from "@mail/core/common/im_status";
 
-import { Component, useEffect, useRef, useState } from "@odoo/owl";
+import { Component, useEffect, useRef, useState } from "@eden/owl";
 
 import { useService } from "@web/core/utils/hooks";
 import { useHover, useMovable } from "@mail/utils/common/hooks";

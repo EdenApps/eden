@@ -1,7 +1,7 @@
-// @odoo-module ignore
+// @eden-module ignore
 
-odoo.define(
-    "@odoo/o-spreadsheet",
+eden.define(
+    "@eden/o-spreadsheet",
     ["@web/core/l10n/translation", "@spreadsheet/o_spreadsheet/o_spreadsheet"],
     function (require) {
         "use strict";

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <record id="auth_passkey_key_rename" model="ir.ui.view">
         <field name="name">auth.passkey.key.rename</field>
         <field name="model">auth.passkey.key</field>
@@ -42,4 +42,4 @@
             </form>
         </field>
     </record>
-</odoo>
+</eden>

@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.http import request
+from eden.http import request
 
-from odoo import _
-from odoo.addons.base.models.ir_qweb_fields import nl2br, nl2br_enclose
-from odoo.addons.website.controllers import form
-from odoo.tools import html2plaintext
+from eden import _
+from eden.addons.base.models.ir_qweb_fields import nl2br, nl2br_enclose
+from eden.addons.website.controllers import form
+from eden.tools import html2plaintext
 
 
 class WebsiteForm(form.WebsiteForm):
@@ -16,7 +16,7 @@ class WebsiteForm(form.WebsiteForm):
             visitor_partner = visitor_sudo.partner_id
             if visitor_partner:
                 values['partner_id'] = visitor_partner.id
-            # When a task is created from the web editor, if the key 'user_ids' is not present, the user_ids is filled with the odoo bot. We set it to False to ensure it is not.
+            # When a task is created from the web editor, if the key 'user_ids' is not present, the user_ids is filled with the eden bot. We set it to False to ensure it is not.
             values.setdefault('user_ids', False)
 
         res = super().insert_record(request, model, values, custom, meta=meta)

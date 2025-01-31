@@ -1,4 +1,4 @@
-import { afterEach, onError } from "@odoo/hoot";
+import { afterEach, onError } from "@eden/hoot";
 
 export function preventResizeObserverError() {
     let resizeObserverErrorCount = 0;

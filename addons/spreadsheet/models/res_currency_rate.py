@@ -1,4 +1,4 @@
-from odoo import api, fields, models
+from eden import api, fields, models
 
 
 class ResCurrencyRate(models.Model):

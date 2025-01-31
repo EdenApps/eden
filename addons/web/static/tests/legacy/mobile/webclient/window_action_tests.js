@@ -1,4 +1,4 @@
-/** @odoo-module alias=@web/../tests/mobile/webclient/window_action_tests default=false */
+/** @eden-module alias=@web/../tests/mobile/webclient/window_action_tests default=false */
 
 import { getFixture } from "@web/../tests/helpers/utils";
 import { setupViewRegistries } from "@web/../tests/views/helpers";

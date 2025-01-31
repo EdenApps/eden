@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 from freezegun import freeze_time
 
-from odoo.addons.stock.tests.common import TestStockCommon
+from eden.addons.stock.tests.common import TestStockCommon
 
-from odoo import fields
+from eden import fields
 
 
 class TestReplenishWizard(TestStockCommon):

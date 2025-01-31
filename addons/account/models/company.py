@@ -4,14 +4,14 @@ from collections import defaultdict
 from datetime import timedelta, datetime, date
 import calendar
 
-from odoo import fields, models, api, _, Command
-from odoo.exceptions import ValidationError, UserError, RedirectWarning
-from odoo.osv import expression
-from odoo.tools import date_utils, format_list, SQL
-from odoo.tools.mail import is_html_empty
-from odoo.tools.misc import format_date
-from odoo.addons.account.models.account_move import MAX_HASH_VERSION
-from odoo.addons.base_vat.models.res_partner import _ref_vat
+from eden import fields, models, api, _, Command
+from eden.exceptions import ValidationError, UserError, RedirectWarning
+from eden.osv import expression
+from eden.tools import date_utils, format_list, SQL
+from eden.tools.mail import is_html_empty
+from eden.tools.misc import format_date
+from eden.addons.account.models.account_move import MAX_HASH_VERSION
+from eden.addons.base_vat.models.res_partner import _ref_vat
 
 
 MONTH_SELECTION = [

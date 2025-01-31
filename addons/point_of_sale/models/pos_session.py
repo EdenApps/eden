@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 from collections import defaultdict
 from datetime import timedelta
 from itertools import groupby, starmap
 from markupsafe import Markup
 
-from odoo import api, fields, models, _, Command
-from odoo.exceptions import AccessDenied, AccessError, UserError, ValidationError
-from odoo.tools import float_is_zero, float_compare, convert, plaintext2html
-from odoo.service.common import exp_version
-from odoo.osv.expression import AND
+from eden import api, fields, models, _, Command
+from eden.exceptions import AccessDenied, AccessError, UserError, ValidationError
+from eden.tools import float_is_zero, float_compare, convert, plaintext2html
+from eden.service.common import exp_version
+from eden.osv.expression import AND
 
 
 class PosSession(models.Model):

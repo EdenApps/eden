@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { cookie } from "@web/core/browser/cookie";
 import { patch } from "@web/core/utils/patch";

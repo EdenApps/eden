@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<eden noupdate="1">
 
     <!-- Multi - Company Rules -->
     <record id="event_sale_report_comp_rule" model="ir.rule">
@@ -8,4 +8,4 @@
         <field name="domain_force">[('company_id', 'in', company_ids + [False])]</field>
     </record>
 
-</odoo>
+</eden>

@@ -1,6 +1,6 @@
 import { cleanTerm } from "@mail/utils/common/format";
 
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
@@ -38,7 +38,7 @@ commandSetupRegistry.add("@", {
 commandProviderRegistry.add("mail.partner", {
     namespace: "@",
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").EdenEnv} env
      */
     async provide(env, options) {
         const store = env.services["mail.store"];
@@ -119,7 +119,7 @@ commandSetupRegistry.add("#", {
 commandProviderRegistry.add("discuss.channel", {
     namespace: "#",
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").EdenEnv} env
      */
     async provide(env, options) {
         const store = env.services["mail.store"];

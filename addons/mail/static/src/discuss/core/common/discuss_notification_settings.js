@@ -1,4 +1,4 @@
-import { Component, useState } from "@odoo/owl";
+import { Component, useState } from "@eden/owl";
 import { useService } from "@web/core/utils/hooks";
 
 export class DiscussNotificationSettings extends Component {

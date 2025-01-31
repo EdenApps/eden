@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import fields, models, api
+from eden import fields, models, api
 
 
 class ResConfigSettings(models.TransientModel):
@@ -10,7 +10,7 @@ class ResConfigSettings(models.TransientModel):
     pos_basic_employee_ids = fields.Many2many(related='pos_config_id.basic_employee_ids', readonly=False,
         help='If left empty, all employees can log in to PoS')
     pos_advanced_employee_ids = fields.Many2many(related='pos_config_id.advanced_employee_ids', readonly=False,
-        help='If left empty, only Odoo users have extended rights in PoS')
+        help='If left empty, only Eden users have extended rights in PoS')
 
     @api.onchange('pos_basic_employee_ids')
     def _onchange_basic_employee_ids(self):

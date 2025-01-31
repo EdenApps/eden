@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
 
     <record id="product_supplierinfo_tree_view_inherit" model="ir.ui.view">
         <field name="name">product.template.product.form.inherit</field>
@@ -24,4 +24,4 @@
             </field>
         </field>
     </record>
-</odoo>
+</eden>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="mass_mailing.preview_content_mobile">
         <html>
             <head>
@@ -8,4 +8,4 @@
             <body></body>
         </html>
     </template>
-</odoo>
+</eden>

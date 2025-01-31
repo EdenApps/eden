@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
         <record model="ir.ui.view" id="view_purchase_order_pivot">
             <field name="name">product.month.pivot</field>
             <field name="model">purchase.report</field>
@@ -103,4 +103,4 @@
     <menuitem id="purchase_report_main" name="Reporting" parent="purchase.menu_purchase_root" sequence="99" groups="purchase.group_purchase_manager"/>
     <menuitem id="purchase_report" name="Purchase" parent="purchase.purchase_report_main" sequence="99" groups="purchase.group_purchase_manager" action="action_purchase_order_report_all"/>
 
-</odoo>
+</eden>

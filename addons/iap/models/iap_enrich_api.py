@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import models, api
-from odoo.addons.iap.tools import iap_tools
+from eden import models, api
+from eden.addons.iap.tools import iap_tools
 
 
 class IapEnrichAPI(models.AbstractModel):
     _name = 'iap.enrich.api'
     _description = 'IAP Lead Enrichment API'
-    _DEFAULT_ENDPOINT = 'https://iap-services.odoo.com'
+    _DEFAULT_ENDPOINT = 'https://iap-services.edencloud.us'
 
     @api.model
     def _contact_iap(self, local_endpoint, params):
@@ -29,7 +29,7 @@ class IapEnrichAPI(models.AbstractModel):
           * InsufficientCreditError: {
             "credit": 4.0,
             "service_name": "reveal",
-            "base_url": "https://iap.odoo.com/iap/1/credit",
+            "base_url": "https://iap.edencloud.us/iap/1/credit",
             "message": "You don't have enough credits on your account to use this service."
             }
         """

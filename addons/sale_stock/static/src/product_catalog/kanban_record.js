@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 import { ProductCatalogKanbanRecord } from "@product/product_catalog/kanban_record";
 import { ProductCatalogSaleOrderLine } from "./sale_order_line/sale_order_line";
 import { patch } from "@web/core/utils/patch";

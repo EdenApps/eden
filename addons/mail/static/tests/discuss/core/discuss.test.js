@@ -10,8 +10,8 @@ import {
     startServer,
     step,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, test } from "@odoo/hoot";
-import { mockDate } from "@odoo/hoot-mock";
+import { describe, test } from "@eden/hoot";
+import { mockDate } from "@eden/hoot-mock";
 import { getService } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");
@@ -46,7 +46,7 @@ test("bus subscription is refreshed when channel is joined", async () => {
     const expectedSubscribes = [];
     for (const { type, id } of getService("mail.store").imStatusTrackedPersonas) {
         const model = type === "partner" ? "res.partner" : "mail.guest";
-        expectedSubscribes.unshift(`"odoo-presence-${model}_${id}"`);
+        expectedSubscribes.unshift(`"eden-presence-${model}_${id}"`);
     }
     await assertSteps([`subscribe - [${expectedSubscribes.join(",")}]`]);
     await openDiscuss();
@@ -80,7 +80,7 @@ test("bus subscription is refreshed when channel is left", async () => {
     const imStatusChannels = [];
     for (const { type, id } of env.services["mail.store"].imStatusTrackedPersonas) {
         const model = type === "partner" ? "res.partner" : "mail.guest";
-        imStatusChannels.unshift(`"odoo-presence-${model}_${id}"`);
+        imStatusChannels.unshift(`"eden-presence-${model}_${id}"`);
     }
     await assertSteps([`subscribe - [${imStatusChannels.join(",")}]`]);
     await openDiscuss();

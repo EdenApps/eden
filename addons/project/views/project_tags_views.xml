@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
         <record model="ir.ui.view" id="project_tags_search_view">
             <field name="name">Tags</field>
             <field name="model">project.tags</field>
@@ -49,4 +49,4 @@
               </p>
             </field>
         </record>
-</odoo>
+</eden>

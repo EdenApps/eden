@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="view_stock_rules_report_sale" model="ir.ui.view">
         <field name="name">Stock Rules Report Sale</field>
         <field name="model">stock.rules.report</field>
@@ -10,4 +10,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</eden>

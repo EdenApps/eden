@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 from datetime import timedelta
 
-import odoo.tests
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
-from odoo.addons.payment.tests.http_common import PaymentHttpCommon
-from odoo.fields import Datetime
-from odoo.tools import mute_logger
+import eden.tests
+from eden.addons.base.tests.common import HttpCaseWithUserDemo
+from eden.addons.payment.tests.http_common import PaymentHttpCommon
+from eden.fields import Datetime
+from eden.tools import mute_logger
 
 from .common import TestWebsiteEventSaleCommon
 
 
-@odoo.tests.common.tagged('post_install', '-at_install')
+@eden.tests.common.tagged('post_install', '-at_install')
 class TestUi(HttpCaseWithUserDemo, TestWebsiteEventSaleCommon):
     def setUp(self):
         super().setUp()
@@ -117,10 +117,10 @@ class TestUi(HttpCaseWithUserDemo, TestWebsiteEventSaleCommon):
     # TO DO - add public test with new address when convert to web.tour format.
 
 
-@odoo.tests.common.tagged('post_install', '-at_install')
+@eden.tests.common.tagged('post_install', '-at_install')
 class TestRoutes(HttpCaseWithUserDemo, TestWebsiteEventSaleCommon, PaymentHttpCommon):
 
-    @mute_logger('odoo.http')
+    @mute_logger('eden.http')
     def test_check_seats_avail_before_purchase(self):
         self.authenticate(None, None)
 
@@ -186,8 +186,8 @@ class TestRoutes(HttpCaseWithUserDemo, TestWebsiteEventSaleCommon, PaymentHttpCo
             'tokenization_requested': False,
             'landing_route': '/shop/payment/validate',
             'is_validation': False,
-            'csrf_token': odoo.http.Request.csrf_token(self),
+            'csrf_token': eden.http.Request.csrf_token(self),
             'access_token': self.so._portal_ensure_token(),
         }
-        with self.assertRaisesRegex(odoo.tests.JsonRpcException, 'odoo.exceptions.ValidationError'):
+        with self.assertRaisesRegex(eden.tests.JsonRpcException, 'eden.exceptions.ValidationError'):
             self.make_jsonrpc_request(url, route_kwargs)

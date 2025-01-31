@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
     <data>
         <record forcecreate="True" id="ir_cron_sync_all_cals" model="ir.cron">
             <field name="name">Outlook: synchronization</field>
@@ -13,4 +13,4 @@ model._sync_all_microsoft_calendar()
             <field name="interval_type">hours</field>
         </record>
     </data>
-</odoo>
+</eden>

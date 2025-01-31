@@ -1,4 +1,4 @@
-import { useComponent } from "@odoo/owl";
+import { useComponent } from "@eden/owl";
 
 import { useCommand } from "@web/core/commands/command_hook";
 import { Domain } from "@web/core/domain";

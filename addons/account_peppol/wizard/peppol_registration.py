@@ -1,15 +1,15 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import contextlib
 try:
     import phonenumbers
 except ImportError:
     phonenumbers = None
 
-from odoo import _, api, fields, models, modules
-from odoo.exceptions import UserError, ValidationError
+from eden import _, api, fields, models, modules
+from eden.exceptions import UserError, ValidationError
 
-from odoo.addons.account_edi_proxy_client.models.account_edi_proxy_user import AccountEdiProxyError
-from odoo.addons.account_peppol.tools.demo_utils import handle_demo
+from eden.addons.account_edi_proxy_client.models.account_edi_proxy_user import AccountEdiProxyError
+from eden.addons.account_peppol.tools.demo_utils import handle_demo
 
 
 class PeppolRegistration(models.TransientModel):

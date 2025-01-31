@@ -22,10 +22,10 @@ export class ResPartner extends ServerModel {
             name: serverState.publicPartnerName,
         },
         {
-            id: serverState.odoobotId,
+            id: serverState.edenbotId,
             active: false,
             im_status: "bot",
-            name: "OdooBot",
+            name: "EdenBot",
         },
     ];
 }

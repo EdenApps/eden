@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { SectionListRenderer } from "./section_list_renderer";
 import { registry } from "@web/core/registry";

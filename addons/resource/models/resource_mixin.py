@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
 from pytz import utc
 
-from odoo import api, fields, models
+from eden import api, fields, models
 from .utils import timezone_datetime
 
 

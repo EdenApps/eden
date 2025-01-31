@@ -4,7 +4,7 @@ import { rpc } from "@web/core/network/rpc";
 import { registry } from "@web/core/registry";
 import { escape, sprintf } from "@web/core/utils/strings";
 
-import { markup } from "@odoo/owl";
+import { markup } from "@eden/owl";
 
 export function displayNotificationAction(env, action) {
     const params = action.params || {};

@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import json
 
-from odoo.addons.survey.controllers.main import Survey
-from odoo.addons.survey.tests import common
-from odoo.addons.website.tools import MockRequest
+from eden.addons.survey.controllers.main import Survey
+from eden.addons.survey.tests import common
+from eden.addons.website.tools import MockRequest
 
 
 class TestSurveyResults(common.TestSurveyResultsCommon):

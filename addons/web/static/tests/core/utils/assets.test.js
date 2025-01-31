@@ -1,5 +1,5 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { manuallyDispatchProgrammaticEvent } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@eden/hoot";
+import { manuallyDispatchProgrammaticEvent } from "@eden/hoot-dom";
 import { patchWithCleanup } from "@web/../tests/web_test_helpers";
 
 import { assets, loadCSS, loadJS } from "@web/core/assets";

@@ -1,4 +1,4 @@
-import { useEffect } from "@odoo/owl";
+import { useEffect } from "@eden/owl";
 import { ControlPanel } from "@web/search/control_panel/control_panel";
 
 export class TodoFormControlPanel extends ControlPanel {

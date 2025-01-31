@@ -1,4 +1,4 @@
-import { beforeEach, expect, test } from "@odoo/hoot";
+import { beforeEach, expect, test } from "@eden/hoot";
 import { cookie } from "@web/core/browser/cookie";
 import { redirect } from "@web/core/utils/urls";
 import {
@@ -12,7 +12,7 @@ import {
     patchWithCleanup,
     serverState,
 } from "@web/../tests/web_test_helpers";
-import { animationFrame } from "@odoo/hoot-dom";
+import { animationFrame } from "@eden/hoot-dom";
 import { browser } from "@web/core/browser/browser";
 
 class Partner extends models.Model {
@@ -61,11 +61,11 @@ test("open record withtout the correct company (load state)", async () => {
         });
     });
 
-    redirect("/odoo/res.partner/1");
+    redirect("/eden/res.partner/1");
     await mountWebClient();
     expect(cookie.get("cids")).toBe("1-2");
     expect.verifySteps(["reload"]);
-    expect(browser.location.href).toBe("http://example.com/odoo/res.partner/1", {
+    expect(browser.location.href).toBe("http://example.com/eden/res.partner/1", {
         message: "url did not change",
     });
 });
@@ -90,7 +90,7 @@ test("open record withtout the correct company (doAction)", async () => {
     await animationFrame();
     expect(cookie.get("cids")).toBe("1-2");
     expect.verifySteps(["reload"]);
-    expect(browser.location.href).toBe("http://example.com/odoo/res.partner/1", {
+    expect(browser.location.href).toBe("http://example.com/eden/res.partner/1", {
         message: "url should contain the information of the doAction",
     });
 });

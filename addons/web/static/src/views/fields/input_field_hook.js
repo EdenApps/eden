@@ -1,7 +1,7 @@
 import { getActiveHotkey } from "@web/core/hotkeys/hotkey_service";
 import { useBus } from "@web/core/utils/hooks";
 
-import { useComponent, useEffect, useRef } from "@odoo/owl";
+import { useComponent, useEffect, useRef } from "@eden/owl";
 
 /**
  * This hook is meant to be used by field components that use an input or

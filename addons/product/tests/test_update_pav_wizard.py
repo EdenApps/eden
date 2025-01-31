@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import Form, tagged
+from eden.tests import Form, tagged
 
-from odoo.addons.product.tests.common import ProductVariantsCommon
+from eden.addons.product.tests.common import ProductVariantsCommon
 
 
 @tagged('post_install', '-at_install')

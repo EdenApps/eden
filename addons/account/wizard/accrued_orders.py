@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 from dateutil.relativedelta import relativedelta
 import json
-from odoo import models, fields, api, _, Command
-from odoo.tools import format_date
-from odoo.exceptions import UserError
-from odoo.tools import date_utils
-from odoo.tools.misc import formatLang
+from eden import models, fields, api, _, Command
+from eden.tools import format_date
+from eden.exceptions import UserError
+from eden.tools import date_utils
+from eden.tools.misc import formatLang
 
 class AccruedExpenseRevenue(models.TransientModel):
     _name = 'account.accrued.orders.wizard'

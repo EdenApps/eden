@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <!-- ====== Actions ====================================================
         ==================================================================== -->
@@ -429,4 +429,4 @@
             <field name="action_id" ref="action_open_website_configurator"/>
         </record>
     </data>
-</odoo>
+</eden>

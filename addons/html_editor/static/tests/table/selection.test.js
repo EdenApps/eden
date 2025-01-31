@@ -1,9 +1,9 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 import { setupEditor, testEditor } from "../_helpers/editor";
 import { unformat } from "../_helpers/format";
 import { bold, resetSize, setColor } from "../_helpers/user_actions";
 import { getContent } from "../_helpers/selection";
-import { queryAll } from "@odoo/hoot-dom";
+import { queryAll } from "@eden/hoot-dom";
 
 describe("custom selection", () => {
     test("should indicate selected cells with blue background", async () => {

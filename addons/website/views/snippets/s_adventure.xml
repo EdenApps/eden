@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_adventure" name="Adventure">
     <section class="s_adventure pt184 pb200 oe_img_bg o_bg_img_center" style="background-image: url('/web/image/website.s_adventure_default_image');">
@@ -17,4 +17,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

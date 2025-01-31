@@ -1489,7 +1489,7 @@
   },
   "pivots": {
     "0005f6f8-d7c6-4629-88c2-0596dce2bdb3": {
-      "type": "ODOO",
+      "type": "EDEN",
       "domain": [["config_id.module_pos_restaurant", "=", true]],
       "context": {},
       "sortedColumn": null,
@@ -1544,7 +1544,7 @@
       }
     },
     "e95e7842-672b-414d-9df8-d63fc9893cba": {
-      "type": "ODOO",
+      "type": "EDEN",
       "domain": [["config_id.module_pos_restaurant", "=", true]],
       "context": {},
       "sortedColumn": null,
@@ -1599,7 +1599,7 @@
       }
     },
     "f9256105-4dad-47e4-bdbd-9dc1cdf54b96": {
-      "type": "ODOO",
+      "type": "EDEN",
       "domain": [
         "&",
         ["config_id.module_pos_restaurant", "=", true],
@@ -1691,7 +1691,7 @@
       }
     },
     "d360c54a-4c26-43af-9fb6-3814df165c9e": {
-      "type": "ODOO",
+      "type": "EDEN",
       "domain": [
         "&",
         ["customer_count", "!=", 0],
@@ -1776,7 +1776,7 @@
       }
     },
     "15d132ec-7f1b-4f5a-99c0-14c696423a56": {
-      "type": "ODOO",
+      "type": "EDEN",
       "domain": [["config_id.module_pos_restaurant", "=", true]],
       "context": { "group_by": [] },
       "sortedColumn": {
@@ -1835,7 +1835,7 @@
       }
     },
     "2ada09e2-9b25-41c4-96b9-f3d7f077e5cf": {
-      "type": "ODOO",
+      "type": "EDEN",
       "domain": [["config_id.module_pos_restaurant", "=", true]],
       "context": {
         "params": {
@@ -1902,7 +1902,7 @@
       }
     },
     "46b474b9-dc26-424c-b423-ac9209ba9899": {
-      "type": "ODOO",
+      "type": "EDEN",
       "domain": [["config_id.module_pos_restaurant", "=", true]],
       "context": { "group_by": [] },
       "sortedColumn": {
@@ -1955,7 +1955,7 @@
       }
     },
     "bc1df90b-fa7e-417a-868c-5f48e0e20349": {
-      "type": "ODOO",
+      "type": "EDEN",
       "domain": [
         "&",
         "&",
@@ -2006,7 +2006,7 @@
   },
   "pivotNextId": 11,
   "customTableStyles": {},
-  "odooVersion": 12,
+  "edenVersion": 12,
   "globalFilters": [
     {
       "id": "4b44fd69-5c22-4402-be22-636d52226a76",
@@ -2045,5 +2045,5 @@
   ],
   "lists": {},
   "listNextId": 1,
-  "chartOdooMenusReferences": {}
+  "chartEdenMenusReferences": {}
 }

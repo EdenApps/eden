@@ -1,5 +1,5 @@
-from odoo.tests import tagged
-from odoo.tests.common import TransactionCase
+from eden.tests import tagged
+from eden.tests.common import TransactionCase
 
 
 @tagged('post_install', '-at_install')

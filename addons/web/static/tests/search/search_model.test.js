@@ -1,7 +1,7 @@
-import { describe, expect, test } from "@odoo/hoot";
-import { Component, xml } from "@odoo/owl";
+import { describe, expect, test } from "@eden/hoot";
+import { Component, xml } from "@eden/owl";
 import { defineModels, fields, models, mountWithSearch } from "@web/../tests/web_test_helpers";
-import { mockDate, mockTimeZone } from "@odoo/hoot-mock";
+import { mockDate, mockTimeZone } from "@eden/hoot-mock";
 
 describe.current.tags("headless");
 

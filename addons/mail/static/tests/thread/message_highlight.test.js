@@ -7,8 +7,8 @@ import {
     startServer,
 } from "@mail/../tests/mail_test_helpers";
 import { Thread } from "@mail/core/common/thread";
-import { describe, test } from "@odoo/hoot";
-import { advanceTime, Deferred, tick } from "@odoo/hoot-dom";
+import { describe, test } from "@eden/hoot";
+import { advanceTime, Deferred, tick } from "@eden/hoot-dom";
 import { patchWithCleanup } from "@web/../tests/web_test_helpers";
 
 defineMailModels();

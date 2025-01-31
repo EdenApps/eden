@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import re
 from collections import defaultdict
 import itertools
 
-from odoo import api, fields, models
-from odoo.http import request
-from odoo.osv import expression
+from eden import api, fields, models
+from eden.http import request
+from eden.osv import expression
 
 
 class UtmMixin(models.AbstractModel):
@@ -54,9 +54,9 @@ class UtmMixin(models.AbstractModel):
         # methods of utm.mixin, but will ignore overridden method on crm.lead
         return [
             # ("URL_PARAMETER", "FIELD_NAME_MIXIN", "NAME_IN_COOKIES")
-            ('utm_campaign', 'campaign_id', 'odoo_utm_campaign'),
-            ('utm_source', 'source_id', 'odoo_utm_source'),
-            ('utm_medium', 'medium_id', 'odoo_utm_medium'),
+            ('utm_campaign', 'campaign_id', 'eden_utm_campaign'),
+            ('utm_source', 'source_id', 'eden_utm_source'),
+            ('utm_medium', 'medium_id', 'eden_utm_medium'),
         ]
 
     def _tracking_models(self):

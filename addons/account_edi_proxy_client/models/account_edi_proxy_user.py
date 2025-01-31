@@ -5,10 +5,10 @@ import uuid
 import psycopg2.errors
 import requests
 
-from odoo import _, fields, models
-from odoo.exceptions import UserError
-from odoo.tools import index_exists
-from .account_edi_proxy_auth import OdooEdiProxyAuth
+from eden import _, fields, models
+from eden.exceptions import UserError
+from eden.tools import index_exists
+from .account_edi_proxy_auth import EdenEdiProxyAuth
 
 _logger = logging.getLogger(__name__)
 
@@ -27,7 +27,7 @@ class AccountEdiProxyClientUser(models.Model):
     """Represents a user of the proxy for an electronic invoicing format.
     An edi_proxy_user has a unique identification on a specific format (for example, the vat for Peppol) which
     allows to identify him when receiving a document addressed to him. It is linked to a specific company on a specific
-    Odoo database.
+    Eden database.
     It also owns a key with which each file should be decrypted with (the proxy encrypt all the files with the public key).
     """
     _name = 'account_edi_proxy_client.user'
@@ -121,7 +121,7 @@ class AccountEdiProxyClientUser(models.Model):
                 json=payload,
                 timeout=TIMEOUT,
                 headers={'content-type': 'application/json'},
-                auth=OdooEdiProxyAuth(user=self)).json()
+                auth=EdenEdiProxyAuth(user=self)).json()
         except (ValueError, requests.exceptions.ConnectionError, requests.exceptions.MissingSchema, requests.exceptions.Timeout, requests.exceptions.HTTPError):
             raise AccountEdiProxyError('connection_error',
                 _('The url that this service requested returned an error. The url it tried to contact was %s', url))
@@ -172,7 +172,7 @@ class AccountEdiProxyClientUser(models.Model):
             if 'error' in response:
                 if response['error'] == 'A user already exists with this identification.':
                     # Note: Peppol IAP errors weren't made properly with error code that are then translated on
-                    # Odoo side. We are for now forced to check the error message.
+                    # Eden side. We are for now forced to check the error message.
                     raise UserError(_('A user already exists with theses credentials on our server. Please check your information.'))
                 raise UserError(response['error'])
 

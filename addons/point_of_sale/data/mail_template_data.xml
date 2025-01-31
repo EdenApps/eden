@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<odoo>
+<eden>
     <data noupdate="1">
         <!-- POS Marketing template -->
         <record id="pos_email_marketing_template" model="mail.template">
@@ -24,4 +24,4 @@ We can't wait to continue serving you.
             <field name="auto_delete" eval="False"/>
         </record>
     </data>
-</odoo>
+</eden>

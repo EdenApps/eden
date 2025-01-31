@@ -2,8 +2,8 @@
 import logging
 import time
 
-from odoo.tests import standalone
-from odoo.addons.account.models.chart_template import AccountChartTemplate
+from eden.tests import standalone
+from eden.addons.account.models.chart_template import AccountChartTemplate
 from unittest.mock import patch
 
 _logger = logging.getLogger(__name__)
@@ -69,7 +69,7 @@ def test_all_l10n(env):
     # Install the CoAs
     start = time.time()
     env.cr.execute('ANALYZE')
-    logger = logging.getLogger('odoo.loading')
+    logger = logging.getLogger('eden.loading')
     logger.runbot('ANALYZE took %s seconds', time.time() - start)  # not sure this one is usefull
     for (template_code, _template), company in zip(not_loaded_codes, companies):
         env.user.company_ids += company

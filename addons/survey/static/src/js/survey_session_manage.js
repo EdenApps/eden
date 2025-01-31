@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import publicWidget from "@web/legacy/js/public/public_widget";
 import SurveyPreloadImageMixin from "@survey/js/survey_preload_image_mixin";

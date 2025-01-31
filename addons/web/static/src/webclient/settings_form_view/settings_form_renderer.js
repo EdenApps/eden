@@ -7,7 +7,7 @@ import { SettingsBlock } from "./settings/settings_block";
 import { SettingsApp } from "./settings/settings_app";
 import { SettingsPage } from "./settings/settings_page";
 
-import { useState } from "@odoo/owl";
+import { useState } from "@eden/owl";
 
 export class SettingsFormRenderer extends FormRenderer {
     static components = {

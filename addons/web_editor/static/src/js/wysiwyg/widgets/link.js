@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @eden-module **/
 
-import * as OdooEditorLib from "@web_editor/js/editor/odoo-editor/src/OdooEditor";
+import * as EdenEditorLib from "@web_editor/js/editor/eden-editor/src/EdenEditor";
 import { _t } from "@web/core/l10n/translation";
 import { isVisible } from "@web/core/utils/ui";
 import weUtils from "@web_editor/js/common/utils";
@@ -11,11 +11,11 @@ import {
     onWillUpdateProps,
     useState,
     useRef,
-} from "@odoo/owl";
+} from "@eden/owl";
 import { useService } from "@web/core/utils/hooks";
-import { deduceURLfromText } from "@web_editor/js/editor/odoo-editor/src/utils/sanitize";
+import { deduceURLfromText } from "@web_editor/js/editor/eden-editor/src/utils/sanitize";
 
-const { getDeepRange, getInSelection, EMAIL_REGEX, PHONE_REGEX } = OdooEditorLib;
+const { getDeepRange, getInSelection, EMAIL_REGEX, PHONE_REGEX } = EdenEditorLib;
 
 /**
  * Allows to customize link content and style.
@@ -537,7 +537,7 @@ export class Link extends Component {
         }
 
         if (this.state.range) {
-            this.$link = this.$link || $(OdooEditorLib.getInSelection(this.editable.ownerDocument, 'a'));
+            this.$link = this.$link || $(EdenEditorLib.getInSelection(this.editable.ownerDocument, 'a'));
             this.linkEl = this.$link[0];
             this.state.iniClassName = this.$link.attr('class') || '';
             this.colorCombinationClass = false;

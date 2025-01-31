@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, _
-from odoo.exceptions import RedirectWarning, UserError
-from odoo.osv import expression
+from eden import api, fields, models, _
+from eden.exceptions import RedirectWarning, UserError
+from eden.osv import expression
 
 
 class AccountAnalyticLine(models.Model):

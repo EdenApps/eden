@@ -1,5 +1,5 @@
 import { WORKER_STATE } from "@bus/workers/websocket_worker";
-import { reactive } from "@odoo/owl";
+import { reactive } from "@eden/owl";
 import { browser } from "@web/core/browser/browser";
 import { registry } from "@web/core/registry";
 
@@ -17,7 +17,7 @@ export class BusMonitoringService {
     }
 
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").EdenEnv} env
      * @param {Partial<import("services").Services>} services
      */
     setup(env, { bus_service }) {

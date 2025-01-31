@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="multi_url" model="website.page">
         <field name="name">Multi URL test</field>
         <field name="url">/multi_url</field>
@@ -89,4 +89,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</eden>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<odoo>
+<eden>
     <template id="enrich_company" inherit_id="iap_mail.enrich_company">
         <xpath expr="//div[hasclass('o_partner_autocomplete_enrich_info')]" position="inside">
             <t t-if="people_data">
@@ -57,4 +57,4 @@
             </t>
         </xpath>
     </template>
-</odoo>
+</eden>

@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import WebsiteSale from '@website_sale_stock/js/website_sale';
 

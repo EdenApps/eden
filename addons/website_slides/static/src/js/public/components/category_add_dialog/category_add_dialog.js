@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { useAutofocus } from "@web/core/utils/hooks";
@@ -13,7 +13,7 @@ export class CategoryAddDialog extends ConfirmationDialog {
     setup() {
         super.setup();
         this.inputRef = useAutofocus();
-        this.csrf_token = odoo.csrf_token;
+        this.csrf_token = eden.csrf_token;
         this.lastInputValue;
     }
 

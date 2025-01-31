@@ -3,7 +3,7 @@ import { SaleDetailsButton } from "@point_of_sale/app/navbar/sale_details_button
 import { ConfirmationDialog, AlertDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { MoneyDetailsPopup } from "@point_of_sale/app/utils/money_details_popup/money_details_popup";
 import { useService } from "@web/core/utils/hooks";
-import { Component, useState } from "@odoo/owl";
+import { Component, useState } from "@eden/owl";
 import { ConnectionLostError } from "@web/core/network/rpc";
 import { _t } from "@web/core/l10n/translation";
 import { usePos } from "@point_of_sale/app/store/pos_hook";
@@ -234,14 +234,14 @@ export class ClosePosPopup extends Component {
                 [this.pos.session.id, bankPaymentMethodDiffPairs],
                 {
                     context: {
-                        login_number: odoo.login_number,
+                        login_number: eden.login_number,
                     },
                 }
             );
             if (!response.successful) {
                 return this.handleClosingError(response);
             }
-            localStorage.removeItem(`pos.session.${odoo.pos_config_id}`);
+            localStorage.removeItem(`pos.session.${eden.pos_config_id}`);
             location.reload();
         } catch (error) {
             if (error instanceof ConnectionLostError) {

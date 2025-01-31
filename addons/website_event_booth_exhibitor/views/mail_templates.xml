@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<odoo><data>
+<eden><data>
 
     <template id="event_booth_booked_template" inherit_id="event_booth.event_booth_booked_template">
         <ul name="contact_details" position="inside">
@@ -10,4 +10,4 @@
         </ul>
     </template>
 
-</data></odoo>
+</data></eden>

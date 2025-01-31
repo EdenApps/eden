@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
         <template id="graphs" name="Link Statistics">
             <t t-call="website.layout">
                 <div class="o_website_links_chart">
@@ -140,4 +140,4 @@
                 </div>
             </t>
         </template>
-</odoo>
+</eden>

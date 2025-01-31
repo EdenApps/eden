@@ -7,7 +7,7 @@ import time
 import werkzeug.urls
 
 
-class OdooEdiProxyAuth(requests.auth.AuthBase):
+class EdenEdiProxyAuth(requests.auth.AuthBase):
     """ For routes that needs to be authenticated and verified for access.
         Allows:
         1) to preserve the integrity of the message between the endpoints.
@@ -41,8 +41,8 @@ class OdooEdiProxyAuth(requests.auth.AuthBase):
         h = hmac.new(base64.b64decode(self.refresh_token), message.encode(), digestmod=hashlib.sha256)
 
         request.headers.update({
-            'odoo-edi-client-id': self.id_client,
-            'odoo-edi-signature': h.hexdigest(),
-            'odoo-edi-timestamp': msg_timestamp,
+            'eden-edi-client-id': self.id_client,
+            'eden-edi-signature': h.hexdigest(),
+            'eden-edi-timestamp': msg_timestamp,
         })
         return request

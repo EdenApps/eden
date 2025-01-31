@@ -8,13 +8,13 @@
             box-shadow: none;
         }
 
-        // Replace the default chevron with our Odoo UI icon to
+        // Replace the default chevron with our Eden UI icon to
         // have more control on its color depending on the
         // preset applied
         &:after {
             margin: 0;
             background: none;
-            font-family: 'odoo_ui_icons';
+            font-family: 'eden_ui_icons';
             text-align: center;
             content: '\e839';
         }

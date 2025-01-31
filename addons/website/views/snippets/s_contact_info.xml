@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_contact_info" name="Contact Info">
     <section class="s_contact_info pt48 pb64 o_cc o_cc1">
@@ -42,4 +42,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

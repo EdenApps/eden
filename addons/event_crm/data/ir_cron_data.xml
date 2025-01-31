@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 <data>
 
     <record id="ir_cron_generate_leads" model="ir.cron">
@@ -13,4 +13,4 @@
     </record>
 
 </data>
-</odoo>
+</eden>

@@ -7,8 +7,8 @@ import {
     onRpc,
     stepAllNetworkCalls,
 } from "../web_test_helpers";
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { queryAllTexts } from "@odoo/hoot-dom";
+import { beforeEach, describe, expect, test } from "@eden/hoot";
+import { queryAllTexts } from "@eden/hoot-dom";
 import { registry } from "@web/core/registry";
 
 /** Foo is dummy model to test `action.report` with domain of its field `value`. **/

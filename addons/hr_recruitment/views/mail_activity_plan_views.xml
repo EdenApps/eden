@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <record id="mail_activity_plan_action_config_hr_applicant" model="ir.actions.act_window">
             <field name="name">Recruitment Plans</field>
@@ -19,4 +19,4 @@
             </field>
         </record>
     </data>
-</odoo>
+</eden>

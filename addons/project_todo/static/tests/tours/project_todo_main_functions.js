@@ -1,11 +1,11 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { markup } from "@odoo/owl";
+import { markup } from "@eden/owl";
 import { registry } from "@web/core/registry";
 import { stepUtils } from "@web_tour/tour_service/tour_utils";
 
 registry.category("web_tour.tours").add('project_todo_main_functions', {
-    url: '/odoo',
+    url: '/eden',
     steps: () => [stepUtils.showAppsMenuItem(), {
     trigger: '.o_app[data-menu-xmlid="project_todo.menu_todo_todos"]',
     run: "click",

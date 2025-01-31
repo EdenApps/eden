@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 import re
@@ -6,12 +6,12 @@ import textwrap
 from binascii import Error as binascii_error
 from collections import defaultdict
 
-from odoo import _, api, fields, models, modules, tools
-from odoo.exceptions import AccessError
-from odoo.osv import expression
-from odoo.tools import clean_context, format_list, groupby, SQL
-from odoo.tools.misc import OrderedSet
-from odoo.addons.mail.tools.discuss import Store
+from eden import _, api, fields, models, modules, tools
+from eden.exceptions import AccessError
+from eden.osv import expression
+from eden.tools import clean_context, format_list, groupby, SQL
+from eden.tools.misc import OrderedSet
+from eden.addons.mail.tools.discuss import Store
 
 _logger = logging.getLogger(__name__)
 _image_dataurl = re.compile(r'(data:image/[a-z]+?);base64,([a-z0-9+/\n]{3,}=*)\n*([\'"])(?: data-filename="([^"]*)")?', re.I)

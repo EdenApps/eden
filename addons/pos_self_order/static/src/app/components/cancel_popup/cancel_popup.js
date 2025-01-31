@@ -1,4 +1,4 @@
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 import { useSelfOrder } from "@pos_self_order/app/self_order_service";
 
 export class CancelPopup extends Component {

@@ -49,7 +49,7 @@
             "web/static/lib/bootstrap/js/dist/carousel.js",
             'web/static/lib/bootstrap/js/dist/scrollspy.js',
             "point_of_sale/static/src/app/store/models/product_custom_attribute.js",
-            'web_editor/static/src/js/editor/odoo-editor/src/base_style.scss',
+            'web_editor/static/src/js/editor/eden-editor/src/base_style.scss',
             'web_editor/static/src/scss/web_editor.common.scss',
             "point_of_sale/static/src/app/generic_components/numpad/*",
             "point_of_sale/static/src/app/generic_components/product_card/*",

@@ -2,7 +2,7 @@ import { _t } from "@web/core/l10n/translation";
 import { useService } from "../utils/hooks";
 import { ConfirmationDialog } from "../confirmation_dialog/confirmation_dialog";
 
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 export class FileUploadProgressBar extends Component {
     static template = "web.FileUploadProgressBar";

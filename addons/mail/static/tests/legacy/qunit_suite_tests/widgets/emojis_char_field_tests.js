@@ -1,4 +1,4 @@
-/** @odoo-module alias=@mail/../tests/qunit_suite_tests/widgets/emojis_char_field_tests default=false */
+/** @eden-module alias=@mail/../tests/qunit_suite_tests/widgets/emojis_char_field_tests default=false */
 const test = QUnit.test; // QUnit.test()
 
 import { click, editInput, nextTick } from "@web/../tests/helpers/utils";

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import re
-from odoo.tests import HttpCase, tagged
-from odoo.release import url, version
+from eden.tests import HttpCase, tagged
+from eden.release import url, version
 
 
 @tagged('-standard', 'external', 'post_install', '-at_install') # nightly is not a real tag
@@ -37,7 +37,7 @@ class TestResConfigDocLinks(HttpCase):
         checked_links = set()
         for link in self._extract_links_from_settings_view(links_regex, self.settings_view):
             if not link.startswith("http"):
-                # Only check links targeting odoo documentation, not external ones.
+                # Only check links targeting eden documentation, not external ones.
                 if link in checked_links:
                     continue
                 self._check_link(

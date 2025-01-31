@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import datetime
 
 from freezegun import freeze_time
 
-from odoo import _, Command, fields
-from odoo.addons.mail.tests.common import MailCase
-from odoo.addons.survey.tests import common
-from odoo.tests.common import users
+from eden import _, Command, fields
+from eden.addons.mail.tests.common import MailCase
+from eden.addons.survey.tests import common
+from eden.tests.common import users
 
 
 class TestSurveyInternals(common.TestSurveyCommon, MailCase):

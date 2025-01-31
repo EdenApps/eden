@@ -1,5 +1,5 @@
-from odoo import api, fields, models
-from odoo.http import request
+from eden import api, fields, models
+from eden.http import request
 
 
 class ResUsers(models.Model):

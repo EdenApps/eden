@@ -1,4 +1,4 @@
-/** @odoo-module alias=@bus/../tests/helpers/view_definitions_setup default=false */
+/** @eden-module alias=@bus/../tests/helpers/view_definitions_setup default=false */
 
 import { registry } from "@web/core/registry";
 

@@ -1,7 +1,7 @@
 import { user } from "@web/core/user";
 import { registry } from "../registry";
 
-import { useEffect, useEnv, useSubEnv } from "@odoo/owl";
+import { useEffect, useEnv, useSubEnv } from "@eden/owl";
 const debugRegistry = registry.category("debug");
 
 const getAccessRights = async () => {

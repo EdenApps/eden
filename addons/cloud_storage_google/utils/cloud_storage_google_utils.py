@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 """
 This module is used to provide a google.cloud.storage._signing.generate_signed_url_v4
 compatible function for generating signed URLs for Google Cloud Storage without

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from odoo import api, fields, models, _
-from odoo import osv
-from odoo.tools.sql import SQL
-from odoo.exceptions import UserError
+from eden import api, fields, models, _
+from eden import osv
+from eden.tools.sql import SQL
+from eden.exceptions import UserError
 
 
 class AccountAccountTag(models.Model):

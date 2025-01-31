@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
 
     <record id="act_res_partner_2_sale_order" model="ir.actions.act_window">
         <field name="name">Quotations and Sales</field>
@@ -91,4 +91,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

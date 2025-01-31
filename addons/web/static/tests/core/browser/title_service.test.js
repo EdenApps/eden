@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
+import { beforeEach, describe, expect, test } from "@eden/hoot";
 import { getService, makeMockEnv } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("headless");
@@ -11,44 +11,44 @@ beforeEach(async () => {
 });
 
 test("simple title", () => {
-    titleService.setParts({ one: "MyOdoo" });
-    expect(titleService.current).toBe("MyOdoo");
+    titleService.setParts({ one: "MyEden" });
+    expect(titleService.current).toBe("MyEden");
 });
 
 test("add title part", () => {
-    titleService.setParts({ one: "MyOdoo", two: null });
-    expect(titleService.current).toBe("MyOdoo");
+    titleService.setParts({ one: "MyEden", two: null });
+    expect(titleService.current).toBe("MyEden");
     titleService.setParts({ three: "Import" });
-    expect(titleService.current).toBe("MyOdoo - Import");
+    expect(titleService.current).toBe("MyEden - Import");
 });
 
 test("modify title part", () => {
-    titleService.setParts({ one: "MyOdoo" });
-    expect(titleService.current).toBe("MyOdoo");
+    titleService.setParts({ one: "MyEden" });
+    expect(titleService.current).toBe("MyEden");
     titleService.setParts({ one: "Zopenerp" });
     expect(titleService.current).toBe("Zopenerp");
 });
 
 test("delete title part", () => {
-    titleService.setParts({ one: "MyOdoo" });
-    expect(titleService.current).toBe("MyOdoo");
+    titleService.setParts({ one: "MyEden" });
+    expect(titleService.current).toBe("MyEden");
     titleService.setParts({ one: null });
-    expect(titleService.current).toBe("Odoo");
+    expect(titleService.current).toBe("Eden");
 });
 
 test("all at once", () => {
-    titleService.setParts({ one: "MyOdoo", two: "Import" });
-    expect(titleService.current).toBe("MyOdoo - Import");
+    titleService.setParts({ one: "MyEden", two: "Import" });
+    expect(titleService.current).toBe("MyEden - Import");
     titleService.setParts({ one: "Zopenerp", two: null, three: "Sauron" });
     expect(titleService.current).toBe("Zopenerp - Sauron");
 });
 
 test("get title parts", () => {
     expect(titleService.current).toBe("");
-    titleService.setParts({ one: "MyOdoo", two: "Import" });
-    expect(titleService.current).toBe("MyOdoo - Import");
+    titleService.setParts({ one: "MyEden", two: "Import" });
+    expect(titleService.current).toBe("MyEden - Import");
     const parts = titleService.getParts();
-    expect(parts).toEqual({ one: "MyOdoo", two: "Import" });
+    expect(parts).toEqual({ one: "MyEden", two: "Import" });
     parts.action = "Export";
-    expect(titleService.current).toBe("MyOdoo - Import"); // parts is a copy!
+    expect(titleService.current).toBe("MyEden - Import"); // parts is a copy!
 });

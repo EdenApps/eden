@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <template id="courses_home_inherit_survey" inherit_id="website_slides.courses_home">
             <xpath expr="//a[hasclass('o_wslides_home_all_slides')]" position="after">
@@ -18,4 +18,4 @@
             </xpath>
         </template>
     </data>
-</odoo>
+</eden>

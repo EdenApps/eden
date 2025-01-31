@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_features" name="Features">
     <div class="s_features o_mail_snippet_general">
@@ -31,4 +31,4 @@
     </div>
 </template>
 
-</odoo>
+</eden>

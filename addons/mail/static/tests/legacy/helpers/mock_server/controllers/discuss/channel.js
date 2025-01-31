@@ -1,4 +1,4 @@
-/** @odoo-module alias=@mail/../tests/helpers/mock_server/controllers/discuss/channel default=false */
+/** @eden-module alias=@mail/../tests/helpers/mock_server/controllers/discuss/channel default=false */
 
 import "@mail/../tests/helpers/mock_server/controllers/webclient"; // ensure super is loaded first
 

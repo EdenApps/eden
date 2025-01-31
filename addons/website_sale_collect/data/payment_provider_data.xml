@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <record id="payment_provider_on_site" model="payment.provider">
         <field name="name">Pay on Site</field>
@@ -25,4 +25,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

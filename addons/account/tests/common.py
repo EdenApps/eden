@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-from odoo import fields, Command
-from odoo.tests import Form, HttpCase, new_test_user
-from odoo.tools.float_utils import float_round
+# Part of Eden. See LICENSE file for full copyright and licensing details.
+from eden import fields, Command
+from eden.tests import Form, HttpCase, new_test_user
+from eden.tools.float_utils import float_round
 
-from odoo.addons.product.tests.common import ProductCommon
+from eden.addons.product.tests.common import ProductCommon
 
 import json
 import base64

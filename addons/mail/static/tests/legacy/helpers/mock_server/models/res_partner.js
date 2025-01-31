@@ -1,4 +1,4 @@
-/** @odoo-module alias=@mail/../tests/helpers/mock_server/models/res_partner default=false */
+/** @eden-module alias=@mail/../tests/helpers/mock_server/models/res_partner default=false */
 
 import { patch } from "@web/core/utils/patch";
 import { MockServer } from "@web/../tests/helpers/mock_server";

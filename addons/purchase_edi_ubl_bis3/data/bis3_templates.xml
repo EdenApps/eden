@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <template id="bis3_AddressType">
         <t
@@ -254,4 +254,4 @@
             </cac:OrderLine>
         </Order>
     </template>
-</odoo>
+</eden>

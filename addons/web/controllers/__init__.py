@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 from . import utils
 from . import action
 from . import binary
@@ -29,5 +29,5 @@ def __getattr__(attr):
         return main
 
     # can't use relative import as that triggers a getattr first
-    import odoo.addons.web.controllers.main as main  # noqa: PLC0415
+    import eden.addons.web.controllers.main as main  # noqa: PLC0415
     return main

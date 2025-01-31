@@ -1,7 +1,7 @@
-import { expect, test } from "@odoo/hoot";
-import { queryRect, queryOne } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
-import { Component, useRef, xml } from "@odoo/owl";
+import { expect, test } from "@eden/hoot";
+import { queryRect, queryOne } from "@eden/hoot-dom";
+import { animationFrame } from "@eden/hoot-mock";
+import { Component, useRef, xml } from "@eden/owl";
 import { contains, mountWithCleanup } from "@web/../tests/web_test_helpers";
 
 import { useAutoresize } from "@web/core/utils/autoresize";

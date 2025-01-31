@@ -1,4 +1,4 @@
-/** @odoo-module alias=@mail/../tests/helpers/time_control default=false */
+/** @eden-module alias=@mail/../tests/helpers/time_control default=false */
 
 import { browser } from "@web/core/browser/browser";
 import { uniqueId } from "@web/core/utils/functions";

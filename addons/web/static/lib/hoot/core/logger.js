@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { formatTime, stringify } from "../hoot_utils";
 import { urlParams } from "./url";

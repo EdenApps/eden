@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { CalendarFilterPanel } from "@web/views/calendar/filter_panel/calendar_filter_panel";
 import { TimeOffCardMobile } from "../../../dashboard/time_off_card";
@@ -6,7 +6,7 @@ import { getFormattedDateSpan } from "@web/views/calendar/utils";
 
 import { useService } from "@web/core/utils/hooks";
 import { serializeDate } from "@web/core/l10n/dates";
-import { useState, onWillStart, onWillUpdateProps } from "@odoo/owl";
+import { useState, onWillStart, onWillUpdateProps } from "@eden/owl";
 
 export class TimeOffCalendarFilterPanel extends CalendarFilterPanel {
     static template = "hr_holidays.CalendarFilterPanel";

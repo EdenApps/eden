@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from ast import literal_eval
 
-from odoo import models, fields, api, SUPERUSER_ID
-from odoo.http import request
-from odoo.osv import expression
+from eden import models, fields, api, SUPERUSER_ID
+from eden.http import request
+from eden.osv import expression
 
 
 class website_form_config(models.Model):

@@ -1,11 +1,11 @@
 import json
 
-from odoo import fields, models, _
-from odoo.tools import SQL
-from odoo.exceptions import AccessDenied
-from odoo.modules.registry import Registry
+from eden import fields, models, _
+from eden.tools import SQL
+from eden.exceptions import AccessDenied
+from eden.modules.registry import Registry
 
-from odoo.addons.base.models.res_users import check_identity
+from eden.addons.base.models.res_users import check_identity
 from .._vendor.webauthn.helpers.exceptions import InvalidAuthenticationResponse
 
 

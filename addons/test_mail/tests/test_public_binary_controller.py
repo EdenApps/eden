@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-import odoo
-from odoo.addons.mail.tests.test_binary_controller import TestBinaryControllerCommon
+import eden
+from eden.addons.mail.tests.test_binary_controller import TestBinaryControllerCommon
 
 
-@odoo.tests.tagged("-at_install", "post_install")
+@eden.tests.tagged("-at_install", "post_install")
 class TestPublicBinaryController(TestBinaryControllerCommon):
     def test_01_guest_avatar_public_record(self):
         """Test access to open a guest avatar who hasn't sent a message on a public record."""

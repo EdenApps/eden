@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models
-from odoo.addons.base.models.ir_module import assert_log_admin_access
-from odoo.tools import str2bool
+from eden import fields, models
+from eden.addons.base.models.ir_module import assert_log_admin_access
+from eden.tools import str2bool
 
 
 class CalendarProviderConfig(models.TransientModel):

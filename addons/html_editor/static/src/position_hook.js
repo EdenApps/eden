@@ -1,7 +1,7 @@
 import { ancestors } from "@html_editor/utils/dom_traversal";
 import { throttleForAnimation } from "@web/core/utils/timing";
 import { couldBeScrollableX, couldBeScrollableY } from "@web/core/utils/scrolling";
-import { useComponent, useEffect } from "@odoo/owl";
+import { useComponent, useEffect } from "@eden/owl";
 
 /**
  * This hook has the same job as the PositionPlugin, but for Components.

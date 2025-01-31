@@ -1,4 +1,4 @@
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 import { isMobileOS } from "@web/core/browser/feature_detection";
 
 /**

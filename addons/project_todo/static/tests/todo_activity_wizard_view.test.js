@@ -1,6 +1,6 @@
-import { expect, test, describe, beforeEach } from "@odoo/hoot";
-import { queryFirst, click } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { expect, test, describe, beforeEach } from "@eden/hoot";
+import { queryFirst, click } from "@eden/hoot-dom";
+import { animationFrame } from "@eden/hoot-mock";
 
 import { mountWithCleanup } from "@web/../tests/web_test_helpers";
 

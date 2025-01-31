@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.tests import tagged
-from odoo.exceptions import ValidationError, UserError
-from odoo import fields, Command
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
+from eden.tests import tagged
+from eden.exceptions import ValidationError, UserError
+from eden import fields, Command
 
 import base64
 

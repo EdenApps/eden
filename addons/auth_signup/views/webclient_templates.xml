@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <template id="login_successful" inherit_id="web.login_successful">
         <xpath expr="//div[hasclass('oe_login_form')]/p" position="before">
@@ -13,4 +13,4 @@
         </xpath>
     </template>
 
-</odoo>
+</eden>

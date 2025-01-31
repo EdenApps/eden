@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="matrix">
           <t t-foreach="order.get_report_matrixes()" t-as="grid">
             <div t-if="False" contenteditable="false" class="bg-light border-1 rounded h-100 d-flex flex-column align-items-center justify-content-center p-4 opacity-75 text-muted text-center">
@@ -52,4 +52,4 @@
               </span>
           </span>
     </template>
-</odoo>
+</eden>

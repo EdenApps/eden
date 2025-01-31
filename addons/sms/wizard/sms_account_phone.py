@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models, _
-from odoo.addons.sms.tools.sms_api import ERROR_MESSAGES, SmsApi
-from odoo.exceptions import ValidationError
+from eden import fields, models, _
+from eden.addons.sms.tools.sms_api import ERROR_MESSAGES, SmsApi
+from eden.exceptions import ValidationError
 
 
 class SMSAccountPhone(models.TransientModel):

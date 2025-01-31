@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @eden-module **/
 
-import { Component, markup, onRendered, onWillStart, useState } from "@odoo/owl";
+import { Component, markup, onRendered, onWillStart, useState } from "@eden/owl";
 import { _t } from "@web/core/l10n/translation";
 import { download } from "@web/core/network/download";
 import { registry } from "@web/core/registry";

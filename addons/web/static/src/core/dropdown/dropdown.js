@@ -7,7 +7,7 @@ import {
     status,
     useEffect,
     xml,
-} from "@odoo/owl";
+} from "@eden/owl";
 import { useDropdownGroup } from "@web/core/dropdown/_behaviours/dropdown_group_hook";
 import { useDropdownNesting } from "@web/core/dropdown/_behaviours/dropdown_nesting";
 import { DropdownPopover } from "@web/core/dropdown/_behaviours/dropdown_popover";

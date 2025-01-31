@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 import random
@@ -7,10 +7,10 @@ import threading
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, fields, models, tools
-from odoo.tools import exception_to_unicode
-from odoo.tools.translate import _
-from odoo.exceptions import MissingError
+from eden import api, fields, models, tools
+from eden.tools import exception_to_unicode
+from eden.tools.translate import _
+from eden.exceptions import MissingError
 
 
 _logger = logging.getLogger(__name__)
@@ -62,7 +62,7 @@ class EventTypeMail(models.Model):
 
 class EventMailScheduler(models.Model):
     """ Event automated mailing. This model replaces all existing fields and
-    configuration allowing to send emails on events since Odoo 9. A cron exists
+    configuration allowing to send emails on events since Eden 9. A cron exists
     that periodically checks for mailing to run. """
     _name = 'event.mail'
     _rec_name = 'event_id'

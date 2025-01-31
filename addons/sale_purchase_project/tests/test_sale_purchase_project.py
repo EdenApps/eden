@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import tagged
-from odoo.addons.sale_purchase.tests.test_sale_purchase import TestSalePurchase
+from eden.tests import tagged
+from eden.addons.sale_purchase.tests.test_sale_purchase import TestSalePurchase
 
 
 @tagged('-at_install', 'post_install')

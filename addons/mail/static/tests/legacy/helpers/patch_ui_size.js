@@ -1,4 +1,4 @@
-/** @odoo-module alias=@mail/../tests/helpers/patch_ui_size default=false */
+/** @eden-module alias=@mail/../tests/helpers/patch_ui_size default=false */
 
 import { browser } from "@web/core/browser/browser";
 import { MEDIAS_BREAKPOINTS, SIZES, utils } from "@web/core/ui/ui_service";

@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import psycopg2
 
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.tools import mute_logger
+from eden.addons.mail.tests.common import MailCommon
+from eden.tools import mute_logger
 
 
 class TestResPartnerIap(MailCommon):
 
-    @mute_logger("odoo.sql_db")
+    @mute_logger("eden.sql_db")
     def test_res_partner_iap_constraint(self):
         partner = self.partner_employee
 

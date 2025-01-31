@@ -6,8 +6,8 @@ import {
     mountView,
     onRpc,
 } from "@web/../tests/web_test_helpers";
-import { test, expect } from "@odoo/hoot";
-import { click, setInputFiles, queryOne, waitFor } from "@odoo/hoot-dom";
+import { test, expect } from "@eden/hoot";
+import { click, setInputFiles, queryOne, waitFor } from "@eden/hoot-dom";
 
 const getIframeSrc = () => queryOne(".o_field_widget iframe.o_pdfview_iframe").dataset.src;
 

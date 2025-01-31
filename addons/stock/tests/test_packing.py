@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-import odoo.tests
-from odoo.tests import Form
-from odoo.tests.common import TransactionCase
-from odoo.exceptions import UserError
-from odoo import Command
+import eden.tests
+from eden.tests import Form
+from eden.tests.common import TransactionCase
+from eden.exceptions import UserError
+from eden import Command
 
 
 class TestPackingCommon(TransactionCase):
@@ -1863,7 +1863,7 @@ class TestPacking(TestPackingCommon):
         ])
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@eden.tests.tagged('post_install', '-at_install')
 class TestPackagePropagation(TestPackingCommon):
 
     def test_reusable_package_propagation(self):

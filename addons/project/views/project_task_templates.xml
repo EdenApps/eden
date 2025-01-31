@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="task_track_depending_tasks">
         <span>Task: <a href="#" data-oe-model="project.task" t-att-data-oe-id="child.id" t-esc="child.name"/></span>
         <br/>
@@ -7,4 +7,4 @@
             <span><t t-esc="child_subtype"/></span><br/>
         </t>
     </template>
-</odoo>
+</eden>

@@ -1,6 +1,6 @@
 import { Plugin } from "@html_editor/plugin";
 import { isZWS } from "@html_editor/utils/dom_info";
-import { reactive } from "@odoo/owl";
+import { reactive } from "@eden/owl";
 import { isTextNode } from "@web/views/view_compiler";
 import { Toolbar } from "./toolbar";
 import { hasTouch } from "@web/core/browser/feature_detection";

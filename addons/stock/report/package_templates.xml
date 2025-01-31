@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
     <data>
         <template id="label_package_template_view">
             <t t-foreach="docs" t-as="package">
@@ -30,4 +30,4 @@
             </t>
         </template>
     </data>
-</odoo>
+</eden>

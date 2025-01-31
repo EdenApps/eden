@@ -1,4 +1,4 @@
-<odoo>
+<eden>
     <data>
         <record id="ir_cron_mail_notify_group_moderators" model="ir.cron">
             <field name="name">Mail List: Notify group moderators</field>
@@ -11,4 +11,4 @@
             <field name="priority">1000</field>
         </record>
     </data>
-</odoo>
+</eden>

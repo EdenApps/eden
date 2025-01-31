@@ -1,6 +1,6 @@
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { click, edit, keyDown, keyUp, press, queryOne } from "@odoo/hoot-dom";
-import { animationFrame, runAllTimers } from "@odoo/hoot-mock";
+import { beforeEach, describe, expect, test } from "@eden/hoot";
+import { click, edit, keyDown, keyUp, press, queryOne } from "@eden/hoot-dom";
+import { animationFrame, runAllTimers } from "@eden/hoot-mock";
 import {
     contains,
     defineWebModels,
@@ -15,7 +15,7 @@ import {
     TOUR_RECORDER_ACTIVE_LOCAL_STORAGE_KEY,
     TourRecorder,
 } from "@web_tour/tour_service/tour_recorder/tour_recorder";
-import { Component, xml } from "@odoo/owl";
+import { Component, xml } from "@eden/owl";
 import { useAutofocus } from "@web/core/utils/hooks";
 import { WebClient } from "@web/webclient/webclient";
 import { tourRecorderState } from "@web_tour/tour_service/tour_recorder/tour_recorder_state";
@@ -42,7 +42,7 @@ const checkTourSteps = (expected) => {
     expect(tourRecorder.state.steps.map((s) => s.trigger)).toEqual(expected);
 };
 
-test("Click on element with unique odoo class", async () => {
+test("Click on element with unique eden class", async () => {
     await mountWithCleanup(
         `
         <div class="o_parent">
@@ -66,7 +66,7 @@ test("Click on element with unique odoo class", async () => {
     checkTourSteps([".o_child_1", ".o_child_2"]);
 });
 
-test("Click on element with no unique odoo class", async () => {
+test("Click on element with no unique eden class", async () => {
     await mountWithCleanup(
         `
         <div class="o_parent">
@@ -86,7 +86,7 @@ test("Click on element with no unique odoo class", async () => {
     checkTourSteps([".o_child_1:nth-child(1)"]);
 });
 
-test("Find the nearest odoo class", async () => {
+test("Find the nearest eden class", async () => {
     await mountWithCleanup(`<a class="click"></a>`, { noMainContainer: true });
 
     expect(".o_tour_recorder").toHaveCount(1);

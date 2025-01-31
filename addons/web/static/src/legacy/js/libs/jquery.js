@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 /**
  * The jquery library extensions and fixes should be done here to avoid patching
@@ -15,11 +15,11 @@ $.extend($.expr[':'], {
 // jQuery functions extensions
 $.fn.extend({
     /**
-     * Makes DOM elements bounce the way Odoo decided it.
+     * Makes DOM elements bounce the way Eden decided it.
      *
      * @param {string} [extraClass]
      */
-    odooBounce: function (extraClass) {
+    edenBounce: function (extraClass) {
         for (const el of this) {
             el.classList.add('o_catch_attention', extraClass);
             setTimeout(() => el.classList.remove('o_catch_attention', extraClass), 400);

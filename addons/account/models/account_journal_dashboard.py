@@ -6,12 +6,12 @@ import base64
 import json
 import random
 
-from odoo import models, api, _, fields, Command, tools
-from odoo.exceptions import UserError
-from odoo.osv import expression
-from odoo.release import version
-from odoo.tools import DEFAULT_SERVER_DATE_FORMAT as DF, SQL
-from odoo.tools.misc import formatLang, format_date as odoo_format_date, get_lang
+from eden import models, api, _, fields, Command, tools
+from eden.exceptions import UserError
+from eden.osv import expression
+from eden.release import version
+from eden.tools import DEFAULT_SERVER_DATE_FORMAT as DF, SQL
+from eden.tools.misc import formatLang, format_date as eden_format_date, get_lang
 
 
 def group_by_journal(vals_list):
@@ -133,7 +133,7 @@ class account_journal(models.Model):
                 'status': activity['status'],
                 'name': activity['summary'] or activity['act_type_name'],
                 'activity_category': activity['activity_category'],
-                'date': odoo_format_date(self.env, activity['date_deadline'])
+                'date': eden_format_date(self.env, activity['date_deadline'])
             }
 
             activities[activity['journal_id']].append(act)

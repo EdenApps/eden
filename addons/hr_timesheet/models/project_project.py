@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 from collections import defaultdict
 
-from odoo import api, fields, models
-from odoo.exceptions import RedirectWarning, ValidationError
-from odoo.tools import SQL
-from odoo.tools.translate import _
+from eden import api, fields, models
+from eden.exceptions import RedirectWarning, ValidationError
+from eden.tools import SQL
+from eden.tools.translate import _
 
 
 class Project(models.Model):

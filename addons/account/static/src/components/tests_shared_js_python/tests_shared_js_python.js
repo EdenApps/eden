@@ -1,10 +1,10 @@
-/** @odoo-module **/
+/** @eden-module **/
 import { rpc } from "@web/core/network/rpc";
 import { registry } from "@web/core/registry";
 
 import { accountTaxHelpers } from "@account/helpers/account_tax";
 
-import { xml, useState, Component } from "@odoo/owl";
+import { xml, useState, Component } from "@eden/owl";
 
 export class TestsSharedJsPython extends Component {
     static template = xml`

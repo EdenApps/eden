@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="task_submitted" name="Task Submitted">
         <t t-call="website.layout">
             <div class="oe_structure oe_empty h-100">
@@ -47,4 +47,4 @@
             <t t-set="additional_title" t-value="task.name"/>
         </xpath>
     </template>
-</odoo>
+</eden>

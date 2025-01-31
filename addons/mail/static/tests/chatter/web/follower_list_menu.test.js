@@ -9,8 +9,8 @@ import {
     startServer,
     step,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, expect, test } from "@odoo/hoot";
-import { tick } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@eden/hoot";
+import { tick } from "@eden/hoot-dom";
 import { mockService, onRpc, serverState } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");

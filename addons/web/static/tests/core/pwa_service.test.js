@@ -1,5 +1,5 @@
-import { describe, expect, getFixture, test } from "@odoo/hoot";
-import { mockFetch } from "@odoo/hoot-mock";
+import { describe, expect, getFixture, test } from "@eden/hoot";
+import { mockFetch } from "@eden/hoot-mock";
 import { getService, makeMockEnv, patchWithCleanup } from "@web/../tests/web_test_helpers";
 
 import { browser } from "@web/core/browser/browser";
@@ -19,14 +19,14 @@ test("PWA service fetches the manifest found in the page", async () => {
     mountManifestLink("/web/manifest.webmanifest");
     mockFetch((route) => {
         expect.step(route);
-        return { name: "Odoo PWA" };
+        return { name: "Eden PWA" };
     });
     const pwaService = await getService("pwa");
     let appManifest = await pwaService.getManifest();
-    expect(appManifest).toEqual({ name: "Odoo PWA" });
+    expect(appManifest).toEqual({ name: "Eden PWA" });
     expect.verifySteps(["/web/manifest.webmanifest"]);
     appManifest = await pwaService.getManifest();
-    expect(appManifest).toEqual({ name: "Odoo PWA" });
+    expect(appManifest).toEqual({ name: "Eden PWA" });
     // manifest is only fetched once to get the app name
     expect.verifySteps([]);
 });
@@ -63,5 +63,5 @@ test("PWA installation process", async () => {
         },
     });
     expect(pwaService.canPromptToInstall).toBe(false);
-    expect.verifySteps(['{"/odoo":"accepted"}', "onDone call with installation accepted"]);
+    expect.verifySteps(['{"/eden":"accepted"}', "onDone call with installation accepted"]);
 });

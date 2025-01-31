@@ -1,14 +1,14 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import itertools
 import random
 from collections import defaultdict
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError, ValidationError
-from odoo.fields import Command
-from odoo.osv import expression
-from odoo.tools import float_round, lazy, str2bool
+from eden import _, api, fields, models
+from eden.exceptions import UserError, ValidationError
+from eden.fields import Command
+from eden.osv import expression
+from eden.tools import float_round, lazy, str2bool
 
 
 def _generate_random_reward_code():

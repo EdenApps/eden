@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import threading
 
-from odoo import _, api, fields, models
+from eden import _, api, fields, models
 
 
 class Company(models.Model):

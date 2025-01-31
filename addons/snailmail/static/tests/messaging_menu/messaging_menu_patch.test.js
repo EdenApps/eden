@@ -7,7 +7,7 @@ import {
     step,
     triggerEvents,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 import { defineSnailmailModels } from "@snailmail/../tests/snailmail_test_helpers";
 import { mockService, serverState } from "@web/../tests/web_test_helpers";
 

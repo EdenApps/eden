@@ -1,5 +1,5 @@
 declare module "registries" {
-    import { Component } from "@odoo/owl";
+    import { Component } from "@eden/owl";
 
     interface DynamicWidgetInfo {
         readonly: boolean;

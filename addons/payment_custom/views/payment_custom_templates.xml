@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <template id="payment_custom.token_form" inherit_id="payment.token_form">
         <xpath expr="//t[@t-set='hide_secured_by']" position="attributes">
@@ -83,4 +83,4 @@
 
     </template>
 
-</odoo>
+</eden>

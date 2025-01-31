@@ -1,6 +1,6 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import HttpCase, tagged, new_test_user
+from eden.tests import HttpCase, tagged, new_test_user
 
 @tagged('-at_install', 'post_install')
 class TestEmployeeUi(HttpCase):
@@ -14,4 +14,4 @@ class TestEmployeeUi(HttpCase):
             'user_id': user.id,
         }])
 
-        self.start_tour("/odoo", 'hr_employee_tour', login="davidelora")
+        self.start_tour("/eden", 'hr_employee_tour', login="davidelora")

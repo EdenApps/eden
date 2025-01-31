@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 <data>
     <template id="survey_page_statistics" name="Survey: result statistics page">
         <t t-set="no_livechat" t-value="True"/>
@@ -532,4 +532,4 @@
     </template>
 
 </data>
-</odoo>
+</eden>

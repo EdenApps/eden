@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from odoo import api, fields, models, Command, tools, _
-from odoo.exceptions import UserError, ValidationError
+from eden import api, fields, models, Command, tools, _
+from eden.exceptions import UserError, ValidationError
 import re
 from math import copysign
 from collections import defaultdict

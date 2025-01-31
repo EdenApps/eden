@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import http
-from odoo.http import request
-from odoo.addons.web.controllers.home import Home
-from odoo.addons.web.controllers.session import Session
-from odoo.addons.web.controllers.webclient import WebClient
+from eden import http
+from eden.http import request
+from eden.addons.web.controllers.home import Home
+from eden.addons.web.controllers.session import Session
+from eden.addons.web.controllers.webclient import WebClient
 
 
 class Routing(Home):
@@ -21,5 +21,5 @@ class Routing(Home):
 class SessionWebsite(Session):
 
     @http.route('/web/session/logout', website=True, multilang=False, sitemap=False)
-    def logout(self, redirect='/odoo'):
+    def logout(self, redirect='/eden'):
         return super().logout(redirect=redirect)

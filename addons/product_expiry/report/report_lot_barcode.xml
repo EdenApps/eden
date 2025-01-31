@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 <template id="report_lot_label_expiry" inherit_id="stock.report_lot_label">
     <xpath expr="//div[@name='lot_name']" position="after">
         <t t-if="o.use_expiration_date">
@@ -69,4 +69,4 @@
         </t>
     </xpath>
 </template>
-</odoo>
+</eden>

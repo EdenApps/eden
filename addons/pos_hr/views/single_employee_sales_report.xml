@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="pos_hr.single_employee_sales_report" inherit_id="point_of_sale.pos_session_sales_details" primary="True">
         <xpath expr="//h2[@id='daily_report_title']" position="after">
             <t t-if="employee_name">
@@ -13,4 +13,4 @@
 
         <xpath expr="//t[@id='closing_session']" position="replace"/>
     </template>
-</odoo>
+</eden>

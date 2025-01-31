@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { animationFrame } from "@odoo/hoot-mock";
-import { click } from "@odoo/hoot-dom";
+import { expect, test } from "@eden/hoot";
+import { animationFrame } from "@eden/hoot-mock";
+import { click } from "@eden/hoot-dom";
 import {
     defineModels,
     fields,
@@ -60,7 +60,7 @@ test("widget upgrade_boolean in a form view - label", async () => {
 });
 
 test("widget upgrade_boolean in a form view - dialog (enterprise version)", async () => {
-    patchWithCleanup(odoo, { info: { isEnterprise: 1 } });
+    patchWithCleanup(eden, { info: { isEnterprise: 1 } });
     await mountView({
         type: "form",
         arch: /* xml */ `
@@ -81,7 +81,7 @@ test("widget upgrade_boolean in a form view - dialog (enterprise version)", asyn
 });
 
 test("widget upgrade_boolean in a form view - label (enterprise version)", async () => {
-    patchWithCleanup(odoo, { info: { isEnterprise: 1 } });
+    patchWithCleanup(eden, { info: { isEnterprise: 1 } });
     await mountView({
         type: "form",
         arch: /* xml */ `

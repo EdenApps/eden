@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <!-- Calendar -->
         <record id="resource_calendar_std_38h" model="resource.calendar" forcecreate="1">
@@ -38,4 +38,4 @@
             <field name="pin">789</field>
         </record>
     </data>
-</odoo>
+</eden>

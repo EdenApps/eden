@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<odoo><data>
+<eden><data>
 
     <!-- This template is rendered on the event.event model without referring to it. -->
     <!-- Instead it shows details about event.booth model. -->
@@ -32,4 +32,4 @@
         </ul>
     </template>
 
-</data></odoo>
+</data></eden>

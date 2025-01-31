@@ -1,12 +1,12 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import tagged
+from eden.tests import tagged
 
-from odoo.addons.payment.tests.common import PaymentCommon
-from odoo.addons.sale.tests.common import SaleCommon
-from odoo.addons.website.tools import MockRequest
-from odoo.addons.website_sale.controllers.delivery import Delivery
-from odoo.exceptions import ValidationError
+from eden.addons.payment.tests.common import PaymentCommon
+from eden.addons.sale.tests.common import SaleCommon
+from eden.addons.website.tools import MockRequest
+from eden.addons.website_sale.controllers.delivery import Delivery
+from eden.exceptions import ValidationError
 
 
 @tagged('post_install', '-at_install')

@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { Component, useState, xml } from "@odoo/owl";
+import { Component, useState, xml } from "@eden/owl";
 import { FILTER_KEYS } from "../core/config";
 import { createUrlFromId } from "../core/url";
 

@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
-from odoo.http import request
-from odoo.tools.translate import html_translate
+from eden import api, fields, models
+from eden.http import request
+from eden.tools.translate import html_translate
 
-from odoo.addons.website.models import ir_http
+from eden.addons.website.models import ir_http
 
 
 class ProductTemplate(models.Model):

@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 
-from odoo import fields, http
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo, HttpCaseWithUserPortal
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.website_event.tests.common import TestEventOnlineCommon, OnlineEventCase
-from odoo.exceptions import AccessError
-from odoo.tests import HttpCase, tagged
-from odoo.tools import mute_logger
-from odoo.tests.common import users
+from eden import fields, http
+from eden.addons.base.tests.common import HttpCaseWithUserDemo, HttpCaseWithUserPortal
+from eden.addons.mail.tests.common import mail_new_test_user
+from eden.addons.website_event.tests.common import TestEventOnlineCommon, OnlineEventCase
+from eden.exceptions import AccessError
+from eden.tests import HttpCase, tagged
+from eden.tools import mute_logger
+from eden.tests.common import users
 
 class TestEventRegisterUTM(HttpCase, TestEventOnlineCommon):
     def test_event_registration_utm_values(self):
@@ -29,9 +29,9 @@ class TestEventRegisterUTM(HttpCase, TestEventOnlineCommon):
 
         self.authenticate(None, None)
         self.opener.cookies.update({
-            'odoo_utm_campaign': event_campaign.name,
-            'odoo_utm_source': self.env.ref('utm.utm_source_newsletter').name,
-            'odoo_utm_medium': self.env.ref('utm.utm_medium_email').name
+            'eden_utm_campaign': event_campaign.name,
+            'eden_utm_source': self.env.ref('utm.utm_source_newsletter').name,
+            'eden_utm_medium': self.env.ref('utm.utm_medium_email').name
         })
         event_questions = self.event_0.question_ids
         name_question = event_questions.filtered(lambda q: q.question_type == 'name')
@@ -238,7 +238,7 @@ class TestWebsiteAccess(HttpCaseWithUserDemo, OnlineEventCase):
         self.assertTrue(published_events[0].name in resp.text, 'Event user must see the unpublished events.')
         self.assertTrue(unpublished_events[0].name in resp.text, 'Event user must see the published events.')
 
-    @mute_logger('odoo.http')
+    @mute_logger('eden.http')
     def test_website_access_portal(self):
         """ Portal users access only published events """
         self.authenticate('user_portal', 'user_portal')
@@ -254,7 +254,7 @@ class TestWebsiteAccess(HttpCaseWithUserDemo, OnlineEventCase):
         self.assertTrue(published_events[0].name in resp.text, 'Portal must see the published events.')
         self.assertFalse(unpublished_events[0].name in resp.text, 'Portal should not see the unpublished events.')
 
-    @mute_logger('odoo.http')
+    @mute_logger('eden.http')
     def test_website_access_public(self):
         """ Public users access only published events """
         published_events = self.events.filtered(lambda event: event.website_published)

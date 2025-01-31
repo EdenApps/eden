@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <record id="mail_template_base_install_request" model="mail.template">
             <field name="name">Mail: Install Request</field>
@@ -18,7 +18,7 @@
             <t t-out="object.body_html"/>
         </blockquote>
         <br/><br/>
-        <a style="background-color:#875A7B; padding:8px 16px 8px 16px; text-decoration:none; color:#fff; border-radius:5px" t-attf-href="/odoo/{{ object.module_id.id }}/action-base_install_request.action_base_module_install_review?menu_id={{ ctx['menu_id'] }}">Review Request</a>
+        <a style="background-color:#875A7B; padding:8px 16px 8px 16px; text-decoration:none; color:#fff; border-radius:5px" t-attf-href="/eden/{{ object.module_id.id }}/action-base_install_request.action_base_module_install_review?menu_id={{ ctx['menu_id'] }}">Review Request</a>
         <br/><br/>
         Thanks,
         <t t-if="not is_html_empty(object.user_id.signature)">
@@ -33,4 +33,4 @@
             <field name="auto_delete" eval="True"/>
         </record>
     </data>
-</odoo>
+</eden>

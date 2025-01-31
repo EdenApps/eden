@@ -1,5 +1,5 @@
-from odoo.tests.common import TransactionCase
-from odoo.tests import tagged
+from eden.tests.common import TransactionCase
+from eden.tests import tagged
 
 
 @tagged('hr_applicant')

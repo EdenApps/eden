@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="multi_employee_sales_report_action" model="ir.actions.report">
         <field name="name">Employee Sales Details</field>
         <field name="model">pos.session</field>
@@ -44,4 +44,4 @@
             </t>
         </t>
     </template>
-</odoo>
+</eden>

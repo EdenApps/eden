@@ -1,8 +1,8 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
-import { onMounted, onPatched, useRef } from "@odoo/owl";
+import { onMounted, onPatched, useRef } from "@eden/owl";
 
 import { formatDate } from "@web/core/l10n/dates";
 

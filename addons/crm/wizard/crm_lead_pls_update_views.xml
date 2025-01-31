@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="crm_lead_pls_update_view_form" model="ir.ui.view">
         <field name="name">crm.lead.pls.update.view.form</field>
         <field name="model">crm.lead.pls.update</field>
@@ -31,4 +31,4 @@
         <field name="view_id" ref="crm_lead_pls_update_view_form"/>
     </record>
 
-</odoo>
+</eden>

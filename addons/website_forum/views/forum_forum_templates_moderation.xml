@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
 
 <template id="moderation_display_post_question_block">
@@ -226,4 +226,4 @@
     </t>
 </template>
     </data>
-</odoo>
+</eden>

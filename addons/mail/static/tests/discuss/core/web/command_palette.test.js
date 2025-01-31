@@ -7,9 +7,9 @@ import {
     startServer,
     triggerHotkey,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, test } from "@odoo/hoot";
+import { describe, test } from "@eden/hoot";
 import { registry } from "@web/core/registry";
-import { advanceTime } from "@odoo/hoot-mock";
+import { advanceTime } from "@eden/hoot-mock";
 import { Command, serverState } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");
@@ -127,6 +127,6 @@ test("only partners with dedicated users will be displayed in command palette", 
     await insertText(".o_command_palette_search input", "@");
     advanceTime(commandSetupRegistry.get("@").debounceDelay);
     await contains(".o_command_name", { text: "Mitchell Admin" });
-    await contains(".o_command_name", { text: "OdooBot" });
+    await contains(".o_command_name", { text: "EdenBot" });
     await contains(".o_command_name", { text: "test user", count: 0 });
 });

@@ -1,4 +1,4 @@
-import { describe, test } from "@odoo/hoot";
+import { describe, test } from "@eden/hoot";
 import { loadDefaultEmbedConfig } from "@im_livechat/../tests/livechat_test_helpers";
 import { contains, start, startServer } from "@mail/../tests/mail_test_helpers";
 import { Command, patchWithCleanup, serverState } from "@web/../tests/web_test_helpers";

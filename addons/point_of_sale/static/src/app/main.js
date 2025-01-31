@@ -1,6 +1,6 @@
 import { Loader } from "@point_of_sale/app/loader/loader";
 import { getTemplate } from "@web/core/templates";
-import { mount, reactive, whenReady } from "@odoo/owl";
+import { mount, reactive, whenReady } from "@eden/owl";
 import { _t } from "@web/core/l10n/translation";
 import { hasTouch } from "@web/core/browser/feature_detection";
 import { localization } from "@web/core/l10n/localization";
@@ -17,7 +17,7 @@ whenReady(() => {
 });
 // The following is mostly a copy of startWebclient but without any of the legacy stuff
 (async function startPosApp() {
-    odoo.info = {
+    eden.info = {
         db: session.db,
         server_version: session.server_version,
         server_version_info: session.server_version_info,
@@ -25,7 +25,7 @@ whenReady(() => {
     };
     await whenReady();
     const app = await mountComponent(Chrome, document.body, {
-        name: "Odoo Point of Sale",
+        name: "Eden Point of Sale",
         props: { disableLoader: () => (loader.isShown = false) },
     });
     window.addEventListener("beforeunload", function (event) {

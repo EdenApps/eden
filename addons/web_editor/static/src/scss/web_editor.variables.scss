@@ -3,7 +3,7 @@
 ///
 
 //------------------------------------------------------------------------------
-// Odoo Editor UI
+// Eden Editor UI
 //------------------------------------------------------------------------------
 
 $o-we-bg-darkest: #000000 !default;
@@ -43,7 +43,7 @@ $o-we-handle-inside-line-width: 3px !default;
 
 $o-we-dropzone-size: 30px !default; // $grid-gutter-width (todo: allow to use the variable)
 $o-we-dropzone-border-width: 2px !default;
-$o-we-dropzone-border: $o-we-dropzone-border-width dashed $o-brand-odoo !default;
+$o-we-dropzone-border: $o-we-dropzone-border-width dashed $o-brand-eden!default;
 $o-we-dropzone-accent-color: $o-we-accent !default;
 $o-we-dropzone-bg-color: rgba($o-we-dropzone-accent-color, .5) !default;
 
@@ -321,7 +321,7 @@ $o-theme-color-palette-name: 'base-1' !default;
 
 // Note: BS values are forced by default in every palette as the values can
 // be used in bootstrap_overridden.scss files through the o-color function.
-// Also, all of the gray colors generates bg- classes in Odoo so black and white
+// Also, all of the gray colors generates bg- classes in Eden so black and white
 // are added for the same reason.
 
 $o-base-gray-color-palette: (
@@ -360,10 +360,10 @@ $o-base-color-combination: (
     'h4': null,
     'h5': null,
     'h6': null,
-    'link': null, // Default to BS 'primary' (= first odoo color)
-    'btn-primary': null, // Default to BS 'primary' (= first odoo color)
+    'link': null, // Default to BS 'primary' (= first eden color)
+    'btn-primary': null, // Default to BS 'primary' (= first eden color)
     'btn-primary-border': null, // Default to 'btn-primary'
-    'btn-secondary': null, // Default to BS 'secondary' (= second odoo color)
+    'btn-secondary': null, // Default to BS 'secondary' (= second eden color)
     'btn-secondary-border': null, // Default to 'btn-secondary'
 );
 $o-color-combinations-presets: (
@@ -447,7 +447,7 @@ $o-color-extras-nesting-selector: '&, .o_colored_level &';
 }
 
 // Given a primary color (and eventually a secondary one), the function returns
-// a basic odoo palette in sass-map format. The palette will be generated using
+// a basic eden palette in sass-map format. The palette will be generated using
 // the safest readability values possible.
 @function o-make-palette($-primary, $-secondary: null, $-overrides-map: null) {
     $-o-color-2: $-secondary or increase-contrast(desaturate(mix(complement($-primary), #FFFFFF, 80%), 20%), $-primary);

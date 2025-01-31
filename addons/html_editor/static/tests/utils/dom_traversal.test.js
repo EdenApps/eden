@@ -10,7 +10,7 @@ import {
     lastLeaf,
     getCommonAncestor,
 } from "@html_editor/utils/dom_traversal";
-import { describe, expect, getFixture, test } from "@odoo/hoot";
+import { describe, expect, getFixture, test } from "@eden/hoot";
 import { insertTestHtml } from "../_helpers/editor";
 import { unformat } from "../_helpers/format";
 
@@ -29,18 +29,18 @@ describe("closestElement", () => {
         expect(result).toBe(p);
     });
 
-    test("should not find a node which is not contained inside a .odoo-editor-editable", () => {
+    test("should not find a node which is not contained inside a .eden-editor-editable", () => {
         const [div] = insertTestHtml(`<div><p>abc</p></div>`);
         const p = div.querySelector("p");
         let result = closestElement(p, "div");
         expect(result).toBe(div);
         const fixture = getFixture();
-        fixture.classList.remove("odoo-editor-editable");
+        fixture.classList.remove("eden-editor-editable");
         result = closestElement(p, "div");
         expect(result).toBe(null);
     });
 
-    test("should find a disconnected node even if not contained inside a .odoo-editor-editable element", () => {
+    test("should find a disconnected node even if not contained inside a .eden-editor-editable element", () => {
         const [div] = insertTestHtml(`<div><p>abc</p></div>`);
         const p = div.querySelector("p");
         div.remove();

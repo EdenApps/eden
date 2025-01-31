@@ -1,7 +1,7 @@
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
+import { beforeEach, describe, expect, test } from "@eden/hoot";
 import { patchTranslations, patchWithCleanup } from "@web/../tests/web_test_helpers";
 
-import { markup } from "@odoo/owl";
+import { markup } from "@eden/owl";
 import { currencies } from "@web/core/currency";
 import { localization } from "@web/core/l10n/localization";
 import {

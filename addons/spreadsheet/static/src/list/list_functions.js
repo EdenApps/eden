@@ -1,7 +1,7 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { _t } from "@web/core/l10n/translation";
-import { helpers, registries, EvaluationError } from "@odoo/o-spreadsheet";
+import { helpers, registries, EvaluationError } from "@eden/o-spreadsheet";
 import { sprintf } from "@web/core/utils/strings";
 
 const { arg, toString, toNumber } = helpers;
@@ -17,14 +17,14 @@ function assertListsExists(listId, getters) {
     }
 }
 
-const ODOO_LIST = {
+const EDEN_LIST = {
     description: _t("Get the value from a list."),
     args: [
         arg("list_id (string)", _t("ID of the list.")),
         arg("index (string)", _t("Position of the record in the list.")),
         arg("field_name (string)", _t("Name of the field.")),
     ],
-    category: "Odoo",
+    category: "Eden",
     compute: function (listId, index, fieldName) {
         const id = toString(listId);
         const position = toNumber(index, this.locale) - 1;
@@ -35,13 +35,13 @@ const ODOO_LIST = {
     returns: ["NUMBER", "STRING"],
 };
 
-const ODOO_LIST_HEADER = {
+const EDEN_LIST_HEADER = {
     description: _t("Get the header of a list."),
     args: [
         arg("list_id (string)", _t("ID of the list.")),
         arg("field_name (string)", _t("Name of the field.")),
     ],
-    category: "Odoo",
+    category: "Eden",
     compute: function (listId, fieldName) {
         const id = toString(listId);
         const field = toString(fieldName);
@@ -51,5 +51,5 @@ const ODOO_LIST_HEADER = {
     returns: ["NUMBER", "STRING"],
 };
 
-functionRegistry.add("ODOO.LIST", ODOO_LIST);
-functionRegistry.add("ODOO.LIST.HEADER", ODOO_LIST_HEADER);
+functionRegistry.add("EDEN.LIST", EDEN_LIST);
+functionRegistry.add("EDEN.LIST.HEADER", EDEN_LIST_HEADER);

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import itertools
 
@@ -12,15 +12,15 @@ from dateutil.relativedelta import relativedelta
 from dateutil.rrule import rrule, DAILY
 from pytz import timezone, utc
 
-from odoo import api, fields, models, _
-from odoo.addons.base.models.res_partner import _tz_get
-from odoo.exceptions import ValidationError
-from odoo.osv import expression
-from odoo.tools.float_utils import float_round
+from eden import api, fields, models, _
+from eden.addons.base.models.res_partner import _tz_get
+from eden.exceptions import ValidationError
+from eden.osv import expression
+from eden.tools.float_utils import float_round
 
-from odoo.tools import date_utils, ormcache
+from eden.tools import date_utils, ormcache
 from .utils import Intervals, float_to_time, make_aware, datetime_to_string, string_to_datetime
-from odoo.addons.hr_work_entry_contract.models.hr_work_intervals import WorkIntervals
+from eden.addons.hr_work_entry_contract.models.hr_work_intervals import WorkIntervals
 
 
 class ResourceCalendar(models.Model):

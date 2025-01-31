@@ -1,7 +1,7 @@
-/** @odoo-module **/
+/** @eden-module **/
 /*global L*/
 
-import { Component, useEffect, useRef } from '@odoo/owl';
+import { Component, useEffect, useRef } from '@eden/owl';
 import { renderToString } from '@web/core/utils/render';
 
 export class Map extends Component {

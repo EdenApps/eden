@@ -1,5 +1,5 @@
-import { expect, test } from "@odoo/hoot";
-import { queryAllProperties, queryAllTexts } from "@odoo/hoot-dom";
+import { expect, test } from "@eden/hoot";
+import { queryAllProperties, queryAllTexts } from "@eden/hoot-dom";
 import {
     contains,
     defineModels,

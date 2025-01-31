@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import re
 
 from collections import defaultdict, deque
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError
-from odoo.tools import OrderedSet
+from eden import _, api, fields, models
+from eden.exceptions import UserError
+from eden.tools import OrderedSet
 
 
 class MrpBatchProduct(models.TransientModel):

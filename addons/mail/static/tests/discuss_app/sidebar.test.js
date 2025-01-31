@@ -12,9 +12,9 @@ import {
     step,
     triggerHotkey,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, expect, test } from "@odoo/hoot";
-import { queryFirst } from "@odoo/hoot-dom";
-import { Deferred, mockDate } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@eden/hoot";
+import { queryFirst } from "@eden/hoot-dom";
+import { Deferred, mockDate } from "@eden/hoot-mock";
 import {
     Command,
     getService,

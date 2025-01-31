@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
 from freezegun import freeze_time
 
-from odoo import Command, fields
-from odoo.exceptions import UserError
-from odoo.tests import Form, users
-from odoo.tools.misc import format_date
-from odoo.tests.common import HttpCase, tagged
+from eden import Command, fields
+from eden.exceptions import UserError
+from eden.tests import Form, users
+from eden.tools.misc import format_date
+from eden.tests.common import HttpCase, tagged
 
-from odoo.addons.mrp.tests.common import TestMrpCommon
+from eden.addons.mrp.tests.common import TestMrpCommon
 
 
 class TestMrpOrder(TestMrpCommon):
@@ -5043,7 +5043,7 @@ class TestTourMrpOrder(HttpCase):
         })
 
         self.assertEqual(len(mo.move_raw_ids), 0)
-        url = f'/odoo/action-mrp.mrp_production_action/{mo.id}'
+        url = f'/eden/action-mrp.mrp_production_action/{mo.id}'
 
         self.start_tour(url, 'test_mrp_production_product_catalog', login='admin')
         self.assertEqual(len(mo.move_raw_ids), 1)
@@ -5096,7 +5096,7 @@ class TestTourMrpOrder(HttpCase):
         mo = mo_form.save()
 
         action_id = self.env.ref('mrp.menu_mrp_production_action').action
-        url = f'/odoo/action-{action_id.id}/{mo.id}'
+        url = f'/eden/action-{action_id.id}/{mo.id}'
         self.start_tour(url, "test_manufacturing_and_byproduct_sm_to_sml_synchronization", login="admin", timeout=100)
         self.assertEqual(mo.move_raw_ids.quantity, 7)
         self.assertEqual(mo.move_raw_ids.move_line_ids.quantity, 7)

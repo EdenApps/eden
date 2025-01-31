@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import models
-from odoo.tools.misc import format_datetime
+from eden import models
+from eden.tools.misc import format_datetime
 
 
 class StockQuantityHistory(models.TransientModel):

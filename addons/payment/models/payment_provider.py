@@ -1,12 +1,12 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError, ValidationError
+from eden import _, api, fields, models
+from eden.exceptions import UserError, ValidationError
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment.const import REPORT_REASONS_MAPPING
+from eden.addons.payment import utils as payment_utils
+from eden.addons.payment.const import REPORT_REASONS_MAPPING
 
 _logger = logging.getLogger(__name__)
 
@@ -58,7 +58,7 @@ class PaymentProvider(models.Model):
              "provider's database, allowing the customer to reuse it for a next purchase.")
     capture_manually = fields.Boolean(
         string="Capture Amount Manually",
-        help="Capture the amount from Odoo, when the delivery is completed.\n"
+        help="Capture the amount from Eden, when the delivery is completed.\n"
              "Use this if you want to charge your customers cards only when\n"
              "you are sure you can ship the goods to them.")
     allow_express_checkout = fields.Boolean(
@@ -161,7 +161,7 @@ class PaymentProvider(models.Model):
     )
     support_refund = fields.Selection(
         string="Refund",
-        help="Refund is a feature allowing to refund customers directly from the payment in Odoo.",
+        help="Refund is a feature allowing to refund customers directly from the payment in Eden.",
         selection=[
             ('none', "Unsupported"),
             ('full_only', "Full Only"),
@@ -179,7 +179,7 @@ class PaymentProvider(models.Model):
     # Module-related fields
     module_id = fields.Many2one(string="Corresponding Module", comodel_name='ir.module.module')
     module_state = fields.Selection(string="Installation State", related='module_id.state')
-    module_to_buy = fields.Boolean(string="Odoo Enterprise Module", related='module_id.to_buy')
+    module_to_buy = fields.Boolean(string="Eden Enterprise Module", related='module_id.to_buy')
 
     #=== COMPUTE METHODS ===#
 

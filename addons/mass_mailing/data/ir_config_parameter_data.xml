@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <!-- Enable Mass Mailing Reports -->
         <function model="ir.config_parameter"
@@ -10,4 +10,4 @@
                   name="set_param"
                   eval="('mass_mailing.show_blacklist_buttons', True)"/>
     </data>
-</odoo>
+</eden>

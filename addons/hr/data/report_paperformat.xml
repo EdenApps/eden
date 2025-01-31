@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="paperformat_hr_employee_badge" model="report.paperformat">
         <field name="name">Badge(s)</field>
         <field name="default" eval="True"/>
@@ -12,4 +12,4 @@
         <field name="margin_left">0</field>
         <field name="margin_right">0</field>
     </record>
-</odoo>
+</eden>

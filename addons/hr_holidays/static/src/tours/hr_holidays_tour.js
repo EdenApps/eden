@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
@@ -10,7 +10,7 @@ const leaveDateTo = "01/17/2022";
 const description = "Days off";
 
 registry.category("web_tour.tours").add("hr_holidays_tour", {
-    url: "/odoo",
+    url: "/eden",
     steps: () => [
         stepUtils.showAppsMenuItem(),
         {

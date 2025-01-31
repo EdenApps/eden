@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import base64
 
-from odoo.addons.website_event.controllers.main import WebsiteEventController
-from odoo.tools import plaintext2html
+from eden.addons.website_event.controllers.main import WebsiteEventController
+from eden.tools import plaintext2html
 
 
 class WebsiteEventBoothController(WebsiteEventController):

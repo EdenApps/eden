@@ -1,12 +1,12 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 
-from odoo import api, fields, models
-from odoo.osv import expression
-from odoo.tools import SQL
-from odoo.exceptions import ValidationError, UserError
-from odoo.tools.translate import _
+from eden import api, fields, models
+from eden.osv import expression
+from eden.tools import SQL
+from eden.exceptions import ValidationError, UserError
+from eden.tools.translate import _
 
 
 class ProjectProject(models.Model):

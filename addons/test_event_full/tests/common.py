@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta, time
 
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo, HttpCaseWithUserPortal
-from odoo.addons.base.tests.test_ir_cron import CronMixinCase
-from odoo.addons.event.tests.common import EventCase
-from odoo.addons.event_crm.tests.common import EventCrmCase
-from odoo.addons.mail.tests.common import mail_new_test_user, MailCommon
-from odoo.addons.sales_team.tests.common import TestSalesCommon
-from odoo.addons.sms.tests.common import SMSCase
-from odoo.addons.website.tests.test_website_visitor import MockVisitor
+from eden.addons.base.tests.common import HttpCaseWithUserDemo, HttpCaseWithUserPortal
+from eden.addons.base.tests.test_ir_cron import CronMixinCase
+from eden.addons.event.tests.common import EventCase
+from eden.addons.event_crm.tests.common import EventCrmCase
+from eden.addons.mail.tests.common import mail_new_test_user, MailCommon
+from eden.addons.sales_team.tests.common import TestSalesCommon
+from eden.addons.sms.tests.common import SMSCase
+from eden.addons.website.tests.test_website_visitor import MockVisitor
 
 
 class TestEventFullCommon(EventCrmCase, TestSalesCommon, MockVisitor):

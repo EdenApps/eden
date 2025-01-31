@@ -6,9 +6,9 @@ import uuid
 from contextlib import contextmanager
 from unittest.mock import patch
 
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.addons.test_mimetypes.tests.test_guess_mimetypes import contents
-from odoo.tests import tagged
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
+from eden.addons.test_mimetypes.tests.test_guess_mimetypes import contents
+from eden.tests import tagged
 
 
 @tagged('post_install', '-at_install')
@@ -18,7 +18,7 @@ class TestAccountIncomingSupplierInvoice(AccountTestInvoicingCommon):
     def setUpClass(cls):
         super().setUpClass()
 
-        cls.internal_user = cls._create_new_internal_user(login='internal.user@test.odoo.com')
+        cls.internal_user = cls._create_new_internal_user(login='internal.user@test.eden.com')
 
         cls.supplier_partner = cls.env['res.partner'].create({
             'name': 'Your Supplier',
@@ -117,7 +117,7 @@ class TestAccountIncomingSupplierInvoice(AccountTestInvoicingCommon):
 
     def _get_raw_mail_message_str(self, attachments, email_to, message_id=None):
         """
-        :param attachments: Odoo recordset of ir.attachment.
+        :param attachments: Eden recordset of ir.attachment.
         :param email_to: string that will fill email_to field in the email, probably you'll want to use some journal alias here.
         :param message_id: Optional. Custom message ID for the email. If not provided, a UUID will be generated.
 

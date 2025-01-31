@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<eden noupdate="1">
 
         <record id="hr_user_work_entry_employee" model="ir.rule">
             <field name="name">Work entries/Employee calendar filter: only self</field>
@@ -18,4 +18,4 @@
             <field name="domain_force">[('country_id', 'in', user.env.companies.mapped('country_id').ids + [False])]</field>
         </record>
 
-</odoo>
+</eden>

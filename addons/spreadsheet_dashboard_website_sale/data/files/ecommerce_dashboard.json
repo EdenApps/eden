@@ -32,10 +32,10 @@
       "merges": [],
       "cells": {
         "A6": {
-          "content": "[Monthly Sales](odoo://view/{\"viewType\":\"graph\",\"action\":{\"domain\":[[\"state\",\"not in\",[\"draft\",\"cancel\",\"sent\"]]],\"context\":{\"group_by\":[],\"graph_measure\":\"price_subtotal\",\"graph_mode\":\"line\",\"graph_groupbys\":[\"date:day\"],\"graph_order\":null,\"graph_stacked\":true,\"graph_cumulated\":false},\"modelName\":\"sale.report\",\"views\":[[false,\"graph\"],[false,\"pivot\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Sales Analysis\"})"
+          "content": "[Monthly Sales](eden://view/{\"viewType\":\"graph\",\"action\":{\"domain\":[[\"state\",\"not in\",[\"draft\",\"cancel\",\"sent\"]]],\"context\":{\"group_by\":[],\"graph_measure\":\"price_subtotal\",\"graph_mode\":\"line\",\"graph_groupbys\":[\"date:day\"],\"graph_order\":null,\"graph_stacked\":true,\"graph_cumulated\":false},\"modelName\":\"sale.report\",\"views\":[[false,\"graph\"],[false,\"pivot\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Sales Analysis\"})"
         },
         "A22": {
-          "content": "[Top Products](odoo://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[\"&\",[\"website_id\",\"!=\",false],[\"state\",\"in\",[\"sale\",\"done\"]]],\"context\":{\"group_by\":[],\"pivot_measures\":[\"order_reference\",\"price_total\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"product_id\"]},\"modelName\":\"sale.report\",\"views\":[[false,\"pivot\"],[false,\"graph\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Online Sales Analysis\"})"
+          "content": "[Top Products](eden://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[\"&\",[\"website_id\",\"!=\",false],[\"state\",\"in\",[\"sale\",\"done\"]]],\"context\":{\"group_by\":[],\"pivot_measures\":[\"order_reference\",\"price_total\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"product_id\"]},\"modelName\":\"sale.report\",\"views\":[[false,\"pivot\"],[false,\"graph\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Online Sales Analysis\"})"
         },
         "A23": { "content": "=_t(\"Products\")" },
         "A24": { "content": "=PIVOT.HEADER(4,\"#product_id\",1)" },
@@ -111,7 +111,7 @@
           "content": "=PIVOT.VALUE(4,\"price_subtotal\",\"#product_id\",10)"
         },
         "E22": {
-          "content": "[Top Categories](odoo://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[[\"state\",\"not in\",[\"draft\",\"cancel\",\"sent\"]]],\"context\":{\"group_by\":[],\"pivot_measures\":[\"order_reference\",\"price_subtotal\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"categ_id\"]},\"modelName\":\"sale.report\",\"views\":[[false,\"graph\"],[false,\"pivot\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Sales Analysis\"})"
+          "content": "[Top Categories](eden://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[[\"state\",\"not in\",[\"draft\",\"cancel\",\"sent\"]]],\"context\":{\"group_by\":[],\"pivot_measures\":[\"order_reference\",\"price_subtotal\"],\"pivot_column_groupby\":[],\"pivot_row_groupby\":[\"categ_id\"]},\"modelName\":\"sale.report\",\"views\":[[false,\"graph\"],[false,\"pivot\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Sales Analysis\"})"
         },
         "E23": { "content": "=_t(\"Categories\")" },
         "E24": { "content": "=PIVOT.HEADER(1,\"#categ_id\",1)" },
@@ -354,7 +354,7 @@
               "groupBy": ["date:month"],
               "orderBy": []
             },
-            "type": "odoo_line",
+            "type": "eden_line",
             "verticalAxisPosition": "left",
             "stacked": false,
             "fillArea": true,
@@ -511,7 +511,7 @@
   },
   "pivots": {
     "1": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "eefac62b-900a-4197-95e9-9a4cdbb832d6": {
           "chain": "date",
@@ -564,7 +564,7 @@
       "rows": [{ "fieldName": "categ_id" }]
     },
     "2": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "eefac62b-900a-4197-95e9-9a4cdbb832d6": {
           "chain": "date",
@@ -608,7 +608,7 @@
       "rows": [{ "fieldName": "is_abandoned_cart" }]
     },
     "3": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "eefac62b-900a-4197-95e9-9a4cdbb832d6": {
           "chain": "date",
@@ -652,7 +652,7 @@
       "rows": [{ "fieldName": "is_abandoned_cart" }]
     },
     "4": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "eefac62b-900a-4197-95e9-9a4cdbb832d6": {
           "chain": "date",
@@ -703,7 +703,7 @@
       "rows": [{ "fieldName": "product_id" }]
     },
     "5": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "eefac62b-900a-4197-95e9-9a4cdbb832d6": {
           "chain": "date",
@@ -747,7 +747,7 @@
       "rows": []
     },
     "6": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "eefac62b-900a-4197-95e9-9a4cdbb832d6": {
           "chain": "date",
@@ -791,7 +791,7 @@
       "rows": []
     },
     "7": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "eefac62b-900a-4197-95e9-9a4cdbb832d6": {
           "chain": "date",
@@ -835,7 +835,7 @@
       "rows": []
     },
     "8": {
-      "type": "ODOO",
+      "type": "EDEN",
       "fieldMatching": {
         "eefac62b-900a-4197-95e9-9a4cdbb832d6": {
           "chain": "date",
@@ -881,7 +881,7 @@
   },
   "pivotNextId": 9,
   "customTableStyles": {},
-  "odooVersion": 12,
+  "edenVersion": 12,
   "globalFilters": [
     {
       "id": "eefac62b-900a-4197-95e9-9a4cdbb832d6",
@@ -933,7 +933,7 @@
   ],
   "lists": {},
   "listNextId": 1,
-  "chartOdooMenusReferences": {
+  "chartEdenMenusReferences": {
     "0c5e3c79-3754-41a9-83df-b185003ce0b1": "website.menu_website_dashboard",
     "a761d77e-17d1-4d7a-ac85-5494c07dd360": "website.menu_website_dashboard",
     "7db1cb48-a155-4984-b8dd-de155db2b65f": "website.menu_website_dashboard",

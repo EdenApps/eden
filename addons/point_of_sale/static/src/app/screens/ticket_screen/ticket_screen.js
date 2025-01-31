@@ -12,7 +12,7 @@ import { OrderWidget } from "@point_of_sale/app/generic_components/order_widget/
 import { CenteredIcon } from "@point_of_sale/app/generic_components/centered_icon/centered_icon";
 import { SearchBar } from "@point_of_sale/app/screens/ticket_screen/search_bar/search_bar";
 import { usePos } from "@point_of_sale/app/store/pos_hook";
-import { Component, onMounted, onWillStart, useState } from "@odoo/owl";
+import { Component, onMounted, onWillStart, useState } from "@eden/owl";
 import {
     BACKSPACE,
     Numpad,

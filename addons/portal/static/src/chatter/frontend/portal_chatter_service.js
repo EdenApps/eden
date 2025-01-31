@@ -1,5 +1,5 @@
 import { PortalChatter } from "@portal/chatter/frontend/portal_chatter";
-import { App } from "@odoo/owl";
+import { App } from "@eden/owl";
 import { getBundle } from "@web/core/assets";
 import { registry } from "@web/core/registry";
 import { rpc } from "@web/core/network/rpc";
@@ -76,7 +76,7 @@ export class PortalChatterService {
             { silent: true }
         );
         this.store.insert(data);
-        odoo.portalChatterReady.resolve(true);
+        eden.portalChatterReady.resolve(true);
     }
 }
 

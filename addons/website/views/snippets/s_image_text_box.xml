@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_image_text_box" name="Image Text Box">
     <section class="s_image_text_box pt80 pb80">
@@ -19,4 +19,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

@@ -31,7 +31,7 @@ $-main-color: map-get($o-color-palette, 'o-color-1');
 $-main-color-lightness: lightness($-main-color);
 $o-theme-color-palette: map-merge((
     // color 1 and 2 are used to override primary and secondary BS4
-    // colors by default, so that theme colors affect the default Odoo layouts
+    // colors by default, so that theme colors affect the default Eden layouts
     'primary': $-main-color,
     'secondary': map-get($o-color-palette, 'o-color-2'),
 ), $o-theme-color-palette);
@@ -67,7 +67,7 @@ $o-color-system-initialized: false;
     }
     @return $name;
 }
-// Looks up for the color related to the given name in the related odoo palettes
+// Looks up for the color related to the given name in the related eden palettes
 // following redirection a maximum number of time (by default none).
 @function o-related-color($name, $max-recursions: 0, $original-name: $name, $use-cc-bg: false) {
     @if $use-cc-bg {
@@ -92,7 +92,7 @@ $o-color-system-initialized: false;
 }
 // Function which allows to retrieve a color value from a name, the color being
 // either in $theme-colors, $grays or $colors maps. If those maps are not
-// initialized yet, it will look up the color in the related odoo palettes.
+// initialized yet, it will look up the color in the related eden palettes.
 @function o-color($name) {
     $name: use-cc-bg($name);
 

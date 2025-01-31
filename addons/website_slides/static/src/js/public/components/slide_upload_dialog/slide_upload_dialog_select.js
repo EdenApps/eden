@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @eden-module **/
 
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 export class ModuleToInstallIcon extends Component {
     static template = "website_slides.ModuleToInstallIcon";

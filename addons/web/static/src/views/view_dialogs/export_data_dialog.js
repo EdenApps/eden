@@ -9,7 +9,7 @@ import { fuzzyLookup } from "@web/core/utils/search";
 import { useSortable } from "@web/core/utils/sortable_owl";
 import { useDebounced } from "@web/core/utils/timing";
 
-import { Component, useRef, useState, onMounted, onWillStart, onWillUnmount } from "@odoo/owl";
+import { Component, useRef, useState, onMounted, onWillStart, onWillUnmount } from "@eden/owl";
 
 class DeleteExportListDialog extends Component {
     static components = { Dialog };
@@ -175,7 +175,7 @@ export class ExportDataDialog extends Component {
     }
 
     get isDebug() {
-        return Boolean(odoo.debug);
+        return Boolean(eden.debug);
     }
 
     get rootFields() {

@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 class FinalSteps {
 

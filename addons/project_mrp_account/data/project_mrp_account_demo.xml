@@ -1,4 +1,4 @@
-<odoo>
+<eden>
     <data>
         <record id="product_product_dinning_table" model="product.product">
             <field name="name">Dining Table</field>
@@ -36,4 +36,4 @@
             ref('project_mrp_account.mrp_production_dinning_table_2'),
         ]]"/>
     </data>
-</odoo>
+</eden>

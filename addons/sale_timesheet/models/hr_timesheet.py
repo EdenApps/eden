@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import UserError, ValidationError
+from eden.exceptions import UserError, ValidationError
 
-from odoo import api, fields, models, _
-from odoo.osv import expression
-from odoo.tools import format_list
-from odoo.tools.misc import unquote
+from eden import api, fields, models, _
+from eden.osv import expression
+from eden.tools import format_list
+from eden.tools.misc import unquote
 
 TIMESHEET_INVOICE_TYPES = [
     ('billable_time', 'Billed on Timesheets'),

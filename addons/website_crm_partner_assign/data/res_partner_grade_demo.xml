@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <record id="website_crm_partner_assign.res_partner_grade_data_gold" model="res.partner.grade">
             <field name="is_published" eval="True" />
@@ -11,4 +11,4 @@
             <field name="is_published" eval="True" />
         </record>
     </data>
-</odoo>
+</eden>

@@ -1,4 +1,4 @@
-import { after, beforeEach, expect, test } from "@odoo/hoot";
+import { after, beforeEach, expect, test } from "@eden/hoot";
 import {
     click,
     dblclick,
@@ -8,10 +8,10 @@ import {
     queryOne,
     queryText,
     setInputFiles,
-} from "@odoo/hoot-dom";
+} from "@eden/hoot-dom";
 import { FileInput } from "@web/core/file_input/file_input";
-import { Deferred, animationFrame } from "@odoo/hoot-mock";
-import { Component, onRendered, xml } from "@odoo/owl";
+import { Deferred, animationFrame } from "@eden/hoot-mock";
+import { Component, onRendered, xml } from "@eden/owl";
 import {
     contains,
     defineModels,

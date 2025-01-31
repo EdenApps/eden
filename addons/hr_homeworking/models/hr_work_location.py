@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, models
-from odoo.exceptions import UserError
-from odoo.addons.hr_homeworking.models.hr_homeworking import DAYS
+from eden import _, api, models
+from eden.exceptions import UserError
+from eden.addons.hr_homeworking.models.hr_homeworking import DAYS
 
 class WorkLocation(models.Model):
     _inherit = "hr.work.location"

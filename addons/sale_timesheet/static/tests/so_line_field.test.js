@@ -1,5 +1,5 @@
 import { defineSaleTimesheetModels } from "./sale_timesheet_test_helpers";
-import { beforeEach, describe, expect, getFixture, test } from "@odoo/hoot";
+import { beforeEach, describe, expect, getFixture, test } from "@eden/hoot";
 import {
     assertSteps,
     click,

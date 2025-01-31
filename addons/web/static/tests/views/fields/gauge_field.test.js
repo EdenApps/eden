@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { queryAllTexts } from "@odoo/hoot-dom";
-import { onMounted } from "@odoo/owl";
+import { expect, test } from "@eden/hoot";
+import { queryAllTexts } from "@eden/hoot-dom";
+import { onMounted } from "@eden/owl";
 import {
     defineModels,
     fields,

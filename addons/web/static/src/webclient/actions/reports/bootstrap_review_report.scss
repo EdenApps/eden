@@ -67,7 +67,7 @@ $report-text-colors: null;
 
 // Report footer need to support bootstrap columns (2, 3 and 4 columns)
 // Even if the width is smaller than the media querry limit from bootstrap.
-// This need come from the footer being editable via the Odoo editor.
+// This need come from the footer being editable via the Eden editor.
 .footer {
     .row, .col-lg-3, .col-lg-4, .col-lg-6 {
         -webkit-box-flex: 1 !important;

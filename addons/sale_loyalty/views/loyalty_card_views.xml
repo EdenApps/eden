@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <record id="loyalty_card_view_form_inherit_sale_loyalty" model="ir.ui.view">
         <field name="name">loyalty.card.view.form.inherit.sale.loyalty</field>
@@ -12,4 +12,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

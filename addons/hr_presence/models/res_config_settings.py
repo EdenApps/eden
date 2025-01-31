@@ -1,5 +1,5 @@
 
-from odoo import models
+from eden import models
 
 
 class ResConfigSettings(models.TransientModel):

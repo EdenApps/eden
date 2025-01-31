@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, tools, _
-from odoo.osv import expression
+from eden import api, fields, models, tools, _
+from eden.osv import expression
 
 
 class LeaveReport(models.Model):

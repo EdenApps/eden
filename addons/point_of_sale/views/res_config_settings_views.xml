@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="res_config_settings_view_form" model="ir.ui.view">
         <field name="name">res.config.settings.view.form.inherit.point_of_sale</field>
         <field name="model">res.config.settings</field>
@@ -299,7 +299,7 @@
                                     </div>
                                 </div>
                             </setting>
-                            <setting help="Print information on the receipt to allow the customer to easily request the invoice anytime, from Odoo's portal." documentation="/applications/sales/point_of_sale/receipts_invoices.html">
+                            <setting help="Print information on the receipt to allow the customer to easily request the invoice anytime, from Eden's portal." documentation="/applications/sales/point_of_sale/receipts_invoices.html">
                                 <field name="point_of_sale_use_ticket_qr_code"/>
                                 <div class="content-group mt16" invisible="not point_of_sale_use_ticket_qr_code">
                                     <div class="col mt16">
@@ -447,4 +447,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</eden>

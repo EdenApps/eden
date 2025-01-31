@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
         <record id="res_config_settings_view_form" model="ir.ui.view">
             <field name="name">res.config.settings.view.form.inherit.base.setup</field>
             <field name="model">res.config.settings</field>
@@ -101,7 +101,7 @@
                                 <setting id="sms" string="Send SMS" documentation="/applications/marketing/sms_marketing/pricing/pricing_and_faq.html" help="Send texts to your contacts">
                                     <field name="module_sms"/>
                                 </setting>
-                                <setting help="Automatically enrich your contact base with company data" title="When populating your address book, Odoo provides a list of matching companies. When selecting one item, the company data and logo are auto-filled." id="partner_autocomplete">
+                                <setting help="Automatically enrich your contact base with company data" title="When populating your address book, Eden provides a list of matching companies. When selecting one item, the company data and logo are auto-filled." id="partner_autocomplete">
                                     <field name="module_partner_autocomplete"/>
                                 </setting>
                         </block>
@@ -116,7 +116,7 @@
                                 </div>
                             </div>
                         </setting>
-                        <setting string="API Keys" help="API Keys allow your users to access Odoo with external tools when multi-factor authentication is enabled." groups="base.group_system">
+                        <setting string="API Keys" help="API Keys allow your users to access Eden with external tools when multi-factor authentication is enabled." groups="base.group_system">
                             <button type="action" name="%(base.action_apikeys_admin)d" string="Manage API Keys" icon="oi-arrow-right" class="btn-link"/>
                         </setting>
                         <setting string="Import &amp; Export" help="Allow users to import data from CSV/XLS/XLSX/ODS files" documentation="/applications/general/export_import_data.html" groups="base.group_no_one" id="allow_import">
@@ -128,8 +128,8 @@
                     </block>
 
                     <block title="Progressive Web App" id="pwa_settings" groups="base.group_no_one">
-                        <setting help="This name will be used for the application when Odoo is installed through the browser.">
-                            <field name="web_app_name" placeholder="Odoo"/>
+                        <setting help="This name will be used for the application when Eden is installed through the browser.">
+                            <field name="web_app_name" placeholder="Eden"/>
                         </setting>
                     </block>
 
@@ -212,4 +212,4 @@
             action="action_general_configuration"
             groups="base.group_system"/>
 
-</odoo>
+</eden>

@@ -1,10 +1,10 @@
-from odoo import api, Command, fields, models, _
-from odoo.exceptions import UserError, ValidationError
+from eden import api, Command, fields, models, _
+from eden.exceptions import UserError, ValidationError
 
 from xmlrpc.client import MAXINT
 
-from odoo.tools import create_index, SQL
-from odoo.tools.misc import str2bool
+from eden.tools import create_index, SQL
+from eden.tools.misc import str2bool
 
 
 class AccountBankStatementLine(models.Model):

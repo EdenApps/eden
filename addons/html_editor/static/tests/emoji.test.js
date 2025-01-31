@@ -1,6 +1,6 @@
-import { expect, test } from "@odoo/hoot";
-import { click, press, waitFor } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
+import { expect, test } from "@eden/hoot";
+import { click, press, waitFor } from "@eden/hoot-dom";
+import { animationFrame } from "@eden/hoot-mock";
 import { loadBundle } from "@web/core/assets";
 import { setupEditor } from "./_helpers/editor";
 import { getContent } from "./_helpers/selection";

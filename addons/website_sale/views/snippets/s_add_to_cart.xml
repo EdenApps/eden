@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template name="Add to Cart Button" id="s_add_to_cart">
         <div class="s_add_to_cart">
             <button class="s_add_to_cart_btn disabled btn btn-secondary mb-2">
@@ -47,4 +47,4 @@
         <field name="bundle">web.assets_frontend</field>
         <field name="path">website_sale/static/src/snippets/s_add_to_cart/000.js</field>
     </record>
-</odoo>
+</eden>

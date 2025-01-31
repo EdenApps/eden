@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <data>
         <record model="ir.ui.view" id="hr_recruitment_source_tree">
             <field name="name">hr.recruitment.source.list</field>
@@ -43,4 +43,4 @@
             </field>
         </record>
     </data>
-</odoo>
+</eden>

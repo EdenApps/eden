@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { isVisible } from '@odoo/hoot-dom';
+import { isVisible } from '@eden/hoot-dom';
 import {
     clickOnEditAndWaitEditMode,
     clickOnSave,

@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 
 {
@@ -14,7 +14,7 @@ This module aims to manage employee's attendances.
 Keeps account of the attendances of the employees on the basis of the
 actions(Check in/Check out) performed by them.
        """,
-    'website': 'https://www.odoo.com/app/employees',
+    'website': 'https://www.edencloud.us/app/employees',
     'depends': ['hr', 'barcodes'],
     'data': [
         'data/hr_attendance_data.xml',
@@ -60,7 +60,7 @@ actions(Check in/Check out) performed by them.
             'web/static/lib/bootstrap/scss/_maps.scss',
             ('include', 'web._assets_bootstrap_frontend'),
             ('include', 'web._assets_bootstrap_backend'),
-            '/web/static/lib/odoo_ui_icons/*',
+            '/web/static/lib/eden_ui_icons/*',
             '/web/static/lib/bootstrap/scss/_functions.scss',
             '/web/static/lib/bootstrap/scss/_mixins.scss',
             '/web/static/lib/bootstrap/scss/utilities/_api.scss',

@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from ast import literal_eval
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError
-from odoo.tools import float_compare, float_round
+from eden import _, api, fields, models
+from eden.exceptions import UserError
+from eden.tools import float_compare, float_round
 
 
 class StockLot(models.Model):

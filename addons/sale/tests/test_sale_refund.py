@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.fields import Command
-from odoo.tests import Form, tagged
+from eden.fields import Command
+from eden.tests import Form, tagged
 
-from odoo.addons.sale.tests.common import TestSaleCommon
+from eden.addons.sale.tests.common import TestSaleCommon
 
 
 @tagged('post_install', '-at_install')

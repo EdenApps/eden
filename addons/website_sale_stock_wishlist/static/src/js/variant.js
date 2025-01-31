@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import VariantMixin from "@website_sale_stock/js/variant_mixin";
 import "@website_sale/js/website_sale";

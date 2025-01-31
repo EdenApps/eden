@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="event_track1" model="event.track">
         <field name="name">How to design a new piece of furniture</field>
         <field name="is_published" eval="True"/>
@@ -763,4 +763,4 @@
         <field name="partner_id" ref="base.res_partner_address_17"/>
     </record>
 
-</odoo>
+</eden>

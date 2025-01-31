@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <!-- RESOURCE.RESOURCE -->
     <record id="view_resource_resource_search" model="ir.ui.view">
@@ -89,4 +89,4 @@
         <field name="search_view_id" ref="view_resource_resource_search"/>
         <field name="help">Resources allow you to create and manage resources that should be involved in a specific project phase. You can also set their efficiency level and workload based on their weekly working hours.</field>
     </record>
-</odoo>
+</eden>

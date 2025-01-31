@@ -1,12 +1,12 @@
 import { partnerCompareRegistry } from "@mail/core/common/partner_compare";
 import { cleanTerm } from "@mail/utils/common/format";
-import { toRaw } from "@odoo/owl";
+import { toRaw } from "@eden/owl";
 
 import { registry } from "@web/core/registry";
 
 export class SuggestionService {
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").EdenEnv} env
      * @param {Partial<import("services").Services>} services
      */
     constructor(env, services) {
@@ -182,7 +182,7 @@ export class SuggestionService {
             }
         } else {
             partners = Object.values(this.store.Persona.records).filter((persona) => {
-                if (thread?.model !== "discuss.channel" && persona.eq(this.store.odoobot)) {
+                if (thread?.model !== "discuss.channel" && persona.eq(this.store.edenbot)) {
                     return false;
                 }
                 return persona.type === "partner";
@@ -313,7 +313,7 @@ export class SuggestionService {
 export const suggestionService = {
     dependencies: ["orm", "mail.store"],
     /**
-     * @param {import("@web/env").OdooEnv} env
+     * @param {import("@web/env").EdenEnv} env
      * @param {Partial<import("services").Services>} services
      */
     start(env, services) {

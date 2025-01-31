@@ -1,4 +1,4 @@
-import { Component, whenReady } from "@odoo/owl";
+import { Component, whenReady } from "@eden/owl";
 import { MainComponentsContainer } from "@web/core/main_components_container";
 import { useSelfOrder } from "@pos_self_order/app/self_order_service";
 import { Router } from "@pos_self_order/app/router";

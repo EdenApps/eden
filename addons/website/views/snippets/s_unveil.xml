@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_unveil" name="Unveil">
     <section class="s_unveil pt64 pb64">
@@ -29,4 +29,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

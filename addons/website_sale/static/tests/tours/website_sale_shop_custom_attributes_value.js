@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { registry } from "@web/core/registry";
 import configuratorTourUtils from "@sale/js/tours/product_configurator_tour_utils";

@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import datetime
 
 from dateutil.relativedelta import relativedelta
 from freezegun import freeze_time
 
-from odoo.addons.event.tests.common import EventCase
-from odoo.tests.common import tagged, users
-from odoo.tools import mute_logger
+from eden.addons.event.tests.common import EventCase
+from eden.tests.common import tagged, users
+from eden.tools import mute_logger
 
 
 @tagged("event_mail")
@@ -40,7 +40,7 @@ class TestEventFlow(EventCase):
         self.assertEqual(event.date_begin, specific_datetimes['date_begin'])
         self.assertEqual(event.date_end, specific_datetimes['date_end'])
 
-    @mute_logger('odoo.addons.event.models.event_mail')
+    @mute_logger('eden.addons.event.models.event_mail')
     def test_event_missed_mail_template(self):
         """ Check that error on mail sending is ignored if corresponding mail template was deleted """
         test_event = self.env['event.event'].with_user(self.user_eventmanager).create({

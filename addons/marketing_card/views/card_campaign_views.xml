@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <record id="card_campaign_view_form" model="ir.ui.view">
         <field name="name">card.campaign.view.form</field>
         <field name="model">card.campaign</field>
@@ -65,7 +65,7 @@
                 <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
                 <div class="oe_title">
                     <h1>
-                        <field name="name" placeholder="e.g. Odoo Experience Talks"/>
+                        <field name="name" placeholder="e.g. Eden Experience Talks"/>
                     </h1>
                 </div>
                 <group>
@@ -89,7 +89,7 @@
                             <label for="content_header"/>
                             <div class="d-flex">
                                 <field name="content_header_dyn" title="Dynamic Field?"/>
-                                <field name="content_header" invisible="content_header_dyn" placeholder="e.g. Join Odoo Experience 2024"/>
+                                <field name="content_header" invisible="content_header_dyn" placeholder="e.g. Join Eden Experience 2024"/>
                                 <field name="content_header_path" invisible="not content_header_dyn" placeholder="Select a field" widget="DynamicModelFieldSelectorChar" options="{'model': 'res_model'}"/>
                                 <field name="content_header_color" widget="color" style="width: 40px"/>
                             </div>
@@ -227,4 +227,4 @@
         </field>
     </record>
 
-</odoo>
+</eden>

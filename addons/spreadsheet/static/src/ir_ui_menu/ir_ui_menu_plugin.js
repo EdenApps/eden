@@ -1,7 +1,7 @@
-/** @odoo-module */
-import { OdooCorePlugin } from "@spreadsheet/plugins";
+/** @eden-module */
+import { EdenCorePlugin } from "@spreadsheet/plugins";
 
-export class IrMenuPlugin extends OdooCorePlugin {
+export class IrMenuPlugin extends EdenCorePlugin {
     static getters = /** @type {const} */ (["getIrMenu"]);
     constructor(config) {
         super(config);

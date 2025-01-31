@@ -1,5 +1,5 @@
 import { click, contains, start, startServer } from "@mail/../tests/mail_test_helpers";
-import { test } from "@odoo/hoot";
+import { test } from "@eden/hoot";
 import { defineTestMailFullModels } from "@test_mail_full/../tests/test_mail_full_test_helpers";
 import { serverState } from "@web/../tests/web_test_helpers";
 

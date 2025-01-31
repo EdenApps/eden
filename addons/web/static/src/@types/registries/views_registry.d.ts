@@ -1,6 +1,6 @@
 declare module "registries" {
     import { FieldDefinitionMap } from "fields";
-    import { Component } from "@odoo/owl";
+    import { Component } from "@eden/owl";
     import { Model } from "@web/model/model";
     import { SearchModel } from "@web/search/search_model";
     import { ViewCompiler } from "@web/views/view_compiler";

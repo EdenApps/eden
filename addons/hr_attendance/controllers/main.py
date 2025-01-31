@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.service.common import exp_version
-from odoo import http, _
-from odoo.http import request
-from odoo.osv import expression
-from odoo.tools import float_round, py_to_js_locale, SQL
-from odoo.tools.image import image_data_uri
+from eden.service.common import exp_version
+from eden import http, _
+from eden.http import request
+from eden.osv import expression
+from eden.tools import float_round, py_to_js_locale, SQL
+from eden.tools.image import image_data_uri
 
 import datetime
 

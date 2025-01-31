@@ -1,4 +1,4 @@
-/** @odoo-module alias=@web/../tests/helpers/cleanup default=false */
+/** @eden-module alias=@web/../tests/helpers/cleanup default=false */
 
 // -----------------------------------------------------------------------------
 // Cleanup
@@ -20,7 +20,7 @@ export function registerCleanup(callback) {
 }
 
 if (window.QUnit) {
-    QUnit.on("OdooAfterTestHook", (info) => {
+    QUnit.on("EdenAfterTestHook", (info) => {
         if (QUnit.config.debug) {
             return;
         }
@@ -80,7 +80,7 @@ if (window.QUnit) {
      * As a payload, an object with keys 'moduleName' and 'testName' is provided. It
      * is used to indicate the test that left elements in the DOM, when it happens.
      */
-    QUnit.on("OdooAfterTestHook", function (info) {
+    QUnit.on("EdenAfterTestHook", function (info) {
         if (QUnit.config.debug) {
             return;
         }

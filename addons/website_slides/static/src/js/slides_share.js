@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import publicWidget from '@web/legacy/js/public/public_widget';
 import { SlideShareDialog } from './public/components/slide_share_dialog/slide_share_dialog';

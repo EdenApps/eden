@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import logging
 import requests
 
-from odoo import api, models, _
-from odoo.http import request
-from odoo.exceptions import UserError, ValidationError
+from eden import api, models, _
+from eden.http import request
+from eden.exceptions import UserError, ValidationError
 
 logger = logging.getLogger(__name__)
 

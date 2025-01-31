@@ -1,6 +1,6 @@
 from markupsafe import Markup
 
-from odoo import _, models
+from eden import _, models
 
 
 class SaleEdiCommon(models.AbstractModel):

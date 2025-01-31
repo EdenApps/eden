@@ -1,19 +1,19 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import base64
 from datetime import datetime, timedelta
 from freezegun import freeze_time
 from unittest.mock import patch
 
-from odoo import Command, fields
-from odoo.tools.misc import limited_field_access_token
-from odoo.addons.mail.models.discuss.discuss_channel import channel_avatar, group_avatar
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.mail.tests.common import MailCommon
-from odoo.addons.mail.tools.discuss import Store
-from odoo.exceptions import ValidationError
-from odoo.tests import HttpCase, tagged, users
-from odoo.tools import html_escape, mute_logger
+from eden import Command, fields
+from eden.tools.misc import limited_field_access_token
+from eden.addons.mail.models.discuss.discuss_channel import channel_avatar, group_avatar
+from eden.addons.mail.tests.common import mail_new_test_user
+from eden.addons.mail.tests.common import MailCommon
+from eden.addons.mail.tools.discuss import Store
+from eden.exceptions import ValidationError
+from eden.tests import HttpCase, tagged, users
+from eden.tools import html_escape, mute_logger
 
 
 @tagged("post_install", "-at_install")
@@ -246,7 +246,7 @@ class TestChannelInternals(MailCommon, HttpCase):
         self.assertEqual(channel.channel_partner_ids, self.env['res.partner'])
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('eden.addons.mail.models.mail_mail', 'eden.models.unlink')
     def test_channel_chat_message_post_should_update_last_interest_dt(self):
         chat = self.env['discuss.channel'].with_user(self.user_admin).channel_get((self.partner_employee | self.user_admin.partner_id).ids)
         post_time = fields.Datetime.now()
@@ -257,7 +257,7 @@ class TestChannelInternals(MailCommon, HttpCase):
         self.assertEqual(chat.last_interest_dt, post_time)
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('eden.addons.mail.models.mail_mail', 'eden.models.unlink')
     def test_channel_recipients_channel(self):
         """ Posting a message on a channel should not send emails """
         channel = self.env['discuss.channel'].browse(self.test_channel.ids)
@@ -272,7 +272,7 @@ class TestChannelInternals(MailCommon, HttpCase):
         self.assertEqual(new_msg.notified_partner_ids, self.env['res.partner'])
 
     @users('employee')
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('eden.addons.mail.models.mail_mail', 'eden.models.unlink')
     def test_channel_recipients_chat(self):
         """ Posting a message on a chat should not send emails """
         chat = self.env['discuss.channel'].with_user(self.user_admin).channel_get((self.partner_employee | self.user_admin.partner_id).ids)
@@ -285,7 +285,7 @@ class TestChannelInternals(MailCommon, HttpCase):
         self.assertEqual(new_msg.partner_ids, self.env['res.partner'])
         self.assertEqual(new_msg.notified_partner_ids, self.env['res.partner'])
 
-    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
+    @mute_logger('eden.addons.mail.models.mail_mail', 'eden.models.unlink')
     def test_channel_recipients_mention(self):
         """ Posting a message on a classic channel should support mentioning somebody """
         with self.mock_mail_gateway():
@@ -294,7 +294,7 @@ class TestChannelInternals(MailCommon, HttpCase):
                 message_type='comment', subtype_xmlid='mail.mt_comment')
         self.assertSentEmail(self.test_channel.env.user.partner_id, [self.test_partner])
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('eden.models.unlink')
     def test_channel_user_synchronize(self):
         """Archiving / deleting a user should automatically unsubscribe related partner from group restricted channels"""
         group_restricted_channel = self.env['discuss.channel'].channel_create(name='Sic Mundus', group_id=self.env.ref('base.group_user').id)
@@ -481,7 +481,7 @@ class TestChannelInternals(MailCommon, HttpCase):
         channel.message_post(attachments=[('audio', b'OggS\x00\x02', {'voice': True})])
         self.assertTrue(channel.message_ids.attachment_ids.voice_ids, "message's attachment should have voice metadata")
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('eden.models.unlink')
     def test_channel_unsubscribe_auto(self):
         """ Archiving / deleting a user should automatically unsubscribe related
         partner from private channels """
@@ -518,7 +518,7 @@ class TestChannelInternals(MailCommon, HttpCase):
         self.assertEqual(private_group.channel_partner_ids, self.user_employee.partner_id | test_partner)
 
     @users('employee')
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('eden.models.unlink')
     def test_channel_private_unfollow(self):
         """ Test that a partner can leave (unfollow) a channel/group/chat. """
         group_restricted_channel = self.env['discuss.channel'].channel_create(name='Channel for Groups', group_id=self.env.ref('base.group_user').id)

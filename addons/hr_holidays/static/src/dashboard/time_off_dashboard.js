@@ -1,10 +1,10 @@
-/* @odoo-module */
+/* @eden-module */
 
 import { TimeOffCard } from "./time_off_card";
 import { useNewAllocationRequest } from "@hr_holidays/views/hooks";
 import { useBus, useService } from "@web/core/utils/hooks";
 import { DateTimeInput } from "@web/core/datetime/datetime_input";
-import { Component, useState, onWillStart } from "@odoo/owl";
+import { Component, useState, onWillStart } from "@eden/owl";
 
 export class TimeOffDashboard extends Component {
     static components = { TimeOffCard, DateTimeInput };

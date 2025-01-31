@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.http import request, route
-from odoo.addons.product.controllers.catalog import ProductCatalogController
+from eden.http import request, route
+from eden.addons.product.controllers.catalog import ProductCatalogController
 
 
 class ProjectPurchaseCatalogController(ProductCatalogController):

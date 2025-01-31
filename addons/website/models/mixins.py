@@ -1,17 +1,17 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 import re
 
 from werkzeug.urls import url_join
 
-from odoo import api, fields, models, _
-from odoo.addons.website.tools import text_from_html
-from odoo.http import request
-from odoo.osv import expression
-from odoo.exceptions import AccessError
-from odoo.tools import escape_psql
-from odoo.tools.json import scriptsafe as json_safe
+from eden import api, fields, models, _
+from eden.addons.website.tools import text_from_html
+from eden.http import request
+from eden.osv import expression
+from eden.exceptions import AccessError
+from eden.tools import escape_psql
+from eden.tools.json import scriptsafe as json_safe
 
 logger = logging.getLogger(__name__)
 

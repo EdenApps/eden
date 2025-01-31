@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import werkzeug.urls
 
-from odoo import fields
+from eden import fields
 
-from odoo import http
-from odoo.http import request
-from odoo.tools.translate import _
+from eden import http
+from eden.http import request
+from eden.tools.translate import _
 
 
 class WebsiteMembership(http.Controller):

@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import options from "@web_editor/js/editor/snippets.options";
 
@@ -75,10 +75,10 @@ options.registry.SnippetPopup = options.Class.extend({
      * @override
      */
     onTargetShow: async function () {
-        this.options.wysiwyg.odooEditor.observerUnactive();
+        this.options.wysiwyg.edenEditor.observerUnactive();
         this.$bsTarget.modal('show');
         $(this.$target[0].ownerDocument.body).children('.modal-backdrop:last').addClass('d-none');
-        this.options.wysiwyg.odooEditor.observerActive();
+        this.options.wysiwyg.edenEditor.observerActive();
     },
     /**
      * @override

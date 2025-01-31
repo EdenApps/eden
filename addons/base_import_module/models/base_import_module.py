@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import base64
 from io import BytesIO
-from odoo import api, fields, models
+from eden import api, fields, models
 
 
 class BaseImportModule(models.TransientModel):
@@ -26,7 +26,7 @@ class BaseImportModule(models.TransientModel):
         return {
             'type': 'ir.actions.act_url',
             'target': 'self',
-            'url': '/odoo',
+            'url': '/eden',
         }
 
     def get_dependencies_to_install_names(self):

@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, models
-from odoo.osv import expression
+from eden import api, models
+from eden.osv import expression
 
 
 class ResUsers(models.Model):

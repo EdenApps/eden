@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <!-- Cron that processes the mass mailing queue -->
         <record id="ir_cron_mass_mailing_queue" model="ir.cron">
@@ -24,4 +24,4 @@
             <field name="interval_type">days</field>
         </record>
     </data>
-</odoo>
+</eden>

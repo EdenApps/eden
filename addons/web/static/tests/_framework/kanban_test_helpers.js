@@ -4,7 +4,7 @@ import {
     queryAllAttributes,
     queryAllTexts,
     queryOne,
-} from "@odoo/hoot-dom";
+} from "@eden/hoot-dom";
 import { contains } from "./dom_test_helpers";
 import { buildSelector } from "./view_test_helpers";
 import { getDropdownMenu } from "./component_test_helpers";

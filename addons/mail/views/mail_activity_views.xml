@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <record id="mail_activity_type_view_form" model="ir.ui.view">
         <field name="name">mail.activity.type.view.form</field>
         <field name="model">mail.activity.type</field>
@@ -457,4 +457,4 @@
         <field name="view_id" ref="mail.mail_activity_view_kanban_open_target"/>
     </record>
 
-</odoo>
+</eden>

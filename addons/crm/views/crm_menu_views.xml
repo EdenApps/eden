@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <!-- Top menu item -->
     <!--
@@ -177,4 +177,4 @@
         id="menu_import_crm"
         name="Import &amp; Synchronize"
         parent="crm_menu_root"/>
-</odoo>
+</eden>

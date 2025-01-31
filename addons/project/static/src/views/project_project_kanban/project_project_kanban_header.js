@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { KanbanHeader } from "@web/views/kanban/kanban_header";
 import { useService } from "@web/core/utils/hooks";

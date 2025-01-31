@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.crm.tests.common import TestCrmCommon, INCOMING_EMAIL
-from odoo.exceptions import AccessError, UserError
-from odoo.tests import Form, tagged
-from odoo.tests.common import users
+from eden.addons.crm.tests.common import TestCrmCommon, INCOMING_EMAIL
+from eden.exceptions import AccessError, UserError
+from eden.tests import Form, tagged
+from eden.tests.common import users
 
 
 @tagged('multi_company')

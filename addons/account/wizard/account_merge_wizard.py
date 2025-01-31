@@ -1,8 +1,8 @@
 import json
 
-from odoo import _, api, fields, models, Command
-from odoo.exceptions import UserError
-from odoo.tools import SQL
+from eden import _, api, fields, models, Command
+from eden.exceptions import UserError
+from eden.tools import SQL
 
 
 class AccountMergeWizard(models.TransientModel):

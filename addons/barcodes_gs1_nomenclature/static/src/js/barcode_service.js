@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { session } from "@web/session";
 import { patch } from "@web/core/utils/patch";

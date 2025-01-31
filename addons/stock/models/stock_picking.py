@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 import math
@@ -7,13 +7,13 @@ from ast import literal_eval
 from datetime import date, timedelta
 from collections import defaultdict
 
-from odoo import SUPERUSER_ID, _, api, fields, models
-from odoo.addons.stock.models.stock_move import PROCUREMENT_PRIORITIES
-from odoo.addons.web.controllers.utils import clean_action
-from odoo.exceptions import UserError, ValidationError
-from odoo.osv import expression
-from odoo.tools import format_datetime, format_date, format_list, groupby, SQL
-from odoo.tools.float_utils import float_compare, float_is_zero
+from eden import SUPERUSER_ID, _, api, fields, models
+from eden.addons.stock.models.stock_move import PROCUREMENT_PRIORITIES
+from eden.addons.web.controllers.utils import clean_action
+from eden.exceptions import UserError, ValidationError
+from eden.osv import expression
+from eden.tools import format_datetime, format_date, format_list, groupby, SQL
+from eden.tools.float_utils import float_compare, float_is_zero
 
 
 class PickingType(models.Model):
@@ -70,17 +70,17 @@ class PickingType(models.Model):
     reservation_days_before_priority = fields.Integer('Days when starred', help="Maximum number of days before scheduled date that priority picking products should be reserved.")
     auto_show_reception_report = fields.Boolean(
         "Show Reception Report at Validation",
-        help="If this checkbox is ticked, Odoo will automatically show the reception report (if there are moves to allocate to) when validating.")
+        help="If this checkbox is ticked, Eden will automatically show the reception report (if there are moves to allocate to) when validating.")
     auto_print_delivery_slip = fields.Boolean(
         "Auto Print Delivery Slip",
-        help="If this checkbox is ticked, Odoo will automatically print the delivery slip of a picking when it is validated.")
+        help="If this checkbox is ticked, Eden will automatically print the delivery slip of a picking when it is validated.")
     auto_print_return_slip = fields.Boolean(
         "Auto Print Return Slip",
-        help="If this checkbox is ticked, Odoo will automatically print the return slip of a picking when it is validated.")
+        help="If this checkbox is ticked, Eden will automatically print the return slip of a picking when it is validated.")
 
     auto_print_product_labels = fields.Boolean(
         "Auto Print Product Labels",
-        help="If this checkbox is ticked, Odoo will automatically print the product labels of a picking when it is validated.")
+        help="If this checkbox is ticked, Eden will automatically print the product labels of a picking when it is validated.")
     product_label_format = fields.Selection([
         ('dymo', 'Dymo'),
         ('2x7xprice', '2 x 7 with price'),
@@ -91,7 +91,7 @@ class PickingType(models.Model):
         ('zplxprice', 'ZPL Labels with price')], string="Product Label Format to auto-print", default='2x7xprice')
     auto_print_lot_labels = fields.Boolean(
         "Auto Print Lot/SN Labels",
-        help="If this checkbox is ticked, Odoo will automatically print the lot/SN labels of a picking when it is validated.")
+        help="If this checkbox is ticked, Eden will automatically print the lot/SN labels of a picking when it is validated.")
     lot_label_format = fields.Selection([
         ('4x12_lots', '4 x 12 - One per lot/SN'),
         ('4x12_units', '4 x 12 - One per unit'),
@@ -100,17 +100,17 @@ class PickingType(models.Model):
         string="Lot Label Format to auto-print", default='4x12_lots')
     auto_print_reception_report = fields.Boolean(
         "Auto Print Reception Report",
-        help="If this checkbox is ticked, Odoo will automatically print the reception report of a picking when it is validated and has assigned moves.")
+        help="If this checkbox is ticked, Eden will automatically print the reception report of a picking when it is validated and has assigned moves.")
     auto_print_reception_report_labels = fields.Boolean(
         "Auto Print Reception Report Labels",
-        help="If this checkbox is ticked, Odoo will automatically print the reception report labels of a picking when it is validated.")
+        help="If this checkbox is ticked, Eden will automatically print the reception report labels of a picking when it is validated.")
     auto_print_packages = fields.Boolean(
         "Auto Print Packages",
-        help="If this checkbox is ticked, Odoo will automatically print the packages and their contents of a picking when it is validated.")
+        help="If this checkbox is ticked, Eden will automatically print the packages and their contents of a picking when it is validated.")
 
     auto_print_package_label = fields.Boolean(
         "Auto Print Package Label",
-        help="If this checkbox is ticked, Odoo will automatically print the package label when \"Put in Pack\" button is used.")
+        help="If this checkbox is ticked, Eden will automatically print the package label when \"Put in Pack\" button is used.")
     package_label_to_print = fields.Selection(
         [('pdf', 'PDF'), ('zpl', 'ZPL')],
         "Package Label to Print", default='pdf')

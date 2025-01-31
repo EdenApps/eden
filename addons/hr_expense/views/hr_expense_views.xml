@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
         <record id="hr_employee_view_form_inherit_expense" model="ir.ui.view">
             <field name="name">hr.employee.view.form.expense</field>
@@ -1234,4 +1234,4 @@
         <menuitem id="menu_hr_expense_account_employee_expenses" name="Employee Expenses" sequence="22"
                   parent="account.menu_finance_payables" groups="hr_expense.group_hr_expense_user"
                   action="action_hr_expense_account"/>
-</odoo>
+</eden>

@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import publicWidget from '@web/legacy/js/public/public_widget';
 import { ConnectionLostError, rpc, RPCError } from '@web/core/network/rpc';
@@ -20,7 +20,7 @@ publicWidget.registry.PaymentPostProcessing = publicWidget.Widget.extend({
             // Fetch the post-processing values from the server.
             const self = this;
             rpc('/payment/status/poll', {
-                'csrf_token': odoo.csrf_token,
+                'csrf_token': eden.csrf_token,
             }).then(postProcessingValues => {
                 let {provider_code, state, landing_route} = postProcessingValues;
 

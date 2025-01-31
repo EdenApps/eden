@@ -1,12 +1,12 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, date
 from dateutil.relativedelta import relativedelta
 from freezegun import freeze_time
 
-from odoo.exceptions import ValidationError
-from odoo.addons.hr_contract.tests.common import TestContractCommon
-from odoo.tests import tagged
+from eden.exceptions import ValidationError
+from eden.addons.hr_contract.tests.common import TestContractCommon
+from eden.tests import tagged
 
 @tagged('test_contracts')
 class TestHrContracts(TestContractCommon):

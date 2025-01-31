@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import re
 
-from odoo import api, fields, models, _
-from odoo.exceptions import AccessError, UserError
-from odoo.osv import expression
-from odoo.tools import create_index
+from eden import api, fields, models, _
+from eden.exceptions import AccessError, UserError
+from eden.osv import expression
+from eden.tools import create_index
 
 PHONE_REGEX_PATTERN = r'[\s\\./\(\)\-]'
 

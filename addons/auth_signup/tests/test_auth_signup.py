@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from unittest.mock import patch
 
-import odoo
-from odoo import http
-from odoo.addons.base.tests.common import HttpCaseWithUserPortal, HttpCaseWithUserDemo
-from odoo.exceptions import AccessError
+import eden
+from eden import http
+from eden.addons.base.tests.common import HttpCaseWithUserPortal, HttpCaseWithUserDemo
+from eden.exceptions import AccessError
 
 
 class TestAuthSignupFlow(HttpCaseWithUserPortal, HttpCaseWithUserDemo):
@@ -45,7 +45,7 @@ class TestAuthSignupFlow(HttpCaseWithUserPortal, HttpCaseWithUserDemo):
         }
 
         # Override unlink to not delete the email if the send works.
-        with patch.object(odoo.addons.mail.models.mail_mail.MailMail, 'unlink', lambda self: None):
+        with patch.object(eden.addons.mail.models.mail_mail.MailMail, 'unlink', lambda self: None):
             # Call the controller
             url_free_signup = self._get_free_signup_url()
             self.url_open(url_free_signup, data=payload)
@@ -67,8 +67,8 @@ class TestAuthSignupFlow(HttpCaseWithUserPortal, HttpCaseWithUserDemo):
 
     def test_copy_multiple_users(self):
         users = self.env['res.users'].create([
-            {'login': 'testuser1', 'name': 'Test User 1', 'email': 'test1@odoo.com'},
-            {'login': 'testuser2', 'name': 'Test User 2', 'email': 'test2@odoo.com'},
+            {'login': 'testuser1', 'name': 'Test User 1', 'email': 'test1@eden.com'},
+            {'login': 'testuser2', 'name': 'Test User 2', 'email': 'test2@eden.com'},
         ])
         initial_user_count = self.env['res.users'].search_count([])
         users.copy()

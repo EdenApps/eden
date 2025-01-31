@@ -8,7 +8,7 @@ import {
     useComponent,
     useEffect,
     useRef,
-} from "@odoo/owl";
+} from "@eden/owl";
 
 /**
  * @typedef {import("@web/core/position/utils").ComputePositionOptions} ComputePositionOptions

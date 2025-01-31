@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import time
 from freezegun import freeze_time
 from datetime import datetime
 
-import odoo
-from odoo import fields, tools
-from odoo.fields import Command
-from odoo.tools import float_compare, mute_logger, test_reports
-from odoo.tests import Form
-from odoo.addons.point_of_sale.tests.common import TestPointOfSaleCommon
+import eden
+from eden import fields, tools
+from eden.fields import Command
+from eden.tools import float_compare, mute_logger, test_reports
+from eden.tests import Form
+from eden.addons.point_of_sale.tests.common import TestPointOfSaleCommon
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@eden.tests.tagged('post_install', '-at_install')
 class TestPointOfSaleFlow(TestPointOfSaleCommon):
 
     @classmethod

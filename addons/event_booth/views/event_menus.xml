@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<odoo><data>
+<eden><data>
 
     <menuitem name="Booth Categories"
         id="menu_event_booth_category"
@@ -13,4 +13,4 @@
         parent="event.menu_event_configuration"
         groups="base.group_no_one"/>
 
-</data></odoo>
+</data></eden>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
 
     <record id='fleet_vehicle_view_form' model='ir.ui.view'>
         <field name="name">fleet.vehicle.form</field>
@@ -595,4 +595,4 @@
         <field name="state">code</field>
         <field name="code">action = records.action_send_email()</field>
     </record>
-</odoo>
+</eden>

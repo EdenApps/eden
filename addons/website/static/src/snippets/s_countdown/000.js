@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import publicWidget from "@web/legacy/js/public/public_widget";
 import weUtils from "@web_editor/js/common/utils";
@@ -32,7 +32,7 @@ const CountdownWidget = publicWidget.Widget.extend({
             // the DOM for good measures, maybe even allowing to remove this
             // code in a few years as hopefully all current countdowns will have
             // been removed or edited (or when a proper upgrade script in a
-            // future version of Odoo will be made, if necessary). TODO.
+            // future version of Eden will be made, if necessary). TODO.
             this.display = this.el.dataset.bsDisplay;
             delete this.el.dataset.bsDisplay;
             this.el.dataset.display = this.display;

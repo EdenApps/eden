@@ -2,7 +2,7 @@ import { Dialog } from "@web/core/dialog/dialog";
 import { DebugMenu } from "@web/core/debug/debug_menu";
 import { useOwnDebugContext } from "@web/core/debug/debug_context";
 
-import { useEffect } from "@odoo/owl";
+import { useEffect } from "@eden/owl";
 
 export class ActionDialog extends Dialog {
     static components = { ...Dialog.components, DebugMenu };

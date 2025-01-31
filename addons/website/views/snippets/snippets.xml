@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <!-- Snippets menu -->
 <template id="snippets" inherit_id="web_editor.snippets" primary="True" groups="base.group_user">
@@ -1566,8 +1566,8 @@
             <we-button t-att-data-select-label="_label" data-select-template="website.s_mega_menu_multi_menus" data-img="/website/static/src/img/snippets_thumbs/s_mega_menu_multi_menus.svg" t-out="_label"/>
             <t t-set="_label">Image Menu</t>
             <we-button t-att-data-select-label="_label" data-select-template="website.s_mega_menu_menu_image_menu" data-img="/website/static/src/img/snippets_thumbs/s_mega_menu_menu_image_menu.svg" t-out="_label"/>
-            <t t-set="_label">Odoo Menu</t>
-            <we-button t-att-data-select-label="_label" data-select-template="website.s_mega_menu_odoo_menu" data-img="/website/static/src/img/snippets_thumbs/s_mega_menu_odoo_menu.svg" t-out="_label"/>
+            <t t-set="_label">Eden Menu</t>
+            <we-button t-att-data-select-label="_label" data-select-template="website.s_mega_menu_eden_menu" data-img="/website/static/src/img/snippets_thumbs/s_mega_menu_eden_menu.svg" t-out="_label"/>
             <t t-set="_label">Little Icons</t>
             <we-button t-att-data-select-label="_label" data-select-template="website.s_mega_menu_little_icons" data-img="/website/static/src/img/snippets_thumbs/s_mega_menu_little_icons.svg" t-out="_label"/>
             <t t-set="_label">Big Icons Subtitles</t>
@@ -1986,7 +1986,7 @@
     <div data-js="ThemeColors" data-selector="theme-colors" data-no-check="true">
         <we-alert class="o_old_color_system_warning d-none mt-2">
             It appears your website is still using the old color system of
-            Odoo 13.0 in some places. We made sure it is still working but
+            Eden 13.0 in some places. We made sure it is still working but
             we recommend you to try to use the new color system, which is
             still customizable.
         </we-alert>
@@ -2284,7 +2284,7 @@
     </div>
     <!-- Info page ('/website/info') -->
     <div data-selector="main:has(.o_website_info)" data-page-options="true" groups="website.group_website_designer" data-no-check="true" string="Info Page">
-        <we-checkbox string="Odoo Information"
+        <we-checkbox string="Eden Information"
                         data-customize-website-views="website.show_website_info"
                         data-no-preview="true"
                         data-reload="/"/>
@@ -2296,4 +2296,4 @@
     </xpath>
 </template>
 
-</odoo>
+</eden>

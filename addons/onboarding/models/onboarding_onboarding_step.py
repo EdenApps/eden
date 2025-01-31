@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, Command, fields, models
-from odoo.addons.onboarding.models.onboarding_progress import ONBOARDING_PROGRESS_STATES
-from odoo.exceptions import ValidationError
+from eden import _, api, Command, fields, models
+from eden.addons.onboarding.models.onboarding_progress import ONBOARDING_PROGRESS_STATES
+from eden.exceptions import ValidationError
 
 
 class OnboardingStep(models.Model):

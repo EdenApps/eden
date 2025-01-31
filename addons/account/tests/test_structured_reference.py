@@ -1,7 +1,7 @@
-from odoo.tests import tagged
-from odoo.tests.common import TransactionCase
+from eden.tests import tagged
+from eden.tests.common import TransactionCase
 
-from odoo.addons.account.tools import (
+from eden.addons.account.tools import (
     is_valid_structured_reference_be,
     is_valid_structured_reference_fi,
     is_valid_structured_reference_no_se,

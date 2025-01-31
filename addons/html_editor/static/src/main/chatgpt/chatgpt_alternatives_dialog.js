@@ -1,5 +1,5 @@
 import { _t } from "@web/core/l10n/translation";
-import { useState } from "@odoo/owl";
+import { useState } from "@eden/owl";
 import { ChatGPTDialog } from "./chatgpt_dialog";
 
 export const DEFAULT_ALTERNATIVES_MODES = {

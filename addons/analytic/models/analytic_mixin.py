@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-from odoo import models, fields, api, _
-from odoo.tools import SQL, Query, unique
-from odoo.tools.float_utils import float_round, float_compare
-from odoo.exceptions import UserError, ValidationError
+# Part of Eden. See LICENSE file for full copyright and licensing details.
+from eden import models, fields, api, _
+from eden.tools import SQL, Query, unique
+from eden.tools.float_utils import float_round, float_compare
+from eden.exceptions import UserError, ValidationError
 
 class AnalyticMixin(models.AbstractModel):
     _name = 'analytic.mixin'

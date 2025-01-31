@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import collections
 import logging
@@ -11,10 +11,10 @@ import werkzeug.wrappers
 import werkzeug.wsgi
 from werkzeug.urls import iri_to_uri
 
-from odoo.tools.translate import JAVASCRIPT_TRANSLATION_COMMENT
-from odoo.tools.misc import file_open
-from odoo import http
-from odoo.http import request
+from eden.tools.translate import JAVASCRIPT_TRANSLATION_COMMENT
+from eden.tools.misc import file_open
+from eden import http
+from eden.http import request
 
 
 _logger = logging.getLogger(__name__)
@@ -143,7 +143,7 @@ def generate_views(action):
 def get_action(env, path_part):
     """
     Get a ir.actions.actions() given an action typically found in a
-    "/odoo"-like url.
+    "/eden"-like url.
 
     The action can take one of the following forms:
     * "action-" followed by a record id
@@ -187,7 +187,7 @@ def get_action(env, path_part):
 
 def get_action_triples(env, path, *, start_pos=0):
     """
-    Extract the triples (active_id, action, record_id) from a "/odoo"-like path.
+    Extract the triples (active_id, action, record_id) from a "/eden"-like path.
 
     >>> env = ...
     >>> list(get_action_triples(env, "/all-tasks/5/project.project/1/tasks"))
@@ -233,7 +233,7 @@ def _get_login_redirect_url(uid, redirect=None):
     fully logged and can proceed to the requested URL
     """
     if request.session.uid:  # fully logged
-        return redirect or ('/odoo' if is_user_internal(request.session.uid)
+        return redirect or ('/eden' if is_user_internal(request.session.uid)
                             else '/web/login_successful')
 
     # partial session (MFA)

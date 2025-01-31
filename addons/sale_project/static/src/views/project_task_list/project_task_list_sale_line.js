@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { patch } from "@web/core/utils/patch";
 import { ProjectTaskListRenderer } from "@project/views/project_task_list/project_task_list_renderer";

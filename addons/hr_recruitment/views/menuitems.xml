@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <menuitem
         name="Recruitment"
         id="menu_hr_recruitment_root"
@@ -193,4 +193,4 @@
 
 
 
-</odoo>
+</eden>

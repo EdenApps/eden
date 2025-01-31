@@ -1,10 +1,10 @@
-/** @odoo-module **/
+/** @eden-module **/
 
     import { registry } from "@web/core/registry";
     import { stepUtils } from "@web_tour/tour_service/tour_utils";
 
     registry.category("web_tour.tours").add('debug_menu_set_defaults', {
-        url: '/odoo?debug=1',
+        url: '/eden?debug=1',
         steps: () => [
             ...stepUtils.goToAppSteps('contacts.menu_contacts', "Open the contacts menu"),
             {

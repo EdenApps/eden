@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-from odoo import models
-from odoo.tools import format_list
+# Part of Eden. See LICENSE file for full copyright and licensing details.
+from eden import models
+from eden.tools import format_list
 
 
 class MergePartnerAutomatic(models.TransientModel):

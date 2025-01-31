@@ -1,17 +1,17 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 
 from werkzeug.urls import url_encode
 from werkzeug.exceptions import NotFound, Unauthorized
 
-from odoo import _, http
-from odoo.exceptions import AccessError
-from odoo.http import request
-from odoo.tools import consteq
-from odoo.addons.mail.controllers.discuss.public_page import PublicPageController
-from odoo.addons.mail.models.discuss.mail_guest import add_guest_to_context
-from odoo.addons.mail.tools.discuss import Store
+from eden import _, http
+from eden.exceptions import AccessError
+from eden.http import request
+from eden.tools import consteq
+from eden.addons.mail.controllers.discuss.public_page import PublicPageController
+from eden.addons.mail.models.discuss.mail_guest import add_guest_to_context
+from eden.addons.mail.tools.discuss import Store
 
 _logger = logging.getLogger(__name__)
 
@@ -21,7 +21,7 @@ class MailController(http.Controller):
 
     @classmethod
     def _redirect_to_messaging(cls):
-        url = '/odoo/action-mail.action_discuss'
+        url = '/eden/action-mail.action_discuss'
         return request.redirect(url)
 
     @classmethod
@@ -139,7 +139,7 @@ class MailController(http.Controller):
         # @see router.js: heuristics to discrimate a model name from an action path
         # is the presence of dots, or the prefix m- for models
         model_in_url = model if "." in model else "m-" + model
-        url = f'/odoo/{model_in_url}/{res_id}?{url_encode(url_params)}'
+        url = f'/eden/{model_in_url}/{res_id}?{url_encode(url_params)}'
         return request.redirect(url)
 
     @http.route('/mail/view', type='http', auth='public')
@@ -221,7 +221,7 @@ class MailController(http.Controller):
                 raise Unauthorized()
 
         if message.model == 'discuss.channel':
-            url = f'/odoo/action-mail.action_discuss?active_id={message.res_id}&highlight_message_id={message_id}'
+            url = f'/eden/action-mail.action_discuss?active_id={message.res_id}&highlight_message_id={message_id}'
         else:
-            url = f'/odoo/{message.model}/{message.res_id}?highlight_message_id={message_id}'
+            url = f'/eden/{message.model}/{message.res_id}?highlight_message_id={message_id}'
         return request.redirect(url)

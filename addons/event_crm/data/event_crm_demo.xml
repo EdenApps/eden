@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <!-- Event CRM Rule 0 -->
         <record id="event_lead_rule_0" model="event.lead.rule">
@@ -24,4 +24,4 @@
         </record>
 
     </data>
-</odoo>
+</eden>

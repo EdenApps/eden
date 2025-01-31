@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <record id="base.user_root" model="res.users">
-            <field name="odoobot_state">disabled</field>
+            <field name="edenbot_state">disabled</field>
         </record>
     </data>
-</odoo>
+</eden>

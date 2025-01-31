@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import tagged, TransactionCase
+from eden.tests import tagged, TransactionCase
 
 @tagged('recruitment')
 class TestRecruitment(TransactionCase):
@@ -54,7 +54,7 @@ class TestRecruitment(TransactionCase):
                 'active': False,  # Refused/archived application should still count
                 'candidate_id': self.env['hr.candidate'].create({
                     'partner_name': 'Application A',
-                    'email_from': 'abc@odoo.com',
+                    'email_from': 'abc@eden.com',
                     'partner_phone': '123',
                 }).id,
             },
@@ -67,14 +67,14 @@ class TestRecruitment(TransactionCase):
             {
                 'candidate_id': self.env['hr.candidate'].create({
                     'partner_name': 'Application C',
-                    'email_from': 'def@odoo.com',
+                    'email_from': 'def@eden.com',
                     'partner_phone': '123',
                 }).id,
             },
             {
                 'candidate_id': self.env['hr.candidate'].create({
                     'partner_name': 'Application D',
-                    'email_from': 'abc@odoo.com',
+                    'email_from': 'abc@eden.com',
                     'partner_phone': '456',
                 }).id,
             },

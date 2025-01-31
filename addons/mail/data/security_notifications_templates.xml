@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <!-- Template for security update notification (password/login/mail changed, ...) -->
         <template id="account_security_setting_update">
@@ -34,4 +34,4 @@
 </ul>
         </template>
     </data>
-</odoo>
+</eden>

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <data>
         <record id="hr_job_stage_act" model="ir.actions.act_window">
             <field name="name">Recruitment / Applicants Stages</field>
@@ -109,4 +109,4 @@
             </field>
         </record>
     </data>
-</odoo>
+</eden>

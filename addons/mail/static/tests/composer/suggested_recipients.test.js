@@ -11,8 +11,8 @@ import {
     startServer,
     step,
 } from "@mail/../tests/mail_test_helpers";
-import { describe, expect, test } from "@odoo/hoot";
-import { Deferred, tick } from "@odoo/hoot-mock";
+import { describe, expect, test } from "@eden/hoot";
+import { Deferred, tick } from "@eden/hoot-mock";
 import { mockService } from "@web/../tests/web_test_helpers";
 
 describe.current.tags("desktop");

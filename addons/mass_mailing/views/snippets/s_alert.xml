@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 <template id="s_alert" name="Alert">
     <div class="s_mail_alert o_mail_snippet_general pt16 pb16 mx-auto">
         <div class="container">
@@ -49,4 +49,4 @@
     <field name="path">mass_mailing/static/src/snippets/s_alert/000.scss</field>
 </record>
 
-</odoo>
+</eden>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <!-- The reveal service is defined in the iap module, as a lot of different modules depend on it. -->
         <record id="iap_service_reveal" model="iap.service">
@@ -10,4 +10,4 @@
             <field name="integer_balance">True</field>
         </record>
     </data>
-</odoo>
+</eden>

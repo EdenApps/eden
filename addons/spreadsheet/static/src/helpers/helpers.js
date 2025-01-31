@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 // @ts-check
 
 /**
@@ -15,7 +15,7 @@ export function intersect(a, b) {
 }
 
 /**
- * Convert a spreadsheet date representation to an odoo
+ * Convert a spreadsheet date representation to an eden
  * server formatted date
  *
  * @param {Date} value
@@ -76,7 +76,7 @@ export function isEmpty(item) {
 }
 
 /**
- * @param {import("@odoo/o-spreadsheet").Cell} cell
+ * @param {import("@eden/o-spreadsheet").Cell} cell
  */
 export function containsReferences(cell) {
     if (!cell.isFormula) {

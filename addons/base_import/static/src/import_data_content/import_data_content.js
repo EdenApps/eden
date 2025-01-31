@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @eden-module **/
 
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 import { SelectMenu } from "@web/core/select_menu/select_menu";
 import { ImportDataColumnError } from "../import_data_column_error/import_data_column_error";
 import { ImportDataOptions } from "../import_data_options/import_data_options";

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 {
     'name': 'Purchase',
@@ -7,7 +7,7 @@
     'category': 'Inventory/Purchase',
     'sequence': 35,
     'summary': 'Purchase orders, tenders and agreements',
-    'website': 'https://www.odoo.com/app/purchase',
+    'website': 'https://www.edencloud.us/app/purchase',
     'depends': ['account'],
     'data': [
         'security/purchase_security.xml',

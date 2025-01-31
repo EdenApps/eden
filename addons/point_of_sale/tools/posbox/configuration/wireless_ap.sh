@@ -11,7 +11,7 @@ function get_conf () {
 }
 
 FORCE_HOST_AP="${1}"
-CONF_FILE="/home/pi/odoo.conf"
+CONF_FILE="/home/pi/eden.conf"
 COUNTER=0
 ESSID=$(get_conf "wifi_ssid" "${CONF_FILE}")
 PASSWORD=$(get_conf "wifi_password" "${CONF_FILE}")
@@ -23,7 +23,7 @@ if ! [ "${ESSID}" ] && [ "${PASSWORD}" ] && [ -z "${FORCE_HOST_AP}" ] ; then
 fi
 
 # Do we have to use the NetworkManager ?
-current_iotbox_version=$(cat "/var/odoo/iotbox_version")
+current_iotbox_version=$(cat "/var/eden/iotbox_version")
 required_version="23.11"
 if [[ "$current_iotbox_version" < "$required_version" ]]; then
     logger -t wireless_ap "USING WPA_SUPPLICANT REMOVING NETWORK MANAGER SERVICE"
@@ -51,7 +51,7 @@ if [ -z "${WIRED_IP}" ] ; then
 
 	if [ "${ESSID}" ] && [ "${PASSWORD}" ] && [ -z "${FORCE_HOST_AP}" ] ; then
 		logger -t posbox_wireless_ap "Loading persistently saved setting"
-		/home/pi/odoo/addons/point_of_sale/tools/posbox/configuration/connect_to_wifi.sh &
+		/home/pi/eden/addons/point_of_sale/tools/posbox/configuration/connect_to_wifi.sh &
 	else
 		logger -t posbox_wireless_ap "Starting AP"
 
@@ -70,7 +70,7 @@ if [ -z "${WIRED_IP}" ] ; then
 		ip addr add 10.11.12.1/24 dev wlan0
 
 		service dnsmasq restart
-		service odoo restart # As this file is executed on boot, this line is responsible for restarting odoo service on reboot
+		service eden restart # As this file is executed on boot, this line is responsible for restarting eden service on reboot
 	fi
 # wired
 else
@@ -78,5 +78,5 @@ else
 	service nginx restart
 	service dnsmasq stop
 	ip addr del 10.11.12.1/24 dev wlan0 # remove the static ip
-	service odoo restart # As this file is executed on boot, this line is responsible for restarting odoo service on reboot
+	service eden restart # As this file is executed on boot, this line is responsible for restarting eden service on reboot
 fi

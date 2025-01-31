@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record model="ir.module.category" id="base.module_category_sales_point_of_sale">
         <field name="description">Helps you get the most out of your points of sale with fast sale encoding, simplified payment mode encoding, automatic picking lists generation and more.</field>
         <field name="sequence">21</field>
@@ -82,4 +82,4 @@
             <field name="groups_id" eval="[(4,ref('point_of_sale.group_pos_manager'))]"/>
         </record>
     </data>
-</odoo>
+</eden>

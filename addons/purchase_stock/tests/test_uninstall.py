@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 from unittest.mock import patch
 
-from odoo import fields
-from odoo.addons.base.models.ir_model import MODULE_UNINSTALL_FLAG
-from odoo.addons.purchase_stock.models.purchase_order_line import PurchaseOrderLine
-from odoo.tests.common import tagged
+from eden import fields
+from eden.addons.base.models.ir_model import MODULE_UNINSTALL_FLAG
+from eden.addons.purchase_stock.models.purchase_order_line import PurchaseOrderLine
+from eden.tests.common import tagged
 
 from .common import PurchaseTestCommon
 

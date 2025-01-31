@@ -1,4 +1,4 @@
-import { mockDate } from "@odoo/hoot-mock";
+import { mockDate } from "@eden/hoot-mock";
 import { session } from "@web/session";
 import { defineModels, fields, models, patchWithCleanup } from "@web/../tests/web_test_helpers";
 

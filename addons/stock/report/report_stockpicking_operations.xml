@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
 
         <template id="report_picking">
@@ -214,4 +214,4 @@
             <t t-call="stock.report_generic_barcode"/>
         </template>
     </data>
-</odoo>
+</eden>

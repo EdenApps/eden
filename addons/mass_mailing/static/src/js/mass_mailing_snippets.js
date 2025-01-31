@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import options from "@web_editor/js/editor/snippets.options";
 import { loadImage } from "@web_editor/js/editor/image_processing";

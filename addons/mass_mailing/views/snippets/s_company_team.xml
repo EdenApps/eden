@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_company_team" name="Team">
     <div class="s_company_team o_mail_snippet_general">
@@ -62,4 +62,4 @@
     </div>
 </template>
 
-</odoo>
+</eden>

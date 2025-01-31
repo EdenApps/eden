@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 import re
 from datetime import timedelta
-from odoo import http, fields
-from odoo.http import request
-from odoo.tools import float_round
+from eden import http, fields
+from eden.http import request
+from eden.tools import float_round
 from werkzeug.exceptions import NotFound, BadRequest, Unauthorized
 
 class PosSelfOrderController(http.Controller):

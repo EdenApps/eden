@@ -17,7 +17,7 @@ import { Transition } from "@web/core/transition";
 import { Breadcrumbs } from "../breadcrumbs/breadcrumbs";
 import { SearchBar } from "../search_bar/search_bar";
 
-import { Component, useState, onMounted, useExternalListener, useRef, useEffect } from "@odoo/owl";
+import { Component, useState, onMounted, useExternalListener, useRef, useEffect } from "@eden/owl";
 
 const STICKY_CLASS = "o_mobile_sticky";
 

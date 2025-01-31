@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@eden/hoot";
 
 import { formatText } from "@mail/js/emojis_mixin";
 

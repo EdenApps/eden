@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, models, fields
-from odoo.tools.translate import html_translate
+from eden import api, models, fields
+from eden.tools.translate import html_translate
 
 
 class ImLivechatChannel(models.Model):

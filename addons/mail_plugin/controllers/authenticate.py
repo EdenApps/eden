@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import base64
 import datetime
 import hmac
 import json
 import logging
-import odoo
+import eden
 import werkzeug
 
-from odoo import _, http
-from odoo.http import request
+from eden import _, http
+from eden.http import request
 from werkzeug.exceptions import NotFound
 
 _logger = logging.getLogger(__name__)
@@ -21,7 +21,7 @@ class Authenticate(http.Controller):
     @http.route(['/mail_client_extension/auth', '/mail_plugin/auth'], type='http', auth="user", methods=['GET'], website=True)
     def auth(self, **values):
         """
-         Once authenticated this route renders the view that shows an app wants to access Odoo.
+         Once authenticated this route renders the view that shows an app wants to access Eden.
          The user is invited to allow or deny the app. The form posts to `/mail_client_extension/auth/confirm`.
 
          old route name "/mail_client_extension/auth is deprecated as of saas-14.3,it is not needed for newer
@@ -34,7 +34,7 @@ class Authenticate(http.Controller):
     @http.route(['/mail_client_extension/auth/confirm', '/mail_plugin/auth/confirm'], type='http', auth="user", methods=['POST'])
     def auth_confirm(self, scope, friendlyname, redirect, info=None, do=None, **kw):
         """
-        Called by the `app_auth` template. If the user decided to allow the app to access Odoo, a temporary auth code
+        Called by the `app_auth` template. If the user decided to allow the app to access Eden, a temporary auth code
         is generated and they are redirected to `redirect` with this code in the URL. It should redirect to the app, and
         the app should then exchange this auth code for an access token by calling
         `/mail_client/auth/access_token`.
@@ -72,7 +72,7 @@ class Authenticate(http.Controller):
         if not auth_message:
             return {"error": "Invalid code"}
         request.update_env(user=auth_message['uid'])
-        scope = 'odoo.plugin.' + auth_message.get('scope', '')
+        scope = 'eden.plugin.' + auth_message.get('scope', '')
         api_key = request.env['res.users.apikeys']._generate(
             scope,
             auth_message['name'],
@@ -84,7 +84,7 @@ class Authenticate(http.Controller):
         data, auth_code_signature = auth_code.split('.')
         data = base64.b64decode(data)
         auth_code_signature = base64.b64decode(auth_code_signature)
-        signature = odoo.tools.misc.hmac(request.env(su=True), 'mail_plugin', data).encode()
+        signature = eden.tools.misc.hmac(request.env(su=True), 'mail_plugin', data).encode()
         if not hmac.compare_digest(auth_code_signature, signature):
             return None
 
@@ -109,7 +109,7 @@ class Authenticate(http.Controller):
             'uid': request.uid,
         }
         auth_message = json.dumps(auth_dict, sort_keys=True).encode()
-        signature = odoo.tools.misc.hmac(request.env(su=True), 'mail_plugin', auth_message).encode()
+        signature = eden.tools.misc.hmac(request.env(su=True), 'mail_plugin', auth_message).encode()
         auth_code = "%s.%s" % (base64.b64encode(auth_message).decode(), base64.b64encode(signature).decode())
         _logger.info('Auth code created - user %s, scope %s', request.env.user, scope)
         return auth_code

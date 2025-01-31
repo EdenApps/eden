@@ -1,4 +1,4 @@
-/** @odoo-module alias=@web/../tests/helpers/mock_server default=false */
+/** @eden-module alias=@web/../tests/helpers/mock_server default=false */
 
 import { assets } from "@web/core/assets";
 import { browser } from "@web/core/browser/browser";
@@ -129,9 +129,9 @@ export function makeServerError({
 } = {}) {
     return makeErrorFromResponse({
         code: code || 200,
-        message: message || "Odoo Server Error",
+        message: message || "Eden Server Error",
         data: {
-            name: errorName || `odoo.exceptions.${type || "UserError"}`,
+            name: errorName || `eden.exceptions.${type || "UserError"}`,
             debug: "traceback",
             arguments: [],
             context: context || {},
@@ -776,7 +776,7 @@ export class MockServer {
             Object.values(this.actions).find((a) => a.path === action_id);
         if (!action) {
             throw makeServerError({
-                errorName: "odoo.addons.web.controllers.action.MissingActionError",
+                errorName: "eden.addons.web.controllers.action.MissingActionError",
                 message: `The action ${JSON.stringify(action_id)} does not exist`,
             });
         }

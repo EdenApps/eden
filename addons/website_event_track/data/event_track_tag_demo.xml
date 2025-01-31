@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="event_track_tag_category_1" model="event.track.tag.category">
         <field name="name">Audience</field>
         <field name="sequence">10</field>
@@ -46,4 +46,4 @@
         <field name="sequence">13</field>
     </record>
 
-</odoo>
+</eden>

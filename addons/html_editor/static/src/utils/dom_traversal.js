@@ -75,7 +75,7 @@ export function findFurthest(node, limitAncestor, predicate) {
  */
 export function closestElement(node, predicate = "*") {
     let element = node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement;
-    const editable = element?.closest(".odoo-editor-editable");
+    const editable = element?.closest(".eden-editor-editable");
     if (typeof predicate === "function") {
         while (element && !predicate(element)) {
             element = element.parentElement;

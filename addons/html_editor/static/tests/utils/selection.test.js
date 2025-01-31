@@ -4,8 +4,8 @@ import {
     getAdjacentCharacter,
     getCursorDirection,
 } from "@html_editor/utils/selection";
-import { describe, expect, test } from "@odoo/hoot";
-import { dispatch } from "@odoo/hoot-dom";
+import { describe, expect, test } from "@eden/hoot";
+import { dispatch } from "@eden/hoot-dom";
 import { insertText, setupEditor, testEditor } from "../_helpers/editor";
 import { unformat } from "../_helpers/format";
 import { setSelection } from "../_helpers/selection";

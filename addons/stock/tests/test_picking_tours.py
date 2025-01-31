@@ -1,6 +1,6 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-from odoo import Command
-from odoo.tests import Form, HttpCase, tagged
+# Part of Eden. See LICENSE file for full copyright and licensing details.
+from eden import Command
+from eden.tests import Form, HttpCase, tagged
 
 
 @tagged('-at_install', 'post_install')
@@ -15,7 +15,7 @@ class TestStockPickingTour(HttpCase):
         return super().setUp()
 
     def _get_picking_url(self, picking_id):
-        return '/odoo/action-stock.action_picking_tree_incoming/%s' % (picking_id)
+        return '/eden/action-stock.action_picking_tree_incoming/%s' % (picking_id)
 
     def test_detailed_op_no_save_1(self):
         """validate a receipt with some move without any save except the last one"""
@@ -97,7 +97,7 @@ class TestStockPickingTour(HttpCase):
         ])
 
         menu = self.env.ref('stock.menu_action_inventory_tree')
-        url = '/odoo/stock.quant?menu_id=%s' % (menu['id'])
+        url = '/eden/stock.quant?menu_id=%s' % (menu['id'])
 
         # We need a bigger window, so the "Apply All" button is immediately visible
         self.browser_size = '1920,1080'

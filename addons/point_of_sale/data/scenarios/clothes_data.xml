@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <record id="base.group_user" model="res.groups">
             <field name="implied_ids" eval="[(4, ref('product.group_product_variant'))]"/>
@@ -274,8 +274,8 @@
             <field name="categ_id" ref="product.product_category_1"/>
             <field name="pos_categ_ids" eval="[(6, 0, [ref('pos_category_upper')])]" />
         </record>
-        <record model="product.product" id="product_odoo_sneakers">
-            <field name="name">Odoo Sneakers</field>
+        <record model="product.product" id="product_eden_sneakers">
+            <field name="name">Eden Sneakers</field>
             <field name="list_price">60.40</field>
             <field name="standard_price">54.36</field>
             <field name="description_sale">Trainers in cotton canvas with a padded top edge, tongue and lacing at the front.</field>
@@ -283,7 +283,7 @@
             <field name="weight">0.01</field>
             <field name="uom_id" ref="uom.product_uom_unit"/>
             <field name="uom_po_id" ref="uom.product_uom_unit"/>
-            <field name="image_1920" type="base64" file="point_of_sale/static/img/product_odoo_sneakers.png"/>
+            <field name="image_1920" type="base64" file="point_of_sale/static/img/product_eden_sneakers.png"/>
             <field name="available_in_pos" eval="True"/>
             <field name="categ_id" ref="product.product_category_1"/>
             <field name="pos_categ_ids" eval="[(6, 0, [ref('pos_category_others')])]" />
@@ -291,8 +291,8 @@
 
         <function model="ir.model.data" name="_update_xmlids">
             <value model="base" eval="[{
-                        'xml_id': 'point_of_sale.product_odoo_sneakers_template',
-                        'record': obj().env.ref('point_of_sale.product_odoo_sneakers').product_tmpl_id,
+                        'xml_id': 'point_of_sale.product_eden_sneakers_template',
+                        'record': obj().env.ref('point_of_sale.product_eden_sneakers').product_tmpl_id,
                         'noupdate': True,
                     }]" />
         </function>
@@ -329,7 +329,7 @@
         </record>
 
         <record model="product.template.attribute.line" id="product_attribute_line_size_number">
-            <field name="product_tmpl_id" ref="point_of_sale.product_odoo_sneakers_template"/>
+            <field name="product_tmpl_id" ref="point_of_sale.product_eden_sneakers_template"/>
             <field name="attribute_id" ref="product_attribute_size_number"/>
             <field name="value_ids" eval="[(6, 0, [ref('product_attribute_value_39'), ref('product_attribute_value_40'), ref('product_attribute_value_41'), ref('product_attribute_value_42'), ref('product_attribute_value_43')])]" />
         </record>
@@ -509,4 +509,4 @@
             <field name="value_ids" eval="[(6, 0, [ref('product_attribute_value_39'), ref('product_attribute_value_40'), ref('product_attribute_value_41'), ref('product_attribute_value_42'), ref('product_attribute_value_43')])]" />
         </record>
     </data>
-</odoo>
+</eden>

@@ -2,12 +2,12 @@ import base64
 from lxml import html
 from unittest.mock import patch
 
-from odoo import exceptions
-from odoo.tools import mute_logger
-from odoo.tests.common import users
-from odoo.tests import Form, HttpCase, tagged, warmup
-from odoo.addons.mail.tests.common import MailCase
-from odoo.addons.marketing_card.controllers.marketing_card import SOCIAL_NETWORK_USER_AGENTS
+from eden import exceptions
+from eden.tools import mute_logger
+from eden.tests.common import users
+from eden.tests import Form, HttpCase, tagged, warmup
+from eden.addons.mail.tests.common import MailCase
+from eden.addons.marketing_card.controllers.marketing_card import SOCIAL_NETWORK_USER_AGENTS
 
 from .common import MarketingCardCommon, mock_image_render, VALID_JPEG
 
@@ -30,7 +30,7 @@ class TestMarketingCardMail(MailCase, MarketingCardCommon):
 
     @users('marketing_card_user')
     @warmup
-    @mute_logger('odoo.addons.mail.models.mail_mail')
+    @mute_logger('eden.addons.mail.models.mail_mail')
     def test_campaign_send_mailing(self):
         campaign = self.campaign.with_user(self.env.user)
         self.env.user.sudo().groups_id += self.env.ref('mass_mailing.group_mass_mailing_user')
@@ -164,7 +164,7 @@ class TestMarketingCardRender(MarketingCardCommon):
 
         # mismatch preview
 
-        with patch('odoo.addons.marketing_card.models.card_campaign.CardCampaign._get_model_selection',
+        with patch('eden.addons.marketing_card.models.card_campaign.CardCampaign._get_model_selection',
                    lambda Model: [('res.partner', 'Partner'), ('res.users', 'User')]):
 
             # mismatches without cards
@@ -258,7 +258,7 @@ class TestMarketingCardRouting(HttpCase, MarketingCardCommon):
 class TestMarketingCardSecurity(MarketingCardCommon):
 
     @users('marketing_card_manager')
-    @mute_logger('odoo.addons.mail.models.mail_render_mixin')
+    @mute_logger('eden.addons.mail.models.mail_render_mixin')
     def test_campaign_field_paths(self):
         """Check that card updates are performed as the current user."""
         # restrict reading from partner titles (flush to apply new rule)

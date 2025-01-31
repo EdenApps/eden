@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data>
+<eden><data>
 
     <template id="chat_room_join_button">
         <div t-att-class="'o_wjitsi_room_widget %s' % (_classes or '')"
@@ -15,4 +15,4 @@
         </div>
     </template>
 
-</data></odoo>
+</data></eden>

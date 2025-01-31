@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<eden noupdate="1">
 
     <record id="product_pick_up_in_store" model="product.product">
         <field name="name">Pick up in store</field>
@@ -9,4 +9,4 @@
         <field name="sale_ok">false</field>
     </record>
 
-</odoo>
+</eden>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="loyalty.gift_card_product_50" model="product.product">
         <field name="available_in_pos">True</field>
         <field name="taxes_id" eval="False"/>
@@ -12,4 +12,4 @@
     <record id="loyalty.gift_card_program" model="loyalty.program">
         <field name="pos_report_print_id" ref="loyalty.report_gift_card"/>
     </record>
-</odoo>
+</eden>

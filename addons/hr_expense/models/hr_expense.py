@@ -1,12 +1,12 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import re
 from markupsafe import Markup
 import werkzeug
 
-from odoo import api, fields, Command, models, _
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools import email_split, float_repr, float_round, is_html_empty
+from eden import api, fields, Command, models, _
+from eden.exceptions import UserError, ValidationError
+from eden.tools import email_split, float_repr, float_round, is_html_empty
 
 
 class HrExpense(models.Model):
@@ -250,7 +250,7 @@ class HrExpense(models.Model):
     @api.depends('currency_id', 'total_amount_currency', 'date')
     def _compute_currency_rate(self):
         """
-            We want the default odoo rate when the following change:
+            We want the default eden rate when the following change:
             - the currency of the expense
             - the total amount in foreign currency
             - the date of the expense

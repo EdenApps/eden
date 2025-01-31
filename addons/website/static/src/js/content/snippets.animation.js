@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 /**
  * Provides a way to start JS code for snippets' initialization and animations.
@@ -488,10 +488,10 @@ registry.slider = publicWidget.Widget.extend({
             const indicatorEls = this.el.querySelectorAll(".carousel-indicators > *");
             // Deactivate the carousel controls to handle the slides manually in
             // edit mode (by the options).
-            this.options.wysiwyg.odooEditor.observerUnactive("disable_controls");
+            this.options.wysiwyg.edenEditor.observerUnactive("disable_controls");
             this.controlEls.forEach(controlEl => controlEl.removeAttribute("data-bs-slide"));
             indicatorEls.forEach(indicatorEl => indicatorEl.removeAttribute("data-bs-slide-to"));
-            this.options.wysiwyg.odooEditor.observerActive("disable_controls");
+            this.options.wysiwyg.edenEditor.observerActive("disable_controls");
             // Redirect the clicks on the active slide, in order to start the
             // carousel options.
             this.__onControlClick = this._onControlClick.bind(this);
@@ -509,13 +509,13 @@ registry.slider = publicWidget.Widget.extend({
 
         window.Carousel.getOrCreateInstance(this.el).dispose();
 
-        this.options.wysiwyg && this.options.wysiwyg.odooEditor.observerUnactive("destroy");
+        this.options.wysiwyg && this.options.wysiwyg.edenEditor.observerUnactive("destroy");
         this.$(".carousel-item")
             .toArray()
             .forEach((el) => {
                 $(el).css("min-height", "");
             });
-        this.options.wysiwyg && this.options.wysiwyg.odooEditor.observerActive("destroy");
+        this.options.wysiwyg && this.options.wysiwyg.edenEditor.observerActive("destroy");
 
         $(window).off('.slider');
         this.$el.off('.slider'); // TODO remove in master
@@ -525,14 +525,14 @@ registry.slider = publicWidget.Widget.extend({
                 && !this.options.wysiwyg.options.enableTranslation) {
             // Restore the carousel controls.
             const indicatorEls = this.el.querySelectorAll(".carousel-indicators > *");
-            this.options.wysiwyg.odooEditor.observerUnactive("restore_controls");
+            this.options.wysiwyg.edenEditor.observerUnactive("restore_controls");
             this.controlEls.forEach(controlEl => {
                 const direction = controlEl.classList.contains("carousel-control-prev") ?
                     "prev" : "next";
                 controlEl.setAttribute("data-bs-slide", direction);
             });
             indicatorEls.forEach((indicatorEl, i) => indicatorEl.setAttribute("data-bs-slide-to", i));
-            this.options.wysiwyg.odooEditor.observerActive("restore_controls");
+            this.options.wysiwyg.edenEditor.observerActive("restore_controls");
             [...this.controlEls, ...indicatorEls].forEach(controlEl => {
                 controlEl.removeEventListener("mousedown", this.__onControlClick);
             });
@@ -549,7 +549,7 @@ registry.slider = publicWidget.Widget.extend({
     _computeHeights: function () {
         var maxHeight = 0;
         var $items = this.$('.carousel-item');
-        this.options.wysiwyg && this.options.wysiwyg.odooEditor.observerUnactive("_computeHeights");
+        this.options.wysiwyg && this.options.wysiwyg.edenEditor.observerUnactive("_computeHeights");
         $items.css('min-height', '');
         $items.toArray().forEach((el) => {
             var $item = $(el);
@@ -562,7 +562,7 @@ registry.slider = publicWidget.Widget.extend({
             $item.toggleClass('active', isActive);
         });
         $items.css('min-height', maxHeight);
-        this.options.wysiwyg && this.options.wysiwyg.odooEditor.observerActive("_computeHeights");
+        this.options.wysiwyg && this.options.wysiwyg.edenEditor.observerActive("_computeHeights");
     },
 
     //--------------------------------------------------------------------------
@@ -601,7 +601,7 @@ async function waitForCarouselToFinishSliding(carouselEl) {
 }
 
 /**
- * This class is used to fix carousel auto-slide behavior in Odoo 17.4 and up.
+ * This class is used to fix carousel auto-slide behavior in Eden 17.4 and up.
  * It handles upgrade cases from lower versions.
  * TODO find a way to get rid of this with an upgrade script?
  */
@@ -784,11 +784,11 @@ registry.Parallax = Animation.extend({
             return;
         }
         if (this.options.wysiwyg) {
-            this.options.wysiwyg.odooEditor.observerUnactive('_updateBgCss');
+            this.options.wysiwyg.edenEditor.observerUnactive('_updateBgCss');
         }
         this.$bg.css(cssValues);
         if (this.options.wysiwyg) {
-            this.options.wysiwyg.odooEditor.observerActive('_updateBgCss');
+            this.options.wysiwyg.edenEditor.observerActive('_updateBgCss');
         }
     },
 
@@ -881,13 +881,13 @@ registry.mediaVideo = publicWidget.Widget.extend(
      */
     start: function () {
         // TODO: this code should be refactored to make more sense and be better
-        // integrated with Odoo (this refactoring should be done in master).
+        // integrated with Eden (this refactoring should be done in master).
 
         const proms = [this._super.apply(this, arguments)];
         let iframeEl = this.el.querySelector(':scope > iframe');
 
         // The following code is only there to ensure compatibility with
-        // videos added before bug fixes or new Odoo versions where the
+        // videos added before bug fixes or new Eden versions where the
         // <iframe/> element is properly saved.
         if (!iframeEl) {
             iframeEl = this._generateIframe();
@@ -1762,7 +1762,7 @@ registry.ImagesLazyLoading = publicWidget.Widget.extend({
      */
     _updateImgMinHeight(imgEl, reset = false) {
         if (this.options.wysiwyg) {
-            this.options.wysiwyg.odooEditor.observerUnactive('_updateImgMinHeight');
+            this.options.wysiwyg.edenEditor.observerUnactive('_updateImgMinHeight');
         }
         if (reset) {
             imgEl.style.minHeight = imgEl.dataset.lazyLoadingInitialMinHeight;
@@ -1774,7 +1774,7 @@ registry.ImagesLazyLoading = publicWidget.Widget.extend({
             imgEl.style.minHeight = '1px';
         }
         if (this.options.wysiwyg) {
-            this.options.wysiwyg.odooEditor.observerActive('_updateImgMinHeight');
+            this.options.wysiwyg.edenEditor.observerActive('_updateImgMinHeight');
         }
     },
 });
@@ -1793,7 +1793,7 @@ registry.ImagesLazyLoading = publicWidget.Widget.extend({
  * Note: a gap also appears between some shapes without zoom. This is likely
  * due to error in the shapes themselves. Many things were done to try and fix
  * this, but the remaining errors will likely be fixed with a review of the
- * shapes in future Odoo versions.
+ * shapes in future Eden versions.
  *
  * /!\
  * If a better solution for stable comes up, this widget behavior may be
@@ -1993,12 +1993,12 @@ registry.ImageShapeHoverEffet = publicWidget.Widget.extend({
                 resolve();
                 return;
             }
-            this.options.wysiwyg && this.options.wysiwyg.odooEditor.observerUnactive("setImgHoverEffectSrc");
+            this.options.wysiwyg && this.options.wysiwyg.edenEditor.observerUnactive("setImgHoverEffectSrc");
             if (this.editableMode && !this.el.dataset.originalSrcBeforeHover) {
                 this.el.dataset.originalSrcBeforeHover = this.originalImgSrc;
             }
             this.el.src = preloadedImg.getAttribute('src');
-            this.options.wysiwyg && this.options.wysiwyg.odooEditor.observerActive("setImgHoverEffectSrc");
+            this.options.wysiwyg && this.options.wysiwyg.edenEditor.observerActive("setImgHoverEffectSrc");
             this.lastImgSrc = preloadedImg.getAttribute('src');
             this.el.onload = () => {
                 resolve();

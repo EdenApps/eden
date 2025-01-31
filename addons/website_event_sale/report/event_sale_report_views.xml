@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <record id="event_sale_report_view_search" model="ir.ui.view">
         <field name="name">event.sale.report.view.search.inherit.website</field>
@@ -11,4 +11,4 @@
             </xpath>
         </field>
     </record>
-</odoo>
+</eden>

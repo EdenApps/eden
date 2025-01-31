@@ -1,4 +1,4 @@
-from odoo.addons.base.tests.common import BaseCommon
+from eden.addons.base.tests.common import BaseCommon
 
 
 class AnalyticCommon(BaseCommon):

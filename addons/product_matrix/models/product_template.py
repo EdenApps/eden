@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 import itertools
 
-from odoo import models, fields
+from eden import models, fields
 
 
 class ProductTemplate(models.Model):

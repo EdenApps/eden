@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <record id="blog_blog_1" model="blog.blog">
             <field name="name">Our blog</field>
@@ -38,4 +38,4 @@
         </record>
 
     </data>
-</odoo>
+</eden>

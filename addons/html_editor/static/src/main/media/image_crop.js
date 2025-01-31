@@ -13,7 +13,7 @@ import {
     onWillDestroy,
     markup,
     useExternalListener,
-} from "@odoo/owl";
+} from "@eden/owl";
 import { useService } from "@web/core/utils/hooks";
 import { scrollTo, closestScrollableY } from "@web/core/utils/scrolling";
 
@@ -120,7 +120,7 @@ export class ImageCrop extends Component {
             this.notification.add(
                 markup(
                     _t(
-                        "This type of image is not supported for cropping.<br/>If you want to crop it, please first download it from the original source and upload it in Odoo."
+                        "This type of image is not supported for cropping.<br/>If you want to crop it, please first download it from the original source and upload it in Eden."
                     )
                 ),
                 {

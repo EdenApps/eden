@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import operator as py_operator
 from ast import literal_eval
 from collections import defaultdict
 from dateutil.relativedelta import relativedelta
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError
-from odoo.osv import expression
-from odoo.tools import float_is_zero, check_barcode_encoding
-from odoo.tools.float_utils import float_round
-from odoo.tools.mail import html2plaintext, is_html_empty
+from eden import _, api, fields, models
+from eden.exceptions import UserError
+from eden.osv import expression
+from eden.tools import float_is_zero, check_barcode_encoding
+from eden.tools.float_utils import float_round
+from eden.tools.mail import html2plaintext, is_html_empty
 
 OPERATORS = {
     '<': py_operator.lt,

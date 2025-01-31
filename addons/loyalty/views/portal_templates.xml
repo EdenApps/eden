@@ -1,4 +1,4 @@
-<odoo>
+<eden>
     <template id="loyalty_buttons" inherit_id="portal.side_content">
         <div name="portal_contact" position="after">
             <div class='o_loyalty_container'>
@@ -102,4 +102,4 @@
         </xpath>
     </template>
 
-</odoo>
+</eden>

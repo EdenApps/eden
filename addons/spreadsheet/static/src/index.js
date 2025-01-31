@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 /**
  * This file is meant to load the different subparts of the module
@@ -12,33 +12,33 @@
  *                filters
  *                /\    \
  *               /  \    \
- *           pivot  list  Odoo chart
+ *           pivot  list  Eden chart
  */
 
 /** TODO: Introduce a position parameter to the plugin registry in order to load them in a specific order */
-import * as spreadsheet from "@odoo/o-spreadsheet";
+import * as spreadsheet from "@eden/o-spreadsheet";
 const { corePluginRegistry, coreViewsPluginRegistry } = spreadsheet.registries;
 
 import { GlobalFiltersCorePlugin, GlobalFiltersUIPlugin } from "@spreadsheet/global_filters/index";
-import { PivotOdooCorePlugin, PivotUIGlobalFilterPlugin } from "@spreadsheet/pivot/index"; // list depends on filter for its getters
+import { PivotEdenCorePlugin, PivotUIGlobalFilterPlugin } from "@spreadsheet/pivot/index"; // list depends on filter for its getters
 import { ListCorePlugin, ListUIPlugin } from "@spreadsheet/list/index"; // pivot depends on filter for its getters
 import {
-    ChartOdooMenuPlugin,
-    OdooChartCorePlugin,
-    OdooChartUIPlugin,
-} from "@spreadsheet/chart/index"; // Odoochart depends on filter for its getters
+    ChartEdenMenuPlugin,
+    EdenChartCorePlugin,
+    EdenChartUIPlugin,
+} from "@spreadsheet/chart/index"; // Edenchart depends on filter for its getters
 import { PivotCoreGlobalFilterPlugin } from "./pivot/plugins/pivot_core_global_filter_plugin";
-import { PivotOdooUIPlugin } from "./pivot/plugins/pivot_odoo_ui_plugin";
+import { PivotEdenUIPlugin } from "./pivot/plugins/pivot_eden_ui_plugin";
 
-corePluginRegistry.add("OdooGlobalFiltersCorePlugin", GlobalFiltersCorePlugin);
-corePluginRegistry.add("PivotOdooCorePlugin", PivotOdooCorePlugin);
-corePluginRegistry.add("OdooPivotGlobalFiltersCorePlugin", PivotCoreGlobalFilterPlugin);
-corePluginRegistry.add("OdooListCorePlugin", ListCorePlugin);
-corePluginRegistry.add("odooChartCorePlugin", OdooChartCorePlugin);
-corePluginRegistry.add("chartOdooMenuPlugin", ChartOdooMenuPlugin);
+corePluginRegistry.add("EdenGlobalFiltersCorePlugin", GlobalFiltersCorePlugin);
+corePluginRegistry.add("PivotEdenCorePlugin", PivotEdenCorePlugin);
+corePluginRegistry.add("EdenPivotGlobalFiltersCorePlugin", PivotCoreGlobalFilterPlugin);
+corePluginRegistry.add("EdenListCorePlugin", ListCorePlugin);
+corePluginRegistry.add("edenChartCorePlugin", EdenChartCorePlugin);
+corePluginRegistry.add("chartEdenMenuPlugin", ChartEdenMenuPlugin);
 
-coreViewsPluginRegistry.add("OdooGlobalFiltersUIPlugin", GlobalFiltersUIPlugin);
-coreViewsPluginRegistry.add("OdooPivotGlobalFilterUIPlugin", PivotUIGlobalFilterPlugin);
-coreViewsPluginRegistry.add("OdooListUIPlugin", ListUIPlugin);
-coreViewsPluginRegistry.add("odooChartUIPlugin", OdooChartUIPlugin);
-coreViewsPluginRegistry.add("odooPivotUIPlugin", PivotOdooUIPlugin);
+coreViewsPluginRegistry.add("EdenGlobalFiltersUIPlugin", GlobalFiltersUIPlugin);
+coreViewsPluginRegistry.add("EdenPivotGlobalFilterUIPlugin", PivotUIGlobalFilterPlugin);
+coreViewsPluginRegistry.add("EdenListUIPlugin", ListUIPlugin);
+coreViewsPluginRegistry.add("edenChartUIPlugin", EdenChartUIPlugin);
+coreViewsPluginRegistry.add("edenPivotUIPlugin", PivotEdenUIPlugin);

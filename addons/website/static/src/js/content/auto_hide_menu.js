@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 const BREAKPOINT_SIZES = {sm: '575', md: '767', lg: '991', xl: '1199', xxl: '1399'};
 
@@ -113,11 +113,11 @@ async function autoHideMenu(el, options) {
 
     function _adapt() {
         const wysiwyg = window.$ && $('#wrapwrap').data('wysiwyg');
-        const odooEditor = wysiwyg && wysiwyg.odooEditor;
-        if (odooEditor) {
-            odooEditor.observerUnactive("adapt");
-            odooEditor.withoutRollback(__adapt);
-            odooEditor.observerActive("adapt");
+        const edenEditor = wysiwyg && wysiwyg.edenEditor;
+        if (edenEditor) {
+            edenEditor.observerUnactive("adapt");
+            edenEditor.withoutRollback(__adapt);
+            edenEditor.observerActive("adapt");
             return;
         }
         __adapt();

@@ -39,9 +39,9 @@ VERSION=${VERSION:-$current_branch}
 
 # ask user for the repository
 current_remote=$(git config branch.$current_branch.remote)
-current_repo="$(git remote get-url $current_remote | sed 's/.*github.com[\/:]//' | sed 's/\/odoo.git//')"
+current_repo="$(git remote get-url $current_remote | sed 's/.*github.com[\/:]//' | sed 's/\/eden.git//')"
 read -p "Enter repo [${current_repo}]: " REPO
-REPO="https://github.com/${REPO:-$current_repo}/odoo.git"
+REPO="https://github.com/${REPO:-$current_repo}/eden.git"
 echo "Using repo: ${REPO}"
 
 if ! file_exists *raspios*.img ; then
@@ -52,7 +52,7 @@ fi
 RASPIOS=$(echo *raspios*.img)
 rsync -avh --progress "${RASPIOS}" iotbox.img
 
-CLONE_DIR="${OVERWRITE_FILES_BEFORE_INIT_DIR}/home/pi/odoo"
+CLONE_DIR="${OVERWRITE_FILES_BEFORE_INIT_DIR}/home/pi/eden"
 
 rm -rfv "${CLONE_DIR}"
 
@@ -65,8 +65,8 @@ if [ ! -d $CLONE_DIR ]; then
     echo "addons/web
 addons/hw_*
 addons/point_of_sale/tools/posbox/configuration
-odoo/
-odoo-bin" | tee --append .git/info/sparse-checkout > /dev/null
+eden/
+eden-bin" | tee --append .git/info/sparse-checkout > /dev/null
     git read-tree -mu HEAD
 fi
 
@@ -149,8 +149,8 @@ sudo systemctl reload NetworkManager
 chroot "${MOUNT_POINT}" /bin/bash -c "/etc/init_posbox_image.sh"
 
 # copy iotbox version
-mkdir -pv "${MOUNT_POINT}"/var/odoo/
-echo "${VERSION_IOTBOX}" > "${MOUNT_POINT}"/var/odoo/iotbox_version
+mkdir -pv "${MOUNT_POINT}"/var/eden/
+echo "${VERSION_IOTBOX}" > "${MOUNT_POINT}"/var/eden/iotbox_version
 
 # get rid of the git clone
 rm -rf "${CLONE_DIR}"

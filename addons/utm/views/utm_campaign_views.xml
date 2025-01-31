@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record model="ir.ui.view" id="view_utm_campaign_view_search">
         <field name="name">utm.campaign.view.search</field>
         <field name="model">utm.campaign</field>
@@ -131,4 +131,4 @@
             </p>
         </field>
     </record>
-</odoo>
+</eden>

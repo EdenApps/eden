@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, Command, fields, models, _
-from odoo.addons.mail.tools.discuss import Store
-from odoo.exceptions import UserError
-from odoo.http import request
-from odoo.tools import get_lang
-from odoo.tools.sql import column_exists, create_column
+from eden import api, Command, fields, models, _
+from eden.addons.mail.tools.discuss import Store
+from eden.exceptions import UserError
+from eden.http import request
+from eden.tools import get_lang
+from eden.tools.sql import column_exists, create_column
 
 
 class WebsiteVisitor(models.Model):

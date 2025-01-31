@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
@@ -6,10 +6,10 @@ import { stepUtils } from "@web_tour/tour_service/tour_utils";
 
 import EventAdditionalTourSteps from "@event/js/tours/event_steps";
 
-import { markup } from "@odoo/owl";
+import { markup } from "@eden/owl";
 
 registry.category("web_tour.tours").add('event_tour', {
-    url: '/odoo',
+    url: '/eden',
     steps: () => [stepUtils.showAppsMenuItem(), {
     isActive: ["enterprise"],
     trigger: '.o_app[data-menu-xmlid="event.event_main_menu"]',
@@ -33,7 +33,7 @@ registry.category("web_tour.tours").add('event_tour', {
 }, {
     trigger: '.o_event_form_view div[name="name"] textarea',
     content: markup(_t("This is the <b>name</b> your guests will see when registering.")),
-    run: "edit Odoo Experience 2020",
+    run: "edit Eden Experience 2020",
 }, {
     trigger: '.o_event_form_view div[name="date_begin"]',
     run: function () {

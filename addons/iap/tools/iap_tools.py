@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import contextlib
 import logging
@@ -8,12 +8,12 @@ import requests
 import threading
 import uuid
 
-from odoo import exceptions, _
-from odoo.tools import email_normalize
+from eden import exceptions, _
+from eden.tools import email_normalize
 
 _logger = logging.getLogger(__name__)
 
-DEFAULT_ENDPOINT = 'https://iap.odoo.com'
+DEFAULT_ENDPOINT = 'https://iap.edencloud.us'
 
 
 #----------------------------------------------------------
@@ -33,7 +33,7 @@ _MAIL_PROVIDERS = {
     'o2.pl', 'live.cn', 'gmial.com', 'seznam.cz', 'live.be', 'videotron.ca', 'gmil.com', 'live.ca', 'hotmail.de', 'sbcglobal.net', 'connect.hku.hk',
     'yahoo.com.au', 'att.net', 'live.in', 'btinternet.com', 'gmx.fr', 'voila.fr', 'shaw.ca', 'prodigy.net.mx', 'vip.qq.com', 'yahoo.com.ph',
     'bigpond.com', '7thcomputing.com', 'freenet.de', 'alice.it', 'esi.dz',
-    'bk.ru', 'mail.odoo.com', 'gmail.con', 'fiu.edu', 'gmal.com', 'useemlikefun.com', 'google.com', 'trbvn.com', 'yopmail.com', 'ya.ru',
+    'bk.ru', 'mail.eden.com', 'gmail.con', 'fiu.edu', 'gmal.com', 'useemlikefun.com', 'google.com', 'trbvn.com', 'yopmail.com', 'ya.ru',
     'hotmail.co.th', 'arcor.de', 'hotmail.ca', '21cn.com', 'live.de', 'outlook.de', 'gmailcom', 'unal.edu.co', 'tom.com', 'yahoo.gr',
     'gmx.at', 'inbox.lv', 'ziggo.nl', 'xs4all.nl', 'sapo.pt', 'live.com.au', 'nate.com', 'online.de', 'sina.cn', 'gmail.co', 'rogers.com',
     'mailinator.com', 'cox.net', 'hotmail.be', 'verizon.net', 'yahoo.co.jp', 'usa.com', 'consultant.com', 'hotmai.com', '189.cn',
@@ -47,7 +47,7 @@ _MAIL_PROVIDERS = {
     # Dummy entries
     'example.com',
 }
-_MAIL_DOMAIN_BLACKLIST = _MAIL_PROVIDERS | {'odoo.com'}
+_MAIL_DOMAIN_BLACKLIST = _MAIL_PROVIDERS | {'eden.com'}
 
 # List of country codes for which we should offer state filtering when mining new leads.
 # See crm.iap.lead.mining.request#_compute_available_state_ids() or task-2471703 for more details.
@@ -150,7 +150,7 @@ def iap_jsonrpc(url, method='call', params=None, timeout=15):
     except (ValueError, requests.exceptions.ConnectionError, requests.exceptions.MissingSchema, requests.exceptions.HTTPError):
         _logger.exception("iap jsonrpc %s failed", url)
         raise exceptions.AccessError(
-            _("An error occurred while reaching %s. Please contact Odoo support if this error persists.", url)
+            _("An error occurred while reaching %s. Please contact Eden support if this error persists.", url)
         )
 
 #----------------------------------------------------------

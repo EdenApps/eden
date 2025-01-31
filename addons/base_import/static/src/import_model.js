@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
@@ -8,7 +8,7 @@ import { pick } from "@web/core/utils/objects";
 import { groupBy, sortBy } from "@web/core/utils/arrays";
 import { memoize } from "@web/core/utils/functions";
 import { session } from "@web/session";
-import { useState } from "@odoo/owl";
+import { useState } from "@eden/owl";
 import { ImportBlockUI } from "./import_block_ui";
 import { BinaryFileManager } from "./binary_file_manager";
 
@@ -71,7 +71,7 @@ const strftimeToHumanFormat = memoize(function strftimeToHumanFormat(value) {
  * used in the different base_import components.
  *
  * When uploading a file some "preview data" is returned by the backend, this
- * data consist of the different columns of the file and the odoo fields which
+ * data consist of the different columns of the file and the eden fields which
  * these columns can be mapped to.
  *
  * Only a small selection of the lines are returned so the user can get an idea
@@ -806,7 +806,7 @@ export class BaseImportModel {
             },
             date_format: {
                 help: _t(
-                    "Use YYYY to represent the year, MM for the month and DD for the day. Include separators such as a dot, forward slash or dash. You can use a custom format in addition to the suggestions provided. Leave empty to let Odoo guess the format (recommended)"
+                    "Use YYYY to represent the year, MM for the month and DD for the day. Include separators such as a dot, forward slash or dash. You can use a custom format in addition to the suggestions provided. Leave empty to let Eden guess the format (recommended)"
                 ),
                 label: _t("Date Format:"),
                 type: "input",
@@ -822,7 +822,7 @@ export class BaseImportModel {
             },
             datetime_format: {
                 help: _t(
-                    "Use HH for hours in a 24h system, use II in conjonction with 'p' for a 12h system. You can use a custom format in addition to the suggestions provided. Leave empty to let Odoo guess the format (recommended)"
+                    "Use HH for hours in a 24h system, use II in conjonction with 'p' for a 12h system. You can use a custom format in addition to the suggestions provided. Leave empty to let Eden guess the format (recommended)"
                 ),
                 label: _t("Datetime Format:"),
                 type: "input",

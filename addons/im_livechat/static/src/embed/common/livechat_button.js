@@ -1,5 +1,5 @@
 import { SESSION_STATE } from "@im_livechat/embed/common/livechat_service";
-import { Component, useExternalListener, useRef, useState } from "@odoo/owl";
+import { Component, useExternalListener, useRef, useState } from "@eden/owl";
 
 import { useMovable } from "@mail/utils/common/hooks";
 

@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, fields, models
-from odoo.osv.expression import AND
+from eden import _, api, fields, models
+from eden.osv.expression import AND
 
-from odoo.addons.payment_custom import const
+from eden.addons.payment_custom import const
 
 
 class PaymentProvider(models.Model):

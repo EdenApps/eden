@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <record id="mail_activity_todo_create_popup" model="ir.ui.view">
         <field name="name">mail.activity.todo.create.popup</field>
         <field name="model">mail.activity.todo.create</field>
@@ -18,4 +18,4 @@
             </form>
         </field>
     </record>
-</odoo>
+</eden>

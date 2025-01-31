@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from lxml import etree
 import re
 
-from odoo import tools
-from odoo.addons.base.tests.common import TransactionCaseWithUserDemo
+from eden import tools
+from eden.addons.base.tests.common import TransactionCaseWithUserDemo
 
 
 class TestQweb(TransactionCaseWithUserDemo):
@@ -63,7 +63,7 @@ class TestQweb(TransactionCaseWithUserDemo):
         <meta/>
         <script type="text/javascript" src="http://test.external.link/javascript1.js"></script>
         <script type="text/javascript" src="http://test.external.link/javascript2.js"></script>
-        <script type="text/javascript" src="http://test.cdn%(js)s" onerror="__odooAssetError=1"></script>
+        <script type="text/javascript" src="http://test.cdn%(js)s" onerror="__edenAssetError=1"></script>
     </head>
     <body>
         <img src="http://test.external.link/img.png" loading="lazy"/>

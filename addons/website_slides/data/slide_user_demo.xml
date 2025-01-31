@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo><data noupdate="1">
+<eden><data noupdate="1">
     <!-- CHANNEL 0: Basics of Gardening -->
     <!-- ================================================== -->
     <!-- Note that admin is already member due to auto subscribe -->
@@ -232,4 +232,4 @@
     <function model="slide.channel" name="message_subscribe"
             eval="[ref('website_slides.slide_channel_demo_2_gard2')], [ref('base.partner_admin'), ref('base.partner_demo')]"/>
 
-</data></odoo>
+</data></eden>

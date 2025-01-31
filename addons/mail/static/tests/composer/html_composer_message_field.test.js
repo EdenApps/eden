@@ -3,7 +3,7 @@ import { insertText } from "@html_editor/../tests/_helpers/user_actions";
 import { FileSelector } from "@html_editor/main/media/media_dialog/file_selector";
 import { uploadService } from "@html_editor/main/media/media_dialog/upload_progress_toast/upload_service";
 import { HtmlComposerMessageField } from "@mail/views/web/fields/html_composer_message_field/html_composer_message_field";
-import { beforeEach, expect, test } from "@odoo/hoot";
+import { beforeEach, expect, test } from "@eden/hoot";
 import {
     manuallyDispatchProgrammaticEvent,
     press,
@@ -11,8 +11,8 @@ import {
     queryAllTexts,
     queryOne,
     waitFor,
-} from "@odoo/hoot-dom";
-import { Deferred, animationFrame } from "@odoo/hoot-mock";
+} from "@eden/hoot-dom";
+import { Deferred, animationFrame } from "@eden/hoot-mock";
 import {
     contains,
     makeMockServer,
@@ -100,7 +100,7 @@ test("media dialog: upload", async function () {
         </form>`,
     });
 
-    const anchorNode = queryOne(".odoo-editor-editable p");
+    const anchorNode = queryOne(".eden-editor-editable p");
     setSelection({ anchorNode, anchorOffset: 0 });
 
     // Open media dialog
@@ -150,7 +150,7 @@ test("mention a partner", async () => {
         </form>`,
     });
 
-    const anchorNode = queryOne(`[name='body'] .odoo-editor-editable p`);
+    const anchorNode = queryOne(`[name='body'] .eden-editor-editable p`);
     setSelection({ anchorNode, anchorOffset: 0 });
     await insertText(htmlEditor, "@");
     await animationFrame();
@@ -165,9 +165,9 @@ test("mention a partner", async () => {
     expect.verifySteps(["get_mention_suggestions: a"]);
 
     await press("enter");
-    expect("[name='body'] .odoo-editor-editable").toHaveInnerHTML(`
+    expect("[name='body'] .eden-editor-editable").toHaveInnerHTML(`
     <p>
-        <a target="_blank" data-oe-protected="true" contenteditable="false" href="https://www.hoot.test/odoo/res.partner/17" class="o_mail_redirect" data-oe-id="17" data-oe-model="res.partner">
+        <a target="_blank" data-oe-protected="true" contenteditable="false" href="https://www.hoot.test/eden/res.partner/17" class="o_mail_redirect" data-oe-id="17" data-oe-model="res.partner">
             @Mitchell Admin
         </a>
     </p>`);
@@ -185,7 +185,7 @@ test("mention a channel", async () => {
             <field name="body" type="html" widget="html_composer_message"/>
         </form>`,
     });
-    const anchorNode = queryOne(`[name='body'] .odoo-editor-editable p`);
+    const anchorNode = queryOne(`[name='body'] .eden-editor-editable p`);
     setSelection({ anchorNode, anchorOffset: 0 });
     await insertText(htmlEditor, "#");
     await animationFrame();

@@ -1,5 +1,5 @@
 import { DiscussClientAction } from "@mail/core/public_web/discuss_client_action";
-import { useState } from "@odoo/owl";
+import { useState } from "@eden/owl";
 import "@mail/discuss/core/public/discuss_client_action_patch";
 
 import { browser } from "@web/core/browser/browser";

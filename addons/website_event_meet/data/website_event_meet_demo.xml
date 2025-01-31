@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data>
         <record id="event_meeting_room_0" model="event.meeting.room">
             <field name="name">Best wood for furniture</field>
@@ -39,4 +39,4 @@
             <field name="community_menu" eval="True"/>
         </record>
     </data>
-</odoo>
+</eden>

@@ -1,4 +1,4 @@
-import { useComponent, useEffect, useEnv } from "@odoo/owl";
+import { useComponent, useEffect, useEnv } from "@eden/owl";
 import { DROPDOWN_GROUP } from "@web/core/dropdown/dropdown_group";
 
 /**

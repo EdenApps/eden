@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="hr_job_form_inherit_hr_recruitment_skills" model="ir.ui.view">
         <field name="name">hr.job.view.form.inherit</field>
         <field name="model">hr.job</field>
@@ -24,4 +24,4 @@
         <field name="state">code</field>
         <field name="code">action = records.action_search_matching_candidates()</field>
     </record>
-</odoo>
+</eden>

@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import json
 from contextlib import contextmanager
@@ -7,9 +7,9 @@ from uuid import uuid4
 from lxml import etree, objectify
 from werkzeug import urls
 
-from odoo.tests import HttpCase, JsonRpcException
+from eden.tests import HttpCase, JsonRpcException
 
-from odoo.addons.payment.tests.common import PaymentCommon
+from eden.addons.payment.tests.common import PaymentCommon
 
 
 class PaymentHttpCommon(PaymentCommon, HttpCase):

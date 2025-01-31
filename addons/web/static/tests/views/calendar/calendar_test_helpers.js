@@ -1,6 +1,6 @@
-import { click, drag, hover, queryFirst, queryRect } from "@odoo/hoot-dom";
-import { advanceFrame, advanceTime, animationFrame } from "@odoo/hoot-mock";
-import { EventBus } from "@odoo/owl";
+import { click, drag, hover, queryFirst, queryRect } from "@eden/hoot-dom";
+import { advanceFrame, advanceTime, animationFrame } from "@eden/hoot-mock";
+import { EventBus } from "@eden/owl";
 import { contains, getMockEnv, swipeLeft, swipeRight } from "@web/../tests/web_test_helpers";
 
 import { createElement } from "@web/core/utils/xml";

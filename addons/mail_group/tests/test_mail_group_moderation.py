@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from psycopg2 import IntegrityError
 
-from odoo import Command, tools
-from odoo.addons.mail_group.tests.data import GROUP_TEMPLATE
-from odoo.addons.mail_group.tests.common import TestMailListCommon
-from odoo.exceptions import AccessError
-from odoo.tests.common import tagged, users
-from odoo.tools import mute_logger
+from eden import Command, tools
+from eden.addons.mail_group.tests.data import GROUP_TEMPLATE
+from eden.addons.mail_group.tests.common import TestMailListCommon
+from eden.exceptions import AccessError
+from eden.tests.common import tagged, users
+from eden.tools import mute_logger
 
 
 @tagged('mail_group_moderation')
@@ -25,7 +25,7 @@ class TestMailGroupModeration(TestMailListCommon):
             'name': 'Test group 2',
         })
 
-    @mute_logger('odoo.sql_db')
+    @mute_logger('eden.sql_db')
     @users('employee')
     def test_constraints(self):
         mail_group = self.env['mail.group'].browse(self.test_group.ids)
@@ -36,7 +36,7 @@ class TestMailGroupModeration(TestMailListCommon):
                 'status': 'ban',
             })
 
-    @mute_logger('odoo.models.unlink', 'odoo.addons.mail_group.models.mail_group_message')
+    @mute_logger('eden.models.unlink', 'eden.addons.mail_group.models.mail_group_message')
     @users('employee')
     def test_moderation_rule_api(self):
         """ Test moderation rule creation / update through API """
@@ -107,7 +107,7 @@ class TestMailGroupModeration(TestMailListCommon):
         rule.email = '"Alice" <alice@test.com>'
         self.assertEqual(rule.email, 'alice@test.com')
 
-    @mute_logger('odoo.addons.base.models.ir_rule', 'odoo.addons.base.models.ir_model')
+    @mute_logger('eden.addons.base.models.ir_rule', 'eden.addons.base.models.ir_model')
     def test_moderation_rule_security(self):
         with self.assertRaises(AccessError, msg='Portal should not have access to moderation rules'):
             self.env['mail.group.moderation'].with_user(self.user_portal).browse(self.moderation.ids).email
@@ -153,7 +153,7 @@ class TestModeration(TestMailListCommon):
             'moderation_status': 'pending_moderation',
         })
 
-    @mute_logger('odoo.addons.mail.models.mail_thread', 'odoo.addons.mail_group.models.mail_group_message')
+    @mute_logger('eden.addons.mail.models.mail_thread', 'eden.addons.mail_group.models.mail_group_message')
     @users('employee')
     def test_moderation_flow_accept(self):
         """ Unknown email sends email on moderated group, test accept """
@@ -197,7 +197,7 @@ class TestModeration(TestMailListCommon):
         self.assertEqual(new_email_message.moderation_status, 'accepted', 'Should have accepted the message')
         self.assertEqual(old_email_message.moderation_status, 'pending_moderation', 'Should not have touched other message of the same author')
 
-    @mute_logger('odoo.addons.mail.models.mail_thread', 'odoo.addons.mail_group.models.mail_group_message', 'odoo.models.unlink')
+    @mute_logger('eden.addons.mail.models.mail_thread', 'eden.addons.mail_group.models.mail_group_message', 'eden.models.unlink')
     @users('employee')
     def test_moderation_flow_allow(self):
         """ Unknown email sends email on moderated group, test allow """
@@ -283,7 +283,7 @@ class TestModeration(TestMailListCommon):
             len(mail_group_2_as2.mail_group_message_ids), group_2_message_count,
             'Should never have created message in the other group')
 
-    @mute_logger('odoo.addons.mail.models.mail_thread', 'odoo.addons.mail_group.models.mail_group_message', 'odoo.models.unlink')
+    @mute_logger('eden.addons.mail.models.mail_thread', 'eden.addons.mail_group.models.mail_group_message', 'eden.models.unlink')
     @users('employee')
     def test_moderation_flow_ban(self):
         """ Unknown email sends email on moderated group, test ban """
@@ -337,7 +337,7 @@ class TestModeration(TestMailListCommon):
         # Check no mail.mail has been sent
         self.assertEqual(len(self._new_mails), 0, 'Should not have send emails')
 
-    @mute_logger('odoo.addons.mail.models.mail_thread', 'odoo.addons.mail_group.models.mail_group_message', 'odoo.models.unlink')
+    @mute_logger('eden.addons.mail.models.mail_thread', 'eden.addons.mail_group.models.mail_group_message', 'eden.models.unlink')
     @users('employee')
     def test_moderation_flow_reject(self):
         """ Unknown email sends email on moderated group, test reject """
@@ -373,7 +373,7 @@ class TestModeration(TestMailListCommon):
                                     'subject': 'Test Rejected',
                                    })
 
-    @mute_logger('odoo.addons.mail_group.models.mail_group')
+    @mute_logger('eden.addons.mail_group.models.mail_group')
     @users('employee')
     def test_moderation_send_guidelines(self):
         """ Test sending guidelines """
@@ -394,7 +394,7 @@ class TestModeration(TestMailListCommon):
                                         'subject': 'Guidelines of group %s' % mail_group.name,
                                        })
 
-    @mute_logger('odoo.addons.mail_group.models.mail_group')
+    @mute_logger('eden.addons.mail_group.models.mail_group')
     @users('employee')
     def test_moderation_send_guidelines_on_new_member(self):
         """ Test sending guidelines when having a new members """

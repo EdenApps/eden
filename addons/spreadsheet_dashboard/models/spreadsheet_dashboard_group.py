@@ -1,5 +1,5 @@
-from odoo import fields, models, api, _
-from odoo.exceptions import UserError
+from eden import fields, models, api, _
+from eden.exceptions import UserError
 
 
 class SpreadsheetDashboardGroup(models.Model):

@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<odoo>
+<eden>
 
     <!-- Mail template are declared in a NOUPDATE block
          so users can freely customize/delete them -->
@@ -157,4 +157,4 @@
 </p>
         </template>
     </data>
-</odoo>
+</eden>

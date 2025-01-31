@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, _
+from eden import api, fields, models, _
 
-from odoo.exceptions import ValidationError, UserError
-from odoo.osv.expression import AND
+from eden.exceptions import ValidationError, UserError
+from eden.osv.expression import AND
 
 
 class LunchOrder(models.Model):

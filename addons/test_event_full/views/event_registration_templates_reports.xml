@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <template id="event_registration_template_report">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="registration">
@@ -11,4 +11,4 @@
             </t>
         </t>
     </template>
-</odoo>
+</eden>

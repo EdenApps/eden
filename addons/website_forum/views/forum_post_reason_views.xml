@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo><data>
+<eden><data>
     <!-- POST REASON VIEWS -->
     <record id="forum_post_reason_view_list" model="ir.ui.view">
         <field name="name">forum.post.reason.list</field>
@@ -17,4 +17,4 @@
         <field name="res_model">forum.post.reason</field>
         <field name="view_mode">list</field>
     </record>
-</data></odoo>
+</data></eden>

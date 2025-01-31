@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo>
+<eden>
     <data>
 
         <record model="ir.ui.view" id="view_message_subtype_tree">
@@ -63,4 +63,4 @@
         </record>
 
     </data>
-</odoo>
+</eden>

@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import warnings
 from datetime import datetime
@@ -6,12 +6,12 @@ from dateutil.relativedelta import relativedelta
 from operator import itemgetter
 from werkzeug.urls import url_encode
 
-from odoo import http, _
-from odoo.addons.website.controllers.form import WebsiteForm
-from odoo.osv.expression import AND
-from odoo.http import request
-from odoo.tools import email_normalize
-from odoo.tools.misc import groupby
+from eden import http, _
+from eden.addons.website.controllers.form import WebsiteForm
+from eden.osv.expression import AND
+from eden.http import request
+from eden.tools import email_normalize
+from eden.tools.misc import groupby
 
 
 class WebsiteHrRecruitment(WebsiteForm):
@@ -267,11 +267,11 @@ class WebsiteHrRecruitment(WebsiteForm):
     ], type='http', auth="public", website=True, sitemap=False)
     def jobs_compatibility(self, country=None, department=None, office_id=None, contract_type_id=None, **kwargs):
         """
-        Deprecated since Odoo 16.3: those routes are kept by compatibility.
-        They should not be used in Odoo code anymore.
+        Deprecated since Eden 16.3: those routes are kept by compatibility.
+        They should not be used in Eden code anymore.
         """
         warnings.warn(
-            "This route is deprecated since Odoo 16.3: the jobs list is now available at /jobs or /jobs/page/XXX",
+            "This route is deprecated since Eden 16.3: the jobs list is now available at /jobs or /jobs/page/XXX",
             DeprecationWarning
         )
         url_params = {

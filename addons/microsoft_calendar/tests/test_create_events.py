@@ -2,15 +2,15 @@ from unittest.mock import patch
 from datetime import timedelta, datetime
 from freezegun import freeze_time
 
-from odoo import Command
+from eden import Command
 
-from odoo.addons.mail.tests.common import MailCommon, mail_new_test_user
-from odoo.addons.microsoft_calendar.utils.microsoft_calendar import MicrosoftCalendarService
-from odoo.addons.microsoft_calendar.utils.microsoft_event import MicrosoftEvent
-from odoo.addons.microsoft_calendar.models.res_users import User
-from odoo.addons.microsoft_calendar.tests.common import TestCommon, mock_get_token, _modified_date_in_the_future
-from odoo.exceptions import ValidationError, UserError
-from odoo.tests.common import tagged
+from eden.addons.mail.tests.common import MailCommon, mail_new_test_user
+from eden.addons.microsoft_calendar.utils.microsoft_calendar import MicrosoftCalendarService
+from eden.addons.microsoft_calendar.utils.microsoft_event import MicrosoftEvent
+from eden.addons.microsoft_calendar.models.res_users import User
+from eden.addons.microsoft_calendar.tests.common import TestCommon, mock_get_token, _modified_date_in_the_future
+from eden.exceptions import ValidationError, UserError
+from eden.tests.common import tagged
 
 
 @tagged('post_install', '-at_install')
@@ -20,7 +20,7 @@ class TestCreateEvents(TestCommon):
     @patch.object(MicrosoftCalendarService, 'insert')
     def test_create_simple_event_without_sync(self, mock_insert):
         """
-        A Odoo event is created when Outlook sync is not enabled.
+        A Eden event is created when Outlook sync is not enabled.
         """
 
         # arrange
@@ -46,12 +46,12 @@ class TestCreateEvents(TestCommon):
         record = self.env["calendar.event"].with_user(self.organizer_user).create(self.simple_event_values)
 
         with self.assertRaises(ValidationError):
-            record._sync_odoo2microsoft()
+            record._sync_eden2microsoft()
 
     @patch.object(MicrosoftCalendarService, 'get_events')
     def test_create_simple_event_from_outlook_organizer_calendar(self, mock_get_events):
         """
-        An event has been created in Outlook and synced in the Odoo organizer calendar.
+        An event has been created in Outlook and synced in the Eden organizer calendar.
         """
 
         # arrange
@@ -65,15 +65,15 @@ class TestCreateEvents(TestCommon):
         records = self.env["calendar.event"].search([])
         new_records = (records - existing_records)
         self.assertEqual(len(new_records), 1)
-        self.assert_odoo_event(new_records, self.expected_odoo_event_from_outlook)
+        self.assert_eden_event(new_records, self.expected_eden_event_from_outlook)
         self.assertEqual(new_records.user_id, self.organizer_user)
         self.assertEqual(new_records.need_sync_m, False)
 
     @patch.object(MicrosoftCalendarService, 'get_events')
-    def test_create_simple_event_from_outlook_attendee_calendar_and_organizer_exists_in_odoo(self, mock_get_events):
+    def test_create_simple_event_from_outlook_attendee_calendar_and_organizer_exists_in_eden(self, mock_get_events):
         """
-        An event has been created in Outlook and synced in the Odoo attendee calendar.
-        There is a Odoo user that matches with the organizer email address.
+        An event has been created in Outlook and synced in the Eden attendee calendar.
+        There is a Eden user that matches with the organizer email address.
         """
 
         # arrange
@@ -87,22 +87,22 @@ class TestCreateEvents(TestCommon):
         records = self.env["calendar.event"].search([])
         new_records = (records - existing_records)
         self.assertEqual(len(new_records), 1)
-        self.assert_odoo_event(new_records, self.expected_odoo_event_from_outlook)
+        self.assert_eden_event(new_records, self.expected_eden_event_from_outlook)
         self.assertEqual(new_records.user_id, self.organizer_user)
 
     @patch.object(MicrosoftCalendarService, 'get_events')
-    def test_create_simple_event_from_outlook_attendee_calendar_and_organizer_does_not_exist_in_odoo(self, mock_get_events):
+    def test_create_simple_event_from_outlook_attendee_calendar_and_organizer_does_not_exist_in_eden(self, mock_get_events):
         """
-        An event has been created in Outlook and synced in the Odoo attendee calendar.
-        no Odoo user that matches with the organizer email address.
+        An event has been created in Outlook and synced in the Eden attendee calendar.
+        no Eden user that matches with the organizer email address.
         """
 
         # arrange
         outlook_event = self.simple_event_from_outlook_attendee
         outlook_event = dict(self.simple_event_from_outlook_attendee, organizer={
-            'emailAddress': {'address': "john.doe@odoo.com", 'name': "John Doe"},
+            'emailAddress': {'address': "john.doe@eden.com", 'name': "John Doe"},
         })
-        expected_event = dict(self.expected_odoo_event_from_outlook, user_id=False)
+        expected_event = dict(self.expected_eden_event_from_outlook, user_id=False)
 
         mock_get_events.return_value = (MicrosoftEvent([outlook_event]), None)
         existing_records = self.env["calendar.event"].search([])
@@ -114,13 +114,13 @@ class TestCreateEvents(TestCommon):
         records = self.env["calendar.event"].search([])
         new_records = (records - existing_records)
         self.assertEqual(len(new_records), 1)
-        self.assert_odoo_event(new_records, expected_event)
+        self.assert_eden_event(new_records, expected_event)
 
     @patch.object(MicrosoftCalendarService, 'get_events')
     def test_create_simple_event_from_outlook_attendee_calendar_where_email_addresses_are_capitalized(self, mock_get_events):
         """
-        An event has been created in Outlook and synced in the Odoo attendee calendar.
-        The email addresses of the attendee and the organizer are in different case than in Odoo.
+        An event has been created in Outlook and synced in the Eden attendee calendar.
+        The email addresses of the attendee and the organizer are in different case than in Eden.
         """
 
         # arrange
@@ -139,15 +139,15 @@ class TestCreateEvents(TestCommon):
         records = self.env["calendar.event"].search([])
         new_records = (records - existing_records)
         self.assertEqual(len(new_records), 1)
-        self.assert_odoo_event(new_records, self.expected_odoo_event_from_outlook)
+        self.assert_eden_event(new_records, self.expected_eden_event_from_outlook)
         self.assertEqual(new_records.user_id, self.organizer_user)
 
     @patch.object(MicrosoftCalendarService, 'insert')
     def test_create_recurrent_event_without_sync(self, mock_insert):
         """
-        A Odoo recurrent event is created when Outlook sync is not enabled.
+        A Eden recurrent event is created when Outlook sync is not enabled.
         """
-        if not self.sync_odoo_recurrences_with_outlook_feature():
+        if not self.sync_eden_recurrences_with_outlook_feature():
             return
 
         # arrange
@@ -166,9 +166,9 @@ class TestCreateEvents(TestCommon):
     @patch.object(MicrosoftCalendarService, 'insert')
     def test_create_recurrent_event_with_sync(self, mock_insert, mock_get_events):
         """
-        A Odoo recurrent event is created when Outlook sync is enabled.
+        A Eden recurrent event is created when Outlook sync is enabled.
         """
-        if not self.sync_odoo_recurrences_with_outlook_feature():
+        if not self.sync_eden_recurrences_with_outlook_feature():
             return
 
         # >>> first phase: create the recurrence
@@ -209,11 +209,11 @@ class TestCreateEvents(TestCommon):
     @patch.object(MicrosoftCalendarService, 'insert')
     def test_create_recurrent_event_with_sync_by_another_user(self, mock_insert, mock_get_events):
         """
-        A Odoo recurrent event has been created and synced with Outlook by another user, but nothing
+        A Eden recurrent event has been created and synced with Outlook by another user, but nothing
         should happen as it we prevent sync of recurrences from other users
         ( see microsoft_calendar/models/calendar_recurrence_rule.py::_get_microsoft_sync_domain() )
         """
-        if not self.sync_odoo_recurrences_with_outlook_feature():
+        if not self.sync_eden_recurrences_with_outlook_feature():
             return
         # >>> first phase: create the recurrence
 
@@ -251,7 +251,7 @@ class TestCreateEvents(TestCommon):
     @patch.object(MicrosoftCalendarService, 'get_events')
     def test_create_recurrent_event_from_outlook_organizer_calendar(self, mock_get_events):
         """
-        A recurrent event has been created in Outlook and synced in the Odoo organizer calendar.
+        A recurrent event has been created in Outlook and synced in the Eden organizer calendar.
         """
 
         # arrange
@@ -267,14 +267,14 @@ class TestCreateEvents(TestCommon):
         new_recurrences = (self.env["calendar.recurrence"].search([]) - existing_recurrences)
         self.assertEqual(len(new_recurrences), 1)
         self.assertEqual(len(new_events), self.recurrent_events_count)
-        self.assert_odoo_recurrence(new_recurrences, self.expected_odoo_recurrency_from_outlook)
+        self.assert_eden_recurrence(new_recurrences, self.expected_eden_recurrency_from_outlook)
         for i, e in enumerate(sorted(new_events, key=lambda e: e.id)):
-            self.assert_odoo_event(e, self.expected_odoo_recurrency_events_from_outlook[i])
+            self.assert_eden_event(e, self.expected_eden_recurrency_events_from_outlook[i])
 
     @patch.object(MicrosoftCalendarService, 'get_events')
     def test_create_recurrent_event_from_outlook_attendee_calendar(self, mock_get_events):
         """
-        A recurrent event has been created in Outlook and synced in the Odoo attendee calendar.
+        A recurrent event has been created in Outlook and synced in the Eden attendee calendar.
         """
 
         # arrange
@@ -290,14 +290,14 @@ class TestCreateEvents(TestCommon):
         new_recurrences = (self.env["calendar.recurrence"].search([]) - existing_recurrences)
         self.assertEqual(len(new_recurrences), 1)
         self.assertEqual(len(new_events), self.recurrent_events_count)
-        self.assert_odoo_recurrence(new_recurrences, self.expected_odoo_recurrency_from_outlook)
+        self.assert_eden_recurrence(new_recurrences, self.expected_eden_recurrency_from_outlook)
         for i, e in enumerate(sorted(new_events, key=lambda e: e.id)):
-            self.assert_odoo_event(e, self.expected_odoo_recurrency_events_from_outlook[i])
+            self.assert_eden_event(e, self.expected_eden_recurrency_events_from_outlook[i])
 
     @patch.object(MicrosoftCalendarService, 'insert')
     def test_forbid_recurrences_creation_synced_outlook_calendar(self, mock_insert):
         """
-        Forbids new recurrences creation in Odoo due to Outlook spam limitation of updating recurrent events.
+        Forbids new recurrences creation in Eden due to Outlook spam limitation of updating recurrent events.
         """
         # Set custom calendar token validity to simulate real scenario.
         self.env.user.microsoft_calendar_token_validity = datetime.now() + timedelta(minutes=5)
@@ -322,7 +322,7 @@ class TestCreateEvents(TestCommon):
         self.organizer_user.microsoft_synchronization_stopped = False
         self.organizer_user.pause_microsoft_synchronization()
 
-        # Try to create a simple event in Odoo Calendar.
+        # Try to create a simple event in Eden Calendar.
         record = self.env["calendar.event"].with_user(self.organizer_user).create(self.simple_event_values)
         self.call_post_commit_hooks()
         record.invalidate_recordset()
@@ -408,7 +408,7 @@ class TestCreateEvents(TestCommon):
     @patch.object(MicrosoftCalendarService, 'insert')
     def test_create_event_for_another_user(self, mock_insert, mock_get_events):
         """
-        Allow the creation of event for another user only if the proposed user have its Odoo Calendar synced.
+        Allow the creation of event for another user only if the proposed user have its Eden Calendar synced.
         User A (self.organizer_user) is creating an event with user B as organizer (self.attendee_user).
         """
         # Ensure that the calendar synchronization of user A is active. Deactivate user B synchronization for throwing an error.
@@ -448,7 +448,7 @@ class TestCreateEvents(TestCommon):
         self.assertTrue(self.attendee_user.partner_id.id in event.partner_ids.ids, "User B (self.attendee_user) should be listed as attendee after event creation.")
 
         # Try creating an event with portal user (with no access rights) as organizer from Microsoft.
-        # In Odoo, this event will be created (behind the screens) by a synced Odoo user as attendee (self.attendee_user).
+        # In Eden, this event will be created (behind the screens) by a synced Eden user as attendee (self.attendee_user).
         portal_group = self.env.ref('base.group_portal')
         portal_user = self.env['res.users'].create({
             'login': 'portal@user',
@@ -457,7 +457,7 @@ class TestCreateEvents(TestCommon):
             'groups_id': [Command.set([portal_group.id])],
             })
 
-        # Mock event from Microsoft and sync event with Odoo through self.attendee_user (synced user).
+        # Mock event from Microsoft and sync event with Eden through self.attendee_user (synced user).
         self.simple_event_from_outlook_organizer.update({
             'id': 'portalUserEventID',
             'iCalUId': 'portalUserEventICalUId',
@@ -467,20 +467,20 @@ class TestCreateEvents(TestCommon):
         self.assertTrue(self.env['calendar.event'].with_user(self.attendee_user)._check_microsoft_sync_status())
         self.attendee_user.with_user(self.attendee_user).sudo()._sync_microsoft_calendar()
 
-        # Ensure that event was successfully created in Odoo (no ACL error was triggered blocking creation).
+        # Ensure that event was successfully created in Eden (no ACL error was triggered blocking creation).
         portal_user_events = self.env['calendar.event'].search([('user_id', '=', portal_user.id)])
         self.assertEqual(len(portal_user_events), 1)
 
     @patch.object(MicrosoftCalendarService, 'get_events')
     def test_create_simple_event_from_outlook_without_organizer(self, mock_get_events):
         """
-        Allow creation of an event without organizer in Outlook and sync it in Odoo.
+        Allow creation of an event without organizer in Outlook and sync it in Eden.
         """
 
         # arrange
         outlook_event = self.simple_event_from_outlook_attendee
         outlook_event = dict(self.simple_event_from_outlook_attendee, organizer=None)
-        expected_event = dict(self.expected_odoo_event_from_outlook, user_id=False)
+        expected_event = dict(self.expected_eden_event_from_outlook, user_id=False)
 
         mock_get_events.return_value = (MicrosoftEvent([outlook_event]), None)
         existing_records = self.env["calendar.event"].search([])
@@ -492,27 +492,27 @@ class TestCreateEvents(TestCommon):
         records = self.env["calendar.event"].search([])
         new_records = (records - existing_records)
         self.assertEqual(len(new_records), 1)
-        self.assert_odoo_event(new_records, expected_event)
+        self.assert_eden_event(new_records, expected_event)
 
     def test_create_event_with_default_and_undefined_sensitivity(self):
-        """ Check if microsoft events are created in Odoo when 'None' sensitivity setting is defined and also when it is not. """
-        # Sync events from Microsoft to Odoo after adding the sensitivity (privacy) property.
+        """ Check if microsoft events are created in Eden when 'None' sensitivity setting is defined and also when it is not. """
+        # Sync events from Microsoft to Eden after adding the sensitivity (privacy) property.
         self.simple_event_from_outlook_organizer.pop('sensitivity')
         undefined_privacy_event = {'id': 100, 'iCalUId': 2, **self.simple_event_from_outlook_organizer}
         default_privacy_event = {'id': 200, 'iCalUId': 4, 'sensitivity': None, **self.simple_event_from_outlook_organizer}
-        self.env['calendar.event']._sync_microsoft2odoo(MicrosoftEvent([undefined_privacy_event, default_privacy_event]))
+        self.env['calendar.event']._sync_microsoft2eden(MicrosoftEvent([undefined_privacy_event, default_privacy_event]))
 
-        # Ensure that synced events have the correct privacy field in Odoo.
-        undefined_privacy_odoo_event = self.env['calendar.event'].search([('microsoft_id', '=', 100)])
-        default_privacy_odoo_event = self.env['calendar.event'].search([('microsoft_id', '=', 200)])
-        self.assertFalse(undefined_privacy_odoo_event.privacy, "Event with undefined privacy must have False value in privacy field.")
-        self.assertFalse(default_privacy_odoo_event.privacy, "Event with custom privacy must have False value in privacy field.")
+        # Ensure that synced events have the correct privacy field in Eden.
+        undefined_privacy_eden_event = self.env['calendar.event'].search([('microsoft_id', '=', 100)])
+        default_privacy_eden_event = self.env['calendar.event'].search([('microsoft_id', '=', 200)])
+        self.assertFalse(undefined_privacy_eden_event.privacy, "Event with undefined privacy must have False value in privacy field.")
+        self.assertFalse(default_privacy_eden_event.privacy, "Event with custom privacy must have False value in privacy field.")
 
     @patch.object(MicrosoftCalendarService, 'get_events')
     @patch.object(MicrosoftCalendarService, 'insert')
     def test_create_videocall_sync_microsoft_calendar(self, mock_insert, mock_get_events):
         """
-        Test syncing an event from Odoo to Microsoft Calendar.
+        Test syncing an event from Eden to Microsoft Calendar.
         Ensures that meeting details are correctly updated after syncing from Microsoft.
         """
         record = self.env["calendar.event"].with_user(self.organizer_user).create(self.simple_event_values)
@@ -526,7 +526,7 @@ class TestCreateEvents(TestCommon):
         # Prepare the mock event response from Microsoft
         self.response_from_outlook_organizer = {
             **self.simple_event_from_outlook_organizer,
-            '_odoo_id': record.id,
+            '_eden_id': record.id,
             'onlineMeeting': {
                 'joinUrl': 'https://teams.microsoft.com/l/meetup-join/test',
                 'conferenceId': '275984951',
@@ -551,7 +551,7 @@ class TestCreateEvents(TestCommon):
                          "The event's online meeting provider should be set to Microsoft Teams.")
         self.assertEqual(record.need_sync_m, False)
 
-        # Verify the event's videocall_location is updated in Odoo
+        # Verify the event's videocall_location is updated in Eden
         event = self.env['calendar.event'].search([('name', '=', self.response_from_outlook_organizer.get('subject'))])
         self.assertTrue(event, "The event should exist in the calendar after sync.")
         self.assertEqual(event.videocall_location, 'https://teams.microsoft.com/l/meetup-join/test', "The meeting URL should match.")
@@ -629,7 +629,7 @@ class TestCreateEvents(TestCommon):
         """
         Skip the synchro of new events by attendees when the organizer is not synchronized with Outlook.
         Otherwise, the event ownership will be lost to the attendee and it could generate duplicates in
-        Odoo, as well cause problems in the future the synchronization of that event for the original owner.
+        Eden, as well cause problems in the future the synchronization of that event for the original owner.
         """
         # Ensure that the calendar synchronization of user A is active. Deactivate user B synchronization.
         self.assertTrue(self.env['calendar.event'].with_user(self.organizer_user)._check_microsoft_sync_status())
@@ -639,14 +639,14 @@ class TestCreateEvents(TestCommon):
         self.simple_event_values['user_id'] = self.attendee_user.id
         self.simple_event_values['partner_ids'] = [Command.set([self.organizer_user.partner_id.id, self.attendee_user.partner_id.id])]
         event = self.env['calendar.event'].with_user(self.attendee_user).create(self.simple_event_values)
-        self.assertTrue(event, "The event for the not synchronized owner must be created in Odoo.")
+        self.assertTrue(event, "The event for the not synchronized owner must be created in Eden.")
 
         # Synchronize the calendar of user A, then make sure insert was not called.
-        event.with_user(self.organizer_user).sudo()._sync_odoo2microsoft()
+        event.with_user(self.organizer_user).sudo()._sync_eden2microsoft()
         mock_insert.assert_not_called()
 
 
-class TestSyncOdoo2MicrosoftMail(TestCommon, MailCommon):
+class TestSyncEden2MicrosoftMail(TestCommon, MailCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -655,7 +655,7 @@ class TestSyncOdoo2MicrosoftMail(TestCommon, MailCommon):
             user = cls.env['res.users'].create({
                 'name': f'user{n}',
                 'login': f'user{n}',
-                'email': f'user{n}@odoo.com',
+                'email': f'user{n}@eden.com',
                 'microsoft_calendar_rtoken': f'abc{n}',
                 'microsoft_calendar_token': f'abc{n}',
                 'microsoft_calendar_token_validity': datetime(9999, 12, 31),

@@ -1,4 +1,4 @@
-import { Component, useEffect, useRef } from "@odoo/owl";
+import { Component, useEffect, useRef } from "@eden/owl";
 import { CenteredIcon } from "@point_of_sale/app/generic_components/centered_icon/centered_icon";
 import { _t } from "@web/core/l10n/translation";
 import { Orderline } from "@point_of_sale/app/generic_components/orderline/orderline";

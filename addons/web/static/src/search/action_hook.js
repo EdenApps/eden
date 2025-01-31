@@ -1,4 +1,4 @@
-import { onMounted, useComponent, useEffect, useExternalListener } from "@odoo/owl";
+import { onMounted, useComponent, useEffect, useExternalListener } from "@eden/owl";
 
 export const scrollSymbol = Symbol("scroll");
 

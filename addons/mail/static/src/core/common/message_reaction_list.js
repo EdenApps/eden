@@ -1,5 +1,5 @@
 import { useHover } from "@mail/utils/common/hooks";
-import { Component, onMounted, onPatched, useState } from "@odoo/owl";
+import { Component, onMounted, onPatched, useState } from "@eden/owl";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { useDropdownState } from "@web/core/dropdown/dropdown_hooks";
 import { loadEmoji, loader } from "@web/core/emoji_picker/emoji_picker";

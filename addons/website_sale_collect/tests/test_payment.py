@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import HttpCase, tagged
-from odoo.tools import mute_logger
+from eden.tests import HttpCase, tagged
+from eden.tools import mute_logger
 
-from odoo.addons.website_sale_collect.tests.common import OnSiteCommon
+from eden.addons.website_sale_collect.tests.common import OnSiteCommon
 
 
 @tagged('post_install', '-at_install')
@@ -36,7 +36,7 @@ class TestOnSitePayment(HttpCase, OnSiteCommon):
             state='pending',
             payment_method_id=self.provider.payment_method_ids.id,
         )
-        with mute_logger('odoo.addons.sale.models.payment_transaction'):
+        with mute_logger('eden.addons.sale.models.payment_transaction'):
             tx._post_process()
 
         self.assertEqual(order.state, 'sale')

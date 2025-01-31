@@ -1,4 +1,4 @@
-<odoo>
+<eden>
     <record id="view_pos_printer_form" model="ir.ui.view">
         <field name="name">Preparation Printer</field>
         <field name="model">pos.printer</field>
@@ -55,4 +55,4 @@
         parent="point_of_sale.menu_point_of_sale"
         action="action_pos_printer_form"
         sequence="99" />
-</odoo>
+</eden>

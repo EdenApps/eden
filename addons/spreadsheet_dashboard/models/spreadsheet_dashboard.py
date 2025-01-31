@@ -1,7 +1,7 @@
 import json
 
-from odoo import _, fields, models
-from odoo.tools import file_open
+from eden import _, fields, models
+from eden.tools import file_open
 
 
 class SpreadsheetDashboard(models.Model):

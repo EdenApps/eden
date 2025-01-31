@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import publicWidget from "@web/legacy/js/public/public_widget";
 import { rpc } from "@web/core/network/rpc";
@@ -141,7 +141,7 @@ const DynamicSnippetProductsCard = WebsiteSale.extend({
     /**
      * Event triggered by a click on the Add to cart button
      *
-     * @param {OdooEvent} ev
+     * @param {EdenEvent} ev
      */
     async _onClickAddToCart(ev) {
         const button = ev.currentTarget
@@ -183,7 +183,7 @@ const DynamicSnippetProductsCard = WebsiteSale.extend({
      * Event triggered by a click on the remove button on a "recently viewed"
      * template.
      *
-     * @param {OdooEvent} ev
+     * @param {EdenEvent} ev
      */
     async _onRemoveFromRecentlyViewed(ev) {
         const rpcParams = {}

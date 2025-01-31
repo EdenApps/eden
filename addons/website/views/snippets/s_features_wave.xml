@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_features_wave" name="Features Wave">
     <section class="s_features_wave o_cc o_cc5 pt64 pb64" data-oe-shape-data="{'shape':'web_editor/Wavy/11', 'showOnMobile':true}">
@@ -51,4 +51,4 @@
     </section>
 </template>
 
-</odoo>
+</eden>

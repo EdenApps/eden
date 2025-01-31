@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import date, datetime
 
-from odoo import Command
-from odoo.tests import tagged
-from odoo.tests.common import TransactionCase, warmup
+from eden import Command
+from eden.tests import tagged
+from eden.tests.common import TransactionCase, warmup
 
 
 @tagged('company_leave')

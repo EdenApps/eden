@@ -1,14 +1,14 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 import pprint
 
-from odoo import _, models
-from odoo.exceptions import UserError, ValidationError
+from eden import _, models
+from eden.exceptions import UserError, ValidationError
 
-from odoo.addons.payment import utils as payment_utils
-from odoo.addons.payment_authorize.models.authorize_request import AuthorizeAPI
-from odoo.addons.payment_authorize.const import PAYMENT_METHODS_MAPPING, TRANSACTION_STATUS_MAPPING
+from eden.addons.payment import utils as payment_utils
+from eden.addons.payment_authorize.models.authorize_request import AuthorizeAPI
+from eden.addons.payment_authorize.const import PAYMENT_METHODS_MAPPING, TRANSACTION_STATUS_MAPPING
 
 
 _logger = logging.getLogger(__name__)
@@ -111,7 +111,7 @@ class PaymentTransaction(models.Model):
             self._set_canceled(extra_allowed_states=('done',))
         elif tx_status in TRANSACTION_STATUS_MAPPING['refunded']:
             # The payment has been refunded from Authorize.net side before we could refund it. We
-            # create a refund tx on Odoo to reflect the move of the funds.
+            # create a refund tx on Eden to reflect the move of the funds.
             refund_tx = super()._send_refund_request(amount_to_refund=amount_to_refund)
             refund_tx._set_done()
             # Immediately post-process the transaction as the post-processing will not be

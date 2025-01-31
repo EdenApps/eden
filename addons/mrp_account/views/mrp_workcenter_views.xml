@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="mrp_workcenter_view_inherit" model="ir.ui.view">
         <field name="name">mrp.workcenter.form.inherit</field>
         <field name="model">mrp.workcenter</field>
@@ -10,4 +10,4 @@
             </group>
         </field>
     </record>
-</odoo>
+</eden>

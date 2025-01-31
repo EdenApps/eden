@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import {
     changeOption,
@@ -74,7 +74,7 @@ registerWebsitePreviewTour('edit_megamenu', {
     toggleMegaMenu({}),
     {
         content: "Select the last menu link of the first column",
-        trigger: ':iframe .s_mega_menu_odoo_menu .row > div:first-child .nav > :nth-child(6)', // 6th is the last one
+        trigger: ':iframe .s_mega_menu_eden_menu .row > div:first-child .nav > :nth-child(6)', // 6th is the last one
         run: "click",
     },
     {
@@ -84,7 +84,7 @@ registerWebsitePreviewTour('edit_megamenu', {
     },
     {
         content: "Check that the last menu link was deleted",
-        trigger: ':iframe .s_mega_menu_odoo_menu .row > div:first-child .nav:not(:has(:nth-child(6)))',
+        trigger: ':iframe .s_mega_menu_eden_menu .row > div:first-child .nav:not(:has(:nth-child(6)))',
     },
     {
         content: "Click on the first title item.",
@@ -175,7 +175,7 @@ registerWebsitePreviewTour("megamenu_active_nav_link", {
     toggleMegaMenu({}),
     {
         content: "Select the last menu link of the first column",
-        trigger: ":iframe .s_mega_menu_odoo_menu .row > div:first-child .nav > :nth-child(6)",
+        trigger: ":iframe .s_mega_menu_eden_menu .row > div:first-child .nav > :nth-child(6)",
         run: "click",
     },
     {
@@ -193,7 +193,7 @@ registerWebsitePreviewTour("megamenu_active_nav_link", {
     toggleMegaMenu(),
     {
         content: "Click on the last menu link of the first column",
-        trigger: ":iframe .s_mega_menu_odoo_menu .row > div:first-child .nav > :nth-child(6)",
+        trigger: ":iframe .s_mega_menu_eden_menu .row > div:first-child .nav > :nth-child(6)",
         run: "click",
     },
     {
@@ -257,7 +257,7 @@ registerWebsitePreviewTour('edit_megamenu_big_icons_subtitles', {
     toggleMegaMenu({}),
     {
         content: "Select the first menu link of the first column",
-        trigger: ':iframe .s_mega_menu_odoo_menu .row > div:first-child .nav > :first-child',
+        trigger: ':iframe .s_mega_menu_eden_menu .row > div:first-child .nav > :first-child',
         run: "click",
     },
     changeOption("MegaMenuLayout", "we-toggler"),

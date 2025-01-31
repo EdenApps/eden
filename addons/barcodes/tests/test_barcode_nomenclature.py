@@ -1,5 +1,5 @@
-from odoo.exceptions import ValidationError
-from odoo.tests import common
+from eden.exceptions import ValidationError
+from eden.tests import common
 
 
 class TestBarcodeNomenclature(common.TransactionCase):

@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-import odoo
+import eden
 
-from odoo import Command
-from odoo.addons.point_of_sale.tests.common import TestPoSCommon
-from odoo.tests import Form
+from eden import Command
+from eden.addons.point_of_sale.tests.common import TestPoSCommon
+from eden.tests import Form
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@eden.tests.tagged('post_install', '-at_install')
 class TestConfigureShops(TestPoSCommon):
     """ Shops are now configured from the general settings.
         This test suite ensures that changes made in the general settings

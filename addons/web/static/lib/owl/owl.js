@@ -1489,7 +1489,7 @@
             }
             moveBeforeVNode(other, afterNode) {
                 if (other) {
-                    // check this with @ged-odoo for use in foreach
+                    // check this with @ged-eden for use in foreach
                     afterNode = other.firstNode() || afterNode;
                 }
                 this.child.moveBeforeVNode(other ? other.child : null, afterNode);
@@ -5808,7 +5808,7 @@
         return `Owl is running in 'dev' mode.
 
 This is not suitable for production use.
-See https://github.com/odoo/owl/blob/${hash}/doc/reference/app.md#configuration for more information.`;
+See https://github.com/eden/owl/blob/${hash}/doc/reference/app.md#configuration for more information.`;
     };
     const apps = new Set();
     window.__OWL_DEVTOOLS__ || (window.__OWL_DEVTOOLS__ = { apps, Fiber, RootFiber, toRaw, reactive });
@@ -6225,7 +6225,7 @@ See https://github.com/odoo/owl/blob/${hash}/doc/reference/app.md#configuration 
 
     __info__.date = '2025-01-15T10:40:24.184Z';
     __info__.hash = 'a9be149';
-    __info__.url = 'https://github.com/odoo/owl';
+    __info__.url = 'https://github.com/eden/owl';
 
 
 })(this.owl = this.owl || {});

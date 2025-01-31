@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
 
-from odoo import _, models
-from odoo.exceptions import UserError
+from eden import _, models
+from eden.exceptions import UserError
 
 import markupsafe
 

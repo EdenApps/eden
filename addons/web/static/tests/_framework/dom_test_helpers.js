@@ -1,4 +1,4 @@
-import { after, afterEach } from "@odoo/hoot";
+import { after, afterEach } from "@eden/hoot";
 import {
     check,
     clear,
@@ -19,19 +19,19 @@ import {
     select,
     uncheck,
     waitFor,
-} from "@odoo/hoot-dom";
-import { advanceFrame, advanceTime, animationFrame } from "@odoo/hoot-mock";
+} from "@eden/hoot-dom";
+import { advanceFrame, advanceTime, animationFrame } from "@eden/hoot-mock";
 import { hasTouch } from "@web/core/browser/feature_detection";
 
 /**
- * @typedef {import("@odoo/hoot-dom").DragHelpers} DragHelpers
- * @typedef {import("@odoo/hoot-dom").FillOptions} FillOptions
- * @typedef {import("@odoo/hoot-dom").InputValue} InputValue
- * @typedef {import("@odoo/hoot-dom").KeyStrokes} KeyStrokes
- * @typedef {import("@odoo/hoot-dom").PointerOptions} PointerOptions
- * @typedef {import("@odoo/hoot-dom").Position} Position
- * @typedef {import("@odoo/hoot-dom").QueryOptions} QueryOptions
- * @typedef {import("@odoo/hoot-dom").Target} Target
+ * @typedef {import("@eden/hoot-dom").DragHelpers} DragHelpers
+ * @typedef {import("@eden/hoot-dom").FillOptions} FillOptions
+ * @typedef {import("@eden/hoot-dom").InputValue} InputValue
+ * @typedef {import("@eden/hoot-dom").KeyStrokes} KeyStrokes
+ * @typedef {import("@eden/hoot-dom").PointerOptions} PointerOptions
+ * @typedef {import("@eden/hoot-dom").Position} Position
+ * @typedef {import("@eden/hoot-dom").QueryOptions} QueryOptions
+ * @typedef {import("@eden/hoot-dom").Target} Target
  *
  * @typedef {PointerOptions & {
  *  initialPointerMoveDistance?: number;
@@ -48,7 +48,7 @@ import { hasTouch } from "@web/core/browser/feature_detection";
 
 /**
  * @template T
- * @typedef {import("@odoo/hoot-dom").MaybePromise<T>} MaybePromise
+ * @typedef {import("@eden/hoot-dom").MaybePromise<T>} MaybePromise
  */
 
 /**

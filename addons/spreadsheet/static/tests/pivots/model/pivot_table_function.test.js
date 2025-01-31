@@ -1,5 +1,5 @@
-import { animationFrame } from "@odoo/hoot-mock";
-import { describe, expect, test, beforeEach } from "@odoo/hoot";
+import { animationFrame } from "@eden/hoot-mock";
+import { describe, expect, test, beforeEach } from "@eden/hoot";
 import {
     defineSpreadsheetActions,
     defineSpreadsheetModels,

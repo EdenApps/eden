@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <template id="s_text_cover" name="Text Cover">
     <section class="s_text_cover o_colored_level o_cc o_cc3">
@@ -22,4 +22,4 @@
     <field name="path">website/static/src/snippets/s_text_cover/000.scss</field>
 </record>
 
-</odoo>
+</eden>

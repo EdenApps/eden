@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 from pytz import timezone, utc
 
-from odoo import models
+from eden import models
 
 
 class ResourceCalendarLeaves(models.Model):

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="view_res_partner_filter_assign_tree" model="ir.ui.view">
         <field name="name">res.partner.geo.inherit.list</field>
         <field name="model">res.partner</field>
@@ -52,4 +52,4 @@
             </data>
         </field>
     </record>
-</odoo>
+</eden>

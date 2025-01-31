@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 import math
 import re
 from datetime import datetime
 
-from odoo import api, fields, models, tools, _
-from odoo.exceptions import UserError, ValidationError, AccessError
-from odoo.osv import expression
-from odoo.tools import sql, SQL
-from odoo.tools.json import scriptsafe as json_safe
+from eden import api, fields, models, tools, _
+from eden.exceptions import UserError, ValidationError, AccessError
+from eden.osv import expression
+from eden.tools import sql, SQL
+from eden.tools.json import scriptsafe as json_safe
 
 _logger = logging.getLogger(__name__)
 

@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import {
     ProductDocumentKanbanRenderer
@@ -6,7 +6,7 @@ import {
 import { UploadButton } from '@product/js/product_document_kanban/upload_button/upload_button';
 import { registry } from '@web/core/registry';
 import { X2ManyField, x2ManyField } from '@web/views/fields/x2many/x2many_field';
-import { onWillRender } from "@odoo/owl";
+import { onWillRender } from "@eden/owl";
 
 export class QuotationDocumentX2ManyField extends X2ManyField {
     static template = 'sale_pdf_quote_builder.QuotationDocumentX2ManyField';

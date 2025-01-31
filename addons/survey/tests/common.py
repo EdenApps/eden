@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import datetime
 import re
@@ -7,8 +7,8 @@ import re
 from collections import Counter
 from contextlib import contextmanager
 
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.tests import common
+from eden.addons.mail.tests.common import mail_new_test_user
+from eden.tests import common
 
 
 class SurveyCase(common.TransactionCase):

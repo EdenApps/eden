@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { Failure } from "@mail/core/common/failure_model";
 import { _t } from "@web/core/l10n/translation";

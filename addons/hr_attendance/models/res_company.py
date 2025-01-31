@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models, api
-from odoo.osv.expression import OR
+from eden import fields, models, api
+from eden.osv.expression import OR
 
 import uuid
 from werkzeug.urls import url_join

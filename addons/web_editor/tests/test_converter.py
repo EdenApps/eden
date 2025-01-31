@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import textwrap
 
 from lxml import etree, html
 from lxml.builder import E
 
-from odoo.tests import common
-from odoo.tests.common import BaseCase
-from odoo.addons.web_editor.models.ir_qweb_fields import html_to_text
+from eden.tests import common
+from eden.tests.common import BaseCase
+from eden.addons.web_editor.models.ir_qweb_fields import html_to_text
 
 
 class TestHTMLToText(BaseCase):

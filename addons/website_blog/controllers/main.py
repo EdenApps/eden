@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import werkzeug
 import itertools
@@ -7,12 +7,12 @@ import pytz
 import babel.dates
 from collections import defaultdict
 
-from odoo import http, fields, tools, models
-from odoo.addons.website.controllers.main import QueryURL
-from odoo.http import request
-from odoo.tools import html2plaintext
-from odoo.tools.misc import get_lang
-from odoo.tools import sql
+from eden import http, fields, tools, models
+from eden.addons.website.controllers.main import QueryURL
+from eden.http import request
+from eden.tools import html2plaintext
+from eden.tools.misc import get_lang
+from eden.tools import sql
 
 
 class WebsiteBlog(http.Controller):

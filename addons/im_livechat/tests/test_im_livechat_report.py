@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from unittest.mock import patch
 
-from odoo.addons.im_livechat.tests.common import TestImLivechatCommon
-from odoo.tests.common import tagged
+from eden.addons.im_livechat.tests.common import TestImLivechatCommon
+from eden.tests.common import tagged
 
 
 @tagged("post_install", "-at_install")

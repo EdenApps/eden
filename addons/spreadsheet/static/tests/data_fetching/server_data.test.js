@@ -1,8 +1,8 @@
-import { animationFrame } from "@odoo/hoot-mock";
+import { animationFrame } from "@eden/hoot-mock";
 import { LoadingDataError } from "@spreadsheet/o_spreadsheet/errors";
 import { BatchEndpoint, Request, ServerData } from "@spreadsheet/data_sources/server_data";
 import { Deferred } from "@web/core/utils/concurrency";
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 import { defineSpreadsheetActions, defineSpreadsheetModels } from "../helpers/data";
 
 describe.current.tags("headless");

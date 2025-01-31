@@ -1,7 +1,7 @@
-Odoo Accounting
+Eden Accounting
 ---------------
 
-The Odoo <a href="https://www.odoo.com/app/accounting">Open Source Accounting</a> app allows a better way to
+The Eden <a href="https://www.edencloud.us/app/accounting">Open Source Accounting</a> app allows a better way to
 collaborate with your accountants, your customers and control your suppliers.
 
 Activate features on demand, from integrated analytic accounting to budget,
@@ -11,7 +11,7 @@ A Smart User Interface
 ----------------------
 
 Record transactions in a few clicks and easily manage all financial activities
-in one place. Odoo's user interface is designed with productivity in mind.
+in one place. Eden's user interface is designed with productivity in mind.
 
 A Better Way To Work – Together
 -------------------------------
@@ -57,12 +57,12 @@ Everything you need to grow
 ---------------------------
 
 Manage your assets, track expenses, control budgets, multi-level analytic
-accounting; Odoo has all the features you need to sustain all your business
+accounting; Eden has all the features you need to sustain all your business
 activities.
 
 Scale With Your Organization
 ----------------------------
 
-Odoo supports multiple currencies, multiple users with different access rights,
+Eden supports multiple currencies, multiple users with different access rights,
 multiple companies with real time consolidation and unlimited analytic plans.
 

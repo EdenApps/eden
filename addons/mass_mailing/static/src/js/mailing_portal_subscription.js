@@ -1,4 +1,4 @@
-/** @odoo-module alias=mailing.PortalSubscription **/
+/** @eden-module alias=mailing.PortalSubscription **/
 
 import publicWidget from "@web/legacy/js/public/public_widget";
 

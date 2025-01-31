@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-from odoo.tests import tagged
-from odoo.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
-from odoo import Command
+# Part of Eden. See LICENSE file for full copyright and licensing details.
+from eden.tests import tagged
+from eden.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
+from eden import Command
 
 
 @tagged('post_install', '-at_install')

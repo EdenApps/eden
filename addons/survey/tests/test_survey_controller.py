@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import Command
-from odoo.addons.survey.tests import common
-from odoo.tests.common import HttpCase
+from eden import Command
+from eden.addons.survey.tests import common
+from eden.tests.common import HttpCase
 
 
 class TestSurveyController(common.TestSurveyCommon, HttpCase):

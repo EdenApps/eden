@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, date
-from odoo.exceptions import ValidationError
-from odoo.tests import tagged, freeze_time
-from odoo.addons.hr_holidays_contract.tests.common import TestHolidayContract
+from eden.exceptions import ValidationError
+from eden.tests import tagged, freeze_time
+from eden.addons.hr_holidays_contract.tests.common import TestHolidayContract
 
 
 @tagged('multi_contract')

@@ -8,7 +8,7 @@ import { _t } from "@web/core/l10n/translation";
 import { WebsiteDialog } from '@website/components/dialog/dialog';
 import { Switch } from '@website/components/switch/switch';
 import { applyTextHighlight } from "@website/js/text_processing";
-import { useRef, useState, useSubEnv, Component, onWillStart, onMounted } from "@odoo/owl";
+import { useRef, useState, useSubEnv, Component, onWillStart, onMounted } from "@eden/owl";
 import wUtils from '@website/js/utils';
 
 const NO_OP = () => {};
@@ -55,7 +55,7 @@ export class AddPageConfirmDialog extends Component {
     }
 
     async addPage() {
-        const params = {'add_menu': this.state.addMenu || '', csrf_token: odoo.csrf_token};
+        const params = {'add_menu': this.state.addMenu || '', csrf_token: eden.csrf_token};
         if (this.props.sectionsArch) {
             params.sections_arch = this.props.sectionsArch;
         }

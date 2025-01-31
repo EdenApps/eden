@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="mailing_trace_view_search" model="ir.ui.view">
         <field name="name">mailing.trace.view.search.inherit.sms</field>
         <field name="model">mailing.trace</field>
@@ -132,4 +132,4 @@
             </form>
         </field>
     </record>
-</odoo>
+</eden>

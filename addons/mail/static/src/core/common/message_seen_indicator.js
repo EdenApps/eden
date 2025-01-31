@@ -1,4 +1,4 @@
-import { Component, useExternalListener, useRef } from "@odoo/owl";
+import { Component, useExternalListener, useRef } from "@eden/owl";
 import { Dialog } from "@web/core/dialog/dialog";
 import { _t } from "@web/core/l10n/translation";
 import { useService } from "@web/core/utils/hooks";

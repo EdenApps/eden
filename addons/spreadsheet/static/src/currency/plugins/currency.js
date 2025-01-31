@@ -1,7 +1,7 @@
-/** @odoo-module */
+/** @eden-module */
 
-import { EvaluationError, helpers, registries } from "@odoo/o-spreadsheet";
-import { OdooUIPlugin } from "@spreadsheet/plugins";
+import { EvaluationError, helpers, registries } from "@eden/o-spreadsheet";
+import { EdenUIPlugin } from "@spreadsheet/plugins";
 import { toServerDateString } from "@spreadsheet/helpers/helpers";
 import { _t } from "@web/core/l10n/translation";
 const { featurePluginRegistry } = registries;
@@ -16,7 +16,7 @@ const { createCurrencyFormat } = helpers;
  * @property {"before" | "after"} position
  */
 
-export class CurrencyPlugin extends OdooUIPlugin {
+export class CurrencyPlugin extends EdenUIPlugin {
     static getters = /** @type {const} */ ([
         "getCurrencyRate",
         "computeFormatFromCurrency",
@@ -28,13 +28,13 @@ export class CurrencyPlugin extends OdooUIPlugin {
         /** @type {string | undefined} */
         this.currentCompanyCurrency = config.defaultCurrency;
         /** @type {import("@spreadsheet/data_sources/server_data").ServerData} */
-        this._serverData = config.custom.odooDataProvider?.serverData;
+        this._serverData = config.custom.edenDataProvider?.serverData;
     }
 
     get serverData() {
         if (!this._serverData) {
             throw new Error(
-                "'serverData' is not defined, please make sure a 'OdooDataProvider' instance is provided to the model."
+                "'serverData' is not defined, please make sure a 'EdenDataProvider' instance is provided to the model."
             );
         }
         return this._serverData;
@@ -102,4 +102,4 @@ export class CurrencyPlugin extends OdooUIPlugin {
     }
 }
 
-featurePluginRegistry.add("odooCurrency", CurrencyPlugin);
+featurePluginRegistry.add("edenCurrency", CurrencyPlugin);

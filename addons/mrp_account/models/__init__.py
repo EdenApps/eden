@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 from . import analytic_account
 from . import mrp_workcenter
 from . import mrp_workorder

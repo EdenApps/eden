@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
-from odoo import models
-from odoo.http import request
+from eden import models
+from eden.http import request
 
 _logger = logging.getLogger(__name__)
 BAD_REQUEST = """Missing request.is_frontend attribute.
@@ -12,7 +12,7 @@ http_routing is installed and that all incoming requests SHOULD be
 going through ir.http._match (which sets that attribute),
 there are some rogue requests which do not. This is likely due to a
 @route(auth='none') controller which creates its own registry and attempts
-to render a template (e.g. odoo/odoo#99667).
+to render a template (e.g. eden/eden#99667).
 
 The following expectations MUST hold:
 

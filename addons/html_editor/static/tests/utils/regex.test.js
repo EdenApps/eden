@@ -1,4 +1,4 @@
-import { expect, test } from "@odoo/hoot";
+import { expect, test } from "@eden/hoot";
 import { URL_REGEX } from "@html_editor/utils/regex";
 
 function testUrlRegex(content, { expectedUrl, insideText } = {}) {
@@ -152,5 +152,5 @@ testUrlRegex("abc.abc.com", { insideText: true });
 testNotUrlRegex("abc.abc.abc", { insideText: true });
 testUrlRegex("http://abc.abc.abc", { insideText: true });
 testUrlRegex("https://abc.abc.abc", { insideText: true });
-testUrlRegex("1234-abc.runbot007.odoo.com/web#id=3&menu_id=221", { insideText: true });
-testUrlRegex("https://1234-abc.runbot007.odoo.com/web#id=3&menu_id=221", { insideText: true });
+testUrlRegex("1234-abc.runbot007.eden.com/web#id=3&menu_id=221", { insideText: true });
+testUrlRegex("https://1234-abc.runbot007.edencloud.us/web#id=3&menu_id=221", { insideText: true });

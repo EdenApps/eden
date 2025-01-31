@@ -1,4 +1,4 @@
-from odoo.fields import Command
+from eden.fields import Command
 
 
 def setup_product_combo_items(self):

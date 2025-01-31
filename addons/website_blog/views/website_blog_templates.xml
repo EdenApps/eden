@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
 <!-- ======   Overall pages layout   ===========================================
 ============================================================================ -->
@@ -451,4 +451,4 @@ list of filtered posts (by date or tag).
 </feed>
 </template>
 
-</odoo>
+</eden>

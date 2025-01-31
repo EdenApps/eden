@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<odoo noupdate="1">
+<eden noupdate="1">
     <record id="base.user_demo" model="res.users">
         <field name="groups_id" eval="[
             (3, ref('hr_recruitment.group_hr_recruitment_interviewer')),
@@ -717,4 +717,4 @@
         <field name="create_uid" ref="base.user_admin"/>
         <field name="user_id" ref="base.user_admin"/>
     </record>
-</odoo>
+</eden>

@@ -1,4 +1,4 @@
-/var/log/odoo/*.log {
+/var/log/eden/*.log {
     copytruncate
     missingok
     notifempty

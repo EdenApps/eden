@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import api, fields, models
+from eden import api, fields, models
 
 
 # defined for access rules

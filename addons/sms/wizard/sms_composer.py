@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from ast import literal_eval
 from uuid import uuid4
 
-from odoo import api, fields, models, _
-from odoo.addons.sms.tools.sms_tools import sms_content_to_rendered_html
-from odoo.exceptions import UserError
+from eden import api, fields, models, _
+from eden.addons.sms.tools.sms_tools import sms_content_to_rendered_html
+from eden.exceptions import UserError
 
 
 class SendSMS(models.TransientModel):

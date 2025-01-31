@@ -1,6 +1,6 @@
-from odoo import Command
-from odoo.addons.account.tests.common import TestAccountMergeCommon
-from odoo.tests import tagged
+from eden import Command
+from eden.addons.account.tests.common import TestAccountMergeCommon
+from eden.tests import tagged
 
 
 @tagged('post_install', '-at_install')

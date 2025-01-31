@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { _t } from "@web/core/l10n/translation";
 import { escape } from "@web/core/utils/strings";
@@ -8,7 +8,7 @@ import { useService } from "@web/core/utils/hooks";
 import { standardWidgetProps } from "@web/views/widgets/standard_widget_props";
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 
-import { Component, markup, useState } from "@odoo/owl";
+import { Component, markup, useState } from "@eden/owl";
 
 
 class PeppolSettingsButtons extends Component {
@@ -78,7 +78,7 @@ class PeppolSettingsButtons extends Component {
 
     showConfirmation(warning, methodName) {
         const message = _t(warning);
-        const confirmMessage = _t("You will not be able to send or receive Peppol documents in Odoo anymore. Are you sure you want to proceed?");
+        const confirmMessage = _t("You will not be able to send or receive Peppol documents in Eden anymore. Are you sure you want to proceed?");
         this.dialogService.add(ConfirmationDialog, {
             body: markup(
                 `<div class="text-danger">${escape(message)}</div>

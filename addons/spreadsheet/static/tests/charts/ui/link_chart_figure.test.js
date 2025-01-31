@@ -1,6 +1,6 @@
-import { click } from "@odoo/hoot-dom";
-import { animationFrame } from "@odoo/hoot-mock";
-import { expect, test, beforeEach } from "@odoo/hoot";
+import { click } from "@eden/hoot-dom";
+import { animationFrame } from "@eden/hoot-mock";
+import { expect, test, beforeEach } from "@eden/hoot";
 import { getBasicData, defineSpreadsheetModels } from "@spreadsheet/../tests/helpers/data";
 import { createBasicChart } from "@spreadsheet/../tests/helpers/commands";
 import { mountSpreadsheet } from "@spreadsheet/../tests/helpers/ui";
@@ -114,48 +114,48 @@ beforeEach(async () => {
     serverState.userId = 1;
 });
 
-test("icon external link isn't on the chart when its not linked to an odoo menu", async function () {
+test("icon external link isn't on the chart when its not linked to an eden menu", async function () {
     const model = await createModelWithDataSource({
         serverData,
     });
     const fixture = await mountSpreadsheet(model);
     createBasicChart(model, chartId);
     await animationFrame();
-    const odooMenu = model.getters.getChartOdooMenu(chartId);
-    expect(odooMenu).toBe(undefined, { message: "No menu linked with the chart" });
+    const edenMenu = model.getters.getChartEdenMenu(chartId);
+    expect(edenMenu).toBe(undefined, { message: "No menu linked with the chart" });
 
     const externalRefIcon = fixture.querySelector(".o-chart-external-link");
     expect(externalRefIcon).toBe(null);
 });
 
-test("icon external link is on the chart when its linked to an odoo menu", async function () {
+test("icon external link is on the chart when its linked to an eden menu", async function () {
     const model = await createModelWithDataSource({
         serverData,
     });
     await mountSpreadsheet(model);
     createBasicChart(model, chartId);
-    model.dispatch("LINK_ODOO_MENU_TO_CHART", {
+    model.dispatch("LINK_EDEN_MENU_TO_CHART", {
         chartId,
-        odooMenuId: 1,
+        edenMenuId: 1,
     });
 
-    const chartMenu = model.getters.getChartOdooMenu(chartId);
-    expect(chartMenu.id).toBe(1, { message: "Odoo menu is linked to chart" });
+    const chartMenu = model.getters.getChartEdenMenu(chartId);
+    expect(chartMenu.id).toBe(1, { message: "Eden menu is linked to chart" });
     await animationFrame();
     expect(".o-chart-external-link").toHaveCount(1);
 });
 
-test("icon external link is not on the chart when its linked to a wrong odoo menu", async function () {
+test("icon external link is not on the chart when its linked to a wrong eden menu", async function () {
     const model = await createModelWithDataSource({
         serverData,
     });
     await mountSpreadsheet(model);
     createBasicChart(model, chartId);
-    model.dispatch("LINK_ODOO_MENU_TO_CHART", {
+    model.dispatch("LINK_EDEN_MENU_TO_CHART", {
         chartId,
-        odooMenuId: "menu which does not exist",
+        edenMenuId: "menu which does not exist",
     });
-    const chartMenu = model.getters.getChartOdooMenu(chartId);
+    const chartMenu = model.getters.getChartEdenMenu(chartId);
     expect(chartMenu).toBe(undefined, { message: "cannot get a wrong menu" });
     await animationFrame();
     expect(".o-chart-external-link").toHaveCount(0);
@@ -167,18 +167,18 @@ test("icon external link isn't on the chart in dashboard mode", async function (
     });
     await mountSpreadsheet(model);
     createBasicChart(model, chartId);
-    model.dispatch("LINK_ODOO_MENU_TO_CHART", {
+    model.dispatch("LINK_EDEN_MENU_TO_CHART", {
         chartId,
-        odooMenuId: 1,
+        edenMenuId: 1,
     });
-    const chartMenu = model.getters.getChartOdooMenu(chartId);
-    expect(chartMenu.id).toBe(1, { message: "Odoo menu is linked to chart" });
+    const chartMenu = model.getters.getChartEdenMenu(chartId);
+    expect(chartMenu.id).toBe(1, { message: "Eden menu is linked to chart" });
     model.updateMode("dashboard");
     await animationFrame();
     expect(".o-chart-external-link").toHaveCount(0, { message: "No link icon in dashboard" });
 });
 
-test("click on icon external link on chart redirect to the odoo menu", async function () {
+test("click on icon external link on chart redirect to the eden menu", async function () {
     const doActionStep = "doAction";
     mockActionService(doActionStep);
 
@@ -188,12 +188,12 @@ test("click on icon external link on chart redirect to the odoo menu", async fun
     const fixture = await mountSpreadsheet(model);
 
     createBasicChart(model, chartId);
-    model.dispatch("LINK_ODOO_MENU_TO_CHART", {
+    model.dispatch("LINK_EDEN_MENU_TO_CHART", {
         chartId,
-        odooMenuId: 2,
+        edenMenuId: 2,
     });
-    const chartMenu = model.getters.getChartOdooMenu(chartId);
-    expect(chartMenu.id).toBe(2, { message: "Odoo menu is linked to chart" });
+    const chartMenu = model.getters.getChartEdenMenu(chartId);
+    expect(chartMenu.id).toBe(2, { message: "Eden menu is linked to chart" });
     await animationFrame();
 
     await clickChartExternalLink(fixture);
@@ -201,7 +201,7 @@ test("click on icon external link on chart redirect to the odoo menu", async fun
     expect.verifySteps([doActionStep]);
 });
 
-test("Click on chart in dashboard mode redirect to the odoo menu", async function () {
+test("Click on chart in dashboard mode redirect to the eden menu", async function () {
     const doActionStep = "doAction";
     mockActionService(doActionStep);
     const model = await createModelWithDataSource({
@@ -210,12 +210,12 @@ test("Click on chart in dashboard mode redirect to the odoo menu", async functio
     const fixture = await mountSpreadsheet(model);
 
     createBasicChart(model, chartId);
-    model.dispatch("LINK_ODOO_MENU_TO_CHART", {
+    model.dispatch("LINK_EDEN_MENU_TO_CHART", {
         chartId,
-        odooMenuId: 2,
+        edenMenuId: 2,
     });
-    const chartMenu = model.getters.getChartOdooMenu(chartId);
-    expect(chartMenu.id).toBe(2, { message: "Odoo menu is linked to chart" });
+    const chartMenu = model.getters.getChartEdenMenu(chartId);
+    expect(chartMenu.id).toBe(2, { message: "Eden menu is linked to chart" });
     await animationFrame();
 
     await click(fixture.querySelector(".o-chart-container"));
@@ -227,7 +227,7 @@ test("Click on chart in dashboard mode redirect to the odoo menu", async functio
     await animationFrame();
     await click(fixture.querySelector(".o-chart-container"));
     await animationFrame();
-    // Clicking on a chart while on dashboard mode redirect to the odoo menu
+    // Clicking on a chart while on dashboard mode redirect to the eden menu
     expect.verifySteps([doActionStep]);
 });
 
@@ -239,9 +239,9 @@ test("can use menus xmlIds instead of menu ids", async function () {
     const fixture = await mountSpreadsheet(model);
 
     createBasicChart(model, chartId);
-    model.dispatch("LINK_ODOO_MENU_TO_CHART", {
+    model.dispatch("LINK_EDEN_MENU_TO_CHART", {
         chartId,
-        odooMenuId: "documents_spreadsheet.test.menu2",
+        edenMenuId: "documents_spreadsheet.test.menu2",
     });
     await animationFrame();
 
@@ -265,9 +265,9 @@ test("Trying to open a menu without an action sends a notification to the user",
     const fixture = await mountSpreadsheet(model);
 
     createBasicChart(model, chartId);
-    model.dispatch("LINK_ODOO_MENU_TO_CHART", {
+    model.dispatch("LINK_EDEN_MENU_TO_CHART", {
         chartId,
-        odooMenuId: "documents_spreadsheet.test.menu_without_action",
+        edenMenuId: "documents_spreadsheet.test.menu_without_action",
     });
     await animationFrame();
 

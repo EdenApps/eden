@@ -1,7 +1,7 @@
 import logging
 
-from odoo import api, models
-from odoo.exceptions import AccessError
+from eden import api, models
+from eden.exceptions import AccessError
 
 _logger = logging.getLogger(__name__)
 

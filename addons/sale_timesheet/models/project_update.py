@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, models
-from odoo.tools import float_utils, formatLang
-from odoo.tools.misc import format_duration
+from eden import api, models
+from eden.tools import float_utils, formatLang
+from eden.tools.misc import format_duration
 
 
 class ProjectUpdate(models.Model):

@@ -1,5 +1,5 @@
-from odoo.addons.crm.tests.common import TestCrmCommon
-from odoo.fields import Command
+from eden.addons.crm.tests.common import TestCrmCommon
+from eden.fields import Command
 
 
 class TestSaleCrm(TestCrmCommon):

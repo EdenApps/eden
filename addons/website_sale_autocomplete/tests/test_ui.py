@@ -1,9 +1,9 @@
 # -*- encoding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-from odoo.addons.website_sale_autocomplete.controllers.main import AutoCompleteController
-from odoo.tests import patch, HttpCase, tagged
+# Part of Eden. See LICENSE file for full copyright and licensing details.
+from eden.addons.website_sale_autocomplete.controllers.main import AutoCompleteController
+from eden.tests import patch, HttpCase, tagged
 
-CONTROLLER_PATH = 'odoo.addons.website_sale_autocomplete.controllers.main.AutoCompleteController'
+CONTROLLER_PATH = 'eden.addons.website_sale_autocomplete.controllers.main.AutoCompleteController'
 MOCK_GOOGLE_ID = 'aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1kUXc0dzlXZ1hjUQ=='
 MOCK_API_KEY = 'Tm9ib2R5IGV4cGVjdHMgdGhlIFNwYW5pc2ggaW5xdWlzaXRpb24gIQ=='
 

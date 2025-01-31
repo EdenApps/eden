@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from psycopg2 import IntegrityError
 
-from odoo.addons.website_forum.tests.common import KARMA, TestForumCommon
-from odoo.exceptions import UserError, AccessError
-from odoo.tools import mute_logger
+from eden.addons.website_forum.tests.common import KARMA, TestForumCommon
+from eden.exceptions import UserError, AccessError
+from eden.tools import mute_logger
 
 
 class TestForumCRUD(TestForumCommon):
@@ -92,7 +92,7 @@ class TestForumCRUD(TestForumCommon):
                 'vote': '1',
             })
 
-        with mute_logger('odoo.sql_db'):
+        with mute_logger('eden.sql_db'):
             with self.assertRaises(IntegrityError):
                 with self.cr.savepoint():
                     # One should not be able to vote more than once on a same post
@@ -126,7 +126,7 @@ class TestForumCRUD(TestForumCommon):
 
 class TestForumKarma(TestForumCommon):
 
-    @mute_logger('odoo.addons.base.models.ir_model', 'odoo.models')
+    @mute_logger('eden.addons.base.models.ir_model', 'eden.models')
     def test_answer_question(self):
         Post = self.env['forum.post']
 
@@ -147,7 +147,7 @@ class TestForumKarma(TestForumCommon):
         })
         self.assertEqual(self.user_employee.karma, KARMA['ans'], 'website_forum: wrong karma generation when answering question')
 
-    @mute_logger('odoo.addons.base.models.ir_model', 'odoo.models')
+    @mute_logger('eden.addons.base.models.ir_model', 'eden.models')
     def test_ask_question(self):
         Post = self.env['forum.post']
 
@@ -242,7 +242,7 @@ class TestForumKarma(TestForumCommon):
         self.post.with_user(self.user_portal).vote(upvote=False)
         self.assertEqual(self.post.create_uid.karma, 50 + KARMA['gen_que_dwv'], 'website_forum: wrong karma generation of downvoted question author')
 
-    @mute_logger('odoo.addons.base.models.ir_model', 'odoo.models')
+    @mute_logger('eden.addons.base.models.ir_model', 'eden.models')
     def test_downvote_crash(self):
         Post = self.env['forum.post']
         self.user_employee.karma = KARMA['ans']
@@ -419,7 +419,7 @@ class TestForumKarma(TestForumCommon):
 
         check_vote_records_count_and_integrity(ORIGIN_COUNT + 1)
 
-    @mute_logger('odoo.addons.base.models.ir_model', 'odoo.models')
+    @mute_logger('eden.addons.base.models.ir_model', 'eden.models')
     def test_vote_crash(self):
         Post = self.env['forum.post']
         self.user_employee.karma = KARMA['ans']

@@ -1,4 +1,4 @@
-import { Component, xml } from "@odoo/owl";
+import { Component, xml } from "@eden/owl";
 import { registry } from "@web/core/registry";
 
 // In pos we are not loading all the assests that the web views might need

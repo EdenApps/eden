@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
 		<record id="pos_category_cocktails" model="pos.category">
 			<field name="name">Cocktails</field>
@@ -216,4 +216,4 @@
             <field name="image_1920" type="base64" file="pos_restaurant/static/img/th-fanta.png"/>
         </record>
 	</data>
-</odoo>
+</eden>

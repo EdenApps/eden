@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@odoo/hoot";
+import { describe, expect, test } from "@eden/hoot";
 import { expectMarkup, patchTranslations } from "@web/../tests/web_test_helpers";
 
 import { renderToElement, renderToString } from "@web/core/utils/render";

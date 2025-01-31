@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="project_embedded_action_bills_of_materials" model="ir.embedded.actions">
         <field name="parent_res_model">project.project</field>
         <field name="sequence">95</field>
@@ -19,4 +19,4 @@
         <field name="context">{"from_embedded_action": true}</field>
         <field name="groups_ids" eval="[(4, ref('mrp.group_mrp_user'))]"/>
     </record>
-</odoo>
+</eden>

@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime as dt, time
 from datetime import timedelta as td
 from json import loads
 
-from odoo import SUPERUSER_ID, Command
-from odoo.fields import Date
-from odoo.tests import Form, tagged, freeze_time
-from odoo.tests.common import TransactionCase
-from odoo.tools import format_date
-from odoo.tools.date_utils import add
-from odoo.exceptions import UserError, ValidationError
+from eden import SUPERUSER_ID, Command
+from eden.fields import Date
+from eden.tests import Form, tagged, freeze_time
+from eden.tests.common import TransactionCase
+from eden.tools import format_date
+from eden.tools.date_utils import add
+from eden.exceptions import UserError, ValidationError
 
 
 @tagged('post_install', '-at_install')

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
         <!-- Product Suppliers-->
         <record id="product_supplierinfo_tree_view2" model="ir.ui.view">
@@ -183,4 +183,4 @@
             </field>
         </record>
 
-</odoo>
+</eden>

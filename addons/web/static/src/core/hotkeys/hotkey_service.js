@@ -106,7 +106,7 @@ export function getActiveHotkey(ev) {
 
 export const hotkeyService = {
     dependencies: ["ui"],
-    // Be aware that all odoo hotkeys are designed with this modifier in mind,
+    // Be aware that all eden hotkeys are designed with this modifier in mind,
     // so changing the overlay modifier may conflict with some shortcuts.
     overlayModifier: "alt",
     start(env, { ui }) {

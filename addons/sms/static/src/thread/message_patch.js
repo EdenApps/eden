@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @eden-module */
 
 import { Message } from "@mail/core/common/message";
 

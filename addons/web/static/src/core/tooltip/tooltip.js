@@ -1,4 +1,4 @@
-import { Component } from "@odoo/owl";
+import { Component } from "@eden/owl";
 
 export class Tooltip extends Component {
     static template = "web.Tooltip";

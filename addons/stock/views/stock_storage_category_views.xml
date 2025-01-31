@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="stock_storage_category_form" model="ir.ui.view">
         <field name="name">stock.storage.category.form</field>
         <field name="model">stock.storage.category</field>
@@ -99,4 +99,4 @@
 
     <menuitem id="menu_storage_categoty_config" action="action_storage_category" name="Storage Categories" parent="menu_warehouse_config" sequence="6" groups="stock.group_stock_multi_locations"/>
 
-</odoo>
+</eden>

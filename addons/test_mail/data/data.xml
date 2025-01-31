@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
 
     <record id="mail_act_test_todo" model="mail.activity.type">
         <field name="name">Do Stuff</field>
@@ -43,4 +43,4 @@
         <field name="res_model">mail.test.activity</field>
     </record>
 
-</odoo>
+</eden>

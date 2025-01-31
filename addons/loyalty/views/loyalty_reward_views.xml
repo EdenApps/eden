@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <record id="loyalty_reward_view_form" model="ir.ui.view">
         <field name="name">loyalty.reward.view.form</field>
         <field name="model">loyalty.reward</field>
@@ -151,4 +151,4 @@
             </kanban>
         </field>
     </record>
-</odoo>
+</eden>

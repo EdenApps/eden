@@ -1,4 +1,4 @@
-import { markRaw, reactive, toRaw } from "@odoo/owl";
+import { markRaw, reactive, toRaw } from "@eden/owl";
 import { Store } from "./store";
 import { STORE_SYM, isFieldDefinition, isMany, isRelation, modelRegistry } from "./misc";
 import { Record } from "./record";

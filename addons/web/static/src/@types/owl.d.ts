@@ -1,3 +1,3 @@
-declare module "@odoo/owl" {
-    export * from "@odoo/owl/dist/types/owl";
+declare module "@eden/owl" {
+    export * from "@eden/owl/dist/types/owl";
 }

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import models
+from eden import models
 
 
 class AccountEdiXmlUBLDE(models.AbstractModel):

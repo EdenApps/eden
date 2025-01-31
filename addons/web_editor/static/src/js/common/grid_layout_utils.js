@@ -1,7 +1,7 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { renderToElement } from "@web/core/utils/render";
-import {descendants, preserveCursor} from "@web_editor/js/editor/odoo-editor/src/utils/utils";
+import {descendants, preserveCursor} from "@web_editor/js/editor/eden-editor/src/utils/utils";
 export const rowSize = 50; // 50px.
 // Maximum number of rows that can be added when dragging a grid item.
 export const additionalRowLimit = 10;

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 from werkzeug import urls
 
-from odoo import api, fields, models
+from eden import api, fields, models
 
 
 class RecruitmentSource(models.Model):

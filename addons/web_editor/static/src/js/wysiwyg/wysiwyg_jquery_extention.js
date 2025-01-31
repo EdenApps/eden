@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 // jQuery extensions
 $.extend($.expr[':'], {

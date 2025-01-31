@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<eden>
     <template id="account.account_terms_conditions_setting_banner" name="Account Terms and Conditions Setting Banner">
         <div id="terms_conditions" t-ignore="true" class="text-center">
             <span>This is a preview of your Terms &amp; Conditions.</span>
@@ -12,7 +12,7 @@
         <t t-call="web.frontend_layout">
             <t t-set="o_portal_fullwidth_alert" groups="account.group_account_manager">
                 <t t-call="account.account_terms_conditions_setting_banner">
-                    <t t-set="backend_url" t-value="'/odoo/action-account.action_open_settings'"/>
+                    <t t-set="backend_url" t-value="'/eden/action-account.action_open_settings'"/>
                 </t>
             </t>
             <div class="oe_structure" id="oe_structure_terms_conditions"/>
@@ -28,7 +28,7 @@
         <div>
             <h1>STANDARD TERMS AND CONDITIONS OF SALE</h1>
             <p>You should update this document to reflect your T&amp;C.</p>
-            <p>Below text serves as a suggestion and doesn’t engage Odoo S.A. responsibility.</p>
+            <p>Below text serves as a suggestion and doesn’t engage Eden Cloud responsibility.</p>
             <ol>
                 <li>
                     The client explicitly waives its own standard terms and conditions, even if these were drawn up after these standard terms and conditions of sale. In order to be valid, any derogation must be expressly agreed to in advance in writing.
@@ -55,4 +55,4 @@
         </div>
     </template>
 
-</odoo>
+</eden>

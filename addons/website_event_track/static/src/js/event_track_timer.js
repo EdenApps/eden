@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @eden-module **/
 
 import { formatDuration } from "@web/core/l10n/dates";
 import publicWidget from "@web/legacy/js/public/public_widget";

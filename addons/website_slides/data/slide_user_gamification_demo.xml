@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<eden>
     <data noupdate="1">
         <!-- Completion of Quiz and Karma Generation -->
         <record id="slide_slide_1_4_partner_admin" model="slide.slide.partner">
@@ -39,4 +39,4 @@
             <value>Membership Removed</value>
         </function>
     </data>
-</odoo>
+</eden>

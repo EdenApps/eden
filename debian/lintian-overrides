@@ -1,31 +1,31 @@
 # correct spelling
-odoo: spelling-error-in-copyright Ang And
-odoo: spelling-error-in-copyright Filsystem Filesystem
+eden: spelling-error-in-copyright Ang And
+eden: spelling-error-in-copyright Filsystem Filesystem
 
 # placeholder test.external.link
-odoo: privacy-breach-generic usr/lib/python3/dist-packages/odoo/addons/test_assetsbundle/views/views.xml [<link rel="stylesheet" href="http://test.external.link/style1.css"/>] (http://test.external.link/style1.css)
-odoo: privacy-breach-generic usr/lib/python3/dist-packages/odoo/addons/test_assetsbundle/views/views.xml [<link rel="stylesheet" href="http://test.external.link/style2.css"/>] (http://test.external.link/style2.css)
-odoo: privacy-breach-generic usr/lib/python3/dist-packages/odoo/addons/test_assetsbundle/views/views.xml [<script type="text/javascript" src="http://test.external.link/javascript1.js">] (http://test.external.link/javascript1.js)
-odoo: privacy-breach-generic usr/lib/python3/dist-packages/odoo/addons/test_assetsbundle/views/views.xml [<script type="text/javascript" src="http://test.external.link/javascript2.js">] (http://test.external.link/javascript2.js)
-odoo: privacy-breach-generic usr/lib/python3/dist-packages/odoo/addons/website/tests/template_qweb_test.xml [<img src="http://test.external.link/img.png"/>] (http://test.external.link/img.png)
-odoo: privacy-breach-generic usr/lib/python3/dist-packages/odoo/addons/website/tests/template_qweb_test.xml [<link rel="stylesheet" href="http://test.external.link/style1.css"/>] (http://test.external.link/style1.css)
-odoo: privacy-breach-generic usr/lib/python3/dist-packages/odoo/addons/website/tests/template_qweb_test.xml [<link rel="stylesheet" href="http://test.external.link/style2.css"/>] (http://test.external.link/style2.css)
-odoo: privacy-breach-generic usr/lib/python3/dist-packages/odoo/addons/website/tests/template_qweb_test.xml [<script type="text/javascript" src="http://test.external.link/javascript1.js">] (http://test.external.link/javascript1.js)
-odoo: privacy-breach-generic usr/lib/python3/dist-packages/odoo/addons/website/tests/template_qweb_test.xml [<script type="text/javascript" src="http://test.external.link/javascript2.js">] (http://test.external.link/javascript2.js)
+eden: privacy-breach-generic usr/lib/python3/dist-packages/eden/addons/test_assetsbundle/views/views.xml [<link rel="stylesheet" href="http://test.external.link/style1.css"/>] (http://test.external.link/style1.css)
+eden: privacy-breach-generic usr/lib/python3/dist-packages/eden/addons/test_assetsbundle/views/views.xml [<link rel="stylesheet" href="http://test.external.link/style2.css"/>] (http://test.external.link/style2.css)
+eden: privacy-breach-generic usr/lib/python3/dist-packages/eden/addons/test_assetsbundle/views/views.xml [<script type="text/javascript" src="http://test.external.link/javascript1.js">] (http://test.external.link/javascript1.js)
+eden: privacy-breach-generic usr/lib/python3/dist-packages/eden/addons/test_assetsbundle/views/views.xml [<script type="text/javascript" src="http://test.external.link/javascript2.js">] (http://test.external.link/javascript2.js)
+eden: privacy-breach-generic usr/lib/python3/dist-packages/eden/addons/website/tests/template_qweb_test.xml [<img src="http://test.external.link/img.png"/>] (http://test.external.link/img.png)
+eden: privacy-breach-generic usr/lib/python3/dist-packages/eden/addons/website/tests/template_qweb_test.xml [<link rel="stylesheet" href="http://test.external.link/style1.css"/>] (http://test.external.link/style1.css)
+eden: privacy-breach-generic usr/lib/python3/dist-packages/eden/addons/website/tests/template_qweb_test.xml [<link rel="stylesheet" href="http://test.external.link/style2.css"/>] (http://test.external.link/style2.css)
+eden: privacy-breach-generic usr/lib/python3/dist-packages/eden/addons/website/tests/template_qweb_test.xml [<script type="text/javascript" src="http://test.external.link/javascript1.js">] (http://test.external.link/javascript1.js)
+eden: privacy-breach-generic usr/lib/python3/dist-packages/eden/addons/website/tests/template_qweb_test.xml [<script type="text/javascript" src="http://test.external.link/javascript2.js">] (http://test.external.link/javascript2.js)
 
 # false positive: this is SIL, as per debian/copyright:396
-odoo: truetype-font-prohibits-installable-embedding [preview/print only] usr/lib/python3/dist-packages/odoo/addons/web/static/fonts/lato/Lato-BlaIta-webfont.ttf
-odoo: truetype-font-prohibits-installable-embedding [preview/print only] usr/lib/python3/dist-packages/odoo/addons/web/static/fonts/lato/Lato-BolIta-webfont.ttf
-odoo: truetype-font-prohibits-installable-embedding [preview/print only] usr/lib/python3/dist-packages/odoo/addons/web/static/fonts/lato/Lato-HaiIta-webfont.ttf
-odoo: truetype-font-prohibits-installable-embedding [preview/print only] usr/lib/python3/dist-packages/odoo/addons/web/static/fonts/lato/Lato-LigIta-webfont.ttf
+eden: truetype-font-prohibits-installable-embedding [preview/print only] usr/lib/python3/dist-packages/eden/addons/web/static/fonts/lato/Lato-BlaIta-webfont.ttf
+eden: truetype-font-prohibits-installable-embedding [preview/print only] usr/lib/python3/dist-packages/eden/addons/web/static/fonts/lato/Lato-BolIta-webfont.ttf
+eden: truetype-font-prohibits-installable-embedding [preview/print only] usr/lib/python3/dist-packages/eden/addons/web/static/fonts/lato/Lato-HaiIta-webfont.ttf
+eden: truetype-font-prohibits-installable-embedding [preview/print only] usr/lib/python3/dist-packages/odoo/addons/web/static/fonts/lato/Lato-LigIta-webfont.ttf
 odoo: truetype-font-prohibits-installable-embedding [preview/print only] usr/lib/python3/dist-packages/odoo/addons/web/static/fonts/lato/Lato-RegIta-webfont.ttf
 
 # only present in emails sent from the "digest" addon, and are not
 # served from the odoo instance itself. This addon is only enabled
 # when the user explicitely activates it after install.
-odoo: privacy-breach-generic usr/lib/python3/dist-packages/odoo/addons/digest/data/digest_data.xml [<img class="download_app" src="https://www.odoo.com/digest/static/src/img/app_store.png" />] (https://www.odoo.com/digest/static/src/img/app_store.png)
-odoo: privacy-breach-generic usr/lib/python3/dist-packages/odoo/addons/digest/data/digest_data.xml [<img class="download_app" src="https://www.odoo.com/digest/static/src/img/google_play.png" />] (https://www.odoo.com/digest/static/src/img/google_play.png)
-odoo: privacy-breach-generic usr/lib/python3/dist-packages/odoo/addons/digest/data/digest_data.xml [<img src="https://www.odoo.com/web/image/24717933/odoo-mobile.png" alt="odoo mobile" />] (https://www.odoo.com/web/image/24717933/odoo-mobile.png)
+odoo: privacy-breach-generic usr/lib/python3/dist-packages/odoo/addons/digest/data/digest_data.xml [<img class="download_app" src="https://www.edencloud.us/digest/static/src/img/app_store.png" />] (https://www.edencloud.us/digest/static/src/img/app_store.png)
+odoo: privacy-breach-generic usr/lib/python3/dist-packages/odoo/addons/digest/data/digest_data.xml [<img class="download_app" src="https://www.edencloud.us/digest/static/src/img/google_play.png" />] (https://www.edencloud.us/digest/static/src/img/google_play.png)
+odoo: privacy-breach-generic usr/lib/python3/dist-packages/odoo/addons/digest/data/digest_data.xml [<img src="https://www.edencloud.us/web/image/24717933/odoo-mobile.png" alt="odoo mobile" />] (https://www.edencloud.us/web/image/24717933/odoo-mobile.png)
 
 # only present in emails sent from the "event" addon, and are not
 # served from the odoo instance itself. This addon is only enabled

@@ -6,8 +6,8 @@ import {
     startServer,
     step,
 } from "@mail/../tests/mail_test_helpers";
-import { beforeEach, describe, expect, test } from "@odoo/hoot";
-import { queryFirst } from "@odoo/hoot-dom";
+import { beforeEach, describe, expect, test } from "@eden/hoot";
+import { queryFirst } from "@eden/hoot-dom";
 import { defineSMSModels } from "@sms/../tests/sms_test_helpers";
 import { mockService, mountView, MockServer } from "@web/../tests/web_test_helpers";
 

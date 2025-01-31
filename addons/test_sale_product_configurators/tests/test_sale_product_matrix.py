@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of Eden. See LICENSE file for full copyright and licensing details.
 
 import logging
 
-from odoo.tests import tagged
+from eden.tests import tagged
 
-from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.addons.product_matrix.tests.common import TestMatrixCommon
+from eden.addons.mail.tests.common import mail_new_test_user
+from eden.addons.product_matrix.tests.common import TestMatrixCommon
 
 _logger = logging.getLogger(__name__)
 
@@ -53,7 +53,7 @@ class TestSaleMatrixUi(TestMatrixCommon):
         # Set the template as configurable by matrix.
         self.matrix_template.product_add_mode = "matrix"
 
-        self.start_tour("/odoo", 'sale_matrix_tour', login='salesman')
+        self.start_tour("/eden", 'sale_matrix_tour', login='salesman')
 
         # Ensures some dynamic create variants have been created by the matrix
         # Ensures a SO has been created with exactly x lines ...

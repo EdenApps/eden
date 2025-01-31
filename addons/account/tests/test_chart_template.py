@@ -3,11 +3,11 @@ import io
 from markupsafe import Markup
 from unittest.mock import patch
 
-from odoo import Command
-from odoo.exceptions import UserError
-from odoo.tests import tagged
-from odoo.addons.account.models.chart_template import code_translations, AccountChartTemplate, TEMPLATE_MODELS
-from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+from eden import Command
+from eden.exceptions import UserError
+from eden.tests import tagged
+from eden.addons.account.models.chart_template import code_translations, AccountChartTemplate, TEMPLATE_MODELS
+from eden.addons.account.tests.common import AccountTestInvoicingCommon
 
 
 def _get_chart_template_mapping(self, get_all=False):
@@ -950,7 +950,7 @@ class TestChartTemplate(AccountTestInvoicingCommon):
         def get_rep_line_data(x):
             return (x.document_type, x.repartition_type, x.factor_percent, x.use_in_tax_closing)
 
-        with patch('odoo.addons.account.models.chart_template.file_open',
+        with patch('eden.addons.account.models.chart_template.file_open',
                    side_effect=lambda *args: io.StringIO(CSV_DATA['tax_1'])):
             data = {'account.tax': self.ChartTemplate._get_account_tax('test')}
         self.ChartTemplate._load_data(data)
@@ -982,7 +982,7 @@ class TestChartTemplate(AccountTestInvoicingCommon):
         with patch.object(AccountChartTemplate, '_get_chart_template_data', side_effect=local_get_data, autospec=True):
             self.env['account.chart.template'].try_loading('test', company=self.company, install_demo=False)
 
-        with patch('odoo.addons.account.models.chart_template.file_open',
+        with patch('eden.addons.account.models.chart_template.file_open',
                    side_effect=lambda *args: io.StringIO(CSV_DATA['test_fiscal_position_template'])):
             data = {'account.fiscal.position': self.ChartTemplate._get_account_fiscal_position('test')}
         self.ChartTemplate._pre_reload_data(self.company, {}, data)
