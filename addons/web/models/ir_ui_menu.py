@@ -19,7 +19,6 @@ class IrUiMenu(models.Model):
         :return: the menus (including the images in Base64)
         """
         menus = self.load_menus(debug)
-
         web_menus = {}
         for menu in menus.values():
             if not menu['id']:

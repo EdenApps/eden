@@ -155,74 +155,6 @@
                     >
                         <field name="module_website_sale_collect"/>
                     </setting>
-                    <setting id="ups_provider_setting" string="UPS" help="Compute shipping costs and ship with UPS"
-                             documentation="/applications/inventory_and_mrp/inventory/shipping/setup/third_party_shipper.html">
-                        <field name="module_delivery_ups" widget="upgrade_boolean"/>
-                    </setting>
-                    <setting id="shipping_provider_dhl_setting" string="DHL Express Connector" help="Compute shipping costs and ship with DHL"
-                             documentation="/applications/inventory_and_mrp/inventory/shipping/setup/third_party_shipper.html">
-                        <field name="module_delivery_dhl" widget="upgrade_boolean"/>
-                        <div class="content-group">
-                            <div class="mt8" invisible="not module_delivery_dhl">
-                                <button name="%(delivery.action_delivery_carrier_form)d" icon="oi-arrow-right" type="action" string="DHL Shipping Methods" class="btn-link" context="{'search_default_delivery_type': 'dhl'}"/>
-                            </div>
-                        </div>
-                    </setting>
-                    <setting id="shipping_provider_fedex_setting" string="FedEx" help="Compute shipping costs and ship with FedEx"
-                             documentation="/applications/inventory_and_mrp/inventory/shipping/setup/third_party_shipper.html">
-                        <field name="module_delivery_fedex" widget="upgrade_boolean"/>
-                        <div class="content-group">
-                            <div class="mt8" invisible="not module_delivery_fedex">
-                                <button name="%(delivery.action_delivery_carrier_form)d" icon="oi-arrow-right" type="action" string="FedEx Shipping Methods" class="btn-link" context="{'search_default_delivery_type': 'fedex'}"/>
-                            </div>
-                        </div>
-                    </setting>
-                    <setting id="shipping_provider_usps_setting" string="USPS" help="Compute shipping costs and ship with USPS"
-                             documentation="/applications/inventory_and_mrp/inventory/shipping/setup/third_party_shipper.html">
-                        <field name="module_delivery_usps" widget="upgrade_boolean"/>
-                        <div class="content-group">
-                            <div class="mt8" invisible="not module_delivery_usps">
-                                <button name="%(delivery.action_delivery_carrier_form)d" icon="oi-arrow-right" type="action" string="USPS Shipping Methods" class="btn-link" context="{'search_default_delivery_type': 'usps'}"/>
-                            </div>
-                        </div>
-                    </setting>
-                    <setting id="shipping_provider_bpost_setting" string="bpost" help="Compute shipping costs and ship with bpost"
-                             documentation="/applications/inventory_and_mrp/inventory/shipping/setup/third_party_shipper.html">
-                        <field name="module_delivery_bpost" widget="upgrade_boolean"/>
-                        <div class="content-group">
-                            <div class="mt8" invisible="not module_delivery_bpost">
-                                <button name="%(delivery.action_delivery_carrier_form)d" icon="oi-arrow-right" type="action" string="bpost Shipping Methods" class="btn-link" context="{'search_default_delivery_type': 'bpost'}"/>
-                            </div>
-                        </div>
-                    </setting>
-                    <setting id="shipping_provider_easypost_setting" string="Easypost" help="Compute shipping cost and ship with Easypost"
-                             documentation="/applications/inventory_and_mrp/inventory/shipping/setup/third_party_shipper.html">
-                        <field name="module_delivery_easypost" widget="upgrade_boolean"/>
-                        <div class="content-group">
-                            <div class="mt8" invisible="not module_delivery_easypost">
-                                <button name="%(delivery.action_delivery_carrier_form)d" icon="oi-arrow-right" type="action" string="Easypost Shipping Methods" class="btn-link" context="{'search_default_delivery_type': 'easypost'}"/>
-                            </div>
-                        </div>
-                    </setting>
-                    <setting
-                        id="shipping_provider_shiprocket_setting"
-                        string="Shiprocket"
-                        help="Compute shipping cost and ship with Shiprocket"
-                        documentation="/applications/inventory_and_mrp/inventory/shipping/setup/third_party_shipper.html"
-                    >
-                        <field name="module_delivery_shiprocket" widget="upgrade_boolean"/>
-                            <div class="content-group">
-                                <div class="mt8" invisible="not module_delivery_shiprocket">
-                                    <button
-                                        name="%(delivery.action_delivery_carrier_form)d"
-                                        icon="oi-arrow-right"
-                                        type="action"
-                                        string="Shiprocket Shipping Methods"
-                                        class="btn-link"
-                                        context="{'search_default_delivery_type': 'shiprocket'}"/>
-                                </div>
-                            </div>
-                    </setting>
                     <setting id="shipping_provider_mondialrelay_setting" string="Mondial Relay" help="Let the customer select a Mondial Relay shipping point">
                         <field name="module_delivery_mondialrelay"/>
                     </setting>
@@ -246,34 +178,6 @@
                         </setting>
                     </block>
             </block>
-
-            <setting id="website_marketing_automation" position="after">
-                <setting
-                    id="abandoned_carts_setting"
-                    title="Customer needs to be signed in otherwise the mail address is not known.
-    &#10;&#10;- If a potential customer creates one or more abandoned checkouts and then completes a sale before the recovery email gets sent, then the email won't be sent.
-    &#10;&#10;- If user has manually sent a recovery email, the mail will not be sent a second time
-    &#10;&#10;- If a payment processing error occurred when the customer tried to complete their checkout, then the email won't be sent.
-    &#10;&#10;- If your shop does not support shipping to the customer's address, then the email won't be sent.
-    &#10;&#10;- If none of the products in the checkout are available for purchase (empty inventory, for example), then the email won't be sent.
-    &#10;&#10;- If all the products in the checkout are free, and the customer does not visit the shipping page to add a shipping fee or the shipping fee is also free, then the email won't be sent."
-                    string="Automatically send abandoned checkout emails"
-                    help="Mail only sent to signed in customers with items available for sale in their cart.">
-                    <field name="send_abandoned_cart_email"/>
-
-                    <div invisible="not send_abandoned_cart_email" class="content-group" title="Carts are flagged as abandoned after this delay.">
-                        <div class="row mt16">
-                            <div class="col-12">
-                                <label for="cart_abandoned_delay" string="Send after" class="o_light_label"/>
-                                <field class="col-2" name="cart_abandoned_delay" widget="float_time" /> Hours.
-                            </div>
-                        </div>
-                    </div>
-                    <div invisible="not send_abandoned_cart_email" class="mt8">
-                        <button type="object" name="action_open_abandoned_cart_mail_template" string="Customize Abandoned Email Template" class="btn-link" icon="oi-arrow-right"/>
-                    </div>
-                </setting>
-            </setting>
 
             <setting id="website_login_documents" position="after">
                 <setting

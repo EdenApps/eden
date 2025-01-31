@@ -20,19 +20,6 @@
                             <setting id="warning_info" string="Warnings" help="Get informative or blocking warnings on partners">
                                 <field name="group_warning_stock"/>
                             </setting>
-                            <setting id="quality_control" help="Add quality checks to your transfer operations"
-                                     documentation="/applications/inventory_and_mrp/manufacturing/management/quality_control.html">
-                                <field name="module_quality_control" widget="upgrade_boolean"/>
-                                <div class="row mt-2" invisible="not module_quality_control">
-                                    <field name="module_quality_control_worksheet" widget="upgrade_boolean" class="col flex-grow-0 ml16 mr0 pe-2"/>
-                                    <div class="col ps-0">
-                                        <label for="module_quality_control_worksheet"/>
-                                        <div class="text-muted">
-                                            Create customizable worksheets for your quality checks
-                                        </div>
-                                    </div>
-                                </div>
-                            </setting>
                             <setting id="annual_inventory_date" groups='stock.group_stock_manager' string="Annual Inventory Day and Month" help="Day and month that annual inventory counts should occur.">
                                 <div class="content-group">
                                     <field name="annual_inventory_day" class="o_light_label" style="width: 30px;"/>
@@ -44,9 +31,7 @@
                             </setting>
                         </block>
                         <block title="Barcode" name="barcode_setting_container">
-                            <setting id="process_operations_barcodes" help="Process operations faster with barcodes" company_dependent="1" documentation="/applications/inventory_and_mrp/inventory/barcode/setup/software.html">
-                                <field name="module_stock_barcode" widget="upgrade_boolean"/>
-                            </setting>
+
                             <setting id="process_stock_barcodelookup" string="Stock Barcode Database" help="" documentation="https://www.barcodelookup.com/api-documentation">
                                 <field name="module_stock_barcode_barcodelookup" placeholder="e.g. d7vctmiv2rwgenebha8bxq7irooudn"/>
                                 <span class="text-muted">
@@ -69,36 +54,6 @@
                             </setting>
                             <setting id="signature_delivery_orders" help="Require a signature on your delivery orders">
                                 <field name="group_stock_sign_delivery"/>
-                            </setting>
-                        </block>
-                        <block title="Shipping Connectors" name="shipping_connectors_setting_container">
-                            <setting id="compute_shipping_costs_ups" documentation="/applications/inventory_and_mrp/inventory/shipping/setup/third_party_shipper.html" help="Compute shipping costs and ship with UPS">
-                                <field name="module_delivery_ups" widget="upgrade_boolean"/>
-                            </setting>
-                            <setting id="compute_shipping_costs_dhl" help=" Compute shipping costs and ship with DHL" documentation="/applications/inventory_and_mrp/inventory/shipping/setup/third_party_shipper.html">
-                                <field name="module_delivery_dhl" widget="upgrade_boolean"/>
-                            </setting>
-                            <setting id="compute_shipping_costs_fedex" help="Compute shipping costs and ship with FedEx" documentation="/applications/inventory_and_mrp/inventory/shipping/setup/third_party_shipper.html">
-                                <field name="module_delivery_fedex" widget="upgrade_boolean"/>
-                            </setting>
-                            <setting id="compute_shipping_costs_usps" help="Compute shipping costs and ship with USPS" documentation="/applications/inventory_and_mrp/inventory/shipping/setup/third_party_shipper.html">
-                                <field name="module_delivery_usps" widget="upgrade_boolean"/>
-                            </setting>
-                            <setting id="compute_shipping_costs_bpost" help="Compute shipping costs and ship with bpost" documentation="/applications/inventory_and_mrp/inventory/shipping/setup/third_party_shipper.html">
-                                <field name="module_delivery_bpost" widget="upgrade_boolean"/>
-                            </setting>
-
-                            <setting id="compute_shipping_costs_easypost" help="Compute shipping costs and ship with Easypost" documentation="/applications/inventory_and_mrp/inventory/shipping/setup/third_party_shipper.html">
-                                <field name="module_delivery_easypost" widget="upgrade_boolean"/>
-                            </setting>
-                            <setting id="compute_shipping_costs_sendcloud" help="Compute shipping costs and ship with Sendcloud" documentation="/applications/inventory_and_mrp/inventory/shipping/setup/third_party_shipper.html">
-                                <field name="module_delivery_sendcloud" widget="upgrade_boolean"/>
-                            </setting>
-                            <setting id="compute_shipping_costs_shiprocket" help="Compute shipping costs and ship with Shiprocket" documentation="/applications/inventory_and_mrp/inventory/shipping/setup/third_party_shipper.html">
-                                <field name="module_delivery_shiprocket" widget="upgrade_boolean"/>
-                            </setting>
-                            <setting id="compute_shipping_costs_starshipit" help="Compute shipping costs and ship with Starshipit" documentation="/applications/inventory_and_mrp/inventory/shipping/setup/third_party_shipper.html">
-                                <field name="module_delivery_starshipit" widget="upgrade_boolean"/>
                             </setting>
                         </block>
                         <block title="Products" name="product_setting_container">

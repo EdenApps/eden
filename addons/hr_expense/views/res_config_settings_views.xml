@@ -29,14 +29,6 @@
                                     </div>
                                 </div>
                             </setting>
-                            <setting string="Reimburse in Payslip" help="Refund employees via their payslips." id="hr_payroll_accountant">
-                                <field name="module_hr_payroll_expense" widget="upgrade_boolean"/>
-                            </setting>
-                            <setting id="expense_extract_settings" string="Expense Digitalization (OCR)" company_dependent="1"
-                                     help="Digitalize your receipts with OCR and Artificial Intelligence"
-                                     title="use OCR to fill data from a picture of the bill">
-                                <field name="module_hr_expense_extract" widget="upgrade_boolean"/>
-                            </setting>
                         </block>
                         <block title="Accounting">
                             <setting company_dependent="1" help="Default accounting journal for expenses paid by employees."

@@ -100,10 +100,6 @@
                                     </div>
                                 </div>
                             </setting>
-                            <setting id="update_exchange_rates" invisible="not group_multi_currency" help="Update exchange rates automatically"
-                                documentation="/applications/finance/accounting/others/multi_currency.html">
-                                <field name="module_currency_rate_live" widget="upgrade_boolean"/>
-                            </setting>
                         </block>
                         <block title="Customer Invoices" id="invoicing_settings">
                             <setting id="send_invoices_followups" help="Send invoices and payment follow-ups by post"
@@ -124,10 +120,6 @@
                                             type="action" string="Cash Roundings" class="btn-link"
                                             invisible="not group_cash_rounding"/>
                                 </div>
-                            </setting>
-                            <setting id="intrastat_statistics" help="Collect information and produce statistics on the trade in goods in Europe with intrastat"
-                                documentation="/applications/finance/accounting/reporting/declarations/intrastat.html">
-                                <field name="module_account_intrastat" widget="upgrade_boolean"/>
                             </setting>
                             <setting id="default_incoterm" string="Default Incoterm" help="Default Incoterm of your company">
                                 <field name="incoterm_id"/>
@@ -193,19 +185,6 @@
                                 documentation="/applications/finance/accounting/receivables/customer_payments/online_payment.html">
                                 <field name="module_account_payment"/>
                             </setting>
-                            <setting id="account_batch_payment" string="Batch Payments" help="Group payments into a single batch to ease the reconciliation process"
-                                documentation="/applications/finance/accounting/receivables/customer_payments/batch.html">
-                                <field name="module_account_batch_payment" widget="upgrade_boolean"/>
-                            </setting>
-                            <setting id="collect_customer_payment" title="If you check this box, you will be able to collect payments using SEPA Direct Debit mandates." string="SEPA Direct Debit (SDD)" company_dependent="1" help="Collect customer payments in one-click using Euro SEPA Service"
-                                documentation="/applications/finance/accounting/receivables/customer_payments/batch_sdd.html">
-                                <field name="module_account_sepa_direct_debit" class="oe_inline" widget="upgrade_boolean"/>
-                                <div class="content-group" invisible="not module_account_sepa_direct_debit">
-                                    <div class="text-warning mt16 mb4">
-                                        Save this page and come back here to set up the feature.
-                                    </div>
-                                </div>
-                            </setting>
                             <setting id="qr_code_invoices" title="Add a QR-code to your invoices so that your customers can pay instantly with their mobile banking application." string="QR Codes" company_dependent="1" help="Add a payment QR-code to your invoices"
                                 documentation="/applications/finance/accounting/receivables/customer_invoices/epc_qr_code.html">
                                 <field name="qr_code" class="oe_inline"/>
@@ -223,22 +202,6 @@
                             <setting id="print_checks" groups="account.group_account_user" string="Checks" company_dependent="1" help="Print checks to pay your vendors"
                                 documentation="/applications/finance/accounting/payables/pay/check.html">
                                 <field name="module_account_check_printing"/>
-                            </setting>
-                            <setting id="sepa_payments" title="If you check this box, you will be able to register your payment using SEPA." company_dependent="1" help="Pay your bills in one-click using Euro SEPA Service"
-                                documentation="/applications/finance/accounting/payables/pay/sepa.html">
-                                <field name="module_account_iso20022" widget="upgrade_boolean"/>
-                            </setting>
-                        </block>
-
-                        <block title="Digitization" id="account_digitalization">
-                            <setting id="account_ocr_settings" help="Digitize your PDF or scanned documents with OCR and Artificial Intelligence"
-                                documentation="/applications/finance/accounting/payables/supplier_bills/invoice_digitization.html">
-                                <field name="module_account_extract" widget="upgrade_boolean"/>
-                                <div id="msg_invoice_extract" class="content-group" invisible="not module_account_extract">
-                                    <div class="text-warning mt16 mb4">
-                                        Save this page and come back here to set up the feature.
-                                    </div>
-                                </div>
                             </setting>
                         </block>
 
@@ -300,42 +263,11 @@
                             </block>
                         </t>
 
-                        <t groups="account.group_account_user">
-                            <block title="Bank &amp; Cash" id="bank_cash">
-                                <setting id="import_bank_statements_csv"
-                                         title="Once installed, set 'Bank Feeds' to 'File Import' in bank account settings.This adds a button to import from the Accounting dashboard."
-                                         string="CSV, XLS, and XLSX Import"
-                                         help="Import your bank statements in CSV, XLS, and XLSX">
-                                    <field name="module_account_bank_statement_import_csv" widget="upgrade_boolean"/>
-                                </setting>
-                                <setting title="Once installed, set 'Bank Feeds' to 'File Import' in bank account settings.This adds a button to import from the Accounting dashboard." string="QIF Import" help="Import your bank statements in QIF">
-                                    <field name="module_account_bank_statement_import_qif" widget="upgrade_boolean"/>
-                                </setting>
-                                <setting title="Once installed, set 'Bank Feeds' to 'File Import' in bank account settings.This adds a button to import from the Accounting dashboard." string="OFX Import" help="Import your bank statements in OFX">
-                                    <field name="module_account_bank_statement_import_ofx" widget="upgrade_boolean"/>
-                                </setting>
-                                <setting id="import_bank_statement_camt" title="Once installed, set 'Bank Feeds' to 'File Import' in bank account settings.This adds a button to import from the Accounting dashboard." string="CAMT Import" help="Import your bank statements in CAMT.053">
-                                    <field name="module_account_bank_statement_import_camt" widget="upgrade_boolean"/>
-                                </setting>
-                            </block>
-                        </t>
 
-                        <t groups="account.group_account_user">
-                            <block title="Fiscal Periods" id="accounting_reports">
-                                <setting id="fiscalyear" invisible="1" groups="account.group_account_user"/>
-                                <setting id="dynamic_report" groups="account.group_account_user" help="Navigate easily through reports and see what is behind the numbers">
-                                    <field name="module_account_reports" widget="upgrade_boolean"/>
-                                </setting>
-                            </block>
-                        </t>
                         <block title="Analytics" id="analytic" groups="account.group_account_user">
                             <setting id="track_costs_revenues" title="Allows you to use the analytic accounting." groups="account.group_account_user" help="Track costs &amp; revenues by project, department, etc"
                                 documentation="/applications/finance/accounting/others/analytic_accounting.html">
                                 <field name="group_analytic_accounting"/>
-                            </setting>
-                            <setting id="account_budget" title="This allows accountants to manage analytic and crossovered budgets. Once the master budgets and the budgets are defined, the project managers can set the planned amount on each analytic account." groups="account.group_account_user" help="Use budgets to compare actual with expected revenues and costs"
-                                documentation="/applications/finance/accounting/others/adviser/budget.html">
-                                <field name="module_account_budget" widget="upgrade_boolean"/>
                             </setting>
                             <setting id="monitor_product_margins" string="Margin Analysis" help="Monitor your product margins from invoices" groups="account.group_account_user">
                                 <field name="module_product_margin"/>

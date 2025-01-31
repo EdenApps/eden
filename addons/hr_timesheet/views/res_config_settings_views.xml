@@ -17,14 +17,6 @@
                             <field name="is_encode_uom_days" invisible="1"/>
                         </setting>
                     </block>
-                    <block title="Timesheets Control">
-                        <setting id="reminder_user_allow" company_dependent="1" help="Send a periodical email reminder to timesheets users that still have timesheets to encode">
-                            <field name="reminder_user_allow" widget="upgrade_boolean"/>
-                        </setting>
-                        <setting id="reminder_allow" company_dependent="1" help="Send a periodical email reminder to timesheets approvers that still have timesheets to validate">
-                            <field name="reminder_allow" widget="upgrade_boolean"/>
-                        </setting>
-                    </block>
                     <div name="section_leaves">
                         <block title="Time Off" name="timesheet_control">
                             <setting company_dependent="1" documentation="/applications/services/timesheets/overview/time_off.html" help="Generate timesheets for validated time off requests and public holidays" id="timesheet_off_validation_setting">

@@ -107,42 +107,6 @@
                         <setting id="delivery" help="Compute shipping costs on orders">
                             <field name="module_delivery"/>
                         </setting>
-                        <setting id="ups" help="Compute shipping costs and ship with UPS"
-                                 documentation="/applications/inventory_and_mrp/inventory/shipping/setup/third_party_shipper.html">
-                            <field name="module_delivery_ups" widget="upgrade_boolean"/>
-                        </setting>
-                        <setting id="shipping_costs_dhl" help="Compute shipping costs and ship with DHL"
-                                 documentation="/applications/inventory_and_mrp/inventory/shipping/setup/third_party_shipper.html">
-                            <field name="module_delivery_dhl" widget="upgrade_boolean"/>
-                        </setting>
-                        <setting id="shipping_costs_fedex" help="Compute shipping costs and ship with FedEx"
-                                 documentation="/applications/inventory_and_mrp/inventory/shipping/setup/third_party_shipper.html">
-                            <field name="module_delivery_fedex" widget="upgrade_boolean"/>
-                        </setting>
-                        <setting id="shipping_costs_usps" help="Compute shipping costs and ship with USPS"
-                                 documentation="/applications/inventory_and_mrp/inventory/shipping/setup/third_party_shipper.html">
-                            <field name="module_delivery_usps" widget="upgrade_boolean"/>
-                        </setting>
-                        <setting id="shipping_costs_bpost" help="Compute shipping costs and ship with bpost"
-                                 documentation="/applications/inventory_and_mrp/inventory/shipping/setup/third_party_shipper.html">
-                            <field name="module_delivery_bpost" widget="upgrade_boolean"/>
-                        </setting>
-                        <setting id="shipping_costs_easypost" help="Compute shipping costs and ship with Easypost"
-                                 documentation="/applications/inventory_and_mrp/inventory/shipping/setup/third_party_shipper.html">
-                            <field name="module_delivery_easypost" widget="upgrade_boolean"/>
-                        </setting>
-                        <setting id="shipping_costs_sendcloud" help="Compute shipping costs and ship with Sendcloud"
-                                 documentation="/applications/inventory_and_mrp/inventory/shipping/setup/third_party_shipper.html">
-                            <field name="module_delivery_sendcloud" widget="upgrade_boolean"/>
-                        </setting>
-                        <setting id="shipping_costs_shiprocket" help="Compute shipping costs and ship with Shiprocket"
-                                 documentation="/applications/inventory_and_mrp/inventory/shipping/setup/third_party_shipper.html">
-                            <field name="module_delivery_shiprocket" widget="upgrade_boolean"/>
-                        </setting>
-                        <setting id="shipping_costs_starshipit" help="Compute shipping costs and ship with Starshipit"
-                                 documentation="/applications/inventory_and_mrp/inventory/shipping/setup/third_party_shipper.html">
-                            <field name="module_delivery_starshipit" widget="upgrade_boolean"/>
-                        </setting>
                     </block>
                     <block title="Invoicing" name="invoicing_setting_container">
                         <setting id="sales_settings_invoicing_policy" title="This default value is applied to any new product created. This can be changed in the product detail form." documentation="/applications/sales/sales/invoicing/invoicing_policy.html" help="Quantities to invoice from sales orders">
@@ -154,15 +118,6 @@
                                 <label for="invoice_mail_template_id" class="o_light_label me-2"/>
                                 <field name="invoice_mail_template_id" class="oe_inline" options="{'no_create': True}"/>
                             </div>
-                        </setting>
-                        <setting id="setting_commission" help="Manage Sales &amp; teams targets and commissions">
-                            <field name="module_sale_commission" widget="upgrade_boolean"/>
-                        </setting>
-                    </block>
-                    <block title="Connectors" id="connectors_setting_container">
-                        <setting id="amazon_connector" documentation="/applications/sales/sales/amazon_connector/setup.html" help="Import Amazon orders and sync deliveries">
-                            <field name="module_sale_amazon" widget="upgrade_boolean"/>
-                            <div class="content-group" name="amazon_connector" invisible="not module_sale_amazon"/>
                         </setting>
                     </block>
                 </app>
