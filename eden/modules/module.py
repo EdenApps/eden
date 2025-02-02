@@ -44,7 +44,7 @@ _DEFAULT_MANIFEST = {
     'application': False,
     'bootstrap': False,  # web
     'assets': {},
-    'author': 'Eden S.A.',
+    'author': 'Eden Cloud',
     'auto_install': False,
     'category': 'Uncategorized',
     'cloc_exclude': [],

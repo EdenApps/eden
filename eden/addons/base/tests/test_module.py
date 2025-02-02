@@ -38,7 +38,7 @@ class TestModuleManifest(BaseCase):
             'addons_path': self.addons_path,
             'application': False,
             'assets': {},
-            'author': 'Eden S.A.',
+            'author': 'Eden Cloud',
             'auto_install': False,
             'bootstrap': False,
             'category': 'Uncategorized',
