@@ -39,7 +39,10 @@ function makeMenus(env, menusData, fetchLoadMenus) {
             return Object.values(menusData);
         },
         getApps() {
-            return this.getMenu("root").children.map((mid) => this.getMenu(mid));
+            const apps = this.getMenu("root").children.map((mid) => this.getMenu(mid));
+            apps.sort((a, b) => a.name.localeCompare(b.name));
+            console.log(apps);
+            return apps;
         },
         getMenu: _getMenu,
         getCurrentApp() {
