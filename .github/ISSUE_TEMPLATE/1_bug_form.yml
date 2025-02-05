@@ -1,23 +1,20 @@
 name: Bug
 description: Open a Bug Report on Github
-title: '[18.0] module: description'
+title: '[Main] module: description'
 body:
   - type: markdown
     attributes:
       value: |
         Thank you for taking the time to open a bug report. Please make sure to search in existing issues if the issue was not already raised.
-        Also, if you think it is a standard bug, please first try to reproduce the issue on runbot (http://runbot.odoo.com/runbot - click on the blue door icon of the version row - admin/admin).
+        Also, if you think it is a standard bug, please make sure you can reproduce the issue.
         To speed the process, we need some information."
   - type: checkboxes
     id: version
     attributes:
-      label: Odoo Version
-      description: In which version(s) of Odoo does your issue occur?
+      label: Eden Version
+      description: In which version(s) of Eden does your issue occur?
       options:
-        - label: "16.0"
-        - label: "17.0"
-        - label: "18.0"
-        - label: "Other (specify)"
+        - label: "Main"
     validations:
       required: true
   - type: markdown
@@ -50,5 +47,5 @@ body:
     id: supportticket
     attributes:
       label: Support Ticket
-      description: Optional eden.com/help ticket number
-      placeholder: opw-123456789
+      description: Optional edencloud.us/help ticket number
+      placeholder: eaid-123456789
