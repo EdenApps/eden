@@ -6,3 +6,4 @@ declare module "models" {
     export interface Models {
         "ScheduledMessage": ScheduledMessage,
     }
+}
