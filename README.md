@@ -19,6 +19,6 @@ Install and Run
 1. Clone the repo ```git clone https://github.com/edenapps/eden```
 2. Change Directory ```cd eden```
 3. Install Dependencies ```pip install setuptools wheel && pip install -r requirements.txt```
-4. Launch Eden ```python odoo-bin --addons-path=addons -d edendb``` OR ```python eden-bin --addons-path=addons -d edendb --dev xml,reload --test-enable``` for devMode
+4. Launch Eden ```python eden-bin --addons-path=addons -d edendb``` OR ```python eden-bin --addons-path=addons -d edendb --dev xml,reload --test-enable``` for devMode
 
 Complete dev instructions coming soon.
