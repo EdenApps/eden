@@ -1,0 +1,51 @@
+name: Bug
+description: Open a Bug Report on Github
+title: '[Main] module: description'
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to open a bug report. Please make sure to search in existing issues if the issue was not already raised.
+        Also, if you think it is a standard bug, please make sure you can reproduce the issue.
+        To speed the process, we need some information."
+  - type: checkboxes
+    id: version
+    attributes:
+      label: Eden Version
+      description: In which version(s) of Eden does your issue occur?
+      options:
+        - label: "Main"
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        Please describe how to reproduce the issue with clear steps.
+        - Current behaviour:
+        - Expected behaviour:
+        - Video/Screenshot link (optional):
+  - type: textarea
+    id: howtoreproduce
+    attributes:
+      label: Steps to Reproduce
+      description:
+      placeholder: |
+        - Go to Quotations;
+        - Select one quotation and click on 'Create an Invoice';
+        
+        Current behaviour: traceback.
+        Expected behaviour: it creates a draft invoice.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log Output
+      description: Copy-paste full traceback or error message if you have some
+      render: shell
+  - type: input
+    id: supportticket
+    attributes:
+      label: Support Ticket
+      description: Optional edencloud.us/help ticket number
+      placeholder: eaid-123456789

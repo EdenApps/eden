@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<eden noupdate="1">
+
+    <record id="payment_provider_authorize" model="payment.provider">
+        <field name="name">Authorize.net</field>
+        <field name="image_128"
+               type="base64"
+               file="payment_authorize/static/description/icon.png"/>
+        <field name="module_id" ref="base.module_payment_authorize"/>
+        <!-- https://www.authorize.net/solutions/merchantsolutions/onlinemerchantaccount/ -->
+        <field name="payment_method_ids"
+               eval="[Command.set([
+                         ref('payment.payment_method_ach_direct_debit'),
+                         ref('payment.payment_method_card'),
+                     ])]"
+        />
+    </record>
+
+    <record id="payment_provider_demo" model="payment.provider">
+        <field name="name">Demo</field>
+        <field name="sequence">40</field>
+        <field name="image_128" type="base64" file="payment_demo/static/description/icon.png"/>
+        <field name="module_id" ref="base.module_payment_demo"/>
+    </record>
+
+    <record id="payment_provider_paypal" model="payment.provider">
+        <field name="name">PayPal</field>
+        <field name="image_128" type="base64" file="payment_paypal/static/description/icon.png"/>
+        <field name="module_id" ref="base.module_payment_paypal"/>
+        <!-- https://www.paypal.com/us/selfhelp/article/Which-credit-cards-can-I-accept-with-PayPal-Merchant-Services-FAQ1525#business -->
+        <field name="payment_method_ids"
+               eval="[Command.set([
+                         ref('payment.payment_method_paypal'),
+                     ])]"
+        />
+    </record>
+
+    <record id="payment_provider_stripe" model="payment.provider">
+        <field name="name">Stripe</field>
+        <field name="image_128" type="base64" file="payment_stripe/static/description/icon.png"/>
+        <field name="module_id" ref="base.module_payment_stripe"/>
+        <!--
+            See https://stripe.com/payments/payment-methods-guide
+            See https://support.goteamup.com/hc/en-us/articles/115002089349-Which-cards-and-payment-types-can-I-accept-with-Stripe-
+        -->
+        <field name="payment_method_ids"
+               eval="[Command.set([
+                         ref('payment.payment_method_ach_direct_debit'),
+                         ref('payment.payment_method_affirm'),
+                         ref('payment.payment_method_afterpay'),
+                         ref('payment.payment_method_alipay'),
+                         ref('payment.payment_method_bacs_direct_debit'),
+                         ref('payment.payment_method_bancontact'),
+                         ref('payment.payment_method_becs_direct_debit'),
+                         ref('payment.payment_method_boleto'),
+                         ref('payment.payment_method_card'),
+                         ref('payment.payment_method_cash_app_pay'),
+                         ref('payment.payment_method_clearpay'),
+                         ref('payment.payment_method_eps'),
+                         ref('payment.payment_method_fpx'),
+                         ref('payment.payment_method_giropay'),
+                         ref('payment.payment_method_grabpay'),
+                         ref('payment.payment_method_ideal'),
+                         ref('payment.payment_method_klarna'),
+                         ref('payment.payment_method_mobile_pay'),
+                         ref('payment.payment_method_multibanco'),
+                         ref('payment.payment_method_p24'),
+                         ref('payment.payment_method_paynow'),
+                         ref('payment.payment_method_paypal'),
+                         ref('payment.payment_method_pix'),
+                         ref('payment.payment_method_promptpay'),
+                         ref('payment.payment_method_revolut_pay'),
+                         ref('payment.payment_method_sepa_direct_debit'),
+                         ref('payment.payment_method_sofort'),
+                         ref('payment.payment_method_upi'),
+                         ref('payment.payment_method_wechat_pay'),
+                         ref('payment.payment_method_zip'),
+                     ])]"
+        />
+    </record>
+
+    <record id="payment_provider_transfer" model="payment.provider">
+        <field name="name">Wire Transfer</field>
+        <field name="sequence">30</field>
+        <field name="image_128" type="base64" file="payment_custom/static/description/icon.png"/>
+        <field name="module_id" ref="base.module_payment_custom"/>
+    </record>
+
+</eden>
