@@ -258,13 +258,6 @@ def module_manifest(path):
     for manifest_name in MANIFEST_NAMES:
         candidate = opj(path, manifest_name)
         if os.path.isfile(candidate):
-            if manifest_name == '__openerp__.py':
-                warnings.warn(
-                    "__openerp__.py manifests are deprecated since 17.0, "
-                    f"rename {candidate!r} to __manifest__.py "
-                    "(valid since 10.0)",
-                    category=DeprecationWarning
-                )
             return candidate
 
 def get_module_root(path):
