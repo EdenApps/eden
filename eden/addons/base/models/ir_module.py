@@ -321,15 +321,15 @@ class Module(models.Model):
     icon_image = fields.Binary(string='Icon', compute='_get_icon_image')
     icon_flag = fields.Char(string='Flag', compute='_get_icon_image')
     to_buy = fields.Boolean('Eden Enterprise Module', default=False)
-    has_iap = fields.Boolean(compute='_compute_has_iap')
+    # has_iap = fields.Boolean(compute='_compute_has_iap')
 
     _sql_constraints = [
         ('name_uniq', 'UNIQUE (name)', 'The name of the module must be unique!'),
     ]
 
-    def _compute_has_iap(self):
-        for module in self:
-            module.has_iap = bool(module.id) and 'iap' in module.upstream_dependencies(exclude_states=('',)).mapped('name')
+    # def _compute_has_iap(self):
+    #    for module in self:
+    #        module.has_iap = bool(module.id) and 'iap' in module.upstream_dependencies(exclude_states=('',)).mapped('name')
 
     @api.ondelete(at_uninstall=False)
     def _unlink_except_installed(self):

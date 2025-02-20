@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<eden>
-    <data>
-        <record id="base.user_root" model="res.users">
-            <field name="edenbot_state">disabled</field>
-        </record>
-    </data>
-</eden>
