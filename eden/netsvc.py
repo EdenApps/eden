@@ -22,7 +22,7 @@ _logger = logging.getLogger(__name__)
 
 def log(logger, level, prefix, msg, depth=None):
     warnings.warn(
-        "eden.netsvc.log is deprecated starting Eden 18, use normal logging APIs",
+        "eden.netsvc.log is deprecated starting Eden 2025, use normal logging APIs",
         category=DeprecationWarning,
         stacklevel=2,
     )

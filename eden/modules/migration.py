@@ -31,13 +31,6 @@ VERSION_RE = re.compile(
 
             # multi digits "x.0" versions
             [1-9]\d+\.0|
-
-            # x.saas~y, where x >= 7 and x <= 10
-            (7|8|9|10)\.saas~[1-9]\d*|
-
-            # saas~x.y, where x >= 11 and y between 1 and 9
-            # FIXME handle version >= saas~100 (expected in year 2106)
-            saas~(1[1-9]|[2-9]\d+)\.[1-9]
         )\.)?
         # After Eden version we allow precisely 2 or 3 parts
         # note this will also allow 0.0.0 which has a special meaning

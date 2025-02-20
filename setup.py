@@ -38,7 +38,6 @@ setup(
         'lxml',  # windows binary http://www.lfd.uci.edu/~gohlke/pythonlibs/
         'libsass',
         'MarkupSafe',
-        'num2words',
         'ofxparse',
         'openpyxl',
         'passlib',
