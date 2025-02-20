@@ -23,8 +23,6 @@ def patch_all():
     patch_pytz()
     from .literal_eval import patch_literal_eval
     patch_literal_eval()
-    from .num2words import patch_num2words
-    patch_num2words()
     from .stdnum import patch_stdnum
     patch_stdnum()
     from .werkzeug_urls import patch_werkzeug

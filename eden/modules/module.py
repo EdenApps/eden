@@ -36,7 +36,7 @@ except ImportError:
             self.name = pydep
 
 
-MANIFEST_NAMES = ('__manifest__.py')
+MANIFEST_NAMES = ('__manifest__.py', '__openerp__.py')
 README = ['README.rst', 'README.md', 'README.txt']
 
 _DEFAULT_MANIFEST = {
