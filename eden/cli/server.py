@@ -131,6 +131,13 @@ def import_translation():
         translation_importer.save(overwrite=overwrite)
 
 def main(args):
+    # Load .env file if it exists using dotenv package
+    try:
+        from dotenv import load_dotenv
+        load_dotenv()
+    except ImportError:
+        pass
+
     check_root_user()
     eden.tools.config.parse_config(args, setup_logging=True)
     check_postgres_user()

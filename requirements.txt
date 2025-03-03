@@ -5,6 +5,7 @@ chardet==5.2.0
 cryptography==44.0.1
 decorator==5.1.1
 docutils==0.21.2
+dotenv==0.9.9
 freezegun==1.5.1
 geoip2==5.0.1
 gevent==24.11.1

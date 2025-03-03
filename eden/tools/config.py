@@ -487,6 +487,8 @@ class configmanager(object):
             # action=append requiring a real default, so we cannot use the my_default workaround)
             if getattr(opt, arg, None) is not None:
                 self.options[arg] = getattr(opt, arg)
+            elif os.environ.get(arg.upper()) is not None:
+                self.options[arg] = os.environ[arg.upper()]
             # ... or keep, but cast, the config file value.
             elif isinstance(self.options[arg], str) and self.casts[arg].type in optparse.Option.TYPE_CHECKER:
                 self.options[arg] = optparse.Option.TYPE_CHECKER[self.casts[arg].type](self.casts[arg], arg, self.options[arg])
