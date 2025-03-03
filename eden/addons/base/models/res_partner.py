@@ -160,8 +160,7 @@ class PartnerCategory(models.Model):
 
     @api.depends('parent_id')
     def _compute_display_name(self):
-        """ Return the categories' display name, including their direct
-            parent by default.
+        """ Return the categories' display name, not including their parent.
         """
         for category in self:
             names = []
@@ -191,7 +190,7 @@ class Partner(models.Model):
     _description = 'Contact'
     _inherit = ['format.address.mixin', 'format.vat.label.mixin', 'avatar.mixin']
     _name = "res.partner"
-    _order = "complete_name ASC, id DESC"
+    _order = "name ASC, id DESC"
     _rec_names_search = ['complete_name', 'email', 'ref', 'vat', 'company_registry']  # TODO vat must be sanitized the same way for storing/searching
     _allow_sudo_commands = False
     _check_company_domain = models.check_company_domain_parent_of
@@ -312,6 +311,7 @@ class Partner(models.Model):
 
     _sql_constraints = [
         ('check_name', "CHECK( (type='contact' AND name IS NOT NULL) or (type!='contact') )", 'Contacts require a name'),
+        ('unique_email', 'UNIQUE(email)', 'Email must be unique across contacts.'),
     ]
 
     def _get_street_split(self):
