@@ -448,6 +448,7 @@ _SAFE_QWEB_OPCODES = _EXPR_OPCODES.union(to_opcodes([
     # 3.13 https://docs.python.org/3/whatsnew/3.13.html
     'CALL_KW', 'TO_BOOL',
     'CONVERT_VALUE', 'FORMAT_SIMPLE',
+    'STORE_FAST_LOAD_FAST',
 ])) - _BLACKLIST
 
 

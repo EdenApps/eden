@@ -176,6 +176,7 @@ _SAFE_OPCODES = _EXPR_OPCODES.union(to_opcodes([
     'STORE_SLICE',
     # 3.13 https://docs.python.org/3/whatsnew/3.13.html
     'CALL_KW', 'TO_BOOL',
+    'STORE_FAST_LOAD_FAST',
 ])) - _BLACKLIST
 
 
