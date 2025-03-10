@@ -11,7 +11,6 @@ export class ResPartner extends Base {
             "phone",
             "mobile",
             "email",
-            "vat",
             "parent_name",
             "contact_address",
         ];

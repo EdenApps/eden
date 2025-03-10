@@ -698,7 +698,7 @@ def get_aliased_eden_define_content(module_path, content):
 
     Example:
     If we have a require call somewhere in the eden source base being:
-    > vat AbstractAction require("web.AbstractAction")
+    > web  AbstractAction require("web.AbstractAction")
     we have a problem when we will have converted to module to ES6: its new name will be more like
     "web/chrome/abstract_action". So the require would fail !
     So we add a second small modules, an alias, as such:

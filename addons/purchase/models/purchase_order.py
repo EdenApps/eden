@@ -244,14 +244,6 @@ class PurchaseOrder(models.Model):
                 company=order.company_id,
             )
 
-    @api.depends('company_id.account_fiscal_country_id', 'fiscal_position_id.country_id', 'fiscal_position_id.foreign_vat')
-    def _compute_tax_country_id(self):
-        for record in self:
-            if record.fiscal_position_id.foreign_vat:
-                record.tax_country_id = record.fiscal_position_id.country_id
-            else:
-                record.tax_country_id = record.company_id.account_fiscal_country_id
-
     @api.onchange('date_planned')
     def onchange_date_planned(self):
         if self.date_planned:

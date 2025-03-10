@@ -6,7 +6,6 @@ class BaseDocumentLayout(models.TransientModel):
 
     from_invoice = fields.Boolean()
     qr_code = fields.Boolean(related='company_id.qr_code', readonly=False)
-    vat = fields.Char(related='company_id.vat', readonly=False,)
     account_number = fields.Char(compute='_compute_account_number', inverse='_inverse_account_number',)
 
     def document_layout_save(self):

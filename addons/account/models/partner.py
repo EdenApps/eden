@@ -14,7 +14,6 @@ from eden.tools import DEFAULT_SERVER_DATETIME_FORMAT, mute_logger
 from eden.exceptions import ValidationError, UserError
 from eden.addons.base.models.res_partner import WARNING_MESSAGE, WARNING_HELP
 from eden.tools import SQL, unique
-from eden.addons.base_vat.models.res_partner import _ref_vat
 
 _logger = logging.getLogger(__name__)
 
@@ -38,8 +37,6 @@ class AccountFiscalPosition(models.Model):
     tax_ids = fields.One2many('account.fiscal.position.tax', 'position_id', string='Tax Mapping', copy=True)
     tax_map = fields.Binary(compute='_compute_tax_map')
     note = fields.Html('Notes', translate=True, help="Legal mentions that have to be printed on the invoices.")
-    auto_apply = fields.Boolean(string='Detect Automatically', help="Apply tax & account mappings on invoices automatically if the matching criterias (VAT/Country) are met.")
-    vat_required = fields.Boolean(string='VAT required', help="Apply only if partner has a VAT number.")
     company_country_id = fields.Many2one(string="Company Country", related='company_id.account_fiscal_country_id')
     fiscal_country_codes = fields.Char(string="Company Fiscal Country Code", related='company_country_id.code')
     country_id = fields.Many2one('res.country', string='Country',
@@ -51,36 +48,11 @@ class AccountFiscalPosition(models.Model):
     zip_to = fields.Char(string='Zip Range To')
     # To be used in hiding the 'Federal States' field('attrs' in view side) when selected 'Country' has 0 states.
     states_count = fields.Integer(compute='_compute_states_count')
-    foreign_vat = fields.Char(string="Foreign Tax ID", inverse="_inverse_foreign_vat", help="The tax ID of your company in the region mapped by this fiscal position.")
 
-    # Technical field used to display a banner on top of foreign vat fiscal positions,
-    # in order to ease the instantiation of foreign taxes when possible.
-    foreign_vat_header_mode = fields.Selection(
-        selection=[('templates_found', "Templates Found"), ('no_template', "No Template")],
-        compute='_compute_foreign_vat_header_mode')
-
-    def _inverse_foreign_vat(self):
-        # Hook for extension
-        pass
 
     def _compute_states_count(self):
         for position in self:
             position.states_count = len(position.country_id.state_ids)
-
-    @api.depends('foreign_vat', 'country_id')
-    def _compute_foreign_vat_header_mode(self):
-        for fiscal_position in self:
-            if (
-                    not fiscal_position.foreign_vat
-                    or not fiscal_position.country_id
-                    or self.env['account.tax'].search([('country_id', '=', fiscal_position.country_id.id)], limit=1)
-            ):
-                fiscal_position.foreign_vat_header_mode = False
-            else:
-                template_code = self.env['account.chart.template']._guess_chart_template(fiscal_position.country_id)
-                template = self.env['account.chart.template']._get_chart_template_mapping()[template_code]
-                # 'no_template' kept for compatibility in stable. To remove in master
-                fiscal_position.foreign_vat_header_mode = 'templates_found' if template['installed'] else 'no_template'
 
     @api.depends('tax_ids.tax_src_id', 'tax_ids.tax_dest_id')
     def _compute_tax_map(self):
@@ -103,41 +75,6 @@ class AccountFiscalPosition(models.Model):
         for position in self:
             if bool(position.zip_from) != bool(position.zip_to) or position.zip_from > position.zip_to:
                 raise ValidationError(_('Invalid "Zip Range", You have to configure both "From" and "To" values for the zip range and "To" should be greater than "From".'))
-
-    @api.constrains('country_id', 'country_group_id', 'state_ids', 'foreign_vat')
-    def _validate_foreign_vat_country(self):
-        for record in self:
-            if record.foreign_vat:
-                if record.country_id == record.company_id.account_fiscal_country_id:
-                    if not record.state_ids:
-                        if record.company_id.account_fiscal_country_id.state_ids:
-                            raise ValidationError(_("You cannot create a fiscal position with a foreign VAT within your fiscal country without assigning it a state."))
-                if record.country_group_id and record.country_id:
-                    if record.country_id not in record.country_group_id.country_ids:
-                        raise ValidationError(_("You cannot create a fiscal position with a country outside of the selected country group."))
-
-                similar_fpos_domain = [
-                    *self.env['account.fiscal.position']._check_company_domain(record.company_id),
-                    ('foreign_vat', '!=', False),
-                    ('id', '!=', record.id),
-                ]
-
-                if record.country_group_id:
-                    foreign_vat_country = self.country_group_id.country_ids.filtered(lambda c: c.code == record.foreign_vat[:2].upper())
-                    if not foreign_vat_country:
-                        raise ValidationError(_("The country code of the foreign VAT number does not match any country in the group."))
-                    similar_fpos_domain += [('country_group_id', '=', record.country_group_id.id), ('country_id', '=', foreign_vat_country.id)]
-                elif record.country_id:
-                    similar_fpos_domain += [('country_id', '=', record.country_id.id), ('country_group_id', '=', False)]
-
-                if record.state_ids:
-                    similar_fpos_domain.append(('state_ids', 'in', record.state_ids.ids))
-                else:
-                    similar_fpos_domain.append(('state_ids', '=', False))
-
-                similar_fpos_count = self.env['account.fiscal.position'].search_count(similar_fpos_domain)
-                if similar_fpos_count:
-                    raise ValidationError(_("A fiscal position with a foreign VAT already exists in this region."))
 
     def map_tax(self, taxes):
         return self.env['account.tax'].browse(unique(
@@ -189,9 +126,6 @@ class AccountFiscalPosition(models.Model):
                 vals['zip_from'], vals['zip_to'] = self._convert_zip_values(zip_from or rec.zip_from, zip_to or rec.zip_to)
         return super(AccountFiscalPosition, self).write(vals)
 
-    def _get_vat_valid(self, delivery, company=None):
-        """ Hook for determining VAT validity with more complex VAT requirements """
-        return bool(delivery.vat)
 
     def _get_fpos_ranking_functions(self, partner):
         """Get comparison functions to rank fiscal positions.
@@ -210,10 +144,6 @@ class AccountFiscalPosition(models.Model):
         :rtype: list[tuple[str, function]
         """
         return [
-            ('vat_required', lambda fpos: (
-                not fpos.vat_required
-                or (self._get_vat_valid(partner, self.env.company) and 2)
-            )),
             ('company_id', lambda fpos: len(fpos.company_id.parent_ids)),
             ('zipcode', lambda fpos:(
                 not (fpos.zip_from and fpos.zip_to)
@@ -244,15 +174,6 @@ class AccountFiscalPosition(models.Model):
             return self.env['account.fiscal.position']
 
         company = self.env.company
-        intra_eu = vat_exclusion = False
-        if company.vat and partner.vat:
-            eu_country_codes = set(self.env.ref('base.europe').country_ids.mapped('code'))
-            intra_eu = company.vat[:2] in eu_country_codes and partner.vat[:2] in eu_country_codes
-            vat_exclusion = company.vat[:2] == partner.vat[:2]
-
-        # If company and partner have the same vat prefix (and are both within the EU), use invoicing
-        if not delivery or (intra_eu and vat_exclusion):
-            delivery = partner
 
         # partner manually set fiscal position always win
         manual_fiscal_position = (
@@ -338,7 +259,6 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     fiscal_country_codes = fields.Char(compute='_compute_fiscal_country_codes')
-    partner_vat_placeholder = fields.Char(compute='_compute_partner_vat_placeholder')
 
     @api.depends('company_id')
     @api.depends_context('allowed_company_ids')
@@ -746,12 +666,6 @@ class ResPartner(models.Model):
             [('partner_id', '=', self.id)]
         )
 
-    def can_edit_vat(self):
-        """ Can't edit `vat` if there is (non draft) issued invoices. """
-        return super().can_edit_vat() and not self._has_invoice(
-            [('partner_id', 'child_of', self.commercial_partner_id.id)]
-        )
-
     @api.model_create_multi
     def create(self, vals_list):
         search_partner_mode = self.env.context.get('res_partner_search_mode')
@@ -798,35 +712,6 @@ class ResPartner(models.Model):
                 _logger.debug('Another transaction already locked partner rows. Cannot update partner ranks.')
 
     @api.model
-    def _run_vat_test(self, vat_number, default_country, partner_is_company=True):
-        """ Checks a VAT number syntactically to ensure its validity upon saving.
-
-        :param vat_number: a string with the VAT number to check.
-        :param default_country: a res.country object
-        :param partner_is_company: True if the partner is a company, else False.
-            .. deprecated:: 16.0
-                Will be removed in 16.2
-
-        :return: The country code (in lower case) of the country the VAT number
-                 was validated for, if it was validated. False if it could not be validated
-                 against the provided or guessed country. None if no country was available
-                 for the check, and no conclusion could be made with certainty.
-        """
-        return default_country.code.lower()
-
-    @api.model
-    def _build_vat_error_message(self, country_code, wrong_vat, record_label):
-        """ Prepare an error message for the VAT number that failed validation
-
-        :param country_code: string of lowercase country code
-        :param wrong_vat: the vat number that was validated
-        :param record_label: a string to desribe the record that failed a VAT validation check
-
-        :return: The error message string
-        """
-        return ""
-
-    @api.model
     def get_partner_localisation_fields_required_to_invoice(self, country_id):
         """ Returns the list of fields that needs to be filled when creating an invoice for the selected country.
         This is required for some flows that would allow a user to request an invoice from the portal.
@@ -841,57 +726,6 @@ class ResPartner(models.Model):
     # -------------------------------------------------------------------------
     # EDI
     # -------------------------------------------------------------------------
-
-    @api.model
-    def _retrieve_partner_with_vat(self, vat, extra_domain):
-        if not vat:
-            return None
-
-        # Sometimes, the vat is specified with some whitespaces.
-        normalized_vat = vat.replace(' ', '')
-        country_prefix = re.match('^[a-zA-Z]{2}|^', vat).group()
-
-        partner = self.env['res.partner'].search(extra_domain + [('vat', 'in', (normalized_vat, vat))], limit=2)
-
-        # Try to remove the country code prefix from the vat.
-        if not partner and country_prefix:
-            partner = self.env['res.partner'].search(extra_domain + [
-                ('vat', 'in', (normalized_vat[2:], vat[2:])),
-                ('country_id.code', '=', country_prefix.upper()),
-            ], limit=2)
-
-            # The country could be not specified on the partner.
-            if not partner:
-                partner = self.env['res.partner'].search(extra_domain + [
-                    ('vat', 'in', (normalized_vat[2:], vat[2:])),
-                    ('country_id', '=', False),
-                ], limit=2)
-
-        # The vat could be a string of alphanumeric values without country code but with missing zeros at the
-        # beginning.
-        if not partner:
-            try:
-                vat_only_numeric = str(int(re.sub(r'^\D{2}', '', normalized_vat) or 0))
-            except ValueError:
-                vat_only_numeric = None
-
-            if vat_only_numeric:
-                if country_prefix:
-                    vat_prefix_regex = f'({country_prefix})?'
-                else:
-                    vat_prefix_regex = '([A-z]{2})?'
-                Partner = self.env['res.partner']
-                query = Partner._search(extra_domain + [('active', '=', True)], limit=2)
-                query.add_where(SQL(
-                    "%s ~ %s",
-                    Partner._field_to_sql(Partner._table, 'vat'),
-                    f'^{vat_prefix_regex}0*{vat_only_numeric}$',
-                ))
-                partner_row = list(query)
-                if partner_row and len(partner_row) == 1:
-                    partner = Partner.browse(partner_row[0])
-
-        return partner
 
     @api.model
     def _retrieve_partner_with_phone_email(self, phone, email, extra_domain):
@@ -916,19 +750,15 @@ class ResPartner(models.Model):
             return None
         return self.env['res.partner'].search([('name', 'ilike', name)] + extra_domain, limit=2)
 
-    def _retrieve_partner(self, name=None, phone=None, email=None, vat=None, domain=None, company=None):
+    def _retrieve_partner(self, name=None, phone=None, email=None, domain=None, company=None):
         '''Search all partners and find one that matches one of the parameters.
         :param name:    The name of the partner.
         :param phone:   The phone or mobile of the partner.
         :param mail:    The mail of the partner.
-        :param vat:     The vat number of the partner.
         :param domain:  An extra domain to apply.
         :param company: The company of the partner.
         :returns:       A partner or an empty recordset if not found.
         '''
-
-        def search_with_vat(extra_domain):
-            return self._retrieve_partner_with_vat(vat, extra_domain)
 
         def search_with_phone_mail(extra_domain):
             return self._retrieve_partner_with_phone_email(phone, email, extra_domain)
@@ -941,16 +771,13 @@ class ResPartner(models.Model):
                 return None
             return self.env['res.partner'].search(domain + extra_domain, limit=1)
 
-        for search_method in (search_with_vat, search_with_domain, search_with_phone_mail, search_with_name):
+        for search_method in (search_with_domain, search_with_phone_mail, search_with_name):
             for extra_domain in (
                 [*self.env['res.partner']._check_company_domain(company or self.env.company), ('company_id', '!=', False)],
                 [('company_id', '=', False)],
             ):
                 partner = search_method(extra_domain)
 
-                # The VAT should be a sufficiently distinctive criterion
-                if partner and search_method == search_with_vat:
-                    return partner[:1]
                 if partner and len(partner) == 1:
                     return partner
         return self.env['res.partner']
@@ -965,25 +792,9 @@ class ResPartner(models.Model):
 
     def _deduce_country_code(self):
         """ deduce the country code based on the information available.
-        we have three cases:
-        - country_code is BE but the VAT number starts with FR, the country code is FR, not BE
-        - if a country-specific field is set (e.g. the codice_fiscale), that country is used for the country code
-        - if the VAT number has no ISO country code, use the country_code in that case.
+        
         """
         self.ensure_one()
 
         country_code = self.country_code
-        if self.vat and self.vat[:2].isalpha():
-            country_code = self.vat[:2].upper()
         return country_code
-
-    @api.depends('country_id')
-    def _compute_partner_vat_placeholder(self):
-        for partner in self:
-            placeholder = _("/ if not applicable")
-            if partner.country_id:
-                expected_vat = _ref_vat.get(partner.country_id.code.lower())
-                if expected_vat:
-                    placeholder = _("%s, or / if not applicable", expected_vat)
-
-            partner.partner_vat_placeholder = placeholder

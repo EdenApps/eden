@@ -32,7 +32,6 @@
                             <field name='group_by_email' />
                             <field name='group_by_name' />
                             <field name='group_by_is_company' />
-                            <field name='group_by_vat' />
                             <field name='group_by_parent_id' />
                         </group>
                         <group string="Exclude contacts having"
@@ -65,7 +64,6 @@
                                     <field name="display_name" />
                                     <field name="email" />
                                     <field name="is_company" />
-                                    <field name="vat" />
                                     <field name="country_id" />
                                 </list>
                             </field>

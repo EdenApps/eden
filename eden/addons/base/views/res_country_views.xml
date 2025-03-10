@@ -30,9 +30,8 @@
                                 <field name="currency_id"/>
                                 <field name="code"/>
                             </group>
-                            <group name="phone_vat_settings">
+                            <group name="phone_settings">
                                 <field name="phone_code" options="{'format': false}"/>
-                                <field name="vat_label"/>
                                 <field name="zip_required"/>
                                 <field name="state_required"/>
                             </group>

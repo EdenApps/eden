@@ -21,9 +21,6 @@ class AccountAccountTag(models.Model):
     @api.depends('applicability', 'country_id')
     @api.depends_context('company')
     def _compute_display_name(self):
-        if not self.env.company.multi_vat_foreign_country_ids:
-            return super()._compute_display_name()
-
         for tag in self:
             name = tag.name
             if tag.applicability == "taxes" and tag.country_id and tag.country_id != self.env.company.account_fiscal_country_id:

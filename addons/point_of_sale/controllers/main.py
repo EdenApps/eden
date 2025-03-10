@@ -154,7 +154,7 @@ class PosController(PortalAccount):
 
         user_is_connected = not request.env.user._is_public()
 
-        # Validate the form by ensuring required fields are filled and the VAT is correct.
+        # Validate the form by ensuring required fields are filled.
         form_values = {'error': {}, 'error_message': {}, 'extra_field_values': {}}
         if kwargs and request.httprequest.method == 'POST':
             form_values.update(kwargs)

@@ -7,4 +7,4 @@ class ResCountry(models.Model):
 
     @api.model
     def _load_pos_data_fields(self, config_id):
-        return ['id', 'name', 'code', 'vat_label']
+        return ['id', 'name', 'code']

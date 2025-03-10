@@ -424,9 +424,6 @@ ZeroDivisionError: division by zero""" % self.test_server_action.id
         bindings = Actions.get_bindings('res.country')
         self.assertItemsEqual(bindings.get('action'), self.action.read(['name', 'sequence', 'binding_view_types']))
 
-        self.action.with_context(self.context).run()
-        self.assertEqual(self.test_country.vat_label, 'VatFromTest', 'vat label should be changed to VatFromTest')
-
     def test_60_sort(self):
         """ check the actions sorted by sequence """
         Actions = self.env['ir.actions.actions']

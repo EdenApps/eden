@@ -8,7 +8,6 @@
             <span t-field="o.vendor_id" t-options='{"widget": "contact", "fields": ["name","address"], "no_marker": True}'/>
             <br/>
             <span t-field="o.vendor_id" t-options='{"widget": "contact", "fields": ["phone"], "phone_icons": True}'/>
-            <p t-if="o.vendor_id.vat"><t t-out="o.company_id.account_fiscal_country_id.vat_label or 'Tax ID'"/>: <span t-field="o.vendor_id.vat"/></p>
         </t>
         <div class="page">
             <div class="oe_structure"/>

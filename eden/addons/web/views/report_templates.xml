@@ -327,11 +327,6 @@
                                 </div>
                             </span>
                         </li>
-                        <li t-if="not forced_vat"/>
-                        <li t-else="">
-                            <t t-esc="company.country_id.vat_label or 'Tax ID'">Tax ID</t>:
-                            <span t-esc="forced_vat">US12345671</span>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -379,11 +374,6 @@
                                         <div>Contains the company details.</div>
                                     </div>
                                 </span>
-                            </li>
-                            <li t-if="not forced_vat"/>
-                            <li t-else="">
-                                <t t-esc="company.country_id.vat_label or 'Tax ID'">Tax ID</t>:
-                                <span t-esc="forced_vat">US12345671</span>
                             </li>
                         </ul>
                     </div>
@@ -438,11 +428,6 @@
                                 </div>
                             </span>
                         </li>
-                        <li t-if="not forced_vat"/>
-                        <li t-else="">
-                            <t t-esc="company.country_id.vat_label or 'Tax ID'">Tax ID</t>:
-                            <span t-esc="forced_vat">US12345671</span>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -495,11 +480,6 @@
                                     <div>Contains the company details.</div>
                                 </div>
                             </span>
-                        </li>
-                        <li t-if="not forced_vat"/>
-                        <li t-else="">
-                            <t t-esc="company.country_id.vat_label or 'Tax ID'">Tax ID</t>:
-                            <span t-esc="forced_vat">US12345671</span>
                         </li>
                     </ul>
                 </div>
@@ -569,11 +549,6 @@
                                 </div>
                             </span>
                         </li>
-                        <li t-if="not forced_vat"/>
-                        <li t-else="">
-                            <t t-esc="company.country_id.vat_label or 'Tax ID'">Tax ID</t>:
-                            <span t-esc="forced_vat">US12345671</span>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -635,11 +610,6 @@
                                 </div>
                             </span>
                         </li>
-                        <li t-if="not forced_vat"/>
-                        <li t-else="">
-                            <t t-esc="company.country_id.vat_label or 'Tax ID'">Tax ID</t>:
-                            <span t-esc="forced_vat">US12345671</span>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -698,11 +668,6 @@
                                     <div>Contains the company details.</div>
                                 </div>
                             </span>
-                        </li>
-                        <li t-if="not forced_vat"/>
-                        <li t-else="">
-                            <t t-esc="company.country_id.vat_label or 'Tax ID'">Tax ID</t>:
-                            <span t-esc="forced_vat">US12345671</span>
                         </li>
                     </ul>
                 </div>

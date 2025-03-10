@@ -145,7 +145,7 @@ class TestClocCustomization(TransactionCase):
             'store': False,
             'compute': "for rec in self: rec['x_invoice_count'] = 10",
         })
-        # Simulate the effect of https://github.com/odoo/odoo/commit/9afce4805fc8bac45fdba817488aa867fddff69b
+        # Simulate the effect of https://github.com/eden/eden/commit/9afce4805fc8bac45fdba817488aa867fddff69b
         # Updating a module create xml_id of the module even for manual field if it's the original module
         # of the model
         self.create_xml_id('base', name, field)
