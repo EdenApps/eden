@@ -1,0 +1,5 @@
+/var/log/eden/*.log {
+    copytruncate
+    missingok
+    notifempty
+}
