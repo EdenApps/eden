@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<eden>
+
+	<record id="view_router_form" model="ir.ui.view">
+        <field name="name">muk_mail_route.router.form</field>
+        <field name="model">muk_mail_route.router</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="reference"/>
+                        <field name="notify" widget="boolean_toggle"/>
+                        <field 
+                            name="set_is_internal" 
+                            widget="boolean_toggle"
+                            invisible="not notify"
+                        />
+                	</group>
+                </sheet>
+                <footer>
+                    <button 
+                    	name="action_route"
+                        string="Attach Message"
+                        type="object"
+                        class="oe_highlight"
+                    />
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</eden>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eden>
+
+    <template id="contact_name" inherit_id="base.contact_name">
+        <xpath expr="//span[@t-esc='name']" position="replace">
+			<t t-if="object.parent_id.is_company and object.parent_name">
+				<span itemprop="name" t-esc="object.parent_name"/>
+				<br/>
+			</t>
+			<span itemprop="name" t-esc="object.name"/>
+        </xpath>
+    </template>
+
+</eden>

@@ -1,0 +1,79 @@
+# Translation of Eden Server.
+# This file contains the translation of the following modules:
+# 	* muk_contacts
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Eden Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-06 15:32+0000\n"
+"PO-Revision-Date: 2024-11-06 15:32+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: muk_contacts
+#: model_terms:ir.ui.view,arch_db:muk_contacts.contact
+msgid "<span>Ref:</span>"
+msgstr "<span>Ref:</span>"
+
+#. module: muk_contacts
+#: model_terms:ir.ui.view,arch_db:muk_contacts.view_partner_search
+msgid "All"
+msgstr "Alle"
+
+#. module: muk_contacts
+#: model_terms:ir.ui.view,arch_db:muk_contacts.view_partner_list
+msgid "Complete Name"
+msgstr "Vollständiger Name"
+
+#. module: muk_contacts
+#: model:ir.model,name:muk_contacts.model_res_partner
+msgid "Contact"
+msgstr "Kontakt"
+
+#. module: muk_contacts
+#: model:ir.model.fields,field_description:muk_contacts.field_res_partner__contact_number
+#: model:ir.model.fields,field_description:muk_contacts.field_res_users__contact_number
+msgid "Contact Number"
+msgstr "Kontaktnummer"
+
+#. module: muk_contacts
+#: model:ir.model,name:muk_contacts.model_res_country
+msgid "Country"
+msgstr "Land"
+
+#. module: muk_contacts
+#: model_terms:ir.ui.view,arch_db:muk_contacts.view_partner_form
+msgid "Generate Contact Number"
+msgstr "Kontaktnummer generieren"
+
+#. module: muk_contacts
+#: model_terms:ir.ui.view,arch_db:muk_contacts.view_partner_search
+msgid "Main Contacts"
+msgstr "Hauptkontakte"
+
+#. module: muk_contacts
+#: model_terms:ir.ui.view,arch_db:muk_contacts.view_partner_form
+msgid "Open View"
+msgstr "Ansicht öffnen"
+
+#. module: muk_contacts
+#: model:ir.model.fields,field_description:muk_contacts.field_res_country__partner_properties_definition
+msgid "Partner Properties"
+msgstr "Partner Eigenschaften"
+
+#. module: muk_contacts
+#: model:ir.model.fields,field_description:muk_contacts.field_res_partner__partner_properties
+#: model:ir.model.fields,field_description:muk_contacts.field_res_users__partner_properties
+#: model_terms:ir.ui.view,arch_db:muk_contacts.view_partner_search
+msgid "Properties"
+msgstr "Eigenschaften"
+
+#. module: muk_contacts
+#: model_terms:ir.ui.view,arch_db:muk_contacts.view_partner_search
+msgid "Tags"
+msgstr "Stichwörter"
