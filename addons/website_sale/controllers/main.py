@@ -1163,6 +1163,17 @@ class WebsiteSale(payment_portal.PaymentPortal):
                 'zip' in address_fields
                 and address_fields.index('zip') < address_fields.index('city')
             ),
+            'show_vat': (
+                (address_type == 'billing' or use_delivery_as_billing)
+                and (
+                    is_anonymous_cart  # Allow inputting VAT on the new main address.
+                    or (
+                        partner_sudo == order_sudo.partner_id
+                        and (can_edit_vat or partner_sudo.vat)
+                    )  # On the main partner only, if the VAT was set.
+                )
+            ),
+            'vat_label': request.env._("VAT"),
         }
 
     @route(
@@ -1336,6 +1347,16 @@ class WebsiteSale(payment_portal.PaymentPortal):
             elif value:  # The value cannot be saved on the `res.partner` model.
                 extra_form_data[key] = value
 
+        if (
+            hasattr(ResPartner, 'check_vat')  # The `base_vat` module is installed.
+            and address_values.get('vat')
+            and address_values.get('country_id')
+        ):
+            address_values['vat'] = ResPartner.fix_eu_vat_number(
+                address_values['country_id'],
+                address_values['vat'],
+            )
+
         return address_values, extra_form_data
 
     def _validate_address_values(
@@ -1402,10 +1423,39 @@ class WebsiteSale(payment_portal.PaymentPortal):
                     " the account settings or contact your administrator."
                 ))
 
+            # Prevent changing the VAT number if invoices have been issued.
+            if (
+                'vat' in address_values
+                and address_values['vat'] != partner_sudo.vat
+                and not partner_sudo.can_edit_vat()
+            ):
+                invalid_fields.add('vat')
+                error_messages.append(_(
+                    "Changing VAT number is not allowed once document(s) have been issued for your"
+                    " account. Please contact us directly for this operation."
+                ))
+
         # Validate the email.
         if address_values.get('email') and not single_email_re.match(address_values['email']):
             invalid_fields.add('email')
             error_messages.append(_("Invalid Email! Please enter a valid email address."))
+
+        # Validate the VAT number.
+        ResPartnerSudo = request.env['res.partner'].sudo()
+        if (
+            address_values.get('vat') and hasattr(ResPartnerSudo, 'check_vat')
+            and 'vat' not in invalid_fields
+        ):
+            partner_dummy = ResPartnerSudo.new({
+                fname: address_values[fname]
+                for fname in self._get_vat_validation_fields()
+                if fname in address_values
+            })
+            try:
+                partner_dummy.check_vat()
+            except ValidationError as exception:
+                invalid_fields.add('vat')
+                error_messages.append(exception.args[0])
 
         # Build the set of required fields from the address form's requirements.
         required_field_set = {f for f in required_fields.split(',') if f}
@@ -1431,6 +1481,9 @@ class WebsiteSale(payment_portal.PaymentPortal):
             error_messages.append(_("Some required fields are empty."))
 
         return invalid_fields, missing_fields, error_messages
+
+    def _get_vat_validation_fields(self):
+        return {'country_id', 'vat'}
 
     def _complete_address_values(
         self, address_values, address_type, use_delivery_as_billing, order_sudo
@@ -1486,6 +1539,7 @@ class WebsiteSale(payment_portal.PaymentPortal):
         creation_context = clean_context(request.env.context)
         creation_context.update({
             'tracking_disable': True,
+            # 'no_vat_validation': True,  # TODO VCR VAT validation or not ?
         })
         return request.env['res.partner'].sudo().with_context(
             creation_context

@@ -18,7 +18,7 @@ class Company(models.Model):
     _name = "res.company"
     _description = 'Companies'
     _order = 'sequence, name'
-    _inherit = ['format.address.mixin']
+    _inherit = ['format.address.mixin', 'format.vat.label.mixin']
     _parent_store = True
 
     def copy(self, default=None):
@@ -68,6 +68,7 @@ class Company(models.Model):
     phone = fields.Char(related='partner_id.phone', store=True, readonly=False)
     mobile = fields.Char(related='partner_id.mobile', store=True, readonly=False)
     website = fields.Char(related='partner_id.website', readonly=False)
+    vat = fields.Char(related='partner_id.vat', string="Tax ID", readonly=False)
     company_registry = fields.Char(related='partner_id.company_registry', string="Company ID", readonly=False)
     paperformat_id = fields.Many2one('report.paperformat', 'Paper format', default=lambda self: self.env.ref('base.paperformat_euro', raise_if_not_found=False))
     external_report_layout_id = fields.Many2one('ir.ui.view', 'Document Template')
@@ -294,6 +295,7 @@ class Company(models.Model):
                     'email': vals.get('email'),
                     'phone': vals.get('phone'),
                     'website': vals.get('website'),
+                    'vat': vals.get('vat'),
                     'country_id': vals.get('country_id'),
                 }
                 for vals in no_partner_vals_list

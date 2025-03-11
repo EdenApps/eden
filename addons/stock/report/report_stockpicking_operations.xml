@@ -49,7 +49,7 @@
                                     </div>
                                     <div t-if="show_partner" name="partner_header">
                                         <div t-field="o.partner_id.commercial_partner_id"
-                                             t-options='{"widget": "contact", "fields": ["address", "name", "phone"] if show_full_address else ["name"], "no_marker": True, "phone_icons": True}'>
+                                             t-options='{"widget": "contact", "fields": ["address", "name", "phone", "vat"] if show_full_address else ["name"], "no_marker": True, "phone_icons": True}'>
                                              <div class="bg-light border-1 rounded h-100 d-flex flex-column align-items-center justify-content-center p-4 opacity-75 text-muted text-center">
                                                 <strong>Recipient address</strong>
                                                 <div>Presence depends on the type of operation.</div>

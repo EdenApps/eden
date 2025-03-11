@@ -8,7 +8,12 @@ class PosSession extends models.ServerModel {
         return {
             "res.partner": {
                 relations: {
-
+                    vat: {
+                        compute: false,
+                        name: "vat",
+                        related: false,
+                        type: "char",
+                    },
                     name: {
                         compute: false,
                         name: "name",
@@ -16,7 +21,7 @@ class PosSession extends models.ServerModel {
                         type: "char",
                     },
                 },
-                fields: ["name"],
+                fields: ["vat", "name"],
                 data: [],
             },
             "product.product": { relations: {}, fields: {}, data: [] },
@@ -127,7 +132,7 @@ test("don't retry sending data to the server if the reason that caused the failu
     await defineModels({ PosSession, ResPartner });
     const env = await makeMockEnv();
     try {
-        await env.services.pos_data.create("res.partner", [{ name: "Test 1" }]);
+        await env.services.pos_data.create("res.partner", [{ name: "Test 1", vat: "BE40301926" }]);
     } catch {
         expect.step("create failed");
         expect(env.services.pos_data.network.unsyncData.length).toBe(0);

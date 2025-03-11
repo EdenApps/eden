@@ -21,6 +21,7 @@ class Partner(models.Model):
     phone = fields.Char(tracking=2)
     parent_id = fields.Many2one(tracking=3)
     user_id = fields.Many2one(tracking=4)
+    vat = fields.Char(tracking=5)
     # tracked field used for chatter logging purposes
     # we need this to be readable inline as tracking messages use inline HTML nodes
     contact_address_inline = fields.Char(compute='_compute_contact_address_inline', string='Inlined Complete Address', tracking=True)

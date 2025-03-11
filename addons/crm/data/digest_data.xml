@@ -69,7 +69,7 @@
             <field name="tip_description" type="html">
 <div>
     <p class="tip_title">Tip: Do not waste time recording customers' data</p>
-    <p class="tip_content">Did you know you can search a company by name to instantly fill in all its data? Eden autocompletes everything for you: logo, address, company size, business information, social media accounts, etc.</p>
+    <p class="tip_content">Did you know you can search a company by name or VAT number to instantly fill in all its data? Eden autocompletes everything for you: logo, address, company size, business information, social media accounts, etc.</p>
     <img src="https://cdn.edencloud.us/digests/crm/static/src/img/milk-autofill.gif" width="540" class="illustration_border" />
 </div>
             </field>

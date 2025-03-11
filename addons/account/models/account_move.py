@@ -855,6 +855,11 @@ class AccountMove(models.Model):
 
         return journal
 
+    @api.depends('move_type')
+    def _compute_is_storno(self):
+        for move in self:
+            move.is_storno = move.is_storno or (move.move_type in ('out_refund', 'in_refund') and move.company_id.account_storno)
+
     @api.depends('company_id', 'invoice_filter_type_domain')
     def _compute_suitable_journal_ids(self):
         for m in self:
@@ -1667,6 +1672,14 @@ class AccountMove(models.Model):
     def _compute_display_inactive_currency_warning(self):
         for move in self.with_context(active_test=False):
             move.display_inactive_currency_warning = move.state == 'draft' and move.currency_id and not move.currency_id.active
+
+    @api.depends('company_id.account_fiscal_country_id', 'fiscal_position_id', 'fiscal_position_id.country_id', 'fiscal_position_id.foreign_vat')
+    def _compute_tax_country_id(self):
+        foreign_vat_records = self.filtered(lambda r: r.fiscal_position_id.foreign_vat)
+        for fiscal_position_id, record_group in groupby(foreign_vat_records, key=lambda r: r.fiscal_position_id):
+            self.env['account.move'].concat(*record_group).tax_country_id = fiscal_position_id.country_id
+        for company_id, record_group in groupby((self-foreign_vat_records), key=lambda r: r.company_id):
+            self.env['account.move'].concat(*record_group).tax_country_id = company_id.account_fiscal_country_id
 
     @api.depends('tax_country_id')
     def _compute_tax_country_code(self):

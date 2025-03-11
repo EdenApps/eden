@@ -705,6 +705,14 @@ class SaleOrder(models.Model):
                 and order.validity_date < today
             )
 
+    @api.depends('company_id', 'fiscal_position_id')
+    def _compute_tax_country_id(self):
+        for record in self:
+            if record.fiscal_position_id.foreign_vat:
+                record.tax_country_id = record.fiscal_position_id.country_id
+            else:
+                record.tax_country_id = record.company_id.account_fiscal_country_id
+
     @api.depends('order_line.amount_to_invoice')
     def _compute_amount_to_invoice(self):
         for order in self:

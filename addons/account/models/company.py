@@ -11,6 +11,7 @@ from eden.tools import date_utils, format_list, SQL
 from eden.tools.mail import is_html_empty
 from eden.tools.misc import format_date
 from eden.addons.account.models.account_move import MAX_HASH_VERSION
+from eden.addons.base_vat.models.res_partner import _ref_vat
 
 
 MONTH_SELECTION = [
@@ -221,6 +222,17 @@ class ResCompany(models.Model):
         help="Account that will be set on lines created in cash basis journal entry and used to keep track of the "
              "tax base amount.")
 
+    # Storno Accounting
+    account_storno = fields.Boolean(string="Storno accounting", readonly=False)
+
+    # Multivat
+    fiscal_position_ids = fields.One2many(comodel_name="account.fiscal.position", inverse_name="company_id")
+    multi_vat_foreign_country_ids = fields.Many2many(
+        string="Foreign VAT countries",
+        help="Countries for which the company has a VAT number",
+        comodel_name='res.country',
+        compute='_compute_multi_vat_foreign_country',
+    )
 
     # Fiduciary mode
     quick_edit_mode = fields.Selection(
@@ -248,6 +260,7 @@ class ResCompany(models.Model):
         required=True,
         help="Default on whether the sales price used on the product and invoices with this Company includes its taxes."
     )
+    company_vat_placeholder = fields.Char(compute='_compute_company_vat_placeholder')
 
     def get_next_batch_payment_communication(self):
         '''
@@ -261,6 +274,7 @@ class ResCompany(models.Model):
         return super()._get_company_root_delegated_field_names() + [
             'fiscalyear_last_day',
             'fiscalyear_last_month',
+            'account_storno',
             'tax_exigibility',
         ]
 
@@ -299,12 +313,40 @@ class ResCompany(models.Model):
             if move_count:
                 raise UserError(_("Can't disable audit trail when there are existing records."))
 
+    @api.depends('fiscal_position_ids.foreign_vat')
+    def _compute_multi_vat_foreign_country(self):
+        company_to_foreign_vat_country = {
+            company.id: country_ids
+            for company, country_ids in self.env['account.fiscal.position']._read_group(
+                domain=[
+                    *self.env['account.fiscal.position']._check_company_domain(self),
+                    ('foreign_vat', '!=', False),
+                ],
+                groupby=['company_id'],
+                aggregates=['country_id:array_agg'],
+            )
+        }
+        for company in self:
+            company.multi_vat_foreign_country_ids = self.env['res.country'].browse(company_to_foreign_vat_country.get(company.id))
 
     @api.depends('country_id')
     def compute_account_tax_fiscal_country(self):
         for record in self:
             if not record.account_fiscal_country_id:
                 record.account_fiscal_country_id = record.country_id
+
+    @api.depends('account_fiscal_country_id')
+    def _compute_account_enabled_tax_country_ids(self):
+        for record in self:
+            if record not in self.env.user.company_ids:
+                # can have access to the company form without having access to its content (see base.res_company_rule_erp_manager)
+                record.account_enabled_tax_country_ids = False
+                continue
+            foreign_vat_fpos = self.env['account.fiscal.position'].search([
+                *self.env['account.fiscal.position']._check_company_domain(record),
+                ('foreign_vat', '!=', False)
+            ])
+            record.account_enabled_tax_country_ids = foreign_vat_fpos.country_id + record.account_fiscal_country_id
 
     @api.depends('terms_type')
     def _compute_invoice_terms_html(self):
@@ -976,3 +1018,15 @@ class ResCompany(models.Model):
         date_from, date_to = date_utils.get_fiscal_year(current_date, day=self.fiscalyear_last_day, month=int(self.fiscalyear_last_month))
         return {'date_from': date_from, 'date_to': date_to}
 
+    @api.depends('country_id', 'account_fiscal_country_id')
+    def _compute_company_vat_placeholder(self):
+        for company in self:
+            placeholder = _("/ if not applicable")
+            if company.country_id or company.account_fiscal_country_id:
+                expected_vat = _ref_vat.get(
+                    (company.country_id.code or company.account_fiscal_country_id.code).lower()
+                )
+                if expected_vat:
+                    placeholder = _("%s, or / if not applicable", expected_vat)
+
+            company.company_vat_placeholder = placeholder

@@ -65,6 +65,9 @@
                             <setting id="rounding_method" company_dependent="1" string="Rounding Method" help="How total tax amount is computed in orders and invoices" title="A rounding per line is advised if your prices are tax-included. That way, the sum of line subtotals equals the total with taxes.">
                                 <field name="tax_calculation_rounding_method" class="o_light_label mt16" widget="radio"/>
                             </setting>
+                            <setting id="eu_service" title="If you sell goods and services to customers in a foreign EU country, you must charge VAT based on the delivery address. This rule applies regardless of where you are located." documentation="/applications/finance/accounting/taxation/taxes/eu_distance_selling.html" help="Apply VAT of the EU country to which goods and services are delivered.">
+                                <field name="module_l10n_eu_oss"/>
+                            </setting>
                             <setting id="tax_exigibility" company_dependent="1" help="Allow to configure taxes using cash basis" title="Select this if the taxes should use cash basis, which will create an entry for such taxes on a given account during reconciliation." groups="account.group_account_user"
                                 documentation="/applications/finance/accounting/taxation/taxes/cash_basis_taxes.html">
                                 <field name="tax_exigibility"/>
@@ -283,6 +286,11 @@
                                     </div>
                                 </div>
                             </div>
+                        </block>
+                        <block title="Storno Accounting" id="storno" groups="account.group_account_user">
+                            <setting id="enable_storno_accounting" company_dependent="1" help="Use Storno accounting" title="Allows you to use Storno accounting.">
+                                <field name="account_storno"/>
+                            </setting>
                         </block>
                         <block title="Accounting Firms mode" id="quick_edit_mode">
                             <div class="text-muted">

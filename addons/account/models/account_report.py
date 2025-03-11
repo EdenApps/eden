@@ -882,6 +882,20 @@ class AccountReportExternalValue(models.Model):
 
     company_id = fields.Many2one(string='Company', comodel_name='res.company', required=True, default=lambda self: self.env.company)
 
+    foreign_vat_fiscal_position_id = fields.Many2one(
+        string="Fiscal position",
+        comodel_name='account.fiscal.position',
+        domain="[('country_id', '=', report_country_id), ('foreign_vat', '!=', False)]",
+        check_company=True,
+        help="The foreign fiscal position for which this external value is made.",
+    )
+
     # Carryover fields
     carryover_origin_expression_label = fields.Char(string="Origin Expression Label")
     carryover_origin_report_line_id = fields.Many2one(string="Origin Line", comodel_name='account.report.line')
+
+    @api.constrains('foreign_vat_fiscal_position_id', 'target_report_expression_id')
+    def _check_fiscal_position(self):
+        for record in self:
+            if record.foreign_vat_fiscal_position_id and record.foreign_vat_fiscal_position_id.country_id != record.report_country_id:
+                raise ValidationError(_("The country set on the foreign VAT fiscal position must match the one set on the report."))

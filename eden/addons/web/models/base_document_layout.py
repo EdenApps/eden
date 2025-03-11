@@ -33,7 +33,7 @@ class BaseDocumentLayout(models.TransientModel):
     @api.model
     def _default_report_footer(self):
         company = self.env.company
-        footer_fields = [field for field in [company.phone, company.email, company.website] if isinstance(field, str) and len(field) > 0]
+        footer_fields = [field for field in [company.phone, company.email, company.website, company.vat] if isinstance(field, str) and len(field) > 0]
         return Markup(' ').join(footer_fields)
 
     @api.model
@@ -90,6 +90,7 @@ class BaseDocumentLayout(models.TransientModel):
     phone = fields.Char(related='company_id.phone', readonly=True)
     email = fields.Char(related='company_id.email', readonly=True)
     website = fields.Char(related='company_id.website', readonly=True)
+    vat = fields.Char(related='company_id.vat', readonly=True)
     name = fields.Char(related='company_id.name', readonly=True)
     country_id = fields.Many2one(related="company_id.country_id", readonly=True)
 

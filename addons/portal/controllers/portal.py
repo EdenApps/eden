@@ -333,6 +333,27 @@ class CustomerPortal(Controller):
             error["email"] = 'error'
             error_message.append(_('Invalid Email! Please enter a valid email address.'))
 
+        # vat validation
+        partner = request.env.user.partner_id
+        if data.get("vat") and partner and partner.vat != data.get("vat"):
+            # Check the VAT if it is the public user too.
+            if partner_creation or partner.can_edit_vat():
+                if hasattr(partner, "check_vat"):
+                    if data.get("country_id"):
+                        data["vat"] = request.env["res.partner"].fix_eu_vat_number(int(data.get("country_id")), data.get("vat"))
+                    partner_dummy = partner.new({
+                        'vat': data['vat'],
+                        'country_id': (int(data['country_id'])
+                                       if data.get('country_id') else False),
+                    })
+                    try:
+                        partner_dummy.check_vat()
+                    except ValidationError as e:
+                        error["vat"] = 'error'
+                        error_message.append(e.args[0])
+            else:
+                error_message.append(_('Changing VAT number is not allowed once document(s) have been issued for your account. Please contact us directly for this operation.'))
+
         # error message for empty required fields
         if [err for err in error.values() if err == 'missing']:
             error_message.append(_('Some required fields are empty.'))
@@ -350,7 +371,7 @@ class CustomerPortal(Controller):
 
     def _get_optional_fields(self):
         """ This method is there so that we can override the optional fields """
-        return ["street2", "zipcode", "state_id", "company_name"]
+        return ["street2", "zipcode", "state_id", "vat", "company_name"]
 
     def _document_check_access(self, model_name, document_id, access_token=None):
         """Check if current user is allowed to access the specified record.

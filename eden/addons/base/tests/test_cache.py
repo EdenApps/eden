@@ -116,7 +116,7 @@ class TestRecordCache(TransactionCaseWithUserDemo):
 
         char_names = [
             'name', 'display_name', 'email', 'website', 'phone', 'mobile',
-            'street', 'street2', 'city', 'zip', 'ref',
+            'street', 'street2', 'city', 'zip', 'vat', 'ref',
         ]
         for name in char_names:
             field = model._fields[name]

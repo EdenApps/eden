@@ -663,6 +663,7 @@ class StockMove(models.Model):
             'stock_move_id': self.id,
             'stock_valuation_layer_ids': [(6, None, [svl_id])],
             'move_type': 'entry',
+            'is_storno': self.env.context.get('is_returned') and self.company_id.account_storno,
             'company_id': self.company_id.id,
         }
 

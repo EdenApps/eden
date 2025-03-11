@@ -50,6 +50,7 @@ class TestPoSController(TestPointOfSaleHttpCommon):
             'name': self.new_partner.name,
             'email': "test@test.com",
             'company_name': self.new_partner.company_name,
+            'vat': self.new_partner.vat,
             'street': "Test street",
             'city': "Test City",
             'zipcode': self.new_partner.zip,

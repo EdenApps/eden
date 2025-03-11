@@ -53,6 +53,7 @@ class MergePartnerAutomatic(models.TransientModel):
     group_by_email = fields.Boolean('Email')
     group_by_name = fields.Boolean('Name')
     group_by_is_company = fields.Boolean('Is Company')
+    group_by_vat = fields.Boolean('VAT')
     group_by_parent_id = fields.Boolean('Parent Company')
 
     state = fields.Selection([
@@ -458,6 +459,8 @@ class MergePartnerAutomatic(models.TransientModel):
         for field in fields:
             if field in ['email', 'name']:
                 sql_fields.append('lower(%s)' % field)
+            elif field in ['vat']:
+                sql_fields.append("replace(%s, ' ', '')" % field)
             else:
                 sql_fields.append(field)
         group_fields = ', '.join(sql_fields)
@@ -465,7 +468,7 @@ class MergePartnerAutomatic(models.TransientModel):
         # where clause : for given group by columns, only keep the 'not null' record
         filters = []
         for field in fields:
-            if field in ['email', 'name']:
+            if field in ['email', 'name', 'vat']:
                 filters.append((field, 'IS NOT', 'NULL'))
         criteria = ' AND '.join('%s %s %s' % (field, operator, value) for field, operator, value in filters)
 
@@ -715,7 +718,7 @@ class MergePartnerAutomatic(models.TransientModel):
 
         # NOTE JEM : seems louche to create a new wizard instead of reuse the current one with updated options.
         # since it is like this from the initial commit of this wizard, I don't change it. yet ...
-        wizard = self.create({'group_by_email': True, 'group_by_name': True})
+        wizard = self.create({'group_by_vat': True, 'group_by_email': True, 'group_by_name': True})
         wizard.action_start_automatic_process()
 
         # NOTE JEM : no idea if this query is usefull

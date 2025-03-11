@@ -45,6 +45,22 @@ _tzs = [(tz, tz) for tz in sorted(pytz.all_timezones, key=lambda tz: tz if not t
 def _tz_get(self):
     return _tzs
 
+
+class FormatVATLabelMixin(models.AbstractModel):
+    _name = "format.vat.label.mixin"
+    _description = "Country Specific VAT Label"
+
+    @api.model
+    def _get_view(self, view_id=None, view_type='form', **options):
+        arch, view = super()._get_view(view_id, view_type, **options)
+        if vat_label := self.env.company.country_id.vat_label:
+            for node in arch.iterfind(".//field[@name='vat']"):
+                node.set("string", vat_label)
+            # In some module vat field is replaced and so above string change is not working
+            for node in arch.iterfind(".//label[@for='vat']"):
+                node.set("string", vat_label)
+        return arch, view
+
 class FormatAddressMixin(models.AbstractModel):
     _name = "format.address.mixin"
     _description = 'Address Format'
@@ -172,10 +188,10 @@ class PartnerTitle(models.Model):
 
 class Partner(models.Model):
     _description = 'Contact'
-    _inherit = ['format.address.mixin', 'avatar.mixin']
+    _inherit = ['format.address.mixin', 'format.vat.label.mixin', 'avatar.mixin']
     _name = "res.partner"
     _order = "name ASC, id DESC"
-    _rec_names_search = ['complete_name', 'email', 'ref', 'company_registry']
+    _rec_names_search = ['complete_name', 'email', 'ref', 'vat', 'company_registry']  # TODO vat must be sanitized the same way for storing/searching
     _allow_sudo_commands = False
     _check_company_domain = models.check_company_domain_parent_of
 
@@ -224,6 +240,10 @@ class Partner(models.Model):
         precompute=True,  # avoid queries post-create
         readonly=False, store=True,
         help='The internal user in charge of this contact.')
+    vat = fields.Char(string='Tax ID', index=True, help="The Tax Identification Number. Values here will be validated based on the country format. You can use '/' to indicate that the partner is not subject to tax.")
+    vat_label = fields.Char(string='Tax ID Label', compute='_compute_vat_label')
+    same_vat_partner_id: Partner = fields.Many2one('res.partner', string='Partner with same Tax ID', compute='_compute_same_vat_partner_id', store=False)
+    same_company_registry_partner_id: Partner = fields.Many2one('res.partner', string='Partner with same Company Registry', compute='_compute_same_vat_partner_id', store=False)
     company_registry = fields.Char(string="Company ID", compute='_compute_company_registry', store=True, readonly=False,
        help="The registry number of the company. Use it if it is different from the Tax ID. It must be unique across all partners of a same country")
     company_registry_label = fields.Char(string='Company ID Label', compute='_compute_company_registry_label')
@@ -381,6 +401,37 @@ class Partner(models.Model):
             super_partner.partner_share = False
         for partner in self - super_partner:
             partner.partner_share = not partner.user_ids or not any(not user.share for user in partner.user_ids)
+
+    @api.depends('vat', 'company_id', 'company_registry')
+    def _compute_same_vat_partner_id(self):
+        for partner in self:
+            # use _origin to deal with onchange()
+            partner_id = partner._origin.id
+            #active_test = False because if a partner has been deactivated you still want to raise the error,
+            #so that you can reactivate it instead of creating a new one, which would loose its history.
+            Partner = self.with_context(active_test=False).sudo()
+            domain = [
+                ('vat', '=', partner.vat),
+            ]
+            if partner.company_id:
+                domain += [('company_id', 'in', [False, partner.company_id.id])]
+            if partner_id:
+                domain += [('id', '!=', partner_id), '!', ('id', 'child_of', partner_id)]
+            # For VAT number being only one character, we will skip the check just like the regular check_vat
+            should_check_vat = partner.vat and len(partner.vat) != 1
+            partner.same_vat_partner_id = should_check_vat and not partner.parent_id and Partner.search(domain, limit=1)
+            # check company_registry
+            domain = [
+                ('company_registry', '=', partner.company_registry),
+                ('company_id', 'in', [False, partner.company_id.id]),
+            ]
+            if partner_id:
+                domain += [('id', '!=', partner_id), '!', ('id', 'child_of', partner_id)]
+            partner.same_company_registry_partner_id = bool(partner.company_registry) and not partner.parent_id and Partner.search(domain, limit=1)
+
+    @api.depends_context('company')
+    def _compute_vat_label(self):
+        self.vat_label = self.env.company.country_id.vat_label or _("Tax ID")
 
     @api.depends(lambda self: self._display_address_depends())
     def _compute_contact_address(self):
@@ -586,7 +637,7 @@ class Partner(models.Model):
         partners that aren't `commercial entities` themselves, and will be
         delegated to the parent `commercial entity`. The list is meant to be
         extended by inheriting classes. """
-        return ['company_registry', 'industry_id']
+        return ['vat', 'company_registry', 'industry_id']
 
     def _commercial_sync_from_company(self):
         """ Handle sync of commercial fields when a new parent commercial entity is set,
@@ -670,7 +721,7 @@ class Partner(models.Model):
             # DLE: It should not be necessary to modify this to make work the ORM. The problem was just the recompute
             # of partner.user_ids when you create a new user for this partner, see test test_70_archive_internal_partners
             # You modified it in a previous commit, see original commit of this:
-            # https://github.com/eden/eden/commit/9d7226371730e73c296bcc68eb1f856f82b0b4ed
+            # https://github.com/odoo/odoo/commit/9d7226371730e73c296bcc68eb1f856f82b0b4ed
             #
             # RCO: when creating a user for partner, the user is automatically added in partner.user_ids.
             # This is wrong if the user is not active, as partner.user_ids only returns active users.
@@ -800,7 +851,7 @@ class Partner(models.Model):
         self.ensure_one()
         if self.company_name:
             # Create parent company
-            values = dict(name=self.company_name, is_company=True)
+            values = dict(name=self.company_name, is_company=True, vat=self.vat)
             values.update(self._update_fields_values(self._address_fields()))
             new_company = self.create(values)
             # Set new company as my parent
@@ -820,7 +871,7 @@ class Partner(models.Model):
                 'target': 'current',
                 }
 
-    @api.depends('complete_name', 'email', 'state_id', 'country_id', 'commercial_company_name')
+    @api.depends('complete_name', 'email', 'vat', 'state_id', 'country_id', 'commercial_company_name')
     @api.depends_context('show_address', 'partner_show_db_id', 'address_inline', 'show_email', 'show_vat', 'lang')
     def _compute_display_name(self):
         for partner in self:
@@ -835,6 +886,8 @@ class Partner(models.Model):
                 name = ", ".join([n for n in splitted_names if n.strip()])
             if partner._context.get('show_email') and partner.email:
                 name = f"{name} <{partner.email}>"
+            if partner._context.get('show_vat') and partner.vat:
+                name = f"{name} ‒ {partner.vat}"
 
             partner.display_name = name.strip()
 

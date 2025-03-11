@@ -456,7 +456,8 @@ class AccountTax(models.Model):
                     21M       => 2%1%M%   where the % represents 0, 1 or multiple characters in a SQL 'LIKE' search.
                     21" M"    => 2%1% M%
                     21" M"co  => 2%1% M%c%o%
-        Examples:   21M       => 21% M , 21% EU M, 21% M.Cocont and 21% EX M.
+        Examples:   0EUM      => VAT 0% EU M.
+                    21M       => 21% M , 21% EU M, 21% M.Cocont and 21% EX M.
                     21" M"    => 21% M and 21% M.Cocont.
                     21" M"co  => 21% M.Cocont.
         """
@@ -2725,6 +2726,12 @@ class AccountTaxRepartitionLine(models.Model):
     )
 
     tag_ids_domain = fields.Binary(string="tag domain", help="Dynamic domain used for the tag that can be set on tax", compute="_compute_tag_ids_domain")
+
+    @api.depends('company_id.multi_vat_foreign_country_ids', 'company_id.account_fiscal_country_id')
+    def _compute_tag_ids_domain(self):
+        for rep_line in self:
+            allowed_country_ids = (False, rep_line.company_id.account_fiscal_country_id.id, *rep_line.company_id.multi_vat_foreign_country_ids.ids,)
+            rep_line.tag_ids_domain = [('applicability', '=', 'taxes'), ('country_id', 'in', allowed_country_ids)]
 
     @api.depends('account_id', 'repartition_type')
     def _compute_use_in_tax_closing(self):

@@ -58,24 +58,6 @@ export function computeAppsAndMenuItems(menuTree) {
             menuItems.push(item);
         }
     });
-    // Sort Apps alphabetically, with Apps and Settings at the end.
-    apps.sort((a, b) => {
-        const aName = a.label.toLowerCase();
-        const bName = b.label.toLowerCase();
-        if (aName === "apps") {
-            return 1;
-        }
-        if (bName === "apps") {
-            return -1;
-        }
-        if (aName === "settings") {
-            return 1;
-        }
-        if (bName === "settings") {
-            return -1;
-        }
-        return aName.localeCompare(bName);
-    });
     return { apps, menuItems };
 }
 

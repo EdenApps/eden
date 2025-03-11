@@ -179,6 +179,7 @@ class Obfuscate(Command):
                             ('res_partner', 'street2'),
                             ('res_partner', 'city'),
                             ('res_partner', 'zip'),
+                            ('res_partner', 'vat'),
                             ('res_partner', 'website'),
                             ('res_country', 'name'),
                             ('mail_message', 'subject'),
