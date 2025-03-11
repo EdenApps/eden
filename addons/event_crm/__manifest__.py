@@ -5,7 +5,7 @@
     'name': 'Event CRM',
     'version': '1.0',
     'category': 'Marketing/Events',
-    'website': 'https://www.edencloud.us/app/events',
+    
     'description': "Create leads from event registrations.",
     'depends': ['event', 'crm'],
     'data': [

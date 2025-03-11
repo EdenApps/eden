@@ -7,7 +7,7 @@
     'category': 'Human Resources/Recruitment',
     'sequence': 90,
     'summary': 'Track your recruitment pipeline',
-    'website': 'https://www.edencloud.us/app/recruitment',
+    
     'depends': [
         'hr',
         'calendar',

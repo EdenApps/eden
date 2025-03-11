@@ -5,7 +5,7 @@
     'name': 'Blog',
     'category': 'Website/Website',
     'sequence': 200,
-    'website': 'https://www.edencloud.us/app/blog',
+    
     'summary': 'Publish blog posts, announces, news',
     'version': '1.1',
     'depends': ['website_mail', 'website_partner'],

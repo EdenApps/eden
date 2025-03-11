@@ -10,7 +10,6 @@ This addon provides an extensible, maintainable editor.
     """,
 
     'author': "eden",
-    'website': "https://www.edencloud.us",
     'version': '1.0',
     'category': 'Hidden',
     'depends': ['base', 'bus', 'web'],

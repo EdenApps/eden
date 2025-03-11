@@ -6,7 +6,7 @@
     'summary': 'Design, send and track emails',
     'version': '2.7',
     'sequence': 60,
-    'website': 'https://www.edencloud.us/app/email-marketing',
+    
     'category': 'Marketing/Email Marketing',
     'depends': [
         'contacts',

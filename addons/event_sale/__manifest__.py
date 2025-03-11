@@ -4,7 +4,7 @@
     'name': 'Events Sales',
     'version': '1.3',
     'category': 'Marketing/Events',
-    'website': 'https://www.edencloud.us/app/events',
+    
     'description': """
 Creating registration with sales orders.
 ========================================

@@ -7,7 +7,7 @@
     'version': '1.1',
     'category': 'Marketing/Email Marketing',
     'sequence': 245,
-    'website': 'https://www.edencloud.us/app/sms-marketing',
+    
     'depends': [
         'portal',
         'mass_mailing',

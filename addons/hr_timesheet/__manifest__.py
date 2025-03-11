@@ -19,7 +19,7 @@ Lots of reporting on time and employee tracking are provided.
 It is completely integrated with the cost accounting module. It allows you to set
 up a management by affair.
     """,
-    'website': 'https://www.edencloud.us/app/timesheet',
+    
     'depends': ['hr', 'hr_hourly_cost', 'analytic', 'project', 'uom'],
     'data': [
         'security/hr_timesheet_security.xml',

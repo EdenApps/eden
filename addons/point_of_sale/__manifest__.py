@@ -57,7 +57,7 @@
     ],
     'installable': True,
     'application': True,
-    'website': 'https://www.edencloud.us/app/point-of-sale-shop',
+    
     'assets': {
 
         # In general, you DON'T NEED to declare new assets here, just put the

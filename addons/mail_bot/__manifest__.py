@@ -6,7 +6,7 @@
     'version': '1.2',
     'category': 'Productivity/Discuss',
     'summary': 'Add EdenBot in discussions',
-    'website': 'https://www.edencloud.us/app/discuss',
+    
     'depends': ['mail'],
     'auto_install': True,
     'installable': True,

@@ -9,8 +9,6 @@
     'category': 'Sales/CRM',
     'license': 'LGPL-3', 
     'author': 'MuK IT',
-    'website': 'http://www.mukit.at',
-    'live_test_url': 'https://my.mukit.at/r/f6m',
     'contributors': [
         'Mathias Markl <mathias.markl@mukit.at>',
     ],

@@ -14,7 +14,7 @@ This module aims to manage employee's attendances.
 Keeps account of the attendances of the employees on the basis of the
 actions(Check in/Check out) performed by them.
        """,
-    'website': 'https://www.edencloud.us/app/employees',
+    
     'depends': ['hr', 'barcodes'],
     'data': [
         'data/hr_attendance_data.xml',

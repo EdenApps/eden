@@ -13,7 +13,7 @@ The specific and easy-to-use Invoicing system in Eden allows you to keep track o
 You could use this simplified accounting in case you work with an (external) account to keep your books, and you still want to keep track of payments. This module also offers you an easy method of registering payments, without having to encode complete abstracts of account.
     """,
     'category': 'Accounting/Accounting',
-    'website': 'https://www.edencloud.us/app/invoicing',
+    
     'depends': ['base_setup', 'onboarding', 'product', 'analytic', 'portal', 'digest'],
     'data': [
         'security/account_security.xml',

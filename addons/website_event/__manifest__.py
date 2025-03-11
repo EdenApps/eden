@@ -7,7 +7,7 @@
     'category': 'Marketing/Events',
     'sequence': 140,
     'summary': 'Publish events, sell tickets',
-    'website': 'https://www.edencloud.us/app/events',
+    
     'depends': [
         'event',
         'website',

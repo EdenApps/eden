@@ -5,7 +5,7 @@
     'category': 'Website/Website',
     'sequence': 20,
     'summary': 'Enterprise website builder',
-    'website': 'https://www.edencloud.us/app/website',
+    
     'version': '1.0',
     'depends': [
         'digest',

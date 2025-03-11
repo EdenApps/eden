@@ -11,7 +11,7 @@
     'data': [
         'views/project_task_views.xml'
     ],
-    'website': 'https://www.edencloud.us/app/project',
+    
     'depends': [
         'project',
         'mail_plugin',

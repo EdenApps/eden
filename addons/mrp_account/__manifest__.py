@@ -17,7 +17,7 @@ It adds a button on the product itself but also an action in the list view of th
 If the automated inventory valuation is active, the necessary accounting entries will be created.
 
 """,
-    'website': 'https://www.edencloud.us/app/manufacturing',
+    
     'depends': ['mrp', 'stock_account'],
     "data": [
         'security/ir.model.access.csv',

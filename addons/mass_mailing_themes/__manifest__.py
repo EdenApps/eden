@@ -9,7 +9,7 @@ Design gorgeous mails
     """,
     'version': '1.2',
     'sequence': 110,
-    'website': 'https://www.edencloud.us/app/mailing',
+    
     'category': 'Marketing/Email Marketing',
     'depends': [
         'mass_mailing',

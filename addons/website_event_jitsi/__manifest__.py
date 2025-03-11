@@ -7,7 +7,7 @@
     'sequence': 1002,
     'version': '1.0',
     'summary': 'Event / Jitsi',
-    'website': 'https://www.edencloud.us/app/events',
+    
     'depends': [
         'website_event',
         'website_jitsi',

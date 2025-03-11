@@ -2,7 +2,7 @@
 {
     'name': 'Events Organization',
     'version': '1.9',
-    'website': 'https://www.edencloud.us/app/events',
+    
     'category': 'Marketing/Events',
     'summary': 'Trainings, Conferences, Meetings, Exhibitions, Registrations',
     'description': """

@@ -5,7 +5,7 @@
     'sequence': 210,
     'summary': 'Chat with your website visitors',
     'category': 'Website/Live Chat',
-    'website': 'https://www.edencloud.us/app/live-chat',
+    
     'description':
         """
 Live Chat Support

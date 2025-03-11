@@ -11,7 +11,7 @@
     'description': """
 Ask questions, get answers, no distractions
         """,
-    'website': 'https://www.edencloud.us/app/forum',
+    
     'depends': [
         'auth_signup',
         'website_mail',

@@ -9,7 +9,7 @@
 Track equipment and maintenance requests""",
     'depends': ['mail'],
     'summary': 'Track equipment and manage maintenance requests',
-    'website': 'https://www.edencloud.us/app/maintenance',
+    
     'data': [
         'security/maintenance.xml',
         'security/ir.model.access.csv',
