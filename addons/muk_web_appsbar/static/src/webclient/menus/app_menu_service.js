@@ -1,7 +1,7 @@
 import { registry } from "@web/core/registry";
 import { user } from "@web/core/user";
 
-import { computeAppsAndMenuItems, reorderApps } from "@web/webclient/menus/menu_helpers";
+import { computeAppsAndMenuItems } from "@web/webclient/menus/menu_helpers";
 
 export const appMenuService = {
     dependencies: ["menu"],
@@ -15,12 +15,6 @@ export const appMenuService = {
 					menu.getMenuAsTree('root')
 				)
 				const apps = menuItems.apps;
-				const menuConfig = JSON.parse(
-					user.settings?.homemenu_config || 'null'
-				);
-				if (menuConfig) {
-                    reorderApps(apps, menuConfig);
-				}
         		return apps;
 			},
 			selectApp(app) {

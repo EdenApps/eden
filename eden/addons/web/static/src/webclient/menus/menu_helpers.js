@@ -58,28 +58,9 @@ export function computeAppsAndMenuItems(menuTree) {
             menuItems.push(item);
         }
     });
+    // Sort apps by alphebetical order, remove settings and apps from the list.
+    apps.sort((a, b) => a.label.localeCompare(b.label));
+    apps.splice(apps.findIndex((app) => app.label === "Settings"), 1);
+    apps.splice(apps.findIndex((app) => app.label === "Apps"), 1);
     return { apps, menuItems };
-}
-
-/**
- * @param {Array} order
- * Sorts the apps in the homescreen menu according to the given order as an array of xmlid strings
- */
-export function reorderApps(apps, order) {
-    apps.sort((a, b) => {
-        const aIndex = order.indexOf(a.xmlid);
-        const bIndex = order.indexOf(b.xmlid);
-        if (aIndex === -1 && bIndex === -1) {
-            // if both items are not present, sort by original order
-            return apps.indexOf(a) - apps.indexOf(b);
-        }
-        // not found items always before found ones
-        if (aIndex === -1) {
-            return -1;
-        }
-        if (bIndex === -1) {
-            return 1;
-        }
-        return aIndex - bIndex; // sort by order array
-    });
 }
